@@ -116,11 +116,41 @@ import { getFlowerById } from '@/api/admin/flower.js'
 
 const router = useRouter()
 
-// 送人对象预设关键词（spec_object LIKE %object%，与明细录入占位口径一致）
-const objectOptions = ['女友', '男友', '母亲', '父亲', '朋友', '老师', '长辈', '客户', '爱人']
+const objectOptions = [
+  '恋人/爱人',      // 对应 LOVER_OR_SPOUSE，同时覆盖原 女友/男友/爱人
+  '母亲/长辈',      // 对应 MOTHER_OR_ELDER，覆盖原 母亲/父亲/长辈
+  '朋友',           // 对应 FRIEND / FRIEND_OR_COLLEAGUE / FRIEND_OR_CLASSMATE 等
+  '老师',           // 对应 ELDER_OR_TEACHER / FRIEND_OR_TEACHER
+  '客户/商务',      // 对应 CLIENT_OR_BUSINESS，覆盖原 客户
+  '同事/上司',      // 对应 COLLEAGUE_OR_SUPERIOR
+  '病人',           // 对应 PATIENT / PATIENT_ELDER（探病场景）
+]
 
-// 用途场景预设关键词（spec_option LIKE %option%）
-const optionOptions = ['生日', '表白', '纪念日', '求婚', '道歉', '婚礼', '春节', '探望', '毕业', '感谢']
+// 用途场景 —— 对齐 OptionConstant（spec_option LIKE %option%）
+const optionOptions = [
+  '生日',           // BIRTHDAY
+  '表白',           // CONFESSION
+  '纪念日',         // ANNIVERSARY
+  '求婚',           // PROPOSAL
+  '道歉',           // APOLOGY
+  '婚礼',           // WEDDING
+  '探病',           // VISIT_PATIENT（替代原"探望"）
+  '毕业',           // GRADUATION
+  '感谢',           // THANKS
+  '情人节',         // VALENTINES_DAY
+  '日常',           // DAILY
+  '祝福',           // BLESSING
+  '商务',           // BUSINESS
+  '母亲节',         // MOTHERS_DAY
+  '教师节',         // TEACHERS_DAY
+  '乔迁',           // HOUSEWARMING
+  '升职',           // PROMOTION
+  '聚会',           // PARTY
+  '鼓励',           // ENCOURAGEMENT
+  '约会',           // DATING
+  '感恩',           // GRATITUDE
+  '祝寿',           // LONGEVITY
+]
 
 // 当前选中的维度与关键词
 const activeType = ref(null) // 'object' | 'option'

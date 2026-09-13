@@ -1,4 +1,3 @@
-Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -9,111 +8,56 @@ Standard Commons Logging discovery in action with spring-jcl: please remove comm
 
  :: Spring Boot ::                (v3.5.9)
 
-2026-08-31T11:10:14.953+08:00  INFO 9004 --- [love-flower-main] [           main] start.FlowerApplication                  : Starting FlowerApplication using Java 17.0.1 with PID 9004 (D:\a.github\flowerpayment-ai\spring-flower\start\target\classes started by lenovo in D:\a.github\flowerpayment-ai\spring-flower)
-2026-08-31T11:10:14.956+08:00  INFO 9004 --- [love-flower-main] [           main] start.FlowerApplication                  : The following 1 profile is active: "dev"
-2026-08-31T11:10:15.678+08:00  INFO 9004 --- [love-flower-main] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2026-08-31T11:10:15.681+08:00  INFO 9004 --- [love-flower-main] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2026-08-31T11:10:15.710+08:00  INFO 9004 --- [love-flower-main] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 0 Redis repository interfaces.
-2026-08-31T11:10:16.520+08:00  INFO 9004 --- [love-flower-main] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2026-08-31T11:10:16.530+08:00  INFO 9004 --- [love-flower-main] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-08-31T11:10:16.530+08:00  INFO 9004 --- [love-flower-main] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.50]
-2026-08-31T11:10:16.573+08:00  INFO 9004 --- [love-flower-main] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-08-31T11:10:16.573+08:00  INFO 9004 --- [love-flower-main] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1572 ms
+2026-09-13T13:52:02.650+08:00  INFO 3136 --- [flower-main] [           main] start.FlowerApplication                  : Starting FlowerApplication using Java 17.0.1 with PID 3136 (D:\a.github\flowerpayment-ai\spring-flower\start\target\classes started by lenovo in D:\a.github\flowerpayment-ai\spring-flower)
+2026-09-13T13:52:02.650+08:00  INFO 3136 --- [flower-main] [           main] start.FlowerApplication                  : The following 1 profile is active: "dev"
+2026-09-13T13:52:03.369+08:00  INFO 3136 --- [flower-main] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-13T13:52:03.369+08:00  INFO 3136 --- [flower-main] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-09-13T13:52:03.401+08:00  INFO 3136 --- [flower-main] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 0 Redis repository interfaces.
+2026-09-13T13:52:04.213+08:00  INFO 3136 --- [flower-main] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-09-13T13:52:04.223+08:00  INFO 3136 --- [flower-main] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-09-13T13:52:04.223+08:00  INFO 3136 --- [flower-main] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.50]
+2026-09-13T13:52:04.270+08:00  INFO 3136 --- [flower-main] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-09-13T13:52:04.271+08:00  INFO 3136 --- [flower-main] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1578 ms
 Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
 Logging initialized using 'class org.apache.ibatis.logging.stdout.StdOutImpl' adapter.
 Get /192.168.80.1 network interface 
 Get network interface info: name:eth6 (VMware Virtual Ethernet Adapter for VMnet8)
-Initialization Sequence datacenterId:0 workerId:11
+Initialization Sequence datacenterId:0 workerId:17
  _ _   |_  _ _|_. ___ _ |    _ 
 | | |\/|_)(_| | |_\  |_)||_|_\ 
      /               |         
                         3.5.9 
-2026-08-31T11:10:17.233+08:00  INFO 9004 --- [love-flower-main] [           main] org.redisson.Version                     : Redisson 3.52.0
-2026-08-31T11:10:17.605+08:00  INFO 9004 --- [love-flower-main] [isson-netty-1-4] o.redisson.connection.ConnectionsHolder  : 1 connections initialized for 192.168.80.128/192.168.80.128:6379
-2026-08-31T11:10:18.668+08:00  INFO 9004 --- [love-flower-main] [sson-netty-1-19] o.redisson.connection.ConnectionsHolder  : 24 connections initialized for 192.168.80.128/192.168.80.128:6379
-2026-08-31T11:10:18.855+08:00  INFO 9004 --- [love-flower-main] [           main] service.impl.FestivalDetailServiceImpl   : Festival 缓存重建线程池初始化完成
-2026-08-31T11:10:18.909+08:00  INFO 9004 --- [love-flower-main] [           main] service.impl.FestivalServiceImpl         : FestivalDetail 缓存重建线程池初始化完成
-2026-08-31T11:10:18.977+08:00  INFO 9004 --- [love-flower-main] [           main] service.impl.FlowerDetailServiceImpl     : flowerDetail缓存重建线程池初始化完成
-2026-08-31T11:10:18.997+08:00  INFO 9004 --- [love-flower-main] [           main] service.impl.FlowerServiceImpl           : Flower 缓存重建线程池初始化完成
-2026-08-31T11:10:19.485+08:00  INFO 9004 --- [love-flower-main] [           main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name roleAuthenticationProvider
-2026-08-31T11:10:19.957+08:00  INFO 9004 --- [love-flower-main] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2026-08-31T11:10:19.967+08:00  INFO 9004 --- [love-flower-main] [           main] start.FlowerApplication                  : Started FlowerApplication in 5.398 seconds (process running for 6.009)
-2026-08-31T11:10:19.968+08:00  INFO 9004 --- [love-flower-main] [           main] start.FlowerApplication                  : --匹配成功
-2026-08-31T11:10:29.775+08:00  INFO 9004 --- [love-flower-main] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-08-31T11:10:29.777+08:00  INFO 9004 --- [love-flower-main] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-08-31T11:10:29.780+08:00  INFO 9004 --- [love-flower-main] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2026-08-31T11:10:29.923+08:00  INFO 9004 --- [love-flower-main] [nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-08-31T11:10:30.252+08:00  INFO 9004 --- [love-flower-main] [nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@599e3ddc
-2026-08-31T11:10:30.254+08:00  INFO 9004 --- [love-flower-main] [nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-09-13T13:52:04.927+08:00  INFO 3136 --- [flower-main] [           main] org.redisson.Version                     : Redisson 3.52.0
+2026-09-13T13:52:17.169+08:00  INFO 3136 --- [flower-main] [isson-netty-1-9] o.redisson.connection.ConnectionsHolder  : 1 connections initialized for 192.168.80.128/192.168.80.128:6379
+2026-09-13T13:52:17.281+08:00  INFO 3136 --- [flower-main] [sson-netty-1-23] o.redisson.connection.ConnectionsHolder  : 24 connections initialized for 192.168.80.128/192.168.80.128:6379
+2026-09-13T13:52:17.601+08:00  INFO 3136 --- [flower-main] [           main] service.impl.FestivalDetailServiceImpl   : FestivalDetail 缓存重建线程池初始化完成
+2026-09-13T13:52:17.644+08:00  INFO 3136 --- [flower-main] [           main] service.impl.FestivalServiceImpl         : Festival 缓存重建线程池初始化完成
+2026-09-13T13:52:17.721+08:00  INFO 3136 --- [flower-main] [           main] service.impl.FlowerDetailServiceImpl     : flowerDetail缓存重建线程池初始化完成
+2026-09-13T13:52:17.742+08:00  INFO 3136 --- [flower-main] [           main] service.impl.FlowerServiceImpl           : Flower 缓存重建线程池初始化完成
+2026-09-13T13:52:18.292+08:00  INFO 3136 --- [flower-main] [           main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name roleAuthenticationProvider
+2026-09-13T13:52:19.075+08:00  INFO 3136 --- [flower-main] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-09-13T13:52:19.088+08:00  INFO 3136 --- [flower-main] [           main] start.FlowerApplication                  : Started FlowerApplication in 16.823 seconds (process running for 17.42)
+2026-09-13T13:52:19.091+08:00  INFO 3136 --- [flower-main] [           main] start.FlowerApplication                  : --匹配成功
+2026-09-13T13:52:23.182+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-13T13:52:23.182+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-09-13T13:52:23.186+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
 Creating a new SqlSession
-Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2ef71d47]
-JDBC Connection [HikariProxyConnection@1868548265 wrapping com.mysql.cj.jdbc.ConnectionImpl@599e3ddc] will be managed by Spring
-==>  Preparing: SELECT id,work,username,password,avatar,email,phone,sex,status,create_time,update_time,create_user,update_user FROM employee WHERE (username = ?)
-==> Parameters: admin(String)
-<==    Columns: id, work, username, password, avatar, email, phone, sex, status, create_time, update_time, create_user, update_user
-<==        Row: 1, admin, admin, $2a$10$MpAqoVlqUThDtR59uir2i.CZKgNTs7FzRV9S3u0VZPCXM/nrTMnIK, , zhang@flowershop.com, 13800001001, 男, 1, 2026-08-20 15:54:43, 2026-08-20 15:54:43, 0, 0
-<==      Total: 1
-Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2ef71d47]
-Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2ef71d47] from current transaction
-Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2ef71d47]
-Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2ef71d47]
-Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2ef71d47]
-Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2ef71d47]
+2026-09-13T13:52:23.415+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5e20bf85] was not registered for synchronization because synchronization is not active
+2026-09-13T13:52:23.705+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-3] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@483a9b05
+2026-09-13T13:52:23.706+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+JDBC Connection [HikariProxyConnection@1497263715 wrapping com.mysql.cj.jdbc.ConnectionImpl@2ecc2eb3] will not be managed by Spring
 Creating a new SqlSession
-SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@36d07dac] was not registered for synchronization because synchronization is not active
-JDBC Connection [HikariProxyConnection@480754772 wrapping com.mysql.cj.jdbc.ConnectionImpl@599e3ddc] will not be managed by Spring
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4728d776]
 ==>  Preparing: SELECT id,work,username,password,avatar,email,phone,sex,status,create_time,update_time,create_user,update_user FROM employee WHERE id=?
 ==> Parameters: 1(Long)
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@330df4f0]
 <==    Columns: id, work, username, password, avatar, email, phone, sex, status, create_time, update_time, create_user, update_user
 <==        Row: 1, admin, admin, $2a$10$MpAqoVlqUThDtR59uir2i.CZKgNTs7FzRV9S3u0VZPCXM/nrTMnIK, , zhang@flowershop.com, 13800001001, 男, 1, 2026-08-20 15:54:43, 2026-08-20 15:54:43, 0, 0
 <==      Total: 1
-Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@36d07dac]
-2026-08-31T11:10:30.931+08:00  INFO 9004 --- [love-flower-main] [nio-8080-exec-2] start.oparation.OperationType            : role: [ROLE_ADMIN] , :ID:1, 执行操作: READ, 使用参数: [1], SUCCESS
-Creating a new SqlSession
-SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@784d8b99] was not registered for synchronization because synchronization is not active
-JDBC Connection [HikariProxyConnection@1455550639 wrapping com.mysql.cj.jdbc.ConnectionImpl@599e3ddc] will not be managed by Spring
-==>  Preparing: SELECT id,work,username,password,avatar,email,phone,sex,status,create_time,update_time,create_user,update_user FROM employee WHERE id=?
-==> Parameters: 1(Long)
-<==    Columns: id, work, username, password, avatar, email, phone, sex, status, create_time, update_time, create_user, update_user
-<==        Row: 1, admin, admin, $2a$10$MpAqoVlqUThDtR59uir2i.CZKgNTs7FzRV9S3u0VZPCXM/nrTMnIK, , zhang@flowershop.com, 13800001001, 男, 1, 2026-08-20 15:54:43, 2026-08-20 15:54:43, 0, 0
-<==      Total: 1
-Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@784d8b99]
-2026-08-31T11:10:30.946+08:00  INFO 9004 --- [love-flower-main] [nio-8080-exec-3] start.oparation.OperationType            : role: [ROLE_ADMIN] , :ID:1, 执行操作: READ, 使用参数: [1], SUCCESS
-Creating a new SqlSession
-Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@52bff17b]
-JDBC Connection [HikariProxyConnection@789838830 wrapping com.mysql.cj.jdbc.ConnectionImpl@599e3ddc] will be managed by Spring
-==>  Preparing: SELECT COUNT(*) AS total FROM flower_category
-==> Parameters: 
-<==    Columns: total
-<==        Row: 15
-<==      Total: 1
-==>  Preparing: SELECT id,name,type,sort,status,create_time,update_time,create_user,update_user FROM flower_category LIMIT ?
-==> Parameters: 10(Long)
-<==    Columns: id, name, type, sort, status, create_time, update_time, create_user, update_user
-<==        Row: 1, 玫瑰类, 1, 1, 1, 2026-08-20 15:54:42, 2026-08-20 15:54:42, 1, 1
-<==        Row: 2, 百合类, 1, 2, 1, 2026-08-20 15:54:42, 2026-08-20 15:54:42, 1, 1
-<==        Row: 3, 郁金香类, 1, 3, 1, 2026-08-20 15:54:42, 2026-08-20 15:54:42, 1, 1
-<==        Row: 4, 向日葵类, 1, 4, 1, 2026-08-20 15:54:42, 2026-08-20 15:54:42, 1, 1
-<==        Row: 5, 菊类, 1, 5, 1, 2026-08-20 15:54:42, 2026-08-20 15:54:42, 1, 1
-<==        Row: 6, 桃花/蔷薇类, 1, 6, 1, 2026-08-20 15:54:42, 2026-08-20 15:54:42, 1, 1
-<==        Row: 7, 水生花类, 1, 7, 1, 2026-08-20 15:54:42, 2026-08-20 15:54:42, 1, 1
-<==        Row: 8, 风信子类, 1, 8, 1, 2026-08-20 15:54:42, 2026-08-20 15:54:42, 1, 1
-<==        Row: 9, 雏菊类, 1, 9, 1, 2026-08-20 15:54:42, 2026-08-20 15:54:42, 1, 1
-<==        Row: 10, 情人节礼盒, 2, 10, 1, 2026-08-20 15:54:42, 2026-08-20 15:54:42, 1, 1
-<==      Total: 10
-Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@52bff17b]
-Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@52bff17b]
-Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@52bff17b]
-Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@52bff17b]
-2026-08-31T11:10:33.073+08:00  INFO 9004 --- [love-flower-main] [nio-8080-exec-4] start.oparation.OperationType            : role: [ROLE_ADMIN] , :ID:1, 执行操作: READ, 使用参数: [FlowerCategoryPageDTO(page=1, pageSize=10, type=null)], SUCCESS
-Creating a new SqlSession
-Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@f81989]
-JDBC Connection [HikariProxyConnection@351409020 wrapping com.mysql.cj.jdbc.ConnectionImpl@599e3ddc] will be managed by Spring
-==>  Preparing: SELECT COUNT(*) AS total FROM flower_shop
-==> Parameters: 
-Creating a new SqlSession
-Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@522f9d56]
-JDBC Connection [HikariProxyConnection@1130849908 wrapping com.mysql.cj.jdbc.ConnectionImpl@2daf97f7] will be managed by Spring
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5e20bf85]
+JDBC Connection [HikariProxyConnection@1682693397 wrapping com.mysql.cj.jdbc.ConnectionImpl@353f8698] will be managed by Spring
 ==>  Preparing: SELECT id,name,type,sort,status,create_time,update_time,create_user,update_user FROM flower_category WHERE (type = ?)
 ==> Parameters: 1(Long)
 <==    Columns: id, name, type, sort, status, create_time, update_time, create_user, update_user
@@ -121,24 +65,31 @@ JDBC Connection [HikariProxyConnection@1130849908 wrapping com.mysql.cj.jdbc.Con
 <==        Row: 2, 百合类, 1, 2, 1, 2026-08-20 15:54:42, 2026-08-20 15:54:42, 1, 1
 <==        Row: 3, 郁金香类, 1, 3, 1, 2026-08-20 15:54:42, 2026-08-20 15:54:42, 1, 1
 <==        Row: 4, 向日葵类, 1, 4, 1, 2026-08-20 15:54:42, 2026-08-20 15:54:42, 1, 1
+<==        Row: 5, 菊类, 1, 5, 1, 2026-08-20 15:54:42, 2026-08-20 15:54:42, 1, 1
+<==        Row: 6, 桃花/蔷薇类, 1, 6, 1, 2026-08-20 15:54:42, 2026-08-20 15:54:42, 1, 1
+<==        Row: 7, 水生花类, 1, 7, 1, 2026-08-20 15:54:42, 2026-08-20 15:54:42, 1, 1
+<==        Row: 8, 风信子类, 1, 8, 1, 2026-08-20 15:54:42, 2026-08-20 15:54:42, 1, 1
+<==        Row: 9, 雏菊类, 1, 9, 1, 2026-08-20 15:54:42, 2026-08-20 15:54:42, 1, 1
+<==        Row: 15, 兰花, 1, 15, 1, 2026-08-20 16:42:02, 2026-08-20 16:42:03, 1, 1
+<==      Total: 10
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@330df4f0]
+JDBC Connection [HikariProxyConnection@888044942 wrapping com.mysql.cj.jdbc.ConnectionImpl@483a9b05] will be managed by Spring
+==>  Preparing: SELECT COUNT(*) AS total FROM flower_shop
+==> Parameters: 
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@330df4f0]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@330df4f0]
+2026-09-13T13:52:23.936+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-2] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [1], 运行状态: SUCCESS, 记录时间: 552ms(毫秒)
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@330df4f0]
 <==    Columns: total
 <==        Row: 11
 <==      Total: 1
-<==        Row: 5, 菊类, 1, 5, 1, 2026-08-20 15:54:42, 2026-08-20 15:54:42, 1, 1
 ==>  Preparing: SELECT id,name,category_id,color,price,image,description,status,create_time,update_time,create_user,update_user FROM flower_shop LIMIT ?
-<==        Row: 6, 桃花/蔷薇类, 1, 6, 1, 2026-08-20 15:54:42, 2026-08-20 15:54:42, 1, 1
 ==> Parameters: 10(Long)
 <==    Columns: id, name, category_id, color, price, image, description, status, create_time, update_time, create_user, update_user
 <==        Row: 1, 红玫瑰, 1, 红色, 9.90, /image/1.png, 深红色经典玫瑰，花语：热恋、我爱你。花瓣层叠饱满，适合表达浓烈爱意。, 1, 2026-08-20 15:54:42, 2026-08-20 15:54:42, 1, 1
-<==        Row: 7, 水生花类, 1, 7, 1, 2026-08-20 15:54:42, 2026-08-20 15:54:42, 1, 1
-<==        Row: 8, 风信子类, 1, 8, 1, 2026-08-20 15:54:42, 2026-08-20 15:54:42, 1, 1
 <==        Row: 2, 白百合, 2, 白色, 12.50, /image/2.png, 纯白色百合花，花语：纯洁、庄严、百年好合。清香淡雅，适合婚礼与祝福场景。, 1, 2026-08-20 15:54:42, 2026-08-20 15:54:42, 1, 1
 <==        Row: 3, 黄郁金香, 3, 黄色, 8.80, /image/3.png, 明亮黄色郁金香，花语：阳光、友谊、珍贵。杯状花苞带纵向纹理，充满春日生机。, 1, 2026-08-20 15:54:42, 2026-08-20 15:54:42, 1, 1
-<==        Row: 9, 雏菊类, 1, 9, 1, 2026-08-20 15:54:42, 2026-08-20 15:54:42, 1, 1
 <==        Row: 4, 向日葵, 4, 黄色, 7.50, /image/4.png, 金黄向日葵，花语：阳光、忠诚、仰慕。明亮大气，适合送给积极向上的人。, 1, 2026-08-20 15:54:42, 2026-08-20 15:54:42, 1, 1
-<==        Row: 15, 兰花, 1, 15, 1, 2026-08-20 16:42:02, 2026-08-20 16:42:03, 1, 1
-<==      Total: 10
-Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@522f9d56]
 <==        Row: 5, 橙色非洲菊, 5, 橙色, 6.80, /image/5.png, 鲜艳橙色非洲菊（扶郎花），花语：快乐、互敬互爱。细长花瓣放射状展开，色彩热情。, 1, 2026-08-20 15:54:42, 2026-08-20 15:54:42, 1, 1
 <==        Row: 6, 粉桃花, 6, 粉色, 5.50, /image/6.png, 浅粉色五瓣桃花，花语：爱情、好运、生机。柔和淡雅，适合春日浪漫场景。, 1, 2026-08-20 15:54:42, 2026-08-20 15:54:42, 1, 1
 <==        Row: 7, 粉莲花, 7, 粉色, 15.00, /image/7.png, 粉色莲花，花语：清雅、纯洁、脱俗。漂浮水面，禅意悠然，适合高雅送礼。, 1, 2026-08-20 15:54:42, 2026-08-20 15:54:42, 1, 1
@@ -146,73 +97,651 @@ Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSq
 <==        Row: 9, 白雏菊, 9, 白色, 4.50, /image/9.png, 白色雏菊，花语：纯真、暗恋、和平。清新可爱，适合日常点缀与告白场景。, 1, 2026-08-20 15:54:42, 2026-08-20 15:54:42, 1, 1
 <==        Row: 10, 红郁金香, 3, 红色, 9.50, /image/10.png, 深红色郁金香，花语：热烈的爱、钟情。杯状花苞饱满层叠，适合情人节与表白。, 1, 2026-08-20 15:54:42, 2026-08-20 15:54:42, 1, 1
 <==      Total: 10
-Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@f81989]
-Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@f81989]
-Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@f81989]
-Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@f81989]
-2026-08-31T11:10:38.920+08:00  INFO 9004 --- [love-flower-main] [nio-8080-exec-6] start.oparation.OperationType            : role: [ROLE_ADMIN] , :ID:1, 执行操作: READ, 使用参数: [FlowerPageDTO(page=1, pageSize=10, name=null)], SUCCESS
-Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@522f9d56]
-Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@522f9d56]
-Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@522f9d56]
-2026-08-31T11:10:38.945+08:00  INFO 9004 --- [love-flower-main] [nio-8080-exec-5] start.oparation.OperationType            : role: [ROLE_ADMIN] , :ID:1, 执行操作: READ, 使用参数: [1], SUCCESS
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4728d776]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4728d776]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4728d776]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4728d776]
+2026-09-13T13:52:23.953+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-3] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [FlowerPageDTO(page=1, pageSize=10, name=null)], 运行状态: SUCCESS, 记录时间: 570ms(毫秒)
+2026-09-13T13:52:23.991+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-1] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [1], 运行状态: SUCCESS, 记录时间: 608ms(毫秒)
 Creating a new SqlSession
-Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3666f68d]
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4bf5b653]
+JDBC Connection [HikariProxyConnection@1486609584 wrapping com.mysql.cj.jdbc.ConnectionImpl@483a9b05] will be managed by Spring
+==>  Preparing: SELECT id,festival_id,flower_id,spec_number,spec_object,spec_option FROM festival_detail WHERE (spec_option LIKE ?)
+==> Parameters: %探病%(String)
+<==    Columns: id, festival_id, flower_id, spec_number, spec_object, spec_option
+<==        Row: 21, 9, 2, 7, 病人,长辈, 探病
+<==        Row: 22, 9, 9, 15, 病人, 探病,祝福
+<==        Row: 23, 10, 4, 9, 病人, 探病
+<==        Row: 24, 10, 6, 12, 病人, 探病
+<==        Row: 25, 10, 5, 44, 病人, 探病
+<==      Total: 5
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4bf5b653]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4bf5b653]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4bf5b653]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4bf5b653]
+2026-09-13T13:52:30.517+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-6] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [探病], 运行状态: SUCCESS, 记录时间: 11ms(毫秒)
 Creating a new SqlSession
-Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@61ef54a6]
-JDBC Connection [HikariProxyConnection@597119181 wrapping com.mysql.cj.jdbc.ConnectionImpl@599e3ddc] will be managed by Spring
-==>  Preparing: SELECT id,name,type,sort,status,create_time,update_time,create_user,update_user FROM flower_category WHERE (type = ?)
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5a29c533]
+Creating a new SqlSession
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7d4164cb]
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6e314b4e]
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@28a18c3a]
+Creating a new SqlSession
+JDBC Connection [HikariProxyConnection@1148738453 wrapping com.mysql.cj.jdbc.ConnectionImpl@67902f63] will be managed by Spring
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@65cd42ee]
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4bfa1671]
+==>  Preparing: SELECT id,name,category_id,color,price,image,description,status,create_time,update_time,create_user,update_user FROM flower_shop WHERE id=?
+JDBC Connection [HikariProxyConnection@1294897747 wrapping com.mysql.cj.jdbc.ConnectionImpl@483a9b05] will be managed by Spring
+==> Parameters: 6(Long)
+==>  Preparing: SELECT id,name,category_id,color,price,image,description,status,create_time,update_time,create_user,update_user FROM flower_shop WHERE id=?
+JDBC Connection [HikariProxyConnection@976272099 wrapping com.mysql.cj.jdbc.ConnectionImpl@63494426] will be managed by Spring
+JDBC Connection [HikariProxyConnection@1105031864 wrapping com.mysql.cj.jdbc.ConnectionImpl@2ecc2eb3] will be managed by Spring
+JDBC Connection [HikariProxyConnection@860475095 wrapping com.mysql.cj.jdbc.ConnectionImpl@40189412] will be managed by Spring
+==>  Preparing: SELECT id,name,category_id,color,price,image,description,status,create_time,update_time,create_user,update_user FROM flower_shop WHERE id=?
+JDBC Connection [HikariProxyConnection@1570415974 wrapping com.mysql.cj.jdbc.ConnectionImpl@353f8698] will be managed by Spring
+==>  Preparing: SELECT id,name,category_id,color,price,image,description,status,create_time,update_time,create_user,update_user FROM flower_shop WHERE id=?
+==>  Preparing: SELECT id,category_id,name,price,status,description,image,create_time,update_time,create_user,update_user FROM festival WHERE id=?
 ==> Parameters: 2(Long)
-<==    Columns: id, name, type, sort, status, create_time, update_time, create_user, update_user
-<==        Row: 10, 情人节礼盒, 2, 10, 1, 2026-08-20 15:54:42, 2026-08-20 15:54:42, 1, 1
-<==        Row: 11, 母亲节礼盒, 2, 11, 1, 2026-08-20 15:54:42, 2026-08-20 15:54:42, 1, 1
-<==        Row: 12, 生日礼盒, 2, 12, 1, 2026-08-20 15:54:42, 2026-08-20 15:54:42, 1, 1
-<==      Total: 3
-Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3666f68d]
-Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3666f68d]
-Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3666f68d]
-Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3666f68d]
-JDBC Connection [HikariProxyConnection@1187081943 wrapping com.mysql.cj.jdbc.ConnectionImpl@2daf97f7] will be managed by Spring
-==>  Preparing: SELECT COUNT(*) AS total FROM festival
-==> Parameters: 
-2026-08-31T11:10:42.508+08:00  INFO 9004 --- [love-flower-main] [nio-8080-exec-2] start.oparation.OperationType            : role: [ROLE_ADMIN] , :ID:1, 执行操作: READ, 使用参数: [2], SUCCESS
-<==    Columns: total
-<==        Row: 10
+==>  Preparing: SELECT id,name,category_id,color,price,image,description,status,create_time,update_time,create_user,update_user FROM flower_shop WHERE id=?
+==> Parameters: 4(Long)
+==> Parameters: 9(Long)
+==> Parameters: 5(Long)
+==> Parameters: 9(Long)
+<==    Columns: id, name, category_id, color, price, image, description, status, create_time, update_time, create_user, update_user
+<==    Columns: id, name, category_id, color, price, image, description, status, create_time, update_time, create_user, update_user
+<==    Columns: id, name, category_id, color, price, image, description, status, create_time, update_time, create_user, update_user
+<==    Columns: id, name, category_id, color, price, image, description, status, create_time, update_time, create_user, update_user
+<==    Columns: id, name, category_id, color, price, image, description, status, create_time, update_time, create_user, update_user
+<==        Row: 9, 白雏菊, 9, 白色, 4.50, /image/9.png, 白色雏菊，花语：纯真、暗恋、和平。清新可爱，适合日常点缀与告白场景。, 1, 2026-08-20 15:54:42, 2026-08-20 15:54:42, 1, 1
+<==        Row: 6, 粉桃花, 6, 粉色, 5.50, /image/6.png, 浅粉色五瓣桃花，花语：爱情、好运、生机。柔和淡雅，适合春日浪漫场景。, 1, 2026-08-20 15:54:42, 2026-08-20 15:54:42, 1, 1
+<==        Row: 4, 向日葵, 4, 黄色, 7.50, /image/4.png, 金黄向日葵，花语：阳光、忠诚、仰慕。明亮大气，适合送给积极向上的人。, 1, 2026-08-20 15:54:42, 2026-08-20 15:54:42, 1, 1
+<==        Row: 2, 白百合, 2, 白色, 12.50, /image/2.png, 纯白色百合花，花语：纯洁、庄严、百年好合。清香淡雅，适合婚礼与祝福场景。, 1, 2026-08-20 15:54:42, 2026-08-20 15:54:42, 1, 1
+<==        Row: 5, 橙色非洲菊, 5, 橙色, 6.80, /image/5.png, 鲜艳橙色非洲菊（扶郎花），花语：快乐、互敬互爱。细长花瓣放射状展开，色彩热情。, 1, 2026-08-20 15:54:42, 2026-08-20 15:54:42, 1, 1
 <==      Total: 1
-==>  Preparing: SELECT id,category_id,name,price,number,status,description,image,create_time,update_time,create_user,update_user FROM festival LIMIT ?
-==> Parameters: 10(Long)
-<==    Columns: id, category_id, name, price, number, status, description, image, create_time, update_time, create_user, update_user
-<==        Row: 1, 10, 520 十一朵红玫瑰礼盒, 128.00, 11, 1, 11朵深红玫瑰+牛皮纸包装+手写贺卡，经典告白款，适合520/情人节, /image/1.png, 2026-08-20 15:54:43, 2026-08-20 15:54:43, 1, 1
-<==        Row: 2, 10, 热烈爱意 红郁金香9朵礼盒, 99.00, 9, 1, 9朵深红郁金香+雾面纸包装+贺卡，热烈而不失优雅的表白之选, /image/2.png, 2026-08-20 15:54:43, 2026-08-20 15:54:43, 1, 1
-<==        Row: 3, 11, 感恩母亲 百合+桃花+雏菊礼盒, 158.00, 15, 1, 白百合5枝+粉桃花5枝+白雏菊5枝，清新淡雅，献给最爱的妈妈, /image/3.png, 2026-08-20 15:54:43, 2026-08-20 15:54:43, 1, 1
-<==        Row: 4, 11, 母爱如花 粉莲花+雏菊礼篮, 138.00, 12, 1, 粉莲花3枝+白雏菊5枝+黄郁金香4枝，高雅清新的母亲节祝福, /image/4.png, 2026-08-20 15:54:43, 2026-08-20 15:54:43, 1, 1
-<==        Row: 5, 12, 生日快乐 向日葵+非洲菊活力礼盒, 118.00, 10, 1, 向日葵3枝+橙色非洲菊4枝+黄郁金香3枝，阳光活力满满的生日祝福, /image/5.png, 2026-08-20 15:54:43, 2026-08-20 15:54:43, 1, 1
-<==        Row: 6, 12, 浪漫生日 玫瑰+风信子混搭礼盒, 148.00, 10, 1, 红玫瑰5枝+蓝风信子3枝+粉桃花2枝，浪漫与神秘交织的生日惊喜, /image/6.png, 2026-08-20 15:54:43, 2026-08-20 15:54:43, 1, 1
-<==        Row: 7, 13, 开业大吉 向日葵+百合花篮, 188.00, 20, 1, 向日葵8枝+白百合6枝+黄郁金香6枝，大气端庄的开业/商务送礼首选, /image/7.png, 2026-08-20 15:54:43, 2026-08-20 15:54:43, 1, 1
-<==        Row: 8, 13, 商务致谢 莲花+风信子雅致礼盒, 168.00, 10, 1, 粉莲花4枝+蓝风信子3枝+白百合3枝，高雅内敛的商务感谢礼, /image/8.png, 2026-08-20 15:54:43, 2026-08-20 15:54:43, 1, 1
-<==        Row: 9, 14, 早日康复 百合+雏菊慰问花束, 88.00, 8, 1, 白百合3枝+白雏菊5枝，清淡素雅，适合探病慰问场景, /image/9.png, 2026-08-20 15:54:43, 2026-08-20 15:54:43, 1, 1
-<==        Row: 10, 14, 温暖祝福 向日葵+桃花探病礼盒, 98.00, 8, 1, 向日葵3枝+粉桃花3枝+非洲菊2枝，阳光温暖，传递早日康复的祝福, /image/10.png, 2026-08-20 15:54:43, 2026-08-20 15:54:43, 1, 1
-<==      Total: 10
-Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@61ef54a6]
-Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@61ef54a6]
-Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@61ef54a6]
-Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@61ef54a6]
-2026-08-31T11:10:42.523+08:00  INFO 9004 --- [love-flower-main] [nio-8080-exec-8] start.oparation.OperationType            : role: [ROLE_ADMIN] , :ID:1, 执行操作: READ, 使用参数: [FestivalPageDTO(page=1, pageSize=10, name=null)], SUCCESS
-2026-08-31T11:10:55.220+08:00  INFO 9004 --- [love-flower-main] [nio-8080-exec-1] start.oparation.OperationType            : role: [ROLE_ADMIN] , :ID:1, 执行操作: READ, 使用参数: [], SUCCESS
+<==      Total: 1
+<==      Total: 1
+<==      Total: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5a29c533]
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6e314b4e]
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@28a18c3a]
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4bfa1671]
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7d4164cb]
+<==    Columns: id, category_id, name, price, status, description, image, create_time, update_time, create_user, update_user
+<==        Row: 9, 14, 早日康复 百合+雏菊慰问花束, 88.00, 1, 白百合3枝+白雏菊5枝，清淡素雅，适合探病慰问场景, /image/19.png, 2026-08-20 15:54:43, 2026-08-20 15:54:43, 1, 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@65cd42ee]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@28a18c3a]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4bfa1671]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5a29c533]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@65cd42ee]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5a29c533]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4bfa1671]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@28a18c3a]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6e314b4e]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@28a18c3a]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6e314b4e]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6e314b4e]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4bfa1671]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5a29c533]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@65cd42ee]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@65cd42ee]
+2026-09-13T13:52:30.642+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-3] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [9], 运行状态: SUCCESS, 记录时间: 106ms(毫秒)
+2026-09-13T13:52:30.642+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-5] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [9], 运行状态: SUCCESS, 记录时间: 106ms(毫秒)
+2026-09-13T13:52:30.642+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-7] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [5], 运行状态: SUCCESS, 记录时间: 106ms(毫秒)
+2026-09-13T13:52:30.642+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-8] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [6], 运行状态: SUCCESS, 记录时间: 105ms(毫秒)
+2026-09-13T13:52:30.642+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-9] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [4], 运行状态: SUCCESS, 记录时间: 106ms(毫秒)
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7d4164cb]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7d4164cb]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7d4164cb]
+2026-09-13T13:52:30.642+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-4] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [2], 运行状态: SUCCESS, 记录时间: 108ms(毫秒)
 Creating a new SqlSession
-SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2c653b91] was not registered for synchronization because synchronization is not active
-JDBC Connection [HikariProxyConnection@1764583989 wrapping com.mysql.cj.jdbc.ConnectionImpl@599e3ddc] will not be managed by Spring
-==>  Preparing: SELECT COUNT(*) AS total FROM employee
-==> Parameters: 
-<==    Columns: total
-<==        Row: 4
-<==      Total: 1
-==>  Preparing: SELECT id,work,username,password,avatar,email,phone,sex,status,create_time,update_time,create_user,update_user FROM employee LIMIT ?
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@70c7c463]
+JDBC Connection [HikariProxyConnection@1935064576 wrapping com.mysql.cj.jdbc.ConnectionImpl@2ecc2eb3] will be managed by Spring
+==>  Preparing: SELECT id,category_id,name,price,status,description,image,create_time,update_time,create_user,update_user FROM festival WHERE id=?
 ==> Parameters: 10(Long)
-<==    Columns: id, work, username, password, avatar, email, phone, sex, status, create_time, update_time, create_user, update_user
-<==        Row: 1, admin, admin, $2a$10$MpAqoVlqUThDtR59uir2i.CZKgNTs7FzRV9S3u0VZPCXM/nrTMnIK, , zhang@flowershop.com, 13800001001, 男, 1, 2026-08-20 15:54:43, 2026-08-20 15:54:43, 0, 0
-<==        Row: 2, 店员, lili, $2a$10$MpAqoVlqUThDtR59uir2i.CZKgNTs7FzRV9S3u0VZPCXM/nrTMnIK, , li@flowershop.com, 13800001002, 女, 1, 2026-08-20 15:54:43, 2026-08-20 15:54:43, 1, 1
-<==        Row: 3, 店员, wangwang, $2a$10$MpAqoVlqUThDtR59uir2i.CZKgNTs7FzRV9S3u0VZPCXM/nrTMnIK, , wang@flowershop.com, 13800001003, 女, 1, 2026-08-20 15:54:43, 2026-08-20 15:54:43, 1, 1
-<==        Row: 4, 快递员, zhaozhao, $2a$10$MpAqoVlqUThDtR59uir2i.CZKgNTs7FzRV9S3u0VZPCXM/nrTMnIK, , zhao@flowershop.com, 13800001004, 男, 1, 2026-08-20 15:54:43, 2026-08-20 15:54:43, 1, 1
-<==      Total: 4
-Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2c653b91]
-2026-08-31T11:10:56.675+08:00  INFO 9004 --- [love-flower-main] [nio-8080-exec-7] start.oparation.OperationType            : role: [ROLE_ADMIN] , :ID:1, 执行操作: READ, 使用参数: [EmployeePageDTO(page=1, pageSize=10, employeename=null)], SUCCESS
+<==    Columns: id, category_id, name, price, status, description, image, create_time, update_time, create_user, update_user
+<==        Row: 10, 14, 温暖祝福 向日葵+桃花探病礼盒, 98.00, 1, 向日葵3枝+粉桃花3枝+非洲菊2枝，阳光温暖，传递早日康复的祝福, /image/20.png, 2026-08-20 15:54:43, 2026-08-20 15:54:43, 1, 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@70c7c463]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@70c7c463]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@70c7c463]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@70c7c463]
+2026-09-13T13:52:30.668+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-2] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [10], 运行状态: SUCCESS, 记录时间: 11ms(毫秒)
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@27a8fec6]
+JDBC Connection [HikariProxyConnection@1596662609 wrapping com.mysql.cj.jdbc.ConnectionImpl@483a9b05] will be managed by Spring
+==>  Preparing: SELECT id,festival_id,flower_id,spec_number,spec_object,spec_option FROM festival_detail WHERE (spec_option LIKE ?)
+==> Parameters: %祝寿%(String)
+<==      Total: 0
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@27a8fec6]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@27a8fec6]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@27a8fec6]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@27a8fec6]
+2026-09-13T13:52:31.655+08:00  INFO 3136 --- [flower-main] [io-8080-exec-10] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [祝寿], 运行状态: SUCCESS, 记录时间: 3ms(毫秒)
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7779af99]
+JDBC Connection [HikariProxyConnection@1595694521 wrapping com.mysql.cj.jdbc.ConnectionImpl@353f8698] will be managed by Spring
+==>  Preparing: SELECT id,festival_id,flower_id,spec_number,spec_object,spec_option FROM festival_detail WHERE (spec_option LIKE ?)
+==> Parameters: %感恩%(String)
+<==    Columns: id, festival_id, flower_id, spec_number, spec_object, spec_option
+<==        Row: 3, 3, 2, 6, 母亲/长辈, 母亲节,感恩
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7779af99]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7779af99]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7779af99]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7779af99]
+2026-09-13T13:52:32.648+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-1] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [感恩], 运行状态: SUCCESS, 记录时间: 4ms(毫秒)
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3dbb96f9]
+JDBC Connection [HikariProxyConnection@1894450494 wrapping com.mysql.cj.jdbc.ConnectionImpl@483a9b05] will be managed by Spring
+==>  Preparing: SELECT id,category_id,name,price,status,description,image,create_time,update_time,create_user,update_user FROM festival WHERE id=?
+==> Parameters: 3(Long)
+<==    Columns: id, category_id, name, price, status, description, image, create_time, update_time, create_user, update_user
+2026-09-13T13:52:32.667+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-8] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [2], 运行状态: SUCCESS, 记录时间: 5ms(毫秒)
+<==        Row: 3, 11, 感恩母亲 百合+桃花+雏菊礼盒, 158.00, 1, 白百合5枝+粉桃花5枝+白雏菊5枝，清新淡雅，献给最爱的妈妈, /image/13.png, 2026-08-20 15:54:43, 2026-08-20 15:54:43, 1, 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3dbb96f9]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3dbb96f9]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3dbb96f9]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3dbb96f9]
+2026-09-13T13:52:32.670+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-6] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [3], 运行状态: SUCCESS, 记录时间: 8ms(毫秒)
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@67e277ce]
+JDBC Connection [HikariProxyConnection@1649980288 wrapping com.mysql.cj.jdbc.ConnectionImpl@2ecc2eb3] will be managed by Spring
+==>  Preparing: SELECT id,festival_id,flower_id,spec_number,spec_object,spec_option FROM festival_detail WHERE (spec_option LIKE ?)
+==> Parameters: %求婚%(String)
+<==    Columns: id, festival_id, flower_id, spec_number, spec_object, spec_option
+<==        Row: 1, 1, 1, 99, 恋人/爱人, 情人节,求婚
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@67e277ce]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@67e277ce]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@67e277ce]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@67e277ce]
+2026-09-13T13:52:33.639+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-9] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [求婚], 运行状态: SUCCESS, 记录时间: 5ms(毫秒)
+Creating a new SqlSession
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3254dfd8]
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@26f5b208]
+JDBC Connection [HikariProxyConnection@1529020563 wrapping com.mysql.cj.jdbc.ConnectionImpl@63494426] will be managed by Spring
+JDBC Connection [HikariProxyConnection@528914098 wrapping com.mysql.cj.jdbc.ConnectionImpl@40189412] will be managed by Spring
+==>  Preparing: SELECT id,category_id,name,price,status,description,image,create_time,update_time,create_user,update_user FROM festival WHERE id=?
+==>  Preparing: SELECT id,name,category_id,color,price,image,description,status,create_time,update_time,create_user,update_user FROM flower_shop WHERE id=?
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+<==    Columns: id, category_id, name, price, status, description, image, create_time, update_time, create_user, update_user
+<==    Columns: id, name, category_id, color, price, image, description, status, create_time, update_time, create_user, update_user
+<==        Row: 1, 红玫瑰, 1, 红色, 9.90, /image/1.png, 深红色经典玫瑰，花语：热恋、我爱你。花瓣层叠饱满，适合表达浓烈爱意。, 1, 2026-08-20 15:54:42, 2026-08-20 15:54:42, 1, 1
+<==        Row: 1, 10, 520 十一朵红玫瑰礼盒, 128.00, 1, 11朵深红玫瑰+牛皮纸包装+手写贺卡，经典告白款，适合520/情人节, /image/11.png, 2026-08-20 15:54:43, 2026-08-20 15:54:43, 1, 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3254dfd8]
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@26f5b208]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3254dfd8]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3254dfd8]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3254dfd8]
+2026-09-13T13:52:33.663+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-5] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [1], 运行状态: SUCCESS, 记录时间: 10ms(毫秒)
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@26f5b208]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@26f5b208]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@26f5b208]
+2026-09-13T13:52:33.667+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-7] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [1], 运行状态: SUCCESS, 记录时间: 14ms(毫秒)
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@225219d9]
+JDBC Connection [HikariProxyConnection@455004575 wrapping com.mysql.cj.jdbc.ConnectionImpl@483a9b05] will be managed by Spring
+==>  Preparing: SELECT id,festival_id,flower_id,spec_number,spec_object,spec_option FROM festival_detail WHERE (spec_option LIKE ?)
+==> Parameters: %纪念日%(String)
+<==      Total: 0
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@225219d9]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@225219d9]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@225219d9]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@225219d9]
+2026-09-13T13:52:35.179+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-4] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [纪念日], 运行状态: SUCCESS, 记录时间: 4ms(毫秒)
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5bf9ee0]
+JDBC Connection [HikariProxyConnection@1029453603 wrapping com.mysql.cj.jdbc.ConnectionImpl@353f8698] will be managed by Spring
+==>  Preparing: SELECT id,festival_id,flower_id,spec_number,spec_object,spec_option FROM festival_detail WHERE (spec_option LIKE ?)
+==> Parameters: %鼓励%(String)
+<==      Total: 0
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5bf9ee0]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5bf9ee0]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5bf9ee0]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5bf9ee0]
+2026-09-13T13:52:35.717+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-3] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [鼓励], 运行状态: SUCCESS, 记录时间: 2ms(毫秒)
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1ff1dd63]
+JDBC Connection [HikariProxyConnection@1676868983 wrapping com.mysql.cj.jdbc.ConnectionImpl@2ecc2eb3] will be managed by Spring
+==>  Preparing: SELECT id,festival_id,flower_id,spec_number,spec_object,spec_option FROM festival_detail WHERE (spec_option LIKE ?)
+==> Parameters: %聚会%(String)
+<==      Total: 0
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1ff1dd63]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1ff1dd63]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1ff1dd63]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1ff1dd63]
+2026-09-13T13:52:36.758+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-2] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [聚会], 运行状态: SUCCESS, 记录时间: 2ms(毫秒)
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6ade68f3]
+JDBC Connection [HikariProxyConnection@2092216720 wrapping com.mysql.cj.jdbc.ConnectionImpl@483a9b05] will be managed by Spring
+==>  Preparing: SELECT id,festival_id,flower_id,spec_number,spec_object,spec_option FROM festival_detail WHERE (spec_option LIKE ?)
+==> Parameters: %表白%(String)
+<==    Columns: id, festival_id, flower_id, spec_number, spec_object, spec_option
+<==        Row: 2, 2, 10, 52, 恋人/爱人, 情人节,表白
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6ade68f3]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6ade68f3]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6ade68f3]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6ade68f3]
+2026-09-13T13:52:37.541+08:00  INFO 3136 --- [flower-main] [io-8080-exec-10] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [表白], 运行状态: SUCCESS, 记录时间: 4ms(毫秒)
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@62157730]
+JDBC Connection [HikariProxyConnection@958926082 wrapping com.mysql.cj.jdbc.ConnectionImpl@353f8698] will be managed by Spring
+==>  Preparing: SELECT id,category_id,name,price,status,description,image,create_time,update_time,create_user,update_user FROM festival WHERE id=?
+==> Parameters: 2(Long)
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5e155127]
+JDBC Connection [HikariProxyConnection@2138672749 wrapping com.mysql.cj.jdbc.ConnectionImpl@67902f63] will be managed by Spring
+==>  Preparing: SELECT id,name,category_id,color,price,image,description,status,create_time,update_time,create_user,update_user FROM flower_shop WHERE id=?
+<==    Columns: id, category_id, name, price, status, description, image, create_time, update_time, create_user, update_user
+==> Parameters: 10(Long)
+<==        Row: 2, 10, 热烈爱意 红郁金香9朵礼盒, 99.00, 1, 9朵深红郁金香+雾面纸包装+贺卡，热烈而不失优雅的表白之选, /image/12.png, 2026-08-20 15:54:43, 2026-08-20 15:54:43, 1, 1
+<==    Columns: id, name, category_id, color, price, image, description, status, create_time, update_time, create_user, update_user
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@62157730]
+<==        Row: 10, 红郁金香, 3, 红色, 9.50, /image/10.png, 深红色郁金香，花语：热烈的爱、钟情。杯状花苞饱满层叠，适合情人节与表白。, 1, 2026-08-20 15:54:42, 2026-08-20 15:54:42, 1, 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5e155127]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@62157730]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@62157730]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5e155127]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@62157730]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5e155127]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5e155127]
+2026-09-13T13:52:37.566+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-1] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [2], 运行状态: SUCCESS, 记录时间: 10ms(毫秒)
+2026-09-13T13:52:37.566+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-8] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [10], 运行状态: SUCCESS, 记录时间: 8ms(毫秒)
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4bf2ba93]
+JDBC Connection [HikariProxyConnection@425666665 wrapping com.mysql.cj.jdbc.ConnectionImpl@483a9b05] will be managed by Spring
+==>  Preparing: SELECT id,festival_id,flower_id,spec_number,spec_object,spec_option FROM festival_detail WHERE (spec_option LIKE ?)
+==> Parameters: %祝寿%(String)
+<==      Total: 0
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4bf2ba93]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4bf2ba93]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4bf2ba93]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4bf2ba93]
+2026-09-13T13:52:38.486+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-6] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [祝寿], 运行状态: SUCCESS, 记录时间: 3ms(毫秒)
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@44483724]
+JDBC Connection [HikariProxyConnection@168642633 wrapping com.mysql.cj.jdbc.ConnectionImpl@2ecc2eb3] will be managed by Spring
+==>  Preparing: SELECT id,festival_id,flower_id,spec_number,spec_object,spec_option FROM festival_detail WHERE (spec_object LIKE ?)
+==> Parameters: %老师%(String)
+<==      Total: 0
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@44483724]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@44483724]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@44483724]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@44483724]
+2026-09-13T13:52:39.688+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-9] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [老师], 运行状态: SUCCESS, 记录时间: 3ms(毫秒)
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4f33fcae]
+JDBC Connection [HikariProxyConnection@2089154177 wrapping com.mysql.cj.jdbc.ConnectionImpl@63494426] will be managed by Spring
+==>  Preparing: SELECT id,festival_id,flower_id,spec_number,spec_object,spec_option FROM festival_detail WHERE (spec_object LIKE ?)
+==> Parameters: %母亲/长辈%(String)
+<==    Columns: id, festival_id, flower_id, spec_number, spec_object, spec_option
+<==        Row: 3, 3, 2, 6, 母亲/长辈, 母亲节,感恩
+<==        Row: 4, 3, 6, 27, 母亲/长辈, 母亲节,祝福
+<==        Row: 5, 3, 9, 10, 母亲/长辈, 母亲节,祝福
+<==        Row: 6, 4, 7, 18, 母亲/长辈, 母亲节,祝福
+<==        Row: 7, 4, 9, 25, 母亲/长辈, 母亲节,祝福
+<==        Row: 8, 4, 3, 36, 母亲/长辈, 母亲节,祝福
+<==      Total: 6
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4f33fcae]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4f33fcae]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4f33fcae]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4f33fcae]
+2026-09-13T13:52:41.492+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-5] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [母亲/长辈], 运行状态: SUCCESS, 记录时间: 3ms(毫秒)
+2026-09-13T13:52:41.515+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-4] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [6], 运行状态: SUCCESS, 记录时间: 1ms(毫秒)
+2026-09-13T13:52:41.515+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-3] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [9], 运行状态: SUCCESS, 记录时间: 1ms(毫秒)
+2026-09-13T13:52:41.515+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-7] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [2], 运行状态: SUCCESS, 记录时间: 1ms(毫秒)
+2026-09-13T13:52:41.516+08:00  INFO 3136 --- [flower-main] [io-8080-exec-10] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [3], 运行状态: SUCCESS, 记录时间: 1ms(毫秒)
+Creating a new SqlSession
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@18f31435]
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7c06daf4]
+JDBC Connection [HikariProxyConnection@550516344 wrapping com.mysql.cj.jdbc.ConnectionImpl@63494426] will be managed by Spring
+JDBC Connection [HikariProxyConnection@1469717530 wrapping com.mysql.cj.jdbc.ConnectionImpl@2ecc2eb3] will be managed by Spring
+==>  Preparing: SELECT id,name,category_id,color,price,image,description,status,create_time,update_time,create_user,update_user FROM flower_shop WHERE id=?
+==>  Preparing: SELECT id,name,category_id,color,price,image,description,status,create_time,update_time,create_user,update_user FROM flower_shop WHERE id=?
+==> Parameters: 7(Long)
+==> Parameters: 3(Long)
+<==    Columns: id, name, category_id, color, price, image, description, status, create_time, update_time, create_user, update_user
+<==    Columns: id, name, category_id, color, price, image, description, status, create_time, update_time, create_user, update_user
+<==        Row: 3, 黄郁金香, 3, 黄色, 8.80, /image/3.png, 明亮黄色郁金香，花语：阳光、友谊、珍贵。杯状花苞带纵向纹理，充满春日生机。, 1, 2026-08-20 15:54:42, 2026-08-20 15:54:42, 1, 1
+<==        Row: 7, 粉莲花, 7, 粉色, 15.00, /image/7.png, 粉色莲花，花语：清雅、纯洁、脱俗。漂浮水面，禅意悠然，适合高雅送礼。, 1, 2026-08-20 15:54:42, 2026-08-20 15:54:42, 1, 1
+<==      Total: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@18f31435]
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7c06daf4]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7c06daf4]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7c06daf4]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7c06daf4]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@18f31435]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@18f31435]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@18f31435]
+2026-09-13T13:52:41.524+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-1] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [3], 运行状态: SUCCESS, 记录时间: 10ms(毫秒)
+2026-09-13T13:52:41.524+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-2] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [7], 运行状态: SUCCESS, 记录时间: 9ms(毫秒)
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@152d26ef]
+JDBC Connection [HikariProxyConnection@830487614 wrapping com.mysql.cj.jdbc.ConnectionImpl@67902f63] will be managed by Spring
+==>  Preparing: SELECT id,category_id,name,price,status,description,image,create_time,update_time,create_user,update_user FROM festival WHERE id=?
+==> Parameters: 4(Long)
+<==    Columns: id, category_id, name, price, status, description, image, create_time, update_time, create_user, update_user
+<==        Row: 4, 11, 母爱如花 粉莲花+雏菊礼篮, 138.00, 1, 粉莲花3枝+白雏菊5枝+黄郁金香4枝，高雅清新的母亲节祝福, /image/14.png, 2026-08-20 15:54:43, 2026-08-20 15:54:43, 1, 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@152d26ef]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@152d26ef]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@152d26ef]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@152d26ef]
+2026-09-13T13:52:41.533+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-8] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [4], 运行状态: SUCCESS, 记录时间: 9ms(毫秒)
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@52ec2ee2]
+JDBC Connection [HikariProxyConnection@1365198945 wrapping com.mysql.cj.jdbc.ConnectionImpl@483a9b05] will be managed by Spring
+==>  Preparing: SELECT id,festival_id,flower_id,spec_number,spec_object,spec_option FROM festival_detail WHERE (spec_object LIKE ?)
+==> Parameters: %病人%(String)
+<==    Columns: id, festival_id, flower_id, spec_number, spec_object, spec_option
+<==        Row: 21, 9, 2, 7, 病人,长辈, 探病
+<==        Row: 22, 9, 9, 15, 病人, 探病,祝福
+<==        Row: 23, 10, 4, 9, 病人, 探病
+<==        Row: 24, 10, 6, 12, 病人, 探病
+<==        Row: 25, 10, 5, 44, 病人, 探病
+<==      Total: 5
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@52ec2ee2]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@52ec2ee2]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@52ec2ee2]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@52ec2ee2]
+2026-09-13T13:52:43.165+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-6] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [病人], 运行状态: SUCCESS, 记录时间: 7ms(毫秒)
+2026-09-13T13:52:43.186+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-5] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [4], 运行状态: SUCCESS, 记录时间: 1ms(毫秒)
+2026-09-13T13:52:43.186+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-7] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [9], 运行状态: SUCCESS, 记录时间: 1ms(毫秒)
+2026-09-13T13:52:43.186+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-4] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [6], 运行状态: SUCCESS, 记录时间: 1ms(毫秒)
+2026-09-13T13:52:43.186+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-3] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [5], 运行状态: SUCCESS, 记录时间: 1ms(毫秒)
+2026-09-13T13:52:43.186+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-9] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [2], 运行状态: SUCCESS, 记录时间: 1ms(毫秒)
+2026-09-13T13:52:43.186+08:00  INFO 3136 --- [flower-main] [io-8080-exec-10] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [9], 运行状态: SUCCESS, 记录时间: 0ms(毫秒)
+2026-09-13T13:52:43.194+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-2] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [10], 运行状态: SUCCESS, 记录时间: 0ms(毫秒)
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4cc55ec9]
+JDBC Connection [HikariProxyConnection@787573484 wrapping com.mysql.cj.jdbc.ConnectionImpl@2ecc2eb3] will be managed by Spring
+==>  Preparing: SELECT id,festival_id,flower_id,spec_number,spec_object,spec_option FROM festival_detail WHERE (spec_object LIKE ?)
+==> Parameters: %同事/上司%(String)
+<==      Total: 0
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4cc55ec9]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4cc55ec9]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4cc55ec9]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4cc55ec9]
+2026-09-13T13:52:44.348+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-1] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [同事/上司], 运行状态: SUCCESS, 记录时间: 4ms(毫秒)
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@de908e6]
+JDBC Connection [HikariProxyConnection@544890158 wrapping com.mysql.cj.jdbc.ConnectionImpl@67902f63] will be managed by Spring
+==>  Preparing: SELECT id,festival_id,flower_id,spec_number,spec_object,spec_option FROM festival_detail WHERE (spec_object LIKE ?)
+==> Parameters: %客户/商务%(String)
+<==    Columns: id, festival_id, flower_id, spec_number, spec_object, spec_option
+<==        Row: 15, 7, 4, 8, 客户/商务, 开业,商务
+<==        Row: 16, 7, 2, 66, 客户/商务, 商务,祝福
+<==        Row: 17, 7, 3, 77, 客户/商务, 商务
+<==        Row: 18, 8, 7, 88, 客户/商务, 商务
+<==        Row: 19, 8, 8, 40, 客户/商务, 商务
+<==        Row: 20, 8, 2, 33, 客户/商务, 商务,祝福
+<==      Total: 6
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@de908e6]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@de908e6]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@de908e6]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@de908e6]
+2026-09-13T13:52:45.295+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-8] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [客户/商务], 运行状态: SUCCESS, 记录时间: 6ms(毫秒)
+2026-09-13T13:52:45.319+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-4] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [7], 运行状态: SUCCESS, 记录时间: 0ms(毫秒)
+2026-09-13T13:52:45.319+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-5] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [3], 运行状态: SUCCESS, 记录时间: 0ms(毫秒)
+2026-09-13T13:52:45.319+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-3] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [2], 运行状态: SUCCESS, 记录时间: 0ms(毫秒)
+2026-09-13T13:52:45.319+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-6] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [4], 运行状态: SUCCESS, 记录时间: 0ms(毫秒)
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5925dc38]
+JDBC Connection [HikariProxyConnection@1628652068 wrapping com.mysql.cj.jdbc.ConnectionImpl@2ecc2eb3] will be managed by Spring
+==>  Preparing: SELECT id,category_id,name,price,status,description,image,create_time,update_time,create_user,update_user FROM festival WHERE id=?
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@34df43f2]
+JDBC Connection [HikariProxyConnection@2050988997 wrapping com.mysql.cj.jdbc.ConnectionImpl@40189412] will be managed by Spring
+==>  Preparing: SELECT id,name,category_id,color,price,image,description,status,create_time,update_time,create_user,update_user FROM flower_shop WHERE id=?
+==> Parameters: 7(Long)
+==> Parameters: 8(Long)
+<==    Columns: id, name, category_id, color, price, image, description, status, create_time, update_time, create_user, update_user
+<==    Columns: id, category_id, name, price, status, description, image, create_time, update_time, create_user, update_user
+<==        Row: 7, 13, 开业大吉 向日葵+百合花篮, 188.00, 1, 向日葵8枝+白百合6枝+黄郁金香6枝，大气端庄的开业/商务送礼首选, /image/17.png, 2026-08-20 15:54:43, 2026-08-20 15:54:43, 1, 1
+<==        Row: 8, 蓝风信子, 8, 蓝色, 11.00, /image/8.png, 蓝紫色风信子，花语：恒心、贞操、浪漫。穗状花序密集绽放，色彩深邃雅致。, 1, 2026-08-20 15:54:42, 2026-08-20 15:54:42, 1, 1
+<==      Total: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@34df43f2]
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5925dc38]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5925dc38]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5925dc38]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5925dc38]
+2026-09-13T13:52:45.329+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-9] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [7], 运行状态: SUCCESS, 记录时间: 10ms(毫秒)
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@34df43f2]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@34df43f2]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@34df43f2]
+2026-09-13T13:52:45.330+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-7] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [8], 运行状态: SUCCESS, 记录时间: 11ms(毫秒)
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4f4d0204]
+JDBC Connection [HikariProxyConnection@1615428281 wrapping com.mysql.cj.jdbc.ConnectionImpl@483a9b05] will be managed by Spring
+==>  Preparing: SELECT id,category_id,name,price,status,description,image,create_time,update_time,create_user,update_user FROM festival WHERE id=?
+==> Parameters: 8(Long)
+<==    Columns: id, category_id, name, price, status, description, image, create_time, update_time, create_user, update_user
+<==        Row: 8, 13, 商务致谢 莲花+风信子雅致礼盒, 168.00, 1, 粉莲花4枝+蓝风信子3枝+白百合3枝，高雅内敛的商务感谢礼, /image/18.png, 2026-08-20 15:54:43, 2026-08-20 15:54:43, 1, 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4f4d0204]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4f4d0204]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4f4d0204]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4f4d0204]
+2026-09-13T13:52:45.336+08:00  INFO 3136 --- [flower-main] [io-8080-exec-10] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [8], 运行状态: SUCCESS, 记录时间: 9ms(毫秒)
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@49a6acd9]
+JDBC Connection [HikariProxyConnection@773370402 wrapping com.mysql.cj.jdbc.ConnectionImpl@63494426] will be managed by Spring
+==>  Preparing: SELECT id,festival_id,flower_id,spec_number,spec_object,spec_option FROM festival_detail WHERE (spec_object LIKE ?)
+==> Parameters: %老师%(String)
+<==      Total: 0
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@49a6acd9]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@49a6acd9]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@49a6acd9]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@49a6acd9]
+2026-09-13T13:52:47.758+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-2] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [老师], 运行状态: SUCCESS, 记录时间: 3ms(毫秒)
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@29e6c4cf]
+JDBC Connection [HikariProxyConnection@1746253019 wrapping com.mysql.cj.jdbc.ConnectionImpl@2ecc2eb3] will be managed by Spring
+==>  Preparing: SELECT id,festival_id,flower_id,spec_number,spec_object,spec_option FROM festival_detail WHERE (spec_object LIKE ?)
+==> Parameters: %朋友%(String)
+<==    Columns: id, festival_id, flower_id, spec_number, spec_object, spec_option
+<==        Row: 9, 5, 4, 16, 朋友,恋人/爱人, 生日
+<==        Row: 10, 5, 5, 21, 朋友, 生日
+<==        Row: 11, 5, 3, 30, 朋友, 生日
+<==      Total: 3
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@29e6c4cf]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@29e6c4cf]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@29e6c4cf]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@29e6c4cf]
+2026-09-13T13:52:48.690+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-1] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [朋友], 运行状态: SUCCESS, 记录时间: 5ms(毫秒)
+2026-09-13T13:52:48.706+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-5] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [5], 运行状态: SUCCESS, 记录时间: 1ms(毫秒)
+2026-09-13T13:52:48.707+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-3] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [3], 运行状态: SUCCESS, 记录时间: 1ms(毫秒)
+2026-09-13T13:52:48.707+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-8] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [4], 运行状态: SUCCESS, 记录时间: 1ms(毫秒)
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@f471384]
+JDBC Connection [HikariProxyConnection@2075378686 wrapping com.mysql.cj.jdbc.ConnectionImpl@483a9b05] will be managed by Spring
+==>  Preparing: SELECT id,category_id,name,price,status,description,image,create_time,update_time,create_user,update_user FROM festival WHERE id=?
+==> Parameters: 5(Long)
+<==    Columns: id, category_id, name, price, status, description, image, create_time, update_time, create_user, update_user
+<==        Row: 5, 12, 生日快乐 向日葵+非洲菊活力礼盒, 118.00, 1, 向日葵3枝+橙色非洲菊4枝+黄郁金香3枝，阳光活力满满的生日祝福, /image/15.png, 2026-08-20 15:54:43, 2026-08-20 15:54:43, 1, 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@f471384]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@f471384]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@f471384]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@f471384]
+2026-09-13T13:52:48.712+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-4] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [5], 运行状态: SUCCESS, 记录时间: 7ms(毫秒)
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6cb6235f]
+JDBC Connection [HikariProxyConnection@2019333835 wrapping com.mysql.cj.jdbc.ConnectionImpl@67902f63] will be managed by Spring
+==>  Preparing: SELECT id,festival_id,flower_id,spec_number,spec_object,spec_option FROM festival_detail WHERE (spec_object LIKE ?)
+==> Parameters: %母亲/长辈%(String)
+<==    Columns: id, festival_id, flower_id, spec_number, spec_object, spec_option
+<==        Row: 3, 3, 2, 6, 母亲/长辈, 母亲节,感恩
+<==        Row: 4, 3, 6, 27, 母亲/长辈, 母亲节,祝福
+<==        Row: 5, 3, 9, 10, 母亲/长辈, 母亲节,祝福
+<==        Row: 6, 4, 7, 18, 母亲/长辈, 母亲节,祝福
+<==        Row: 7, 4, 9, 25, 母亲/长辈, 母亲节,祝福
+<==        Row: 8, 4, 3, 36, 母亲/长辈, 母亲节,祝福
+<==      Total: 6
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6cb6235f]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6cb6235f]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6cb6235f]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6cb6235f]
+2026-09-13T13:52:49.437+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-6] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [母亲/长辈], 运行状态: SUCCESS, 记录时间: 4ms(毫秒)
+2026-09-13T13:52:49.457+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-7] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [9], 运行状态: SUCCESS, 记录时间: 0ms(毫秒)
+2026-09-13T13:52:49.457+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-1] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [3], 运行状态: SUCCESS, 记录时间: 0ms(毫秒)
+2026-09-13T13:52:49.457+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-3] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [3], 运行状态: SUCCESS, 记录时间: 0ms(毫秒)
+2026-09-13T13:52:49.457+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-9] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [2], 运行状态: SUCCESS, 记录时间: 0ms(毫秒)
+2026-09-13T13:52:49.457+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-2] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [7], 运行状态: SUCCESS, 记录时间: 0ms(毫秒)
+2026-09-13T13:52:49.459+08:00  INFO 3136 --- [flower-main] [io-8080-exec-10] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [6], 运行状态: SUCCESS, 记录时间: 2ms(毫秒)
+2026-09-13T13:52:49.467+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-5] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [4], 运行状态: SUCCESS, 记录时间: 2ms(毫秒)
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@61b8fa35]
+JDBC Connection [HikariProxyConnection@295286443 wrapping com.mysql.cj.jdbc.ConnectionImpl@67902f63] will be managed by Spring
+==>  Preparing: SELECT id,festival_id,flower_id,spec_number,spec_object,spec_option FROM festival_detail WHERE (spec_object LIKE ?)
+==> Parameters: %恋人/爱人%(String)
+<==    Columns: id, festival_id, flower_id, spec_number, spec_object, spec_option
+<==        Row: 1, 1, 1, 99, 恋人/爱人, 情人节,求婚
+<==        Row: 2, 2, 10, 52, 恋人/爱人, 情人节,表白
+<==        Row: 9, 5, 4, 16, 朋友,恋人/爱人, 生日
+<==        Row: 12, 6, 1, 11, 恋人/爱人, 生日
+<==        Row: 13, 6, 8, 19, 恋人/爱人, 生日
+<==        Row: 14, 6, 6, 24, 恋人/爱人, 生日
+<==      Total: 6
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@61b8fa35]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@61b8fa35]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@61b8fa35]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@61b8fa35]
+2026-09-13T13:52:50.393+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-8] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [恋人/爱人], 运行状态: SUCCESS, 记录时间: 2ms(毫秒)
+2026-09-13T13:52:50.413+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-6] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [4], 运行状态: SUCCESS, 记录时间: 2ms(毫秒)
+2026-09-13T13:52:50.413+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-7] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [10], 运行状态: SUCCESS, 记录时间: 2ms(毫秒)
+2026-09-13T13:52:50.413+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-9] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [8], 运行状态: SUCCESS, 记录时间: 2ms(毫秒)
+2026-09-13T13:52:50.413+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-3] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [6], 运行状态: SUCCESS, 记录时间: 1ms(毫秒)
+2026-09-13T13:52:50.413+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-2] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [1], 运行状态: SUCCESS, 记录时间: 2ms(毫秒)
+2026-09-13T13:52:50.413+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-4] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [1], 运行状态: SUCCESS, 记录时间: 0ms(毫秒)
+2026-09-13T13:52:50.422+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-1] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [2], 运行状态: SUCCESS, 记录时间: 0ms(毫秒)
+2026-09-13T13:52:50.422+08:00  INFO 3136 --- [flower-main] [io-8080-exec-10] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [5], 运行状态: SUCCESS, 记录时间: 0ms(毫秒)
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@86cf2fd]
+JDBC Connection [HikariProxyConnection@480180471 wrapping com.mysql.cj.jdbc.ConnectionImpl@63494426] will be managed by Spring
+==>  Preparing: SELECT id,category_id,name,price,status,description,image,create_time,update_time,create_user,update_user FROM festival WHERE id=?
+==> Parameters: 6(Long)
+<==    Columns: id, category_id, name, price, status, description, image, create_time, update_time, create_user, update_user
+<==        Row: 6, 12, 浪漫生日 玫瑰+风信子混搭礼盒, 148.00, 1, 红玫瑰5枝+蓝风信子3枝+粉桃花2枝，浪漫与神秘交织的生日惊喜, /image/16.png, 2026-08-20 15:54:43, 2026-08-20 15:54:43, 1, 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@86cf2fd]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@86cf2fd]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@86cf2fd]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@86cf2fd]
+2026-09-13T13:52:50.430+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-5] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [6], 运行状态: SUCCESS, 记录时间: 9ms(毫秒)
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@12160431]
+JDBC Connection [HikariProxyConnection@1212094895 wrapping com.mysql.cj.jdbc.ConnectionImpl@67902f63] will be managed by Spring
+==>  Preparing: SELECT id,festival_id,flower_id,spec_number,spec_object,spec_option FROM festival_detail WHERE (spec_option LIKE ?)
+==> Parameters: %祝寿%(String)
+<==      Total: 0
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@12160431]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@12160431]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@12160431]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@12160431]
+2026-09-13T13:52:52.205+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-8] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [祝寿], 运行状态: SUCCESS, 记录时间: 3ms(毫秒)
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7401f91a]
+JDBC Connection [HikariProxyConnection@537714674 wrapping com.mysql.cj.jdbc.ConnectionImpl@63494426] will be managed by Spring
+==>  Preparing: SELECT id,festival_id,flower_id,spec_number,spec_object,spec_option FROM festival_detail WHERE (spec_option LIKE ?)
+==> Parameters: %感恩%(String)
+<==    Columns: id, festival_id, flower_id, spec_number, spec_object, spec_option
+<==        Row: 3, 3, 2, 6, 母亲/长辈, 母亲节,感恩
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7401f91a]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7401f91a]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7401f91a]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7401f91a]
+2026-09-13T13:52:53.606+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-2] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [感恩], 运行状态: SUCCESS, 记录时间: 2ms(毫秒)
+2026-09-13T13:52:53.619+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-7] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [2], 运行状态: SUCCESS, 记录时间: 1ms(毫秒)
+2026-09-13T13:52:53.619+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-6] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [3], 运行状态: SUCCESS, 记录时间: 1ms(毫秒)
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@77c78ca0]
+JDBC Connection [HikariProxyConnection@1071752367 wrapping com.mysql.cj.jdbc.ConnectionImpl@353f8698] will be managed by Spring
+==>  Preparing: SELECT id,festival_id,flower_id,spec_number,spec_object,spec_option FROM festival_detail WHERE (spec_option LIKE ?)
+==> Parameters: %求婚%(String)
+<==    Columns: id, festival_id, flower_id, spec_number, spec_object, spec_option
+<==        Row: 1, 1, 1, 99, 恋人/爱人, 情人节,求婚
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@77c78ca0]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@77c78ca0]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@77c78ca0]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@77c78ca0]
+2026-09-13T13:52:58.479+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-3] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [求婚], 运行状态: SUCCESS, 记录时间: 2ms(毫秒)
+2026-09-13T13:52:58.490+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-4] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [1], 运行状态: SUCCESS, 记录时间: 1ms(毫秒)
+2026-09-13T13:52:58.490+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-9] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [1], 运行状态: SUCCESS, 记录时间: 1ms(毫秒)
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@633548b]
+JDBC Connection [HikariProxyConnection@956583703 wrapping com.mysql.cj.jdbc.ConnectionImpl@2ecc2eb3] will be managed by Spring
+==>  Preparing: SELECT id,festival_id,flower_id,spec_number,spec_object,spec_option FROM festival_detail WHERE (spec_option LIKE ?)
+==> Parameters: %纪念日%(String)
+<==      Total: 0
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@633548b]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@633548b]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@633548b]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@633548b]
+2026-09-13T13:52:59.737+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-1] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [纪念日], 运行状态: SUCCESS, 记录时间: 3ms(毫秒)
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@37e2b3b]
+JDBC Connection [HikariProxyConnection@1923555085 wrapping com.mysql.cj.jdbc.ConnectionImpl@483a9b05] will be managed by Spring
+==>  Preparing: SELECT id,festival_id,flower_id,spec_number,spec_object,spec_option FROM festival_detail WHERE (spec_option LIKE ?)
+==> Parameters: %鼓励%(String)
+<==      Total: 0
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@37e2b3b]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@37e2b3b]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@37e2b3b]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@37e2b3b]
+2026-09-13T13:53:00.838+08:00  INFO 3136 --- [flower-main] [io-8080-exec-10] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [鼓励], 运行状态: SUCCESS, 记录时间: 4ms(毫秒)
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@15216898]
+JDBC Connection [HikariProxyConnection@1161626770 wrapping com.mysql.cj.jdbc.ConnectionImpl@63494426] will be managed by Spring
+==>  Preparing: SELECT id,festival_id,flower_id,spec_number,spec_object,spec_option FROM festival_detail WHERE (spec_option LIKE ?)
+==> Parameters: %聚会%(String)
+<==      Total: 0
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@15216898]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@15216898]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@15216898]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@15216898]
+2026-09-13T13:53:01.858+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-5] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [聚会], 运行状态: SUCCESS, 记录时间: 2ms(毫秒)
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1d312a7b]
+JDBC Connection [HikariProxyConnection@1813814079 wrapping com.mysql.cj.jdbc.ConnectionImpl@67902f63] will be managed by Spring
+==>  Preparing: SELECT id,festival_id,flower_id,spec_number,spec_object,spec_option FROM festival_detail WHERE (spec_option LIKE ?)
+==> Parameters: %表白%(String)
+<==    Columns: id, festival_id, flower_id, spec_number, spec_object, spec_option
+<==        Row: 2, 2, 10, 52, 恋人/爱人, 情人节,表白
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1d312a7b]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1d312a7b]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1d312a7b]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1d312a7b]
+2026-09-13T13:53:02.817+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-8] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [表白], 运行状态: SUCCESS, 记录时间: 4ms(毫秒)
+2026-09-13T13:53:02.830+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-7] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [2], 运行状态: SUCCESS, 记录时间: 1ms(毫秒)
+2026-09-13T13:53:02.830+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-2] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [10], 运行状态: SUCCESS, 记录时间: 1ms(毫秒)
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6f466778]
+JDBC Connection [HikariProxyConnection@448119660 wrapping com.mysql.cj.jdbc.ConnectionImpl@67902f63] will be managed by Spring
+==>  Preparing: SELECT id,festival_id,flower_id,spec_number,spec_object,spec_option FROM festival_detail WHERE (spec_option LIKE ?)
+==> Parameters: %乔迁%(String)
+<==      Total: 0
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6f466778]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6f466778]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6f466778]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6f466778]
+2026-09-13T13:53:10.881+08:00  INFO 3136 --- [flower-main] [nio-8080-exec-6] start.oparation.OperationType            : role: [ROLE_ADMIN], ID: 1, 执行操作: READ, 使用参数: [乔迁], 运行状态: SUCCESS, 记录时间: 2ms(毫秒)

@@ -2,9 +2,10 @@
   <h1>flowerpayment-ai 鲜花商店 + ai</h1>
   <h2>flowerpayment-ai：B2C 经营模式，一个花店卖家，多个买家。鲜花服务由店长、店员和客户组成。</h2>
   <h5>
-    基于 Spring Boot 3 与 Vue 3 构建的现代化前后端分离系统。后端利用 Spring Boot 3 的高效与安全性提供 RESTful API 服务，前端借助 Vue 3 实现流畅的用户交互体验，通过多级缓存热点数据以提升系统响应速度。主业务为鲜花经营，送人，用途，管理，销售。分支业务org.springframework.ai的openai +com.alibaba.cloud.ai的graph，通过图像识别推荐相似花束，支持LLM生成贺卡文案+tts配音贺语，rag连接购物车数据知识文化讲解宣传。
+    基于 Spring Boot 3 与 Vue 3 构建的现代化前后端分离系统。后端利用 Spring Boot 3 的高效与安全性提供 RESTful API 服务，前端借助 Vue 3 实现流畅的用户交互体验，通过多级缓存热点数据以提升系统响应速度。主业务为鲜花经营，送人，用途，管理，销售。分支业务org.springframework.ai的openai +com.alibaba.cloud.ai的graph，通过图像识别推荐相似花束，rag连接购物车数据知识文化讲解宣传。
   </h5>
 </div>
+
 ## 配置说明
 
 <div align="center">
@@ -533,15 +534,20 @@ log.info("role: " + operationType.type+", ID: "+operationType.id+", 执行操作
 
 ## 七、AI模块
 
+## model
+
+chat_session（session表）：存储的是“会话”维度的信息，以 session_id（业务ID）为唯一索引，记录session。
+chat_record（chat表）：存储的是具体的“对话消息”维度的信息，以 conversation_id 为索引, 上下文记忆。
+
+chat_session : chat_record =  1:N
+
 ### 拍照识别鲜花，帮助消费者识别专业的鲜花名,  帮助购买。
 
-spring alibaba graph 编排流程图：
+1 对面买的那多花？不知这个，就是那朵红色花？
 
-1 节点上下文不加入memory： 鲜花识别本身是难题：月季/玫瑰、迎春/连翘、不同玫瑰切花品种之间差异很小，光线、角度、花期都会影响。 偏向“就图论图”，结果更中立。
+实践效果：ai 识别出周围人花 ，用户告诉服务员，想买红色的玫瑰花
 
-2 对面买的那多花？不知这个，就是那朵红色花？
-
-改成 ai 识别出周围人花 ，用户告诉服务员，想买红色的玫瑰花
+2 spring alibaba graph 编排流程图：
 
 ```mermaid
 %%{init: {'theme':'neutral','themeVariables':{'fontSize':'8px','nodeBorder':'2px'},'flowchart':{'nodeSpacing':8,'rankSpacing':32,'useMaxWidth':false,'curve':'basis'}}}%%
@@ -590,17 +596,7 @@ flowchart TD
     ST --> S5 --> End
 ```
 
-### LLM生成贺卡文案+tts配音贺语
-
-```
-思路：使用提示词模板，提前写好提示词使用，匹配个性化贺卡文案，tts连接文字转语音模型，匹配个性化贺语
-PromptTemplate promptTemplate = new PromptTemplate("根据信息{input} 进行文案写作，----等等");
-promptTemplate.add("input", input);
-```
-
 ### 购物车旁边加入ai文化知识讲解带货
 
-1 ai不会下单的一些列功能，花店实际需要的鲜花知识和氛围讲解，
-
-2 rag+上下文memory：记得前文买过什么、对百合过敏、偏好低饱和度色系
+1 ai不会下单的一些列功能，花店实际需要的鲜花知识和氛围讲解.
 
