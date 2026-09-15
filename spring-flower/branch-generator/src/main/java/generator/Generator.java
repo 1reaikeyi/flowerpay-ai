@@ -3,23 +3,30 @@ package generator;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.generator.FastAutoGenerator;
 import com.baomidou.mybatisplus.generator.config.OutputFile;
+import com.baomidou.mybatisplus.generator.config.po.TableInfo;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
 import common.properties.JDBCProperties;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicBoolean;
 
-@Component
+@Service
+@Slf4j
 public class Generator {
 
     @Autowired
     private JDBCProperties jdbcProperties;
 
-    public void generate(String tableName) {
+    public boolean generate(String tableName) {
+         AtomicBoolean hasGenerateFile = new AtomicBoolean(false);
+
          String model = "spring-flower/model/src/main/java/model/entity";
          String mapper = "spring-flower/mapper/src/main/java/mapper";
          String service = "spring-flower/service/src/main/java/service";
@@ -37,10 +44,21 @@ public class Generator {
         FastAutoGenerator.create(jdbcProperties.getUrl(),jdbcProperties.getUsername(),jdbcProperties.getPassword())
                 .globalConfig(b -> b
                         .author("flower")
-                        .outputDir(model)
+//                        .outputDir(model)
                         .disableOpenDir()
                         .commentDate("yyyy-MM-dd")
                 )
+                .injectionConfig(b -> b.beforeOutputFile((TableInfo tableInfo, Map<String, Object> objectMap) -> {
+                    hasGenerateFile.set(true);
+                    String entityName = tableInfo.getEntityName();
+                    log.info("--- generate: 表{}，实体类名: {} ", tableName, entityName);
+                    log.info("entity 路径: {}/{}.java", model, entityName);
+                    log.info("mapper 接口: {}/{}Mapper.java", mapper, entityName);
+                    log.info("mapper xml: {}/{}Mapper.xml", mapperXml, entityName);
+                    log.info("service 接口: {}/{}Service.java", service, entityName);
+                    log.info("service impl: {}/impl/{}ServiceImpl.java", service, entityName);
+                    log.info("controller: {}/{}Controller.java", controller, entityName);
+                }))
                 .packageConfig(b -> b
                         .parent("")                    // 项目无统一父包，包名即模块名
                         .entity("model.entity")        // model 模块的 model.entity 包
@@ -50,6 +68,7 @@ public class Generator {
                         .controller("start.controller") // start 模块的 start.controller 包
                         .pathInfo(pathInfo)
                 )
+
                 .strategyConfig(b -> b
                         .addInclude(tableName)
                         .addTablePrefix("")
@@ -75,5 +94,10 @@ public class Generator {
                 )
                 .templateEngine(new FreemarkerTemplateEngine())
                 .execute();
+        if(hasGenerateFile.get()){
+            log.info(tableName + " 代码创建完成！");
+            return true;
+        }
+        return false;
     }
 }

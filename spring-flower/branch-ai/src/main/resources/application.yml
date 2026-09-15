@@ -9,7 +9,7 @@ logging:
 
 spring:
   application:
-    name: flower-branch-ai
+    name: branch-flower-ai
   profiles:
     active: dev
   servlet:

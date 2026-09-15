@@ -9,7 +9,7 @@ logging:
 # springIOC
 spring:
   application:
-    name: flower-main
+    name: main-flower
   # 项目配置文件
   profiles:
     active: dev

@@ -3,7 +3,7 @@ server:
   port: 8082
 spring:
   application:
-    name: flower-branch-generator
+    name: branch-flower-generator
   profiles:
     active: dev
   config:

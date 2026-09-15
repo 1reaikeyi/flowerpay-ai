@@ -23,8 +23,8 @@ import java.util.UUID;
 @Slf4j
 public class FileController {
 
-    //本地存储 private数据 ku
-    private static final String PATH = "ku/image";
+    //本地存储 private数据 resource-ku
+    private static final String PATH = "resource-ku/image";
 
     @PostMapping
     public Result upload(MultipartFile file) {

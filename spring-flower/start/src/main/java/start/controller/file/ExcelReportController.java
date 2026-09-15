@@ -34,7 +34,7 @@ public class ExcelReportController {
     @Autowired
     private UserService userService;
 
-    private static final String PATH = "ku/excel/report.xlsx";
+    private static final String PATH = "resource-ku/excel/report.xlsx";
 
     /**
      * write
