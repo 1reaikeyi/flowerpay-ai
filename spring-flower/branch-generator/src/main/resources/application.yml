@@ -1,0 +1,12 @@
+#端口
+server:
+  port: 8082
+spring:
+  application:
+    name: flower-branch-generator
+
+
+
+
+
+

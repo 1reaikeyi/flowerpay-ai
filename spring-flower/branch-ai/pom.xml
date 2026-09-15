@@ -8,7 +8,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <groupId>com</groupId>
-    <artifactId>ai</artifactId>
+    <artifactId>branch-ai</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <url/>

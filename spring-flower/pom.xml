@@ -31,7 +31,8 @@
         <module>mapper</module>
         <module>service</module>
         <module>start</module>
-        <module>ai</module>
+        <module>branch-ai</module>
+        <module>branch-generator</module>
     </modules>
 
     <properties>
@@ -55,6 +56,16 @@
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-jsqlparser</artifactId>
                 <version>3.5.9</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
+                <version>3.5.9</version>
+            </dependency>
+            <dependency>
+                <groupId>org.freemarker</groupId>
+                <artifactId>freemarker</artifactId>
+                <version>2.3.33</version>
             </dependency>
             <!--redisson-->
             <dependency>

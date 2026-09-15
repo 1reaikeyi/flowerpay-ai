@@ -22,10 +22,10 @@ import service.impl.FlowerServiceImpl;
 @Import({FestivalServiceImpl.class, FlowerServiceImpl.class, FestivalDetailServiceImpl.class, FlowerDetailServiceImpl.class})
 @Slf4j
 @EnableConfigurationProperties({SessionProperties.class})
-public class FAIApplication {
+public class AIApplication {
     public static void main(String[] args) {
-        SpringApplication.run(FAIApplication.class, args);
-        log.info(">>>ai");
+        SpringApplication.run(AIApplication.class, args);
+        log.info("---匹配成功2");
     }
 
 }

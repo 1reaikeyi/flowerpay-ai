@@ -225,13 +225,15 @@ flowchart LR
 
 ├── model/                  # [共用] 实体类与数据传输对象（Entity/DTO/VO）
 
-├── mapper/               # [共用] 数据访问层（MyBatis-Plus Mapper）
+├── mapper/               # [共用] 数据访问层
 
 ├── service/                 # [共用] 业务逻辑层（Service接口及实现）
 
 ├── start/                     # [main服务] 主业务启动模块
 
-└── ai/                          # [branch服务] AI扩展服务启动模块
+├── branch-generator/           # [branch服务] 代码生成器启动模块
+
+└──branch- ai/                          # [branch服务] AI扩展服务启动模块
 
 ## 一、店长、店员和客户多端端登录认证模块
 

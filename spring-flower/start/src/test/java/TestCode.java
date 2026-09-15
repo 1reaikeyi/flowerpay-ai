@@ -19,7 +19,7 @@ public class TestCode {
     }
     @Test
     public void testLineCaptcha() {
-        // 线段干扰验证码（通过 CodeGenerator 自定义文字，宽200，高100，干扰线10）
+        // 线段干扰验证码（通过 Generator 自定义文字，宽200，高100，干扰线10）
         LineCaptcha lineCaptcha = CaptchaUtil.createLineCaptcha(200, 100,
                 new CodeGenerator() {
                     @Override
