@@ -9,11 +9,13 @@ import common.properties.JDBCProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+
 import java.util.HashMap;
 import java.util.Map;
 
 @Component
 public class Generator {
+
     @Autowired
     private JDBCProperties jdbcProperties;
 

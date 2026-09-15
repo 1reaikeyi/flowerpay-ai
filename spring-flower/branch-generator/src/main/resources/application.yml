@@ -4,6 +4,10 @@ server:
 spring:
   application:
     name: flower-branch-generator
+  profiles:
+    active: dev
+  config:
+    import: classpath:mysql.yml
 
 
 
