@@ -1,4 +1,4 @@
-package excel;
+package model.excel;
 
 import com.alibaba.excel.annotation.ExcelProperty;
 import com.alibaba.excel.annotation.write.style.OnceAbsoluteMerge;

@@ -1,10 +1,9 @@
 <div align="center">
-  <h1>flowerpayment-ai 鲜花商店 + ai</h1>
-  <h2>flowerpayment-ai：B2C 经营模式，一个花店卖家，多个买家。鲜花服务由店长、店员和客户组成。</h2>
-  <h5>
-    基于 Spring Boot 3 与 Vue 3 构建的现代化前后端分离系统。后端利用 Spring Boot 3 的高效与安全性提供 RESTful API 服务，前端借助 Vue 3 实现流畅的用户交互体验，通过多级缓存热点数据以提升系统响应速度。主业务为鲜花经营，送人，用途，管理，销售。分支业务org.springframework.ai的openai +com.alibaba.cloud.ai的graph，通过图像识别推荐相似花束，rag连接购物车数据知识文化讲解宣传。
-  </h5>
+  <h1>flowerpay-ai 鲜花商店 + ai</h1>
+  <h5>flowerpay-ai：B2C 经营模式，一个花店卖家，多个买家。鲜花服务由店长、店员和客户组成。</h5>
+  <h5>基于 Spring Boot 3 与 Vue 3 构建的现代化前后端分离系统。后端利用 Spring Boot 3 的高效与安全性提供 RESTful API 服务，前端借助 Vue 3 实现流畅的用户交互体验，通过多级缓存热点数据以提升系统响应速度。主业务为鲜花经营，送人，用途，管理，销售。分支业务org.springframework.ai的openai +com.alibaba.cloud.ai的graph，通过图像识别推荐相似花束，rag连接购物车数据知识文化讲解宣传。</h5>
 </div>
+
 
 ## 配置说明
 
@@ -32,11 +31,13 @@
 
 ## 接口文档
 
-flowerpayment-ai\说明\admin接口文档.md
+flowerpay-ai\说明\admin接口文档.md
 
-flowerpayment-ai\说明\emp接口文档.md
+flowerpay-ai\说明\emp接口文档.md
 
-flowerpayment-ai\说明\user接口文档.md
+flowerpay-ai\说明\user接口文档.md
+
+flowerpay-ai\说明\function流程图.md
 
 ## 升级方向
 
@@ -65,9 +66,10 @@ flowerpayment-ai\说明\user接口文档.md
         D3["阿里云 OSS 商品图片"]
         D4["本地硬盘 私有文件"]
         D5["Excel 导出 报表数据"]
+        D2["进程缓存"]
     end
- 	%% ============ 业务支撑层 ============
-    subgraph BIZ["业务支撑层"]
+ 	%% ============ 业务层 ============
+    subgraph BIZ["业务层"]
         direction LR
         BK1["后台管理服务"]
         BK2["统计数据分析"]
@@ -85,10 +87,10 @@ flowerpayment-ai\说明\user接口文档.md
         S2["员工模块"]
         S3["分类模块"]
         S4["鲜花单品模块"]
-        S5["节日礼盒模块"]
-        S6["购物车模块"]
+        S5["节日多花模块"]
         S7["订单模块"]
         S8["支付模块"]
+        S9["文件模块"]
     end
   	%% ============ 请求转发层 ============
     subgraph GATEWAY["请求转发层"]
@@ -101,80 +103,10 @@ flowerpayment-ai\说明\user接口文档.md
     %% ============ 客户端 ============
     subgraph CLIENT["客户端"]
         direction LR
-        C1["管理端店长"]
+        C1["店长"]
         C3["店员"]
         C2["用户端"]
     end
-```
-
-## 业务
-
-```mermaid
-%%{init: {'theme':'neutral','themeVariables':{'fontSize':'8px','nodeBorder':'2px'},'flowchart':{'nodeSpacing':8,'rankSpacing':32,'useMaxWidth':false,'curve':'basis'}}}%%
-flowchart LR
-
-    %% ============ 入口（平行）============
-    EMP["emp / 管理员"]
-    USE["user / 用户"]
-    LOGIN["注册登录"]
-
-    %% ============ 管理员路径 ============
-    subgraph ADMIN ["管理员路径"]
-        direction TB
-        AD["管理端"]
-        A["数据大屏"]
-        B["业务"]
-
-        subgraph AA ["数据大屏"]
-            direction LR
-            A1["业务数据大屏-echarts"]
-            A2["用户数据大屏-excel"]
-        end
-
-        subgraph BB ["业务"]
-            direction LR
-            B1["category"]
-            B2["flower"]
-            B3["festival"]
-            B4["order"]
-            B5["支付数据"]
-        end
-    end
-
-    %% ============ 用户路径 ============
-    subgraph USER ["用户路径"]
-        direction TB
-        U["用户端"]
-		S["业务"]
-        subgraph SS ["业务"]
-            direction LR
-            U1["category"]
-            U2["flower"]
-            U3["festival"]
-            U4["order"]
-            U5["ai服务"]
-        end
-    end
-
-    %% ============ 箭头 ============
-    EMP --> LOGIN
-    USE --> LOGIN
-    LOGIN --> AD
-    AD --> A
-    AD --> B
-    A --> A1
-    A --> A2
-    B --> B1
-    B --> B2
-    B --> B3
-    B --> B4
-    B --> B5
-    LOGIN --> U
-    U --> S
-    S --> U1
-    S --> U2
-    S --> U3
-    S --> U4
 ```
 
 # 前端说明
@@ -224,7 +156,7 @@ flowchart LR
 ```
 spring-flower/
 ├── common/              # [共用] 公共模块（常量/枚举、工具类、配置属性、统一结果、异常等）
-├── model/               # [共用] 实体类与数据传输对象（Entity/DTO/VO）
+├── model/               # [共用] 实体类与数据传输对象（Entity/DTO/VO/Data）
 ├── framework/           # [共用] 基础设施层（Security 配置与过滤器、AOP、全局异常处理、拦截器、支付封装等）
 ├── service/             # [共用] 业务层（Mapper 数据访问 + Service 接口及实现）
 ├── start/               # [main服务] 主业务启动模块
@@ -274,11 +206,11 @@ Q: 如何role权限隔离, 不越级？
 | 没有缓存，并发1000次                                         | ![](说明/并发测试/flower-category-运行日志-没有缓存1.png)    |
 | 没有缓存，并发1000次                                         | ![](说明/并发测试/flower-category-运行日志-没有缓存2.png)    |
 | 没有缓存，并发1000次                                         | ![](说明/并发测试/flower-category-运行日志-没有缓存3.png)    |
-| 无缓存的情况是全程没有使用 redis 的稳定情况                  | flowerpayment-ai/说明/并发测试/flower-category-运行日志-没有缓存日志.txt |
+| 无缓存的情况是全程没有使用 redis 的稳定情况                  | flowerpay-ai/说明/并发测试/flower-category-运行日志-没有缓存日志.txt |
 | 有spring-cache缓存，再并发1000次                             | ![](说明/并发测试/flower-category-运行日志-缓存1.png)        |
 | 有spring-cache缓存，再并发1000次                             | ![](说明/并发测试/flower-category-运行日志-缓存2.png)        |
 | 有spring-cache缓存，再并发1000次                             | ![](说明/并发测试/flower-category-运行日志-缓存3.png)        |
-| 有缓存的情况是全程有 redis 的稳定情况                        | flowerpayment-ai/说明/并发测试/flower-category-运行日志-缓存日志.txt |
+| 有缓存的情况是全程有 redis 的稳定情况                        | flowerpay-ai/说明/并发测试/flower-category-运行日志-缓存日志.txt |
 | 计算说明：性能提升百分比 =(无缓存值‑有缓存值)/ 无缓存值 ×100%；吞吐量提升百分比 =(有缓存‑无缓存)/ 无缓存 ×100%。 | **吞吐量**：无缓存吞吐量 21.8 请求 / 秒；开启缓存吞吐量提升至 29.7 请求 / 秒，吞吐量提升**36.2%**，系统整体并发处理能力增强。 **网络流量**：接收速率从 43.46KB/sec 提升至 59.09KB/sec，发送速率从 7.93KB/sec 提升至 10.78KB/sec，单位时间网络数据处理能力随吞吐量同步上涨。 |
 
 ## 三、flower，festival，flower-detial，festival-detail模块
@@ -417,26 +349,26 @@ flowchart TD
 | 悲观锁不能解决集群和并发问题 | Redisson 可重入分布式锁 + 看门狗自动续期；加锁后双重检查缓存 |
 |    redis宕机的突发性问题     | Redis 不可用：降级直查数据库<br> log.info("Redis 宕机:{}", e.getMessage()); Flower flower = this.getMysql(id); return BeanUtil.toBean(flower, FlowerVO.class); |
 
-排除冷启动的（第一次，第 500 次)达到稳定，进行统计。因为本地测试性能影响，最大值设置 500
+排除冷启动的（第一次，第 500 次)达到稳定，进行统计, 最大值设置 500
 
 | flower                                                       | <img src="说明/并发测试/flower.png" style="zoom: 25%;" />    |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 没有缓存，再开启 500次并发                                   | ![](说明/并发测试/flower-运行日志-没有缓存1.png)             |
 | 没有缓存，再开启 500次并发                                   | ![](说明/并发测试/flower-运行日志-没有缓存2.png)             |
-| 无缓存的情况是全程没有使用 redis 的稳定情况                  | flowerpayment-ai/说明/并发测试/flower-运行日志-没有缓存.txt  |
+| 无缓存的情况是全程没有使用 redis 的稳定情况                  | flowerpay-ai/说明/并发测试/flower-运行日志-没有缓存.txt      |
 | 有redis缓存，再开启 500次并发                                | ![](说明/并发测试/flower-运行日志-缓存1.png)                 |
 | 有redis缓存，再开启 500次并发                                | ![](说明/并发测试/flower-运行日志-缓存2.png)                 |
-| 有缓存的情况是全程有 redis 的稳定情况                        | flowerpayment-ai/说明/并发测试/flower-运行日志-缓存.txt      |
+| 有缓存的情况是全程有 redis 的稳定情况                        | flowerpay-ai/说明/并发测试/flower-运行日志-缓存.txt          |
 | 90% Line 含义：90% 的请求响应耗时不大于该数值，分位数指标用于评估接口稳定性，相比平均响应时间更能反映真实用户访问体验。 | 无缓存场景：90% 请求响应时间 1633ms，95% 请求响应时间 1751ms，99% 请求响应时间 1844ms。 开启缓存场景：90% 请求响应时间 193ms，95% 请求响应时间 237ms，99% 请求响应时间 266ms。<br> 90 分位：响应时间下降 88.18%； 95 分位：响应时间下降 86.46%； 99 分位：响应时间下降 85.57%。 |
 
 | festival                      | <img src="说明/并发测试/festival.png" style="zoom: 25%;" />  |
 | ----------------------------- | ------------------------------------------------------------ |
 | 没有缓存，再开启 500次并发    | ![](说明/并发测试/festival-运行日志-没有缓存2.png)           |
 | 没有缓存，再开启 500次并发    | ![](说明/并发测试/festival-运行日志-没有缓存1.png)           |
-| 没有缓存运行日志              | flowerpayment-ai/说明/并发测试/festival-运行日志-没有缓存.txt |
+| 没有缓存运行日志              | flowerpay-ai/说明/并发测试/festival-运行日志-没有缓存.txt    |
 | 有redis缓存，再开启 500次并发 | ![](说明/并发测试/festival-运行日志-缓存2.png)               |
 | 有redis缓存，再开启 500次并发 | ![](说明/并发测试/festival-运行日志-缓存1.png)               |
-| 有redis缓存运行日志           | flowerpayment-ai/说明/并发测试/festival-运行日志-缓存.txt    |
+| 有redis缓存运行日志           | flowerpay-ai/说明/并发测试/festival-运行日志-缓存.txt        |
 | 对比                          | 无缓存场景：接口平均响应时间 761ms，90% 请求响应时间 1595ms，95% 请求响应时间 1629ms，99% 请求响应时间 1746ms，吞吐量 34.3 次每秒，错误率 0%。 开启缓存场景：接口平均响应时间 136ms，90% 请求响应时间 327ms，95% 请求响应时间 346ms，99% 请求响应时间 423ms，吞吐量 150.6 次每秒，错误率 0%。 |
 
 ## 四、订单状态流转
@@ -505,7 +437,7 @@ sequenceDiagram
 
 
 
-## 六、文件管理，数据分析，aop日志
+## 六、文件管理，数据分析
 
 1 使用excel分析
 
@@ -519,17 +451,6 @@ GET /report/excel/download 流式写入Response输出流，边写边返回，不
 UUID 重命名策略，丢弃原始文件名，UUID + 后缀生成全新文件名，解决重名覆盖、路径遍历攻击、中文乱码三大问题。
 
 3 折线图，条形图，块图，扇形图分析
-
-4 采用注解 + AOP 切面实现日志统一收集，自定义注解统一采集上下文常用的登录人、请求类型，使用参数，状态、耗时。
-
-```
-log.info("role: " + operationType.type+", ID: "+operationType.id+", 执行操作: "+operationType.operation+
-        ", 使用参数: "+ message +", 运行状态: "+operationType.status + ", 记录时间: " + time);
-```
-
-|       业务难点       |                场景                |                      解决方案                      |                          选型理由                           |
-| :------------------: | :--------------------------------: | :------------------------------------------------: | :---------------------------------------------------------: |
-| 日志逻辑侵入业务代码 | 每个 CRUD 方法手动写日志，代码冗余 | AOP 切面统一拦截，注解标记即可自动记录，无业务侵入 | 符合 AOP 面向切面设计思想，日志属于横向通用能力，与业务解耦 |
 
 ## 七、AI模块
 
@@ -599,3 +520,17 @@ flowchart TD
 
 1 ai不会下单的一些列功能，花店实际需要的鲜花知识和氛围讲解.
 
+## 八、DB观测和aop日志
+
+1采用注解 + AOP 切面实现日志统一收集，自定义注解统一采集上下文常用的登录人、请求类型，使用参数，状态、耗时。
+
+```
+log.info("role: " + operationType.type+", ID: "+operationType.id+", 执行操作: "+operationType.operation+
+        ", 使用参数: "+ message +", 运行状态: "+operationType.status + ", 记录时间: " + time);
+```
+
+|       业务难点       |                场景                |                      解决方案                      |                          选型理由                           |
+| :------------------: | :--------------------------------: | :------------------------------------------------: | :---------------------------------------------------------: |
+| 日志逻辑侵入业务代码 | 每个 CRUD 方法手动写日志，代码冗余 | AOP 切面统一拦截，注解标记即可自动记录，无业务侵入 | 符合 AOP 面向切面设计思想，日志属于横向通用能力，与业务解耦 |
+
+2 druid

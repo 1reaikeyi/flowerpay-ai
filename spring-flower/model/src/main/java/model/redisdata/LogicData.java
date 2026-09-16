@@ -1,4 +1,4 @@
-package redisdata;
+package model.redisdata;
 
 import lombok.Data;
 

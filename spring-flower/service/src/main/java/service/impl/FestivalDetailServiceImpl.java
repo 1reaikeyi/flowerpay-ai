@@ -21,7 +21,7 @@ import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
-import redisdata.LogicData;
+import model.redisdata.LogicData;
 import service.FestivalDetailService;
 
 import java.time.Duration;

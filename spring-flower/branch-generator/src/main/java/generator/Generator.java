@@ -25,12 +25,13 @@ public class Generator {
 
     public boolean generate(String tableName) {
          AtomicBoolean hasGenerateFile = new AtomicBoolean(false);
-
-         String model = "spring-flower/model/src/main/java/model/entity";
-         String mapper = "spring-flower/service/src/main/java/mapper";
-         String service = "spring-flower/service/src/main/java/service";
-         String controller = "spring-flower/start/src/main/java/start/controller";
-         String mapperXml = "spring-flower/mapper/src/main/resources/mapper";
+         String path = "spring-flower";
+         String model = path + "/model/src/main/java/model/entity";
+         String mapper = path + "/service/src/main/java/mapper";
+         String service = path + "/service/src/main/java/service";
+         String mapperXml = path + "/service/src/main/resources/mapper";
+         String controller = path + "/start/src/main/java/start/controller";
+         
 
         Map<OutputFile, String> pathInfo = new HashMap<>();
         pathInfo.put(OutputFile.entity, model);      

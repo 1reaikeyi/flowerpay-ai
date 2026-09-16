@@ -28,7 +28,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import redisdata.LogicData;
+import model.redisdata.LogicData;
 import service.FlowerDetailService;
 import service.FlowerService;
 import com.github.benmanes.caffeine.cache.Cache;

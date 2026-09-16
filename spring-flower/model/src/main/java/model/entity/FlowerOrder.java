@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 import model.enums.DeliveryStatusEnum;
 import model.enums.OrderStatusEnum;
-import model.enums.PayStatusEnum;
 
 import java.io.Serializable;
 import java.time.LocalDate;
