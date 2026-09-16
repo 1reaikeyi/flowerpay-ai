@@ -34,7 +34,7 @@
     <logger name="com.zaxxer.hikari" level="INFO" additivity="false"/>
 
     <!-- 3. 为 ServiceInterceptAspect 配置独立的 Logger -->
-    <logger name="start.aop.ServiceInterceptAspect" level="INFO" additivity="true">
+    <logger name="framework.aop.ServiceInterceptAspect" level="INFO" additivity="true">
         <appender-ref ref="SERVICE_INTERCEPT_FILE"/>
     </logger>
 

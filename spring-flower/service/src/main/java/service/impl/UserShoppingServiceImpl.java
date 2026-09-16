@@ -14,10 +14,9 @@ import org.springframework.data.redis.core.BoundHashOperations;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 import service.UserShoppingService;
-import service.security.SecurityContextParam;
+import framework.security.SecurityContextParam;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 @Service

@@ -1,0 +1,49 @@
+package service.graph.tool;
+
+import model.enums.ChatEventTypeEnum;
+import model.vo.ChatEventVO;
+import service.memory.mysql.ChatRecordService;
+import service.session.SessionService;
+import jakarta.annotation.Resource;
+import org.springframework.ai.chat.client.ChatClient;
+import org.springframework.ai.chat.prompt.PromptTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.stereotype.Service;
+import reactor.core.publisher.Flux;
+
+import java.util.Map;
+
+@Service
+public class ToolServiceImpl implements ToolService {
+    @Resource(name = "toolClient")
+    private ChatClient chatClient;
+    @Autowired
+    private SessionService sessionService;
+    @Autowired
+    private ChatRecordService chatRecordService;
+    @Autowired
+    private StringRedisTemplate stringRedisTemplate;
+
+    private final static String  OUTPUT_STATUS = "OUTPUT_STATUS";
+    // 输出结束的标记
+    private static final ChatEventVO STOP_EVENT = ChatEventVO.builder()
+            .eventType(ChatEventTypeEnum.STOP.getValue())
+            .build();
+
+    @Override
+    public Flux<String> chat(String visualValue, String question) {
+        PromptTemplate promptTemplate = new PromptTemplate(
+                "你是一个花店查询家。根据用户描述{input}，自由选择信息作为查询条件，进行解决用户的问题 {question}。");
+        String prompt = promptTemplate.render(
+                Map.of("input", visualValue, "question", question)
+        );
+        return chatClient.prompt()
+                .user(prompt)
+                .stream()
+                .content()
+                .concatWith(Flux.just("stop"));
+
+    }
+
+}

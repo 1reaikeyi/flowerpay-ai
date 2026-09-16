@@ -9,7 +9,6 @@ import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
 import common.properties.JDBCProperties;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 
@@ -28,7 +27,7 @@ public class Generator {
          AtomicBoolean hasGenerateFile = new AtomicBoolean(false);
 
          String model = "spring-flower/model/src/main/java/model/entity";
-         String mapper = "spring-flower/mapper/src/main/java/mapper";
+         String mapper = "spring-flower/service/src/main/java/mapper";
          String service = "spring-flower/service/src/main/java/service";
          String controller = "spring-flower/start/src/main/java/start/controller";
          String mapperXml = "spring-flower/mapper/src/main/resources/mapper";

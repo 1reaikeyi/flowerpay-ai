@@ -221,19 +221,16 @@ flowchart LR
 
 # 后端说明
 
-├── common/              # [共用] 公共模块（工具类、全局配置、异常等）
-
-├── model/                  # [共用] 实体类与数据传输对象（Entity/DTO/VO）
-
-├── mapper/               # [共用] 数据访问层
-
-├── service/                 # [共用] 业务逻辑层（Service接口及实现）
-
-├── start/                     # [main服务] 主业务启动模块
-
-├── branch-generator/           # [branch服务] 代码生成器启动模块
-
-└──branch- ai/                          # [branch服务] AI扩展服务启动模块
+```
+spring-flower/
+├── common/              # [共用] 公共模块（常量/枚举、工具类、配置属性、统一结果、异常等）
+├── model/               # [共用] 实体类与数据传输对象（Entity/DTO/VO）
+├── framework/           # [共用] 基础设施层（Security 配置与过滤器、AOP、全局异常处理、拦截器、支付封装等）
+├── service/             # [共用] 业务层（Mapper 数据访问 + Service 接口及实现）
+├── start/               # [main服务] 主业务启动模块
+├── branch-generator/    # [branch服务] 代码生成器模块，修改和导入新功能的快速实现
+└── branch-ai/           # [branch服务] AI 扩展服务启动模块
+```
 
 ## 一、店长、店员和客户多端端登录认证模块
 
@@ -245,7 +242,7 @@ Q：滑动过期会不会产生大量无效 Redis Key？
 Q: 放弃 MD5，使用BCrypt 密码加密存储优点？
 不使用 MD5/SHA256 不可逆哈希，BCrypt 自带随机盐值，抗彩虹表暴力破解，数据库永不存储明文密码。
 Q: 如何role权限隔离, 不越级？
- 1.	service的方法层拦截
+1.service的方法层拦截
  interface使用@PreAuthorize("hasAuthority('ROLE_ADMIN')or hasAuthority('ROLE_EMP')")
  @PreAuthorize("hasAuthority('ROLE_USER')")
  2. controller的url拦截

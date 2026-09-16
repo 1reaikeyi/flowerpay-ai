@@ -28,7 +28,7 @@
     <modules>
         <module>common</module>
         <module>model</module>
-        <module>mapper</module>
+        <module>framework</module>
         <module>service</module>
         <module>start</module>
         <module>branch-ai</module>
@@ -112,6 +112,12 @@
                 <groupId>jakarta.xml.bind</groupId>
                 <artifactId>jakarta.xml.bind-api</artifactId>
                 <version>4.0.2</version>
+            </dependency>
+            <!-- 敏感词 -->
+            <dependency>
+                <groupId>com.github.houbb</groupId>
+                <artifactId>sensitive-word</artifactId>
+                <version>0.27.0</version>
             </dependency>
 
             <dependency>

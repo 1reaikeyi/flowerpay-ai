@@ -7,11 +7,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="framework" />
         <module name="common" />
         <module name="service" />
         <module name="start" />
         <module name="branch-generator" />
-        <module name="mapper" />
         <module name="model" />
         <module name="branch-ai" />
       </profile>
@@ -22,7 +22,7 @@
       <module name="branch-ai" options="-parameters" />
       <module name="branch-generator" options="-parameters" />
       <module name="common" options="-parameters" />
-      <module name="mapper" options="-parameters" />
+      <module name="framework" options="-parameters" />
       <module name="model" options="-parameters" />
       <module name="service" options="-parameters" />
       <module name="start" options="-parameters" />

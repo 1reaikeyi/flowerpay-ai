@@ -33,8 +33,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import model.entity.Employee;
 import org.springframework.transaction.annotation.Transactional;
+import framework.security.SecurityContextParam;
 import service.EmployeeService;
-import service.security.SecurityContextParam;
+
 
 import java.util.Collections;
 import java.util.HashMap;

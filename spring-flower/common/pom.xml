@@ -24,14 +24,16 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional> <!-- 常见写法，表示编译时需要，运行时不需要 -->
         </dependency>
-
+        <!-- Hutool 工具类：提供丰富的 Java 工具方法 -->
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+        </dependency>
         <!-- Spring Web：提供 @RestControllerAdvice、@Component、@ConfigurationProperties 等注解 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
-
 
         <!-- JJWT 核心 API（编译时依赖）：JWT 的生成和解析 -->
         <dependency>
@@ -56,25 +58,6 @@
             <groupId>com.aliyun.oss</groupId>
             <artifactId>aliyun-sdk-oss</artifactId>
         </dependency>
-
-        <!-- Hutool 工具类：提供丰富的 Java 工具方法 -->
-        <dependency>
-            <groupId>cn.hutool</groupId>
-            <artifactId>hutool-all</artifactId>
-        </dependency>
-
-        <!-- 微信支付API -->
-        <dependency>
-            <groupId>com.github.wechatpay-apiv3</groupId>
-            <artifactId>wechatpay-apache-httpclient</artifactId>
-        </dependency>
-
-        <!-- Excel 处理 -->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>easyexcel</artifactId>
-        </dependency>
-
     </dependencies>
 
 

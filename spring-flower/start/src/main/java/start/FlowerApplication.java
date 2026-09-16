@@ -13,14 +13,13 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.springframework.web.bind.annotation.CrossOrigin;
 
 // 日志配置
 @Slf4j
 //主程序入口
 @SpringBootApplication
 // 扫描bean组件
-@ComponentScan(basePackages = {"common","service","start"})
+@ComponentScan(basePackages = {"common","framework","service","start"})
 // 扫描mapper接口
 @MapperScan("mapper")
 //aop

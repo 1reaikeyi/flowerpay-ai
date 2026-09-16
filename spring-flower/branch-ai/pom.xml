@@ -43,20 +43,15 @@
     </dependencyManagement>
 
     <dependencies>
+
         <dependency>
             <groupId>org.example</groupId>
             <artifactId>service</artifactId>
             <version>0.0.1-SNAPSHOT</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-security</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.example</groupId>
-            <artifactId>mapper</artifactId>
+            <artifactId>framework</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
@@ -110,6 +105,10 @@
             <artifactId>hutool-all</artifactId>
             <version>5.8.26</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
         <!--数据库相关-->
         <!-- mybatis plus 管理 -->
         <dependency>
@@ -127,12 +126,7 @@
             <artifactId>mysql-connector-j</artifactId>
             <scope>runtime</scope>
         </dependency>
-        <!-- 敏感词 -->
-        <dependency>
-            <groupId>com.github.houbb</groupId>
-            <artifactId>sensitive-word</artifactId>
-            <version>0.27.0</version>
-        </dependency>
+
     </dependencies>
 
 
