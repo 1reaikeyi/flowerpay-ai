@@ -18,7 +18,6 @@ import service.impl.FlowerServiceImpl;
 @SpringBootApplication
 @MapperScan(basePackages = {"mapper"})
 @ComponentScan(basePackages = {"common","framework","service","start"})
-@Import({FlowerServiceImpl.class, FlowerDetailServiceImpl.class})
 @Slf4j
 @EnableConfigurationProperties({SessionProperties.class})
 public class AIApplication {

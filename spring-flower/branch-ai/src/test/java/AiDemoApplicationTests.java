@@ -8,8 +8,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.util.Arrays;
 import java.util.List;
 
+
 @SpringBootTest(classes = AIApplication.class)
-class AiDemoApplicationTests {
+public class AiDemoApplicationTests {
 
     @Autowired
     private OpenAiEmbeddingModel embeddingModel;
@@ -18,7 +19,7 @@ class AiDemoApplicationTests {
     public void testEmbedding() {
         // 1.测试数据
         // 1.1.用来查询的文本
-        String query = "breakfast";
+        String query = "早餐和早餐吃啥";
 
         // 1.2.用来做比较的文本
         String[] texts = new String[]{

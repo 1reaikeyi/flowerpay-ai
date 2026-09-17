@@ -54,11 +54,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
-        <!-- WebSocket：提供 ServerEndpointExporter 支持 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-websocket</artifactId>
-        </dependency>
         <!-- redis 缓存 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

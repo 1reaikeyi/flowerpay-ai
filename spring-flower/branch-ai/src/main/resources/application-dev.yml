@@ -20,4 +20,6 @@ flower:
     api-key: ${PATH_ai_qwen_api}
     chat:
       model: Qwen/Qwen3.5-27B
+    embedding:
+      model: Qwen/Qwen3-Embedding-8B
 

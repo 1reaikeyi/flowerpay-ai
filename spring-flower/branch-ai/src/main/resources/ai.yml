@@ -6,6 +6,12 @@ spring:
       chat:
         options:
           model: ${flower.ai.chat.model}
+      embedding:
+        options:
+          model: ${flower.ai.embedding.model}
+          dimensions: 1024
+          encoding-format: float
+
   config:
     import: classpath:session.yml
 

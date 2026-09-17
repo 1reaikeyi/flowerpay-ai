@@ -29,7 +29,7 @@ public class SessionController {
         return Result.success(sessionVO);
     }
 
-    @GetMapping("/all")
+    @GetMapping("/ids")
     public Result getId(){
         List<Session> sessionList = sessionService.list(new LambdaQueryWrapper<Session>().select(Session::getSessionId));
         List<String> ids = sessionList.stream()
