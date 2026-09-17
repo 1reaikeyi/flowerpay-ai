@@ -2,10 +2,10 @@ package framework.config;
 
 import cn.hutool.json.JSONUtil;
 import common.properties.JwtProperties;
-import framework.filter.AdminRefreshRequestFilter;
-import framework.filter.EmployeeRefreshRequestFilter;
-import framework.filter.InformationRequestFilter;
-import framework.filter.UserRefreshRequestFilter;
+import framework.filter.auth.AdminRefreshRequestFilter;
+import framework.filter.auth.EmployeeRefreshRequestFilter;
+import framework.filter.auth.InformationRequestFilter;
+import framework.filter.auth.UserRefreshRequestFilter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

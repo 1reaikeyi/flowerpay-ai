@@ -1,10 +1,40 @@
 spring:
   # 数据库配置
   datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: ${flower.datasource.driver-class-name}
     url: jdbc:mysql://${flower.datasource.host}:${flower.datasource.port}/${flower.datasource.database}
     username: ${flower.datasource.username}
     password: ${flower.datasource.password}
+    druid:
+      initial-size: 5
+      min-idle: 5
+      max-active: 20
+      max-wait: 60000
+      validation-query: SELECT 1
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      # 过滤器：stat统计SQL、wall防火墙、slf4j日志
+      filters: stat,wall,slf4j,druidFilter
+      # stat监控配置 慢SQL
+      filter:
+        stat:
+          slow-sql-millis: 2000
+          log-slow-sql: true
+          merge-sql: true
+      # Druid监控面板
+      stat-view-servlet:
+        enabled: true
+        login-username: admin
+        login-password: ${MYSQL_PASSWORD}
+        allow: 127.0.0.1 # 允许访问的ip，本地调试写127.0.0.1，上线改成服务器内网IP
+        deny:
+      # web监控，采集请求、sql关联
+      web-stat-filter:
+        enabled: true
+        url-pattern: /*
+        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
 
 # Mybatis-plus配置
 mybatis-plus:
@@ -13,4 +43,3 @@ mybatis-plus:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     #开启驼峰命名
     map-underscore-to-camel-case: true
-  type-enums-package: model.entityenum

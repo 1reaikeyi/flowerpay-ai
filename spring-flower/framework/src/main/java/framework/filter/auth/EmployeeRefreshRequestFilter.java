@@ -1,4 +1,4 @@
-package framework.filter;
+package framework.filter.auth;
 
 import common.constant.JwtConstant;
 import common.constant.RedisPrefixConstant;

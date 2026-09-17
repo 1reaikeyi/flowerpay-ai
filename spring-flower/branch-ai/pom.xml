@@ -110,7 +110,6 @@
             <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
         <!--数据库相关-->
-        <!-- mybatis plus 管理 -->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
@@ -126,7 +125,10 @@
             <artifactId>mysql-connector-j</artifactId>
             <scope>runtime</scope>
         </dependency>
-
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-3-starter</artifactId>
+        </dependency>
     </dependencies>
 
 

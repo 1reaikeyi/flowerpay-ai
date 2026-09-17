@@ -1,4 +1,4 @@
-package framework.filter;
+package framework.filter.auth;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -26,12 +26,10 @@ public class InformationRequestFilter extends OncePerRequestFilter {
         }
         String uri = request.getRequestURI();
         // 登录和注册接口不需要认证，直接放行
-        if (uri.equals("/user/login") ||
-                uri.equals("/user/register") ||
-                uri.equals("/employee/login") ||
-                uri.equals("/employee/register")||
-                uri.equals("/admin/login") ||
-                uri.equals("/admin/register")) {
+        if (uri.equals("/user/login") || uri.equals("/user/register") ||
+                uri.equals("/employee/login") || uri.equals("/employee/register")||
+                uri.equals("/admin/login") || uri.equals("/admin/register") ||
+                uri.equals("/druid") ) {
             return true;
         }
         return !uri.startsWith("/admin") &&

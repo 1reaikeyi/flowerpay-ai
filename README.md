@@ -25,7 +25,7 @@
 
  1创建数据库并导入 `sql/` 目录脚本。
 
-2 修改 `start/src/main/resources/application-dev.yml` 中数据库与 Redis ，ai配置。
+2 修改 `start/src/main/resources/application-dev.yml` 中数据库,  Redis ，ai配置。
 
 3 `npm run dev ` 前端启动服务。
 
@@ -157,7 +157,7 @@ flowerpay-ai\说明\function流程图.md
 spring-flower/
 ├── common/              # [共用] 公共模块（常量/枚举、工具类、配置属性、统一结果、异常等）
 ├── model/               # [共用] 实体类与数据传输对象（Entity/DTO/VO/Data）
-├── framework/           # [共用] 基础设施层（Security 配置与过滤器、AOP、全局异常处理、拦截器、支付封装等）
+├── framework/           # [共用] 基础设施层（过滤器、AOP、全局异常处理、拦截器、支付，druid检测等）
 ├── service/             # [共用] 业务层（Mapper 数据访问 + Service 接口及实现）
 ├── start/               # [main服务] 主业务启动模块
 ├── branch-generator/    # [branch服务] 代码生成器模块，修改和导入新功能的快速实现
@@ -184,45 +184,20 @@ Q: 如何role权限隔离, 不越级？
 
 ------
 
-## 二、flower-category模块
+## 二、flower-category , flower，festival，flower-detial，festival-detail模块
 
 ### model
 
-1. 索引：type 普通索引
+1. flower-category索引：type 普通索引
 
    按类型快速筛选分类，优化 type查询速度
 
-2. Redis 缓存结构，springcache成本低
-
-   ```
-   @CacheConfig(cacheNames = RedisPrefixConstant.CATEGORY_TYPE_PREFIX)
-   ```
-
-
-### 迭代过程
-排除冷启动的（第一次，第1000次)达到稳定，进行统计
-| jmeter每次1000次                                             | <img src="说明/并发测试/flower-category.png" style="zoom: 25%;" /> |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 没有缓存，并发1000次                                         | ![](说明/并发测试/flower-category-运行日志-没有缓存1.png)    |
-| 没有缓存，并发1000次                                         | ![](说明/并发测试/flower-category-运行日志-没有缓存2.png)    |
-| 没有缓存，并发1000次                                         | ![](说明/并发测试/flower-category-运行日志-没有缓存3.png)    |
-| 无缓存的情况是全程没有使用 redis 的稳定情况                  | flowerpay-ai/说明/并发测试/flower-category-运行日志-没有缓存日志.txt |
-| 有spring-cache缓存，再并发1000次                             | ![](说明/并发测试/flower-category-运行日志-缓存1.png)        |
-| 有spring-cache缓存，再并发1000次                             | ![](说明/并发测试/flower-category-运行日志-缓存2.png)        |
-| 有spring-cache缓存，再并发1000次                             | ![](说明/并发测试/flower-category-运行日志-缓存3.png)        |
-| 有缓存的情况是全程有 redis 的稳定情况                        | flowerpay-ai/说明/并发测试/flower-category-运行日志-缓存日志.txt |
-| 计算说明：性能提升百分比 =(无缓存值‑有缓存值)/ 无缓存值 ×100%；吞吐量提升百分比 =(有缓存‑无缓存)/ 无缓存 ×100%。 | **吞吐量**：无缓存吞吐量 21.8 请求 / 秒；开启缓存吞吐量提升至 29.7 请求 / 秒，吞吐量提升**36.2%**，系统整体并发处理能力增强。 **网络流量**：接收速率从 43.46KB/sec 提升至 59.09KB/sec，发送速率从 7.93KB/sec 提升至 10.78KB/sec，单位时间网络数据处理能力随吞吐量同步上涨。 |
-
-## 三、flower，festival，flower-detial，festival-detail模块
-
-### model
-
-1. 鲜花单品模块
+2. 鲜花单品模块
 
 - 分类：鲜花单品 = 1 : N（`flower.category_id`关联分类表）
 - 鲜花单品：鲜花规格`flower_detail` = 1 : N
 
-2. 多花组合模块
+3. 多花组合模块
 
 - `festival`多花组合主表，代表一个成品礼盒商品（比如 “520 热恋礼盒”）
 
@@ -230,14 +205,19 @@ Q: 如何role权限隔离, 不越级？
 
 - 关系：`festival` : `festival_detail` = 1 : N
 
-
-3. 索引
-
-​	index idx_festival_id (festival_id)、index idx_flower_id (flower_id). 大幅提升数据检索速度（避免全表扫描） ，优化 ORDER BY 和 GROUP BY 操作
+- 索引：index idx_festival_id (festival_id)、index idx_flower_id (flower_id). 大幅提升数据检索速度（避免全表扫描） ，优化 ORDER BY 和 GROUP BY 操作
 
 ---
 
-对于这些热点信息使用多级缓存
+1 对于category使用springcache
+
+```diff
+1 统一结构@CacheConfig(cacheNames = RedisPrefixConstant.CATEGORY_TYPE_PREFIX)
+2 get加@Cacheable(key = "#type")
+3 post,put,delete删@CacheEvict(allEntries = true)
+```
+
+2 对于flower，festival，flower-detial，festival-detail这些热点信息使用多级缓存
 
 ```mermaid
 %%{init: {'theme':'neutral','themeVariables':{'fontSize':'8px','nodeBorder':'2px'},'flowchart':{'nodeSpacing':8,'rankSpacing':32,'useMaxWidth':false,'curve':'basis'}}}%%
@@ -349,6 +329,20 @@ flowchart TD
 | 悲观锁不能解决集群和并发问题 | Redisson 可重入分布式锁 + 看门狗自动续期；加锁后双重检查缓存 |
 |    redis宕机的突发性问题     | Redis 不可用：降级直查数据库<br> log.info("Redis 宕机:{}", e.getMessage()); Flower flower = this.getMysql(id); return BeanUtil.toBean(flower, FlowerVO.class); |
 
+排除冷启动的（第一次，第1000次)达到稳定，进行统计
+
+| category                                                     | <img src="说明/并发测试/flower-category.png" style="zoom: 25%;" /> |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 没有缓存，并发1000次                                         | ![](说明/并发测试/flower-category-运行日志-没有缓存1.png)    |
+| 没有缓存，并发1000次                                         | ![](说明/并发测试/flower-category-运行日志-没有缓存2.png)    |
+| 没有缓存，并发1000次                                         | ![](说明/并发测试/flower-category-运行日志-没有缓存3.png)    |
+| 无缓存的情况是全程没有使用 redis 的稳定情况                  | flowerpay-ai/说明/并发测试/flower-category-运行日志-没有缓存日志.txt |
+| 有spring-cache缓存，再并发1000次                             | ![](说明/并发测试/flower-category-运行日志-缓存1.png)        |
+| 有spring-cache缓存，再并发1000次                             | ![](说明/并发测试/flower-category-运行日志-缓存2.png)        |
+| 有spring-cache缓存，再并发1000次                             | ![](说明/并发测试/flower-category-运行日志-缓存3.png)        |
+| 有缓存的情况是全程有 redis 的稳定情况                        | flowerpay-ai/说明/并发测试/flower-category-运行日志-缓存日志.txt |
+| 计算说明：性能提升百分比 =(无缓存值‑有缓存值)/ 无缓存值 ×100%；吞吐量提升百分比 =(有缓存‑无缓存)/ 无缓存 ×100%。 | **吞吐量**：无缓存吞吐量 21.8 请求 / 秒；开启缓存吞吐量提升至 29.7 请求 / 秒，吞吐量提升**36.2%**，系统整体并发处理能力增强。 **网络流量**：接收速率从 43.46KB/sec 提升至 59.09KB/sec，发送速率从 7.93KB/sec 提升至 10.78KB/sec，单位时间网络数据处理能力随吞吐量同步上涨。 |
+
 排除冷启动的（第一次，第 500 次)达到稳定，进行统计, 最大值设置 500
 
 | flower                                                       | <img src="说明/并发测试/flower.png" style="zoom: 25%;" />    |
@@ -371,7 +365,7 @@ flowchart TD
 | 有redis缓存运行日志           | flowerpay-ai/说明/并发测试/festival-运行日志-缓存.txt        |
 | 对比                          | 无缓存场景：接口平均响应时间 761ms，90% 请求响应时间 1595ms，95% 请求响应时间 1629ms，99% 请求响应时间 1746ms，吞吐量 34.3 次每秒，错误率 0%。 开启缓存场景：接口平均响应时间 136ms，90% 请求响应时间 327ms，95% 请求响应时间 346ms，99% 请求响应时间 423ms，吞吐量 150.6 次每秒，错误率 0%。 |
 
-## 四、订单状态流转
+## 三、订单状态流转
 
 第三方授权登录流程图和支付流程：支付宝
 
@@ -392,7 +386,7 @@ flowchart TD
         → 8 已取消（未接单退款、商家拒单、超时取消、退款）
 ```
 
-## 五、user模块
+## 四、user模块
 
 user-address
 
@@ -437,7 +431,7 @@ sequenceDiagram
 
 
 
-## 六、文件管理，数据分析
+## 五、文件管理，数据分析
 
 1 使用excel分析
 
@@ -452,7 +446,7 @@ UUID 重命名策略，丢弃原始文件名，UUID + 后缀生成全新文件�
 
 3 折线图，条形图，块图，扇形图分析
 
-## 七、AI模块
+## 六、branch-AI
 
 ## model
 
@@ -491,7 +485,7 @@ flowchart TD
             
             subgraph TGROUP ["node2 · ToolNode (异步+流式持续输出，最长30s)"]
                 direction TB
-                INPUT1["1.读取 state.visualResult<br/>2.获取 question,prompt 拼接模糊查询<br/>3.根据 prompt 						模板拼接执行<br/>4.调用业务@Tool工具查询,检索数据 → toolResult 写入 state"]
+                INPUT1["1.读取 state.visualResult<br/>2.获取 question,prompt 拼接模糊查询<br/>3.根据 prompt 						模板拼接执行<br/>4.调用业务@Tool工具查询 → toolResult 写入 state"]
                 end
             
             toolResult["toolResult"]
@@ -520,7 +514,13 @@ flowchart TD
 
 1 ai不会下单的一些列功能，花店实际需要的鲜花知识和氛围讲解.
 
-## 八、DB观测和aop日志
+
+
+## 七 、branch-generator
+
+代码生成器模块，修改和导入新功能的快速实现
+
+## 八、monitor运维和aop日志
 
 1采用注解 + AOP 切面实现日志统一收集，自定义注解统一采集上下文常用的登录人、请求类型，使用参数，状态、耗时。
 
@@ -533,4 +533,11 @@ log.info("role: " + operationType.type+", ID: "+operationType.id+", 执行操作
 | :------------------: | :--------------------------------: | :------------------------------------------------: | :---------------------------------------------------------: |
 | 日志逻辑侵入业务代码 | 每个 CRUD 方法手动写日志，代码冗余 | AOP 切面统一拦截，注解标记即可自动记录，无业务侵入 | 符合 AOP 面向切面设计思想，日志属于横向通用能力，与业务解耦 |
 
-2 druid
+2 druid监测DB
+
+| ![](说明\运维监视\druid1.png) |
+| ----------------------------- |
+| ![](说明\运维监视\druid2.png) |
+| ![](说明\运维监视\druid3.png) |
+
+3Actuator+Micrometer监测redis
