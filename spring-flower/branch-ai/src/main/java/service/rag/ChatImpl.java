@@ -5,6 +5,7 @@ import model.vo.ChatEventVO;
 import service.session.SessionService;
 import start.config.PromptConfig;
 import jakarta.annotation.Resource;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.memory.ChatMemory;
 import org.springframework.ai.chat.messages.AssistantMessage;
@@ -15,6 +16,7 @@ import reactor.core.publisher.Flux;
 
 import java.time.LocalDateTime;
 
+@Slf4j
 @Service
 public class ChatImpl implements Chat {
 
@@ -75,6 +77,11 @@ public class ChatImpl implements Chat {
                 })
                 //控制是否继续
                 .takeWhile(chatResponse -> outputHash.get(sessionId) != null)
+                // 流式返回的部分分块（如 usage/finish 分块）getResult() 可能为 null，直接跳过
+                .filter(chatResponse -> chatResponse != null
+                        && chatResponse.getResult() != null
+                        && chatResponse.getResult().getOutput() != null
+                        && chatResponse.getResult().getOutput().getText() != null)
 
                 .map(chatResponse -> {
                     String response = chatResponse.getResult().getOutput().getText();
@@ -85,6 +92,14 @@ public class ChatImpl implements Chat {
                             .eventType(ChatEventTypeEnum.DATA.getValue())
                             .build();
                     return chatEventVO;
+                })
+                .onErrorResume(e -> {
+                    log.error("对话流式输出异常, sessionId={}", sessionId, e);
+                    outputHash.delete(sessionId);
+                    return Flux.just(ChatEventVO.builder()
+                            .eventData("生成失败，请稍后重试")
+                            .eventType(ChatEventTypeEnum.DATA.getValue())
+                            .build());
                 })
 
                 .concatWith(Flux.just(ChatEventVO.builder()

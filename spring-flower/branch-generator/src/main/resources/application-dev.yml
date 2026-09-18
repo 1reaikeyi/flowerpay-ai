@@ -1,10 +1,11 @@
-flower:
-  #数据库配置
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    host: localhost
-    port: 3306
-    database: use_flower
-    username: root
-    password: ${MYSQL_PASSWORD}
+#端口
+port: 8082
+logging: info
+spring:
+  application:
+    name: branch-flower-generator
+  config:
+    import: classpath:mysql-dev.yml, classpath:redis-dev.yml
+
+
 

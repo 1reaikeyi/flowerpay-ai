@@ -1,0 +1,9 @@
+flower:
+  #数据库配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    host: localhost
+    port: 3306
+    database: use_flower
+    username: root
+    password: ${MYSQL_PASSWORD}

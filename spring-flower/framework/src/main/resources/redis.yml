@@ -14,8 +14,6 @@ spring:
           max-wait: 3000ms
           max-idle: 8
           min-idle: 2
-      # Redisson 配置：单节点模式，复用上方 redis 连接参数
-      # 注意：config 必须使用 | 块标量，内容作为字符串交给 Redisson 自行解析
       redisson:
         config: |
           singleServerConfig:

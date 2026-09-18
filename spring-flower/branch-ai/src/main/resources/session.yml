@@ -1,5 +1,5 @@
 session:
-  title: Hello，我是大大鲜花AI
+  title: Hello，我是大鲜花AI
   describe: 我是鲜花小店倾力打造的智能助理，我不仅能为您推荐鲜花、提供订购服务，还能分享花语寓意和养护技巧，为您的生活增添一抹芬芳。
   examples:
     - title: "鲜花推荐"

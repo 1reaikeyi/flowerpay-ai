@@ -4,6 +4,7 @@ import service.graph.tool.ToolResultHolder;
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.convert.Convert;
 import cn.hutool.core.util.ObjectUtil;
+import cn.hutool.core.util.StrUtil;
 import cn.hutool.json.JSONUtil;
 import org.springframework.ai.chat.messages.*;
 
@@ -28,13 +29,20 @@ public class MessageUtil {
             myMessage.setToolCalls(assistantMessage.getToolCalls());
             // 通过 messageId 获取 requestId，再通过 requestId 获取参数列表，如果有，就存储起来
             // 最后，删除 messageId 对应的数据
-            var messageId = Convert.toStr(assistantMessage.getMetadata().get("id"));
-            var requestId = Convert.toStr(ToolResultHolder.get(messageId, "requestId"));
-            var params = ToolResultHolder.get(requestId);
-            if (ObjectUtil.isNotEmpty(params)) {
-                myMessage.setParams(params);
+            // 注意：普通 AssistantMessage（无工具调用，如停止生成时补存的消息）metadata 中没有 id，
+            // 此时 messageId 为 null，不能访问 ToolResultHolder，否则会触发 "key is not null!" 断言
+            var metadata = assistantMessage.getMetadata();
+            var messageId = metadata == null ? null : Convert.toStr(metadata.get("id"));
+            if (StrUtil.isNotBlank(messageId)) {
+                var requestId = Convert.toStr(ToolResultHolder.get(messageId, "requestId"));
+                if (StrUtil.isNotBlank(requestId)) {
+                    var params = ToolResultHolder.get(requestId);
+                    if (ObjectUtil.isNotEmpty(params)) {
+                        myMessage.setParams(params);
+                    }
+                }
+                ToolResultHolder.remove(messageId);
             }
-            ToolResultHolder.remove(messageId);
         }
 
         if (message instanceof ToolResponseMessage toolResponseMessage) {

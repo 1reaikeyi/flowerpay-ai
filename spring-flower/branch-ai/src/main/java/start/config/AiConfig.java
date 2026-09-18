@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class SpringAiConfig {
+public class AiConfig {
     @Bean
     public Advisor loggerAdvisor(){
         return new SimpleLoggerAdvisor();

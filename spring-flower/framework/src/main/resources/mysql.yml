@@ -15,8 +15,8 @@ spring:
       test-while-idle: true
       test-on-borrow: false
       test-on-return: false
-      # 过滤器：stat统计SQL、wall防火墙、slf4j日志
-      filters: stat,wall,slf4j,druidFilter
+      # 过滤器：stat统计SQL、wall防火墙、slf4j日志，druidFilter需用全限定类名（非Druid内置别名）
+      filters: stat,wall,slf4j,framework.filter.sql.DruidFilter
       # stat监控配置 慢SQL
       filter:
         stat:
@@ -27,7 +27,7 @@ spring:
       stat-view-servlet:
         enabled: true
         login-username: admin
-        login-password: ${MYSQL_PASSWORD}
+        login-password: ${flower.datasource.password}
         allow: 127.0.0.1 # 允许访问的ip，本地调试写127.0.0.1，上线改成服务器内网IP
         deny:
       # web监控，采集请求、sql关联

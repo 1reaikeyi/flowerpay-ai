@@ -535,9 +535,14 @@ log.info("role: " + operationType.type+", ID: "+operationType.id+", 执行操作
 
 2 druid监测DB
 
-| ![](说明\运维监视\druid1.png) |
-| ----------------------------- |
-| ![](说明\运维监视\druid2.png) |
-| ![](说明\运维监视\druid3.png) |
+| 1    | ![](说明/运维监视/druid1.png) |
+| ---- | ----------------------------- |
+| 2    | ![](说明/运维监视/druid2.png) |
+| 3    | ![](说明/运维监视/druid3.png) |
 
 3Actuator+Micrometer监测redis
+
+| 1    |      |
+| ---- | ---- |
+| 2    |      |
+| 3    |      |

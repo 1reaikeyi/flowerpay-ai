@@ -1,7 +1,0 @@
-spring:
-  # 数据库配置
-  datasource:
-    driver-class-name: ${flower.datasource.driver-class-name}
-    url: jdbc:mysql://${flower.datasource.host}:${flower.datasource.port}/${flower.datasource.database}
-    username: ${flower.datasource.username}
-    password: ${flower.datasource.password}

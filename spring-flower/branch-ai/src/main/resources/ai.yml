@@ -1,23 +1,23 @@
 spring:
   ai:
     openai:
-      base-url: ${flower.ai.base-url}
-      api-key: ${flower.ai.api-key}
+      base-url: https://dashscope.aliyuncs.com/compatible-mode
+      api-key: ${PATH_ai_aliyun_api}
       chat:
         options:
-          model: ${flower.ai.chat.model}
+          model: qwen3.8-flash
       embedding:
         options:
-          model: ${flower.ai.embedding.model}
+          model: qwen3.7-text-embedding
           dimensions: 1024
           encoding-format: float
-
   config:
     import: classpath:session.yml
 
+image:
+  max-width: 2048
+  max-height: 2048
 system:
   chat:
     file: classpath:system-message.txt
-    group: DEFAULT_GROUP
-    timeout-ms: 20000
 
