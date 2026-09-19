@@ -11,9 +11,17 @@ spring:
           model: qwen3.7-text-embedding
           dimensions: 1024
           encoding-format: float
+    vectorstore:
+      redis:
+        initialize-schema: true
+        index-name: spring-ai-index
+        prefix: "emb:"
   config:
     import: classpath:session.yml
-
+logging:
+  level:
+    org.springframework.ai: info
+    org.springframework.ai.chat.client: info
 image:
   max-width: 2048
   max-height: 2048

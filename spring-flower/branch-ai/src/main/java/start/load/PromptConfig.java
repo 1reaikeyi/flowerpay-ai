@@ -1,6 +1,7 @@
-package start.config;
+package start.load;
 
 
+import cn.hutool.core.io.IoUtil;
 import jakarta.annotation.PostConstruct;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -11,6 +12,7 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.util.StreamUtils;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -31,9 +33,9 @@ public class PromptConfig {
     }
 
     private void loadSystemPrompt() {
-        try {
-            ClassPathResource resource = new ClassPathResource(systemChatFilePath.replace("classpath:", ""));
-            String content = StreamUtils.copyToString(resource.getInputStream(), StandardCharsets.UTF_8);
+        ClassPathResource resource = new ClassPathResource(systemChatFilePath.replace("classpath:", ""));
+        try(InputStream is = resource.getInputStream()){
+            String content = IoUtil.readUtf8(is);
             chatSystemMessage.set(content);
             log.info("成功加载系统提示词文件: {}, 内容长度: {} 字符", systemChatFilePath, content.length());
         } catch (IOException e) {

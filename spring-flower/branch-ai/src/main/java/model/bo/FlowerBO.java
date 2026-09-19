@@ -1,4 +1,4 @@
-package service.graph.tool;
+package model.bo;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class FlowerJson {
+public class FlowerBO {
 
     @JsonPropertyDescription("鲜花id")
     private Long id;
@@ -53,11 +53,11 @@ public class FlowerJson {
     /**
      * 从 Flower 实体转为
      */
-    public static FlowerJson of(Flower flower) {
+    public static FlowerBO of(Flower flower) {
         if (null == flower) {
             throw new IllegalArgumentException("没有查询到鲜花数据");
         }
-        return FlowerJson.builder()
+        return FlowerBO.builder()
                 .id(flower.getId())
                 .name(flower.getName())
                 .categoryId(flower.getCategoryId())

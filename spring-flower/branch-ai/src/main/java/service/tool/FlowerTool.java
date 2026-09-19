@@ -1,8 +1,9 @@
-package service.graph.tool;
+package service.tool;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import model.bo.FlowerBO;
 import model.entity.Flower;
 import org.springframework.ai.chat.model.ToolContext;
 import org.springframework.ai.tool.annotation.Tool;
@@ -21,29 +22,30 @@ public class FlowerTool {
 
     private static final String FIELD_NAME_RESULT = "{}_{}";  // 提取格式字符串常量
     private static final String READ_BY_ID = "根据id";
+
     @Tool(description = READ_BY_ID)
-    public FlowerJson queryById(@ToolParam(description = READ_BY_ID) Long flowerId,
-                                      ToolContext toolContext) {
+    public FlowerBO queryById(@ToolParam(description = READ_BY_ID) Long flowerId,
+                              ToolContext toolContext) {
         return Optional.ofNullable(flowerId)
                 .map(id -> flowerService.getById(id))
-                .map(flower -> FlowerJson.of(flower))
-                .map(flowerJson -> {
+                .map(flower -> FlowerBO.of(flower))
+                .map(flowerBO -> {
                     // 存储数据的字段名：使用Java原生String.format
-                    String className = FlowerJson.class.getSimpleName();
+                    String className = FlowerBO.class.getSimpleName();
                     // 将首字母转为小写
                     String lowerClassName = className.isEmpty() ? className
                             : Character.toLowerCase(className.charAt(0)) + className.substring(1);
-                    String field = String.format(FIELD_NAME_RESULT, lowerClassName, flowerJson.getId());
+                    String field = String.format(FIELD_NAME_RESULT, lowerClassName, flowerBO.getId());
                     // 存储的key
                     Object requestIdObj = toolContext.getContext().get(READ_BY_ID);
                     String requestId = requestIdObj != null ? String.valueOf(requestIdObj) : null;
-                    ToolResultHolder.put(requestId, field, flowerJson);
-                    return flowerJson;
+                    ToolResultHolder.put(requestId, field, flowerBO);
+                    return flowerBO;
                 })
                 .orElse(null);
     }
     @Tool(description = "根据多个条件组合查询鲜花列表，支持按名称、颜色、分类、价格区间、状态等筛选")
-    public List<FlowerJson> queryFlowers(
+    public List<FlowerBO> queryFlowers(
             @ToolParam(description = "鲜花多条件查询参数，所有字段均为可选") FlowerToolParam param) {
 
         LambdaQueryWrapper<Flower> wrapper = new LambdaQueryWrapper<>();
@@ -81,7 +83,7 @@ public class FlowerTool {
 
         // 执行查询 + 转 DTO
         return flowerService.list(wrapper).stream()
-                .map(flower -> BeanUtil.toBean(flower,FlowerJson.class))
+                .map(flower -> BeanUtil.toBean(flower, FlowerBO.class))
                 .toList();
     }
 }

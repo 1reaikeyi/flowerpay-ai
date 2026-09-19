@@ -1,9 +1,8 @@
 <div align="center">
   <h1>flowerpay-ai 鲜花商店 + ai</h1>
   <h5>flowerpay-ai：B2C 经营模式，一个花店卖家，多个买家。鲜花服务由店长、店员和客户组成。</h5>
-  <h5>基于 Spring Boot 3 与 Vue 3 构建的现代化前后端分离系统。后端利用 Spring Boot 3 的高效与安全性提供 RESTful API 服务，前端借助 Vue 3 实现流畅的用户交互体验，通过多级缓存热点数据以提升系统响应速度。主业务为鲜花经营，送人，用途，管理，销售。分支业务org.springframework.ai的openai +com.alibaba.cloud.ai的graph，通过图像识别推荐相似花束，rag连接购物车数据知识文化讲解宣传。</h5>
+  <h5>后端利用 Spring Boot 3 的高效与安全性提供 RESTful API 服务，前端借助 Vue 3 实现流畅的用户交互体验的构建的现代化前后端分离系统。通过多级缓存热点数据以提升系统响应速度，Druid 负责MySQL连接池与 SQL 监控，保障订单、库存数据访问；使用Actuator采集缓存命中率使用情况。主业务为鲜花经营，送人，用途，管理，销售。分支业务org.springframework.ai的openai +com.alibaba.cloud.ai的graph，通过图像识别推荐相似花束，rag连接购物车数据知识文化讲解宣传。</h5>
 </div>
-
 
 ## 配置说明
 
@@ -25,7 +24,7 @@
 
  1创建数据库并导入 `sql/` 目录脚本。
 
-2 修改 `start/src/main/resources/application-dev.yml` 中数据库,  Redis ，ai配置。
+2 修改 `resources/application-dev.yml` 中DB,  Redis ，ai配置。
 
 3 `npm run dev ` 前端启动服务。
 
@@ -149,17 +148,16 @@ flowerpay-ai\说明\function流程图.md
 |      |      |
 | ---- | ---- |
 |      |      |
-|      |      |
 
 # 后端说明
 
 ```
 spring-flower/
-├── common/              # [共用] 公共模块（常量/枚举、工具类、配置属性、统一结果、异常等）
-├── model/               # [共用] 实体类与数据传输对象（Entity/DTO/VO/Data）
-├── framework/           # [共用] 基础设施层（过滤器、AOP、全局异常处理、拦截器、支付，druid检测等）
+├── common/              # [共用] 公共模块（常量/枚举、工具类、统一结果、异常等）
+├── model/               # [共用] 所有数据传输对象
+├── framework/           # [共用] 基础设施层（filter、AOP、error handle、interceptor、monitor等）
 ├── service/             # [共用] 业务层（Mapper 数据访问 + Service 接口及实现）
-├── start/               # [main服务] 主业务启动模块
+├── start/               # [main服务]   主业务启动模块
 ├── branch-generator/    # [branch服务] 代码生成器模块，修改和导入新功能的快速实现
 └── branch-ai/           # [branch服务] AI 扩展服务启动模块
 ```
@@ -373,13 +371,13 @@ flowchart TD
 
 `生产网关一般为：https://openapi.alipay.com/gateway.do`
 
-| 支付宝授权     | <img src="说明/支付宝+qq/ali1.png" alt="支付宝" style="zoom:10%;" /> |
+| 支付宝授权     | <img src="说明/resource/zhifubao1.png" alt="支付宝" style="zoom:10%;" /> |
 | -------------- | ------------------------------------------------------------ |
-| 第三方授权成功 | <img src="说明/支付宝+qq/ali2.png" alt="支付宝" style="zoom:50%;" /> |
-| 支付集成到订单 | <img src="说明/支付宝+qq/1.png" alt="支付" style="zoom:25%;" /> |
-| 支付过程       | <img src="说明/支付宝+qq/2.png" alt="支付" style="zoom: 25%;" /> |
-| 同步支付结果   | <img src="说明/支付宝+qq/3.png" alt="支付" style="zoom: 25%;" /> |
-| 异步验签结果   | <img src="说明/支付宝+qq/4.png" alt="支付" style="zoom: 25%;" /> |
+| 第三方授权成功 | <img src="说明/resource/zhifubao2.png" alt="支付宝" style="zoom:50%;" /> |
+| 支付集成到订单 | <img src="说明/resource/pay1.png" alt="支付" style="zoom:25%;" /> |
+| 支付过程       | <img src="说明/resource/pay2.png" alt="支付" style="zoom: 25%;" /> |
+| 同步支付结果   | <img src="说明/resource/pay3.png" alt="支付" style="zoom: 25%;" /> |
+| 异步验签结果   | <img src="说明/resource/pay4.png" alt="支付" style="zoom: 25%;" /> |
 
 ```
 1 用户下单 → 2 用户确认支付 → 3 商家制作 → 4 工作人员取货 → 5 工作人员开始配送 → 6 工作人员已到达 → 7 用户确认
@@ -388,30 +386,14 @@ flowchart TD
 
 ## 四、user模块
 
-user-address
-
-|      业务难点      |                         场景                          |                           解决方案                           |                           选型理由                           |
-| :----------------: | :---------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-| 多默认地址数据违规 |       新增 / 修改地址勾选默认，旧默认地址未取消       | 设为默认前先批量更新该用户所有地址 isDefault=0，两步操作绑定业务逻辑 | 数据库无法直接约束单用户唯一默认，代码层前置清理旧默认，保证业务数据合规 |
-|      传统分页      | 用户地址数量较多时，pageNum=100 需要扫描前 100 页数据 |  游标滚动分页，以上一页最后一条 id 作为游标，直接走主键索引  | 游标分页性能稳定不随页码增长衰减，统一项目分页返回结构 ScrollResult |
-
-user-shopping
-
-```
-Q:MySQL 持久化，还采用 Redis Hash 存储?
-节假日使用redis，平时使用MySQL。
-Q:Redis Hash 结构
-   外层 key：shopping_cart:{userId}
-   内层 field：购物项唯一 id，value：商品完整信息 JSON
-   优势：单用户购物车聚合存储，增删单项无需操作整条数据，性能优于 String 序列化列表。
-```
-
-shop店铺
-
-|       业务难点       |                     场景                     |                解决方案                 |                    选型理由                    |
-| :------------------: | :------------------------------------------: | :-------------------------------------: | :--------------------------------------------: |
-| 高频查询店铺营业状态 | 每个用户进店、下单前都校验状态，并发访问频繁 | Redis 单 key 存储状态，查询无数据库 IO  |  相比 MySQL 查询延迟大幅降低，减轻数据库压力   |
-|    集群状态不同步    |      单实例内存变量存储，多节点状态独立      | 统一 Redis 集中存储店铺状态，全实例共享 | 分布式环境全局状态标准存储方案，一致性实时保障 |
+|       业务难点       |                         场景                          |                           解决方案                           |                           选型理由                           |
+| :------------------: | :---------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+|                      |                     user-address                      |                                                              |                                                              |
+|  多默认地址数据违规  |       新增 / 修改地址勾选默认，旧默认地址未取消       | 设为默认前先批量更新该用户所有地址 isDefault=0，两步操作绑定业务逻辑 | 数据库无法直接约束单用户唯一默认，代码层前置清理旧默认，保证业务数据合规 |
+|       传统分页       | 用户地址数量较多时，pageNum=100 需要扫描前 100 页数据 |  游标滚动分页，以上一页最后一条 id 作为游标，直接走主键索引  | 游标分页性能稳定不随页码增长衰减，统一项目分页返回结构 ScrollResult |
+|                      |                       shop店铺                        |                                                              |                                                              |
+| 高频查询店铺营业状态 |     每个用户进店、下单前都校验状态，并发访问频繁      |            Redis 单 key 存储状态，查询无数据库 IO            |         相比 MySQL 查询延迟大幅降低，减轻数据库压力          |
+|    集群状态不同步    |          单实例内存变量存储，多节点状态独立           |           统一 Redis 集中存储店铺状态，全实例共享            |        分布式环境全局状态标准存储方案，一致性实时保障        |
 
 websocket
 
@@ -429,7 +411,16 @@ sequenceDiagram
     websocket-->>用户:4 发送商家请求
 ```
 
+user-shopping
 
+```
+Q:MySQL 持久化，还采用 Redis Hash 存储?
+节假日使用redis，平时使用MySQL。
+Q:Redis Hash 结构
+   外层 key：shopping_cart:{userId}
+   内层 field：购物项唯一 id，value：商品完整信息 JSON
+   优势：单用户购物车聚合存储，增删单项无需操作整条数据，性能优于 String 序列化列表。
+```
 
 ## 五、文件管理，数据分析
 
@@ -471,21 +462,29 @@ flowchart TD
 
     subgraph CHAIN ["图片识别过程"]
         direction TB
-        S1["1. 文件前置校验图片最大尺寸 2048×2048限制文件格式<br/>2. SensitiveWordInterceptor 拦截检测提问文本敏感词 →			命中直接返回 400 拦截<br/>3. 文件统一转 Base64 编码(上传 byte[] 转换base64)"]
+        S1["1. 文件前置校验图片最大尺寸 2048×2048限制文件格式<br/>
+        	2. SensitiveWordInterceptor 拦截检测提问文本敏感词 →命中直接返回 400 拦截<br/>
+        	3. 文件统一转 Base64 编码(上传 byte[] 转换base64)"]
         
         subgraph GRAPH ["StateGraph 工作流 (异步节点)"]
             direction TB
   
             subgraph VGROUP ["node1 · VisualNode (异步+流式持续输出，最长10s)"]
                 direction TB
-                V1["① 读取 Base64 图像<br/>② 封装 Image Media 多模态对象<br/>③ 调用独立 visualChatClient 识别图像内						容<br/>④ 识别文本 → visualResult 写入 state"]
+                V1["① 读取 Base64 图像<br/>
+                	② 封装 Image Media 多模态对象<br/>
+                	③ 调用独立 visualChatClient 识别图像内容<br/>
+                	④ 识别文本 → visualResult 写入 state"]
             end
             
             visualResult["visualResult"]
             
             subgraph TGROUP ["node2 · ToolNode (异步+流式持续输出，最长30s)"]
                 direction TB
-                INPUT1["1.读取 state.visualResult<br/>2.获取 question,prompt 拼接模糊查询<br/>3.根据 prompt 						模板拼接执行<br/>4.调用业务@Tool工具查询 → toolResult 写入 state"]
+                INPUT1["1.读取 state.visualResult<br/>
+                2.获取 question,prompt 拼接模糊查询<br/>
+                3.根据 prompt 模板拼接执行<br/>
+                4.调用业务@Tool工具查询 → toolResult 写入 state"]
                 end
             
             toolResult["toolResult"]
@@ -535,12 +534,12 @@ log.info("role: " + operationType.type+", ID: "+operationType.id+", 执行操作
 
 2 druid监测DB
 
-| 1    | ![](说明/运维监视/druid1.png) |
-| ---- | ----------------------------- |
-| 2    | ![](说明/运维监视/druid2.png) |
-| 3    | ![](说明/运维监视/druid3.png) |
+| 1    | <img src="说明/运维监视/druid1.png" style="zoom: 33%;" /> |
+| ---- | --------------------------------------------------------- |
+| 2    | <img src="说明/运维监视/druid2.png" style="zoom: 33%;" /> |
+| 3    | <img src="说明/运维监视/druid3.png" style="zoom: 33%;" /> |
 
-3Actuator+Micrometer监测redis
+3 Actuator+Micrometer监测redis
 
 | 1    |      |
 | ---- | ---- |

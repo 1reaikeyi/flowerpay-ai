@@ -1,6 +1,6 @@
-package start.config;
+package start.load;
 
-import service.graph.tool.FlowerTool;
+import service.tool.FlowerTool;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.advisor.api.Advisor;
 import org.springframework.ai.openai.OpenAiChatModel;
@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class ChatConfig {
+public class ChatClientModel {
     @Bean
     public ChatClient chatClient(OpenAiChatModel model,
                                  @Qualifier("loggerAdvisor") Advisor loggerAdvisor,

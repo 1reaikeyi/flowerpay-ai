@@ -1,4 +1,4 @@
-package service.graph.tool;
+package service.tool;
 
 import reactor.core.publisher.Flux;
 

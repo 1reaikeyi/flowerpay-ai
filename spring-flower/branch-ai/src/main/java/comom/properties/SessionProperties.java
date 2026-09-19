@@ -1,4 +1,4 @@
-package properties;
+package comom.properties;
 
 import model.vo.SessionVO;
 import lombok.Data;

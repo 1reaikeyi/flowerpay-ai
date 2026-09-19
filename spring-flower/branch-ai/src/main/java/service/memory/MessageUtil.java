@@ -1,6 +1,6 @@
 package service.memory;
 
-import service.graph.tool.ToolResultHolder;
+import service.tool.ToolResultHolder;
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.convert.Convert;
 import cn.hutool.core.util.ObjectUtil;

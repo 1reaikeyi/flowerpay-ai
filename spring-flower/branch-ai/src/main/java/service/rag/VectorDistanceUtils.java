@@ -13,8 +13,7 @@ public class VectorDistanceUtils {
      * 计算欧氏距离
      * @param vectorA 向量A（非空且与B等长）
      * @param vectorB 向量B（非空且与A等长）
-     * @return 欧氏距离
-     * @throws IllegalArgumentException 参数不合法时抛出
+     * @return 欧氏距离 vectorA * vectorB/vectorA长 * vectorB长
      */
     public static double euclideanDistance(float[] vectorA, float[] vectorB) {
         validateVectors(vectorA, vectorB);
@@ -31,8 +30,7 @@ public class VectorDistanceUtils {
      * 计算余弦距离
      * @param vectorA 向量A（非空且与B等长）
      * @param vectorB 向量B（非空且与A等长）
-     * @return 余弦距离，范围[0, 2]
-     * @throws IllegalArgumentException 参数不合法或零向量时抛出
+     * @return 余弦距离，cos范围[0, 2]
      */
     public static double cosineDistance(float[] vectorA, float[] vectorB) {
         validateVectors(vectorA, vectorB);

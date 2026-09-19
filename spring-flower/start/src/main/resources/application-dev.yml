@@ -1,5 +1,7 @@
 port: 8080
-logging: info
+logging:
+  record: info
+  web: info
 spring:
   application:
     name: main-flower

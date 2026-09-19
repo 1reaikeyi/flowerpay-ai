@@ -1,4 +1,4 @@
-package start.config;
+package start.load;
 
 import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
 import org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor;
@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class AiConfig {
+public class SpringAiConfig {
     @Bean
     public Advisor loggerAdvisor(){
         return new SimpleLoggerAdvisor();

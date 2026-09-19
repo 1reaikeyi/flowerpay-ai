@@ -1,6 +1,8 @@
 #端口
 port: 8082
-logging: info
+logging:
+  record: info
+  web: info
 spring:
   application:
     name: branch-flower-generator

@@ -4,7 +4,9 @@ server:
 # 日志配置
 logging:
   level:
-    service: ${logging:info}
+    root: ${logging.record:info}
+    org.springframework.web: ${logging.web:info}
+    org.springframework.web.bind: ${logging.web:info}
 # springIOC
 spring:
   # 项目配置文件

@@ -3,7 +3,7 @@ package service.rag;
 import model.enums.ChatEventTypeEnum;
 import model.vo.ChatEventVO;
 import service.session.SessionService;
-import start.config.PromptConfig;
+import start.load.PromptConfig;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.client.ChatClient;
@@ -82,7 +82,6 @@ public class ChatImpl implements Chat {
                         && chatResponse.getResult() != null
                         && chatResponse.getResult().getOutput() != null
                         && chatResponse.getResult().getOutput().getText() != null)
-
                 .map(chatResponse -> {
                     String response = chatResponse.getResult().getOutput().getText();
                     // 追加到输出内容中
@@ -101,7 +100,6 @@ public class ChatImpl implements Chat {
                             .eventType(ChatEventTypeEnum.DATA.getValue())
                             .build());
                 })
-
                 .concatWith(Flux.just(ChatEventVO.builder()
                                 .eventType(ChatEventTypeEnum.STOP.getValue())
                                 .build()));

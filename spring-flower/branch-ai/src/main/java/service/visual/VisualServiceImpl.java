@@ -1,4 +1,4 @@
-package service.graph.visual;
+package service.visual;
 
 import jakarta.annotation.Resource;
 import org.springframework.ai.chat.client.ChatClient;

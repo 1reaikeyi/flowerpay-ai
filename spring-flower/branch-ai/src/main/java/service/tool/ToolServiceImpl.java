@@ -1,4 +1,4 @@
-package service.graph.tool;
+package service.tool;
 
 import model.enums.ChatEventTypeEnum;
 import model.vo.ChatEventVO;

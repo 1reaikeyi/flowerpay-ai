@@ -1,10 +1,12 @@
 port: 8081
-logging: info
+logging:
+  record: info
+  web: info
 spring:
   application:
     name: branch-flower-ai
   config:
-    import: classpath:redis-dev.yml, classpath:mysql-dev.yml, classpath:ai.yml
+    import: [classpath:redis-dev.yml,classpath:mysql-dev.yml,classpath:ai.yml]
 
 
 

@@ -1,6 +1,6 @@
 package start;
 
-import properties.SessionProperties;
+import comom.properties.SessionProperties;
 import lombok.extern.slf4j.Slf4j;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -10,9 +10,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 // anyRequest().permitAll()，ai 模块的 /chat、/session、/see 接口不在鉴权规则内，不会被拦截
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Import;
-import service.impl.FlowerDetailServiceImpl;
-import service.impl.FlowerServiceImpl;
 
 
 @SpringBootApplication

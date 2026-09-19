@@ -1,6 +1,6 @@
 package service.session;
 
-import properties.SessionProperties;
+import comom.properties.SessionProperties;
 import mapper.SessionMapper;
 import model.entity.ChatRecord;
 import model.entity.Session;

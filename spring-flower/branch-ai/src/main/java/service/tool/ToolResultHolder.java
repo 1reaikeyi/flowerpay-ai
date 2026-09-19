@@ -1,4 +1,4 @@
-package service.graph.tool;
+package service.tool;
 
 import cn.hutool.core.lang.Assert;
 
