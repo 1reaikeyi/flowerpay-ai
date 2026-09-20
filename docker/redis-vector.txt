@@ -1,0 +1,7 @@
+docker run -d --name redis-stack \
+--restart always \
+-p 16379:6379 \
+-p 18001:8001 \
+-v redis_vector:/data \
+-e REDIS_ARGS="--appendonly no --requirepass 111222" \
+redis-stack:7.4.7

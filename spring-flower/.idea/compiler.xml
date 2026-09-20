@@ -16,11 +16,15 @@
         <module name="branch-ai" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="branch-monitor" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="branch-ai" options="-parameters" />
       <module name="branch-generator" options="-parameters" />
+      <module name="branch-monitor" options="-parameters" />
       <module name="common" options="-parameters" />
       <module name="framework" options="-parameters" />
       <module name="model" options="-parameters" />

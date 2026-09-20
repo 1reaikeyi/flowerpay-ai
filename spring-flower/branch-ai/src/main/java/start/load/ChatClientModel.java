@@ -1,5 +1,10 @@
 package start.load;
 
+import org.springframework.ai.embedding.EmbeddingModel;
+import org.springframework.ai.vectorstore.VectorStore;
+import org.springframework.ai.vectorstore.redis.RedisVectorStore;
+import org.springframework.beans.factory.annotation.Value;
+import redis.clients.jedis.JedisPooled;
 import service.tool.FlowerTool;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.advisor.api.Advisor;
@@ -13,11 +18,10 @@ public class ChatClientModel {
     @Bean
     public ChatClient chatClient(OpenAiChatModel model,
                                  @Qualifier("loggerAdvisor") Advisor loggerAdvisor,
-                                 @Qualifier("memoryAdvisor") Advisor messageMemoryAdvisor,
-                                 FlowerTool flowerTool) {  // 日志记录器)
+                                 @Qualifier("memoryAdvisor") Advisor messageMemoryAdvisor
+                                ) {  // 日志记录器)
         return ChatClient.builder(model)
                 .defaultAdvisors(loggerAdvisor, messageMemoryAdvisor)
-                .defaultTools(flowerTool)
                 .build();
     }
     @Bean
@@ -35,6 +39,25 @@ public class ChatClientModel {
                                        @Qualifier("loggerAdvisor") Advisor loggerAdvisor) {  // 日志记录器
         return ChatClient.builder(model)
                 .defaultAdvisors(loggerAdvisor)
+                .build();
+    }
+    @Value("${spring.data.redis.password}")
+    private String auth;
+    @Value("${spring.data.redis.port:16379}")
+    private int redisPort;
+    @Value("${spring.data.redis.host}")
+    private String redisHost;
+    @Bean
+    public JedisPooled jedisPooled() {
+        return new JedisPooled("redis://:"+auth+"@"+redisHost+":"+redisPort);
+    }
+
+    @Bean
+    public VectorStore vectorStore(JedisPooled jedisPooled, EmbeddingModel embeddingModel) {
+        return RedisVectorStore.builder(jedisPooled, embeddingModel)
+                .indexName("spring-ai-index")
+                .prefix("emb:")
+                .initializeSchema(true)
                 .build();
     }
 }
