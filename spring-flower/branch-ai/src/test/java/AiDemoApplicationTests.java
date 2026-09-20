@@ -71,7 +71,7 @@ public class AiDemoApplicationTests {
         SearchRequest searchRequest = SearchRequest.builder()
                 .query(question)
                 .topK(3)
-                // .similarityThreshold(0.5)   // 0~1，越大越严格
+                .similarityThreshold(0.5)   // 0~1，越大越严格
                  .filterExpression("type == 'flower'")  // metadata 过滤，可选
                 .build();
         List<Document> retrievedDocs = vectorStore.similaritySearch(searchRequest);

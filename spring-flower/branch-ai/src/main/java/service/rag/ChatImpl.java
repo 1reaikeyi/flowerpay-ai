@@ -2,6 +2,13 @@ package service.rag;
 
 import model.enums.ChatEventTypeEnum;
 import model.vo.ChatEventVO;
+import org.springframework.ai.document.Document;
+import org.springframework.ai.embedding.EmbeddingResponse;
+import org.springframework.ai.openai.OpenAiEmbeddingModel;
+import org.springframework.ai.vectorstore.SearchRequest;
+import org.springframework.ai.vectorstore.VectorStore;
+import org.springframework.data.redis.core.Cursor;
+import org.springframework.data.redis.core.ScanOptions;
 import service.session.SessionService;
 import start.load.PromptConfig;
 import jakarta.annotation.Resource;
@@ -15,6 +22,10 @@ import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Slf4j
 @Service
@@ -30,6 +41,10 @@ public class ChatImpl implements Chat {
     private ChatMemory chatMemory;
     @Autowired
     private SessionService sessionService;
+    @Autowired
+    private OpenAiEmbeddingModel embeddingModel;
+    @Autowired
+    private VectorStore vectorStore;
 
     private final static String OUTPUT_STATUS = "OUTPUT_STATUS";
 
@@ -126,4 +141,37 @@ public class ChatImpl implements Chat {
         // 移除标记
         outputHash.delete(sessionId);
     }
+
+    @Override
+    public EmbeddingResponse embedForResponse(List<String> message) {
+        return embeddingModel.embedForResponse(message);
+    }
+
+    @Override
+    public List<Document> searchMatch(String message) {
+        return vectorStore.similaritySearch(SearchRequest.builder().query(message).topK(2).build());
+    }
+
+    @Override
+    public Map<String, Object> searchAll(String prefix) {
+        Map<String, Object> resultMap = new HashMap<>();
+        ScanOptions scanOptions = ScanOptions.scanOptions()
+                .match(prefix + ":" + "*")
+                .count(100)
+                .build();
+        try (Cursor<String> cursor = stringRedisTemplate.scan(scanOptions)) {
+            while (cursor.hasNext()) {
+                String redisKey = cursor.next();
+                // ========== opsForValue 读取字符串/JSON ==========
+                Object value = stringRedisTemplate.opsForValue().get(redisKey);
+                resultMap.put(redisKey, value);
+            }
+        }
+        return resultMap;
+    }
+    @Override
+    public void deleteById(List<String> ids) {
+        vectorStore.delete(ids);
+    }
+
 }

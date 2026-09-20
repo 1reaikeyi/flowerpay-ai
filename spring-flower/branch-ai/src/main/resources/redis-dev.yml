@@ -3,4 +3,4 @@ flower:
     host: 192.168.80.128
     port: 16379
     password: ${MYSQL_PASSWORD}
-    database: 0
+    database: 2
