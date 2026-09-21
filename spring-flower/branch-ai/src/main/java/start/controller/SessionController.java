@@ -1,9 +1,9 @@
 package start.controller;
 
 import model.entity.Session;
-import model.vo.MessageVO;
-import model.vo.SessionTitleVO;
-import model.vo.SessionVO;
+import vo.MessageVO;
+import vo.SessionTitleVO;
+import vo.SessionVO;
 import service.session.SessionService;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import common.constant.ErrorConstant;

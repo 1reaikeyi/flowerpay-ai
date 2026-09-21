@@ -1,0 +1,57 @@
+package framework.aop.oparation;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import framework.security.SecurityContextParam;
+
+/**
+ * 数据库操作类型OperationType
+ */
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Slf4j
+public class OperationType {
+
+    private String operation;
+    private Long id;
+    private String type;
+    private String status;
+    private Object message;
+    private Long time;
+
+    public static OperationType ok(String operation,Object message, Long time) {
+        OperationType operationType = new OperationType();
+        operationType.operation = operation;
+        operationType.id = SecurityContextParam.getCurrentUserId();
+        operationType.type = SecurityContextParam.getCurrentType();
+        operationType.status = "SUCCESS";
+        operationType.message = message;
+        operationType.time = time;
+        if(message.toString().equals("password")){
+            message = "不许偷看";
+        }
+        log.info("role: " + operationType.type+", ID: "+operationType.id+", 执行操作: "+operationType.operation+
+                ", 使用参数: "+ message +", 运行状态: "+operationType.status + ", 记录时间: " + time + "ms(毫秒)");
+        return operationType;
+    }
+
+    public static OperationType error(String operation,Object message, Long time) {
+        OperationType operationType = new OperationType();
+        operationType.operation = operation;
+        operationType.id = SecurityContextParam.getCurrentUserId();
+        operationType.type = SecurityContextParam.getCurrentType();
+        operationType.status = "ERROR";
+        operationType.time = time;
+        if(message.toString().equals("password")){
+            message = "不许偷看";
+        }
+        log.info("role:" + operationType.type+", ID:"+operationType.id+", 执行操作:"+operationType.operation +
+                ", 使用参数:"+ message +", 运行状态:"+operationType.status);
+        return operationType;
+    }
+}

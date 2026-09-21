@@ -9,13 +9,19 @@ import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import common.constant.*;
+import common.constant.RedisPrefixConstant;
+import common.constant.ErrorConstant;
+import common.constant.JwtConstant;
 import common.exception.EmployeeFailedException;
 import common.exception.LoginFailedException;
 import common.exception.PasswordErrorException;
-import common.properties.JwtProperties;
+
 import common.result.PageResult;
-import common.utils.JwtUtil;
+
+import constant.RoleConstant;
+import constant.StatusConstant;
+import framework.properties.JwtProperties;
+import framework.util.JwtUtil;
 import mapper.EmployeeMapper;
 import model.dto.EmployeeDTO;
 import model.dto.EmployeePageDTO;

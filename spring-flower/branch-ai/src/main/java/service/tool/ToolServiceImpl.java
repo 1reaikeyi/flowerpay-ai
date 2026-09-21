@@ -1,7 +1,7 @@
 package service.tool;
 
-import model.enums.ChatEventTypeEnum;
-import model.vo.ChatEventVO;
+import comom.enums.ChatEventTypeEnum;
+import vo.ChatEventVO;
 import service.memory.mysql.ChatRecordService;
 import service.session.SessionService;
 import jakarta.annotation.Resource;

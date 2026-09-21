@@ -4,8 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import model.entity.FlowerOrderDetail;
-import model.enums.DeliveryStatusEnum;
-import model.enums.OrderStatusEnum;
+import enums.DeliveryStatusEnum;
+import enums.OrderStatusEnum;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

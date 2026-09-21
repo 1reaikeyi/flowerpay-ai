@@ -1,0 +1,42 @@
+package start;
+
+
+
+
+import framework.properties.AliOssProperties;
+import framework.properties.JwtProperties;
+import lombok.extern.slf4j.Slf4j;
+import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+// 日志配置
+@Slf4j
+//主程序入口
+@SpringBootApplication
+// 扫描bean组件
+@ComponentScan(basePackages = {"common","framework","service","start"})
+// 扫描mapper接口
+@MapperScan("mapper")
+//aop
+@EnableAspectJAutoProxy(proxyTargetClass = true)
+// 开启spring-cache缓存
+@EnableCaching
+// 开启事务管理
+@EnableTransactionManagement
+// 开启定时任务
+@EnableScheduling
+// 开启配置属性
+@EnableConfigurationProperties({AliOssProperties.class, JwtProperties.class})
+public class FlowerApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(FlowerApplication.class, args);
+        log.info("--匹配成功");
+    }
+}

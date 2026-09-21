@@ -16,7 +16,7 @@ spring:
       test-on-borrow: false
       test-on-return: false
       # 过滤器：stat统计SQL、wall防火墙、slf4j日志，druidFilter需用全限定类名（非Druid内置别名）
-      filters: stat,wall,slf4j,framework.filter.sql.DruidFilter
+      filters: stat,wall,slf4j,framework.filter.DruidFilter
       # stat监控配置 慢SQL
       filter:
         stat:

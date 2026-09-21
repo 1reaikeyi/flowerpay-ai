@@ -1,13 +1,13 @@
 package service.session;
 
-import comom.properties.SessionProperties;
+import properties.SessionProperties;
 import mapper.SessionMapper;
 import model.entity.ChatRecord;
 import model.entity.Session;
-import model.enums.MessageTypeEnum;
-import model.vo.MessageVO;
-import model.vo.SessionTitleVO;
-import model.vo.SessionVO;
+import comom.enums.MessageTypeEnum;
+import vo.MessageVO;
+import vo.SessionTitleVO;
+import vo.SessionVO;
 import service.rag.Chat;
 import service.memory.AssistantMessageUtil;
 import service.memory.mysql.ChatRecordService;

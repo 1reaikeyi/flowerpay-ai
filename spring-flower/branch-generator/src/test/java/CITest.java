@@ -1,10 +1,10 @@
-import generator.FlowerGeneratorApplication;
+import generator.GeneratorApplication;
 import generator.Generator;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest(classes = FlowerGeneratorApplication.class)
+@SpringBootTest(classes = GeneratorApplication.class)
 public class CITest {
 
     @Autowired

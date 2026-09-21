@@ -49,7 +49,8 @@ public class ChatClientModel {
     private String redisHost;
     @Bean
     public JedisPooled jedisPooled() {
-        return new JedisPooled("redis://:"+auth+"@"+redisHost+":"+redisPort);
+        // 显式指定 database 0：RediSearch 向量索引仅支持 database 0
+        return new JedisPooled("redis://:"+auth+"@"+redisHost+":"+redisPort+"/0");
     }
 
     @Bean

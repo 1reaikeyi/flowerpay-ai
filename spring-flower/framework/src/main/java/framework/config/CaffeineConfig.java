@@ -1,7 +1,5 @@
 package framework.config;
 
-import model.entity.FestivalDetail;
-import model.entity.FlowerDetail;
 import model.vo.FestivalDetailVO;
 import model.vo.FlowerDetailVO;
 import org.springframework.context.annotation.Bean;

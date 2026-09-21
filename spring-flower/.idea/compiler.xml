@@ -7,29 +7,49 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="branch-generator" />
         <module name="framework" />
         <module name="common" />
         <module name="service" />
-        <module name="start" />
-        <module name="branch-generator" />
         <module name="model" />
+        <module name="branch-main" />
         <module name="branch-ai" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="admin" target="17" />
       <module name="branch-monitor" target="17" />
+      <module name="framework-aop" target="17" />
+      <module name="framework-mybatis" target="17" />
+      <module name="framework-oss" target="17" />
+      <module name="framework-pay" target="17" />
+      <module name="framework-redis" target="17" />
+      <module name="framework-security" target="17" />
+      <module name="framework-start" target="17" />
+      <module name="framework-starter" target="17" />
+      <module name="framework-web" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="admin" options="-parameters" />
       <module name="branch-ai" options="-parameters" />
       <module name="branch-generator" options="-parameters" />
+      <module name="branch-main" options="-parameters" />
       <module name="branch-monitor" options="-parameters" />
       <module name="common" options="-parameters" />
       <module name="framework" options="-parameters" />
+      <module name="framework-aop" options="-parameters" />
+      <module name="framework-mybatis" options="-parameters" />
+      <module name="framework-oss" options="-parameters" />
+      <module name="framework-pay" options="-parameters" />
+      <module name="framework-redis" options="-parameters" />
+      <module name="framework-security" options="-parameters" />
+      <module name="framework-start" options="-parameters" />
+      <module name="framework-starter" options="-parameters" />
+      <module name="framework-web" options="-parameters" />
       <module name="model" options="-parameters" />
       <module name="service" options="-parameters" />
-      <module name="start" options="-parameters" />
     </option>
   </component>
 </project>

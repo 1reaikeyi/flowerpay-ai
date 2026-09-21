@@ -26,8 +26,8 @@ public class ToolFunction implements NodeAction {
 
         String result =  toolService.chat(input,question)
                 .collectList()
-                .timeout(Duration.ofSeconds(80))
-                .blockOptional(Duration.ofSeconds(120))
+                .timeout(Duration.ofSeconds(30))
+                .blockOptional(Duration.ofSeconds(35))
                 .toString();
         return Map.of("toolResult", result);
     }

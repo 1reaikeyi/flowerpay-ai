@@ -5,11 +5,12 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import common.constant.ErrorConstant;
 import common.constant.JwtConstant;
 import common.constant.RedisPrefixConstant;
-import common.constant.RoleConstant;
 import common.exception.LoginFailedException;
 import common.exception.UserFailedException;
-import common.properties.JwtProperties;
-import common.utils.JwtUtil;
+
+import constant.RoleConstant;
+import framework.properties.JwtProperties;
+import framework.util.JwtUtil;
 import mapper.UserMapper;
 import model.dto.LoginDTO;
 import model.dto.UserDTO;

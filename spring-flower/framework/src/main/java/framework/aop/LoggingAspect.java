@@ -1,22 +1,21 @@
 package framework.aop;
 
-import cn.hutool.core.util.StrUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.stereotype.Component;
-import framework.oparation.OperationType;
+
 
 import java.lang.reflect.Method;
-import java.util.Arrays;
+
 @Slf4j
 @Aspect // 标记为AOP切面类
 @Component
 public class LoggingAspect {
 
-    @Around("@annotation(framework.aop.Logging)")
+    @Around("@annotation(com.framework.aop.Logging)")
     public Object interceptServiceMethod(ProceedingJoinPoint joinPoint) throws Throwable {
         // 1. 获取注解信息和目标方法信息
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();

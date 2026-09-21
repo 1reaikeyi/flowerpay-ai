@@ -1,9 +1,9 @@
 package service.session;
 
 import model.entity.Session;
-import model.vo.MessageVO;
-import model.vo.SessionTitleVO;
-import model.vo.SessionVO;
+import vo.MessageVO;
+import vo.SessionTitleVO;
+import vo.SessionVO;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 

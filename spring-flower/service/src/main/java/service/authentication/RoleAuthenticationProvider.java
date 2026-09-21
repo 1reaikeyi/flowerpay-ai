@@ -1,7 +1,7 @@
 package service.authentication;
 
-import common.constant.RoleConstant;
 import common.exception.PasswordErrorException;
+import constant.RoleConstant;
 import framework.security.LoginUserDetails;
 import model.entity.Employee;
 import model.entity.User;

@@ -1,14 +1,15 @@
 package service.rag;
 
-import model.enums.ChatEventTypeEnum;
-import model.vo.ChatEventVO;
+import comom.enums.ChatEventTypeEnum;
+import vo.ChatEventVO;
 import org.springframework.ai.document.Document;
 import org.springframework.ai.embedding.EmbeddingResponse;
 import org.springframework.ai.openai.OpenAiEmbeddingModel;
 import org.springframework.ai.vectorstore.SearchRequest;
 import org.springframework.ai.vectorstore.VectorStore;
-import org.springframework.data.redis.core.Cursor;
-import org.springframework.data.redis.core.ScanOptions;
+import redis.clients.jedis.JedisPooled;
+import redis.clients.jedis.params.ScanParams;
+import redis.clients.jedis.resps.ScanResult;
 import service.session.SessionService;
 import start.load.PromptConfig;
 import jakarta.annotation.Resource;
@@ -22,7 +23,6 @@ import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -45,6 +45,9 @@ public class ChatImpl implements Chat {
     private OpenAiEmbeddingModel embeddingModel;
     @Autowired
     private VectorStore vectorStore;
+    // 向量库连接（database 0，RediSearch 仅支持 0）
+    @Autowired
+    private JedisPooled jedisPooled;
 
     private final static String OUTPUT_STATUS = "OUTPUT_STATUS";
 
@@ -155,18 +158,24 @@ public class ChatImpl implements Chat {
     @Override
     public Map<String, Object> searchAll(String prefix) {
         Map<String, Object> resultMap = new HashMap<>();
-        ScanOptions scanOptions = ScanOptions.scanOptions()
-                .match(prefix + ":" + "*")
-                .count(100)
-                .build();
-        try (Cursor<String> cursor = stringRedisTemplate.scan(scanOptions)) {
-            while (cursor.hasNext()) {
-                String redisKey = cursor.next();
-                // ========== opsForValue 读取字符串/JSON ==========
-                Object value = stringRedisTemplate.opsForValue().get(redisKey);
-                resultMap.put(redisKey, value);
+        ScanParams scanParams = new ScanParams().match(prefix + ":" + "*").count(100);
+        String cursor = ScanParams.SCAN_POINTER_START;
+        do {
+            ScanResult<String> scanResult = jedisPooled.scan(cursor, scanParams);
+            for (String redisKey : scanResult.getResult()) {
+                String type = jedisPooled.type(redisKey);
+                switch (type) {
+                    case "hash" -> {
+                        Map<String, String> doc = jedisPooled.hgetAll(redisKey);
+                        doc.remove("embedding");
+                        resultMap.put(redisKey, doc);
+                    }
+                    case "string" -> resultMap.put(redisKey, jedisPooled.get(redisKey));
+                    default -> { }
+                }
             }
-        }
+            cursor = scanResult.getCursor();
+        } while (!ScanParams.SCAN_POINTER_START.equals(cursor));
         return resultMap;
     }
     @Override

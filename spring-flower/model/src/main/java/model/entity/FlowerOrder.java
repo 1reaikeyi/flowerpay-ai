@@ -3,8 +3,8 @@ package model.entity;
 import com.baomidou.mybatisplus.annotation.*;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
-import model.enums.DeliveryStatusEnum;
-import model.enums.OrderStatusEnum;
+import enums.DeliveryStatusEnum;
+import enums.OrderStatusEnum;
 
 import java.io.Serializable;
 import java.time.LocalDate;

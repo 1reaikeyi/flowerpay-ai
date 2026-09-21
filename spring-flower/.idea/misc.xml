@@ -5,11 +5,18 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/framework/framework-starter/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/admin/pom.xml" />
         <option value="$PROJECT_DIR$/branch-monitor/pom.xml" />
+        <option value="$PROJECT_DIR$/framework/framework-oss/pom.xml" />
+        <option value="$PROJECT_DIR$/framework/framework-redis/pom.xml" />
+        <option value="$PROJECT_DIR$/framework/framework-start/pom.xml" />
+        <option value="$PROJECT_DIR$/framework/framework-starter/pom.xml" />
+        <option value="$PROJECT_DIR$/framework/framework-web/pom.xml" />
       </set>
     </option>
   </component>

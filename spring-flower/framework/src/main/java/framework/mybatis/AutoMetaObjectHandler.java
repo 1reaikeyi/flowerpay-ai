@@ -1,0 +1,32 @@
+package framework.mybatis;
+
+import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
+
+
+import framework.constant.FillHandleConstant;
+import framework.security.SecurityContextParam;
+import org.apache.ibatis.reflection.MetaObject;
+import org.springframework.stereotype.Component;
+
+import java.time.LocalDateTime;
+
+@Component
+public class AutoMetaObjectHandler implements MetaObjectHandler {
+    private Long getUserId(){
+        return SecurityContextParam.getCurrentUserId();
+    }
+
+    @Override
+    public void insertFill(MetaObject metaObject) {
+        this.setFieldValByName(FillHandleConstant.CREATE_TIME_HANDLER, LocalDateTime.now(), metaObject);
+        this.setFieldValByName(FillHandleConstant.UPDATE_TIME_HANDLER, LocalDateTime.now(), metaObject);
+        this.setFieldValByName(FillHandleConstant.CREATE_USER_HANDLER, getUserId(), metaObject);
+        this.setFieldValByName(FillHandleConstant.UPDATE_USER_HANDLER, getUserId(), metaObject);
+    }
+
+    @Override
+    public void updateFill(MetaObject metaObject) {
+        this.setFieldValByName(FillHandleConstant.UPDATE_TIME_HANDLER, LocalDateTime.now(), metaObject);
+        this.setFieldValByName(FillHandleConstant.UPDATE_USER_HANDLER, getUserId(), metaObject);
+    }
+}

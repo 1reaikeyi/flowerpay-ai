@@ -7,7 +7,7 @@
         <artifactId>spring-flower</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>com</groupId>
+    <groupId>org.example</groupId>
     <artifactId>branch-ai</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
@@ -49,21 +49,7 @@
             <artifactId>service</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-        <dependency>
-            <groupId>org.example</groupId>
-            <artifactId>framework</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>org.example</groupId>
-            <artifactId>model</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>org.example</groupId>
-            <artifactId>common</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
+
         <!-- Spring AI OpenAI 模型依赖 -->
         <dependency>
             <groupId>com.alibaba.cloud.ai</groupId>

@@ -1,11 +1,10 @@
 package start.controller;
 
 import common.result.Result;
-import model.dto.ChatDTO;
-import model.vo.ChatEventVO;
+import dto.ChatDTO;
+import vo.ChatEventVO;
 import org.springframework.ai.document.Document;
 import org.springframework.ai.embedding.EmbeddingResponse;
-import org.springframework.ai.vectorstore.SearchRequest;
 import service.rag.Chat;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,7 +56,7 @@ public class ChatController {
     }
     //查询知识库内容
     @GetMapping("/search")
-    public Result searchAll(String prefix){
+    public Result searchAll(@RequestParam String prefix){
         Map<String, Object> result = chatService.searchAll(prefix);
         return Result.success(result);
     }

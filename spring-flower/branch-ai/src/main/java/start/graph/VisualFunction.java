@@ -27,9 +27,10 @@ public class VisualFunction implements NodeAction {
 
         Media media = new Media(MimeTypeUtils.IMAGE_JPEG, URI.create("data:image/jpeg;base64," + file));
 
-        String result =  visualService.chat(media).collectList()
-                .timeout(Duration.ofSeconds(30))
-                .blockOptional(Duration.ofSeconds(60))
+        String result =  visualService.chat(media)
+                .collectList()
+                .timeout(Duration.ofSeconds(60))
+                .blockOptional(Duration.ofSeconds(65))
                 .toString();
         return Map.of("visualResult",result);
     }
