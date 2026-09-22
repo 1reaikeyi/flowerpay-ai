@@ -1,4 +1,4 @@
-package vo;
+package start.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

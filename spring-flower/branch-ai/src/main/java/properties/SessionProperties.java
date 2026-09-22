@@ -1,6 +1,6 @@
 package properties;
 
-import vo.SessionVO;
+import start.vo.SessionVO;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;

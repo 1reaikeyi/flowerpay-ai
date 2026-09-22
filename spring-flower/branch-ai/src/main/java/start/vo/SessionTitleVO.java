@@ -1,22 +1,28 @@
-package dto;
+package start.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ChatDTO {
+public class SessionTitleVO {
 
-    /**
-     * 用户的问题
-     */
-    private String question;
     /**
      * 会话id
      */
     private String sessionId;
+
+    /**
+     * 会话标题
+     */
+    private String title;
+
+    private LocalDateTime updateTime;
+
 }

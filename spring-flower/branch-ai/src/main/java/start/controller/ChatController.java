@@ -1,8 +1,8 @@
 package start.controller;
 
 import common.result.Result;
-import dto.ChatDTO;
-import vo.ChatEventVO;
+import model.dto.ChatDTO;
+import start.vo.ChatEventVO;
 import org.springframework.ai.document.Document;
 import org.springframework.ai.embedding.EmbeddingResponse;
 import service.rag.Chat;
@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 
 import java.util.List;
-import java.util.Map;
 
 
 @RestController
@@ -42,9 +41,9 @@ public class ChatController {
     public Result saveVectorStore(@RequestParam("messages") List<String> messages) {
         return Result.success("保存到向量数据库数量:"+messages.size());
     }
-    //返回 ：返回向量表示（通常是浮点数数组）
-    @PostMapping
-    public Result embedding(@RequestParam("message") String message) {
+    //return 返回向量表示（通常是浮点数数组）
+    @GetMapping("/embedding")
+       public Result embedding(@RequestParam("message") String message) {
         EmbeddingResponse embeddingResponse = chatService.embedForResponse(List.of(message));
         return Result.success(embeddingResponse);
     }

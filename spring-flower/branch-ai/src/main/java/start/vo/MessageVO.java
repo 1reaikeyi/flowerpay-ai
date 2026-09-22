@@ -1,4 +1,4 @@
-package vo;
+package start.vo;
 
 import comom.enums.MessageTypeEnum;
 import lombok.AllArgsConstructor;

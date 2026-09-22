@@ -1,17 +1,12 @@
 package service.rag;
 
 import comom.enums.ChatEventTypeEnum;
-import vo.ChatEventVO;
+import start.vo.ChatEventVO;
 import org.springframework.ai.document.Document;
 import org.springframework.ai.embedding.EmbeddingResponse;
 import org.springframework.ai.openai.OpenAiEmbeddingModel;
 import org.springframework.ai.vectorstore.SearchRequest;
 import org.springframework.ai.vectorstore.VectorStore;
-import cn.hutool.json.JSONObject;
-import cn.hutool.json.JSONUtil;
-import redis.clients.jedis.JedisPooled;
-import redis.clients.jedis.params.ScanParams;
-import redis.clients.jedis.resps.ScanResult;
 import service.session.SessionService;
 import start.load.PromptConfig;
 import jakarta.annotation.Resource;
@@ -25,9 +20,7 @@ import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 
 import java.time.LocalDateTime;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 @Slf4j
@@ -85,11 +78,12 @@ public class ChatImpl implements Chat {
         }
         return chatClient.prompt()
                 .user(result)
+                //局部参数
                 .advisors(advisorSpec -> advisorSpec
                         //会话记忆
                         .param(ChatMemory.CONVERSATION_ID, conversationId))
+                //系统role
                 .system(promptSystemSpec -> promptSystemSpec
-                        //系统role
                         .text(systemPromptConfig.getChatSystemMessage().get())
                         .param("now", LocalDateTime.now())
                 )
@@ -106,7 +100,7 @@ public class ChatImpl implements Chat {
                 })
                 //控制是否继续
                 .takeWhile(chatResponse -> outputHash.get(sessionId) != null)
-                // 流式返回的部分分块（如 usage/finish 分块）getResult() 可能为 null，直接跳过
+                // 流式返回的部分分块getResult() 可能为 null，直接跳过
                 .filter(chatResponse -> chatResponse != null
                         && chatResponse.getResult() != null
                         && chatResponse.getResult().getOutput() != null
@@ -121,6 +115,7 @@ public class ChatImpl implements Chat {
                             .build();
                     return chatEventVO;
                 })
+                //异常处理
                 .onErrorResume(e -> {
                     log.error("对话流式输出异常, sessionId={}", sessionId, e);
                     outputHash.delete(sessionId);
@@ -129,10 +124,18 @@ public class ChatImpl implements Chat {
                             .eventType(ChatEventTypeEnum.DATA.getValue())
                             .build());
                 })
+                //添加结束标志
                 .concatWith(Flux.just(ChatEventVO.builder()
                                 .eventType(ChatEventTypeEnum.STOP.getValue())
                                 .build()));
     }
+
+    /**
+     * rag召回搜索
+     * @param question
+     * @param sessionId
+     * @return
+     */
     private String rag(String question, String sessionId) {
         SearchRequest searchRequest = SearchRequest.builder()
                 .query(question)
@@ -159,12 +162,12 @@ public class ChatImpl implements Chat {
                 question, retrievedDocs.size(), hitDocs.size(),
                 retrievedDocs.get(0).getScore());
 
-        // context 只拼达标文档，不达标的别喂给模型（省 token、降低干扰）
+        // context 只拼达标文档
         String context = hitDocs.stream()
                 .map(Document::getText)
                 .collect(Collectors.joining("\n---\n"));
         String prompt = """
-                         请根据以下参考上下文回答问题。如果上下文中没有答案，请明确说"不知道"。
+                         请根据以下参考上下文回答问题。如果上下文中没有答案，根据自己的知识回答"。
                          ## 参考上下文
                          %s
                          ## 问题
@@ -203,7 +206,6 @@ public class ChatImpl implements Chat {
     public List<Document> searchMatch(String message) {
         return vectorStore.similaritySearch(SearchRequest.builder().query(message).topK(2).build());
     }
-
 
     @Override
     public void deleteById(List<String> ids) {

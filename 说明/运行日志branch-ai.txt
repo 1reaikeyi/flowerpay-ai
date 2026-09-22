@@ -1,0 +1,73 @@
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4bb9b704] was not registered for synchronization because synchronization is not active
+JDBC Connection [ConnectionProxyImpl{connectedTime=2026-09-22 20:17:24.37, closeCount=0, lastValidateTimeMillis=2026-09-22 20:21:05.986}] will not be managed by Spring
+==>  Preparing: SELECT id,session_id,user_id,title,create_time,update_time FROM chat_session WHERE (session_id = ?)
+==> Parameters: 2026-09-22-20-11-03(String)
+<==    Columns: id, session_id, user_id, title, create_time, update_time
+<==        Row: 2102370088869998593, 2026-09-22-20-11-03, 0, 请问，有向日葵吗？, 2026-09-22 20:11:04, 2026-09-22 20:17:32
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4bb9b704]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4434a38] was not registered for synchronization because synchronization is not active
+JDBC Connection [ConnectionProxyImpl{connectedTime=2026-09-22 20:17:24.37, closeCount=0, lastValidateTimeMillis=2026-09-22 20:21:05.986}] will not be managed by Spring
+==>  Preparing: UPDATE chat_session SET session_id=?, user_id=?, title=?, create_time=?, update_time=? WHERE id=?
+==> Parameters: 2026-09-22-20-11-03(String), 0(Long), 向日葵适合送给那些对象？(String), 2026-09-22T20:11:04(LocalDateTime), 2026-09-22T20:21:05.988949700(LocalDateTime), 2102370088869998593(Long)
+<==    Updates: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4434a38]
+2026-09-22T20:21:06.222+08:00  INFO 32036 --- [branch-flower-ai] [nio-8081-exec-6] service.rag.ChatImpl                     : RAG命中, question=向日葵适合送给那些对象？, 召回数=3, 达标数=3, top1分数=0.9218825697898865
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1ed86421] was not registered for synchronization because synchronization is not active
+JDBC Connection [ConnectionProxyImpl{connectedTime=2026-09-22 20:17:24.37, closeCount=0, lastValidateTimeMillis=2026-09-22 20:21:05.986}] will not be managed by Spring
+==>  Preparing: SELECT id,session_id,data,create_time,update_time FROM chat_record WHERE (session_id = ?) ORDER BY create_time ASC
+==> Parameters: 2026-09-22-20-11-03(String)
+<==    Columns: id, session_id, data, create_time, update_time
+<==        Row: 2102371763089326081, 2026-09-22-20-11-03, <<BLOB>>, 2026-09-22 20:17:43, 2026-09-22 20:17:43
+<==        Row: 2102371763089326082, 2026-09-22-20-11-03, <<BLOB>>, 2026-09-22 20:17:43, 2026-09-22 20:17:43
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1ed86421]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@57735c67] was not registered for synchronization because synchronization is not active
+JDBC Connection [ConnectionProxyImpl{connectedTime=2026-09-22 20:17:24.37, closeCount=0, lastValidateTimeMillis=2026-09-22 20:21:05.986}] will not be managed by Spring
+==>  Preparing: SELECT id,session_id,data,create_time,update_time FROM chat_record WHERE (session_id = ?) ORDER BY create_time ASC
+==> Parameters: 2026-09-22-20-11-03(String)
+<==    Columns: id, session_id, data, create_time, update_time
+<==        Row: 2102371763089326081, 2026-09-22-20-11-03, <<BLOB>>, 2026-09-22 20:17:43, 2026-09-22 20:17:43
+<==        Row: 2102371763089326082, 2026-09-22-20-11-03, <<BLOB>>, 2026-09-22 20:17:43, 2026-09-22 20:17:43
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@57735c67]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7511b2ff] was not registered for synchronization because synchronization is not active
+JDBC Connection [ConnectionProxyImpl{connectedTime=2026-09-22 20:17:24.37, closeCount=0, lastValidateTimeMillis=2026-09-22 20:21:05.986}] will not be managed by Spring
+==>  Preparing: DELETE FROM chat_record WHERE (session_id = ?)
+==> Parameters: 2026-09-22-20-11-03(String)
+<==    Updates: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7511b2ff]
+JDBC Connection [ConnectionProxyImpl{connectedTime=2026-09-22 20:17:24.37, closeCount=0, lastValidateTimeMillis=2026-09-22 20:21:05.986}] will be managed by Spring
+==>  Preparing: INSERT INTO chat_record ( id, session_id, data, create_time, update_time ) VALUES ( ?, ?, ?, ?, ? )
+==> Parameters: 2102372614952468482(Long), 2026-09-22-20-11-03(String), {"messageType":"USER","metadata":{"messageType":"USER"},"media":[],"toolCalls":[],"textContent":" 请根据以下参考上下文回答问题。如果上下文中没有答案，请明确说\"不知道\"。\n ## 参考上下文\n 向日葵是菊科向日葵属植物，花盘形似太阳，朝向阳光生长，花色以金黄色为主，花语是沉默的爱、仰慕与忠诚，适合送给朋友和长辈，传递积极向上的正能量。\n---\n玫瑰是蔷薇科蔷薇属植物，被誉为\"花中皇后\"，花色丰富，有红、粉、白、黄等多种颜色，象征爱情与美好，是情人节最受欢迎的鲜花之一。\n---\n百合是百合科百合属多年生草本植物，花朵硕大优雅，常见有白色、粉色、黄色等，香味浓郁清新，寓意百年好合、纯洁高雅，常用于婚礼和家居装饰。\n ## 问题\n 请问，有向日葵吗？\n","toolResponses":[],"sessionId":"2026-09-22-20-11-03","params":{}}(String), 2026-09-22T20:21:06.256722100(LocalDateTime), 2026-09-22T20:21:06.256722100(LocalDateTime)
+==> Parameters: 2102372614952468483(Long), 2026-09-22-20-11-03(String), {"messageType":"ASSISTANT","metadata":{"role":"ASSISTANT","messageType":"ASSISTANT","refusal":"","finishReason":"STOP","annotations":[],"index":0,"id":"chatcmpl-754ff65d-da51-90c3-9967-574edda66f29","reasoningContent":""},"media":[],"toolCalls":[],"textContent":"有的呀～向日葵是菊科向日葵属植物，花盘形似太阳，朝向阳光生长，花色以金黄色为主，花语是沉默的爱、仰慕与忠诚，很适合送给朋友和长辈，传递积极向上的能量。\n\n如果您是想购买向日葵花束或花礼，也可以告诉我：送花对象、预算范围、场合和喜欢的风格，我来帮您挑选合适的款式～","toolResponses":[],"sessionId":"2026-09-22-20-11-03","params":{}}(String), 2026-09-22T20:21:06.257226(LocalDateTime), 2026-09-22T20:21:06.257226(LocalDateTime)
+==> Parameters: 2102372614952468484(Long), 2026-09-22-20-11-03(String), {"messageType":"USER","metadata":{"messageType":"USER"},"media":[],"toolCalls":[],"textContent":" 请根据以下参考上下文回答问题。如果上下文中没有答案，请明确说\"不知道\"。\n ## 参考上下文\n 向日葵是菊科向日葵属植物，花盘形似太阳，朝向阳光生长，花色以金黄色为主，花语是沉默的爱、仰慕与忠诚，适合送给朋友和长辈，传递积极向上的正能量。\n---\n玫瑰是蔷薇科蔷薇属植物，被誉为\"花中皇后\"，花色丰富，有红、粉、白、黄等多种颜色，象征爱情与美好，是情人节最受欢迎的鲜花之一。\n---\n百合是百合科百合属多年生草本植物，花朵硕大优雅，常见有白色、粉色、黄色等，香味浓郁清新，寓意百年好合、纯洁高雅，常用于婚礼和家居装饰。\n ## 问题\n 向日葵适合送给那些对象？\n","toolResponses":[],"sessionId":"2026-09-22-20-11-03","params":{}}(String), 2026-09-22T20:21:06.258243200(LocalDateTime), 2026-09-22T20:21:06.258243200(LocalDateTime)
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@373ffc75] was not registered for synchronization because synchronization is not active
+JDBC Connection [ConnectionProxyImpl{connectedTime=2026-09-22 20:17:24.37, closeCount=0, lastValidateTimeMillis=2026-09-22 20:21:05.986}] will not be managed by Spring
+==>  Preparing: SELECT id,session_id,data,create_time,update_time FROM chat_record WHERE (session_id = ?) ORDER BY create_time ASC
+==> Parameters: 2026-09-22-20-11-03(String)
+<==    Columns: id, session_id, data, create_time, update_time
+<==        Row: 2102372614952468482, 2026-09-22-20-11-03, <<BLOB>>, 2026-09-22 20:21:06, 2026-09-22 20:21:06
+<==        Row: 2102372614952468483, 2026-09-22-20-11-03, <<BLOB>>, 2026-09-22 20:21:06, 2026-09-22 20:21:06
+<==        Row: 2102372614952468484, 2026-09-22-20-11-03, <<BLOB>>, 2026-09-22 20:21:06, 2026-09-22 20:21:06
+<==      Total: 3
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@373ffc75]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@47e3d3a4] was not registered for synchronization because synchronization is not active
+JDBC Connection [ConnectionProxyImpl{connectedTime=2026-09-22 20:17:24.37, closeCount=0, lastValidateTimeMillis=2026-09-22 20:21:05.986}] will not be managed by Spring
+==>  Preparing: DELETE FROM chat_record WHERE (session_id = ?)
+==> Parameters: 2026-09-22-20-11-03(String)
+<==    Updates: 3
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@47e3d3a4]
+JDBC Connection [ConnectionProxyImpl{connectedTime=2026-09-22 20:17:24.37, closeCount=0, lastValidateTimeMillis=2026-09-22 20:21:05.986}] will be managed by Spring
+==>  Preparing: INSERT INTO chat_record ( id, session_id, data, create_time, update_time ) VALUES ( ?, ?, ?, ?, ? )
+==> Parameters: 2102372632824397825(Long), 2026-09-22-20-11-03(String), {"messageType":"USER","metadata":{"messageType":"USER"},"media":[],"toolCalls":[],"textContent":" 请根据以下参考上下文回答问题。如果上下文中没有答案，请明确说\"不知道\"。\n ## 参考上下文\n 向日葵是菊科向日葵属植物，花盘形似太阳，朝向阳光生长，花色以金黄色为主，花语是沉默的爱、仰慕与忠诚，适合送给朋友和长辈，传递积极向上的正能量。\n---\n玫瑰是蔷薇科蔷薇属植物，被誉为\"花中皇后\"，花色丰富，有红、粉、白、黄等多种颜色，象征爱情与美好，是情人节最受欢迎的鲜花之一。\n---\n百合是百合科百合属多年生草本植物，花朵硕大优雅，常见有白色、粉色、黄色等，香味浓郁清新，寓意百年好合、纯洁高雅，常用于婚礼和家居装饰。\n ## 问题\n 请问，有向日葵吗？\n","toolResponses":[],"sessionId":"2026-09-22-20-11-03","params":{}}(String), 2026-09-22T20:21:10.527453500(LocalDateTime), 2026-09-22T20:21:10.527453500(LocalDateTime)
+==> Parameters: 2102372632824397826(Long), 2026-09-22-20-11-03(String), {"messageType":"ASSISTANT","metadata":{"role":"ASSISTANT","messageType":"ASSISTANT","refusal":"","finishReason":"STOP","annotations":[],"index":0,"id":"chatcmpl-754ff65d-da51-90c3-9967-574edda66f29","reasoningContent":""},"media":[],"toolCalls":[],"textContent":"有的呀～向日葵是菊科向日葵属植物，花盘形似太阳，朝向阳光生长，花色以金黄色为主，花语是沉默的爱、仰慕与忠诚，很适合送给朋友和长辈，传递积极向上的能量。\n\n如果您是想购买向日葵花束或花礼，也可以告诉我：送花对象、预算范围、场合和喜欢的风格，我来帮您挑选合适的款式～","toolResponses":[],"sessionId":"2026-09-22-20-11-03","params":{}}(String), 2026-09-22T20:21:10.527453500(LocalDateTime), 2026-09-22T20:21:10.527453500(LocalDateTime)
+==> Parameters: 2102372632824397827(Long), 2026-09-22-20-11-03(String), {"messageType":"USER","metadata":{"messageType":"USER"},"media":[],"toolCalls":[],"textContent":" 请根据以下参考上下文回答问题。如果上下文中没有答案，请明确说\"不知道\"。\n ## 参考上下文\n 向日葵是菊科向日葵属植物，花盘形似太阳，朝向阳光生长，花色以金黄色为主，花语是沉默的爱、仰慕与忠诚，适合送给朋友和长辈，传递积极向上的正能量。\n---\n玫瑰是蔷薇科蔷薇属植物，被誉为\"花中皇后\"，花色丰富，有红、粉、白、黄等多种颜色，象征爱情与美好，是情人节最受欢迎的鲜花之一。\n---\n百合是百合科百合属多年生草本植物，花朵硕大优雅，常见有白色、粉色、黄色等，香味浓郁清新，寓意百年好合、纯洁高雅，常用于婚礼和家居装饰。\n ## 问题\n 向日葵适合送给那些对象？\n","toolResponses":[],"sessionId":"2026-09-22-20-11-03","params":{}}(String), 2026-09-22T20:21:10.527453500(LocalDateTime), 2026-09-22T20:21:10.527453500(LocalDateTime)
+==> Parameters: 2102372632874729474(Long), 2026-09-22-20-11-03(String), {"messageType":"ASSISTANT","metadata":{"role":"ASSISTANT","messageType":"ASSISTANT","refusal":"","finishReason":"STOP","annotations":[],"index":0,"id":"chatcmpl-a4dbf836-ddf2-90af-8103-ad8fc25fbf70","reasoningContent":""},"media":[],"toolCalls":[],"textContent":"向日葵很适合送给**朋友和长辈**哦～它的花语是“沉默的爱、仰慕与忠诚”，金黄色又特别阳光温暖，很适合用来表达关心、敬意和祝福，传递积极向上的正能量。","toolResponses":[],"sessionId":"2026-09-22-20-11-03","params":{}}(String), 2026-09-22T20:21:10.529481700(LocalDateTime), 2026-09-22T20:21:10.529481700(LocalDateTime)

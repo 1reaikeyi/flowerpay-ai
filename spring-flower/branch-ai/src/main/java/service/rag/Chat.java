@@ -1,12 +1,11 @@
 package service.rag;
 
-import vo.ChatEventVO;
+import start.vo.ChatEventVO;
 import org.springframework.ai.document.Document;
 import org.springframework.ai.embedding.EmbeddingResponse;
 import reactor.core.publisher.Flux;
 
 import java.util.List;
-import java.util.Map;
 
 public interface Chat {
     /**
