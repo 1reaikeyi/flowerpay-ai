@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!-- 应用名spring.application.name 保持一致） -->
+    <property name="app.name" value="main-flower"/>
+    <!-- 日志根目录 -->
+    <property name="log.path" value="./logs"/>
+    <!-- 日志文件名前缀 -->
+    <property name="log.file.prefix" value="${app.name}"/>
+
+    <!-- 控制台日志格式：与 framework.aop.LoggingAspect 的 "=>" 前缀呼应 -->
+    <property name="console.log.pattern"
+              value="%cyan(%d{yyyy-MM-dd HH:mm:ss}) %green([%thread]) %highlight(%-5level) %boldMagenta(%logger{36}) ==&gt; %msg%n"/>
+    <!-- 文件日志格式 -->
+    <property name="log.pattern"
+              value="%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} ==&gt; %msg%n"/>
+
+    <!-- 控制台输出 -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${console.log.pattern}</pattern>
+            <charset>utf-8</charset>
+        </encoder>
+    </appender>
+
+    <!-- INFO 级别日志文件（按天滚动 + gzip 压缩，保留 30天） -->
+    <appender name="FILE_INFO" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/${log.file.prefix}-info.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.path}/${log.file.prefix}-info.%d{yyyy-MM-dd}.log.gz</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${log.pattern}</pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>INFO</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+    </appender>
+
+    <!-- ERROR 级别日志文件（按天滚动 + gzip 压缩，保留 30天） -->
+    <appender name="FILE_ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/${log.file.prefix}-error.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.path}/${log.file.prefix}-error.%d{yyyy-MM-dd}.log.gz</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${log.pattern}</pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+    </appender>
+
+    <!-- INFO 异步输出（不丢失日志，队列深度 128） -->
+    <appender name="ASYNC_INFO" class="ch.qos.logback.classic.AsyncAppender">
+        <discardingThreshold>0</discardingThreshold>
+        <queueSize>128</queueSize>
+        <appender-ref ref="FILE_INFO"/>
+    </appender>
+
+    <!-- ERROR 异步输出（不丢失日志，队列深度 128） -->
+    <appender name="ASYNC_ERROR" class="ch.qos.logback.classic.AsyncAppender">
+        <discardingThreshold>0</discardingThreshold>
+        <queueSize>128</queueSize>
+        <appender-ref ref="FILE_ERROR"/>
+    </appender>
+
+
+    <!-- MyBatis / ibatis SQL 调试（dev 下可调为 DEBUG） -->
+    <logger name="org.apache.ibatis" level="INFO"/>
+    <logger name="org.mybatis" level="INFO"/>
+    <!-- Spring 事务 -->
+    <logger name="org.springframework.transaction" level="INFO"/>
+    <!-- Druid 连接池（pool 自身 + SQL 监控） -->
+    <logger name="com.alibaba.druid" level="INFO"/>
+    <logger name="druid.sql" level="INFO"/>
+    <!-- Spring Web -->
+    <logger name="org.springframework.web" level="${logging.web:info}"/>
+    <logger name="org.springframework.web.bind" level="${logging.web:info}"/>
+
+    <!-- ============== 整合 skywalking（默认注释，启用时取消注释并引入依赖） ============== -->
+    <!--
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+            <layout class="org.apache.skywalking.apm.toolkit.log.logback.v1.x.TraceIdPatternLogbackLayout">
+                <pattern>[%tid] ${console.log.pattern}</pattern>
+            </layout>
+            <charset>utf-8</charset>
+        </encoder>
+    </appender>
+
+    <appender name="SKY_LOG" class="org.apache.skywalking.apm.toolkit.log.logback.v1.x.log.GRPCLogClientAppender">
+        <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+            <layout class="org.apache.skywalking.apm.toolkit.log.logback.v1.x.TraceIdPatternLogbackLayout">
+                <pattern>[%tid] ${console.log.pattern}</pattern>
+            </layout>
+            <charset>utf-8</charset>
+        </encoder>
+    </appender>
+    -->
+
+    <!-- 系统操作日志 -->
+    <root level="${logging.record:info}">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="ASYNC_INFO"/>
+        <appender-ref ref="ASYNC_ERROR"/>
+        <!-- <appender-ref ref="SKY_LOG"/> -->
+    </root>
+
+</configuration>

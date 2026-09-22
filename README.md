@@ -1,8 +1,9 @@
 <div align="center">
   <h1>flowerpay-ai 鲜花商店 + ai</h1>
   <h5>flowerpay-ai：B2C 经营模式，一个花店卖家，多个买家。鲜花服务由店长、店员和客户组成。</h5>
-  <h5>后端利用 Spring Boot 3 的高效与安全性提供 RESTful API 服务，前端借助 Vue 3 实现流畅的用户交互体验的构建的现代化前后端分离系统。通过多级缓存热点数据以提升系统响应速度，Druid 负责MySQL连接池与 SQL 监控，保障订单、库存数据访问；使用Actuator采集缓存命中率使用情况。主业务为鲜花经营，送人，用途，管理，销售。分支业务org.springframework.ai的openai +com.alibaba.cloud.ai的graph，通过图像识别推荐相似花束，rag连接商品知识文化讲解宣传。</h5>
+  <h5>后端利用 Spring Boot 3 的高效与安全性提供 RESTful API 服务，前端借助 Vue 3 实现流畅的用户交互体验的构建的现代化前后端分离系统。通过多级缓存热点数据以提升系统响应速度，Druid 负责MySQL连接池与 SQL 监控，保障订单、库存数据访问；使用Actuator采集缓存命中率使用情况。主业务为鲜花经营，送人，用途，管理，销售。分支业务org.springframework.ai的openai +com.alibaba.cloud.ai的graph，通过图像识别推荐相似花束，rag结合商品知识文化讲解宣传。</h5>
 </div>
+
 
 
 
@@ -157,9 +158,9 @@ flowerpay-ai\说明\function流程图.md
 spring-flower/
 ├── common/              # [共用] 公共模块（常量/枚举、工具类、统一结果、异常等）
 ├── model/               # [共用] 所有数据传输对象
-├── framework/           # [共用] 基础设施层（filter、AOP、error handle、interceptor、monitor等）
+├── framework/           # [共用] 设施层（filter、AOP、error handle、interceptor、monitor等）
 ├── service/             # [共用] 业务层（Mapper 数据访问 + Service 接口及实现）
-├── start/               # [main服务]   主业务启动模块
+├── branch-main/         # [main服务]   主业务启动模块
 ├── branch-generator/    # [branch服务] 代码生成器模块，修改和导入新功能的快速实现
 └── branch-ai/           # [branch服务] AI 扩展服务启动模块
 ```
@@ -512,11 +513,32 @@ flowchart TD
     ST --> S5 --> End
 ```
 
-### 旁边加入ai文化知识讲解带货
+### 旁边加入ai文化知识讲解
 
-1 ai不会下单的一些列功能，花店实际需要的鲜花知识和氛围讲解.
+```mermaid
+flowchart TD
+    subgraph 内部文档入库Ingestion
+        D[原始文档<br/>PDF/MD/TXT]
+        D --> DR[DocumentReader 文档读取]
+        DR --> TS[TextSplitter 文本切块]
+        TS --> EM1[EmbeddingModel 向量化]
+        EM1 --> VS[VectorStore 向量库<br/>存储向量+文本块]
+    end
 
-
+    subgraph 在线问答Runtime
+        U[用户提问]
+        U --> CC[ChatClient]
+        CC --> QA[QuestionAnswerAdvisor 拦截]
+        QA --> QT[Pre-Retrieval 查询优化]
+        QT --> EM2[EmbeddingModel 问题向量化]
+        EM2 --> VS
+        VS --> R[召回TopK相关Chunk]
+        R --> RR[Post-Retrieval 重排过滤]
+        RR --> P[Prompt组装<br/>系统提示+上下文+用户问题]
+        P --> LLM[ChatModel 大模型]
+        LLM --> A[返回答案]
+    end
+```
 
 ## 七 、branch-generator
 

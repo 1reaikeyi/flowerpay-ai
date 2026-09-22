@@ -40,6 +40,5 @@ public interface Chat {
 
     List<Document> searchMatch(String message);
 
-    Map<String, Object> searchAll(String prefix);
 }
 

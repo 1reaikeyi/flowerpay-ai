@@ -7,6 +7,8 @@ import org.springframework.ai.embedding.EmbeddingResponse;
 import org.springframework.ai.openai.OpenAiEmbeddingModel;
 import org.springframework.ai.vectorstore.SearchRequest;
 import org.springframework.ai.vectorstore.VectorStore;
+import cn.hutool.json.JSONObject;
+import cn.hutool.json.JSONUtil;
 import redis.clients.jedis.JedisPooled;
 import redis.clients.jedis.params.ScanParams;
 import redis.clients.jedis.resps.ScanResult;
@@ -26,6 +28,7 @@ import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Service
@@ -45,9 +48,6 @@ public class ChatImpl implements Chat {
     private OpenAiEmbeddingModel embeddingModel;
     @Autowired
     private VectorStore vectorStore;
-    // 向量库连接（database 0，RediSearch 仅支持 0）
-    @Autowired
-    private JedisPooled jedisPooled;
 
     private final static String OUTPUT_STATUS = "OUTPUT_STATUS";
 
@@ -71,9 +71,20 @@ public class ChatImpl implements Chat {
         //控制是否stop+追加保存
         var outputHash = stringRedisTemplate.boundHashOps(OUTPUT_STATUS);
         var outputBuilder = new StringBuilder();
-
+        // rag搜索
+        String result = rag(question,sessionId);
+        if (result == null){
+            return Flux.just(
+                    ChatEventVO.builder()
+                            .eventData("抱歉，知识库中未找到相关信息，无法回答。")
+                            .eventType(ChatEventTypeEnum.DATA.getValue())
+                            .build(),
+                    ChatEventVO.builder()
+                            .eventType(ChatEventTypeEnum.STOP.getValue())
+                            .build());
+        }
         return chatClient.prompt()
-                .user(question)
+                .user(result)
                 .advisors(advisorSpec -> advisorSpec
                         //会话记忆
                         .param(ChatMemory.CONVERSATION_ID, conversationId))
@@ -122,7 +133,45 @@ public class ChatImpl implements Chat {
                                 .eventType(ChatEventTypeEnum.STOP.getValue())
                                 .build()));
     }
+    private String rag(String question, String sessionId) {
+        SearchRequest searchRequest = SearchRequest.builder()
+                .query(question)
+                .similarityThreshold(0.6d)
+                .topK(6)
+                .build();
+        List<Document> retrievedDocs = vectorStore.similaritySearch(searchRequest);
+        // topK 中任意一条相似度 ≥ 0.6 即命中
+        List<Document> hitDocs = retrievedDocs.stream()
+                .filter(d -> d.getScore() != null && d.getScore() >= 0.6d)
+                .toList();
+        if (hitDocs.isEmpty()) {
+            log.info("RAG未命中, question={}, sessionId={}, 召回数={}, 最高分={}",
+                    question, sessionId, retrievedDocs.size(),
+                    retrievedDocs.stream()
+                            .map(Document::getScore)
+                            .filter(java.util.Objects::nonNull)
+                            .max(Double::compareTo)
+                            .map(String::valueOf)
+                            .orElse("无召回"));
+            return null;
+        }
+        log.info("RAG命中, question={}, 召回数={}, 达标数={}, top1分数={}",
+                question, retrievedDocs.size(), hitDocs.size(),
+                retrievedDocs.get(0).getScore());
 
+        // context 只拼达标文档，不达标的别喂给模型（省 token、降低干扰）
+        String context = hitDocs.stream()
+                .map(Document::getText)
+                .collect(Collectors.joining("\n---\n"));
+        String prompt = """
+                         请根据以下参考上下文回答问题。如果上下文中没有答案，请明确说"不知道"。
+                         ## 参考上下文
+                         %s
+                         ## 问题
+                         %s
+                        """ .formatted(context, question);
+        return prompt;
+    }
     /**
      * 保存停止输出的记录
      *
@@ -155,29 +204,7 @@ public class ChatImpl implements Chat {
         return vectorStore.similaritySearch(SearchRequest.builder().query(message).topK(2).build());
     }
 
-    @Override
-    public Map<String, Object> searchAll(String prefix) {
-        Map<String, Object> resultMap = new HashMap<>();
-        ScanParams scanParams = new ScanParams().match(prefix + ":" + "*").count(100);
-        String cursor = ScanParams.SCAN_POINTER_START;
-        do {
-            ScanResult<String> scanResult = jedisPooled.scan(cursor, scanParams);
-            for (String redisKey : scanResult.getResult()) {
-                String type = jedisPooled.type(redisKey);
-                switch (type) {
-                    case "hash" -> {
-                        Map<String, String> doc = jedisPooled.hgetAll(redisKey);
-                        doc.remove("embedding");
-                        resultMap.put(redisKey, doc);
-                    }
-                    case "string" -> resultMap.put(redisKey, jedisPooled.get(redisKey));
-                    default -> { }
-                }
-            }
-            cursor = scanResult.getCursor();
-        } while (!ScanParams.SCAN_POINTER_START.equals(cursor));
-        return resultMap;
-    }
+
     @Override
     public void deleteById(List<String> ids) {
         vectorStore.delete(ids);

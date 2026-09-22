@@ -18,27 +18,31 @@
     </properties>
 
     <dependencies>
-
+        <!-- 模块依赖 -->
         <dependency>
             <groupId>org.example</groupId>
             <artifactId>common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-
-
+        <!-- lombok 依赖 -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <!-- 测试依赖 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
+        <!-- generator 将 mybatis-plus-spring 声明为 optional-->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-generator</artifactId>
         </dependency>
-        <!-- generator 将 mybatis-plus-spring 声明为 optional，不传递；IdType 等位于 annotation/core，需显式引入 -->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-core</artifactId>
-            <version>3.5.9</version>
         </dependency>
         <dependency>
             <groupId>org.freemarker</groupId>
@@ -49,10 +53,13 @@
             <artifactId>mysql-connector-j</artifactId>
             <scope>runtime</scope>
         </dependency>
-        <dependency>
-         <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <scope>provided</scope>
-        </dependency>
     </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>

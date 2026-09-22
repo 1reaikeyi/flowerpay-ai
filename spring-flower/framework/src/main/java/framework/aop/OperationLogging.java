@@ -2,7 +2,7 @@ package framework.aop;
 
 
 
-import framework.aop.oparation.enums.OperationEnum;
+import framework.aop.oparation.OperationEnum;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

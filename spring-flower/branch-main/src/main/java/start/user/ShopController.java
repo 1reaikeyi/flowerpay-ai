@@ -1,7 +1,7 @@
 package start.user;
 
 import constant.ShopConstant;
-import framework.aop.oparation.enums.OperationEnum;
+import framework.aop.oparation.OperationEnum;
 import common.result.Result;
 import model.vo.ShopVO;
 import org.springframework.beans.factory.annotation.Autowired;

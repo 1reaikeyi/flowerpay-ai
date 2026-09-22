@@ -3,7 +3,7 @@ package start.employee;
 
 
 
-import framework.aop.oparation.enums.OperationEnum;
+import framework.aop.oparation.OperationEnum;
 import framework.aop.OperationLogging;
 import common.result.Result;
 import lombok.extern.slf4j.Slf4j;

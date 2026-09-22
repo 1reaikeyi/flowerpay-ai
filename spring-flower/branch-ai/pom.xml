@@ -43,13 +43,17 @@
     </dependencyManagement>
 
     <dependencies>
-
+        <!-- 模块依赖 -->
         <dependency>
             <groupId>org.example</groupId>
             <artifactId>service</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-
+        <!--简化-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
         <!-- Spring AI OpenAI 模型依赖 -->
         <dependency>
             <groupId>com.alibaba.cloud.ai</groupId>
@@ -61,13 +65,7 @@
             <artifactId>spring-ai-starter-model-openai</artifactId>
             <version>1.1.0</version>
         </dependency>
-
-        <!--Redis-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
-        </dependency>
-        <!--向量库-->
+        <!--redis vector store-->
         <dependency>
             <groupId>org.springframework.ai</groupId>
             <artifactId>spring-ai-advisors-vector-store</artifactId>
@@ -76,45 +74,12 @@
             <groupId>org.springframework.ai</groupId>
             <artifactId>spring-ai-starter-vector-store-redis</artifactId>
         </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <!--简化-->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>cn.hutool</groupId>
-            <artifactId>hutool-all</artifactId>
-            <version>5.8.26</version>
-        </dependency>
+        <!-- 测试依赖 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
-        <!--数据库相关-->
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
-            <version>3.5.9</version>
-        </dependency>
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-jsqlparser</artifactId>
-            <version>3.5.9</version>
-        </dependency>
-        <dependency>
-            <groupId>com.mysql</groupId>
-            <artifactId>mysql-connector-j</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>druid-spring-boot-3-starter</artifactId>
-        </dependency>
+
     </dependencies>
 
 

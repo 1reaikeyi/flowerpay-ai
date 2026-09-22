@@ -1,4 +1,4 @@
-package framework.aop.oparation.enums;
+package framework.aop.oparation;
 
 public enum OperationErrorEnum {
 

@@ -54,13 +54,7 @@ public class ChatController {
         List<Document> list = chatService.searchMatch(message);
         return Result.success(list);
     }
-    //查询知识库内容
-    @GetMapping("/search")
-    public Result searchAll(@RequestParam String prefix){
-        Map<String, Object> result = chatService.searchAll(prefix);
-        return Result.success(result);
-    }
-    //删除
+    //向量数据库删除
     @DeleteMapping
     public Result deleteVectorStore(@RequestParam("ids") List<String> ids) {
         // 删除向量数据库中的数据

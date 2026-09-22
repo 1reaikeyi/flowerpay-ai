@@ -15,7 +15,7 @@ import java.lang.reflect.Method;
 @Component
 public class LoggingAspect {
 
-    @Around("@annotation(com.framework.aop.Logging)")
+    @Around("@annotation(framework.aop.Logging)")
     public Object interceptServiceMethod(ProceedingJoinPoint joinPoint) throws Throwable {
         // 1. 获取注解信息和目标方法信息
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();

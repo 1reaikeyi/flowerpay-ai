@@ -1,7 +1,7 @@
 package start.admin;
 
 import constant.ShopConstant;
-import framework.aop.oparation.enums.OperationEnum;
+import framework.aop.oparation.OperationEnum;
 import common.result.Result;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;

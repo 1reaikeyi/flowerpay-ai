@@ -1,4 +1,4 @@
-package framework.constant;
+package framework.mybatis;
 
 /**
  * 公共字段自动填充相关常量

@@ -1,6 +1,6 @@
 package start.admin;
 
-import framework.aop.oparation.enums.OperationEnum;
+import framework.aop.oparation.OperationEnum;
 import common.result.Result;
 import lombok.extern.slf4j.Slf4j;
 import model.dto.FlowerDetailDTO;
