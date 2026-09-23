@@ -1,8 +1,8 @@
 <div align="center">
   <h1>flowerpay-ai 鲜花商店 + ai</h1>
-  <h5>flowerpay-ai：B2C 经营模式，一个花店卖家，多个买家。鲜花服务由店长、店员和客户组成。</h5>
-  <h5>后端利用 Spring Boot 3 的高效与安全性提供 RESTful API 服务，前端借助 Vue 3 实现流畅的用户交互体验的构建的现代化前后端分离系统。通过多级缓存热点数据以提升系统响应速度，Druid 负责MySQL连接池与 SQL 监控，保障订单、库存数据访问；使用redis_exporter采集缓存命中率使用情况。主业务为鲜花经营，送人，用途，管理，销售。分支业务org.springframework.ai的openai +com.alibaba.cloud.ai的graph，通过图像识别推荐相似花束，rag结合商品知识文化讲解宣传。</h5>
+  <h5>后端利用 Spring Boot 3 的高效与安全性提供 RESTful API 服务，前端借助 Vue 3 实现流畅的用户交互体验的构建的现代化前后端分离系统。通过多级缓存热点数据以提升系统响应速度，Druid 负责MySQL连接池与 SQL 监控，保障订单、库存数据访问；使用redis_exporter采集多级缓存命中率使用情况，监视redis。</h5>	   <h5>主业务为B2C经营模式，一个花店卖家，多个买家，由店长、店员和客户组成，前台鲜花经营及后台管理系统。分支业务org.springframework.ai的openai +com.alibaba.cloud.ai的graph，问一问rag的使用用途和送人对象，拍一拍识别推荐花束。</h5>
 </div>
+
 
 ## 配置说明
 
@@ -124,7 +124,7 @@ flowerpay-ai\说明\function流程图.md
 |      店铺      | <img src="说明/原型功能/admin6.png" alt="管理端登录" style="zoom: 25%;" /> |
 |      员工      | <img src="说明/原型功能/admin7.png" alt="管理端登录" style="zoom: 25%;" /> |
 
-## 业务大屏
+## statistics
 
 | top + count | user   | order       |
 | ----------- | ------ | ----------- |
@@ -143,11 +143,11 @@ flowerpay-ai\说明\function流程图.md
 |     购物车     |                                                              |
 |      订单      |                                                              |
 
-## AI（多模态）
+## AI
 
-|      |      |
-| ---- | ---- |
-|      |      |
+| 多模态 |      |
+| ------ | ---- |
+| rag    |      |
 
 # 后端说明
 
@@ -447,13 +447,9 @@ chat_record（chat表）：存储的是具体的“对话消息”维度的信�
 
 chat_session : chat_record =  1:N
 
-### 拍照识别鲜花，帮助消费者识别专业的鲜花名,  帮助购买。
+### 拍一拍识别推荐花束
 
-1 对面买的那多花？不知这个，就是那朵红色花？
-
-实践效果：ai 识别出周围人花 ，用户告诉服务员，想买红色的玫瑰花
-
-2 spring alibaba graph 编排流程图：
+spring alibaba graph 编排流程图：
 
 ```mermaid
 %%{init: {'theme':'neutral','themeVariables':{'fontSize':'8px','nodeBorder':'2px'},'flowchart':{'nodeSpacing':8,'rankSpacing':32,'useMaxWidth':false,'curve':'basis'}}}%%
@@ -510,7 +506,7 @@ flowchart TD
     ST --> S5 --> End
 ```
 
-### 旁边加入ai文化知识讲解
+### 问一问rag的使用用途，送人对象
 
 ```mermaid
 flowchart TD
@@ -554,14 +550,14 @@ log.info("role: " + operationType.type+", ID: "+operationType.id+", 执行操作
 | :------------------: | :--------------------------------: | :------------------------------------------------: | :---------------------------------------------------------: |
 | 日志逻辑侵入业务代码 | 每个 CRUD 方法手动写日志，代码冗余 | AOP 切面统一拦截，注解标记即可自动记录，无业务侵入 | 符合 AOP 面向切面设计思想，日志属于横向通用能力，与业务解耦 |
 
-2 druid监测DB
+2 监测DB
 
 | 1    | <img src="说明/运维监视/druid1.png" style="zoom: 33%;" /> |
 | ---- | --------------------------------------------------------- |
 | 2    | <img src="说明/运维监视/druid2.png" style="zoom: 33%;" /> |
 | 3    | <img src="说明/运维监视/druid3.png" style="zoom: 33%;" /> |
 
-3 Actuator+Micrometer监测redis
+3 监测redis
 
 | 1    |      |
 | ---- | ---- |
