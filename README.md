@@ -559,7 +559,6 @@ log.info("role: " + operationType.type+", ID: "+operationType.id+", 执行操作
 
 3 监测redis
 
-| 1    |      |
-| ---- | ---- |
-| 2    |      |
-| 3    |      |
+| 1            | <img src="说明/运维监视/redis_exporter1.png" style="zoom: 33%;" /> |
+| ------------ | ------------------------------------------------------------ |
+| 使用端口9121 | <img src="说明/运维监视/redis_exporter2.png" style="zoom: 33%;" /> |

@@ -1,30 +1,94 @@
-2026-09-22 20:10:24 [background-preinit] INFO  o.h.validator.internal.util.Version ==> HV000001: Hibernate Validator 8.0.3.Final
-2026-09-22 20:10:24 [main] INFO  start.FlowerApplication ==> Starting FlowerApplication using Java 17.0.1 with PID 14984 (D:\a.github\flowerpay-ai\spring-flower\branch-main\target\classes started by lenovo in D:\a.github\flowerpay-ai\spring-flower)
-2026-09-22 20:10:24 [main] INFO  start.FlowerApplication ==> The following 1 profile is active: "dev"
-2026-09-22 20:10:25 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate ==> Multiple Spring Data modules found, entering strict repository configuration mode
-2026-09-22 20:10:25 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate ==> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2026-09-22 20:10:25 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate ==> Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
-2026-09-22 20:10:26 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer ==> Tomcat initialized with port 8080 (http)
-2026-09-22 20:10:26 [main] INFO  o.a.coyote.http11.Http11NioProtocol ==> Initializing ProtocolHandler ["http-nio-8080"]
-2026-09-22 20:10:26 [main] INFO  o.a.catalina.core.StandardService ==> Starting service [Tomcat]
-2026-09-22 20:10:26 [main] INFO  o.a.catalina.core.StandardEngine ==> Starting Servlet engine: [Apache Tomcat/10.1.50]
-2026-09-22 20:10:26 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] ==> Initializing Spring embedded WebApplicationContext
-2026-09-22 20:10:26 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext ==> Root WebApplicationContext: initialization completed in 1696 ms
-2026-09-22 20:10:26 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure ==> Init DruidDataSource
-2026-09-22 20:10:27 [main] INFO  c.alibaba.druid.pool.DruidDataSource ==> {dataSource-1} inited
-2026-09-22 20:10:27 [main] INFO  org.redisson.Version ==> Redisson 3.52.0
-2026-09-22 20:15:40 [background-preinit] INFO  o.h.validator.internal.util.Version ==> HV000001: Hibernate Validator 8.0.3.Final
-2026-09-22 20:15:40 [main] INFO  start.FlowerApplication ==> Starting FlowerApplication using Java 17.0.1 with PID 29088 (D:\a.github\flowerpay-ai\spring-flower\branch-main\target\classes started by lenovo in D:\a.github\flowerpay-ai\spring-flower)
-2026-09-22 20:15:40 [main] INFO  start.FlowerApplication ==> The following 1 profile is active: "dev"
-2026-09-22 20:15:40 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate ==> Multiple Spring Data modules found, entering strict repository configuration mode
-2026-09-22 20:15:40 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate ==> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2026-09-22 20:15:40 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate ==> Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
-2026-09-22 20:15:41 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer ==> Tomcat initialized with port 8080 (http)
-2026-09-22 20:15:41 [main] INFO  o.a.coyote.http11.Http11NioProtocol ==> Initializing ProtocolHandler ["http-nio-8080"]
-2026-09-22 20:15:41 [main] INFO  o.a.catalina.core.StandardService ==> Starting service [Tomcat]
-2026-09-22 20:15:41 [main] INFO  o.a.catalina.core.StandardEngine ==> Starting Servlet engine: [Apache Tomcat/10.1.50]
-2026-09-22 20:15:41 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] ==> Initializing Spring embedded WebApplicationContext
-2026-09-22 20:15:41 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext ==> Root WebApplicationContext: initialization completed in 1385 ms
-2026-09-22 20:15:41 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure ==> Init DruidDataSource
-2026-09-22 20:15:42 [main] INFO  c.alibaba.druid.pool.DruidDataSource ==> {dataSource-1} inited
-2026-09-22 20:15:42 [main] INFO  org.redisson.Version ==> Redisson 3.52.0
+2026-09-23 16:46:21 [background-preinit] INFO  o.h.validator.internal.util.Version ==> HV000001: Hibernate Validator 8.0.3.Final
+2026-09-23 16:46:21 [main] INFO  start.FlowerApplication ==> Starting FlowerApplication using Java 17.0.1 with PID 28284 (D:\a.github\flowerpay-ai\spring-flower\branch-main\target\classes started by lenovo in D:\a.github\flowerpay-ai\spring-flower)
+2026-09-23 16:46:21 [main] INFO  start.FlowerApplication ==> The following 1 profile is active: "dev"
+2026-09-23 16:46:22 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate ==> Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-23 16:46:22 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate ==> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-09-23 16:46:22 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate ==> Finished Spring Data repository scanning in 17 ms. Found 0 Redis repository interfaces.
+2026-09-23 16:46:23 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer ==> Tomcat initialized with port 8080 (http)
+2026-09-23 16:46:23 [main] INFO  o.a.coyote.http11.Http11NioProtocol ==> Initializing ProtocolHandler ["http-nio-8080"]
+2026-09-23 16:46:23 [main] INFO  o.a.catalina.core.StandardService ==> Starting service [Tomcat]
+2026-09-23 16:46:23 [main] INFO  o.a.catalina.core.StandardEngine ==> Starting Servlet engine: [Apache Tomcat/10.1.50]
+2026-09-23 16:46:23 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] ==> Initializing Spring embedded WebApplicationContext
+2026-09-23 16:46:23 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext ==> Root WebApplicationContext: initialization completed in 1941 ms
+2026-09-23 16:46:23 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure ==> Init DruidDataSource
+2026-09-23 16:46:23 [main] INFO  c.alibaba.druid.pool.DruidDataSource ==> {dataSource-1} inited
+2026-09-23 16:46:24 [main] INFO  org.redisson.Version ==> Redisson 3.52.0
+2026-09-23 18:53:47 [background-preinit] INFO  o.h.validator.internal.util.Version ==> HV000001: Hibernate Validator 8.0.3.Final
+2026-09-23 18:53:47 [main] INFO  start.FlowerApplication ==> Starting FlowerApplication using Java 17.0.1 with PID 32876 (D:\a.github\flowerpay-ai\spring-flower\branch-main\target\classes started by lenovo in D:\a.github\flowerpay-ai\spring-flower)
+2026-09-23 18:53:47 [main] INFO  start.FlowerApplication ==> The following 1 profile is active: "dev"
+2026-09-23 18:53:48 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate ==> Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-23 18:53:48 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate ==> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-09-23 18:53:48 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate ==> Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2026-09-23 18:53:49 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer ==> Tomcat initialized with port 8080 (http)
+2026-09-23 18:53:49 [main] INFO  o.a.coyote.http11.Http11NioProtocol ==> Initializing ProtocolHandler ["http-nio-8080"]
+2026-09-23 18:53:49 [main] INFO  o.a.catalina.core.StandardService ==> Starting service [Tomcat]
+2026-09-23 18:53:49 [main] INFO  o.a.catalina.core.StandardEngine ==> Starting Servlet engine: [Apache Tomcat/10.1.50]
+2026-09-23 18:53:49 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] ==> Initializing Spring embedded WebApplicationContext
+2026-09-23 18:53:49 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext ==> Root WebApplicationContext: initialization completed in 1292 ms
+2026-09-23 18:53:49 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure ==> Init DruidDataSource
+2026-09-23 18:53:49 [main] INFO  c.alibaba.druid.pool.DruidDataSource ==> {dataSource-1} inited
+2026-09-23 18:53:50 [main] INFO  org.redisson.Version ==> Redisson 3.52.0
+2026-09-23 18:53:50 [redisson-netty-1-5] INFO  o.r.connection.ConnectionsHolder ==> 1 connections initialized for 192.168.80.128/192.168.80.128:6379
+2026-09-23 18:53:50 [redisson-netty-1-19] INFO  o.r.connection.ConnectionsHolder ==> 24 connections initialized for 192.168.80.128/192.168.80.128:6379
+2026-09-23 18:53:51 [main] INFO  s.impl.FestivalDetailServiceImpl ==> FestivalDetail 缓存重建线程池初始化完成
+2026-09-23 18:53:51 [main] INFO  service.impl.FestivalServiceImpl ==> Festival 缓存重建线程池初始化完成
+2026-09-23 18:53:51 [main] INFO  s.impl.FlowerDetailServiceImpl ==> flowerDetail缓存重建线程池初始化完成
+2026-09-23 18:53:51 [main] INFO  service.impl.FlowerServiceImpl ==> Flower 缓存重建线程池初始化完成
+2026-09-23 18:53:51 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer ==> Global AuthenticationManager configured with AuthenticationProvider bean with name roleAuthenticationProvider
+2026-09-23 18:53:52 [main] INFO  o.a.coyote.http11.Http11NioProtocol ==> Starting ProtocolHandler ["http-nio-8080"]
+2026-09-23 18:53:52 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer ==> Tomcat started on port 8080 (http) with context path '/'
+2026-09-23 18:53:52 [main] INFO  start.FlowerApplication ==> Started FlowerApplication in 4.729 seconds (process running for 5.247)
+2026-09-23 18:53:52 [main] INFO  start.FlowerApplication ==> --匹配成功
+2026-09-23 18:54:41 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] ==> Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-23 18:54:41 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet ==> Initializing Servlet 'dispatcherServlet'
+2026-09-23 18:54:41 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet ==> Completed initialization in 3 ms
+2026-09-23 18:55:32 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown ==> Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-23 18:55:32 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown ==> Graceful shutdown complete
+2026-09-23 18:55:32 [SpringApplicationShutdownHook] INFO  service.impl.FlowerServiceImpl ==> Flower 缓存重建线程池开始关闭...
+2026-09-23 18:55:32 [SpringApplicationShutdownHook] INFO  service.impl.FlowerServiceImpl ==> Flower 缓存重建线程池已关闭
+2026-09-23 18:55:32 [SpringApplicationShutdownHook] INFO  s.impl.FlowerDetailServiceImpl ==> flowerDetail缓存重建线程池开始关闭...
+2026-09-23 18:55:32 [SpringApplicationShutdownHook] INFO  s.impl.FlowerDetailServiceImpl ==> flowerDetail缓存重建线程池已关闭
+2026-09-23 18:55:32 [SpringApplicationShutdownHook] INFO  service.impl.FestivalServiceImpl ==> Festival 缓存重建线程池开始关闭...
+2026-09-23 18:55:32 [SpringApplicationShutdownHook] INFO  service.impl.FestivalServiceImpl ==> Festival 缓存重建线程池已关闭
+2026-09-23 18:55:32 [SpringApplicationShutdownHook] INFO  s.impl.FestivalDetailServiceImpl ==> FestivalDetail 缓存重建线程池开始关闭...
+2026-09-23 18:55:32 [SpringApplicationShutdownHook] INFO  s.impl.FestivalDetailServiceImpl ==> FestivalDetail 缓存重建线程池已关闭
+2026-09-23 18:55:32 [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource ==> {dataSource-1} closing ...
+2026-09-23 18:55:32 [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource ==> {dataSource-1} closed
+2026-09-23 18:57:54 [background-preinit] INFO  o.h.validator.internal.util.Version ==> HV000001: Hibernate Validator 8.0.3.Final
+2026-09-23 18:57:54 [main] INFO  start.FlowerApplication ==> Starting FlowerApplication using Java 17.0.1 with PID 34720 (D:\a.github\flowerpay-ai\spring-flower\branch-main\target\classes started by lenovo in D:\a.github\flowerpay-ai\spring-flower)
+2026-09-23 18:57:54 [main] INFO  start.FlowerApplication ==> The following 1 profile is active: "dev"
+2026-09-23 18:57:55 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate ==> Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-23 18:57:55 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate ==> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-09-23 18:57:55 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate ==> Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2026-09-23 18:57:55 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer ==> Tomcat initialized with port 8080 (http)
+2026-09-23 18:57:55 [main] INFO  o.a.coyote.http11.Http11NioProtocol ==> Initializing ProtocolHandler ["http-nio-8080"]
+2026-09-23 18:57:55 [main] INFO  o.a.catalina.core.StandardService ==> Starting service [Tomcat]
+2026-09-23 18:57:55 [main] INFO  o.a.catalina.core.StandardEngine ==> Starting Servlet engine: [Apache Tomcat/10.1.50]
+2026-09-23 18:57:56 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] ==> Initializing Spring embedded WebApplicationContext
+2026-09-23 18:57:56 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext ==> Root WebApplicationContext: initialization completed in 1357 ms
+2026-09-23 18:57:56 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure ==> Init DruidDataSource
+2026-09-23 18:57:56 [main] INFO  c.alibaba.druid.pool.DruidDataSource ==> {dataSource-1} inited
+2026-09-23 18:57:57 [main] INFO  org.redisson.Version ==> Redisson 3.52.0
+2026-09-23 18:57:57 [redisson-netty-1-5] INFO  o.r.connection.ConnectionsHolder ==> 1 connections initialized for 192.168.80.128/192.168.80.128:6379
+2026-09-23 18:57:57 [redisson-netty-1-19] INFO  o.r.connection.ConnectionsHolder ==> 24 connections initialized for 192.168.80.128/192.168.80.128:6379
+2026-09-23 18:57:57 [main] INFO  s.impl.FestivalDetailServiceImpl ==> FestivalDetail 缓存重建线程池初始化完成
+2026-09-23 18:57:57 [main] INFO  service.impl.FestivalServiceImpl ==> Festival 缓存重建线程池初始化完成
+2026-09-23 18:57:57 [main] INFO  s.impl.FlowerDetailServiceImpl ==> flowerDetail缓存重建线程池初始化完成
+2026-09-23 18:57:57 [main] INFO  service.impl.FlowerServiceImpl ==> Flower 缓存重建线程池初始化完成
+2026-09-23 18:57:58 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer ==> Global AuthenticationManager configured with AuthenticationProvider bean with name roleAuthenticationProvider
+2026-09-23 18:57:58 [main] INFO  o.a.coyote.http11.Http11NioProtocol ==> Starting ProtocolHandler ["http-nio-8080"]
+2026-09-23 18:57:58 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer ==> Tomcat started on port 8080 (http) with context path '/'
+2026-09-23 18:57:58 [main] INFO  start.FlowerApplication ==> Started FlowerApplication in 4.817 seconds (process running for 5.343)
+2026-09-23 18:57:58 [main] INFO  start.FlowerApplication ==> --匹配成功
+2026-09-23 18:59:40 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown ==> Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-23 18:59:40 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown ==> Graceful shutdown complete
+2026-09-23 18:59:40 [SpringApplicationShutdownHook] INFO  service.impl.FlowerServiceImpl ==> Flower 缓存重建线程池开始关闭...
+2026-09-23 18:59:40 [SpringApplicationShutdownHook] INFO  service.impl.FlowerServiceImpl ==> Flower 缓存重建线程池已关闭
+2026-09-23 18:59:40 [SpringApplicationShutdownHook] INFO  s.impl.FlowerDetailServiceImpl ==> flowerDetail缓存重建线程池开始关闭...
+2026-09-23 18:59:40 [SpringApplicationShutdownHook] INFO  s.impl.FlowerDetailServiceImpl ==> flowerDetail缓存重建线程池已关闭
+2026-09-23 18:59:40 [SpringApplicationShutdownHook] INFO  service.impl.FestivalServiceImpl ==> Festival 缓存重建线程池开始关闭...
+2026-09-23 18:59:40 [SpringApplicationShutdownHook] INFO  service.impl.FestivalServiceImpl ==> Festival 缓存重建线程池已关闭
+2026-09-23 18:59:40 [SpringApplicationShutdownHook] INFO  s.impl.FestivalDetailServiceImpl ==> FestivalDetail 缓存重建线程池开始关闭...
+2026-09-23 18:59:40 [SpringApplicationShutdownHook] INFO  s.impl.FestivalDetailServiceImpl ==> FestivalDetail 缓存重建线程池已关闭
+2026-09-23 18:59:40 [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource ==> {dataSource-1} closing ...
+2026-09-23 18:59:40 [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource ==> {dataSource-1} closed
