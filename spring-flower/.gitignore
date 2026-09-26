@@ -32,14 +32,9 @@ build/
 
 .vscode/
 
-# IntelliJ IDEA - 用户级/易变文件，不纳入版本控制
-.idea/workspace.xml
-.idea/uiDesigner.xml
-.idea/MarsCodeWorkspaceAppSettings.xml
-.idea/shelf/
-.idea/httpRequests/
-.idea/dataSources/
-.idea/dataSources.local.xml
-.idea/dictionaries/
-.idea/libraries/
-.idea/*.iml
+# IntelliJ IDEA - 整个配置目录全部排除，不纳入版本控制
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
