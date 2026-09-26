@@ -1,7 +1,7 @@
 package mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import entity.UserShopping;
+import model.entity.UserShopping;
 
 /**
  * 购物车 Mapper（对应 user_shopping 表）

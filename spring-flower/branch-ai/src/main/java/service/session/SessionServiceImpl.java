@@ -1,9 +1,9 @@
 package service.session;
 
-import properties.SessionProperties;
+import framework.properties.SessionProperties;
 import mapper.SessionMapper;
-import entity.ChatRecord;
-import entity.Session;
+import model.entity.ChatRecord;
+import model.entity.Session;
 import comom.enums.MessageTypeEnum;
 import start.vo.MessageVO;
 import start.vo.SessionTitleVO;

@@ -9,7 +9,7 @@ import org.springframework.context.annotation.ComponentScan;
 @Slf4j
 //主程序入口
 @SpringBootApplication
-@ComponentScan(basePackages = {"common", "start"})
+@ComponentScan(basePackages = {"start"})
 public class GeneratorApplication {
     public static void main(String[] args) {
         SpringApplication.run(GeneratorApplication.class, args);

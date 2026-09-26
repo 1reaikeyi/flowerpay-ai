@@ -1,10 +1,10 @@
 package service.authentication;
 
 import common.exception.PasswordErrorException;
-import constant.RoleConstant;
+import model.constant.RoleConstant;
 import framework.security.LoginUserDetails;
-import entity.Employee;
-import entity.User;
+import model.entity.Employee;
+import model.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

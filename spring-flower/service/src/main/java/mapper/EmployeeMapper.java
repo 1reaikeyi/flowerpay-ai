@@ -2,7 +2,7 @@ package mapper;
 
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import entity.Employee;
+import model.entity.Employee;
 /**
  * 员工 Mapper（对应 employee 表）
  */

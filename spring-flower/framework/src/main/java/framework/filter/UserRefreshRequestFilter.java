@@ -5,7 +5,7 @@ import framework.properties.JwtProperties;
 import common.constant.JwtConstant;
 import common.constant.RedisPrefixConstant;
 
-import constant.RoleConstant;
+import model.constant.RoleConstant;
 import framework.security.LoginUserDetails;
 import framework.util.JwtUtil;
 import jakarta.servlet.FilterChain;

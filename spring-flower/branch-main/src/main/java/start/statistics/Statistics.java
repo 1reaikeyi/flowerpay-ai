@@ -2,9 +2,9 @@ package start.statistics;
 
 import framework.aop.oparation.OperationEnum;
 import common.result.Result;
-import vo.statistics.StatisticsVO;
-import vo.statistics.OrderStatisticsVO;
-import vo.statistics.TopStatisticsVO;
+import model.vo.statistics.StatisticsVO;
+import model.vo.statistics.OrderStatisticsVO;
+import model.vo.statistics.TopStatisticsVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

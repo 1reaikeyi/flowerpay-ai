@@ -1,6 +1,6 @@
 package start;
 
-import properties.SessionProperties;
+import framework.properties.SessionProperties;
 import lombok.extern.slf4j.Slf4j;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -14,7 +14,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @MapperScan(basePackages = {"mapper"})
-@ComponentScan(basePackages = {"common","framework","service","start"})
+@ComponentScan(basePackages = {"framework","service","start"})
 @Slf4j
 @EnableConfigurationProperties({SessionProperties.class})
 public class AIApplication {

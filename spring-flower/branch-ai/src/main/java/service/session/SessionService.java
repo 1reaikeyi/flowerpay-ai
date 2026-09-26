@@ -1,6 +1,6 @@
 package service.session;
 
-import entity.Session;
+import model.entity.Session;
 import start.vo.MessageVO;
 import start.vo.SessionTitleVO;
 import start.vo.SessionVO;

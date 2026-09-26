@@ -1,7 +1,7 @@
 package start.controller;
 
 import common.result.Result;
-import dto.ChatDTO;
+import model.dto.ChatDTO;
 import start.vo.ChatEventVO;
 import org.springframework.ai.document.Document;
 import org.springframework.ai.embedding.EmbeddingResponse;

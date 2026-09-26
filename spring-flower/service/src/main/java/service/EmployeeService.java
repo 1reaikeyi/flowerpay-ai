@@ -3,12 +3,12 @@ package service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import common.result.PageResult;
-import dto.EmployeeDTO;
-import dto.EmployeePageDTO;
-import dto.LoginDTO;
-import dto.PasswordDTO;
-import entity.Employee;
-import vo.EmployeeVO;
+import model.dto.EmployeeDTO;
+import model.dto.EmployeePageDTO;
+import model.dto.LoginDTO;
+import model.dto.PasswordDTO;
+import model.entity.Employee;
+import model.vo.EmployeeVO;
 import org.springframework.security.access.prepost.PreAuthorize;
 
 import java.util.List;

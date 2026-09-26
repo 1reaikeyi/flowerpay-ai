@@ -2,7 +2,7 @@ package start.user;
 
 import framework.aop.oparation.OperationEnum;
 import common.result.Result;
-import vo.FestivalDetailVO;
+import model.vo.FestivalDetailVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import service.FestivalDetailService;

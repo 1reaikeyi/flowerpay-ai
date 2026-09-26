@@ -1,11 +1,11 @@
 package start.admin;
 
-import constant.ShopConstant;
+import model.constant.ShopConstant;
 import framework.aop.oparation.OperationEnum;
 import common.result.Result;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
-import vo.ShopVO;
+import model.vo.ShopVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.validation.annotation.Validated;

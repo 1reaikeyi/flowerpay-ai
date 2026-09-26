@@ -2,9 +2,9 @@ package service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import common.result.PageResult;
-import dto.FlowerOrderPageDTO;
-import entity.FlowerOrder;
-import vo.FlowerOrderVO;
+import model.dto.FlowerOrderPageDTO;
+import model.entity.FlowerOrder;
+import model.vo.FlowerOrderVO;
 
 /**
  * 订单 Service（对应 flower_order 表）

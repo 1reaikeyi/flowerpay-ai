@@ -1,5 +1,5 @@
 import org.springframework.web.bind.annotation.*;
-import entity.Employee;
+import model.entity.Employee;
 import framework.aop.Logging;
 
 @CrossOrigin

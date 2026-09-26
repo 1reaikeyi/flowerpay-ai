@@ -8,13 +8,13 @@ import common.constant.RedisPrefixConstant;
 import common.exception.LoginFailedException;
 import common.exception.UserFailedException;
 
-import constant.RoleConstant;
+import model.constant.RoleConstant;
 import framework.properties.JwtProperties;
 import framework.util.JwtUtil;
 import mapper.UserMapper;
-import dto.LoginDTO;
-import dto.UserDTO;
-import entity.User;
+import model.dto.LoginDTO;
+import model.dto.UserDTO;
+import model.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.data.redis.core.StringRedisTemplate;

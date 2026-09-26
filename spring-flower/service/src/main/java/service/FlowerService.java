@@ -2,11 +2,11 @@ package service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import common.result.PageResult;
-import dto.FlowerDTO;
-import dto.FlowerPageDTO;
-import entity.Flower;
-import vo.FlowerDetailVO;
-import vo.FlowerVO;
+import model.dto.FlowerDTO;
+import model.dto.FlowerPageDTO;
+import model.entity.Flower;
+import model.vo.FlowerDetailVO;
+import model.vo.FlowerVO;
 import org.springframework.security.access.prepost.PreAuthorize;
 
 import java.util.List;

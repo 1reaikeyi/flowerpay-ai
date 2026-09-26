@@ -1,9 +1,9 @@
 package service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import dto.LoginDTO;
-import dto.UserDTO;
-import entity.User;
+import model.dto.LoginDTO;
+import model.dto.UserDTO;
+import model.entity.User;
 import org.springframework.security.access.prepost.PreAuthorize;
 
 /**
