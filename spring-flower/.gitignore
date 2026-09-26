@@ -3,6 +3,10 @@
 HELP.md
 .mvn/wrapper/maven-wrapper.jar
 
+# 运行日志（logback 输出到工程根目录 ./logs）
+logs/
+*.log
+
 # 全局忽略所有 target 目录（最简洁有效，删掉多余反向排除）
 
 **/target/

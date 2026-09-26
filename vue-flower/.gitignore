@@ -26,9 +26,13 @@ coverage/
 .yarn/
 .pnpm-store/
 
-# Editor directories and files
+# Editor directories and files - 整个 IDE 配置目录全部排除，不纳入版本控制
 .vscode/
 .idea/
+out/
+*.iml
+*.ipr
+*.iws
 *.suo
 *.ntvs*
 *.njsproj
