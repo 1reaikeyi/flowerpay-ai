@@ -1,7 +1,7 @@
 <template>
-  <div class="festival-container">
+  <AdminListPage>
     <!-- 顶部搜索栏 + 新增按钮 -->
-    <div class="toolbar">
+    <template #toolbar>
       <el-form :inline="true" :model="searchForm" @submit.prevent>
         <el-form-item label="多花礼盒名称">
           <el-input
@@ -23,16 +23,10 @@
         <el-icon><Plus /></el-icon>
         新增多花礼盒
       </el-button>
-    </div>
+    </template>
 
     <!-- 多花礼盒列表 -->
-    <el-table
-      :data="tableData"
-      v-loading="loading"
-      stripe
-      class="festival-table"
-      :header-cell-style="{ background: 'rgba(10, 132, 255, 0.1)', color: '#0A84FF', fontWeight: 'bold' }"
-    >
+    <AdminTable :data="tableData" v-loading="loading">
       <el-table-column prop="id" label="ID" width="80" />
       <!-- 多花礼盒图 -->
       <el-table-column label="多花礼盒图" width="110">
@@ -111,20 +105,17 @@
           </el-popconfirm>
         </template>
       </el-table-column>
-    </el-table>
+    </AdminTable>
 
     <!-- 分页 -->
-    <el-pagination
-      class="pagination"
-      v-model:current-page="pagination.page"
+    <AdminPagination
+      v-model:page="pagination.page"
       v-model:page-size="pagination.pageSize"
-      :page-sizes="[10, 20, 30, 40]"
-      layout="total, sizes, prev, pager, next, jumper"
       :total="total"
       @size-change="handleSizeChange"
       @current-change="fetchList"
     />
-  </div>
+  </AdminListPage>
 </template>
 
 <script setup>
@@ -132,6 +123,9 @@ import { ref, reactive, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { ElMessage } from 'element-plus'
 import { Search, Plus, Edit, Delete, Switch, Picture, View } from '@element-plus/icons-vue'
+import AdminListPage from '@/components/admin/AdminListPage.vue'
+import AdminTable from '@/components/admin/AdminTable.vue'
+import AdminPagination from '@/components/admin/AdminPagination.vue'
 import {
   pageFestivalList,
   updateFestival,
@@ -291,85 +285,30 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
-/* 系统色板变量已全局注入，可直接使用 $sys-blue、$primary 等 */
+/* 系统色板变量已全局注入，可直接使用 $sys-red 等 */
+/* 以下为列表图片/价格的特有样式；容器、工具栏、表格、分页通用样式已抽离到公共组件 */
 
-.festival-container {
-  padding: 20px;
-  /* 容器背景使用系统蓝极浅透明度 */
-  background: rgba(10, 132, 255, 0.04);
+.festival-image {
+  width: 80px;
+  height: 50px;
   border-radius: 4px;
-  min-height: calc(100vh - 120px);
 }
 
-/* 顶部工具栏：搜索 + 新增 */
-.toolbar {
+.image-placeholder {
+  width: 80px;
+  height: 50px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
-  padding: 20px;
-  background: $primary-light;
-  border-radius: 4px;
-
-  .el-form-item {
-    margin-bottom: 0;
-  }
-
-  :deep(.el-button--warning) {
-    /* 主按钮使用系统蓝 */
-    background-color: $primary;
-    border-color: $primary;
-    color: $sys-yellow;
-
-    &:hover {
-      background-color: $primary-dark;
-      border-color: $primary-dark;
-    }
-  }
+  justify-content: center;
+  /* 占位背景使用系统蓝浅透明度 */
+  background: rgba(10, 132, 255, 0.08);
+  /* 占位图标使用系统靛蓝半透明 */
+  color: rgba(94, 92, 230, 0.5);
 }
 
-.festival-table {
-  width: 100%;
-  margin-bottom: 20px;
-
-  .festival-image {
-    width: 80px;
-    height: 50px;
-    border-radius: 4px;
-  }
-
-  .image-placeholder {
-    width: 80px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* 占位背景使用系统蓝浅透明度 */
-    background: rgba(10, 132, 255, 0.08);
-    /* 占位图标使用系统靛蓝半透明 */
-    color: rgba(94, 92, 230, 0.5);
-  }
-
-  .price {
-    /* 价格使用系统红 */
-    color: $sys-red;
-    font-weight: 500;
-  }
-}
-
-/* 分页 */
-.pagination {
-  display: flex;
-  justify-content: flex-end;
-  padding: 20px 0;
-
-  :deep(.el-pagination.is-background .el-pager li:not(.is-disabled).is-active) {
-    background-color: $primary;
-  }
-
-  :deep(.el-pagination.is-background .btn-prev:hover),
-  :deep(.el-pagination.is-background .btn-next:hover) {
-    color: $primary;
-  }
+.price {
+  /* 价格使用系统红 */
+  color: $sys-red;
+  font-weight: 500;
 }
 </style>

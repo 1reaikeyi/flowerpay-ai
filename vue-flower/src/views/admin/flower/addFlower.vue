@@ -1,120 +1,106 @@
 <template>
-  <div class="add-flower-container">
-    <!-- 页面标题 -->
-    <div class="page-header">
-      <el-page-header @back="goBack">
-        <template #content>
-          <span class="page-title">{{ isEdit ? '修改鲜花' : '添加鲜花' }}</span>
-        </template>
-      </el-page-header>
-    </div>
+  <AdminFormPage :title="isEdit ? '修改鲜花' : '添加鲜花'" @back="goBack">
+    <el-form
+      ref="formRef"
+      :model="formData"
+      :rules="rules"
+      label-width="120px"
+      class="flower-form"
+    >
+      <!-- 鲜花名称 -->
+      <el-form-item label="鲜花名称" prop="name">
+        <el-input
+          v-model="formData.name"
+          placeholder="请填写鲜花名称"
+          maxlength="20"
+        />
+      </el-form-item>
 
-    <!-- 表单区域 -->
-    <div class="form-container">
-      <el-form
-        ref="formRef"
-        :model="formData"
-        :rules="rules"
-        label-width="120px"
-        class="flower-form"
-      >
-        <!-- 鲜花名称 -->
-        <el-form-item label="鲜花名称" prop="name">
-          <el-input
-            v-model="formData.name"
-            placeholder="请填写鲜花名称"
-            maxlength="20"
+      <!-- 颜色 -->
+      <el-form-item label="鲜花颜色" prop="color">
+        <el-input
+          v-model="formData.color"
+          placeholder="请填写鲜花颜色，如：红色、粉色、白色"
+          maxlength="20"
+        />
+      </el-form-item>
+
+      <!-- 分类 -->
+      <el-form-item label="鲜花分类" prop="categoryId">
+        <el-select v-model="formData.categoryId" placeholder="请选择鲜花分类">
+          <el-option
+            v-for="item in categoryList"
+            :key="item.id"
+            :label="item.name"
+            :value="item.id"
           />
-        </el-form-item>
+        </el-select>
+      </el-form-item>
 
-        <!-- 颜色 -->
-        <el-form-item label="鲜花颜色" prop="color">
-          <el-input
-            v-model="formData.color"
-            placeholder="请填写鲜花颜色，如：红色、粉色、白色"
-            maxlength="20"
+      <!-- 价格 -->
+      <el-form-item label="鲜花价格" prop="price">
+        <el-input
+          v-model="formData.price"
+          placeholder="请设置鲜花价格"
+          type="number"
+        >
+          <template #append>元</template>
+        </el-input>
+      </el-form-item>
+
+      <!-- 图片上传 -->
+      <el-form-item label="鲜花图片" prop="image">
+        <el-upload
+          class="image-uploader"
+          :show-file-list="false"
+          :before-upload="beforeImageUpload"
+          :http-request="handleImageUpload"
+        >
+          <el-image
+            v-if="formData.image"
+            :src="resolveImageUrl(formData.image)"
+            class="flower-image"
+            fit="cover"
           />
-        </el-form-item>
+          <el-icon v-else class="image-uploader-icon"><Plus /></el-icon>
+        </el-upload>
+        <div class="upload-tip">
+          图片大小不超过2M<br>
+          仅能上传 PNG JPEG JPG 类型图片
+        </div>
+      </el-form-item>
 
-        <!-- 分类 -->
-        <el-form-item label="鲜花分类" prop="categoryId">
-          <el-select v-model="formData.categoryId" placeholder="请选择鲜花分类">
-            <el-option
-              v-for="item in categoryList"
-              :key="item.id"
-              :label="item.name"
-              :value="item.id"
-            />
-          </el-select>
-        </el-form-item>
+      <!-- 鲜花描述 -->
+      <el-form-item label="花语描述">
+        <el-input
+          v-model="formData.description"
+          type="textarea"
+          :rows="3"
+          maxlength="200"
+          placeholder="请输入鲜花的花语描述"
+          show-word-limit
+        />
+      </el-form-item>
 
-        <!-- 价格 -->
-        <el-form-item label="鲜花价格" prop="price">
-          <el-input
-            v-model="formData.price"
-            placeholder="请设置鲜花价格"
-            type="number"
-          >
-            <template #append>元</template>
-          </el-input>
-        </el-form-item>
+      <!-- 状态 -->
+      <el-form-item label="售卖状态">
+        <el-switch
+          v-model="formData.status"
+          :active-value="1"
+          :inactive-value="0"
+          active-text="在售"
+          inactive-text="下架"
+        />
+      </el-form-item>
 
-        <!-- 图片上传 -->
-        <el-form-item label="鲜花图片" prop="image">
-          <el-upload
-            class="image-uploader"
-            :show-file-list="false"
-            :before-upload="beforeImageUpload"
-            :http-request="handleImageUpload"
-          >
-            <el-image
-              v-if="formData.image"
-              :src="resolveImageUrl(formData.image)"
-              class="flower-image"
-              fit="cover"
-            />
-            <el-icon v-else class="image-uploader-icon"><Plus /></el-icon>
-          </el-upload>
-          <div class="upload-tip">
-            图片大小不超过2M<br>
-            仅能上传 PNG JPEG JPG 类型图片
-          </div>
-        </el-form-item>
-
-        <!-- 鲜花描述 -->
-        <el-form-item label="花语描述">
-          <el-input
-            v-model="formData.description"
-            type="textarea"
-            :rows="3"
-            maxlength="200"
-            placeholder="请输入鲜花的花语描述"
-            show-word-limit
-          />
-        </el-form-item>
-
-        <!-- 状态 -->
-        <el-form-item label="售卖状态">
-          <el-switch
-            v-model="formData.status"
-            :active-value="1"
-            :inactive-value="0"
-            active-text="在售"
-            inactive-text="下架"
-          />
-        </el-form-item>
-
-        <!-- 操作按钮 -->
-        <el-form-item class="form-buttons">
-          <el-button @click="goBack">取消</el-button>
-          <el-button type="primary" @click="handleSubmit(false)">保存</el-button>
-          <el-button v-if="!isEdit" type="primary" plain @click="handleSubmit(true)">
-            保存并继续添加
-          </el-button>
-        </el-form-item>
-      </el-form>
-    </div>
-  </div>
+      <!-- 操作按钮 -->
+      <AdminFormActions
+        :show-continue="!isEdit"
+        @cancel="goBack"
+        @submit="handleSubmit"
+      />
+    </el-form>
+  </AdminFormPage>
 </template>
 
 <script setup>
@@ -122,6 +108,8 @@ import { ref, reactive, computed, onMounted } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { ElMessage } from 'element-plus'
 import { Plus } from '@element-plus/icons-vue'
+import AdminFormPage from '@/components/admin/AdminFormPage.vue'
+import AdminFormActions from '@/components/admin/AdminFormActions.vue'
 // API 函数名对齐新的 admin API 层（flower.js）
 import { getFlowerById, createFlower, updateFlower } from '@/api/admin/flower.js'
 import { getCategoryByType } from '@/api/admin/category.js'
@@ -331,33 +319,8 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
-/* 系统色板变量已全局注入，可直接使用 $sys-blue、$primary 等 */
-
-.add-flower-container {
-  padding: 20px;
-  /* 容器背景使用系统蓝极浅透明度 */
-  background: rgba(10, 132, 255, 0.04);
-  border-radius: 4px;
-}
-
-.page-header {
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  /* 分隔线使用系统蓝半透明 */
-  border-bottom: 1px solid rgba(10, 132, 255, 0.2);
-}
-
-.page-title {
-  font-size: 16px;
-  font-weight: 500;
-  /* 标题文字使用系统靛蓝 */
-  color: $sys-indigo;
-}
-
-.form-container {
-  max-width: 800px;
-  padding: 20px 0;
-}
+/* 系统色板变量已全局注入，可直接使用 $primary 等 */
+/* 表单控件宽度、图片上传为页面特有；页面容器、头部、按钮区通用样式已抽离到公共组件 */
 
 .flower-form {
   .el-select {
@@ -371,7 +334,7 @@ onMounted(() => {
 
 /* 图片上传样式 */
 .image-uploader {
-  :deep(.el-upload) {
+  .el-upload {
     /* 虚线边框使用系统蓝半透明 */
     border: 1px dashed rgba(10, 132, 255, 0.3);
     border-radius: 6px;
@@ -409,35 +372,5 @@ onMounted(() => {
   /* 提示文字使用系统靛蓝半透明 */
   color: rgba(94, 92, 230, 0.55);
   line-height: 1.6;
-}
-
-.form-buttons {
-  margin-top: 30px;
-  padding-top: 20px;
-  /* 顶部分隔线使用系统蓝半透明 */
-  border-top: 1px solid rgba(10, 132, 255, 0.2);
-
-  :deep(.el-button--warning) {
-    /* 主按钮使用系统蓝 */
-    background-color: $primary;
-    border-color: $primary;
-    color: $sys-yellow;
-
-    &:hover {
-      background-color: $primary-dark;
-      border-color: $primary-dark;
-    }
-
-    &.is-plain {
-      background-color: $primary-light;
-      color: $primary;
-      border-color: $primary;
-
-      &:hover {
-        background-color: $primary;
-        color: $sys-yellow;
-      }
-    }
-  }
 }
 </style>

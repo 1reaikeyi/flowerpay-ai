@@ -32,6 +32,11 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '')
       },
+      '/api/ai': {
+        target: 'http://localhost:8081',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api\/ai/, '')
+      },
       // 经此代理转发到后端 SpringBoot（localhost:8080），后端 WebConfig 把 /image/** 映射到 file:ku/image/
       '/image': {
         target: 'http://localhost:8080',

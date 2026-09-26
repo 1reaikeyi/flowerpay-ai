@@ -1,7 +1,7 @@
 <template>
-  <div class="employee-container">
+  <AdminListPage>
     <!-- 搜索栏 + 新增按钮 -->
-    <div class="toolbar">
+    <template #toolbar>
       <el-form :inline="true" :model="searchForm" @submit.prevent>
         <!-- 后端 EmployeePageDTO.employeename：按用户名模糊搜索 -->
         <el-form-item label="用户名">
@@ -25,16 +25,10 @@
         <el-icon><Plus /></el-icon>
         新增员工
       </el-button>
-    </div>
+    </template>
 
     <!-- 员工列表 -->
-    <el-table
-      :data="tableData"
-      stripe
-      v-loading="loading"
-      class="employee-table"
-      :header-cell-style="{ background: 'rgba(10, 132, 255, 0.1)', color: '#0A84FF', fontWeight: 'bold' }"
-    >
+    <AdminTable :data="tableData" v-loading="loading">
       <el-table-column prop="id" label="ID" width="80" align="center" />
       <el-table-column prop="username" label="用户名" min-width="120" />
       <!-- 后端 EmployeeVO.work：职位字段 -->
@@ -81,21 +75,17 @@
           </el-popconfirm>
         </template>
       </el-table-column>
-    </el-table>
+    </AdminTable>
 
     <!-- 分页 -->
-    <el-pagination
-      v-if="total > 0"
-      class="pagination"
-      v-model:current-page="pagination.page"
+    <AdminPagination
+      v-model:page="pagination.page"
       v-model:page-size="pagination.pageSize"
-      :page-sizes="[10, 20, 30, 40]"
-      layout="total, sizes, prev, pager, next, jumper"
       :total="total"
       @size-change="handleSizeChange"
       @current-change="fetchEmployeeList"
     />
-  </div>
+  </AdminListPage>
 </template>
 
 <script setup>
@@ -103,6 +93,9 @@ import { ref, reactive, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { ElMessage } from 'element-plus'
 import { Search, Plus, Edit, Switch, Delete } from '@element-plus/icons-vue'
+import AdminListPage from '@/components/admin/AdminListPage.vue'
+import AdminTable from '@/components/admin/AdminTable.vue'
+import AdminPagination from '@/components/admin/AdminPagination.vue'
 // API 函数名对齐新的 admin API 层（admin.js）
 import {
   pageEmployeeList,
@@ -224,51 +217,3 @@ onMounted(() => {
   fetchEmployeeList()
 })
 </script>
-
-<style lang="scss" scoped>
-/* 系统色板变量已全局注入，可直接使用 $sys-blue、$primary 等 */
-
-.employee-container {
-  padding: 20px;
-  /* 容器背景使用系统蓝极浅透明度 */
-  background: rgba(10, 132, 255, 0.04);
-  border-radius: 4px;
-  min-height: calc(100vh - 120px);
-}
-
-/* 顶部工具栏：搜索 + 新增 */
-.toolbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  padding: 20px;
-  /* 工具栏背景使用主色浅背景 */
-  background: $primary-light;
-  border-radius: 4px;
-
-  .el-form-item {
-    margin-bottom: 0;
-  }
-}
-
-.employee-table {
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-.pagination {
-  display: flex;
-  justify-content: flex-end;
-  padding: 20px 0;
-
-  :deep(.el-pagination.is-background .el-pager li:not(.is-disabled).is-active) {
-    background-color: $primary;
-  }
-
-  :deep(.el-pagination.is-background .btn-prev:hover),
-  :deep(.el-pagination.is-background .btn-next:hover) {
-    color: $primary;
-  }
-}
-</style>

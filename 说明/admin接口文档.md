@@ -161,8 +161,30 @@ public Result handleException(Exception e) {
 **响应**: `Result<String>` → `"logout"`
 
 ---
+### 1.6 修改个人信息
 
-### 1.6 批量删除员工
+- **方法**: `PUT`
+- **路径**: `/admin/employee`
+- **描述**: 修改个人信息
+- **权限**: ROLE_ADMIN / ROLE_EMP
+
+**请求体 (EmployeeDTO, JSON)**:
+
+| 字段 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| id | Long | 是 | 员工主键 ID |
+| username | String | 是 | 用户名 |
+| avatar | String | 是 | 头像 |
+| work | String | 是 | 职位 |
+| sex | String | 是 | 性别（男/女） |
+| email | String | 是 | 邮箱 |
+| phone | String | 是 | 手机号 |
+| status | Long | 是 | 状态 0:禁用 1:启用 |
+
+**响应**: `Result<Long>` → 员工 ID
+
+---
+### 1.7 批量删除员工
 
 - **方法**: `DELETE`
 - **路径**: `/admin`

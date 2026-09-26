@@ -4,13 +4,8 @@
       <!-- Logo区域 -->
       <div class="el-aside__logo1"></div>
       <!-- 侧边栏菜单 -->
-      <el-menu
-          active-text-color="#ffd04b"
-          background-color="#232323"
-          :default-active="$route.path"
-          text-color="#fff"
-          router
-      >
+      <el-menu active-text-color="#ffd04b" background-color="#232323"
+          :default-active="$route.path" text-color="#fff" router>
         <el-menu-item index="/admin/category">
           <el-icon><Menu /></el-icon>
           <span>菜单分类</span>
@@ -130,9 +125,7 @@
         </div>
       </el-header>
 
-      <el-main>
-        <router-view></router-view>
-      </el-main>
+      <el-main><router-view></router-view></el-main>
       <el-footer>鲜小花</el-footer>
     </el-container>
   </el-container>
@@ -250,7 +243,7 @@ const handleCommand = async (key) => {
           margin-right: 12px;
         }
 
-        :deep(.el-menu--horizontal) {
+        .el-menu--horizontal {
           border-bottom: none;
         }
       }

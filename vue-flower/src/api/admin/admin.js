@@ -61,7 +61,18 @@ export const updateEmployeePassword = (data) => {
   })
 }
 
-// 1.6 批量删除员工 - DELETE /admin
+// 1.6 修改个人信息 - PUT /admin/employee
+// 请求体 EmployeeDTO: { id, username, avatar, work, sex, email, phone, status }
+// 响应 Result<Long> → 员工 ID
+export const updateEmployeeInfo = (data) => {
+  return request({
+    url: '/admin/employee',
+    method: 'put',
+    data
+  })
+}
+
+// 1.7 批量删除员工 - DELETE /admin
 // 请求参数: ids (List<Long>, 必填)，如 ids=1&ids=2
 // 响应 Result<List<Long>> → 删除的 ID 列表
 export const deleteEmployees = (ids) => {

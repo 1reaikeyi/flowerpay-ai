@@ -112,9 +112,7 @@
         </div>
       </el-header>
 
-      <el-main>
-        <router-view></router-view>
-      </el-main>
+      <el-main><router-view/></el-main>
       <el-footer>鲜小花</el-footer>
     </el-container>
   </el-container>
@@ -232,7 +230,7 @@ const handleCommand = async (key) => {
           margin-right: 12px;
         }
 
-        :deep(.el-menu--horizontal) {
+        .el-menu--horizontal {
           border-bottom: none;
         }
       }

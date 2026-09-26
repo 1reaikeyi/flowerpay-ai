@@ -1,123 +1,110 @@
 <template>
-  <div class="add-employee-container">
-    <!-- 页面头部 - 返回 + 标题 -->
-    <div class="page-header">
-      <el-page-header @back="goBack">
-        <template #content>
-          <span class="page-title">{{ isEdit ? '编辑员工' : '新增员工' }}</span>
-        </template>
-      </el-page-header>
-    </div>
+  <AdminFormPage :title="isEdit ? '编辑员工' : '新增员工'" @back="goBack">
+    <el-form
+      ref="formRef"
+      :model="formData"
+      :rules="rules"
+      label-width="120px"
+      class="employee-form"
+    >
+      <!-- 用户名 - 编辑模式禁止修改 -->
+      <el-form-item label="用户名" prop="username">
+        <el-input
+          v-model="formData.username"
+          placeholder="请输入用户名"
+          maxlength="20"
+          :disabled="isEdit"
+        />
+      </el-form-item>
 
-    <!-- 表单区域 -->
-    <div class="form-container">
-      <el-form
-        ref="formRef"
-        :model="formData"
-        :rules="rules"
-        label-width="120px"
-        class="employee-form"
-      >
-        <!-- 用户名 - 编辑模式禁止修改 -->
-        <el-form-item label="用户名" prop="username">
-          <el-input
-            v-model="formData.username"
-            placeholder="请输入用户名"
-            maxlength="20"
-            :disabled="isEdit"
+      <!-- 在职部门/职位：后端 EmployeeDTO.work 字段 -->
+      <el-form-item label="在职职位" prop="work">
+        <el-input
+          v-model="formData.work"
+          placeholder="请输入在职职位"
+          maxlength="32"
+        />
+      </el-form-item>
+
+      <!-- 密码：新增必填，编辑留空表示不修改 -->
+      <el-form-item label="密码" prop="password">
+        <el-input
+          v-model="formData.password"
+          type="password"
+          :placeholder="isEdit ? '留空表示不修改密码' : '请输入密码'"
+          maxlength="20"
+          show-password
+        />
+      </el-form-item>
+
+      <!-- 头像：el-upload 自定义 http-request 调 uploadFile -->
+      <el-form-item label="头像" prop="avatar">
+        <el-upload
+          class="avatar-uploader"
+          :show-file-list="false"
+          :before-upload="beforeAvatarUpload"
+          :http-request="handleAvatarUpload"
+          accept="image/*"
+        >
+          <img
+            v-if="formData.avatar"
+            :src="avatarPreviewUrl"
+            class="avatar-preview"
+            alt="头像"
           />
-        </el-form-item>
+          <div v-else class="avatar-placeholder">
+            <el-icon><Plus /></el-icon>
+            <span>上传头像</span>
+          </div>
+        </el-upload>
+      </el-form-item>
 
-        <!-- 在职部门/职位：后端 EmployeeDTO.work 字段 -->
-        <el-form-item label="在职职位" prop="work">
-          <el-input
-            v-model="formData.work"
-            placeholder="请输入在职职位"
-            maxlength="32"
-          />
-        </el-form-item>
+      <!-- 邮箱 -->
+      <el-form-item label="邮箱" prop="email">
+        <el-input
+          v-model="formData.email"
+          placeholder="请输入邮箱"
+          maxlength="64"
+        />
+      </el-form-item>
 
-        <!-- 密码：新增必填，编辑留空表示不修改 -->
-        <el-form-item label="密码" prop="password">
-          <el-input
-            v-model="formData.password"
-            type="password"
-            :placeholder="isEdit ? '留空表示不修改密码' : '请输入密码'"
-            maxlength="20"
-            show-password
-          />
-        </el-form-item>
+      <!-- 手机号 -->
+      <el-form-item label="手机号" prop="phone">
+        <el-input
+          v-model="formData.phone"
+          placeholder="请输入手机号"
+          maxlength="11"
+        />
+      </el-form-item>
 
-        <!-- 头像：el-upload 自定义 http-request 调 uploadFile -->
-        <el-form-item label="头像" prop="avatar">
-          <el-upload
-            class="avatar-uploader"
-            :show-file-list="false"
-            :before-upload="beforeAvatarUpload"
-            :http-request="handleAvatarUpload"
-            accept="image/*"
-          >
-            <img
-              v-if="formData.avatar"
-              :src="avatarPreviewUrl"
-              class="avatar-preview"
-              alt="头像"
-            />
-            <div v-else class="avatar-placeholder">
-              <el-icon><Plus /></el-icon>
-              <span>上传头像</span>
-            </div>
-          </el-upload>
-        </el-form-item>
+      <!-- 性别：el-radio 男/女 -->
+      <el-form-item label="性别" prop="sex">
+        <el-radio-group v-model="formData.sex">
+          <el-radio label="男">男</el-radio>
+          <el-radio label="女">女</el-radio>
+        </el-radio-group>
+      </el-form-item>
 
-        <!-- 邮箱 -->
-        <el-form-item label="邮箱" prop="email">
-          <el-input
-            v-model="formData.email"
-            placeholder="请输入邮箱"
-            maxlength="64"
-          />
-        </el-form-item>
+      <!-- 状态：el-switch 0/1 -->
+      <el-form-item label="状态" prop="status">
+        <el-switch
+          v-model="formData.status"
+          :active-value="1"
+          :inactive-value="0"
+          active-text="启用"
+          inactive-text="禁用"
+        />
+      </el-form-item>
 
-        <!-- 手机号 -->
-        <el-form-item label="手机号" prop="phone">
-          <el-input
-            v-model="formData.phone"
-            placeholder="请输入手机号"
-            maxlength="11"
-          />
-        </el-form-item>
-
-        <!-- 性别：el-radio 男/女 -->
-        <el-form-item label="性别" prop="sex">
-          <el-radio-group v-model="formData.sex">
-            <el-radio label="男">男</el-radio>
-            <el-radio label="女">女</el-radio>
-          </el-radio-group>
-        </el-form-item>
-
-        <!-- 状态：el-switch 0/1 -->
-        <el-form-item label="状态" prop="status">
-          <el-switch
-            v-model="formData.status"
-            :active-value="1"
-            :inactive-value="0"
-            active-text="启用"
-            inactive-text="禁用"
-          />
-        </el-form-item>
-
-        <!-- 操作按钮 -->
-        <el-form-item class="form-buttons">
-          <el-button @click="goBack">取消</el-button>
-          <el-button type="primary" :loading="submitting" @click="handleSubmit(false)">保存</el-button>
-          <el-button v-if="!isEdit" type="primary" plain :loading="submitting" @click="handleSubmit(true)">
-            保存并继续添加
-          </el-button>
-        </el-form-item>
-      </el-form>
-    </div>
-  </div>
+      <!-- 操作按钮 -->
+      <AdminFormActions
+        :submitting="submitting"
+        :show-continue="!isEdit"
+        @cancel="goBack"
+        @submit="handleSubmit"
+      />
+    </el-form>
+  </AdminFormPage>
 </template>
 
 <script setup>
@@ -125,6 +112,8 @@ import { ref, reactive, computed, onMounted } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { ElMessage } from 'element-plus'
 import { Plus } from '@element-plus/icons-vue'
+import AdminFormPage from '@/components/admin/AdminFormPage.vue'
+import AdminFormActions from '@/components/admin/AdminFormActions.vue'
 import { getEmployeeById } from '@/api/admin/admin.js'
 import { registerEmployee, updateEmployee } from '@/api/employee/employee.js'
 import { uploadFile } from '@/api/file/file.js'
@@ -341,33 +330,8 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
-/* 系统色板变量已全局注入，可直接使用 $sys-blue、$primary 等 */
-
-.add-employee-container {
-  padding: 20px;
-  /* 容器背景使用系统蓝极浅透明度 */
-  background: rgba(10, 132, 255, 0.04);
-  border-radius: 4px;
-}
-
-.page-header {
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  /* 分隔线使用系统蓝半透明 */
-  border-bottom: 1px solid rgba(10, 132, 255, 0.2);
-}
-
-.page-title {
-  font-size: 16px;
-  font-weight: 500;
-  /* 标题文字使用系统靛蓝 */
-  color: $sys-indigo;
-}
-
-.form-container {
-  max-width: 800px;
-  padding: 20px 0;
-}
+/* 系统色板变量已全局注入，可直接使用 $primary 等 */
+/* 表单控件宽度、头像上传为页面特有；页面容器、头部、按钮区通用样式已抽离到公共组件 */
 
 .employee-form {
   .el-input,
@@ -378,7 +342,7 @@ onMounted(() => {
 
 /* 头像上传组件样式 */
 .avatar-uploader {
-  :deep(.el-upload) {
+  .el-upload {
     width: 120px;
     height: 120px;
     border: 1px dashed rgba(10, 132, 255, 0.4);
@@ -415,12 +379,5 @@ onMounted(() => {
   .el-icon {
     font-size: 24px;
   }
-}
-
-.form-buttons {
-  margin-top: 30px;
-  padding-top: 20px;
-  /* 顶部分隔线使用系统蓝半透明 */
-  border-top: 1px solid rgba(10, 132, 255, 0.2);
 }
 </style>

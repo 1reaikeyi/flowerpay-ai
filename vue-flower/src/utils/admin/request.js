@@ -11,7 +11,7 @@ const instance = axios.create({
 instance.interceptors.request.use(
     (config) => {
         // 登录、注册端点不带 token，避免后端 AdminRefreshRequestFilter 用 localStorage 残留的旧 token 校验失败直接 401
-        const skipAuthUrls = ['/admin/login', '/admin/register']
+        const skipAuthUrls = ['/admin/login']
         if (skipAuthUrls.some((url) => config.url === url)) {
             return config
         }

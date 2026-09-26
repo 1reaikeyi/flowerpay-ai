@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { useEmployeeStore } from '@/stores'
-import { parseJWT } from '@/stores/modules/jwt.js'
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -22,11 +21,17 @@ const router = createRouter({
             component: () => import('@/views/user/login/user.vue'),
             meta: { requiresAuth: false }
         },
+        // Level 3:
+        {
+            path: '/emp/login',
+            component: () => import('@/views/employee/login/employee.vue'),
+            meta: { requiresAuth: false }
+        },
 
         // Level 1 - 分支 A: 管理员体系
         {
             path: '/admin',
-            component: () => import('@/layout/admin.vue'), // 管理员专用布局
+            component: () => import('@/layout/admin.vue'), 
             redirect: '/admin/flower/index',
             children: [
 
@@ -58,14 +63,13 @@ const router = createRouter({
                 { path: 'employee/profile', component: () => import('@/views/admin/employee/profile.vue') },   // 当前员工信息
                 { path: 'employee/avatar', component: () => import('@/views/admin/employee/avatar.vue') },    // 更换头像
                 { path: 'employee/password', component: () => import('@/views/admin/employee/password.vue') } // 重置密码
-                , { path: 'ai', component: () => import('@/views/user/ai/index.vue') }
             ]
         },
 
         // Level 2 - 分支 B: user体系
         {
-            path: '/user', // 员工体系的根路径
-            component: () => import('@/layout/user.vue'), // 员工专用布局
+            path: '/user', // 用户体系的根路径
+            component: () => import('@/layout/user.vue'), 
             redirect: '/user/category',
             children: [
                 { path: 'category', component: () => import('@/views/user/category/category.vue') },
@@ -76,27 +80,47 @@ const router = createRouter({
                 { path: 'order', component: () => import('@/views/user/order/order.vue') },
                 { path: 'ai', component: () => import('@/views/user/ai/index.vue') }
             ]
+        },
+
+        // Level 3 - 分支 C: employee体系
+        {
+            path: '/emp', // 员工体系的根路径
+            component: () => import('@/layout/emp.vue'), 
+            redirect: '/emp/category',
+            children: [
+                { path: 'category', component: () => import('@/views/emp/category/category.vue') },
+            ]
         }
     ]
 })
 
-// 登录访问拦截 => 默认是直接放行的
-// 如果没有token, 且访问的是非登录页，拦截到登录，其他情况正常放行
+// 各端登录态配置：路由前缀 -> { localStorage 存储 key, 登录页路径 }
+const AUTH_SCOPES = [
+    { prefix: '/admin', key: 'flower:admin', login: '/admin/login' },
+    { prefix: '/user', key: 'flower:user', login: '/user/login' },
+    { prefix: '/emp', key: 'flower:emp', login: '/emp/login' },
+]
+
+// 取某端 localStorage 中的 token
+// 守卫仅判断“是否已登录”；token 是否有效/过期交给后端校验，后端无 Authorization 会返回 401，
+// 由各端的 request 拦截器统一处理（清登录态 + 跳转对应登录页）
+const getToken = (key) => {
+    const raw = localStorage.getItem(key)
+    return raw ? JSON.parse(raw).token : ''
+}
+
+// 登录访问拦截：按路由前缀匹配所属体系，仅校验是否已登录
 router.beforeEach((to) => {
-    // 直接从localStorage中获取token，避免初始化顺序问题
-    const token = localStorage.getItem('flower:admin') ? JSON.parse(localStorage.getItem('flower:admin')).token : ''
-    // 校验 token 是否已过期：解析 JWT payload 的 exp（秒级时间戳）与当前时间比较
-    let isExpired = false
-    if (token) {
-        const payload = parseJWT(token)
-        if (!payload || (payload.exp && payload.exp * 1000 < Date.now())) {
-            isExpired = true
-        }
-    }
-    // token 不存在或已过期：清掉本地登录态
-    if (!token || isExpired) {
-        localStorage.removeItem('flower:admin')
-        if (to.path !== '/admin/login') return '/admin/login'
+    const scope = AUTH_SCOPES.find((s) => to.path.startsWith(s.prefix))
+    if (!scope) return
+
+    // 对应体系的登录页放行，避免重定向死循环
+    if (to.path === scope.login) return
+
+    // 未登录：清掉该端登录态，跳转到对应登录页
+    if (!getToken(scope.key)) {
+        localStorage.removeItem(scope.key)
+        return scope.login
     }
 })
 

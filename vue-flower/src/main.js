@@ -8,7 +8,7 @@ import persist from 'pinia-plugin-persistedstate'
 
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
-import zhCN from 'element-plus/dist/locale/zh-cn.js'
+import zhCN from '/element-plus/dist/locale/zh-cn.js'
 
 import router from './router'
 

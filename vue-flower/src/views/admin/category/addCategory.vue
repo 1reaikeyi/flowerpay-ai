@@ -1,83 +1,72 @@
 <template>
-  <div class="add-category-container">
-    <!-- 页面标题 -->
-    <div class="page-header">
-      <el-page-header @back="goBack">
-        <template #content>
-          <span class="page-title">{{ isEdit ? '修改分类' : '添加分类' }}</span>
-        </template>
-      </el-page-header>
-    </div>
+  <AdminFormPage :title="isEdit ? '修改分类' : '添加分类'" @back="goBack">
+    <el-form
+      ref="formRef"
+      :model="formData"
+      :rules="rules"
+      label-width="120px"
+      class="category-form"
+    >
+      <!-- 分类名称 -->
+      <el-form-item label="分类名称" prop="name">
+        <el-input
+          v-model="formData.name"
+          placeholder="请填写分类名称"
+          maxlength="20"
+        />
+      </el-form-item>
 
-    <!-- 表单区域 -->
-    <div class="form-container">
-      <el-form
-        ref="formRef"
-        :model="formData"
-        :rules="rules"
-        label-width="120px"
-        class="category-form"
-      >
-        <!-- 分类名称 -->
-        <el-form-item label="分类名称" prop="name">
-          <el-input
-            v-model="formData.name"
-            placeholder="请填写分类名称"
-            maxlength="20"
+      <!-- 分类类型 -->
+      <el-form-item label="分类类型" prop="type">
+        <el-select v-model="formData.type" placeholder="请选择分类类型">
+          <el-option
+            v-for="item in typeOptions"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value"
           />
-        </el-form-item>
+        </el-select>
+      </el-form-item>
 
-        <!-- 分类类型 -->
-        <el-form-item label="分类类型" prop="type">
-          <el-select v-model="formData.type" placeholder="请选择分类类型">
-            <el-option
-              v-for="item in typeOptions"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            />
-          </el-select>
-        </el-form-item>
+      <!-- 排序：数字越小越靠前 -->
+      <el-form-item label="排序" prop="sort">
+        <el-input-number
+          v-model="formData.sort"
+          :min="0"
+          :max="9999"
+          controls-position="right"
+          placeholder="数字越小越靠前"
+        />
+      </el-form-item>
 
-        <!-- 排序：数字越小越靠前 -->
-        <el-form-item label="排序" prop="sort">
-          <el-input-number
-            v-model="formData.sort"
-            :min="0"
-            :max="9999"
-            controls-position="right"
-            placeholder="数字越小越靠前"
-          />
-        </el-form-item>
+      <!-- 状态：启用 1 / 禁用 0 -->
+      <el-form-item label="状态">
+        <el-switch
+          v-model="formData.status"
+          :active-value="1"
+          :inactive-value="0"
+          active-text="启用"
+          inactive-text="禁用"
+        />
+      </el-form-item>
 
-        <!-- 状态：启用 1 / 禁用 0 -->
-        <el-form-item label="状态">
-          <el-switch
-            v-model="formData.status"
-            :active-value="1"
-            :inactive-value="0"
-            active-text="启用"
-            inactive-text="禁用"
-          />
-        </el-form-item>
-
-        <!-- 操作按钮 -->
-        <el-form-item class="form-buttons">
-          <el-button @click="goBack">取消</el-button>
-          <el-button type="primary" :loading="submitting" @click="handleSubmit(false)">保存</el-button>
-          <el-button v-if="!isEdit" type="primary" plain :loading="submitting" @click="handleSubmit(true)">
-            保存并继续添加
-          </el-button>
-        </el-form-item>
-      </el-form>
-    </div>
-  </div>
+      <!-- 操作按钮 -->
+      <AdminFormActions
+        :submitting="submitting"
+        :show-continue="!isEdit"
+        @cancel="goBack"
+        @submit="handleSubmit"
+      />
+    </el-form>
+  </AdminFormPage>
 </template>
 
 <script setup>
 import { ref, reactive, computed, onMounted } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { ElMessage } from 'element-plus'
+import AdminFormPage from '@/components/admin/AdminFormPage.vue'
+import AdminFormActions from '@/components/admin/AdminFormActions.vue'
 // API 函数名对齐 admin 接口文档第 4 节（category.js）
 import { createCategory, updateCategory, pageCategoryList } from '@/api/admin/category.js'
 
@@ -220,46 +209,12 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
-/* 系统色板变量已全局注入，可直接使用 $sys-blue、$primary 等 */
-
-.add-category-container {
-  padding: 20px;
-  /* 容器背景使用系统蓝极浅透明度 */
-  background: rgba(10, 132, 255, 0.04);
-  border-radius: 4px;
-}
-
-.page-header {
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  /* 分隔线使用系统蓝半透明 */
-  border-bottom: 1px solid rgba(10, 132, 255, 0.2);
-}
-
-.page-title {
-  font-size: 16px;
-  font-weight: 500;
-  /* 标题文字使用系统靛蓝 */
-  color: $sys-indigo;
-}
-
-.form-container {
-  max-width: 800px;
-  padding: 20px 0;
-}
-
+/* 表单控件宽度为页面特有设置；页面容器、头部、按钮区通用样式已抽离到公共组件 */
 .category-form {
   .el-select,
   .el-input,
   .el-input-number {
     width: 300px;
   }
-}
-
-.form-buttons {
-  margin-top: 30px;
-  padding-top: 20px;
-  /* 顶部分隔线使用系统蓝半透明 */
-  border-top: 1px solid rgba(10, 132, 255, 0.2);
 }
 </style>

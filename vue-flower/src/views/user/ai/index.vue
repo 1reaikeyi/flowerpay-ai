@@ -196,6 +196,16 @@ import {
   CaretTop, CaretBottom, CopyDocument, RefreshRight,
   Back, Aim
 } from '@element-plus/icons-vue'
+// AI 接口（后端 branch-ai：ChatController + SessionController）
+import {
+  startSession,
+  getHistorySessions,
+  getSessionMessages,
+  updateSessionTitle,
+  deleteSession,
+  stopChat,
+  chatStream
+} from '@/api/user/ai.js'
 
 const sidebarOpen = ref(true)
 const scrollRef = ref(null)
@@ -203,24 +213,13 @@ const textareaRef = ref(null)
 const inputText = ref('')
 const inputFocused = ref(false)
 const loading = ref(false)
-const activeSessionId = ref('s1')
+const activeSessionId = ref('')
 const messages = ref([])
 const suggestions = ref([])
-let abortFlag = false
-
-const historyGroups = ref([
-  { title: '今天', list: [
-    { sessionId: 's1', title: '推荐生日鲜花' },
-    { sessionId: 's2', title: '玫瑰花语是什么' }
-  ]},
-  { title: '昨天', list: [
-    { sessionId: 's3', title: '查询我的订单' },
-    { sessionId: 's4', title: '今天有什么优惠' }
-  ]},
-  { title: '更早', list: [
-    { sessionId: 's5', title: '情人节送什么花' }
-  ]}
-])
+// 历史会话分组（来自 GET /session/history，后端按时间分组返回 Map）
+const historyGroups = ref([])
+// 标记当前流式是否已被用户停止
+let streamStopped = false
 
 const allHotQuestions = [
   { icon: '🎂', title: '推荐生日鲜花', desc: '帮我推荐几款适合生日送的花束' },
@@ -236,168 +235,223 @@ function shuffleHotQuestions() {
   hotQuestions.value = [...allHotQuestions].sort(() => Math.random() - 0.5).slice(0, 4)
 }
 
-const aiReplyMap = {
-  '推荐生日鲜花': {
-    content: `好的！为你推荐以下生日鲜花：<br><br>
-      <b>🌸 红玫瑰（11朵）</b> — 热烈爱情 ¥168<br>
-      <b>🌷 粉色郁金香</b> — 温柔祝福 ¥128<br>
-      <b>💐 百合康乃馨混搭</b> — 健康长寿 ¥198<br>
-      <b>🌻 向日葵花束</b> — 阳光活力 ¥158<br><br>
-      需要我帮你直接下单吗？`,
-    suggestions: ['红玫瑰花语', '帮我下单红玫瑰', '有优惠吗']
-  },
-  '玫瑰花语': {
-    content: `玫瑰花语大全：<br><br>
-      🌹 <b>红玫瑰</b> — 热烈的爱情<br>
-      🌸 <b>粉玫瑰</b> — 初恋、温柔<br>
-      🤍 <b>白玫瑰</b> — 纯洁、尊敬<br>
-      💛 <b>黄玫瑰</b> — 友谊、祝福<br>
-      💜 <b>紫玫瑰</b> — 梦幻、浪漫`,
-    suggestions: ['11朵玫瑰含义', '99朵玫瑰价格', '帮我选一款']
-  },
-  '查询订单': {
-    content: `为你查询最近订单：<br><br>
-      📦 <b>订单 #20240924001</b><br>
-      红玫瑰花束 ×1 — ¥168.00<br>
-      状态：<span style="color:#30D158">配送中</span><br>
-      预计送达：今日 18:00 前<br><br>
-      📦 <b>订单 #20240920003</b><br>
-      百合康乃馨混搭 ×1 — ¥198.00<br>
-      状态：<span style="color:#8E8E93">已完成</span>`,
-    suggestions: ['能退单吗', '能改地址吗', '看看其他花']
-  },
-  '优惠': {
-    content: `🎉 今日特惠：<br><br>
-      • 满 <b>¥200</b> 减 <b>¥30</b><br>
-      • 新人首单立减 <b>¥20</b><br>
-      • 玫瑰花束限时 <b>8 折</b><br>
-      • 买二送一（指定花款）<br><br>
-      截止今晚 24:00`,
-    suggestions: ['看看玫瑰花束', '怎么领券', '满减叠加吗']
-  }
-}
-
-function getAiReply(text) {
-  for (const key in aiReplyMap) {
-    if (text.includes(key)) return aiReplyMap[key]
-  }
-  return {
-    content: `收到你的问题：「${text}」<br><br>可以试试问我：推荐鲜花、查询订单、了解花语、优惠活动`,
-    suggestions: ['推荐鲜花', '查询订单', '了解花语']
-  }
-}
-
-const sessionMessages = {
-  s1: [{ role: 'user', content: '推荐几款生日鲜花' }, { role: 'ai', content: aiReplyMap['推荐生日鲜花'].content }],
-  s2: [{ role: 'user', content: '玫瑰花语是什么' }, { role: 'ai', content: aiReplyMap['玫瑰花语'].content }],
-  s3: [{ role: 'user', content: '帮我查一下订单' }, { role: 'ai', content: aiReplyMap['查询订单'].content }],
-  s4: [{ role: 'user', content: '今天有什么优惠' }, { role: 'ai', content: aiReplyMap['优惠'].content }],
-  s5: [{ role: 'user', content: '情人节送什么花' }, { role: 'ai', content: '情人节首选红玫瑰！🌹 推荐 11 朵红玫瑰花束，代表"一心一意"，¥168，需要帮你下单吗？' }]
-}
-
 function scrollToBottom() {
   nextTick(() => {
     if (scrollRef.value) scrollRef.value.scrollTop = scrollRef.value.scrollHeight
   })
 }
 
-function handleNewChat() {
-  activeSessionId.value = 'new-' + Date.now()
-  messages.value = []
-  suggestions.value = []
-}
-
-function handleSelectHistory(item) {
-  activeSessionId.value = item.sessionId
-  messages.value = (sessionMessages[item.sessionId] || []).map(m => ({ ...m }))
-  suggestions.value = []
-  scrollToBottom()
-}
-
-function handleDeleteHistory(sessionId) {
-  historyGroups.value.forEach(g => { g.list = g.list.filter(i => i.sessionId !== sessionId) })
-  if (activeSessionId.value === sessionId) { messages.value = []; activeSessionId.value = '' }
-}
-
-function handleHotClick(q) { inputText.value = q.desc; handleSend() }
-function handleSuggestionClick(s) { inputText.value = s; suggestions.value = []; handleSend() }
-
-function handleInput() {
-  nextTick(() => {
-    const ta = textareaRef.value
-    if (ta) { ta.style.height = 'auto'; ta.style.height = Math.min(ta.scrollHeight, 120) + 'px' }
-  })
-  if (inputText.value.length > 2000) inputText.value = inputText.value.slice(0, 2000)
-}
-
-function handleKeydown(e) {
-  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleSend() }
-}
-
-function handleSend() {
-  const text = inputText.value.trim()
-  if (!text || loading.value) return
-  messages.value.push({ role: 'user', content: escapeHtml(text) })
-  inputText.value = ''
-  suggestions.value = []
-  handleInput()
-  scrollToBottom()
-  loading.value = true
-  abortFlag = false
-  const reply = getAiReply(text)
-  const chars = reply.content.split('')
-  let current = ''
-  const aiMsg = { role: 'ai', content: '', streaming: true, liked: false, disliked: false }
-  messages.value.push(aiMsg)
-  let i = 0
-  const timer = setInterval(() => {
-    if (abortFlag) {
-      clearInterval(timer)
-      aiMsg.streaming = false
-      aiMsg.content = current || '（已停止）'
-      loading.value = false
-      suggestions.value = reply.suggestions
-      return
-    }
-    current += chars.slice(i, i + 3).join('')
-    i += 3
-    aiMsg.content = current
-    scrollToBottom()
-    if (i >= chars.length) {
-      clearInterval(timer)
-      aiMsg.streaming = false
-      loading.value = false
-      suggestions.value = reply.suggestions
-      scrollToBottom()
-    }
-  }, 30)
-}
-
-function handleStop() { abortFlag = true; loading.value = false }
-function handleLike(msg) { msg.liked = !msg.liked; if (msg.liked) msg.disliked = false }
-function handleDislike(msg) { msg.disliked = !msg.disliked; if (msg.disliked) msg.liked = false }
-function handleCopy(msg) {
-  navigator.clipboard?.writeText(msg.content.replace(/<[^>]+>/g, ''))
-  ElMessage.success('已复制')
-}
-function handleRegenerate() {
-  if (messages.value.length < 2) return
-  const lastUser = [...messages.value].reverse().find(m => m.role === 'user')
-  if (!lastUser) return
-  const lastIdx = messages.value.length - 1
-  if (messages.value[lastIdx].role === 'ai') messages.value.splice(lastIdx, 1)
-  inputText.value = lastUser.content.replace(/<[^>]+>/g, '')
-  handleSend()
-}
+// HTML 转义，防止 XSS
 function escapeHtml(text) {
   const div = document.createElement('div')
   div.textContent = text
   return div.innerHTML
 }
 
+// 纯文本 → 展示 HTML：转义后将换行转为 <br>
+function formatContent(text) {
+  return escapeHtml(String(text ?? '')).replace(/\n/g, '<br>')
+}
+
+/* ================= 会话管理（对接 SessionController） ================= */
+
+// 加载历史会话分组
+async function loadHistory() {
+  try {
+    const map = await getHistorySessions()
+    const groups = []
+    if (map && typeof map === 'object') {
+      for (const key of Object.keys(map)) {
+        groups.push({ title: key, list: map[key] || [] })
+      }
+    }
+    historyGroups.value = groups
+  } catch (e) {
+    historyGroups.value = []
+  }
+}
+
+// 新建会话 - POST /session
+async function handleNewChat() {
+  try {
+    const session = await startSession()
+    activeSessionId.value = session?.sessionId || ''
+    messages.value = []
+    suggestions.value = []
+    loadHistory()
+  } catch (e) {
+    ElMessage.error('新建会话失败')
+  }
+}
+
+// 选择历史会话 - GET /session/{sessionId} 加载历史消息
+async function handleSelectHistory(item) {
+  if (loading.value) return
+  activeSessionId.value = item.sessionId
+  messages.value = []
+  suggestions.value = []
+  try {
+    const list = (await getSessionMessages(item.sessionId)) || []
+    // 后端 MessageVO.type: USER / ASSISTANT
+    messages.value = list.map((m) => ({
+      role: m.type === 'USER' ? 'user' : 'ai',
+      content: formatContent(m.content || ''),
+      streaming: false,
+      liked: false,
+      disliked: false
+    }))
+  } catch (e) {
+    ElMessage.error('加载对话失败')
+  }
+  scrollToBottom()
+}
+
+// 删除历史会话 - DELETE /session?sessionId=
+async function handleDeleteHistory(sessionId) {
+  try {
+    await deleteSession(sessionId)
+    historyGroups.value.forEach((g) => {
+      g.list = g.list.filter((i) => i.sessionId !== sessionId)
+    })
+    if (activeSessionId.value === sessionId) {
+      messages.value = []
+      activeSessionId.value = ''
+    }
+    ElMessage.success('已删除')
+  } catch (e) {
+    ElMessage.error('删除失败')
+  }
+}
+
+/* ================= 对话（对接 ChatController SSE） ================= */
+
+function handleHotClick(q) {
+  inputText.value = q.desc
+  handleSend()
+}
+function handleSuggestionClick(s) {
+  inputText.value = s
+  suggestions.value = []
+  handleSend()
+}
+
+function handleInput() {
+  nextTick(() => {
+    const ta = textareaRef.value
+    if (ta) {
+      ta.style.height = 'auto'
+      ta.style.height = Math.min(ta.scrollHeight, 120) + 'px'
+    }
+  })
+  if (inputText.value.length > 2000) inputText.value = inputText.value.slice(0, 2000)
+}
+
+function handleKeydown(e) {
+  if (e.key === 'Enter' && !e.shiftKey) {
+    e.preventDefault()
+    handleSend()
+  }
+}
+
+// 发送消息：确保存在会话 → POST /chat 走 SSE 流式
+async function handleSend() {
+  const text = inputText.value.trim()
+  if (!text || loading.value) return
+
+  // 没有会话时先创建（POST /session）
+  if (!activeSessionId.value) {
+    try {
+      const session = await startSession()
+      activeSessionId.value = session?.sessionId || ''
+      loadHistory()
+    } catch (e) {
+      ElMessage.error('创建会话失败')
+      return
+    }
+  }
+  const sessionId = activeSessionId.value
+  const isFirstUserMsg = messages.value.filter((m) => m.role === 'user').length === 0
+
+  messages.value.push({ role: 'user', content: escapeHtml(text) })
+  inputText.value = ''
+  suggestions.value = []
+  handleInput()
+  scrollToBottom()
+
+  loading.value = true
+  streamStopped = false
+  const aiMsg = { role: 'ai', content: '', streaming: true, liked: false, disliked: false }
+  messages.value.push(aiMsg)
+  let rawContent = ''
+
+  await chatStream(
+    { question: text, sessionId },
+    {
+      // 1001 文本数据：后端按增量片段推送，累积后统一格式化（避免拆分导致转义/换行异常）
+      onMessage: (chunk) => {
+        if (streamStopped) return
+        rawContent += chunk
+        aiMsg.content = formatContent(rawContent)
+        scrollToBottom()
+      },
+      // 1002 停止事件
+      onStop: () => {
+        streamStopped = true
+      },
+      onDone: () => {
+        aiMsg.streaming = false
+        loading.value = false
+        // 首条对话后用用户问题更新会话标题，并刷新历史列表
+        if (isFirstUserMsg) {
+          updateSessionTitle(sessionId, text.slice(0, 20)).catch(() => {})
+          loadHistory()
+        }
+        scrollToBottom()
+      },
+      onError: () => {
+        aiMsg.streaming = false
+        if (!aiMsg.content) aiMsg.content = '（服务异常，请稍后重试）'
+        loading.value = false
+        ElMessage.error('对话出错了')
+      }
+    }
+  )
+}
+
+// 停止生成 - POST /chat/stop
+function handleStop() {
+  if (!activeSessionId.value) return
+  streamStopped = true
+  stopChat(activeSessionId.value).catch(() => {})
+  loading.value = false
+}
+
+function handleLike(msg) {
+  msg.liked = !msg.liked
+  if (msg.liked) msg.disliked = false
+}
+function handleDislike(msg) {
+  msg.disliked = !msg.disliked
+  if (msg.disliked) msg.liked = false
+}
+function handleCopy(msg) {
+  navigator.clipboard?.writeText(msg.content.replace(/<[^>]+>/g, ''))
+  ElMessage.success('已复制')
+}
+// 重新生成：移除最后一条 AI 回复，以最近一条用户问题再次发送
+function handleRegenerate() {
+  if (messages.value.length < 2 || loading.value) return
+  const lastUser = [...messages.value].reverse().find((m) => m.role === 'user')
+  if (!lastUser) return
+  const lastIdx = messages.value.length - 1
+  if (messages.value[lastIdx].role === 'ai') messages.value.splice(lastIdx, 1)
+  inputText.value = lastUser.content.replace(/<[^>]+>/g, '')
+  handleSend()
+}
+
 onMounted(() => {
   shuffleHotQuestions()
-  handleSelectHistory(historyGroups.value[0].list[0])
+  loadHistory()
 })
 </script>
 

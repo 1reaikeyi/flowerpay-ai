@@ -1,7 +1,7 @@
 <template>
-  <div class="category-container">
+  <AdminListPage>
     <!-- 顶部工具栏：分类类型筛选 + 查询，右侧新增按钮 -->
-    <div class="toolbar">
+    <template #toolbar>
       <el-form :inline="true" :model="searchForm" @submit.prevent>
         <el-form-item label="分类类型">
           <el-select
@@ -29,16 +29,10 @@
         <el-icon><Plus /></el-icon>
         新增分类
       </el-button>
-    </div>
+    </template>
 
     <!-- 分类列表：id / 类型 / 名称 / 排序 / 状态 / 更新时间 / 操作 -->
-    <el-table
-      :data="tableData"
-      stripe
-      v-loading="loading"
-      class="category-table"
-      :header-cell-style="{ background: 'rgba(10, 132, 255, 0.1)', color: '#0A84FF', fontWeight: 'bold' }"
-    >
+    <AdminTable :data="tableData" v-loading="loading">
       <el-table-column prop="id" label="ID" width="100" align="center" />
       <el-table-column label="分类类型" width="160" align="center">
         <template #default="{ row }">
@@ -91,21 +85,17 @@
           </el-popconfirm>
         </template>
       </el-table-column>
-    </el-table>
+    </AdminTable>
 
     <!-- 分页 -->
-    <el-pagination
-      v-if="total > 0"
-      class="pagination"
-      v-model:current-page="pagination.page"
+    <AdminPagination
+      v-model:page="pagination.page"
       v-model:page-size="pagination.pageSize"
-      :page-sizes="[10, 20, 30, 40]"
-      layout="total, sizes, prev, pager, next, jumper"
       :total="total"
       @size-change="handleSizeChange"
       @current-change="fetchCategoryList"
     />
-  </div>
+  </AdminListPage>
 </template>
 
 <script setup>
@@ -113,6 +103,9 @@ import { ref, reactive, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { ElMessage } from 'element-plus'
 import { Search, Plus, Edit, Delete, Switch } from '@element-plus/icons-vue'
+import AdminListPage from '@/components/admin/AdminListPage.vue'
+import AdminTable from '@/components/admin/AdminTable.vue'
+import AdminPagination from '@/components/admin/AdminPagination.vue'
 // API 函数名对齐 admin 接口文档第 4 节（category.js）
 import { pageCategoryList, updateCategory, deleteCategories } from '@/api/admin/category.js'
 
@@ -260,52 +253,3 @@ onMounted(() => {
   fetchCategoryList()
 })
 </script>
-
-<style lang="scss" scoped>
-/* 系统色板变量已全局注入，可直接使用 $sys-blue、$primary 等 */
-
-.category-container {
-  padding: 20px;
-  /* 容器背景使用系统蓝极浅透明度 */
-  background: rgba(10, 132, 255, 0.04);
-  border-radius: 4px;
-  min-height: calc(100vh - 120px);
-}
-
-/* 顶部工具栏：筛选 + 新增 */
-.toolbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  padding: 20px;
-  /* 工具栏背景使用主色浅背景 */
-  background: $primary-light;
-  border-radius: 4px;
-
-  .el-form-item {
-    margin-bottom: 0;
-  }
-}
-
-.category-table {
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-/* 分页 */
-.pagination {
-  display: flex;
-  justify-content: flex-end;
-  padding: 20px 0;
-
-  :deep(.el-pagination.is-background .el-pager li:not(.is-disabled).is-active) {
-    background-color: $primary;
-  }
-
-  :deep(.el-pagination.is-background .btn-prev:hover),
-  :deep(.el-pagination.is-background .btn-next:hover) {
-    color: $primary;
-  }
-}
-</style>

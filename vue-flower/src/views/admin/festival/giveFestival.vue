@@ -265,7 +265,7 @@ const goFestivalDetail = (festivalId) => {
   margin-bottom: 20px;
   border: 1px solid rgba(10, 132, 255, 0.15);
 
-  :deep(.el-card__header) {
+  .el-card__header {
     background: $primary-light;
     padding: 12px 20px;
   }
@@ -289,7 +289,7 @@ const goFestivalDetail = (festivalId) => {
 .result-card {
   border: 1px solid rgba(10, 132, 255, 0.15);
 
-  :deep(.el-card__header) {
+  .el-card__header {
     background: $primary-light;
     padding: 12px 20px;
   }
