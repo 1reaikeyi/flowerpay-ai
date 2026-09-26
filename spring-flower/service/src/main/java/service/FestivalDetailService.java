@@ -1,11 +1,10 @@
 package service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import model.dto.FestivalDetailDTO;
-import model.entity.FestivalDetail;
-import model.vo.FestivalDetailVO;
+import dto.FestivalDetailDTO;
+import entity.FestivalDetail;
+import vo.FestivalDetailVO;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 

@@ -7,10 +7,10 @@ import com.alibaba.excel.context.AnalysisContext;
 import com.alibaba.excel.event.AnalysisEventListener;
 import com.alibaba.excel.write.metadata.WriteSheet;
 import common.result.Result;
-import model.excel.UserExcel;
+import excel.UserExcel;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
-import model.entity.User;
+import entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.util.StreamUtils;

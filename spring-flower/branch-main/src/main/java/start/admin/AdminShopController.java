@@ -5,7 +5,7 @@ import framework.aop.oparation.OperationEnum;
 import common.result.Result;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
-import model.vo.ShopVO;
+import vo.ShopVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.validation.annotation.Validated;

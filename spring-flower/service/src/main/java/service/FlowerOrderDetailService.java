@@ -1,12 +1,11 @@
 package service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import model.entity.FlowerOrderDetail;
-import model.entity.User;
-import model.vo.statistics.StatisticsVO;
-import model.vo.statistics.OrderStatisticsVO;
-import model.vo.statistics.TopStatisticsVO;
-import org.springframework.beans.factory.annotation.Autowired;
+import entity.FlowerOrderDetail;
+import entity.User;
+import vo.statistics.StatisticsVO;
+import vo.statistics.OrderStatisticsVO;
+import vo.statistics.TopStatisticsVO;
 import org.springframework.security.access.prepost.PreAuthorize;
 
 import java.util.List;

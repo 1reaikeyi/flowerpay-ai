@@ -36,14 +36,6 @@ flowerpay-ai\说明\emp接口文档.md
 
 flowerpay-ai\说明\user接口文档.md
 
-flowerpay-ai\说明\function流程图.md
-
-## 升级方向
-
- 使用nacos+gateway连接主业务+ai业务，灰度更新，分布式部署，故障转移等等。
-
- 使用nacos切换购物车存储，节假日使用redis，平时使用MySQL。
-
 ## 数据流向图
 
 ```mermaid
@@ -126,10 +118,10 @@ flowerpay-ai\说明\function流程图.md
 
 ## statistics
 
-| top + count | user   | order       |
-| ----------- | ------ | ----------- |
-| 柱状图      | 扇形图 | 折现图+饼图 |
-|             |        |             |
+| top    | user   | order | count  |
+| ------ | ------ | ----- | ------ |
+| 柱状图 | 扇形图 | 饼图  | 折现图 |
+|        |        |       |        |
 
 ## 用户端界面
 
@@ -371,13 +363,13 @@ flowchart TD
 
 `生产网关一般为：https://openapi.alipay.com/gateway.do`
 
-| 支付宝授权     | <img src="说明/resource/zhifubao1.png" alt="支付宝" style="zoom:10%;" /> |
+| 支付宝授权     | <img src="说明/支付宝支付/zhifubao1.png" alt="支付宝" style="zoom:10%;" /> |
 | -------------- | ------------------------------------------------------------ |
-| 第三方授权成功 | <img src="说明/resource/zhifubao2.png" alt="支付宝" style="zoom:50%;" /> |
-| 支付集成到订单 | <img src="说明/resource/pay1.png" alt="支付" style="zoom:25%;" /> |
-| 支付过程       | <img src="说明/resource/pay2.png" alt="支付" style="zoom: 25%;" /> |
-| 同步支付结果   | <img src="说明/resource/pay3.png" alt="支付" style="zoom: 25%;" /> |
-| 异步验签结果   | <img src="说明/resource/pay4.png" alt="支付" style="zoom: 25%;" /> |
+| 第三方授权成功 | <img src="说明/支付宝支付/zhifubao2.png" alt="支付宝" style="zoom:50%;" /> |
+| 支付集成到订单 | <img src="说明/支付宝支付/pay1.png" alt="支付" style="zoom:25%;" /> |
+| 支付过程       | <img src="说明/支付宝支付/pay2.png" alt="支付" style="zoom: 25%;" /> |
+| 同步支付结果   | <img src="说明/支付宝支付/pay3.png" alt="支付" style="zoom: 25%;" /> |
+| 异步验签结果   | <img src="说明/支付宝支付/pay4.png" alt="支付" style="zoom: 25%;" /> |
 
 ```
 → 1 用户下单 → 2 用户确认支付 
@@ -387,14 +379,12 @@ flowchart TD
 
 ## 四、user模块
 
-|       业务难点       |                         场景                          |                           解决方案                           |                           选型理由                           |
-| :------------------: | :---------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-|                      |                     user-address                      |                                                              |                                                              |
-|  多默认地址数据违规  |       新增 / 修改地址勾选默认，旧默认地址未取消       | 设为默认前先批量更新该用户所有地址 isDefault=0，两步操作绑定业务逻辑 | 数据库无法直接约束单用户唯一默认，代码层前置清理旧默认，保证业务数据合规 |
-|       传统分页       | 用户地址数量较多时，pageNum=100 需要扫描前 100 页数据 |  游标滚动分页，以上一页最后一条 id 作为游标，直接走主键索引  | 游标分页性能稳定不随页码增长衰减，统一项目分页返回结构 ScrollResult |
-|                      |                       shop店铺                        |                                                              |                                                              |
-| 高频查询店铺营业状态 |     每个用户进店、下单前都校验状态，并发访问频繁      |            Redis 单 key 存储状态，查询无数据库 IO            |         相比 MySQL 查询延迟大幅降低，减轻数据库压力          |
-|    集群状态不同步    |          单实例内存变量存储，多节点状态独立           |           统一 Redis 集中存储店铺状态，全实例共享            |        分布式环境全局状态标准存储方案，一致性实时保障        |
+user-address
+
+|      业务难点      |                         场景                          |                           解决方案                           |                           选型理由                           |
+| :----------------: | :---------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+| 多默认地址数据违规 |       新增 / 修改地址勾选默认，旧默认地址未取消       | 设为默认前先批量更新该用户所有地址 isDefault=0，两步操作绑定业务逻辑 | 数据库无法直接约束单用户唯一默认，代码层前置清理旧默认，保证业务数据合规 |
+|      传统分页      | 用户地址数量较多时，pageNum=100 需要扫描前 100 页数据 |  游标滚动分页，以上一页最后一条 id 作为游标，直接走主键索引  | 游标分页性能稳定不随页码增长衰减，统一项目分页返回结构 ScrollResult |
 
 websocket
 
@@ -423,7 +413,7 @@ Q:Redis Hash 结构
    优势：单用户购物车聚合存储，增删单项无需操作整条数据，性能优于 String 序列化列表。
 ```
 
-## 五、文件管理，数据分析
+## 五、文件管理
 
 1 使用excel分析
 
@@ -435,8 +425,6 @@ GET /report/excel/download 流式写入Response输出流，边写边返回，不
 双存储环境隔离，使用硬盘存储，对于内部的用户数据，敏感数据和重要文档。切换 OSS 加速、多实例共享文件、无限扩容，存储公共数据。
 
 UUID 重命名策略，丢弃原始文件名，UUID + 后缀生成全新文件名，解决重名覆盖、路径遍历攻击、中文乱码三大问题。
-
-3 折线图，条形图，块图，扇形图分析
 
 ## 六、branch-AI
 
@@ -513,8 +501,7 @@ flowchart TD
     subgraph 内部文档入库Ingestion
         D[原始文档<br/>PDF/MD/TXT]
         D --> DR[DocumentReader 文档读取]
-        DR --> TS[TextSplitter 文本切块]
-        TS --> EM1[EmbeddingModel 向量化]
+        DR --> EM1[EmbeddingModel 向量化]
         EM1 --> VS[VectorStore 向量库<br/>存储向量+文本块]
     end
 
@@ -522,12 +509,10 @@ flowchart TD
         U[用户提问]
         U --> CC[ChatClient]
         CC --> QA[QuestionAnswerAdvisor 拦截]
-        QA --> QT[Pre-Retrieval 查询优化]
-        QT --> EM2[EmbeddingModel 问题向量化]
+        QA -->  EM2[EmbeddingModel 问题向量化]
         EM2 --> VS
         VS --> R[召回TopK相关Chunk]
-        R --> RR[Post-Retrieval 重排过滤]
-        RR --> P[Prompt组装<br/>系统提示+上下文+用户问题]
+        R --> P[Prompt组装系统提示+上下文+用户问题]
         P --> LLM[ChatModel 大模型]
         LLM --> A[返回答案]
     end
@@ -537,7 +522,7 @@ flowchart TD
 
 代码生成器模块，修改和导入新功能的快速实现
 
-## 八、monitor运维和aop日志
+## 八、运维监测和aop日志
 
 1采用注解 + AOP 切面实现日志统一收集，自定义注解统一采集上下文常用的登录人、请求类型，使用参数，状态、耗时。
 
@@ -552,13 +537,13 @@ log.info("role: " + operationType.type+", ID: "+operationType.id+", 执行操作
 
 2 监测DB
 
-| 1    | <img src="说明/运维监视/druid1.png" style="zoom: 33%;" /> |
+| 1    | <img src="说明/运维监测/druid1.png" style="zoom: 33%;" /> |
 | ---- | --------------------------------------------------------- |
-| 2    | <img src="说明/运维监视/druid2.png" style="zoom: 33%;" /> |
-| 3    | <img src="说明/运维监视/druid3.png" style="zoom: 33%;" /> |
+| 2    | <img src="说明/运维监测/druid2.png" style="zoom: 33%;" /> |
+| 3    | <img src="说明/运维监测/druid3.png" style="zoom: 33%;" /> |
 
 3 监测redis
 
-| 1            | <img src="说明/运维监视/redis_exporter1.png" style="zoom: 33%;" /> |
+| 使用端口9121 | <img src="说明/运维监测/redis_exporter2.png" style="zoom: 33%;" /> |
 | ------------ | ------------------------------------------------------------ |
-| 使用端口9121 | <img src="说明/运维监视/redis_exporter2.png" style="zoom: 33%;" /> |
+| 正则匹配     | <img src="说明/运维监测/redis_exporter1.png" style="zoom: 33%;" /> |

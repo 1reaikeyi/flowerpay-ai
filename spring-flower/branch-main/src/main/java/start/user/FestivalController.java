@@ -2,9 +2,9 @@ package start.user;
 
 import framework.aop.oparation.OperationEnum;
 import common.result.Result;
-import model.dto.FestivalPageDTO;
-import model.vo.FestivalDetailVO;
-import model.vo.FestivalVO;
+import dto.FestivalPageDTO;
+import vo.FestivalDetailVO;
+import vo.FestivalVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

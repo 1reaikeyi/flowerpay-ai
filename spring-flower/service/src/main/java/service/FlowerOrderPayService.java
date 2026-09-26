@@ -1,8 +1,7 @@
 package service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import model.entity.FlowerOrderPay;
-import org.springframework.stereotype.Service;
+import entity.FlowerOrderPay;
 
 
 /**

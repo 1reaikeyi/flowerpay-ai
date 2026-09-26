@@ -1,9 +1,9 @@
 package service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import model.dto.UserShoppingDTO;
-import model.entity.UserShopping;
-import model.vo.UserShoppingVO;
+import dto.UserShoppingDTO;
+import entity.UserShopping;
+import vo.UserShoppingVO;
 import org.springframework.security.access.prepost.PreAuthorize;
 
 import java.util.List;

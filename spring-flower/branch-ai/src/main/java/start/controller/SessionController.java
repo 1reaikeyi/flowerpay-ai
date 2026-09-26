@@ -1,6 +1,6 @@
 package start.controller;
 
-import model.entity.Session;
+import entity.Session;
 import start.vo.MessageVO;
 import start.vo.SessionTitleVO;
 import start.vo.SessionVO;

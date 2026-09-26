@@ -13,16 +13,16 @@ import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import lombok.extern.slf4j.Slf4j;
 import mapper.FlowerDetailMapper;
-import model.dto.FlowerDetailDTO;
-import model.entity.FlowerDetail;
-import model.vo.FlowerDetailVO;
+import dto.FlowerDetailDTO;
+import entity.FlowerDetail;
+import vo.FlowerDetailVO;
 
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
-import model.wrapper.LogicData;
+import wrapper.LogicData;
 import service.FlowerDetailService;
 
 import java.time.Duration;

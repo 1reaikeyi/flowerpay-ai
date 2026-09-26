@@ -27,33 +27,28 @@ const router = createRouter({
         {
             path: '/admin',
             component: () => import('@/layout/admin.vue'), // 管理员专用布局
-            // 必须用绝对路径：redirect 走 URL 相对路径语义，相对 'flower/index' 在根路径基准下会解析成 /flower/index（不存在）导致白屏
             redirect: '/admin/flower/index',
             children: [
 
                 { path: 'category', component: () => import('@/views/admin/category/category.vue') },
                 { path: 'category/add', component: () => import('@/views/admin/category/addCategory.vue') },
 
-                { path: 'flower/index', component: () => import('@/views/admin/flower/index.vue') },
+                { path: 'flower', component: () => import('@/views/admin/flower/flower.vue') },
                 { path: 'flower/add', component: () => import('@/views/admin/flower/addFlower.vue') },
                 { path: 'flower/detail', component: () => import('@/views/admin/flower/detail.vue') },
                 { path: 'flower/give', component: () => import('@/views/admin/flower/giveFlower.vue') },
 
-                { path: 'festival/index', component: () => import('@/views/admin/festival/index.vue') },
+                { path: 'festival', component: () => import('@/views/admin/festival/festival.vue') },
                 { path: 'festival/add', component: () => import('@/views/admin/festival/addFestival.vue') },
                 { path: 'festival/detail', component: () => import('@/views/admin/festival/detail.vue') },
                 { path: 'festival/give', component: () => import('@/views/admin/festival/giveFestival.vue') },
 
-                /**
-                 * 1 line lump   order
-                 * 2 bar    number + top
-                 * 3 fan    user
-                 */
                 { path: 'statistics/line', component: () => import('@/views/admin/statistics/lineChart.vue') },
                 { path: 'statistics/bar', component: () => import('@/views/admin/statistics/barChart.vue') },
                 { path: 'statistics/fan', component: () => import('@/views/admin/statistics/fanChart.vue') },
 
                 { path: 'shop', component: () => import('@/views/admin/shop/shop.vue') },
+
                 { path: 'order/pay', component: () => import('@/views/admin/order/pay.vue') },
                 { path: 'order/refund', component: () => import('@/views/admin/order/refund.vue') },
                 { path: 'order/detail', component: () => import('@/views/admin/order/detail.vue') },
@@ -63,7 +58,7 @@ const router = createRouter({
                 { path: 'employee/profile', component: () => import('@/views/admin/employee/profile.vue') },   // 当前员工信息
                 { path: 'employee/avatar', component: () => import('@/views/admin/employee/avatar.vue') },    // 更换头像
                 { path: 'employee/password', component: () => import('@/views/admin/employee/password.vue') } // 重置密码
-
+                , { path: 'ai', component: () => import('@/views/user/ai/index.vue') }
             ]
         },
 
@@ -71,14 +66,15 @@ const router = createRouter({
         {
             path: '/user', // 员工体系的根路径
             component: () => import('@/layout/user.vue'), // 员工专用布局
-            redirect: '/user/order',
+            redirect: '/user/category',
             children: [
                 { path: 'category', component: () => import('@/views/user/category/category.vue') },
                 { path: 'flower', component: () => import('@/views/user/flower/index.vue') },
                 { path: 'festival', component: () => import('@/views/user/festival/index.vue') },
                 { path: 'shop', component: () => import('@/views/user/shop/shop.vue') },
                 { path: 'shoppingCart', component: () => import('@/views/user/shop/shop.vue') },
-                { path: 'order', component: () => import('@/views/user/order/order.vue') }
+                { path: 'order', component: () => import('@/views/user/order/order.vue') },
+                { path: 'ai', component: () => import('@/views/user/ai/index.vue') }
             ]
         }
     ]

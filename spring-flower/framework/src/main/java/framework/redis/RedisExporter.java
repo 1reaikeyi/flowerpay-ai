@@ -1,6 +1,7 @@
 package framework.redis;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
@@ -13,23 +14,24 @@ public class RedisExporter {
 
     @Autowired
     private RestTemplate restTemplate;
-
+    @Value("${spring.data.redis.database}")
+    private String database;
     /**
      * key	含义	说明
-     * usedMemoryBytes	Redis 已使用内存，单位字节	10485760 B = 10MB，Redis 实际占用内存
-     * db0KeyCount	db0 数据库的 key 总数量	Redis 默认 db0，一共 142 个 key
-     * keyspaceHits	键命中次数	查询 key 时，找到了的总次数
+     * usedMemoryBytes	Redis 已使用内存，单位字节B
+     * KeyCount	        db数据库的 key 总数量	Redis 默认 db0，一共 142 个 key
+     * keyspaceHits	    键命中次数	查询 key 时，找到了的总次数
      * keyspaceMisses	键未命中次数	查询 key，不存在的总次数
-     * hitRate	缓存命中率	公式：hits/(hits+misses)，95.97% 属于很不错的缓存命中率
-     * slowLogCount	慢查询日志条数	Redis 慢查询队列里现存 5 条慢命令
-     * status	接口状态	success = 成功拉取 redis_exporter 数据
+     * hitRate	        缓存命中率	公式：hits/(hits+misses)
+     * slowLogCount	    慢查询日志条数	Redis
+     * status	        接口状态	success = 成功拉取 redis_exporter 数据
      */
     // 正则
-    private static final Pattern PATTERN_MEMORY = Pattern.compile("redis_memory_used_bytes\\s+(\\d+)");
-    private static final Pattern PATTERN_DB0_KEYS = Pattern.compile("redis_db_keys\\{db=\"0\"\\}\\s+(\\d+)");
-    private static final Pattern PATTERN_HITS = Pattern.compile("redis_keyspace_hits_total\\s+(\\d+)");
-    private static final Pattern PATTERN_MISSES = Pattern.compile("redis_keyspace_misses_total\\s+(\\d+)");
-    private static final Pattern PATTERN_SLOWLOG = Pattern.compile("redis_slowlog_length\\s+(\\d+)");
+    private Pattern PATTERN_MEMORY = Pattern.compile("redis_memory_used_bytes\\s+(\\d+)");
+    private Pattern PATTERN_DB0_KEYS = Pattern.compile("redis_db_keys\\{db=\"" + database + "\"}\\s+(\\d+)");
+    private Pattern PATTERN_HITS = Pattern.compile("redis_keyspace_hits_total\\s+(\\d+)");
+    private Pattern PATTERN_MISSES = Pattern.compile("redis_keyspace_misses_total\\s+(\\d+)");
+    private Pattern PATTERN_SLOWLOG = Pattern.compile("redis_slowlog_length\\s+(\\d+)");
 
     /**
      * 从redis_exporter(9121)拉取并解析指标
@@ -66,13 +68,13 @@ public class RedisExporter {
 
             double hitRate = hits + misses == 0 ? 0 : (double) hits / (hits + misses);
 
-            result.put("usedMemoryBytes", memory);
-            result.put("db0KeyCount", keys);
+            result.put("使用内存: usedMemoryBytes", memory/1024/1024);
+            result.put("KeyCount", keys);
             result.put("keyspaceHits", hits);
             result.put("keyspaceMisses", misses);
-            result.put("hitRate", String.format("%.2f%%", hitRate * 100));
+            result.put("缓存命中率: hitRate", String.format("%.2f%%", hitRate * 100));
             result.put("slowLogCount", slow);
-            result.put("status", "success");
+            result.put("redis_exported状态: status", "success");
         } catch (Exception e) {
             result.put("status", "fail");
             result.put("msg", e.getMessage());

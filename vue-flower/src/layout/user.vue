@@ -11,57 +11,66 @@
           text-color="#fff"
           router
       >
-        <el-menu-item index="/admin/category">
+        <el-menu-item index="/user/category">
           <el-icon><Menu /></el-icon>
           <span>菜单分类</span>
         </el-menu-item>
 
-        <el-sub-menu index="/admin/flower">
+        <el-sub-menu index="/user/flower">
           <template #title>
             <el-icon><DataAnalysis /></el-icon>
             <span>鲜花销售</span>
           </template>
-          <el-menu-item index="/admin/flower/index">
+          <el-menu-item index="/user/flower/index">
             <el-icon><Goods /></el-icon>
             <span>单只鲜花</span>
           </el-menu-item>
-          <el-menu-item index="/admin/flower/give">
+          <el-menu-item index="/user/flower/give">
             <el-icon><Goods /></el-icon>
             <span>送人</span>
           </el-menu-item>
         </el-sub-menu>
 
-        <el-sub-menu index="/admin/festival">
+        <el-sub-menu index="/user/festival">
           <template #title>
             <el-icon><DataAnalysis /></el-icon>
             <span>多花礼盒</span>
           </template>
-          <el-menu-item index="/admin/festival/index">
+          <el-menu-item index="/user/festival/index">
             <el-icon><Present /></el-icon>
             <span>多花</span>
           </el-menu-item>
-          <el-menu-item index="/admin/festival/give">
+          <el-menu-item index="/user/festival/give">
             <el-icon><Present /></el-icon>
             <span>用途</span>
           </el-menu-item>
         </el-sub-menu>
-        
 
-        <el-menu-item index="/admin/shop">
+        <el-sub-menu index="/user/order">
+          <template #title>
+            <el-icon><DataAnalysis /></el-icon>
+            <span>订单管理</span>
+          </template>
+          <el-menu-item index="/user/order/pay">
+            <el-icon><ShoppingCart /></el-icon>
+            <span>主要情况</span>
+          </el-menu-item>
+          <el-menu-item index="/user/order/refund">
+            <el-icon><ShoppingCart /></el-icon>
+            <span>退款情况</span>
+          </el-menu-item>
+        </el-sub-menu>
+
+        <el-menu-item index="/user/shop">
           <el-icon><Shop /></el-icon>
           <span>店铺</span>
         </el-menu-item>
 
-        <el-sub-menu index="/admin/statistics">
-          <template #title>
-            <el-icon><DataAnalysis /></el-icon>
-            <span>今日数据</span>
-          </template>
-          <el-menu-item index="/admin/statistics/line">
-            <el-icon><TrendCharts /></el-icon>
-            <span>鲜花销量</span>
-          </el-menu-item>
-        </el-sub-menu>
+        <el-menu-item index="/user/ai">
+          <el-icon><DataAnalysis /></el-icon>
+          <span>ai-chat</span>
+        </el-menu-item>
+
 
       </el-menu>
     </el-aside>

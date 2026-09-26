@@ -43,7 +43,6 @@ public class ToolServiceImpl implements ToolService {
                 .stream()
                 .content()
                 .concatWith(Flux.just("stop"));
-
     }
 
 }

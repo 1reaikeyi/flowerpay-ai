@@ -1,7 +1,7 @@
 package mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import model.entity.FlowerCategory;
+import entity.FlowerCategory;
 
 
 /**

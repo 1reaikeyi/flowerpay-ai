@@ -21,7 +21,7 @@
             <el-icon><DataAnalysis /></el-icon>
             <span>鲜花销售</span>
           </template>
-          <el-menu-item index="/admin/flower/index">
+          <el-menu-item index="/admin/flower">
             <el-icon><Goods /></el-icon>
             <span>单只鲜花</span>
           </el-menu-item>
@@ -36,7 +36,7 @@
             <el-icon><DataAnalysis /></el-icon>
             <span>多花礼盒</span>
           </template>
-          <el-menu-item index="/admin/festival/index">
+          <el-menu-item index="/admin/festival">
             <el-icon><Present /></el-icon>
             <span>多花</span>
           </el-menu-item>

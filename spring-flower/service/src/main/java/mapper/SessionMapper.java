@@ -1,6 +1,6 @@
 package mapper;
 
-import model.entity.Session;
+import entity.Session;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 import org.springframework.stereotype.Repository;

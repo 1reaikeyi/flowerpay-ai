@@ -2,8 +2,8 @@ package start.user;
 
 import framework.aop.oparation.OperationEnum;
 import common.result.Result;
-import model.dto.LoginDTO;
-import model.dto.UserDTO;
+import dto.LoginDTO;
+import dto.UserDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import service.UserService;

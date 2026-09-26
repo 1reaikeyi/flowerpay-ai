@@ -100,7 +100,7 @@ public Result handleException(Exception e) {
 ### 1.3 根据 ID 查询员工
 
 - **方法**: `GET`
-- **路径**: `/admin`
+- **路径**: `/admin/employee`
 - **描述**: 获取单个员工信息
 - **权限**: ROLE_ADMIN
 

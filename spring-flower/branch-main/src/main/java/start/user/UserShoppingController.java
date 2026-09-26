@@ -2,8 +2,8 @@ package start.user;
 
 import framework.aop.oparation.OperationEnum;
 import common.result.Result;
-import model.dto.UserShoppingDTO;
-import model.vo.UserShoppingVO;
+import dto.UserShoppingDTO;
+import vo.UserShoppingVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;

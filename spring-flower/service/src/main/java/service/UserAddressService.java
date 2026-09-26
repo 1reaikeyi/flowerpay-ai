@@ -2,8 +2,8 @@ package service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import common.result.ScrollResult;
-import model.dto.UserAddressDTO;
-import model.entity.UserAddress;
+import dto.UserAddressDTO;
+import entity.UserAddress;
 import org.springframework.security.access.prepost.PreAuthorize;
 
 import java.util.List;

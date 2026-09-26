@@ -216,7 +216,7 @@ const goBack = () => {
   router.push('/admin/flower/index')
 }
 
-// 统一图片 URL 解析策略（与 index.vue 保持一致）
+// 统一图片 URL 解析策略（与 festival.vue 保持一致）
 const resolveImageUrl = (image) => {
   if (!image) return ''
   if (/^https?:\/\//i.test(image)) return image

@@ -4,10 +4,10 @@ import framework.aop.oparation.OperationEnum;
 import common.result.PageResult;
 import common.result.Result;
 import lombok.extern.slf4j.Slf4j;
-import model.dto.EmployeePageDTO;
-import model.dto.LoginDTO;
-import model.dto.PasswordDTO;
-import model.vo.EmployeeVO;
+import dto.EmployeePageDTO;
+import dto.LoginDTO;
+import dto.PasswordDTO;
+import vo.EmployeeVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -36,7 +36,7 @@ public class AdminController {
         return Result.success("logout");
     }
     @OperationLogging(operation = OperationEnum.READ)
-    @GetMapping
+    @GetMapping("/employee")
     public Result readById(@RequestParam Long id) {
         EmployeeVO employeeVO = employeeService.readById(id);
         return Result.success(employeeVO);

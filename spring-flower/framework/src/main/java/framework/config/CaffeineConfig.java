@@ -1,7 +1,7 @@
 package framework.config;
 
-import model.vo.FestivalDetailVO;
-import model.vo.FlowerDetailVO;
+import vo.FestivalDetailVO;
+import vo.FlowerDetailVO;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import com.github.benmanes.caffeine.cache.Cache;

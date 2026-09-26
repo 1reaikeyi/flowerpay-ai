@@ -32,7 +32,7 @@ export const logoutAdmin = () => {
 // 响应 Result<EmployeeVO>: { id, username, avatar, work, sex, email, phone, status }
 export const getEmployeeById = (id) => {
   return request({
-    url: '/admin',
+    url: '/admin/employee',
     method: 'get',
     params: { id }
   })
