@@ -357,6 +357,14 @@ flowchart TD
 
 ## 三、订单状态流转
 
+### model
+
+```
+→ 1 用户下单 → 2 用户确认支付 
+→ 3 商家制作 → 4 工作人员取货 → 5 工作人员开始配送 → 6 工作人员已到达 → 7 用户确认
+→ 8 已取消（未接单退款、商家拒单、超时取消、退款）
+```
+
 第三方授权登录流程图和支付流程：支付宝
 
 `沙箱网关固定为：https://openapi-sandbox.dl.alipaydev.com/gateway.do`
@@ -371,13 +379,9 @@ flowchart TD
 | 同步支付结果   | <img src="说明/支付宝支付/pay3.png" alt="支付" style="zoom: 25%;" /> |
 | 异步验签结果   | <img src="说明/支付宝支付/pay4.png" alt="支付" style="zoom: 25%;" /> |
 
-```
-→ 1 用户下单 → 2 用户确认支付 
-→ 3 商家制作 → 4 工作人员取货 → 5 工作人员开始配送 → 6 工作人员已到达 → 7 用户确认
-→ 8 已取消（未接单退款、商家拒单、超时取消、退款）
-```
-
 ## 四、user模块
+
+### model
 
 user-address
 
@@ -415,6 +419,8 @@ Q:Redis Hash 结构
 
 ## 五、文件管理
 
+### model
+
 1 使用excel分析
 
 POST /report/excel/read EasyExcel流式逐行读取解析，不加载全表到内存
@@ -428,7 +434,7 @@ UUID 重命名策略，丢弃原始文件名，UUID + 后缀生成全新文件�
 
 ## 六、branch-AI
 
-## model
+### model
 
 chat_session（session表）：存储的是“会话”维度的信息，以 session_id（业务ID）为唯一索引，记录session。
 chat_record（chat表）：存储的是具体的“对话消息”维度的信息，以 conversation_id 为索引, 上下文记忆。
@@ -520,9 +526,13 @@ flowchart TD
 
 ## 七 、branch-generator
 
+### model
+
 代码生成器模块，修改和导入新功能的快速实现
 
 ## 八、运维监测和aop日志
+
+### model
 
 1采用注解 + AOP 切面实现日志统一收集，自定义注解统一采集上下文常用的登录人、请求类型，使用参数，状态、耗时。
 
