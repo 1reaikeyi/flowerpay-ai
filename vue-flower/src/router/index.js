@@ -24,7 +24,7 @@ const router = createRouter({
         // Level 3:
         {
             path: '/emp/login',
-            component: () => import('@/views/employee/login/employee.vue'),
+            component: () => import('@/views/emp/login/emp.vue'),
             meta: { requiresAuth: false }
         },
 
@@ -98,7 +98,7 @@ const router = createRouter({
 const AUTH_SCOPES = [
     { prefix: '/admin', key: 'flower:admin', login: '/admin/login' },
     { prefix: '/user', key: 'flower:user', login: '/user/login' },
-    { prefix: '/emp', key: 'flower:emp', login: '/emp/login' },
+    { prefix: '/emp', key: 'flower:emp', login: '/emp/login' }
 ]
 
 // 取某端 localStorage 中的 token

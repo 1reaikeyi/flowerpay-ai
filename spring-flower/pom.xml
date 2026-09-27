@@ -88,7 +88,13 @@
             <dependency>
                 <groupId>cn.hutool</groupId>
                 <artifactId>hutool-all</artifactId>
-                <version>5.8.26</version>
+                <version>5.8.36</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>cn.hutool</groupId>
+                        <artifactId>hutool-extra</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <!-- JJWT 核心 API（编译时依赖） -->
             <!-- JJWT 实现（运行时依赖，不参与编译） -->
@@ -118,7 +124,8 @@
                 <version>3.3.2</version>
             </dependency>
 
-            <!-- XML 绑定 (Jakarta) -->
+            <!-- XML 解析 -->
+            <!-- json 解析(springboot自带) -->
             <dependency>
                 <groupId>jakarta.xml.bind</groupId>
                 <artifactId>jakarta.xml.bind-api</artifactId>

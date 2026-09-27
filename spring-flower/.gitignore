@@ -3,13 +3,18 @@
 HELP.md
 .mvn/wrapper/maven-wrapper.jar
 
-# 运行日志（logback 输出到工程根目录 ./logs）
+# 运行日志
 logs/
 *.log
+*.xml.versionsBackup
+*.swp
 
-# 全局忽略所有 target 目录（最简洁有效，删掉多余反向排除）
+# 全局忽略所有 target 目录
 
 **/target/
+!*/build/*.java
+!*/build/*.html
+!*/build/*.xml
 
 # STS 开发工具配置
 
@@ -36,9 +41,10 @@ build/
 
 .vscode/
 
-# IntelliJ IDEA - 整个配置目录全部排除，不纳入版本控制
-.idea/
+# IntelliJ IDEA -
+
+.idea
+*.iws
 *.iml
 *.ipr
-*.iws
 out/

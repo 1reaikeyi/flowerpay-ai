@@ -224,8 +224,6 @@ let streamStopped = false
 const allHotQuestions = [
   { icon: '🎂', title: '推荐生日鲜花', desc: '帮我推荐几款适合生日送的花束' },
   { icon: '💝', title: '情人节选花', desc: '情人节送女朋友什么花比较好' },
-  { icon: '📦', title: '查询订单', desc: '帮我查一下最近的订单状态' },
-  { icon: '🎁', title: '优惠活动', desc: '今天有什么优惠活动吗' },
   { icon: '🌹', title: '了解花语', desc: '不同颜色玫瑰花的花语是什么' },
   { icon: '👩', title: '送妈妈的花', desc: '母亲节送什么花最合适' }
 ]
