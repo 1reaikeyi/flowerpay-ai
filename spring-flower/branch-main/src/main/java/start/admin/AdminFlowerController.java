@@ -9,6 +9,7 @@ import model.dto.FlowerPageDTO;
 import model.vo.FlowerDetailVO;
 import model.vo.FlowerVO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import service.FlowerDetailService;
 import service.FlowerService;
@@ -26,6 +27,7 @@ public class AdminFlowerController {
     @Autowired
     private FlowerDetailService flowerDetailService;
 
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @OperationLogging(operation = OperationEnum.CREATE)
     @PostMapping
     public Result create(@RequestBody FlowerDTO flowerDTO) {
@@ -33,6 +35,7 @@ public class AdminFlowerController {
         return Result.success(dto);
     }
 
+    @PreAuthorize("hasAuthority('ROLE_USER') or hasAuthority('ROLE_EMP') or hasAuthority('ROLE_ADMIN')")
     @OperationLogging(operation = OperationEnum.READ)
     @GetMapping
     public Result readById(@RequestParam Long id) {
@@ -41,6 +44,7 @@ public class AdminFlowerController {
         return Result.success(flowerVO);
     }
 
+    @PreAuthorize("hasAuthority('ROLE_USER') or hasAuthority('ROLE_EMP') or hasAuthority('ROLE_ADMIN')")
     @OperationLogging(operation = OperationEnum.READ)
     @GetMapping("/all")
     public Result readPage(FlowerPageDTO flowerPageDTO) {
@@ -48,6 +52,7 @@ public class AdminFlowerController {
         return Result.success(flowerVOPageResult);
     }
 
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @OperationLogging(operation = OperationEnum.UPDATE)
     @PutMapping
     public Result updateByObject(@RequestBody FlowerDTO flowerDTO) {
@@ -55,24 +60,28 @@ public class AdminFlowerController {
         return Result.success(flowerDTO);
     }
 
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @OperationLogging(operation = OperationEnum.DELETE)
     @DeleteMapping
     public Result deleteById(@RequestParam List<Long> ids) {
         flowerService.deleteCache(ids);
         return Result.success(ids);
     }
+    @PreAuthorize("hasAuthority('ROLE_USER') or hasAuthority('ROLE_EMP') or hasAuthority('ROLE_ADMIN')")
     @OperationLogging(operation = OperationEnum.READ)
     @GetMapping("/of/flowerDetail")
     public Result readFlowerDetail(@RequestParam Long id) {
         List<FlowerDetailVO> flowerDetailVOList = flowerService.readFlowerDetail(id);
         return Result.success(flowerDetailVOList);
     }
+    @PreAuthorize("hasAuthority('ROLE_USER') or hasAuthority('ROLE_EMP') or hasAuthority('ROLE_ADMIN')")
     @OperationLogging(operation = OperationEnum.READ)
     @GetMapping("/of/object")
     public Result readOfObject(@RequestParam String object) {
         List<FlowerDetailVO> flowerDetailVOList = flowerService.readOfObject(object);
         return Result.success(flowerDetailVOList);
     }
+    @PreAuthorize("hasAuthority('ROLE_USER') or hasAuthority('ROLE_EMP') or hasAuthority('ROLE_ADMIN')")
     @OperationLogging(operation = OperationEnum.READ)
     @GetMapping("/of/option")
     public Result readOfOption(@RequestParam String option) {

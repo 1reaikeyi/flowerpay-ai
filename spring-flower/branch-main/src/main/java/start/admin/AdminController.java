@@ -4,11 +4,13 @@ import framework.aop.oparation.OperationEnum;
 import common.result.PageResult;
 import common.result.Result;
 import lombok.extern.slf4j.Slf4j;
+import model.dto.EmployeeDTO;
 import model.dto.EmployeePageDTO;
 import model.dto.LoginDTO;
 import model.dto.PasswordDTO;
 import model.vo.EmployeeVO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import service.EmployeeService;
@@ -35,6 +37,7 @@ public class AdminController {
         employeeService.admin2();
         return Result.success("logout");
     }
+    @PreAuthorize("hasAnyAuthority('ROLE_ADMIN')")
     @OperationLogging(operation = OperationEnum.READ)
     @GetMapping("/employee")
     public Result readById(@RequestParam Long id) {
@@ -42,6 +45,7 @@ public class AdminController {
         return Result.success(employeeVO);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_ADMIN')")
     @OperationLogging(operation = OperationEnum.READ)
     @GetMapping("/all")
     public Result readPage( @Validated EmployeePageDTO employeePageDTO) {
@@ -50,12 +54,14 @@ public class AdminController {
     }
 
 
+    @PreAuthorize("hasAnyAuthority('ROLE_ADMIN') or hasAnyAuthority('ROLE_EMP')")
     @OperationLogging(operation = OperationEnum.UPDATE)
     @PutMapping("/password")
     public Result updatePassword(@Validated @RequestBody PasswordDTO passwordDTO) {
         employeeService.updatePassword(passwordDTO);
         return Result.success("layout");
     }
+    @PreAuthorize("hasAnyAuthority('ROLE_ADMIN') or hasAnyAuthority('ROLE_EMP')")
     @OperationLogging(operation = OperationEnum.UPDATE)
     @PutMapping
     public Result updateByObject(@RequestBody EmployeeDTO employeeDTO) {
@@ -63,6 +69,7 @@ public class AdminController {
         return Result.success(employeeDTO.getId());
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_ADMIN')")
     @OperationLogging(operation = OperationEnum.DELETE)
     @DeleteMapping
     public Result deleteById(@RequestParam List<Long> ids) {

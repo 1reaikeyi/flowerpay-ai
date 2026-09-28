@@ -4,7 +4,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import model.dto.FestivalDetailDTO;
 import model.entity.FestivalDetail;
 import model.vo.FestivalDetailVO;
-import org.springframework.security.access.prepost.PreAuthorize;
 
 import java.util.List;
 
@@ -14,15 +13,11 @@ import java.util.List;
 
 public interface FestivalDetailService extends IService<FestivalDetail> {
 
-    @PreAuthorize("hasAnyAuthority('ROLE_ADMIN')")
     FestivalDetailDTO create(FestivalDetailDTO festivalDetailDTO);
 
-    @PreAuthorize("hasAuthority('ROLE_USER') or hasAuthority('ROLE_EMP') or hasAuthority('ROLE_ADMIN')")
     FestivalDetailVO readCache(Long id);
 
-    @PreAuthorize("hasAnyAuthority('ROLE_ADMIN')")
     void updateCache(FestivalDetailDTO festivalDetailDTO);
 
-    @PreAuthorize("hasAnyAuthority('ROLE_ADMIN')")
     void deleteCache(List<Long> ids);
 }

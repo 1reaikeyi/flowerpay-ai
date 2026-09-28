@@ -7,6 +7,7 @@ import model.vo.FestivalVO;
 import model.vo.FlowerCategoryVO;
 import model.vo.FlowerVO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,6 +25,7 @@ public class FlowerCategoryController {
     @Autowired
     private FlowerCategoryService flowerCategoryService;
 
+    @PreAuthorize("hasAuthority('ROLE_USER') or hasAuthority('ROLE_EMP') or hasAuthority('ROLE_ADMIN')")
     @OperationLogging(operation = OperationEnum.READ)
     @GetMapping
     public Result readByType(@RequestParam("type") Long type) {
@@ -31,6 +33,7 @@ public class FlowerCategoryController {
         return Result.success(flowerCategoryVOList);
     }
 
+    @PreAuthorize("hasAuthority('ROLE_USER') or hasAuthority('ROLE_EMP') or hasAuthority('ROLE_ADMIN')")
     @OperationLogging(operation = OperationEnum.READ)
     @GetMapping("/all")
     public Result readPage( @Validated FlowerCategoryPageDTO flowerCategoryPageDTO) {
@@ -38,6 +41,7 @@ public class FlowerCategoryController {
     }
 
 
+    @PreAuthorize("hasAuthority('ROLE_USER') or hasAuthority('ROLE_EMP') or hasAuthority('ROLE_ADMIN')")
     @OperationLogging(operation = OperationEnum.READ)
     @GetMapping("/of/flower")
     public Result readFlower(@RequestParam("id") Long categoryId) {
@@ -46,6 +50,7 @@ public class FlowerCategoryController {
     }
 
 
+    @PreAuthorize("hasAuthority('ROLE_USER') or hasAuthority('ROLE_EMP') or hasAuthority('ROLE_ADMIN')")
     @OperationLogging(operation = OperationEnum.READ)
     @GetMapping("of/festival")
     public Result getFestival(@RequestParam("id") Long categoryId) {

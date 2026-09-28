@@ -6,6 +6,7 @@ import model.dto.FestivalPageDTO;
 import model.vo.FestivalDetailVO;
 import model.vo.FestivalVO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -22,6 +23,7 @@ public class FestivalController {
     @Autowired
     private FestivalService festivalService;
 
+    @PreAuthorize("hasAuthority('ROLE_USER') or hasAuthority('ROLE_EMP') or hasAuthority('ROLE_ADMIN')")
     @OperationLogging(operation = OperationEnum.READ)
     @GetMapping
     public Result readById(@RequestParam Long id) {
@@ -30,18 +32,21 @@ public class FestivalController {
         return Result.success(festivalVO);
     }
 
+    @PreAuthorize("hasAuthority('ROLE_USER') or hasAuthority('ROLE_EMP') or hasAuthority('ROLE_ADMIN')")
     @OperationLogging(operation = OperationEnum.READ)
     @GetMapping("/all")
     public Result readPage(FestivalPageDTO festivalPageDTO) {
         return Result.success(festivalService.readPage(festivalPageDTO));
     }
 
+    @PreAuthorize("hasAuthority('ROLE_USER') or hasAuthority('ROLE_EMP') or hasAuthority('ROLE_ADMIN')")
     @OperationLogging(operation = OperationEnum.READ)
     @GetMapping("/of/festivalDetail")
     public Result readFestivalDetail(@RequestParam Long id) {
         List<FestivalDetailVO> festivalDetailVOList = festivalService.readFestivalDetail(id);
         return Result.success(festivalDetailVOList);
     }
+    @PreAuthorize("hasAuthority('ROLE_USER') or hasAuthority('ROLE_EMP') or hasAuthority('ROLE_ADMIN')")
     @OperationLogging(operation = OperationEnum.READ)
     @GetMapping("/of/flower")
     public Result readFlower(@RequestParam Long id) {

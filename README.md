@@ -2,7 +2,7 @@
   <h1>flowerpay-ai 鲜花商店 + ai</h1>
   <h5>后端利用 Spring Boot 3 的高效与安全性提供 RESTful API 服务，前端借助 Vue 3 实现流畅的用户交互体验的构建的现代化前后端分离系统。通过多级缓存热点数据以提升系统响应速度，Druid 负责MySQL连接池与 SQL 监控，保障订单、库存数据访问；使用redis_exporter采集多级缓存命中率使用情况，监视redis。</h5>	   <h5>主业务为B2C经营模式，一个花店卖家，多个买家，由店长、店员和客户组成，前台鲜花经营及后台管理系统。分支业务org.springframework.ai的openai +com.alibaba.cloud.ai的graph，问一问rag的使用用途和送人对象，拍一拍识别推荐花束。</h5>
 </div>
-
+---
 
 ## 配置说明
 
@@ -17,16 +17,7 @@
     <img src="https://img.shields.io/badge/阿里云-qwen-6DB33F?style=flat-square&logo=java&logoColor=white" alt="阿里云" />
     </h1>
 </div>
-
 ---
-
-## 启动步骤 
-
- 1创建数据库并导入 `sql/` 目录脚本。
-
-2 修改 `resources/application-dev.yml` 中DB,  Redis ，ai配置。
-
-3 `npm run dev ` 前端启动服务。
 
 ## 接口文档
 
@@ -35,6 +26,10 @@ flowerpay-ai\说明\admin接口文档.md
 flowerpay-ai\说明\emp接口文档.md
 
 flowerpay-ai\说明\user接口文档.md
+
+## 项目结构
+
+flowerpay-ai\说明\wiki.md
 
 ## 数据流向图
 
@@ -102,8 +97,6 @@ flowerpay-ai\说明\user接口文档.md
 
 # 前端说明
 
-技术栈：Vue 3 + Element Plus + Pinia + Vue Router + echarts
-
 ## 店长端，员工端界面
 
 |    功能页面    |                             截图                             |
@@ -143,17 +136,6 @@ flowerpay-ai\说明\user接口文档.md
 
 # 后端说明
 
-```
-spring-flower/
-├── common/              # [共用] 公共模块（常量/枚举、工具类、统一结果、异常等）
-├── model/               # [共用] 所有数据传输对象
-├── framework/           # [共用] 设施层（filter、AOP、error handle、interceptor、monitor等）
-├── service/             # [共用] 业务层（Mapper 数据访问 + Service 接口及实现）
-├── branch-main/         # [main服务]   主业务启动模块
-├── branch-generator/    # [branch服务] 代码生成器模块，修改和导入新功能的快速实现
-└── branch-ai/           # [branch服务] AI 扩展服务启动模块
-```
-
 ## 一、店长、店员和客户多端端登录认证模块
 
 ### 迭代过程
@@ -164,10 +146,10 @@ Q：滑动过期会不会产生大量无效 Redis Key？
 Q: 放弃 MD5，使用BCrypt 密码加密存储优点？
 不使用 MD5/SHA256 不可逆哈希，BCrypt 自带随机盐值，抗彩虹表暴力破解，数据库永不存储明文密码。
 Q: 如何role权限隔离, 不越级？
-1.service的方法层拦截
- interface使用@PreAuthorize("hasAuthority('ROLE_ADMIN')or hasAuthority('ROLE_EMP')")
+1.controller的方法层拦截
+@PreAuthorize("hasAuthority('ROLE_ADMIN')or hasAuthority('ROLE_EMP')")
  @PreAuthorize("hasAuthority('ROLE_USER')")
- 2. controller的url拦截
+2.controller的url拦截
 .requestMatchers("/admin/**").hasAnyAuthority("ROLE_ADMIN", "ROLE_EMP")
 .requestMatchers("/user/**").hasAuthority("ROLE_USER")
 ```

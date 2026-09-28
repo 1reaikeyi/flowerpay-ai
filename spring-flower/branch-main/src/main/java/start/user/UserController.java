@@ -5,6 +5,7 @@ import common.result.Result;
 import model.dto.LoginDTO;
 import model.dto.UserDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import service.UserService;
 import framework.aop.OperationLogging;
@@ -34,6 +35,7 @@ public class UserController {
         return Result.success("logout");
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_USER')")
     @OperationLogging(operation = OperationEnum.UPDATE)
     @PutMapping
     public Result updateByObject(@RequestBody UserDTO userDTO) {

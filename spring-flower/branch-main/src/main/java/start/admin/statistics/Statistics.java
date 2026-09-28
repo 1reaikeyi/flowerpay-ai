@@ -6,6 +6,7 @@ import model.vo.statistics.StatisticsVO;
 import model.vo.statistics.OrderStatisticsVO;
 import model.vo.statistics.TopStatisticsVO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,6 +23,7 @@ public class Statistics {
     private FlowerOrderDetailService flowerOrderDetailService;
 
 
+    @PreAuthorize("hasAnyAuthority('ROLE_ADMIN') or hasAnyAuthority('ROLE_EMP')")
     @OperationLogging(operation = OperationEnum.READ)
     @GetMapping("/flower")
     public Result flowerSale() {
@@ -29,6 +31,7 @@ public class Statistics {
         return Result.success(statisticsVOList);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_ADMIN') or hasAnyAuthority('ROLE_EMP')")
     @OperationLogging(operation = OperationEnum.READ)
     @GetMapping("/festival")
     public Result festivalSale() {
@@ -36,6 +39,7 @@ public class Statistics {
         return Result.success(festivalStatisticsVOList);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_ADMIN') or hasAnyAuthority('ROLE_EMP')")
     @OperationLogging(operation = OperationEnum.READ)
     @GetMapping("/top1")
     public Result top1() {
@@ -43,6 +47,7 @@ public class Statistics {
         return Result.success(statisticsVOList);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_ADMIN') or hasAnyAuthority('ROLE_EMP')")
     @OperationLogging(operation = OperationEnum.READ)
     @GetMapping("/top2")
     public Result top2() {
@@ -50,6 +55,7 @@ public class Statistics {
         return Result.success(festivalStatisticsVOList);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_ADMIN') or hasAnyAuthority('ROLE_EMP')")
     @OperationLogging(operation = OperationEnum.READ)
     @GetMapping("/order")
     public Result order() {
@@ -58,6 +64,7 @@ public class Statistics {
     }
 
     // 今日统计：今日订单数、已支付订单数、今日营业额
+    @PreAuthorize("hasAnyAuthority('ROLE_ADMIN') or hasAnyAuthority('ROLE_EMP')")
     @OperationLogging(operation = OperationEnum.READ)
     @GetMapping("/today")
     public Result today() {

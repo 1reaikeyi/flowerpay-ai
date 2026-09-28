@@ -5,6 +5,7 @@ import common.result.Result;
 import model.dto.UserShoppingDTO;
 import model.vo.UserShoppingVO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import service.UserShoppingService;
@@ -19,6 +20,7 @@ public class UserShoppingController {
     @Autowired
     private UserShoppingService userShoppingService;
 
+    @PreAuthorize("hasAnyAuthority('ROLE_USER')")
     @OperationLogging(operation = OperationEnum.CREATE)
     @PostMapping
     public Result create(@Validated @RequestBody UserShoppingDTO userShoppingDTO){
@@ -26,6 +28,7 @@ public class UserShoppingController {
         return Result.success(dto);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_USER')")
     @OperationLogging(operation = OperationEnum.READ)
     @GetMapping
     public Result readAll(){
@@ -33,6 +36,7 @@ public class UserShoppingController {
         return Result.success(userShoppingVOList);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_USER')")
     @OperationLogging(operation = OperationEnum.DELETE)
     @DeleteMapping
     public Result delete(@RequestParam Long id){
@@ -40,6 +44,7 @@ public class UserShoppingController {
         return Result.success(id);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_USER')")
     @OperationLogging(operation = OperationEnum.DELETE)
     @DeleteMapping("/all")
     public Result deleteAll(){

@@ -10,6 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 import model.dto.EmployeeDTO;
 import model.dto.LoginDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import service.EmployeeService;
 
@@ -40,6 +41,7 @@ public class EmployeeController {
         return Result.success("logout");
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_ADMIN') or hasAnyAuthority('ROLE_EMP')")
     @OperationLogging(operation = OperationEnum.UPDATE)
     @PutMapping
     public Result updateByObject(@RequestBody EmployeeDTO employeeDTO) {

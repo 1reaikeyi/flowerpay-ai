@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import model.dto.FlowerDetailDTO;
 import model.vo.FlowerDetailVO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import service.FlowerDetailService;
 import framework.aop.OperationLogging;
@@ -19,6 +20,7 @@ public class AdminFlowerDetailController {
     @Autowired
     private FlowerDetailService flowerDetailService;
 
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @OperationLogging(operation = OperationEnum.CREATE)
     @PostMapping
     public Result add(@RequestBody FlowerDetailDTO flowerDetailDTO) {
@@ -26,6 +28,7 @@ public class AdminFlowerDetailController {
         return Result.success(dto);
     }
 
+    @PreAuthorize("hasAuthority('ROLE_USER') or hasAuthority('ROLE_EMP') or hasAuthority('ROLE_ADMIN')")
     @OperationLogging(operation = OperationEnum.READ)
     @GetMapping
     public Result readById(@RequestParam Long id) {
@@ -34,6 +37,7 @@ public class AdminFlowerDetailController {
         return Result.success(flowerDetailVO);
     }
 
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @OperationLogging(operation = OperationEnum.UPDATE)
     @PutMapping
     public Result updateByObject(@RequestBody FlowerDetailDTO flowerDetailDTO) {
@@ -41,6 +45,7 @@ public class AdminFlowerDetailController {
         return Result.success(flowerDetailDTO);
     }
 
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @OperationLogging(operation = OperationEnum.DELETE)
     @DeleteMapping
     public Result deleteById(@RequestParam List<Long> ids) {
