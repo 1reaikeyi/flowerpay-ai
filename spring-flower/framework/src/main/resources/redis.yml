@@ -6,14 +6,7 @@ spring:
       port: ${flower.redis.port}
       password: ${flower.redis.password}
       database: ${flower.redis.database}
-      client-type: lettuce
       timeout: 3000ms
-      lettuce:
-        pool:
-          max-active: 10
-          max-wait: 3000ms
-          max-idle: 8
-          min-idle: 2
       redisson:
         config: |
           singleServerConfig:
@@ -27,5 +20,13 @@ spring:
             connectionPoolSize: 10
             # 最小空闲连接数
             connectionMinimumIdleSize: 2
+            # 连接空闲超时（毫秒），超时后关闭空闲连接
+            idleConnectionTimeout: 10000
+            # 连接建立超时（毫秒）
+            connectTimeout: 10000
             # 命令执行超时（毫秒）
             timeout: 3000
+            # 命令失败重试次数
+            retryAttempts: 3
+            # 命令失败重试间隔（毫秒）
+            retryInterval: 1500
