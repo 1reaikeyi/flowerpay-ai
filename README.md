@@ -143,15 +143,28 @@ flowerpay-ai\说明\wiki.md
 ```
 Q：滑动过期会不会产生大量无效 Redis Key？
 答：设置最大基础 TTL 兜底，即使用户长期不操作，缓存自动(expire:24小时)淘汰；登出接口主动删除对应 key，减少无效缓存堆积。
-Q: 放弃 MD5，使用BCrypt 密码加密存储优点？
-不使用 MD5/SHA256 不可逆哈希，BCrypt 自带随机盐值，抗彩虹表暴力破解，数据库永不存储明文密码。
-Q: 如何role权限隔离, 不越级？
-1.controller的方法层拦截
-@PreAuthorize("hasAuthority('ROLE_ADMIN')or hasAuthority('ROLE_EMP')")
- @PreAuthorize("hasAuthority('ROLE_USER')")
-2.controller的url拦截
-.requestMatchers("/admin/**").hasAnyAuthority("ROLE_ADMIN", "ROLE_EMP")
-.requestMatchers("/user/**").hasAuthority("ROLE_USER")
+Q: 如何保证role权限？
+使用spring security处理
+1.url拦截
+ @Override
+    protected boolean shouldNotFilter(HttpServletRequest request) {
+        // OPTIONS 请求（CORS 预检）直接放行
+        if (request.getMethod().equalsIgnoreCase(HttpMethod.OPTIONS.name())) {
+            return true;
+        }
+        String uri = request.getRequestURI();
+        // 登录和注册接口不需要认证，直接放行
+        if (uri.equals("/user/login") || uri.equals("/user/register") ||
+                uri.equals("/employee/login") || uri.equals("/employee/register")||
+                uri.equals("/admin/login") || uri.equals("/admin/register")){
+            return true;
+        }
+        return !uri.startsWith("/admin") &&
+                !uri.startsWith("/employee") &&
+                !uri.startsWith("/user");
+    }
+2.使用层拦截
+@PreAuthorize("hasRole('ADMIN')"),@PreAuthorize("hasRole('EMP')"),@PreAuthorize("hasRole('USER')")
 ```
 
 ------

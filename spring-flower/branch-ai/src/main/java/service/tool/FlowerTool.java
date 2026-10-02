@@ -3,7 +3,7 @@ package service.tool;
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import model.bo.FlowerBO;
+import framework.bo.FlowerBO;
 import model.entity.Flower;
 import org.springframework.ai.chat.model.ToolContext;
 import org.springframework.ai.tool.annotation.Tool;

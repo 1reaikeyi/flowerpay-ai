@@ -16,19 +16,15 @@ import model.dto.LoginDTO;
 import model.dto.UserDTO;
 import model.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Lazy;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import service.UserService;
+import framework.security.UserAuthenticationToken;
 import framework.security.SecurityContextParam;
-
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -46,8 +42,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     private StringRedisTemplate stringRedisTemplate;
     @Autowired
     private JwtProperties jwtProperties;
-    // 懒加载：打破 认证管理器 -> 认证提供者 -> 员工Service 的循环依赖
-    @Lazy
     @Autowired
     private AuthenticationManager authenticationManager; // 注入认证管理器
 
@@ -74,15 +68,15 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     public String login(LoginDTO loginDTO) {
         String username = loginDTO.getUsername();
         String password = loginDTO.getPassword();
-        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(username, password,
-                Collections.singletonList(new SimpleGrantedAuthority(RoleConstant.ROLE_USER)));
+        // 使用 UserAuthenticationToken → 自动路由到 UserAuthenticationProvider → LoginUserService
+        UserAuthenticationToken authenticationToken = new UserAuthenticationToken(username, password);
         authenticationManager.authenticate(authenticationToken);
 
         User user = this.findUsername(username);
         Map<String,Object> map = new HashMap<>();
-        map.put(JwtConstant.USER_ID, user.getId());
-        map.put(JwtConstant.USER_NAME, user.getUsername());
-        map.put(JwtConstant.TYPE,RoleConstant.ROLE_USER);
+        map.put(JwtConstant.ID, user.getId());
+        map.put(JwtConstant.NAME, user.getUsername());
+        map.put(JwtConstant.Role,RoleConstant.ROLE_USER);
 
         String token = JwtUtil.createJWT(jwtProperties.getUserSecretKey(), jwtProperties.getUserTtl(), map);
         stringRedisTemplate.opsForValue().set(RedisPrefixConstant.USER_AUTH_PREFIX+ user.getId(), token,

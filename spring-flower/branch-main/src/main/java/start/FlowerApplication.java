@@ -21,7 +21,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 //主程序入口
 @SpringBootApplication
 // 扫描bean组件
-@ComponentScan(basePackages = {"framework","service","start"})
+@ComponentScan(basePackages = {"framework","mapper","service","start"})
 // 扫描mapper接口
 @MapperScan("mapper")
 //aop

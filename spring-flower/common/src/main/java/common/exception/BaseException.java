@@ -31,6 +31,9 @@ public class BaseException extends RuntimeException {
      */
     private String defaultMessage;
 
+    public BaseException() {
+    }
+
     public BaseException(String module, String code, Object[] args, String defaultMessage)
     {
         super(defaultMessage);

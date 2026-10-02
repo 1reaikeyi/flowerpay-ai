@@ -63,6 +63,7 @@ const router = createRouter({
                 { path: 'employee/profile', component: () => import('@/views/admin/employee/profile.vue') },   // 当前员工信息
                 { path: 'employee/avatar', component: () => import('@/views/admin/employee/avatar.vue') },    // 更换头像
                 { path: 'employee/password', component: () => import('@/views/admin/employee/password.vue') } // 重置密码
+                ,{ path: 'ai', component: () => import('@/views/user/ai/index.vue') }
             ]
         },
 

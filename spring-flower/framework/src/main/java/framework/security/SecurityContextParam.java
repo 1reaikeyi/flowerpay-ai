@@ -1,61 +1,73 @@
 package framework.security;
 
 
+import framework.bo.LoginUserDetails;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+
+import java.util.List;
 
 /**
  * Spring Security 用户信息工具类
  *
  */
 public class SecurityContextParam {
+
     /**
-     * 获取当前登录用户主体信息
-     *
-     * @return LoginUserDetails，如果未登录返回null
+     * 获取当前登录用户的ID
      */
-    public static LoginUserDetails getPrincipal() {
+    public static Long getCurrentUserId() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication == null) {
             return null;
         }
         Object principal = authentication.getPrincipal();
-        if (principal instanceof LoginUserDetails) {
-            return (LoginUserDetails) principal;
+        if (principal instanceof LoginUserDetails loginUserDetails) {
+            return loginUserDetails.getUserBO().getId();
         }
-        return null;
-    }
-
-
-    /**
-     * 获取当前登录用户的ID
-     *
-     * @return 用户ID，如果未登录返回null
-     */
-    public static Long getCurrentUserId() {
-        LoginUserDetails details = getPrincipal();
-        return details != null ? details.getId() : null;
+        return 0L;
     }
 
     /**
      * 获取当前登录用户名
-     *
-     * @return 用户名，如果未登录返回null
      */
     public static String getCurrentUsername() {
-        LoginUserDetails details = getPrincipal();
-        return details != null ? details.getUsername() : null;
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication == null) {
+            return null;
+        }
+        Object principal = authentication.getPrincipal();
+        if (principal instanceof LoginUserDetails loginUserDetails) {
+            return loginUserDetails.getUserBO().getUsername();
+        }
+        return null;
     }
     /**
      * 获取当前登录用户角色
-     *
-     * @return 角色，例如"ROLE_USER"或"ROLE_ADMIN"前缀，如果未登录返回null
      */
     public static String getCurrentType() {
-        LoginUserDetails details = getPrincipal();
-        return details != null ? details.getAuthorities().toString() : null;
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication == null) {
+            return null;
+        }
+        Object principal = authentication.getPrincipal();
+        if (principal instanceof LoginUserDetails loginUserDetails) {
+            return loginUserDetails.getUserBO().getRole();
+        }
+        return null;
     }
-    
-
-
+    /**
+     * 获取当前登录用户权限
+     */
+    public static List<String> getCurrentPermissions() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication == null) {
+            return null;
+        }
+        Object principal = authentication.getPrincipal();
+        if (principal instanceof LoginUserDetails loginUserDetails) {
+            return loginUserDetails.getUserBO().getPermission();
+        }
+        return null;
+    }
 }
