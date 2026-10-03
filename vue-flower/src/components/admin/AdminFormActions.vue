@@ -18,8 +18,6 @@
 
 <script setup>
 // 表单底部操作按钮：取消 / 保存 / 保存并继续添加
-// submitting：保存按钮 loading 状态
-// showContinue：是否显示「保存并继续添加」（编辑模式通常为 false，由调用方控制）
 defineProps({
   submitting: {
     type: Boolean,

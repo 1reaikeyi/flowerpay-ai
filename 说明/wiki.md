@@ -1,6 +1,6 @@
 # Wiki
 
-## 一、后端（spring-flower）
+## 一、后端
 
 ```
 spring-flower/
@@ -18,7 +18,6 @@ spring-flower/
 ├── model/                           # 数据模型模块
 │   ├── pom.xml
 │   └── src/main/java/model/
-│       ├── bo/                      # 业务对象
 │       ├── constant/                # 业务常量（角色、店铺、状态）
 │       ├── dto/                     # 数据传输对象（入参）
 │       ├── entity/                  # 数据库实体
@@ -32,14 +31,14 @@ spring-flower/
 │   ├── pom.xml
 │   └── src/main/
 │       ├── java/framework/
-│       │   ├── aop/                 # AOP 操作日志（注解 + 切面）
 │       │   ├── config/              # 配置类（Druid、MyBatis、Security、缓存、Caffeine、Web、Jackson 等）
+│       │   ├── aop/                 # AOP 操作日志（注解 + 切面）
 │       │   ├── exceptionhandle/     # 全局异常处理
 │       │   ├── filter/              # 过滤器（JWT 刷新、信息、Druid 等）
 │       │   ├── interceptor/         # 拦截器（敏感词）
-│       │   ├── mybatis/             # MyBatis 自动填充
+│       │   ├── mybatis/             # MyBatis 使用
 │       │   ├── properties/          # 配置属性（JWT、阿里云 OSS）
-│       │   ├── redis/               # Redis 指标导出
+│       │   ├── redis/               # Redis 使用
 │       │   ├── security/            # 安全上下文
 │       │   ├── util/                # JWT、OSS 工具
 │       │   ├── wechat/              # 微信支付封装
@@ -54,7 +53,7 @@ spring-flower/
 │   ├── pom.xml
 │   └── src/main/java/
 │       ├── mapper/                  # MyBatis-Plus Mapper 接口
-│       └── service/                 # Service 接口 + impl 实现（含权限认证 provider）
+│       └── service/                 # Service 接口 + impl 实现
 │
 ├── branch-main/                     # 主业务启动模块（端口 8080）
 │   ├── pom.xml
@@ -112,7 +111,7 @@ spring-flower/
 
 ---
 
-## 二、前端（vue-flower）
+## 二、前端
 
 ```
 vue-flower/

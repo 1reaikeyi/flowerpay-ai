@@ -1,5 +1,21 @@
 <template>
-  <div class="ai-page">
+  <!-- 右下角悬浮球：未打开对话时显示 -->
+  <div v-if="!dialogVisible" class="ai-float-ball" @click="dialogVisible = true">
+    <img :src="picHello" alt="鲜小花" class="ball-img" />
+  </div>
+
+  <!-- 独立悬浮对话弹窗：无遮罩、不锁滚动，浮于页面之上 -->
+  <el-dialog
+    v-model="dialogVisible"
+    :modal="false"
+    :lock-scroll="false"
+    :close-on-click-modal="false"
+    :show-close="false"
+    :append-to-body="true"
+    custom-class="ai-chat-dialog"
+    width="720px"
+  >
+    <div class="ai-page">
     <div class="ai-layout">
       <!-- 左侧历史记录 -->
       <div class="sidebar" :class="{ collapsed: !sidebarOpen }">
@@ -50,10 +66,15 @@
               </div>
             </div>
           </div>
-          <button class="ios-icon-btn" @click="sidebarOpen = !sidebarOpen">
-            <el-icon v-if="sidebarOpen"><Back /></el-icon>
-            <el-icon v-else><Aim /></el-icon>
-          </button>
+          <div class="header-actions">
+            <button class="ios-icon-btn" @click="sidebarOpen = !sidebarOpen">
+              <el-icon v-if="sidebarOpen"><Back /></el-icon>
+              <el-icon v-else><Aim /></el-icon>
+            </button>
+            <button class="ios-icon-btn" @click="dialogVisible = false">
+              <el-icon><Close /></el-icon>
+            </button>
+          </div>
         </div>
 
         <!-- 消息区 -->
@@ -66,9 +87,6 @@
             <div class="hot-section">
               <div class="hot-header">
                 <span>热门问题</span>
-                <button class="ios-btn ios-btn-ghost ios-btn-sm" @click="shuffleHotQuestions">
-                  换一换
-                </button>
               </div>
               <div class="hot-grid">
                 <div
@@ -185,7 +203,8 @@
         </div>
       </div>
     </div>
-  </div>
+    </div>
+  </el-dialog>
 </template>
 
 <script setup>
@@ -194,7 +213,7 @@ import { ElMessage } from 'element-plus'
 import {
   Plus, Delete, ChatDotRound, User, Promotion,
   CaretTop, CaretBottom, CopyDocument, RefreshRight,
-  Back, Aim
+  Back, Aim, Close
 } from '@element-plus/icons-vue'
 // AI 接口（后端 branch-ai：ChatController + SessionController）
 import {
@@ -205,9 +224,11 @@ import {
   deleteSession,
   stopChat,
   chatStream
-} from '@/api/user/ai.js'
+} from '@/api/ai/ai.js'
+import picHello from '@/assets/image/pic-hello.png'
 
 const sidebarOpen = ref(true)
+const dialogVisible = ref(false) // 悬浮对话弹窗显隐
 const scrollRef = ref(null)
 const textareaRef = ref(null)
 const inputText = ref('')
@@ -221,16 +242,16 @@ const historyGroups = ref([])
 // 标记当前流式是否已被用户停止
 let streamStopped = false
 
-const allHotQuestions = [
-  { icon: '🎂', title: '推荐生日鲜花', desc: '帮我推荐几款适合生日送的花束' },
-  { icon: '💝', title: '情人节选花', desc: '情人节送女朋友什么花比较好' },
-  { icon: '🌹', title: '了解花语', desc: '不同颜色玫瑰花的花语是什么' },
-  { icon: '👩', title: '送妈妈的花', desc: '母亲节送什么花最合适' }
-]
 const hotQuestions = ref([])
 
-function shuffleHotQuestions() {
-  hotQuestions.value = [...allHotQuestions].sort(() => Math.random() - 0.5).slice(0, 4)
+// 用后端会话返回的 examples 填充热门问题（数据来自后端，前端不再“换一换”）
+function applyHotQuestions(session) {
+  const list = session?.examples || []
+  hotQuestions.value = list.map((e) => ({
+    icon: '🌸',
+    title: e.title || '',
+    desc: e.describe || ''
+  }))
 }
 
 function scrollToBottom() {
@@ -274,6 +295,7 @@ async function handleNewChat() {
   try {
     const session = await startSession()
     activeSessionId.value = session?.sessionId || ''
+    applyHotQuestions(session)
     messages.value = []
     suggestions.value = []
     loadHistory()
@@ -361,6 +383,7 @@ async function handleSend() {
     try {
       const session = await startSession()
       activeSessionId.value = session?.sessionId || ''
+      applyHotQuestions(session)
       loadHistory()
     } catch (e) {
       ElMessage.error('创建会话失败')
@@ -447,30 +470,57 @@ function handleRegenerate() {
   handleSend()
 }
 
-onMounted(() => {
-  shuffleHotQuestions()
+onMounted(async () => {
+  // 启动初始会话，从后端获取热门问题（examples）
+  try {
+    const session = await startSession()
+    activeSessionId.value = session?.sessionId || ''
+    applyHotQuestions(session)
+  } catch (e) {
+    // 获取失败时热门问题留空，不阻塞历史加载
+  }
   loadHistory()
 })
 </script>
 
 <style lang="scss" scoped>
-/* ========== Apple iOS 风格 ========== */
-$ios-bg: #F2F2F7;
-$ios-card: #FFFFFF;
-$ios-label: #1C1C1E;
-$ios-label-2: #3C3C43;
-$ios-label-3: #8E8E93;
-$ios-separator: rgba(60, 60, 67, 0.12);
-$ios-fill: rgba(120, 120, 128, 0.12);
-$ios-blue: #0A84FF;
-$ios-green: #30D158;
-$ios-red: #FF3B30;
-$radius-lg: 18px;
-$radius-md: 12px;
-$radius-sm: 8px;
+/* 系统色板与 iOS 设计令牌均已通过 _theme.scss 全局注入，可直接使用 */
+
+/* ===== 右下角悬浮球 ===== */
+.ai-float-ball {
+  position: fixed;
+  right: 256px;
+  bottom: 128px;
+  z-index: 2000;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.15s ease;
+
+  &:hover {
+    transform: translateY(-2px) scale(1.04);
+  }
+  &:active {
+    transform: scale(0.96);
+  }
+
+  .ball-img {
+    display: block;
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    filter: drop-shadow(0 6px 16px rgba(255, 55, 95, 0.35));
+  }
+}
+
+/* ===== 头部操作按钮组 ===== */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 
 .ai-page {
-  height: calc(100vh - 120px);
+  height: 600px;
   background: $ios-bg;
   border-radius: $radius-lg;
   overflow: hidden;
@@ -548,8 +598,8 @@ $radius-sm: 8px;
   }
 
   &.active {
-    background: rgba($ios-blue, 0.1);
-    color: $ios-blue;
+    background: rgba($sys-blue, 0.1);
+    color: $sys-blue;
   }
 
   .item-icon {
@@ -569,7 +619,7 @@ $radius-sm: 8px;
     font-size: 12px;
     opacity: 0;
     transition: opacity 0.15s;
-    &:hover { color: $ios-red; }
+    &:hover { color: $sys-red; }
   }
 
   &.active .item-delete { opacity: 1; }
@@ -616,6 +666,7 @@ $radius-sm: 8px;
     font-weight: 600;
     color: $ios-label;
     letter-spacing: -0.2px;
+    white-space: nowrap;
   }
 
   .header-sub {
@@ -625,12 +676,13 @@ $radius-sm: 8px;
     align-items: center;
     gap: 4px;
     margin-top: 1px;
+    white-space: nowrap;
 
     .status-dot {
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background: $ios-green;
+      background: $sys-green;
     }
   }
 }
@@ -759,7 +811,7 @@ $radius-sm: 8px;
   }
 
   &.user-avatar-sm {
-    background: $ios-blue;
+    background: $sys-blue;
     color: #fff;
   }
 }
@@ -793,7 +845,7 @@ $radius-sm: 8px;
 }
 
 .is-user .msg-bubble {
-  background: $ios-blue;
+  background: $sys-blue;
   color: #fff;
   border-bottom-right-radius: 6px;
 }
@@ -853,11 +905,11 @@ $radius-sm: 8px;
 
   &:hover {
     background: $ios-fill;
-    color: $ios-blue;
+    color: $sys-blue;
   }
 
   &.active {
-    color: $ios-blue;
+    color: $sys-blue;
   }
 }
 
@@ -882,8 +934,8 @@ $radius-sm: 8px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
 
   &:hover {
-    background: rgba($ios-blue, 0.08);
-    color: $ios-blue;
+    background: rgba($sys-blue, 0.08);
+    color: $sys-blue;
   }
 }
 
@@ -902,7 +954,7 @@ $radius-sm: 8px;
   transition: box-shadow 0.2s;
 
   &.focused {
-    box-shadow: 0 2px 16px rgba($ios-blue, 0.15);
+    box-shadow: 0 2px 16px rgba($sys-blue, 0.15);
   }
 }
 
@@ -972,18 +1024,18 @@ $radius-sm: 8px;
   }
 
   &.ios-btn-primary {
-    background: $ios-blue;
+    background: $sys-blue;
     color: #fff;
   }
 
   &.ios-btn-danger {
-    background: $ios-red;
+    background: $sys-red;
     color: #fff;
   }
 
   &.ios-btn-ghost {
     background: transparent;
-    color: $ios-blue;
+    color: $sys-blue;
     font-weight: 400;
   }
 }
@@ -1013,6 +1065,43 @@ $radius-sm: 8px;
 .send-btn {
   .el-icon {
     font-size: 12px;
+  }
+}
+</style>
+
+<!-- 全局样式：el-dialog 经 append-to-body 挂到 body，scoped 作用不到，需非 scoped 覆盖 -->
+<style lang="scss">
+.ai-chat-dialog {
+  // 去除默认内边距与圆角，交由内部 .ai-page 控制
+  .el-dialog {
+    margin: 0 !important;
+    padding: 0;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+  }
+  .el-dialog__header {
+    display: none; // 自定义头部，隐藏默认头部
+  }
+  .el-dialog__body {
+    padding: 0;
+  }
+  // 无遮罩：让遮罩透明且不拦截页面点击
+  &.el-overlay {
+    background-color: transparent;
+    pointer-events: none;
+    .el-dialog {
+      pointer-events: auto; // 弹窗本体仍可交互
+    }
+  }
+  // 定位到右下角（吸附悬浮球上方）
+  &.el-overlay-dialog {
+    position: fixed;
+    right: 24px;
+    bottom: 110px;
+    left: auto;
+    top: auto;
+    transform: none;
   }
 }
 </style>

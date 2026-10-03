@@ -1,4 +1,4 @@
-package start.config;
+package framework.config;
 
 import com.alibaba.druid.support.spring.stat.DruidStatInterceptor;
 import org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator;

@@ -1,4 +1,4 @@
-package start.config;
+package framework.config;
 
 import model.vo.FestivalDetailVO;
 import model.vo.FlowerDetailVO;

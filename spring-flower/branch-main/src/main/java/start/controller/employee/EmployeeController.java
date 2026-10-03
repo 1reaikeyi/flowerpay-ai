@@ -41,7 +41,7 @@ public class EmployeeController {
         return Result.success("logout");
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasRole('EMP')")
     @OperationLogging(operation = OperationEnum.UPDATE)
     @PutMapping
     public Result updateByObject(@RequestBody EmployeeDTO employeeDTO) {

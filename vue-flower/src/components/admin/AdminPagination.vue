@@ -16,7 +16,6 @@
 import { computed } from 'vue'
 
 // 统一分页组件：内置布局、页码尺寸与激活色样式
-// 支持 v-model:page / v-model:page-size 双向绑定
 const props = defineProps({
   page: {
     type: Number,

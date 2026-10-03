@@ -1,4 +1,4 @@
-package start.config;
+package start;
 
 import cn.hutool.json.JSONUtil;
 import framework.filter.auth.AdminRefreshRequestFilter;
@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Configuration;
 
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
+import org.springframework.security.authentication.ProviderManager;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -57,8 +57,14 @@ public class SecurityConfig {
     }
 
     @Bean
-    public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
-        return config.getAuthenticationManager();
+    public AuthenticationManager authenticationManager(
+            AdminAuthenticationProvider adminAuthenticationProvider,
+            EmpAuthenticationProvider empAuthenticationProvider,
+            UserAuthenticationProvider userAuthenticationProvider) {
+        return new ProviderManager(Arrays.asList(
+                adminAuthenticationProvider,
+                empAuthenticationProvider,
+                userAuthenticationProvider));
     }
     @Bean
     public UserAuthenticationProvider userAuthProvider(LoginUserService userService,

@@ -1,9 +1,8 @@
 /*
- * 全局 SCSS 变量 - 系统色板与主题色
- * 所有 Vue 组件自动注入此文件，无需手动 @import
+ * 全局 SCSS 变量 - 系统色板 + 主题色 
  */
 
-/* ---------- 系统色板 ---------- */
+/* ---------- 系统色板---------- */
 $sys-blue: #0A84FF;      // 系统蓝 - 主题主色
 $sys-red: #FF453A;       // 系统红 - 价格/危险
 $sys-orange: #FF9F0A;    // 系统橙
@@ -20,3 +19,17 @@ $sys-pink: #FF375F;      // 系统粉
 $primary: $sys-blue;
 $primary-light: rgba(10, 132, 255, 0.1);    // 主色浅背景
 $primary-dark: $sys-indigo;                 // 主色深色（用于悬停/文字）
+
+/* ---------- iOS 专属中性色 / 背景 / 分隔（系统色板外的补充令牌） ---------- */
+$ios-bg: #F2F2F7;                       // 页面背景
+$ios-card: #FFFFFF;                     // 卡片背景
+$ios-label: #1C1C1E;                    // 主文字
+$ios-label-2: #3C3C43;                  // 次级文字
+$ios-label-3: #8E8E93;                  // 辅助文字
+$ios-separator: rgba(60, 60, 67, 0.12); // 分隔线
+$ios-fill: rgba(120, 120, 128, 0.12);   // 填充灰
+
+/* 圆角令牌 */
+$radius-lg: 18px;
+$radius-md: 12px;
+$radius-sm: 8px;

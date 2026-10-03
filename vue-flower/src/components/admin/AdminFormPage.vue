@@ -18,8 +18,6 @@
 
 <script setup>
 // 表单页（新增/编辑）布局容器：统一页面头部与表单区域样式
-// title：页面标题（如 "添加分类" / "修改分类"）
-// 事件 back：点击返回时触发，由调用方决定跳转目标
 defineProps({
   title: {
     type: String,

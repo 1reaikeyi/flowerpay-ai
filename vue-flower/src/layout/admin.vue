@@ -77,7 +77,7 @@
           </el-menu-item>
           <el-menu-item index="/admin/statistics/fan">
             <el-icon><TrendCharts /></el-icon>
-            <span>用户数据</span>
+            <span>在线用户</span>
           </el-menu-item>
           <el-menu-item index="/admin/statistics/bar">
             <el-icon><Histogram /></el-icon>
@@ -128,11 +128,15 @@
       <el-main><router-view></router-view></el-main>
       <el-footer>鲜小花</el-footer>
     </el-container>
+    <!-- 全局悬浮 AI 助理 -->
+    <AiFloat />
   </el-container>
 </template>
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
+// 全局悬浮 AI 助理
+import AiFloat from '@/views/ai/index.vue'
 // 导入 Element Plus 图标组件
 import {
   Menu,

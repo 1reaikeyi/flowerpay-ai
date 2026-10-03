@@ -4,11 +4,6 @@ import { useEmployeeStore } from '@/stores'
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
     routes: [
-        // 根路径：重定向到 admin 默认页
-        {
-            path: '/',
-            redirect: '/admin'
-        },
         // Level 1:
         {
             path: '/admin/login',
@@ -32,7 +27,7 @@ const router = createRouter({
         {
             path: '/admin',
             component: () => import('@/layout/admin.vue'), 
-            redirect: '/admin/flower/index',
+            redirect: '/admin/flower',
             children: [
 
                 { path: 'category', component: () => import('@/views/admin/category/category.vue') },
@@ -60,10 +55,10 @@ const router = createRouter({
 
                 { path: 'employee', component: () => import('@/views/admin/employee/employee.vue') },
                 { path: 'employee/add', component: () => import('@/views/admin/employee/addEmployee.vue') },
-                { path: 'employee/profile', component: () => import('@/views/admin/employee/profile.vue') },   // 当前员工信息
-                { path: 'employee/avatar', component: () => import('@/views/admin/employee/avatar.vue') },    // 更换头像
-                { path: 'employee/password', component: () => import('@/views/admin/employee/password.vue') } // 重置密码
-                ,{ path: 'ai', component: () => import('@/views/user/ai/index.vue') }
+                { path: 'employee/profile', component: () => import('@/views/admin/employee/profile.vue') },
+                { path: 'employee/avatar', component: () => import('@/views/admin/employee/avatar.vue') },
+                { path: 'employee/password', component: () => import('@/views/admin/employee/password.vue') }
+
             ]
         },
 
@@ -78,8 +73,7 @@ const router = createRouter({
                 { path: 'festival', component: () => import('@/views/user/festival/index.vue') },
                 { path: 'shop', component: () => import('@/views/user/shop/shop.vue') },
                 { path: 'shoppingCart', component: () => import('@/views/user/shop/shop.vue') },
-                { path: 'order', component: () => import('@/views/user/order/order.vue') },
-                { path: 'ai', component: () => import('@/views/user/ai/index.vue') }
+                { path: 'order', component: () => import('@/views/user/order/order.vue') }
             ]
         },
 
@@ -103,8 +97,6 @@ const AUTH_SCOPES = [
 ]
 
 // 取某端 localStorage 中的 token
-// 守卫仅判断“是否已登录”；token 是否有效/过期交给后端校验，后端无 Authorization 会返回 401，
-// 由各端的 request 拦截器统一处理（清登录态 + 跳转对应登录页）
 const getToken = (key) => {
     const raw = localStorage.getItem(key)
     return raw ? JSON.parse(raw).token : ''

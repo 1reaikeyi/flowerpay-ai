@@ -8,6 +8,7 @@ import jakarta.validation.constraints.Min;
 import model.vo.ShopVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import framework.aop.OperationLogging;

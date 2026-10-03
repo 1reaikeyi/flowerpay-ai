@@ -13,7 +13,6 @@
 
 <script setup>
 // 统一数据表格：内置表头样式、斑马纹、loading
-// 未显式声明的属性（如 border、height 等）会自动透传到 el-table 根元素
 defineProps({
   data: {
     type: Array,

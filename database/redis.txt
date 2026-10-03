@@ -1,0 +1,7 @@
+docker run -d \
+--name redis \
+--restart always \
+-p 6379:6379 \
+-v redis_data:/data \
+redis:7.4 \
+redis-server --appendonly no --requirepass 111222

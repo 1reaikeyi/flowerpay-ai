@@ -1,4 +1,4 @@
-package start.config;
+package framework.config;
 
 import com.github.houbb.sensitive.word.api.IWordDeny;
 import com.github.houbb.sensitive.word.bs.SensitiveWordBs;

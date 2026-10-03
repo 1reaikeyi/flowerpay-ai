@@ -1,4 +1,4 @@
-package start.config;
+package framework.config;
 
 
 import framework.interceptor.SensitiveWordInterceptor;
