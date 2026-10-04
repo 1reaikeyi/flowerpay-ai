@@ -4,7 +4,7 @@ import framework.properties.SessionProperties;
 import mapper.SessionMapper;
 import model.entity.ChatRecord;
 import model.entity.Session;
-import comom.enums.MessageTypeEnum;
+import enums.MessageTypeEnum;
 import start.vo.MessageVO;
 import start.vo.SessionTitleVO;
 import start.vo.SessionVO;
@@ -65,10 +65,9 @@ public class SessionServiceImpl extends ServiceImpl<SessionMapper, Session> impl
         SessionVO sessionVO = new SessionVO();
         List<SessionVO.Example> examples = sessionProperties.getExamples();
         List<SessionVO.Example> sessionExampleList = new ArrayList<>();
-        for(int i = 0; i < 3; i++){
+        if (examples != null && !examples.isEmpty()) {
             Random random = new Random();
-            random.nextInt(i,examples.size());
-            sessionExampleList.add(examples.get(i));
+            sessionExampleList.add(examples.get(random.nextInt(examples.size())));
         }
         sessionVO.setExamples(sessionExampleList);
         sessionVO.setSessionId(sessionId);

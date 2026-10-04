@@ -1,14 +1,23 @@
 /**
  * AI 助手 API（对齐后端 branch-ai 模块）
  * 后端服务端口 8081，经 vite 代理 /api/ai 转发（rewrite 去掉 /api/ai 前缀）
- *   - ChatController    @RequestMapping("chat")     → /chat/**
- *   - SessionController @RequestMapping("/session") → /session/**
- *
  * 后端统一返回 Result { code, msg, data }（成功 code=200）；
- * 但 GET /session/{sessionId} 直接返回 List<MessageVO>，不包 Result，需单独处理。
  */
 
 const BASE = '/api/ai'
+
+// 当前流式请求的 AbortController，用于前端本地中止生成（不依赖后端 stop 接口）
+let abortController = null
+
+/**
+ * 中止当前正在进行的流式对话
+ */
+export function abortChat() {
+  if (abortController) {
+    abortController.abort()
+    abortController = null
+  }
+}
 
 /**
  * 通用请求：自动解包 Result；非 Result 结构（如纯数组）原样返回。
@@ -80,12 +89,6 @@ export const deleteSession = (sessionId) =>
 /* ================= ChatController ================= */
 
 /**
- * 停止生成 - POST /chat/stop?sessionId=
- */
-export const stopChat = (sessionId) =>
-  request(`/chat/stop?sessionId=${encodeURIComponent(sessionId)}`, { method: 'POST' })
-
-/**
  * 流式对话 - POST /chat（SSE, text/event-stream）
  * 后端返回 Flux<ChatEventVO>，每个事件为 JSON：{ eventData, eventType }
  *   eventType: 1001=文本数据, 1002=停止事件, 1003=参数事件
@@ -101,14 +104,21 @@ export const stopChat = (sessionId) =>
  * @returns {Promise<void>}
  */
 export const chatStream = async (payload, callbacks = {}) => {
+  // 中止上一次未完成的请求
+  if (abortController) abortController.abort()
+  abortController = new AbortController()
+  const signal = abortController.signal
+
   let resp
   try {
     resp = await fetch(BASE + '/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Accept: 'text/event-stream' },
-      body: JSON.stringify({ question: payload.question, sessionId: payload.sessionId })
+      body: JSON.stringify({ question: payload.question, sessionId: payload.sessionId }),
+      signal
     })
   } catch (e) {
+    if (e.name === 'AbortError') return
     callbacks.onError?.(e)
     return
   }
@@ -169,6 +179,8 @@ export const chatStream = async (payload, callbacks = {}) => {
     if (buffer.trim()) processEvent(buffer)
     callbacks.onDone?.()
   } catch (e) {
-    callbacks.onError?.(e)
+    if (e.name !== 'AbortError') callbacks.onError?.(e)
+  } finally {
+    if (abortController && abortController.signal === signal) abortController = null
   }
 }

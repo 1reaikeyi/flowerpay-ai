@@ -1,6 +1,6 @@
 package service.rag;
 
-import comom.enums.ChatEventTypeEnum;
+import enums.ChatEventTypeEnum;
 import start.vo.ChatEventVO;
 import org.springframework.ai.document.Document;
 import org.springframework.ai.embedding.EmbeddingResponse;

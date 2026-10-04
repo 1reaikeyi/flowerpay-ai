@@ -1,6 +1,6 @@
 package service.tool;
 
-import comom.enums.ChatEventTypeEnum;
+import enums.ChatEventTypeEnum;
 import start.vo.ChatEventVO;
 import service.memory.mysql.ChatRecordService;
 import service.session.SessionService;

@@ -1,10 +1,11 @@
 <template>
   <!-- 右下角悬浮球：未打开对话时显示 -->
   <div v-if="!dialogVisible" class="ai-float-ball" @click="dialogVisible = true">
-    <img :src="picHello" alt="鲜小花" class="ball-img" />
+    <img :src="picHello" alt="ai" class="ball-img" />
   </div>
 
-  <!-- 独立悬浮对话弹窗：无遮罩、不锁滚动，浮于页面之上 -->
+
+  <!-- 悬浮窗口宽度：720px（见下方 width 属性） -->
   <el-dialog
     v-model="dialogVisible"
     :modal="false"
@@ -13,7 +14,7 @@
     :show-close="false"
     :append-to-body="true"
     custom-class="ai-chat-dialog"
-    width="720px"
+    width="900px"
   >
     <div class="ai-page">
     <div class="ai-layout">
@@ -56,7 +57,7 @@
         <div class="chat-header">
           <div class="header-left">
             <div class="ai-avatar">
-              <span>🌸</span>
+              <img :src="logoImg" alt="鲜小花" class="avatar-img" />
             </div>
             <div class="header-titles">
               <div class="header-title">鲜小花</div>
@@ -81,28 +82,9 @@
         <div ref="scrollRef" class="message-scroll">
           <!-- 欢迎页 -->
           <div v-if="messages.length === 0" class="welcome-page">
-            <div class="welcome-logo">🌸</div>
+            <div class="welcome-logo"><img :src="logoImg" alt="鲜小花" class="welcome-logo-img" /></div>
             <div class="welcome-title">你好，我是鲜小花</div>
             <div class="welcome-desc">你的专属鲜花智能助手</div>
-            <div class="hot-section">
-              <div class="hot-header">
-                <span>热门问题</span>
-              </div>
-              <div class="hot-grid">
-                <div
-                  v-for="(q, i) in hotQuestions"
-                  :key="i"
-                  class="hot-card"
-                  @click="handleHotClick(q)"
-                >
-                  <div class="hot-icon">{{ q.icon }}</div>
-                  <div class="hot-text">
-                    <div class="hot-title">{{ q.title }}</div>
-                    <div class="hot-desc">{{ q.desc }}</div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
 
           <!-- 消息列表 -->
@@ -114,25 +96,11 @@
               :class="msg.role === 'user' ? 'is-user' : 'is-ai'"
             >
               <div v-if="msg.role === 'ai'" class="msg-avatar ai-avatar-sm">
-                <span>🌸</span>
+                <img :src="logoImg" alt="鲜小花" class="avatar-img" />
               </div>
               <div class="msg-body">
                 <div class="msg-bubble" :class="{ streaming: msg.streaming }">
                   <div class="msg-content" v-html="msg.content"></div>
-                </div>
-                <div v-if="msg.role === 'ai' && !msg.streaming && msg.content" class="msg-actions">
-                  <span class="action-btn" :class="{ active: msg.liked }" @click="handleLike(msg)">
-                    <el-icon><CaretTop /></el-icon>
-                  </span>
-                  <span class="action-btn" :class="{ active: msg.disliked }" @click="handleDislike(msg)">
-                    <el-icon><CaretBottom /></el-icon>
-                  </span>
-                  <span class="action-btn" @click="handleCopy(msg)">
-                    <el-icon><CopyDocument /></el-icon>
-                  </span>
-                  <span v-if="idx === messages.length - 1" class="action-btn" @click="handleRegenerate">
-                    <el-icon><RefreshRight /></el-icon>
-                  </span>
                 </div>
               </div>
               <div v-if="msg.role === 'user'" class="msg-avatar user-avatar-sm">
@@ -142,7 +110,7 @@
 
             <!-- 加载中 -->
             <div v-if="loading" class="message-row is-ai">
-              <div class="msg-avatar ai-avatar-sm"><span>🌸</span></div>
+              <div class="msg-avatar ai-avatar-sm"><img :src="logoImg" alt="鲜小花" class="avatar-img" /></div>
               <div class="msg-body">
                 <div class="msg-bubble loading-bubble">
                   <span class="loading-dots"><i></i><i></i><i></i></span>
@@ -212,7 +180,6 @@ import { ref, nextTick, onMounted } from 'vue'
 import { ElMessage } from 'element-plus'
 import {
   Plus, Delete, ChatDotRound, User, Promotion,
-  CaretTop, CaretBottom, CopyDocument, RefreshRight,
   Back, Aim, Close
 } from '@element-plus/icons-vue'
 // AI 接口（后端 branch-ai：ChatController + SessionController）
@@ -222,10 +189,11 @@ import {
   getSessionMessages,
   updateSessionTitle,
   deleteSession,
-  stopChat,
+  abortChat,
   chatStream
 } from '@/api/ai/ai.js'
 import picHello from '@/assets/image/pic-hello.png'
+import logoImg from '@/assets/image/logo.png'
 
 const sidebarOpen = ref(true)
 const dialogVisible = ref(false) // 悬浮对话弹窗显隐
@@ -242,16 +210,20 @@ const historyGroups = ref([])
 // 标记当前流式是否已被用户停止
 let streamStopped = false
 
-const hotQuestions = ref([])
-
-// 用后端会话返回的 examples 填充热门问题（数据来自后端，前端不再“换一换”）
-function applyHotQuestions(session) {
-  const list = session?.examples || []
-  hotQuestions.value = list.map((e) => ({
-    icon: '🌸',
-    title: e.title || '',
-    desc: e.describe || ''
-  }))
+// 新建会话时，直接写入一条 AI 问候消息："你好，我是鲜小花" + 后端随机返回的 1 个问题
+function applyGreeting(session) {
+  const example = session?.examples?.[0]
+  const question = example?.describe || example?.title || ''
+  const text = question
+    ? `你好，我是鲜小花。${question}`
+    : '你好，我是鲜小花，请问有什么可以帮您？'
+  messages.value.push({
+    role: 'ai',
+    content: formatContent(text),
+    streaming: false,
+    liked: false,
+    disliked: false
+  })
 }
 
 function scrollToBottom() {
@@ -272,7 +244,9 @@ function formatContent(text) {
   return escapeHtml(String(text ?? '')).replace(/\n/g, '<br>')
 }
 
-/* ================= 会话管理（对接 SessionController） ================= */
+/**
+ * 会话管理（对接 SessionController）
+ */
 
 // 加载历史会话分组
 async function loadHistory() {
@@ -295,9 +269,10 @@ async function handleNewChat() {
   try {
     const session = await startSession()
     activeSessionId.value = session?.sessionId || ''
-    applyHotQuestions(session)
     messages.value = []
     suggestions.value = []
+    applyGreeting(session)
+    scrollToBottom()
     loadHistory()
   } catch (e) {
     ElMessage.error('新建会话失败')
@@ -343,12 +318,10 @@ async function handleDeleteHistory(sessionId) {
   }
 }
 
-/* ================= 对话（对接 ChatController SSE） ================= */
+/**
+ * 对话（对接 ChatController SSE）
+ */
 
-function handleHotClick(q) {
-  inputText.value = q.desc
-  handleSend()
-}
 function handleSuggestionClick(s) {
   inputText.value = s
   suggestions.value = []
@@ -383,7 +356,7 @@ async function handleSend() {
     try {
       const session = await startSession()
       activeSessionId.value = session?.sessionId || ''
-      applyHotQuestions(session)
+      if (messages.value.length === 0) applyGreeting(session)
       loadHistory()
     } catch (e) {
       ElMessage.error('创建会话失败')
@@ -439,52 +412,29 @@ async function handleSend() {
   )
 }
 
-// 停止生成 - POST /chat/stop
+// 停止生成：前端本地中止流式请求（不依赖后端 stop 接口）
 function handleStop() {
   if (!activeSessionId.value) return
   streamStopped = true
-  stopChat(activeSessionId.value).catch(() => {})
+  abortChat()
   loading.value = false
 }
 
-function handleLike(msg) {
-  msg.liked = !msg.liked
-  if (msg.liked) msg.disliked = false
-}
-function handleDislike(msg) {
-  msg.disliked = !msg.disliked
-  if (msg.disliked) msg.liked = false
-}
-function handleCopy(msg) {
-  navigator.clipboard?.writeText(msg.content.replace(/<[^>]+>/g, ''))
-  ElMessage.success('已复制')
-}
-// 重新生成：移除最后一条 AI 回复，以最近一条用户问题再次发送
-function handleRegenerate() {
-  if (messages.value.length < 2 || loading.value) return
-  const lastUser = [...messages.value].reverse().find((m) => m.role === 'user')
-  if (!lastUser) return
-  const lastIdx = messages.value.length - 1
-  if (messages.value[lastIdx].role === 'ai') messages.value.splice(lastIdx, 1)
-  inputText.value = lastUser.content.replace(/<[^>]+>/g, '')
-  handleSend()
-}
-
 onMounted(async () => {
-  // 启动初始会话，从后端获取热门问题（examples）
+  // 启动初始会话，把后端随机返回的 1 条 example 作为 AI 首条消息写入
   try {
     const session = await startSession()
     activeSessionId.value = session?.sessionId || ''
-    applyHotQuestions(session)
+    applyGreeting(session)
+    scrollToBottom()
   } catch (e) {
-    // 获取失败时热门问题留空，不阻塞历史加载
+    // 获取失败时不阻塞历史加载
   }
   loadHistory()
 })
 </script>
 
 <style lang="scss" scoped>
-/* 系统色板与 iOS 设计令牌均已通过 _theme.scss 全局注入，可直接使用 */
 
 /* ===== 右下角悬浮球 ===== */
 .ai-float-ball {
@@ -520,7 +470,7 @@ onMounted(async () => {
 }
 
 .ai-page {
-  height: 600px;
+  height: 600px; /* 悬浮窗口高度：600px */
   background: $ios-bg;
   border-radius: $radius-lg;
   overflow: hidden;
@@ -650,15 +600,23 @@ onMounted(async () => {
     gap: 10px;
   }
 
+  /* ===== logo.png 显示尺寸①：头部头像 ===== */
   .ai-avatar {
-    width: 36px;
-    height: 36px;
+    width: 64px;
+    height: 64px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #FF9F0A, #FF375F);
+    background: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 16px;
+    overflow: hidden;
+
+    .avatar-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
   }
 
   .header-title {
@@ -702,9 +660,17 @@ onMounted(async () => {
   margin: 48px auto 0;
   text-align: center;
 
+  /* ===== logo.png 显示尺寸②：消息/加载头像 ===== */
   .welcome-logo {
-    font-size: 52px;
     margin-bottom: 12px;
+
+    .welcome-logo-img {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+    }
   }
 
   .welcome-title {
@@ -719,63 +685,6 @@ onMounted(async () => {
     font-size: 15px;
     color: $ios-label-3;
     margin-bottom: 40px;
-  }
-}
-
-.hot-section {
-  text-align: left;
-
-  .hot-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 14px;
-    font-size: 13px;
-    font-weight: 600;
-    color: $ios-label-2;
-  }
-}
-
-.hot-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
-
-.hot-card {
-  display: flex;
-  gap: 12px;
-  padding: 14px 16px;
-  background: $ios-card;
-  border-radius: $radius-md;
-  cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-
-  &:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-  }
-
-  &:active {
-    transform: scale(0.98);
-  }
-
-  .hot-icon {
-    font-size: 26px;
-    flex-shrink: 0;
-  }
-
-  .hot-title {
-    font-size: 14px;
-    font-weight: 600;
-    color: $ios-label;
-    margin-bottom: 2px;
-  }
-
-  .hot-desc {
-    font-size: 12px;
-    color: $ios-label-3;
-    line-height: 1.4;
   }
 }
 
@@ -796,18 +705,27 @@ onMounted(async () => {
   }
 }
 
+/* ===== logo.png 显示尺寸③：欢迎页大 logo ===== */
 .msg-avatar {
   flex-shrink: 0;
-  width: 30px;
-  height: 30px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 13px;
+  overflow: hidden;
+
+  .avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
 
   &.ai-avatar-sm {
-    background: linear-gradient(135deg, #FF9F0A, #FF375F);
+    background: transparent;
   }
 
   &.user-avatar-sm {
@@ -875,42 +793,6 @@ onMounted(async () => {
 @keyframes ios-blink {
   0%, 80%, 100% { opacity: 0.3; transform: scale(0.8); }
   40% { opacity: 1; transform: scale(1); }
-}
-
-/* ===== 消息操作栏 ===== */
-.msg-actions {
-  display: flex;
-  gap: 2px;
-  margin-top: 4px;
-  padding: 0 4px;
-  opacity: 0;
-  transition: opacity 0.15s;
-
-  .message-row:hover & { opacity: 1; }
-}
-
-.is-user .msg-actions { display: none; }
-
-.action-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  border-radius: 6px;
-  cursor: pointer;
-  color: $ios-label-3;
-  font-size: 12px;
-  transition: all 0.15s;
-
-  &:hover {
-    background: $ios-fill;
-    color: $sys-blue;
-  }
-
-  &.active {
-    color: $sys-blue;
-  }
 }
 
 /* ===== 联想词 ===== */
@@ -1071,6 +953,7 @@ onMounted(async () => {
 
 <!-- 全局样式：el-dialog 经 append-to-body 挂到 body，scoped 作用不到，需非 scoped 覆盖 -->
 <style lang="scss">
+/* ===== AI 悬浮对话窗口（点击悬浮球后弹出，无遮罩、吸附右下角） ===== */
 .ai-chat-dialog {
   // 去除默认内边距与圆角，交由内部 .ai-page 控制
   .el-dialog {

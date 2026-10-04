@@ -28,17 +28,19 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      '/api': {
-        target: 'http://localhost:8080',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, '')
-      },
+      // ⚠️ 顺序敏感：更具体的 /api/ai 必须放在 /api 之前，
+      // 否则 /api/ai/chat 会被 /api 拦截错发到 8080，导致 AI 无响应
       '/api/ai': {
         target: 'http://localhost:8081',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api\/ai/, '')
       },
-    
+      '/api': {
+        target: 'http://localhost:8080',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '')
+      },
+
       '/image': {
         target: 'http://localhost:8080',
         changeOrigin: true

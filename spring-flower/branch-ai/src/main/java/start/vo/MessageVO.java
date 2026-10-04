@@ -1,6 +1,6 @@
 package start.vo;
 
-import comom.enums.MessageTypeEnum;
+import enums.MessageTypeEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
