@@ -1,4 +1,4 @@
-package com.branch.shop;
+package com.branch.controller.shop;
 
 import com.branch.domain.vo.ShopVO;
 import common.constant.ShopConstant;

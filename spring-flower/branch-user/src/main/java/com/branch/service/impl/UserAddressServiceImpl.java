@@ -4,6 +4,7 @@ import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.collection.CollectionUtil;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.branch.domain.vo.UserAddressVO;
 import com.branch.mapper.UserAddressMapper;
 import com.branch.service.UserAddressService;
 import common.constant.ErrorConstant;
@@ -40,30 +41,32 @@ public class UserAddressServiceImpl extends ServiceImpl<UserAddressMapper, UserA
     }
 
     @Override
-    public UserAddress readDefaultAddress() {
+    public UserAddressVO readDefaultAddress() {
         Long userId = SecurityContextParam.getCurrentUserId();
         UserAddress defaultAddress = this.lambdaQuery()
                 .eq(UserAddress::getUserId,userId)
                 .eq(UserAddress::getIsDefault,1).one();
-        return defaultAddress;
+        UserAddressVO userAddressVO = BeanUtil.toBean(defaultAddress, UserAddressVO.class);
+        return userAddressVO;
     }
 
     @Override
-    public ScrollResult<UserAddress> readPage(Long offset, Long current) {
-        ScrollResult<UserAddress> scrollResult = new ScrollResult();
+    public ScrollResult<UserAddressVO> readPage(Long offset, Long current) {
+        ScrollResult<UserAddressVO> scrollResult = new ScrollResult();
         offset = offset == null ? LIMIT_NUMBER : offset;
         Long userId = SecurityContextParam.getCurrentUserId();
         List<UserAddress> userAddressList = this.lambdaQuery()
                 .eq(UserAddress::getUserId,userId)
                 .last("limit "+offset)
                 .list();
+        List<UserAddressVO> userAddressVOList = BeanUtil.copyToList(userAddressList, UserAddressVO.class);
         if(userAddressList.size() == 0 || userAddressList == null){
             scrollResult.setList(null);
             scrollResult.setMinTime(0L);
             scrollResult.setOffset(LIMIT_NUMBER);
             return scrollResult;
         }
-        scrollResult.setList(userAddressList);
+        scrollResult.setList(userAddressVOList);
         scrollResult.setMinTime(userAddressList.get(userAddressList.size() - 1).getId());
         scrollResult.setOffset(LIMIT_NUMBER);
         return scrollResult;

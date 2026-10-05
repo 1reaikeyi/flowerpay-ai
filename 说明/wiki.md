@@ -9,10 +9,10 @@ spring-flower/
 ├── common/                          # 公共基础模块
 │   ├── pom.xml
 │   └── src/main/java/common/
-│       ├── constant/                # 全局常量（错误码 ErrorConstant、JWT、Redis 前缀）
+│       ├── constant/                # 全局常量（ErrorConstant / JwtConstant / RedisPrefixConstant / RoleConstant / ShopConstant / StatusConstant）
 │       ├── exception/               # 异常体系（基类 BaseException + 各业务异常 + file/ 文件异常）
 │       ├── result/                  # 统一返回体（Result / PageResult / ScrollResult）
-│       ├── system/                  # 系统枚举（NumberEnum / ObjectEnum / OptionEnum）
+│       ├── system/                  # 系统枚举与字典 VO（NumberEnum / ObjectEnum / OptionEnum / DictionaryVO）
 │       └── util/                    # 工具类（MessageUtils 等）
 │
 ├── framework/                       # 设施层模块
@@ -38,6 +38,8 @@ spring-flower/
 │   └── src/main/java/com/branch/
 │       ├── config/                  # OSS 配置（OssConfig）
 │       ├── controller/              # 字典 / 文件 / OSS 文件 Controller
+│       ├── domain/
+│       │   └── vo/                  # 店铺 VO（ShopVO）
 │       └── shop/                    # 店铺 Controller（管理端 AdminShopController + 用户端 ShopController）
 │
 ├── branch-flower/                   # 鲜花商品业务模块（com.branch.*）
@@ -46,6 +48,12 @@ spring-flower/
 │       ├── controller/
 │       │   ├── admin/               # 管理端：鲜花 / 分类 / 节日 / 规格 Controller
 │       │   └── user/                # 用户端：鲜花 / 分类 / 节日 / 规格 Controller
+│       ├── domain/
+│       │   ├── bo/                  # 业务对象（FlowerBO，供 AI 工具调用）
+│       │   ├── dto/                 # 鲜花 / 分类 / 节日 / 规格 DTO（含分页 DTO）
+│       │   ├── entity/              # 实体：Flower / FlowerCategory / FlowerDetail / Festival / FestivalDetail
+│       │   ├── vo/                  # 视图对象：FlowerVO / FlowerCategoryVO / FlowerDetailVO / FestivalVO / FestivalDetailVO
+│       │   └── wrapper/             # 逻辑包装（LogicData）
 │       ├── mapper/                  # 鲜花 / 分类 / 节日 / 规格 Mapper
 │       └── service/                 # Service 接口 + impl 实现
 │
@@ -55,6 +63,11 @@ spring-flower/
 │       ├── controller/
 │       │   ├── admin/               # 管理端订单 Controller
 │       │   └── user/                # 用户端订单 Controller
+│       ├── domain/
+│       │   ├── dto/                 # 订单 DTO（FlowerOrderDTO / FlowerOrderDetailDTO / FlowerOrderPageDTO）
+│       │   ├── entity/              # 实体：FlowerOrder / FlowerOrderDetail / FlowerOrderPay
+│       │   ├── enums/               # 订单状态枚举：OrderStatusEnum / PayStatusEnum / DeliveryStatusEnum
+│       │   └── vo/                  # 订单 VO 与统计 VO（FlowerOrderVO / StatisticsVO / OrderStatisticsVO / TodayStatisticsVO / TopStatisticsVO）
 │       ├── mapper/                  # 订单 / 订单明细 / 订单支付 Mapper
 │       ├── service/                 # Service 接口 + impl 实现
 │       └── wallet/                  # 支付宝支付 / 授权登录 Controller
@@ -63,6 +76,11 @@ spring-flower/
 │   ├── pom.xml
 │   └── src/main/java/com/branch/
 │       ├── controller/              # 管理员 / 员工 / Excel / 用户 Controller
+│       ├── domain/
+│       │   ├── dto/                 # 员工 / 用户 DTO（EmployeeDTO / EmployeePageDTO / LoginDTO / UserDTO / PasswordDTO / EditPasswordDTO）
+│       │   ├── entity/              # 实体：Employee / User / RolePermission
+│       │   ├── excel/               # Excel 导出模型（UserExcel）
+│       │   └── vo/                  # 员工视图对象（EmployeeVO）
 │       ├── mapper/                  # 员工 / 角色权限 / 用户 Mapper
 │       └── service/                 # Service 接口 + impl 实现，含 login/ 三端登录服务
 │
@@ -70,6 +88,10 @@ spring-flower/
 │   ├── pom.xml
 │   └── src/main/java/com/branch/
 │       ├── controller/              # 收货地址 / 购物车 Controller
+│       ├── domain/
+│       │   ├── dto/                 # 用户 DTO（UserAddressDTO / UserShoppingDTO）
+│       │   ├── entity/              # 实体：UserAddress / UserShopping
+│       │   └── vo/                  # 购物车视图对象（UserShoppingVO）
 │       ├── mapper/                  # 地址 / 购物车 Mapper
 │       └── service/                 # Service 接口 + impl 实现
 │
@@ -78,8 +100,10 @@ spring-flower/
 │   └── src/main/java/com/branch/
 │       ├── controller/              # 对话 / 识图 / 会话 Controller，含 graph/ 工作流节点、load/ 配置加载
 │       ├── domain/
+│       │   ├── dto/                 # AI 入参 DTO（ChatDTO）
+│       │   ├── entity/              # 实体：ChatRecord / Session
 │       │   ├── enums/               # 聊天事件 / 消息类型枚举
-│       │   └── vo/                  # AI 出参 VO
+│       │   └── vo/                  # AI 出参 VO（MessageVO / SessionVO / SessionTitleVO / ChatEventVO）
 │       ├── mapper/                  # 会话 / 聊天记录 Mapper
 │       ├── properties/              # 会话配置属性
 │       └── service/

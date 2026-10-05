@@ -1,11 +1,12 @@
 package com.branch.domain.vo;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Data;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-
+@Data
 public class UserShoppingVO implements Serializable {
 
     private static final long serialVersionUID = 1L;

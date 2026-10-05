@@ -2,6 +2,7 @@ package com.branch.controller;
 
 import com.branch.domain.dto.UserAddressDTO;
 import com.branch.domain.entity.UserAddress;
+import com.branch.domain.vo.UserAddressVO;
 import com.branch.service.UserAddressService;
 import common.result.ScrollResult;
 import framework.aop.oparation.OperationEnum;
@@ -34,14 +35,14 @@ public class UserAddressController {
     @OperationLogging(operation = OperationEnum.READ)
     @GetMapping("default")
     public Result readDefaultAddress() {
-        UserAddress defaultAddress = userAddressService.readDefaultAddress();
-        return Result.success(defaultAddress);
+        UserAddressVO defaultAddressVO = userAddressService.readDefaultAddress();
+        return Result.success(defaultAddressVO);
     }
     @PreAuthorize("hasAnyRole('USER')")
     @OperationLogging(operation = OperationEnum.READ)
     @GetMapping("/all")
     public Result readAddress(Long offset, Long current) {
-        ScrollResult<UserAddress> scrollResult = userAddressService.readPage(offset,current);
+        ScrollResult<UserAddressVO> scrollResult = userAddressService.readPage(offset,current);
         return Result.success(scrollResult);
     }
     @PreAuthorize("hasAnyRole('USER')")
