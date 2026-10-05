@@ -15,16 +15,16 @@ import org.springframework.stereotype.Component;
 
 import java.io.InputStream;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Component
 public class AliOssUtil {
 
-   @Autowired
-   private AliOssProperties aliOssProperties;
+    private final AliOssProperties aliOssProperties;
 
-   public String uploadFile(String objectName, InputStream inputStream) {
+    public AliOssUtil(AliOssProperties aliOssProperties) {
+        this.aliOssProperties = aliOssProperties;
+    }
+
+
+    public String uploadFile(String objectName, InputStream inputStream) {
        String endpoint = aliOssProperties.getEndpoint();
        String accessKeyId = aliOssProperties.getAccessKeyId();
        String accessKeySecret = aliOssProperties.getAccessKeySecret();

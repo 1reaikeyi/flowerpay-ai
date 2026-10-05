@@ -1,0 +1,11 @@
+#端口
+server:
+  port: 8082
+spring:
+  application:
+    name: branch-flower-generator
+  config:
+    import: classpath:mysql-dev.yml
+
+
+

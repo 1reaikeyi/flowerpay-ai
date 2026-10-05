@@ -1,0 +1,23 @@
+#端口
+server:
+  port: ${port}
+# 日志配置
+logging:
+  level:
+    root: ${logging.record:info}
+    org.springframework.web: ${logging.web:info}
+    org.springframework.web.bind: ${logging.web:info}
+# springIOC
+spring:
+  # 项目配置文件
+  profiles:
+    active: dev
+  # 导入文件
+  config:
+    import: classpath:mysql.yml
+
+
+
+
+
+

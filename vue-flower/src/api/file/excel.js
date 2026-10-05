@@ -8,7 +8,7 @@ import request from '@/utils/admin/request.js'
 // 导出全部用户为 EasyExcel 文件 - POST /report/excel/write，响应 data = 文件绝对路径
 export const writeExcel = () => {
   return request({
-    url: '/report/excel/write',
+    url: '/excel/write',
     method: 'post'
   })
 }
@@ -16,7 +16,7 @@ export const writeExcel = () => {
 // 读取 Excel 为 UserExcel 列表 - POST /report/excel/read，响应 data = List<UserExcel>
 export const readExcel = () => {
   return request({
-    url: '/report/excel/read',
+    url: '/excel/read',
     method: 'post'
   })
 }

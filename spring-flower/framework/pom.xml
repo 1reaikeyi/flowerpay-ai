@@ -32,11 +32,6 @@
         <!-- 模块依赖 -->
         <dependency>
             <groupId>org.example</groupId>
-            <artifactId>model</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>org.example</groupId>
             <artifactId>common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
@@ -60,7 +55,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
-
         <!-- redis 缓存 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -78,7 +72,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-cache</artifactId>
         </dependency>
-
         <!-- JJWT 核心 API（编译时依赖）：JWT 的生成和解析 -->
         <dependency>
             <groupId>io.jsonwebtoken</groupId>

@@ -5,8 +5,8 @@ import framework.properties.JwtProperties;
 import common.constant.JwtConstant;
 import common.constant.RedisPrefixConstant;
 
-import model.constant.RoleConstant;
-import model.constant.StatusConstant;
+import common.constant.RoleConstant;
+import common.constant.StatusConstant;
 import framework.bo.LoginUserDetails;
 import framework.bo.UserBO;
 import framework.util.JwtUtil;

@@ -1,0 +1,42 @@
+package com.branch.shop;
+
+import com.branch.domain.vo.ShopVO;
+import common.constant.ShopConstant;
+import framework.aop.oparation.OperationEnum;
+import common.result.Result;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
+import framework.aop.OperationLogging;
+
+@RestController
+@RequestMapping("/admin/shop")
+public class AdminShopController {
+    @Autowired
+    private StringRedisTemplate stringRedisTemplate;
+
+    @PreAuthorize("hasRole('ADMIN')")
+    @OperationLogging(operation = OperationEnum.UPDATE)
+    @PostMapping("{status}")
+    @Validated
+    public Result updateStatus(@PathVariable
+                                   @Min(value = 0) @Max(value = 1) Long status) {
+        stringRedisTemplate.opsForValue().set(ShopConstant.SHOP_STATUS, status == 1 ? "营业中" : "已打烊");
+        ShopVO shopVO = new ShopVO(status == 1 ? "营业中" : "已打烊");
+        return Result.success(shopVO);
+    }
+    
+    @PreAuthorize("permitAll")
+    @OperationLogging(operation = OperationEnum.READ)
+    @GetMapping
+    public Result read() {
+        String shop = stringRedisTemplate.opsForValue().get(ShopConstant.SHOP_STATUS);
+        ShopVO shopVO = new ShopVO(shop);
+        return Result.success(shopVO);
+    }
+}

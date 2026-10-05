@@ -5,7 +5,7 @@
   </div>
 
 
-  <!-- 悬浮窗口宽度：720px（见下方 width 属性） -->
+  <!-- 悬浮窗口宽度：900px（见下方 width 属性） -->
   <el-dialog
     v-model="dialogVisible"
     :modal="false"
@@ -99,22 +99,16 @@
                 <img :src="logoImg" alt="鲜小花" class="avatar-img" />
               </div>
               <div class="msg-body">
-                <div class="msg-bubble" :class="{ streaming: msg.streaming }">
-                  <div class="msg-content" v-html="msg.content"></div>
+                <div
+                  class="msg-bubble"
+                  :class="{ streaming: msg.streaming, 'loading-bubble': msg.streaming && !msg.content }"
+                >
+                  <span v-if="msg.streaming && !msg.content" class="loading-dots"><i></i><i></i><i></i></span>
+                  <div v-else class="msg-content" v-html="msg.content"></div>
                 </div>
               </div>
               <div v-if="msg.role === 'user'" class="msg-avatar user-avatar-sm">
-                <el-icon><User /></el-icon>
-              </div>
-            </div>
-
-            <!-- 加载中 -->
-            <div v-if="loading" class="message-row is-ai">
-              <div class="msg-avatar ai-avatar-sm"><img :src="logoImg" alt="鲜小花" class="avatar-img" /></div>
-              <div class="msg-body">
-                <div class="msg-bubble loading-bubble">
-                  <span class="loading-dots"><i></i><i></i><i></i></span>
-                </div>
+                <img :src="userAvatar" alt="用户" class="avatar-img" />
               </div>
             </div>
           </div>
@@ -179,7 +173,7 @@
 import { ref, nextTick, onMounted } from 'vue'
 import { ElMessage } from 'element-plus'
 import {
-  Plus, Delete, ChatDotRound, User, Promotion,
+  Plus, Delete, ChatDotRound, Promotion,
   Back, Aim, Close
 } from '@element-plus/icons-vue'
 // AI 接口（后端 branch-ai：ChatController + SessionController）
@@ -193,7 +187,8 @@ import {
   chatStream
 } from '@/api/ai/ai.js'
 import picHello from '@/assets/image/pic-hello.png'
-import logoImg from '@/assets/image/logo.png'
+import logoImg from '@/assets/image/logo1.png'
+import userAvatar from '@/assets/image/logo2.png'
 
 const sidebarOpen = ref(true)
 const dialogVisible = ref(false) // 悬浮对话弹窗显隐
@@ -600,7 +595,7 @@ onMounted(async () => {
     gap: 10px;
   }
 
-  /* ===== logo.png 显示尺寸①：头部头像 ===== */
+  /* ===== logo1.png 显示尺寸①：头部头像 ===== */
   .ai-avatar {
     width: 64px;
     height: 64px;
@@ -660,7 +655,7 @@ onMounted(async () => {
   margin: 48px auto 0;
   text-align: center;
 
-  /* ===== logo.png 显示尺寸②：消息/加载头像 ===== */
+  /* ===== logo1.png 显示尺寸②：消息/加载头像 ===== */
   .welcome-logo {
     margin-bottom: 12px;
 
@@ -705,7 +700,7 @@ onMounted(async () => {
   }
 }
 
-/* ===== logo.png 显示尺寸③：欢迎页大 logo ===== */
+/* ===== logo1.png 显示尺寸③：欢迎页大 logo ===== */
 .msg-avatar {
   flex-shrink: 0;
   width: 64px;
@@ -729,8 +724,13 @@ onMounted(async () => {
   }
 
   &.user-avatar-sm {
-    background: $sys-blue;
-    color: #fff;
+    background: transparent;
+
+    .avatar-img {
+      object-fit: contain;
+      transform: scale(1.0);
+      transform-origin: center;
+    }
   }
 }
 

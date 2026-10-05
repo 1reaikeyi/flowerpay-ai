@@ -1,7 +1,6 @@
 package framework.bo;
 
-import lombok.Getter;
-import model.constant.StatusConstant;
+import common.constant.StatusConstant;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
