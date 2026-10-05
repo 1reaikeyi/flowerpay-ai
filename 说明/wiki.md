@@ -9,103 +9,123 @@ spring-flower/
 ├── common/                          # 公共基础模块
 │   ├── pom.xml
 │   └── src/main/java/common/
-│       ├── constant/                # 全局常量（错误码、JWT、Redis 前缀）
-│       ├── exception/               # 异常体系（基类 + 各业务异常 + 文件异常）
+│       ├── constant/                # 全局常量（错误码 ErrorConstant、JWT、Redis 前缀）
+│       ├── exception/               # 异常体系（基类 BaseException + 各业务异常 + file/ 文件异常）
 │       ├── result/                  # 统一返回体（Result / PageResult / ScrollResult）
-│       ├── system/                  # 系统枚举
-│       └── util/                    # 工具类
-│
-├── model/                           # 数据模型模块
-│   ├── pom.xml
-│   └── src/main/java/model/
-│       ├── constant/                # 业务常量（角色、店铺、状态）
-│       ├── dto/                     # 数据传输对象（入参）
-│       ├── entity/                  # 数据库实体
-│       ├── enums/                   # 业务枚举（订单/支付/配送状态）
-│       ├── excel/                   # Excel 映射模型
-│       ├── system/                  # 系统 VO（字典等）
-│       ├── vo/                      # 视图对象（出参，含 statistics 统计 VO）
-│       └── wrapper/                 # 包装对象（LogicData 等）
+│       ├── system/                  # 系统枚举（NumberEnum / ObjectEnum / OptionEnum）
+│       └── util/                    # 工具类（MessageUtils 等）
 │
 ├── framework/                       # 设施层模块
 │   ├── pom.xml
-│   └── src/main/
-│       ├── java/framework/
-│       │   ├── config/              # 配置类（Druid、MyBatis、Security、缓存、Caffeine、Web、Jackson 等）
-│       │   ├── aop/                 # AOP 操作日志（注解 + 切面）
-│       │   ├── exceptionhandle/     # 全局异常处理
-│       │   ├── filter/              # 过滤器（JWT 刷新、信息、Druid 等）
-│       │   ├── interceptor/         # 拦截器（敏感词）
-│       │   ├── mybatis/             # MyBatis 使用
-│       │   ├── properties/          # 配置属性（JWT、阿里云 OSS）
-│       │   ├── redis/               # Redis 使用
-│       │   ├── security/            # 安全上下文
-│       │   ├── util/                # JWT、OSS 工具
-│       │   ├── wechat/              # 微信支付封装
-│       │   └── zhifubao/            # 支付宝支付封装（config / service / DTO）
-│       └── resources/
-│           ├── application.yml
-│           ├── mysql.yml
-│           ├── redis.yml
-│           └── redis集群配置
+│   └── src/main/java/framework/
+│       ├── aop/                     # AOP 操作日志（注解 + 切面，含 oparation/ 操作枚举）
+│       ├── bo/                      # 业务对象（LoginUserDetails / UserBO）
+│       ├── exceptionhandle/         # 全局异常处理（ExceptionHandle / GlobalExceptionHandler）
+│       ├── filter/                  # 过滤器
+│       │   ├── auth/                # JWT 刷新 / 信息过滤器（Admin / Employee / User / Information）
+│       │   └── sql/                 # Druid SQL 过滤器
+│       ├── interceptor/             # 拦截器（SensitiveWordInterceptor 敏感词）
+│       ├── mybatis/                 # MyBatis-Plus 自动填充（AutoMetaObjectHandler）
+│       ├── properties/              # 配置属性（JwtProperties / AliOssProperties）
+│       ├── redis/                   # Redis 指标导出（RedisExporter）
+│       ├── security/                # 安全上下文（Admin / Emp / User 认证 Token 与 Provider）
+│       ├── util/                    # JWT、阿里云 OSS 工具
+│       ├── wechat/                  # 微信支付封装
+│       └── zhifubao/                # 支付宝支付封装（config / service / DTO）
 │
-├── service/                         # 业务层模块
+├── branch-system/                   # 系统支撑业务模块（com.branch.*）
 │   ├── pom.xml
-│   └── src/main/java/
-│       ├── mapper/                  # MyBatis-Plus Mapper 接口
+│   └── src/main/java/com/branch/
+│       ├── config/                  # OSS 配置（OssConfig）
+│       ├── controller/              # 字典 / 文件 / OSS 文件 Controller
+│       └── shop/                    # 店铺 Controller（管理端 AdminShopController + 用户端 ShopController）
+│
+├── branch-flower/                   # 鲜花商品业务模块（com.branch.*）
+│   ├── pom.xml
+│   └── src/main/java/com/branch/
+│       ├── controller/
+│       │   ├── admin/               # 管理端：鲜花 / 分类 / 节日 / 规格 Controller
+│       │   └── user/                # 用户端：鲜花 / 分类 / 节日 / 规格 Controller
+│       ├── mapper/                  # 鲜花 / 分类 / 节日 / 规格 Mapper
 │       └── service/                 # Service 接口 + impl 实现
 │
-├── branch-main/                     # 主业务启动模块（端口 8080）
+├── branch-pay/                      # 订单与支付业务模块（com.branch.*）
+│   ├── pom.xml
+│   └── src/main/java/com/branch/
+│       ├── controller/
+│       │   ├── admin/               # 管理端订单 Controller
+│       │   └── user/                # 用户端订单 Controller
+│       ├── mapper/                  # 订单 / 订单明细 / 订单支付 Mapper
+│       ├── service/                 # Service 接口 + impl 实现
+│       └── wallet/                  # 支付宝支付 / 授权登录 Controller
+│
+├── branch-emp/                      # 员工与权限业务模块（com.branch.*）
+│   ├── pom.xml
+│   └── src/main/java/com/branch/
+│       ├── controller/              # 管理员 / 员工 / Excel / 用户 Controller
+│       ├── mapper/                  # 员工 / 角色权限 / 用户 Mapper
+│       └── service/                 # Service 接口 + impl 实现，含 login/ 三端登录服务
+│
+├── branch-user/                     # C 端用户业务模块（com.branch.*）
+│   ├── pom.xml
+│   └── src/main/java/com/branch/
+│       ├── controller/              # 收货地址 / 购物车 Controller
+│       ├── mapper/                  # 地址 / 购物车 Mapper
+│       └── service/                 # Service 接口 + impl 实现
+│
+├── branch-ai/                       # AI 业务模块（com.branch.*）
+│   ├── pom.xml
+│   └── src/main/java/com/branch/
+│       ├── controller/              # 对话 / 识图 / 会话 Controller，含 graph/ 工作流节点、load/ 配置加载
+│       ├── domain/
+│       │   ├── enums/               # 聊天事件 / 消息类型枚举
+│       │   └── vo/                  # AI 出参 VO
+│       ├── mapper/                  # 会话 / 聊天记录 Mapper
+│       ├── properties/              # 会话配置属性
+│       └── service/
+│           ├── memory/              # 对话记忆工具
+│           ├── rag/                 # RAG 对话与向量距离计算
+│           ├── session/             # 会话服务
+│           ├── tool/                # AI 业务查询工具
+│           └── visual/              # 图片识别服务
+│
+├── start-main/                      # 主业务启动模块（FlowerApplication，端口 8080）
 │   ├── pom.xml
 │   └── src/main/
 │       ├── java/start/
-│       │   ├── admin/               # 后台管理 Controller（统计、商品、分类、节日、订单、店铺、员工）
-│       │   ├── employee/            # 员工端 Controller
-│       │   ├── file/                # 文件 / 字典 / Excel 报表 Controller
-│       │   ├── monitor/             # Druid / Redis 监控 Controller
-│       │   ├── user/                # C 端用户 Controller（分类、鲜花、节日、订单、购物车、地址、店铺）
-│       │   ├── wallet/              # 支付宝支付 / 授权登录 Controller
-│       │   ├── websocket/           # WebSocket 配置、服务端、定时任务
+│       │   ├── config/              # 配置类（Druid / MyBatis / Security / 缓存 / Caffeine / Web / Jackson / 敏感词）
+│       │   ├── controller/
+│       │   │   ├── monitor/         # Druid / Redis 监控 Controller
+│       │   │   ├── statistics/      # 统计 Controller 与统计 VO
+│       │   │   └── websocket/       # WebSocket 配置、服务端、定时任务
 │       │   └── FlowerApplication.java
 │       └── resources/
-│           ├── application-dev.yml
+│           ├── application.yml / application-dev.yml
+│           ├── mysql.yml / mysql-dev.yml
+│           ├── redis.yml / redis-dev.yml / redis哨兵配置.yml
 │           ├── logback-spring.xml
-│           ├── mysql-dev.yml
-│           ├── redis-dev.yml
 │           └── static/              # 静态页面与资源（merchant.html、websocket.html、提示音）
 │
-├── branch-ai/                       # AI 扩展服务启动模块（端口 8081）
+├── start-ai/                        # AI 服务启动模块（AIApplication，端口 8081）
 │   ├── pom.xml
 │   └── src/main/
-│       ├── java/
-│       │   ├── comom/enums/         # AI 事件 / 消息类型枚举
-│       │   ├── framework/properties/# 会话配置属性
-│       │   ├── service/
-│       │   │   ├── memory/          # 对话记忆（mysql / redis 仓库 + 工具）
-│       │   │   ├── rag/             # RAG 对话与向量距离计算
-│       │   │   ├── session/         # 会话服务
-│       │   │   ├── tool/            # AI 工具（业务查询工具）
-│       │   │   └── visual/          # 图片识别服务
-│       │   └── start/
-│       │       ├── controller/      # 对话、识图、会话 Controller
-│       │       ├── graph/           # StateGraph 工作流节点定义
-│       │       ├── load/            # ChatClient / Prompt / Spring AI 配置
-│       │       ├── vo/              # AI 出参 VO
-│       │       └── AIApplication.java
+│       ├── java/start/
+│       │   ├── config/              # 配置类（Druid / MyBatis / Security / 缓存 / Caffeine / Web / Jackson / 敏感词）
+│       │   └── AIApplication.java
 │       └── resources/
 │           ├── ai.yml               # Spring AI / 大模型 / 向量库配置
-│           ├── application-dev.yml
-│           ├── mysql-dev.yml
-│           ├── redis-dev.yml
+│           ├── application.yml / application-dev.yml
+│           ├── mysql.yml / mysql-dev.yml
+│           ├── redis.yml / redis-dev.yml
 │           ├── session.yml          # 会话记忆配置
 │           └── system-message.txt   # 系统提示词
 │
-├── branch-generator/                # 代码生成器模块
+├── start-generator/                 # 代码生成器模块
 │   ├── pom.xml
-│   └── src/main/java/start/         # Generator、启动类、JDBC 配置
+│   └── src/main/java/start/         # Generator、GeneratorApplication、JDBC 配置
 │
 └── branch-resource/                 # 资源文件
-    ├── excel/                       # 报表 Excel
+    ├── excel/                       # 报表 Excel（report.xlsx）
     └── image/                       # 商品图片资源
 ```
 
