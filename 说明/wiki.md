@@ -9,10 +9,10 @@ spring-flower/
 ├── common/                          # 公共基础模块
 │   ├── pom.xml
 │   └── src/main/java/common/
-│       ├── constant/                # 全局常量（ErrorConstant / JwtConstant / RedisPrefixConstant / RoleConstant / ShopConstant / StatusConstant）
-│       ├── exception/               # 异常体系（基类 BaseException + 各业务异常 + file/ 文件异常）
+│       ├── constant/                # 全局常量（ErrorConstant / JwtConstant / RedisPrefix等等）
+│       ├── exception/               # 异常体系（基类 BaseException + 各业务异常 + 文件异常）
 │       ├── result/                  # 统一返回体（Result / PageResult / ScrollResult）
-│       ├── system/                  # 系统枚举与字典 VO（NumberEnum / ObjectEnum / OptionEnum / DictionaryVO）
+│       ├── system/                  # 系统枚举与字典 VO
 │       └── util/                    # 工具类（MessageUtils 等）
 │
 ├── framework/                       # 设施层模块
@@ -134,7 +134,7 @@ spring-flower/
 │   ├── pom.xml
 │   └── src/main/
 │       ├── java/start/
-│       │   ├── config/              # 配置类（Druid / MyBatis / Security / 缓存 / Caffeine / Web / Jackson / 敏感词）
+│       │   ├── config/              # 配置类
 │       │   └── AIApplication.java
 │       └── resources/
 │           ├── ai.yml               # Spring AI / 大模型 / 向量库配置

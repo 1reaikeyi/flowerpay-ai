@@ -77,11 +77,11 @@
           </el-menu-item>
           <el-menu-item index="/admin/statistics/fan">
             <el-icon><TrendCharts /></el-icon>
-            <span>在线用户</span>
+            <span>鲜花库存情况</span>
           </el-menu-item>
           <el-menu-item index="/admin/statistics/bar">
             <el-icon><Histogram /></el-icon>
-            <span>order数据</span>
+            <span>订单数据</span>
           </el-menu-item>
         </el-sub-menu>
 

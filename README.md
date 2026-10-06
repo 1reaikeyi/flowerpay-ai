@@ -108,10 +108,10 @@ flowerpay-ai\说明\wiki.md
 
 ## statistics
 
-| top    | user   | order | count  |
-| ------ | ------ | ----- | ------ |
-| 柱状图 | 扇形图 | 饼图  | 折现图 |
-|        |        |       |        |
+| top    | inventory | order | count  |
+| ------ | --------- | ----- | ------ |
+| 柱状图 | 扇形图    | 饼图  | 折现图 |
+|        |           |       |        |
 
 ## 用户端，员工端
 
@@ -381,8 +381,6 @@ user-address
 
 websocket
 
-节日的时效性，某些花需要在特定的时间准时送达到特定场合，通过websocket提醒商家
-
 ```mermaid
 sequenceDiagram
     participant 用户
@@ -391,7 +389,7 @@ sequenceDiagram
 
     用户->>websocket:1 用户催单
     websocket->>商户:2 发送用户请求
-   商户-->>websocket:3 商家回复收到
+    商户-->>websocket:3 商家回复收到
     websocket-->>用户:4 发送商家请求
 ```
 
@@ -403,7 +401,6 @@ Q:MySQL 持久化，还采用 Redis Hash 存储?
 Q:Redis Hash 结构
    外层 key：shopping_cart:{userId}
    内层 field：购物项唯一 id，value：商品完整信息 JSON
-   优势：单用户购物车聚合存储，增删单项无需操作整条数据，性能优于 String 序列化列表。
 ```
 
 ## 五、文件管理

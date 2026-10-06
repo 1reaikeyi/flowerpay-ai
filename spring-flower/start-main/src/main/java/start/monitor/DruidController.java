@@ -1,4 +1,4 @@
-package start.controller.monitor;
+package start.monitor;
 
 import org.springframework.web.bind.annotation.RestController;
 

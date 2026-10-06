@@ -1,20 +1,17 @@
-package com.branch.domain.vo;
+package start.statistics.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.math.BigDecimal;
-
 /**
- * 鲜花单品销量统计 VO
+ * 鲜花订单状态统计 VO
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class StatisticsVO {
-    private Long id;
+public class OrderStatisticsVO {
+    private Long status;
     private String name;
     private Long count;
-    private BigDecimal totalAccount;
 }

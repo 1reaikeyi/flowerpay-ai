@@ -13,8 +13,8 @@
 </body>
 <script type="text/javascript">
     var websocket = null;
-    // 顾客端 id 规则：user_{随机数}
-    var clientId = "user_" + 1;
+    // 顾客端 id 规则：user_{userId}，此处 userId=1
+    var clientId = "user_1";
 
     // 判断当前浏览器是否支持WebSocket
     if('WebSocket' in window){
@@ -59,10 +59,10 @@
         document.getElementById('message').innerHTML += innerHTML + '<br/>';
     }
 
-    // 催单：向服务端发送 reminder 消息
+    // 催单：向服务端发送 reminder:{merchantId}，此处推给商家2
     function reminder(){
-        websocket.send("reminder");
-        setMessageInnerHTML("已发送催单请求");
+        websocket.send("reminder:2");
+        setMessageInnerHTML("已向商家2发送催单请求");
     }
 
     // 关闭连接

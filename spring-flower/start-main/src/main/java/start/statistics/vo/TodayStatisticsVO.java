@@ -1,4 +1,4 @@
-package start.controller.statistics.vo;
+package start.statistics.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

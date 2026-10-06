@@ -19,8 +19,8 @@
     var websocket = null;
     // 音频是否已授权（用户点击过开启按钮）
     var audioEnabled = false;
-    // 商家端 id 规则：admin_{随机数}
-    var clientId = "admin_" + 1;
+    // 商家端 id 规则：admin_{merchantId}，此处 merchantId=2
+    var clientId = "admin_2";
 
     // 判断当前浏览器是否支持WebSocket
     if('WebSocket' in window){
@@ -47,9 +47,9 @@
         if(event.data === "reminder"){
             // 1. 播放催单音频
             playReminderAudio();
-            // 2. 向服务端回复 received，由服务端转发给顾客
-            websocket.send("received");
-            setMessageInnerHTML("已回复顾客 received");
+            // 2. 向服务端回复 received:{userId}，由服务端转发给指定顾客，此处回复给用户1
+            websocket.send("received:1");
+            setMessageInnerHTML("已回复顾客 received:1");
             // 3. 回复后断开连接
             setTimeout(function(){
                 websocket.close();

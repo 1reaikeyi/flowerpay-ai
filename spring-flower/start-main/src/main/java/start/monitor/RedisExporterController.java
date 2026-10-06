@@ -1,4 +1,4 @@
-package start.controller.monitor;
+package start.monitor;
 
 import common.result.Result;
 import framework.redis.RedisExporter;
