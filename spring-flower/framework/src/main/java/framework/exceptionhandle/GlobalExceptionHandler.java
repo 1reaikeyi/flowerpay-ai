@@ -30,12 +30,5 @@ public class GlobalExceptionHandler {
         return Result.error("服务器开小差了,请稍后再试");
     }
 
-    /**
-     * 捕获静态资源缺失异常（如 favicon.ico），仅记录 warn 日志，避免污染错误日志
-     */
-    @ExceptionHandler(NoResourceFoundException.class)
-    public void handleNoResourceFound(NoResourceFoundException e) {
-        log.warn("静态资源未找到: {}", e.getResourcePath());
-    }
 
 }

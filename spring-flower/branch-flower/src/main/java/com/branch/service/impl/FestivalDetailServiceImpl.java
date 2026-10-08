@@ -9,8 +9,7 @@ import com.github.benmanes.caffeine.cache.Cache;
 import common.constant.ErrorConstant;
 import common.constant.RedisPrefixConstant;
 import common.exception.FlowerDetailFailedException;
-import jakarta.annotation.PostConstruct;
-import jakarta.annotation.PreDestroy;
+import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import com.branch.mapper.FestivalDetailMapper;
 import com.branch.domain.dto.FestivalDetailDTO;
@@ -19,6 +18,7 @@ import com.branch.domain.vo.FestivalDetailVO;
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 import com.branch.domain.wrapper.LogicData;
@@ -28,9 +28,7 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Random;
-import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 @Service
@@ -49,40 +47,8 @@ public class FestivalDetailServiceImpl extends ServiceImpl<FestivalDetailMapper,
     private static final long NEED_FLASH_CACHE_TTL = FLASH_CACHE_TTL / 10;
     private static final long REDIS_EXIST_TTL = 86400L;
     private static final Random RANDOM = new Random();
+    @Resource(name = "festivalDetailExecutor")
     private ExecutorService festivalDetailExecutor;
-
-    @PostConstruct
-    public void init() {
-        festivalDetailExecutor = new ThreadPoolExecutor(
-                2, 2, 8,
-                TimeUnit.SECONDS,
-                new ArrayBlockingQueue<>(32),
-                r -> {
-                    Thread t = new Thread(r, "festivalDetail-handler");
-                    t.setDaemon(true);
-                    return t;
-                },
-                new ThreadPoolExecutor.AbortPolicy()
-        );
-        log.info("FestivalDetail 缓存重建线程池初始化完成");
-    }
-    @PreDestroy
-    public void destroy() {
-        if (festivalDetailExecutor != null && !festivalDetailExecutor.isShutdown()) {
-            log.info("FestivalDetail 缓存重建线程池开始关闭...");
-            festivalDetailExecutor.shutdown(); // 不再接受新任务，已提交的任务继续执行
-            try {
-                if (!festivalDetailExecutor.awaitTermination(10, TimeUnit.SECONDS)) {
-                    log.warn("线程池未能在10秒内优雅关闭，执行 shutdownNow");
-                    festivalDetailExecutor.shutdownNow(); // 强制中断
-                }
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-                festivalDetailExecutor.shutdownNow();
-            }
-            log.info("FestivalDetail 缓存重建线程池已关闭");
-        }
-    }
 
     @Override
     public FestivalDetailDTO create(FestivalDetailDTO festivalDetailDTO) {

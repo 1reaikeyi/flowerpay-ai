@@ -243,6 +243,10 @@ flowchart LR
     Browser --> User
 ```
 
+**redis预热**
+
+使用@PreConstruct+@PreDestory管理
+
 **DB查询**
 
 ```mermaid
@@ -296,6 +300,8 @@ flowchart TD
     J --> K[立即返回 old]
     J --> L[后台线程查 DB 写缓存]
 ```
+
+
 
 ### 迭代过程
 

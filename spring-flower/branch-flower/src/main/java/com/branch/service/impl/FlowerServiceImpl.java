@@ -12,8 +12,7 @@ import common.constant.ErrorConstant;
 import common.constant.RedisPrefixConstant;
 import common.exception.FlowerFailedException;
 import common.result.PageResult;
-import jakarta.annotation.PostConstruct;
-import jakarta.annotation.PreDestroy;
+import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import com.branch.mapper.FlowerMapper;
 import com.branch.domain.dto.FlowerDTO;
@@ -25,6 +24,7 @@ import com.branch.domain.vo.FlowerVO;
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -57,40 +57,8 @@ public class FlowerServiceImpl extends ServiceImpl<FlowerMapper, Flower> impleme
     private static final long NEED_FLASH_CACHE_TTL = FLASH_CACHE_TTL / 10;
     private static final long REDIS_EXIST_TTL = 86400L;
     private static final Random RANDOM = new Random();
+    @Resource(name = "flowerExecutor")
     private ExecutorService flowerExecutor;
-
-    @PostConstruct
-    public void init() {
-        flowerExecutor = new ThreadPoolExecutor(
-               2,2,8,
-                TimeUnit.SECONDS,
-                new ArrayBlockingQueue<>(32),
-                r -> {
-                    Thread t = new Thread(r, "flower-handler");
-                    t.setDaemon(true);
-                    return t;
-                },
-                new ThreadPoolExecutor.AbortPolicy()
-        );
-        log.info("Flower 缓存重建线程池初始化完成");
-    }
-    @PreDestroy
-    public void destroy() {
-        if (flowerExecutor != null && !flowerExecutor.isShutdown()) {
-            log.info("Flower 缓存重建线程池开始关闭...");
-            flowerExecutor.shutdown(); // 不再接受新任务，已提交的任务继续执行
-            try {
-                if (!flowerExecutor.awaitTermination(10, TimeUnit.SECONDS)) {
-                    log.warn("线程池未能在10秒内关闭，执行 shutdownNow");
-                    flowerExecutor.shutdownNow(); // 强制中断
-                }
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-                flowerExecutor.shutdownNow();
-            }
-            log.info("Flower 缓存重建线程池已关闭");
-        }
-    }
 
 
     @Override

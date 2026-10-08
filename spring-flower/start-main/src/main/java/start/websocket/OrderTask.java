@@ -34,7 +34,7 @@ public class OrderTask {
         LocalDateTime now = LocalDateTime.now();
         for (Flower flower : flowerList) {
             if (flower.getUpdateTime().plusHours(24).isBefore(now)) {
-                String msg = "鲜花[" + flower.getId() + "]已超过24小时未更新，请及时处理";
+                String msg = "鲜花[" + flower.getId() + "]保质期超过24小时，请及时处理";
                 log.info(msg);
                 WebSocketServer.sendToAdmin("1", msg);
             }

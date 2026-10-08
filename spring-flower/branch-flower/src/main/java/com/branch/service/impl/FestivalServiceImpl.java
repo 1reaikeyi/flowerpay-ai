@@ -13,8 +13,7 @@ import common.constant.ErrorConstant;
 import common.constant.RedisPrefixConstant;
 import common.exception.FestivalFailedException;
 import common.result.PageResult;
-import jakarta.annotation.PostConstruct;
-import jakarta.annotation.PreDestroy;
+import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import com.branch.mapper.FestivalMapper;
 import com.branch.domain.dto.FestivalDTO;
@@ -26,6 +25,7 @@ import com.branch.domain.vo.FestivalVO;
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -60,41 +60,8 @@ public class FestivalServiceImpl extends ServiceImpl<FestivalMapper, Festival> i
     private static final long NEED_FLASH_CACHE_TTL = FLASH_CACHE_TTL / 10;
     private static final long REDIS_EXIST_TTL = 86400L;
     private static final Random RANDOM = new Random();
+    @Resource(name = "festivalExecutor")
     private ExecutorService festivalExecutor;
-
-    @PostConstruct
-    public void init() {
-        festivalExecutor = new ThreadPoolExecutor(
-                2, 2, 8,
-                TimeUnit.SECONDS,
-                new ArrayBlockingQueue<>(32),
-                r -> {
-                    Thread t = new Thread(r, "festival-handler");
-                    t.setDaemon(true);
-                    return t;
-                },
-                new ThreadPoolExecutor.AbortPolicy()
-        );
-        log.info("Festival 缓存重建线程池初始化完成");
-    }
-
-    @PreDestroy
-    public void destroy() {
-        if (festivalExecutor != null && !festivalExecutor.isShutdown()) {
-            log.info("Festival 缓存重建线程池开始关闭...");
-            festivalExecutor.shutdown(); // 不再接受新任务，已提交的任务继续执行
-            try {
-                if (!festivalExecutor.awaitTermination(10, TimeUnit.SECONDS)) {
-                    log.warn("线程池未能在10秒内优雅关闭，执行 shutdownNow");
-                    festivalExecutor.shutdownNow(); // 强制中断
-                }
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-                festivalExecutor.shutdownNow();
-            }
-            log.info("Festival 缓存重建线程池已关闭");
-        }
-    }
 
     @Override
     public FestivalVO readCache(Long id) {
