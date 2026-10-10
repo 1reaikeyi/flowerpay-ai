@@ -1,0 +1,144 @@
+{
+  "easycom": {
+    "autoscan": true,
+    "custom": {
+      "^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue",
+      "^layout-tab-bar$": "@/layout/TabBar.vue"
+    }
+  },
+  "pages": [
+    {
+      "path": "pages/login/admin",
+      "style": {
+        "navigationBarTitleText": "登录",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/admin/home",
+      "style": {
+        "navigationBarTitleText": "鲜小花AI"
+      }
+    },
+    {
+      "path": "pages/admin/goods",
+      "style": {
+        "navigationBarTitleText": "商品"
+      }
+    },
+    {
+      "path": "pages/admin/mine",
+      "style": {
+        "navigationBarTitleText": "我的"
+      }
+    },
+    {
+      "path": "pages/admin/flower",
+      "style": {
+        "navigationBarTitleText": "鲜花管理"
+      }
+    },
+    {
+      "path": "pages/admin/flower-edit",
+      "style": {
+        "navigationBarTitleText": "鲜花编辑"
+      }
+    },
+    {
+      "path": "pages/admin/flower-detail",
+      "style": {
+        "navigationBarTitleText": "鲜花明细"
+      }
+    },
+    {
+      "path": "pages/admin/festival",
+      "style": {
+        "navigationBarTitleText": "礼盒管理"
+      }
+    },
+    {
+      "path": "pages/admin/festival-edit",
+      "style": {
+        "navigationBarTitleText": "礼盒编辑"
+      }
+    },
+    {
+      "path": "pages/admin/festival-detail",
+      "style": {
+        "navigationBarTitleText": "礼盒明细"
+      }
+    },
+    {
+      "path": "pages/admin/category",
+      "style": {
+        "navigationBarTitleText": "分类管理"
+      }
+    },
+    {
+      "path": "pages/admin/category-edit",
+      "style": {
+        "navigationBarTitleText": "分类编辑"
+      }
+    },
+    {
+      "path": "pages/admin/employee",
+      "style": {
+        "navigationBarTitleText": "员工管理"
+      }
+    },
+    {
+      "path": "pages/admin/employee-add",
+      "style": {
+        "navigationBarTitleText": "新增员工"
+      }
+    },
+    {
+      "path": "pages/admin/employee-profile",
+      "style": {
+        "navigationBarTitleText": "个人信息"
+      }
+    },
+    {
+      "path": "pages/admin/employee-avatar",
+      "style": {
+        "navigationBarTitleText": "头像设置"
+      }
+    },
+    {
+      "path": "pages/admin/employee-password",
+      "style": {
+        "navigationBarTitleText": "修改密码"
+      }
+    },
+    {
+      "path": "pages/admin/order",
+      "style": {
+        "navigationBarTitleText": "订单管理"
+      }
+    },
+    {
+      "path": "pages/admin/order-detail",
+      "style": {
+        "navigationBarTitleText": "订单详情"
+      }
+    },
+    {
+      "path": "pages/admin/statistics",
+      "style": {
+        "navigationBarTitleText": "数据统计"
+      }
+    },
+    {
+      "path": "pages/admin/shop",
+      "style": {
+        "navigationBarTitleText": "店铺管理"
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "鲜小花",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "backgroundColor": "#F2F2F7"
+  }
+}

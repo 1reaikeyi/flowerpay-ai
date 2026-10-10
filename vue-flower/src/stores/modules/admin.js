@@ -43,7 +43,7 @@ export const useEmployeeStore
                 removeToken()
                 user.value = {}
                 // 跳转登录页（动态 import router 避免循环依赖）
-                const { default: router } = await import('@/router')
+                const { default: router } = await import('@/page.js')
                 if (router.currentRoute.value.path !== '/admin/login') {
                     router.push('/admin/login')
                 }

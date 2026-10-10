@@ -1,0 +1,33 @@
+/*
+ * 全局 SCSS 变量 - 系统色板 + 主题色
+ */
+
+/* ---------- 系统色板 ---------- */
+$sys-blue: #0A84FF;
+$sys-red: #FF453A;
+$sys-orange: #FF9F0A;
+$sys-yellow: #FFD60A;
+$sys-green: #30D158;
+$sys-cyan: #40C8E0;
+$sys-indigo: #5E5CE6;
+$sys-purple: #BF5AF2;
+$sys-pink: #FF375F;
+
+/* ---------- 主题色 ---------- */
+$primary: $sys-blue;
+$primary-light: rgba(10, 132, 255, 0.1);
+$primary-dark: $sys-indigo;
+
+/* ---------- iOS 中性色 ---------- */
+$ios-bg: #F2F2F7;
+$ios-card: #FFFFFF;
+$ios-label: #1C1C1E;
+$ios-label-2: #3C3C43;
+$ios-label-3: #8E8E93;
+$ios-separator: rgba(60, 60, 67, 0.12);
+$ios-fill: rgba(120, 120, 128, 0.12);
+
+/* ---------- 圆角 ---------- */
+$radius-lg: 18px;
+$radius-md: 12px;
+$radius-sm: 8px;

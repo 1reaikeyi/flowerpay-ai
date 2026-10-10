@@ -69,7 +69,7 @@ const handleSubmit = async () => {
     ElMessage.success('密码已更新，请重新登录')
     // 改完密码让旧 token 失效，清登录态跳登录
     await employeeStore.logout()
-    const { default: router } = await import('@/router')
+    const { default: router } = await import('@/page.js')
     router.push('/admin/login')
   } catch (e) {
     // 响应拦截器已提示

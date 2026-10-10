@@ -129,14 +129,14 @@
       <el-footer>鲜小花</el-footer>
     </el-container>
     <!-- 全局悬浮 AI 助理 -->
-    <AiFloat />
+    <AiWindows />
   </el-container>
 </template>
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 // 全局悬浮 AI 助理
-import AiFloat from '@/views/ai/index.vue'
+import AiWindows from '@/views/ai/index.vue'
 // 导入 Element Plus 图标组件
 import {
   Menu,

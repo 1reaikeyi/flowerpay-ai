@@ -10,7 +10,7 @@ import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 import zhCN from 'element-plus/dist/locale/zh-cn.js'
 
-import router from './router'
+import router from './page.js'
 
 const app = createApp(App)
 const pinia = createPinia()
