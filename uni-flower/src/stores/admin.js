@@ -1,7 +1,6 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 import { loginAdmin, logoutAdmin, getEmployeeById } from '@/api/admin/admin.js'
-import { registerEmployee } from '@/api/employee/employee.js'
 import { getUserIdFromToken } from '@/utils/jwt.js'
 
 export const useAdminStore = defineStore('flower:admin', () => {
@@ -53,11 +52,6 @@ export const useAdminStore = defineStore('flower:admin', () => {
     return res
   }
 
-  const register = async (data) => {
-    const res = await registerEmployee(data)
-    return res
-  }
-
   const getUser = async () => {
     if (!userId.value) {
       console.error('无法获取用户ID，token可能无效')
@@ -84,7 +78,7 @@ export const useAdminStore = defineStore('flower:admin', () => {
   return {
     token, setToken, removeToken,
     user, getUser, setUser, userId,
-    login, register, logout,
+    login, logout,
     restore
   }
 })

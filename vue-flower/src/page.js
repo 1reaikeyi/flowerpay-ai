@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import { useEmployeeStore } from '@/stores/index.js'
+import { useAdminStore } from '@/stores/index.js'
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -16,12 +16,7 @@ const router = createRouter({
             component: () => import('@/views/user/login/user.vue'),
             meta: { requiresAuth: false }
         },
-        // Level 3:
-        {
-            path: '/emp/login',
-            component: () => import('@/views/emp/login/emp.vue'),
-            meta: { requiresAuth: false }
-        },
+
 
         // Level 1 - 分支 A: 管理员体系
         {
@@ -53,11 +48,11 @@ const router = createRouter({
                 { path: 'order/refund', component: () => import('@/views/admin/order/refund.vue') },
                 { path: 'order/detail', component: () => import('@/views/admin/order/detail.vue') },
 
-                { path: 'employee', component: () => import('@/views/admin/employee/employee.vue') },
-                { path: 'employee/add', component: () => import('@/views/admin/employee/addEmployee.vue') },
-                { path: 'employee/profile', component: () => import('@/views/admin/employee/profile.vue') },
-                { path: 'employee/avatar', component: () => import('@/views/admin/employee/avatar.vue') },
-                { path: 'employee/password', component: () => import('@/views/admin/employee/password.vue') }
+                { path: 'admin/employee', component: () => import('@/views/admin/admin/employee.vue') },
+                { path: 'admin/update', component: () => import('@/views/admin/admin/updateEmployee.vue') },
+                { path: 'admin/profile', component: () => import('@/views/admin/admin/profile.vue') },
+                { path: 'admin/avatar', component: () => import('@/views/admin/admin/avatar.vue') },
+                { path: 'admin/password', component: () => import('@/views/admin/admin/password.vue') }
 
             ]
         },
@@ -75,16 +70,6 @@ const router = createRouter({
                 { path: 'shoppingCart', component: () => import('@/views/user/shop/shop.vue') },
                 { path: 'order', component: () => import('@/views/user/order/order.vue') }
             ]
-        },
-
-        // Level 3 - 分支 C: employee体系
-        {
-            path: '/emp', // 员工体系的根路径
-            component: () => import('@/layout/emp.vue'), 
-            redirect: '/emp/category',
-            children: [
-                { path: 'category', component: () => import('@/views/emp/category/category.vue') },
-            ]
         }
     ]
 })
@@ -93,7 +78,6 @@ const router = createRouter({
 const AUTH_SCOPES = [
     { prefix: '/admin', key: 'flower:admin', login: '/admin/login' },
     { prefix: '/user', key: 'flower:user', login: '/user/login' },
-    { prefix: '/emp', key: 'flower:emp', login: '/emp/login' }
 ]
 
 // 取某端 localStorage 中的 token

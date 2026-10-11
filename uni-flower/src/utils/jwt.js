@@ -55,10 +55,10 @@ export const parseJWT = (token) => {
 
 export const getUserIdFromToken = (token) => {
   const payload = parseJWT(token)
-  return payload?.adminId ?? payload?.empId ?? payload?.userId ?? null
+  return payload?.adminId ?? payload?.userId ?? null
 }
 
 export const getUserNameFromToken = (token) => {
   const payload = parseJWT(token)
-  return payload?.adminName ?? payload?.empName ?? payload?.userName ?? null
+  return payload?.adminName ?? payload?.userName ?? null
 }

@@ -61,7 +61,7 @@
           <span>店铺管理</span>
         </el-menu-item>
 
-        <el-menu-item index="/admin/employee">
+        <el-menu-item index="/admin/admin/employee">
           <el-icon><User /></el-icon>
           <span>员工管理</span>
         </el-menu-item>
@@ -153,23 +153,23 @@ import {
 // 导入默认头像图片（用作兜底）
 import avatar from '@/assets/login/avatar.png'
 // 导入员工状态管理
-import { useEmployeeStore } from '@/stores/index.js'
+import { useAdminStore } from '@/stores/index.js'
 // 导入路由
 import { useRouter } from 'vue-router'
 
 const activeIndex = ref('1')
 // 初始化员工状态和路由实例
-const employeeStore = useEmployeeStore()
+const adminStore = useAdminStore()
 // 头像 URL：后端返回的是文件名，需要拼接 /api/local?fileName= 完整 URL；为空时用本地默认头像兜底
 const avatarUrl = computed(() => {
-  const a = employeeStore.user?.avatar
+  const a = adminStore.user?.avatar
   if (!a) return avatar
   // 如果已经是完整 URL（http/https 开头）直接用，否则当作后端文件名拼接
   return /^https?:\/\//.test(a) ? a : `/api/local?fileName=${a}`
 })
 // 组件挂载时获取员工信息
 onMounted(() => {
-  employeeStore.getUser()
+  adminStore.getUser()
 })
 const router = useRouter()
 
@@ -177,20 +177,20 @@ const router = useRouter()
 const handleSelect = (key) => {
   if (key === '1') {
     // 首页：跳转到 admin 默认页（今日数据）
-    router.push('/admin/employee/avatar')
+    router.push('/admin/admin/avatar')
   } else if (key === '2') {
     // 当前员工信息
-    router.push('/admin/employee/profile')
+    router.push('/admin/admin/profile')
   } else if (key === '3') {
     // 退出登录：清登录态后回到 admin 登录页
-    employeeStore.logout()
+    adminStore.logout()
     router.push('/admin/login')
   }
 }
 
 // 处理头像下拉菜单命令
 const handleCommand = async (key) => {
-  router.push(`/admin/employee/${key}`)
+  router.push(`/admin/admin/${key}`)
 }
 </script>
 

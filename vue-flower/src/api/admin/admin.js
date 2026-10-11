@@ -2,9 +2,8 @@ import request from '@/utils/admin/request.js'
 
 /**
  * 管理员账户 API（按 admin 接口文档第 1 节对齐）
- * 后端控制器根路径：/admin
+ * 后端控制器根路径：/admin（AdminController），仅店长（ROLE_ADMIN）使用
  * 认证方式：POST /admin/login 返回 JWT Token，后续请求需携带 Authorization: Bearer {token}
- * 注意：员工注册 / 资料修改不在 /admin 下，统一走员工端 /employee/**（见 @/api/employee/employee.js）
  */
 
 // 1.1 管理员登录 - POST /admin/login（放行）
@@ -61,16 +60,21 @@ export const updateEmployeePassword = (data) => {
   })
 }
 
-// 1.6 修改个人信息 - PUT /admin/employee
-// 请求体 EmployeeDTO: { id, username, avatar, work, sex, email, phone, status }
+// 1.6 修改员工信息 - PUT /admin（AdminController.updateByObject，需 ROLE_ADMIN）
+// 后端 updateByObject 只 set 非空字段，支持局部更新（如仅改 avatar / status）
+// 请求体 EmployeeDTO: { id(必填), username?, work?, avatar?, sex?, email?, phone?, status?, password? }
 // 响应 Result<Long> → 员工 ID
 export const updateEmployeeInfo = (data) => {
   return request({
-    url: '/admin/employee',
+    url: '/admin',
     method: 'put',
     data
   })
 }
+
+// 员工信息修改（别名，语义同 updateEmployeeInfo）
+// 供员工管理列表（启停/编辑）、admin 头像更换等场景调用
+export const updateEmployee = updateEmployeeInfo
 
 // 1.7 批量删除员工 - DELETE /admin
 // 请求参数: ids (List<Long>, 必填)，如 ids=1&ids=2

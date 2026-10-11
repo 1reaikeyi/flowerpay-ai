@@ -1,10 +1,9 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 import { loginAdmin, logoutAdmin, getEmployeeById } from '@/api/admin/admin.js'
-import { registerEmployee } from '@/api/employee/employee.js'
 import { getUserIdFromToken } from '@/stores/modules/jwt.js'
 
-export const useEmployeeStore
+export const useAdminStore
     = defineStore('flower:admin', () => {
         const token = ref('')
 
@@ -21,11 +20,6 @@ export const useEmployeeStore
 
         const login = async (data) => {
             const res = await loginAdmin(data)
-            return res
-        }
-
-        const register = async (data) => {
-            const res = await registerEmployee(data)
             return res
         }
 
@@ -69,7 +63,7 @@ export const useEmployeeStore
         return {
             token, setToken, removeToken,
             user, getUser, setUser, userId,
-            login, register, logout
+            login, logout
         }
     },
     {

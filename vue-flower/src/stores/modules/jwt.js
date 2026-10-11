@@ -24,12 +24,12 @@ export const parseJWT = (token) => {
 
 export const getUserIdFromToken = (token) => {
     const payload = parseJWT(token)
-    // 后端 JwtConstant.ADMIN_ID = "adminId"
-    return payload?.adminId ?? payload?.empId ?? payload?.userId ?? null
+    // 后端 JWT 中 ID 字段：admin 端为 adminId，user 端为 userId
+    return payload?.adminId ?? payload?.userId ?? null
 }
 
 export const getUserNameFromToken = (token) => {
     const payload = parseJWT(token)
-    // 后端 JwtConstant.ADMIN_NAME = "adminName"
-    return payload?.adminName ?? payload?.empName ?? payload?.userName ?? null
+    // 后端 JWT 中用户名字段：admin 端为 adminName，user 端为 userName
+    return payload?.adminName ?? payload?.userName ?? null
 }

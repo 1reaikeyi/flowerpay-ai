@@ -33,103 +33,97 @@
       }
     },
     {
-      "path": "pages/admin/flower",
+      "path": "pages/admin/flower/flower",
       "style": {
         "navigationBarTitleText": "鲜花管理"
       }
     },
     {
-      "path": "pages/admin/flower-edit",
+      "path": "pages/admin/flower/flower-edit",
       "style": {
         "navigationBarTitleText": "鲜花编辑"
       }
     },
     {
-      "path": "pages/admin/flower-detail",
+      "path": "pages/admin/flower/flower-detail",
       "style": {
         "navigationBarTitleText": "鲜花明细"
       }
     },
     {
-      "path": "pages/admin/festival",
+      "path": "pages/admin/festival/festival",
       "style": {
         "navigationBarTitleText": "礼盒管理"
       }
     },
     {
-      "path": "pages/admin/festival-edit",
+      "path": "pages/admin/festival/festival-edit",
       "style": {
         "navigationBarTitleText": "礼盒编辑"
       }
     },
     {
-      "path": "pages/admin/festival-detail",
+      "path": "pages/admin/festival/festival-detail",
       "style": {
         "navigationBarTitleText": "礼盒明细"
       }
     },
     {
-      "path": "pages/admin/category",
+      "path": "pages/admin/category/category",
       "style": {
         "navigationBarTitleText": "分类管理"
       }
     },
     {
-      "path": "pages/admin/category-edit",
+      "path": "pages/admin/category/category-edit",
       "style": {
         "navigationBarTitleText": "分类编辑"
       }
     },
     {
-      "path": "pages/admin/employee",
+      "path": "pages/admin/admin/employee",
       "style": {
         "navigationBarTitleText": "员工管理"
       }
     },
     {
-      "path": "pages/admin/employee-add",
-      "style": {
-        "navigationBarTitleText": "新增员工"
-      }
-    },
-    {
-      "path": "pages/admin/employee-profile",
+      "path": "pages/admin/admin/admin-profile",
       "style": {
         "navigationBarTitleText": "个人信息"
       }
     },
     {
-      "path": "pages/admin/employee-avatar",
+      "path": "pages/admin/admin/admin-avatar",
       "style": {
         "navigationBarTitleText": "头像设置"
       }
     },
     {
-      "path": "pages/admin/employee-password",
+      "path": "pages/admin/admin/admin-password",
       "style": {
         "navigationBarTitleText": "修改密码"
       }
     },
     {
-      "path": "pages/admin/order",
+      "path": "pages/admin/order/order",
       "style": {
         "navigationBarTitleText": "订单管理"
       }
     },
     {
-      "path": "pages/admin/order-detail",
+      "path": "pages/admin/order/order-detail",
       "style": {
         "navigationBarTitleText": "订单详情"
       }
     },
     {
-      "path": "pages/admin/statistics",
+      "path": "pages/admin/statistics/statistics",
       "style": {
         "navigationBarTitleText": "数据统计"
       }
     },
     {
-      "path": "pages/admin/shop",
+      "path": "pages/admin/shop/shop",
       "style": {
         "navigationBarTitleText": "店铺管理"
       }

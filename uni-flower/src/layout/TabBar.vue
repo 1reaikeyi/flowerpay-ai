@@ -7,7 +7,7 @@
       :class="{ active: current === item.path }"
       @click="switchTo(item)"
     >
-      <text class="tab-icon">{{ item.icon }}</text>
+      <image class="tab-icon" :src="item.icon" mode="aspectFit" />
       <text class="tab-text">{{ item.text }}</text>
     </view>
   </view>
@@ -22,9 +22,9 @@ const props = defineProps({
 })
 
 const tabs = [
-  { path: '/pages/admin/home', text: '首页', icon: '🌸' },
-  { path: '/pages/admin/goods', text: '商品', icon: '🛍️' },
-  { path: '/pages/admin/mine', text: '我的', icon: '👤' }
+  { path: '/pages/admin/home', text: '首页', icon: '/static/menu1.png' },
+  { path: '/pages/admin/goods', text: '商品', icon: '/static/menu2.png' },
+  { path: '/pages/admin/mine', text: '我的', icon: '/static/menu3.png' }
 ]
 
 const switchTo = (item) => {
@@ -56,8 +56,8 @@ const switchTo = (item) => {
   gap: 6rpx;
 
   .tab-icon {
-    font-size: 40rpx;
-    line-height: 1;
+    width: 44rpx;
+    height: 44rpx;
     filter: grayscale(100%);
     opacity: 0.5;
   }

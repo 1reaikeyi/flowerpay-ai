@@ -5,4 +5,4 @@ const pinia = createPinia()
 export { pinia }
 
 // 导出所有 stores
-export { useEmployeeStore } from './modules/admin.js'
+export { useAdminStore } from './modules/admin.js'

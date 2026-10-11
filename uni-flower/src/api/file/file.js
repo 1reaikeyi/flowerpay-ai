@@ -12,7 +12,7 @@ export const uploadFile = (filePath, formData = {}) => {
     })()
 
     uni.uploadFile({
-      url: 'http://localhost:8080/local',
+      url: 'https://localhost:8080/local',
       filePath,
       name: 'file',
       formData,

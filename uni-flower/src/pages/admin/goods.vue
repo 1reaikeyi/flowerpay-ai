@@ -10,7 +10,7 @@
         @click="goMenu(item)"
       >
         <view class="card-icon">
-          <image class="icon-img" src="/static/logo.png" mode="aspectFit" />
+          <image class="icon-img" src="/static/menu2.png" mode="aspectFit" />
         </view>
         <text class="card-text">{{ item.text }}</text>
         <view v-if="item.disabled" class="card-badge">开发中</view>
@@ -29,12 +29,12 @@ import { useAdminStore } from '@/stores/index.js'
 const adminStore = useAdminStore()
 
 const menuList = [
-  { text: '鲜花管理', url: '/pages/admin/flower' },
-  { text: '礼盒管理', url: '/pages/admin/festival' },
-  { text: '分类管理', url: '/pages/admin/category' },
-  { text: '员工管理', url: '/pages/admin/employee' },
-  { text: '订单管理', url: '/pages/admin/order' },
-  { text: '数据统计', url: '/pages/admin/statistics', disabled: true }
+  { text: '鲜花管理', url: '/pages/admin/flower/flower' },
+  { text: '礼盒管理', url: '/pages/admin/festival/festival' },
+  { text: '分类管理', url: '/pages/admin/category/category' },
+  { text: '员工管理', url: '/pages/admin/admin/employee' },
+  { text: '订单管理', url: '/pages/admin/order/order' },
+  { text: '数据统计', url: '/pages/admin/statistics/statistics', disabled: true }
 ]
 
 const goMenu = (item) => {

@@ -17,7 +17,7 @@ instance.interceptors.request.use(
         }
         const token = localStorage.getItem('flower:admin') ? JSON.parse(localStorage.getItem('flower:admin')).token : ''
         if (token) {
-            // 后端 EmployeeRefreshRequestFilter 要求 Authorization 头以 "Bearer " 前缀开头
+            // 后端 AdminRefreshRequestFilter 要求 Authorization 头以 "Bearer " 前缀开头
             config.headers.Authorization = `Bearer ${token}`
         }
         return config

@@ -2,7 +2,7 @@
   <view class="mine-page">
     <!-- 用户信息头部 -->
     <view class="my-info">
-      <view class="head" @click="goPage('/pages/admin/employee-avatar')">
+      <view class="head" @click="goPage('/pages/admin/admin/admin-avatar')">
         <image class="head_image" :src="avatarUrl" mode="aspectFill" />
       </view>
       <view class="phone_name">
@@ -18,15 +18,15 @@
     <scroll-view class="container" scroll-y>
       <!-- 个人管理 -->
       <view class="address_order">
-        <view class="address" @click="goPage('/pages/admin/employee-profile')">
+        <view class="address" @click="goPage('/pages/admin/admin/admin-profile')">
           <text class="address_word">个人信息</text>
           <text class="to_right">›</text>
         </view>
-        <view class="order" @click="goPage('/pages/admin/employee-avatar')">
+        <view class="order" @click="goPage('/pages/admin/admin/admin-avatar')">
           <text class="order_word">头像设置</text>
           <text class="to_right">›</text>
         </view>
-        <view class="order" @click="goPage('/pages/admin/employee-password')">
+        <view class="order" @click="goPage('/pages/admin/admin/admin-password')">
           <text class="order_word">修改密码</text>
           <text class="to_right">›</text>
         </view>
@@ -34,15 +34,7 @@
 
       <!-- 管理入口 -->
       <view class="address_order">
-        <view class="address" @click="goPage('/pages/admin/employee')">
-          <text class="address_word">员工管理</text>
-          <text class="to_right">›</text>
-        </view>
-        <view class="order" @click="goPage('/pages/admin/employee-add')">
-          <text class="order_word">新增员工</text>
-          <text class="to_right">›</text>
-        </view>
-        <view class="order" @click="goPage('/pages/admin/shop')">
+        <view class="order" @click="goPage('/pages/admin/shop/shop')">
           <text class="order_word">店铺管理</text>
           <text class="to_right">›</text>
         </view>
@@ -59,9 +51,9 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import { onShow } from '@dcloudio/uni-app'
-import { useAdminStore } from '@/stores/index.js'
+import { useAdminStore } from '@/stores'
 import { getUserNameFromToken } from '@/utils/jwt.js'
-import { resolveImageUrl, showConfirm } from '@/utils/index.js'
+import { resolveImageUrl, showConfirm } from '@/utils'
 
 const adminStore = useAdminStore()
 const userName = ref('')

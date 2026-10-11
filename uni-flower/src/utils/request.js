@@ -9,11 +9,10 @@
 const BASE_URL = 'http://localhost:8080'
 const AI_BASE_URL = 'http://localhost:8081'
 
-// 各端存储 key
+// 各端存储 key（本项目仅保留 admin 店长端）
 const STORAGE_KEYS = {
   admin: 'flower:admin',
-  user: 'flower:user',
-  emp: 'flower:emp'
+  user: 'flower:user'
 }
 
 // 获取 token（从对应端的 storage 中读取）
@@ -40,7 +39,7 @@ const clearAuth = (scope) => {
  * @param {string} options.method - GET/POST/PUT/DELETE
  * @param {Object} options.data - 请求体（POST/PUT）
  * @param {Object} options.params - 查询参数（GET/DELETE）
- * @param {string} options.scope - 认证范围：admin/user/emp，默认 admin
+ * @param {string} options.scope - 认证范围：admin/user，默认 admin
  * @param {string} options.baseURL - 覆盖默认 baseURL（如 AI 服务用 8081）
  * @param {boolean} options.skipAuth - 是否跳过 token 注入（登录接口用）
  * @param {string} options.responseType - 响应类型，如 'arraybuffer' 用于下载

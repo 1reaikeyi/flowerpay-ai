@@ -42,7 +42,7 @@ export const updateEmployeePassword = (data) => {
 
 export const updateEmployeeInfo = (data) => {
   return request({
-    url: '/admin/employee',
+    url: '/admin',
     method: 'put',
     data
   })

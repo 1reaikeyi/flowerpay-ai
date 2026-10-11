@@ -5,5 +5,5 @@ export const getShopStatus = () => {
 }
 
 export const setShopStatus = (status) => {
-  return request({ url: `/admin/shop/status/${status}`, method: 'put' })
+  return request({ url: `/admin/shop/status/${status}`, method: 'post' })
 }

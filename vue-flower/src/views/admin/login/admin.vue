@@ -56,7 +56,7 @@ import { reactive, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import { ElMessage } from 'element-plus'
 import { loginAdmin } from '@/api/admin/admin.js'
-import { useEmployeeStore } from '@/stores/index.js'
+import { useAdminStore } from '@/stores/index.js'
 
 // 加载状态
 const loadLogIn = ref(false)
@@ -89,7 +89,7 @@ const loginRules = {
 }
 
 const router = useRouter()
-const jwt = useEmployeeStore()
+const jwt = useAdminStore()
 
 // 登录方法 - 核心修复：去掉 loginForm.value
 const handleLogin = async () => {

@@ -4,7 +4,7 @@
     <view class="chat-header">
       <view class="header-left">
         <view class="ai-avatar">
-          <image class="avatar-img" src="/static/logo1.png" mode="aspectFill" />
+          <image class="avatar-img" src="/static/ai1.png" mode="aspectFill" />
         </view>
         <view class="header-titles">
           <text class="header-title">鲜小花</text>
@@ -55,7 +55,7 @@
       <!-- 欢迎页 -->
       <view v-if="messages.length === 0" class="welcome-page">
         <view class="welcome-logo">
-          <image class="welcome-logo-img" src="/static/logo1.png" mode="aspectFill" />
+          <image class="welcome-logo-img" src="/static/ai1.png" mode="aspectFill" />
         </view>
         <text class="welcome-title">你好，我是鲜小花</text>
         <text class="welcome-desc">你的专属鲜花智能助手</text>
@@ -71,7 +71,7 @@
           :class="msg.role === 'user' ? 'is-user' : 'is-ai'"
         >
           <view v-if="msg.role === 'ai'" class="msg-avatar">
-            <image class="avatar-img" src="/static/logo1.png" mode="aspectFill" />
+            <image class="avatar-img" src="/static/ai1.png" mode="aspectFill" />
           </view>
           <view class="msg-body">
             <view class="msg-bubble" :class="{ streaming: msg.streaming }">
@@ -84,7 +84,7 @@
             </view>
           </view>
           <view v-if="msg.role === 'user'" class="msg-avatar user-avatar">
-            <image class="avatar-img" src="/static/logo2.png" mode="aspectFill" />
+            <image class="avatar-img" src="/static/ai2.png" mode="aspectFill" />
           </view>
         </view>
       </view>
@@ -142,8 +142,8 @@ import {
   abortChat,
   chatStream
 } from '@/api/ai/ai.js'
-import { useAdminStore } from '@/stores/index.js'
-import { showToast } from '@/utils/index.js'
+import { useAdminStore } from '@/stores'
+import { showToast } from '@/utils'
 
 const adminStore = useAdminStore()
 const sidebarOpen = ref(true)
