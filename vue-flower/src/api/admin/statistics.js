@@ -41,17 +41,8 @@ export const getTop2 = () => {
     })
 }
 
-// 9.5 订单状态分布统计 - GET /admin/statistics/order
-// 响应 Result<List<OrderStatisticsVO>>: { status, name, count }
-export const getOrder = () => {
-    return request({
-        url: '/admin/statistics/order',
-        method: 'get'
-    })
-}
-
 // 9.6 今日订单统计 - GET /admin/statistics/today
-// 今日订单数、已支付订单数、今日营业额，响应 Result<List<OrderStatisticsVO>>
+// 今日订单按状态分布，响应 Result<List<OrderStatisticsVO>>: { status, name, count }
 export const getTodayOrder = () => {
     return request({
         url: '/admin/statistics/today',

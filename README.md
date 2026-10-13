@@ -108,16 +108,15 @@ flowerpay-ai\说明\wiki.md
 
 ## statistics
 
-| top    | inventory | order | count  |
-| ------ | --------- | ----- | ------ |
-| 柱状图 | 扇形图    | 饼图  | 折现图 |
-|        |           |       |        |
+| top                                                          | inventory                                                    | count                                                        |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| <img src="说明/原型功能/statistics3.png" alt="statistics" style="zoom: 50%;" /> | <img src="说明/原型功能/statistics1.png" alt="statistics" style="zoom: 50%;" /> | <img src="说明/原型功能/statistics2.png" alt="statistics" style="zoom: 50%;" /> |
 
 ## 用户端，员工端
 
-| <img src="说明/原型功能/user1.png" alt="user登录" style="zoom: 25%;" /> | <img src="说明/原型功能/uni1.png" alt="user登录" style="zoom: 25%;" /> | <img src="说明/原型功能/uni6.png" alt="user登录" style="zoom: 25%;" /> |
+| <img src="说明/原型功能/uni3.png" alt="user登录" style="zoom: 25%;" /> | <img src="说明/原型功能/uni1.png" alt="user登录" style="zoom: 25%;" /> | <img src="说明/原型功能/uni6.png" alt="user登录" style="zoom: 25%;" /> |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| <img src="说明/原型功能/uni3.png" alt="user登录" style="zoom: 25%;" /> | <img src="说明/原型功能/uni4.png" alt="user登录" style="zoom: 25%;" /> | <img src="说明/原型功能/uni5.png" alt="user登录" style="zoom: 25%;" /> |
+| <img src="说明/原型功能/uni5.png" alt="user登录" style="zoom: 25%;" /> | <img src="说明/原型功能/uni4.png" alt="user登录" style="zoom: 25%;" /> |                                                              |
 
 ## AI
 
@@ -492,6 +491,7 @@ flowchart TD
 ### 问一问rag的使用用途，送人对象
 
 ```mermaid
+%%{init: {'theme':'neutral','themeVariables':{'fontSize':'8px','nodeBorder':'2px'},'flowchart':{'nodeSpacing':8,'rankSpacing':32,'useMaxWidth':false,'curve':'basis'}}}%%
 flowchart TD
     subgraph 内部文档入库Ingestion
         D[原始文档<br/>PDF/MD/TXT]
