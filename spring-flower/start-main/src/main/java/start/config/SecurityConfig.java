@@ -131,7 +131,7 @@ public class SecurityConfig {
                         .requestMatchers("/admin/register", "/admin/login").permitAll()
                         .requestMatchers("/employee/register", "/employee/login").permitAll()
                         // 只拦截
-                        .requestMatchers("/admin/**").hasAnyAuthority("ROLE_ADMIN", "ROLE_EMP")
+                        .requestMatchers("/admin/**").hasAnyAuthority("ROLE_ADMIN")
                         .requestMatchers("/employee/**").hasAnyAuthority( "ROLE_EMP")
                         .requestMatchers("/user/**").hasAuthority("ROLE_USER")
                         // 其他接口全部放行

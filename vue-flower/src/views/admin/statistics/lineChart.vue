@@ -1,272 +1,229 @@
-<!--<template>-->
-<!--  <div class="dashboard-container">-->
-<!--    <div class="chart-card">-->
-<!--      <header class="chart-header">-->
-<!--        <div class="header-title">-->
-<!--          <h3>销量趋势</h3>-->
-<!--          <p>动态数据加载与实时更新</p>-->
-<!--        </div>-->
-<!--        <span class="status-badge">在线</span>-->
-<!--      </header>-->
-<!--      <section class="chart-container">-->
-<!--        <div ref="chartRef" class="chart-dom"></div>-->
-<!--      </section>-->
-<!--      <footer class="chart-footer">-->
-<!--        <button class="btn" @click="refresh">获取最新数据</button>-->
-<!--        <button class="btn btn-primary" @click="toggleAutoUpdate">-->
-<!--          <span>{{ autoUpdate ? '停止自动更新' : '开启自动更新' }}</span>-->
-<!--        </button>-->
-<!--      </footer>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</template>-->
+<template>
+  <div class="dashboard-container">
+    <!-- 顶部：鲜花单品销量折线图 -->
+    <div class="chart-card">
+      <header class="chart-header">
+        <div class="header-title">
+          <h3>鲜花单品销量趋势</h3>
+        </div>
+        <span class="status-badge">鲜花</span>
+      </header>
+      <section class="chart-container">
+        <div ref="flowerChartRef" class="chart-dom"></div>
+      </section>
+    </div>
 
-<!--<script setup>-->
-<!--import { ref, onMounted, onBeforeUnmount, watch, nextTick } from 'vue'-->
-<!--// 引入 ECharts 核心-->
-<!--import * as echarts from 'echarts'-->
-<!--// 按任务要求使用的 API 函数（禁止改名）-->
-<!--import { getDishScore } from '@/api/admin/statistics.js'-->
+    <!-- 底部：多花礼盒销量折线图 -->
+    <div class="chart-card festival">
+      <header class="chart-header">
+        <div class="header-title">
+          <h3>多花礼盒销量趋势</h3>
+        </div>
+        <span class="status-badge festival-badge">礼盒</span>
+      </header>
+      <section class="chart-container">
+        <div ref="festivalChartRef" class="chart-dom"></div>
+      </section>
+    </div>
+  </div>
+</template>
 
-<!--const flowerScore = ref([])-->
+<script setup>
+import { ref, onMounted, onBeforeUnmount } from 'vue'
+// 引入 ECharts 核心
+import * as echarts from 'echarts'
+// 按任务要求使用的 API 函数
+import { getFlower, getFestival } from '@/api/admin/statistics.js'
 
-<!--// ===== 图表 DOM ref 与实例 =====-->
-<!--const chartRef = ref(null)-->
-<!--let chart = null-->
+// ===== 图表 DOM ref 与实例 =====
+const flowerChartRef = ref(null)
+const festivalChartRef = ref(null)
+let flowerChart = null
+let festivalChart = null
 
-<!--// ===== 自动更新相关 =====-->
-<!--let autoUpdateTimer = null-->
-<!--const autoUpdate = ref(false)-->
-<!--const updateInterval = 5000 // 5 秒刷新一次-->
+// ===== 通用折线图渲染 =====
+const renderLineChart = (chart, list, color) => {
+  if (!chart) return
+  const names = list.map(d => d.name || '未知')
+  const counts = list.map(d => Number(d.count) || 0)
 
-<!--// ===== 数据获取 =====-->
-<!--const fetchData = async () => {-->
-<!--  try {-->
-<!--    const res = await getDishScore()-->
-<!--    if (Array.isArray(res?.data)) flowerScore.value = res.data-->
-<!--  } catch (e) {-->
-<!--    console.error('获取菜品销量统计失败:', e)-->
-<!--  }-->
-<!--}-->
+  chart.setOption({
+    animationDurationUpdate: 1000,
+    tooltip: {
+      trigger: 'axis',
+      backgroundColor: 'rgba(255, 255, 255, 0.95)',
+      borderColor: '#e5e7eb',
+      borderWidth: 1,
+      textStyle: { color: '#374151' }
+    },
+    grid: { left: '3%', right: '4%', bottom: '3%', top: '15%', containLabel: true },
+    xAxis: {
+      type: 'category',
+      boundaryGap: false,
+      data: names,
+      axisLine: { lineStyle: { color: '#9ca3af' } },
+      axisLabel: { color: '#6b7280', rotate: names.length > 6 ? 30 : 0, interval: 0 }
+    },
+    yAxis: {
+      type: 'value',
+      minInterval: 1,
+      splitLine: { lineStyle: { type: 'dashed', color: '#f3f4f6' } }
+    },
+    series: [{
+      name: '销量',
+      type: 'line',
+      smooth: true,
+      data: counts,
+      symbol: 'circle',
+      symbolSize: 8,
+      itemStyle: { color, borderWidth: 2, borderColor: '#fff' },
+      lineStyle: {
+        width: 4,
+        shadowColor: color + '80',
+        shadowBlur: 10
+      },
+      // 渐变区域填充
+      areaStyle: {
+        opacity: 0.2,
+        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+          { offset: 0, color },
+          { offset: 1, color: color + '00' }
+        ])
+      }
+    }]
+  }, true)
+}
 
-<!--// 一次性刷新（按钮触发）-->
-<!--const refresh = fetchData-->
+// ===== 数据获取 =====
+const fetchFlower = async () => {
+  try {
+    const res = await getFlower()
+    if (Array.isArray(res?.data)) renderLineChart(flowerChart, res.data, '#667eea')
+  } catch (e) {
+    console.error('获取鲜花销量统计失败:', e)
+  }
+}
 
-<!--// 自动更新切换-->
-<!--const toggleAutoUpdate = () => {-->
-<!--  if (autoUpdateTimer) {-->
-<!--    clearInterval(autoUpdateTimer)-->
-<!--    autoUpdateTimer = null-->
-<!--    autoUpdate.value = false-->
-<!--  } else {-->
-<!--    autoUpdateTimer = setInterval(refresh, updateInterval)-->
-<!--    autoUpdate.value = true-->
-<!--    refresh()-->
-<!--  }-->
-<!--}-->
+const fetchFestival = async () => {
+  try {
+    const res = await getFestival()
+    if (Array.isArray(res?.data)) renderLineChart(festivalChart, res.data, '#5470c6')
+  } catch (e) {
+    console.error('获取礼盒销量统计失败:', e)
+  }
+}
 
-<!--// ===== ECharts 渲染 =====-->
-<!--const renderChart = () => {-->
-<!--  if (!chartRef.value) return-->
-<!--  if (!chart) chart = echarts.init(chartRef.value)-->
+// ===== 窗口自适应 =====
+const handleResize = () => {
+  flowerChart?.resize()
+  festivalChart?.resize()
+}
 
-<!--  const names = flowerScore.value.map(d => d.name || '未知菜品')-->
-<!--  const numbers = flowerScore.value.map(d => Number(d.number) || 0)-->
+// ===== 生命周期 =====
+onMounted(async () => {
+  if (flowerChartRef.value) flowerChart = echarts.init(flowerChartRef.value)
+  if (festivalChartRef.value) festivalChart = echarts.init(festivalChartRef.value)
+  window.addEventListener('resize', handleResize)
+  await Promise.all([fetchFlower(), fetchFestival()])
+})
 
-<!--  chart.setOption({-->
-<!--    animationDurationUpdate: 1000,-->
-<!--    tooltip: {-->
-<!--      trigger: 'axis',-->
-<!--      backgroundColor: 'rgba(255, 255, 255, 0.95)',-->
-<!--      borderColor: '#e5e7eb',-->
-<!--      borderWidth: 1,-->
-<!--      textStyle: { color: '#374151' }-->
-<!--    },-->
-<!--    grid: { left: '3%', right: '4%', bottom: '3%', top: '15%', containLabel: true },-->
-<!--    xAxis: {-->
-<!--      type: 'category',-->
-<!--      boundaryGap: false,-->
-<!--      data: names,-->
-<!--      axisLine: { lineStyle: { color: '#9ca3af' } },-->
-<!--      axisLabel: { color: '#6b7280', rotate: names.length > 6 ? 30 : 0, interval: 0 }-->
-<!--    },-->
-<!--    yAxis: {-->
-<!--      type: 'value',-->
-<!--      splitLine: { lineStyle: { type: 'dashed', color: '#f3f4f6' } }-->
-<!--    },-->
-<!--    series: [{-->
-<!--      name: '销量',-->
-<!--      type: 'line',-->
-<!--      smooth: true, // 平滑曲线-->
-<!--      data: numbers,-->
-<!--      symbol: 'circle',-->
-<!--      symbolSize: 8,-->
-<!--      itemStyle: { color: '#667eea', borderWidth: 2, borderColor: '#fff' },-->
-<!--      lineStyle: {-->
-<!--        width: 4,-->
-<!--        shadowColor: 'rgba(102, 126, 234, 0.5)',-->
-<!--        shadowBlur: 10-->
-<!--      },-->
-<!--      // 渐变区域填充 - 对齐折线.html 视觉-->
-<!--      areaStyle: {-->
-<!--        opacity: 0.2,-->
-<!--        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [-->
-<!--          { offset: 0, color: '#667eea' },-->
-<!--          { offset: 1, color: 'rgba(102, 126, 234, 0)' }-->
-<!--        ])-->
-<!--      }-->
-<!--    }]-->
-<!--  }, true)-->
-<!--}-->
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', handleResize)
+  flowerChart?.dispose()
+  festivalChart?.dispose()
+})
+</script>
 
-<!--// 监听数据变化，自动渲染-->
-<!--watch(flowerScore, () => nextTick(renderChart), { deep: true, flush: 'post' })-->
+<style lang="scss" scoped>
+/* 系统色板 */
+$sys-blue: #0A84FF;
+$sys-indigo: #5E5CE6;
 
-<!--// ===== 窗口自适应 =====-->
-<!--const handleResize = () => chart?.resize()-->
+.dashboard-container {
+  margin: 20px;
+  background: linear-gradient(135deg, rgba(10, 132, 255, 0.08) 0%, rgba(10, 132, 255, 0.15) 100%);
+  min-height: calc(100vh - 100px);
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
-<!--// ===== 生命周期 =====-->
-<!--onMounted(async () => {-->
-<!--  await nextTick()-->
-<!--  if (chartRef.value) chart = echarts.init(chartRef.value)-->
-<!--  window.addEventListener('resize', handleResize)-->
-<!--  await fetchData()-->
-<!--})-->
+/* ECharts 图表卡片 */
+.chart-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(10, 132, 255, 0.15);
+  overflow: hidden;
+  border-top: 4px solid #667eea; /* 鲜花折线图卡片：紫色系主题 */
 
-<!--onBeforeUnmount(() => {-->
-<!--  window.removeEventListener('resize', handleResize)-->
-<!--  if (autoUpdateTimer) clearInterval(autoUpdateTimer)-->
-<!--  chart?.dispose()-->
-<!--})-->
-<!--</script>-->
+  &.festival {
+    border-top-color: #5470c6; /* 礼盒折线图卡片：蓝色系主题 */
+  }
+}
 
-<!--<style lang="scss" scoped>-->
-<!--/* 系统色板 */-->
-<!--$sys-blue: #0A84FF;-->
-<!--$sys-indigo: #5E5CE6;-->
-<!--$primary: $sys-blue;-->
+.chart-header {
+  padding: 24px 32px;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-<!--.dashboard-container {-->
-<!--  margin: 20px;-->
-<!--  background: linear-gradient(135deg, rgba(10, 132, 255, 0.08) 0%, rgba(10, 132, 255, 0.15) 100%);-->
-<!--  min-height: calc(100vh - 100px);-->
-<!--  padding: 20px;-->
-<!--  border-radius: 12px;-->
-<!--}-->
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 16px;
+  }
 
-<!--/* ECharts 图表卡片 - 对齐折线.html 的卡片样式 */-->
-<!--.chart-card {-->
-<!--  background: #ffffff;-->
-<!--  border-radius: 12px;-->
-<!--  box-shadow: 0 4px 16px rgba(10, 132, 255, 0.15);-->
-<!--  overflow: hidden;-->
-<!--  border-top: 4px solid #667eea; /* 折线图卡片：紫色系主题 */-->
-<!--}-->
+  .header-title {
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: $sys-indigo;
+      margin: 0 0 4px 0;
+    }
 
-<!--.chart-header {-->
-<!--  padding: 24px 32px;-->
-<!--  border-bottom: 1px solid #e5e7eb;-->
-<!--  display: flex;-->
-<!--  justify-content: space-between;-->
-<!--  align-items: center;-->
+    p {
+      color: rgba(94, 92, 230, 0.55);
+      font-size: 0.875rem;
+      margin: 0;
+    }
+  }
 
-<!--  @media (max-width: 600px) {-->
-<!--    flex-direction: column;-->
-<!--    align-items: flex-start;-->
-<!--    gap: 10px;-->
-<!--    padding: 16px;-->
-<!--  }-->
+  .status-badge {
+    background-color: #d1fae5;
+    color: #065f46;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 
-<!--  .header-title {-->
-<!--    h3 {-->
-<!--      font-size: 1.5rem;-->
-<!--      font-weight: 700;-->
-<!--      color: $sys-indigo;-->
-<!--      margin: 0 0 4px 0;-->
-<!--    }-->
+    &.festival-badge {
+      background-color: #dbeafe;
+      color: #1e40af;
+    }
+  }
+}
 
-<!--    p {-->
-<!--      color: rgba(94, 92, 230, 0.55);-->
-<!--      font-size: 0.875rem;-->
-<!--      margin: 0;-->
-<!--    }-->
-<!--  }-->
+.chart-container {
+  position: relative;
+  height: 400px;
+  width: 100%;
+  padding: 20px;
+  background-color: #fff;
 
-<!--  .status-badge {-->
-<!--    background-color: #d1fae5;-->
-<!--    color: #065f46;-->
-<!--    padding: 4px 12px;-->
-<!--    border-radius: 9999px;-->
-<!--    font-size: 0.75rem;-->
-<!--    font-weight: 600;-->
-<!--    text-transform: uppercase;-->
-<!--    letter-spacing: 0.05em;-->
-<!--  }-->
-<!--}-->
+  @media (max-width: 600px) {
+    height: 300px;
+    padding: 10px;
+  }
+}
 
-<!--.chart-container {-->
-<!--  position: relative;-->
-<!--  height: 450px;-->
-<!--  width: 100%;-->
-<!--  padding: 20px;-->
-<!--  background-color: #fff;-->
-
-<!--  @media (max-width: 600px) {-->
-<!--    height: 300px;-->
-<!--    padding: 10px;-->
-<!--  }-->
-<!--}-->
-
-<!--.chart-dom {-->
-<!--  width: 100%;-->
-<!--  height: 100%;-->
-<!--}-->
-
-<!--.chart-footer {-->
-<!--  padding: 16px 32px;-->
-<!--  background-color: #f9fafb;-->
-<!--  border-top: 1px solid #e5e7eb;-->
-<!--  display: flex;-->
-<!--  justify-content: flex-end;-->
-<!--  gap: 12px;-->
-
-<!--  @media (max-width: 600px) {-->
-<!--    flex-direction: column;-->
-<!--    padding: 16px;-->
-<!--  }-->
-<!--}-->
-
-<!--/* 按钮样式 - 对齐 HTML 的按钮风格 */-->
-<!--.btn {-->
-<!--  padding: 8px 16px;-->
-<!--  border-radius: 8px;-->
-<!--  border: 1px solid #d1d5db;-->
-<!--  background: white;-->
-<!--  color: $sys-indigo;-->
-<!--  font-size: 0.875rem;-->
-<!--  font-weight: 500;-->
-<!--  cursor: pointer;-->
-<!--  transition: all 0.2s;-->
-
-<!--  &:hover {-->
-<!--    background-color: #f3f4f6;-->
-<!--    border-color: #9ca3af;-->
-<!--  }-->
-
-<!--  &.btn-primary {-->
-<!--    background: $primary;-->
-<!--    color: white;-->
-<!--    border: none;-->
-
-<!--    &:hover {-->
-<!--      background: #5a67d8;-->
-<!--      transform: translateY(-1px);-->
-<!--      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);-->
-<!--    }-->
-<!--  }-->
-
-<!--  @media (max-width: 600px) {-->
-<!--    width: 100%;-->
-<!--  }-->
-<!--}-->
-<!--</style>-->
+.chart-dom {
+  width: 100%;
+  height: 100%;
+}
+</style>

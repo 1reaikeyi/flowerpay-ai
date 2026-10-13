@@ -100,8 +100,17 @@ public class StatisticsService {
         }
         // 降序排序取前
         List<TopStatisticsVO> topStatisticsVOList = new ArrayList<>();
-
-        return null;
+        // 组装结果
+        numberMap.forEach((id, number) -> {
+            TopStatisticsVO topStatisticsVO = new TopStatisticsVO();
+            FlowerVO flowerVO = flowerService.readCache(id);
+            topStatisticsVO.setName(flowerVO != null ? flowerVO.getName() : null);
+            topStatisticsVO.setId(flowerVO != null ? flowerVO.getId() : null);
+            topStatisticsVO.setCount(number);
+            topStatisticsVOList.add(topStatisticsVO);
+        });
+        topStatisticsVOList.sort((a, b) -> Long.compare(b.getCount(),a.getCount()));
+        return topStatisticsVOList;
     }
 
     public List<TopStatisticsVO> top2() {
@@ -116,11 +125,29 @@ public class StatisticsService {
         }
         // 降序排序取前
         List<TopStatisticsVO> topStatisticsVOList = new ArrayList<>();
-        return List.of();
+        // 组装结果
+        numberMap.forEach((id, number) -> {
+            TopStatisticsVO topStatisticsVO = new TopStatisticsVO();
+            FestivalVO festivalVO = festivalService.readCache(id);
+            topStatisticsVO.setName(festivalVO != null ? festivalVO.getName() : null);
+            topStatisticsVO.setId(festivalVO != null ? festivalVO.getId() : null);
+            topStatisticsVO.setCount(number);
+            topStatisticsVOList.add(topStatisticsVO);
+        });
+        topStatisticsVOList.sort((a, b) -> Long.compare(b.getCount(),a.getCount()));
+        return topStatisticsVOList;
     }
 
-    public List<OrderStatisticsVO> order() {
-        List<FlowerOrder> orders = flowerOrderService.list();
+    // 今日数据：今日订单按状态分组计数
+    public List<OrderStatisticsVO> todayOrder() {
+        // 今日 0 点与明天 0 点作为时间区间
+        LocalDateTime start = LocalDate.now().atStartOfDay();
+        LocalDateTime end = start.plusDays(1);
+        // 今日订单（按创建时间过滤）
+        List<FlowerOrder> orders = flowerOrderService.lambdaQuery()
+                .ge(FlowerOrder::getCreateTime, start)
+                .lt(FlowerOrder::getCreateTime, end)
+                .list();
         // 按状态分组计数
         Map<OrderStatusEnum, Long> countMap = orders.stream()
                 .collect(Collectors.groupingBy(FlowerOrder::getStatus, Collectors.counting()));
@@ -133,22 +160,8 @@ public class StatisticsService {
             orderStatistics.setCount(countMap.getOrDefault(status, 0L));
             orderStatisticsVOList.add(orderStatistics);
         }
-        // 按数量降序排序（修复：原比较 b 与 b 永远相等，无法排序）
+        // 按数量降序排序
         orderStatisticsVOList.sort((a, b) -> Long.compare(b.getCount(), a.getCount()));
-        return null;
-    }
-
-    public List<OrderStatisticsVO> todayOrder() {
-        // 今日 0 点与明天 0 点作为时间区间
-        LocalDateTime start = LocalDate.now().atStartOfDay();
-        LocalDateTime end = start.plusDays(1);
-        // 今日订单（按创建时间过滤）
-        List<FlowerOrderDetail> orders = flowerOrderDetailService.lambdaQuery()
-                .ge(FlowerOrderDetail::getCreateTime, start)
-                .lt(FlowerOrderDetail::getCreateTime, end)
-                .list();
-        // 通过今日订单的 id 关联查询已支付的支付记录，统计实收金额
-
-        return null;
+        return orderStatisticsVOList;
     }
 }

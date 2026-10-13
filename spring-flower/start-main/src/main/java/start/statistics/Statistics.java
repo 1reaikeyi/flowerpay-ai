@@ -57,15 +57,6 @@ public class Statistics {
 
     @PreAuthorize("hasRole('ADMIN')")
     @OperationLogging(operation = OperationEnum.READ)
-    @GetMapping("/order")
-    public Result order() {
-        List<OrderStatisticsVO> orderStatisticsVOList = statisticsService.order();
-        return Result.success(orderStatisticsVOList);
-    }
-
-    // 今日统计：今日订单数、已支付订单数、今日营业额
-    @PreAuthorize("hasRole('ADMIN')")
-    @OperationLogging(operation = OperationEnum.READ)
     @GetMapping("/today")
     public Result today() {
         List<OrderStatisticsVO> orderStatisticsVOList = statisticsService.todayOrder();

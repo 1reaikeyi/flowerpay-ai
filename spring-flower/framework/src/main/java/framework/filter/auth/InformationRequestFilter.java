@@ -43,8 +43,7 @@ public class InformationRequestFilter extends OncePerRequestFilter {
             @NonNull FilterChain filterChain
     ) throws ServletException, IOException {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        if (authentication == null || !authentication.isAuthenticated() ||
-                (authentication.getPrincipal().equals("anonymousUser"))) {
+        if (authentication == null || !authentication.isAuthenticated()) {
             log.error("登录请求被拦截: {}", request.getRequestURI());
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             return;

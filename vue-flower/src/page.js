@@ -39,7 +39,7 @@ const router = createRouter({
                 { path: 'festival/give', component: () => import('@/views/admin/festival/giveFestival.vue') },
 
                 { path: 'statistics/line', component: () => import('@/views/admin/statistics/lineChart.vue') },
-                { path: 'statistics/bar', component: () => import('@/views/admin/statistics/barChart.vue') },
+                { path: 'statistics/column', component: () => import('@/views/admin/statistics/columnChart.vue') },
                 { path: 'statistics/fan', component: () => import('@/views/admin/statistics/fanChart.vue') },
 
                 { path: 'shop', component: () => import('@/views/admin/shop/shop.vue') },

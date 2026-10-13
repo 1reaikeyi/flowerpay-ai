@@ -69,19 +69,19 @@
         <el-sub-menu index="/admin/statistics">
           <template #title>
             <el-icon><DataAnalysis /></el-icon>
-            <span>今日数据</span>
+            <span>数据分析</span>
           </template>
           <el-menu-item index="/admin/statistics/line">
             <el-icon><TrendCharts /></el-icon>
-            <span>鲜花销量</span>
+            <span>鲜花销量情况</span>
+          </el-menu-item>
+          <el-menu-item index="/admin/statistics/column">
+            <el-icon><TrendCharts /></el-icon>
+            <span>鲜花top</span>
           </el-menu-item>
           <el-menu-item index="/admin/statistics/fan">
             <el-icon><TrendCharts /></el-icon>
-            <span>鲜花库存情况</span>
-          </el-menu-item>
-          <el-menu-item index="/admin/statistics/bar">
-            <el-icon><Histogram /></el-icon>
-            <span>订单数据</span>
+            <span>今日数据</span>
           </el-menu-item>
         </el-sub-menu>
 
@@ -146,9 +146,7 @@ import {
   Shop,
   User,
   DataAnalysis,
-  TrendCharts,
-  Histogram,
-  PieChart
+  TrendCharts
 } from '@element-plus/icons-vue'
 // 导入默认头像图片（用作兜底）
 import avatar from '@/assets/login/avatar.png'
