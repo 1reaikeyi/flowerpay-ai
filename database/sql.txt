@@ -1,31 +1,31 @@
-create table chat_record
+create table if not exists chat_record
 (
-    id              bigint                             not null comment '数据id'
+    id          bigint                             not null comment '数据id'
         primary key,
-    conversation_id varchar(100) collate utf8mb4_bin   not null comment '对话id',
-    data            text collate utf8mb4_bin           null comment '对话数据',
-    create_time     datetime default CURRENT_TIMESTAMP not null comment '创建时间',
-    update_time     datetime default CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP comment '更新时间'
+    session_id  varchar(64) collate utf8mb4_bin    not null comment '对话id',
+    data        text collate utf8mb4_bin           null comment '对话数据',
+    create_time datetime default CURRENT_TIMESTAMP not null comment '创建时间',
+    update_time datetime default CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP comment '更新时间'
 )
     comment '对话记录';
 
 create index conversation_id_index
-    on chat_record (conversation_id);
+    on chat_record (session_id);
 
 create index create_time_index
     on chat_record (create_time);
 
-create table chat_session
+create table if not exists chat_session
 (
     id          bigint                             not null comment '数据id'
         primary key,
-    session_id  varchar(32)                        not null comment '会话id',
+    session_id  varchar(64)                        not null comment '会话id',
     user_id     bigint   default 0                 not null comment '用户id',
     title       varchar(100) collate utf8mb4_bin   null comment '会话标题',
     create_time datetime default CURRENT_TIMESTAMP not null comment '创建时间',
     update_time datetime default CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP comment '更新时间'
 )
-    comment 'session';
+    comment '对话session';
 
 create index session_id_index
     on chat_session (session_id);
@@ -36,7 +36,7 @@ create index update_time_index
 create index user_id_index
     on chat_session (user_id);
 
-create table employee
+create table if not exists employee
 (
     id          bigint auto_increment comment '主键'
         primary key,
@@ -55,165 +55,44 @@ create table employee
     constraint idx_username
         unique (username)
 )
-    comment '员工信息（店长/店员/客服）' collate = utf8mb4_bin;
+    comment '员工信息' collate = utf8mb4_bin;
 
-create table festival
-
+create table if not exists festival
 (
-
-id          bigint auto_increment comment '主键'
-
-primary key,
-
-category_id bigint           null comment '所属分类',
-
-name        varchar(32)      not null comment '多花组合名字',
-
-price       decimal(10, 2)   not null comment '价格',
-
-status      bigint default 1 null comment '售卖状态 0:下架 1:在售',
-
-description varchar(255)     null comment '礼盒描述',
-
-image       varchar(255)     null comment '礼盒图片',
-
-create_time datetime         null comment '创建时间',
-
-update_time datetime         null comment '更新时间',
-
-create_user bigint           null comment '创建人',
-
-update_user bigint           null comment '修改人',
-
-constraint idx_festival_name
-
-unique (name)
-
+    id          bigint auto_increment comment '主键'
+        primary key,
+    category_id bigint           null comment '所属分类',
+    name        varchar(32)      not null comment '多花组合名字',
+    price       decimal(10, 2)   not null comment '价格',
+    status      bigint default 1 null comment '售卖状态 0:下架 1:在售',
+    description varchar(255)     null comment '礼盒描述',
+    image       varchar(255)     null comment '礼盒图片',
+    create_time datetime         null comment '创建时间',
+    update_time datetime         null comment '更新时间',
+    create_user bigint           null comment '创建人',
+    update_user bigint           null comment '修改人',
+    constraint idx_festival_name
+        unique (name)
 )
+    comment '多花组合' collate = utf8mb4_bin;
 
-comment '多花组合' collate = utf8mb4_bin;
-
-create table festival_detail
-
+create table if not exists festival_detail
 (
-
-id          bigint auto_increment comment '主键'
-
-primary key,
-
-festival_id bigint       null comment '多花组合id',
-
-flower_id   bigint       null comment '关联鲜花id',
-
-spec_number bigint       null comment '鲜花数量',
-
-spec_object varchar(32)  null comment '送人对象',
-
-spec_option varchar(255) null comment '用途'
-
+    id          bigint auto_increment comment '主键'
+        primary key,
+    festival_id bigint       null comment '多花组合id',
+    flower_id   bigint       null comment '关联鲜花id',
+    spec_number bigint       null comment '数量',
+    spec_object varchar(32)  null comment '送人对象',
+    spec_option varchar(255) null comment '用途'
 )
+    comment '多花详细信息' collate = utf8mb4_bin;
 
 create index idx_festival_id
     on festival_detail (festival_id)
     comment 'festival的索引';
 
-create index idx_flower_id
-    on festival_detail (flower_id)
-    comment 'flower的index';
-
-create table flower_category
-(
-    id          bigint auto_increment comment '主键'
-        primary key,
-    name        varchar(32)      not null comment '分类名称',
-    type        bigint           null comment '类型 1 鲜花商品单只 2 节日商品多只 3 其他',
-    sort        bigint default 0 not null comment '顺序',
-    status      bigint           null comment '启用状态 0:禁用，1:启用',
-    create_time datetime         null comment '创建时间',
-    update_time datetime         null comment '更新时间',
-    create_user bigint           null comment '创建人',
-    update_user bigint           null comment '修改人',
-    constraint idx_category_name
-        unique (name)
-)
-    comment '鲜花及节日礼盒分类' collate = utf8mb4_bin;
-
-create table flower_detail
-(
-    id          bigint auto_increment comment '主键'
-        primary key,
-    flower_id   bigint       not null comment '鲜花id',
-    spec_object varchar(32)  null comment '送人对象',
-    spec_option varchar(255) null comment '用途'
-)
-    comment '单品鲜花规格表' collate = utf8mb4_bin;
-
-create index idx_flower_id
-    on flower_detail (flower_id)
-    comment 'flower索引';
-
-create table flower_order
-(
-    id                      bigint auto_increment comment '主键'
-        primary key,
-    status                  bigint default 1 not null comment '订单状态
-1用户下单2用户确认支付
-3商家制作
-4工作人员取货5工作人员开始配送6工作人员已到达
-7用户确认8已取消：超时未付/商家拒单/用户取消/退款',
-    user_id                 bigint           not null comment '下单用户id',
-    username                varchar(32)      null comment '用户名称',
-    consignee               varchar(32)      null comment '收花人',
-    phone                   varchar(11)      null comment '手机号',
-    address_id              bigint           not null comment '地址id',
-    address                 varchar(255)     null comment '配送地址',
-    remark                  varchar(100)     null comment '备注信息',
-    delivery_type           bigint           null comment '配送方式：0预约配送 1立即送出',
-    delivery_date           date             null comment '预约配送日期',
-    start_delivery_time     datetime         null comment '配送开始时间',
-    estimated_delivery_time datetime         null comment '预计送达时间',
-    delivery_time           datetime         null comment '实际送达时间',
-    create_time             datetime         null comment '创建时间',
-    update_time             datetime         null comment '更新时间'
-)
-    comment '订单表' collate = utf8mb4_bin;
-
-create table flower_order_detail
-(
-    id          bigint auto_increment comment '主键'
-        primary key,
-    order_id    bigint           not null comment '订单id',
-    name        varchar(32)      null comment '商品名称',
-    image       varchar(255)     null comment '图片',
-    flower_id   bigint           null comment '鲜花单品id',
-    festival_id bigint           null comment '节日礼盒id',
-    number      bigint default 1 not null comment '数量',
-    amount      decimal(10, 2)   not null comment '金额',
-    wrap_fee    bigint           null comment '礼盒包装费'
-)
-    comment '订单明细表' collate = utf8mb4_bin;
-
-create table flower_order_pay
-(
-    id            bigint auto_increment comment '主键id'
-        primary key,
-    order_id      bigint           null comment '关联orderId',
-    order_time    datetime         not null comment '下单时间',
-    pay_method    bigint default 1 not null comment '支付方式 1微信,2支付宝',
-    pay_status    bigint default 0 not null comment '支付状态 0未支付 1已支付 2已退款',
-    checkout_time datetime         null comment '支付完成时间',
-    amount        decimal(10, 2)   not null comment '实付金额',
-    remark        varchar(100)     null comment '备注',
-    cancel_reason varchar(255)     null comment '取消原因',
-    cancel_time   datetime         null comment '取消时间',
-    create_time   datetime         null comment '创建时间',
-    update_time   datetime         null comment '更新时间',
-    create_user   bigint           null comment '创建人',
-    update_user   bigint           null comment '修改人'
-)
-    comment '支付记录表' collate = utf8mb4_bin;
-
-create table flower_shop
+create table if not exists flower
 (
     id          bigint auto_increment comment '主键'
         primary key,
@@ -233,7 +112,112 @@ create table flower_shop
 )
     comment '单品鲜花' collate = utf8mb4_bin;
 
-create table user
+create table if not exists flower_category
+(
+    id          bigint auto_increment comment '主键'
+        primary key,
+    name        varchar(32)      not null comment '分类名称',
+    type        bigint           null comment '类型 1 鲜花商品单只 2 节日商品多只 3 其他',
+    sort        bigint default 0 not null comment '顺序',
+    status      bigint           null comment '启用状态 0:禁用，1:启用',
+    create_time datetime         null comment '创建时间',
+    update_time datetime         null comment '更新时间',
+    create_user bigint           null comment '创建人',
+    update_user bigint           null comment '修改人',
+    constraint idx_category_name
+        unique (name)
+)
+    comment '鲜花及节日礼盒分类' collate = utf8mb4_bin;
+
+create table if not exists flower_detail
+(
+    id          bigint auto_increment comment '主键'
+        primary key,
+    flower_id   bigint       not null comment '鲜花id',
+    spec_object varchar(32)  null comment '送人对象',
+    spec_option varchar(255) null comment '用途'
+)
+    comment '单品鲜花规格表' collate = utf8mb4_bin;
+
+create index idx_flower_id
+    on flower_detail (flower_id)
+    comment 'flower索引';
+
+create table if not exists flower_order
+(
+    id                      bigint auto_increment comment '主键'
+        primary key,
+    status                  bigint default 1 not null comment '订单状态1用户下单2用户确认支付3商家制作4工作人员取货5工作人员开始配送6工作人员已到达7用户确认8已取消：超时未付/商家拒单/用户取消/退款',
+    user_id                 bigint           not null comment '下单用户id',
+    username                varchar(32)      null comment '用户名称',
+    consignee               varchar(32)      null comment '收花人',
+    phone                   varchar(11)      null comment '手机号',
+    address_id              bigint           not null comment '地址id',
+    address                 varchar(255)     null comment '配送地址',
+    remark                  varchar(100)     null comment '备注信息',
+    delivery_type           bigint           null comment '配送方式：0预约配送 1立即送出',
+    delivery_date           date             null comment '预约配送日期',
+    start_delivery_time     datetime         null comment '配送开始时间',
+    estimated_delivery_time datetime         null comment '预计送达时间',
+    delivery_time           datetime         null comment '实际送达时间',
+    create_time             datetime         null comment '创建时间',
+    update_time             datetime         null comment '更新时间'
+)
+    comment '订单表' collate = utf8mb4_bin;
+
+create table if not exists flower_order_detail
+(
+    id          bigint auto_increment comment '主键'
+        primary key,
+    order_id    bigint           not null comment '订单id',
+    name        varchar(32)      null comment '商品名称',
+    image       varchar(255)     null comment '图片',
+    flower_id   bigint           null comment '鲜花单品id',
+    festival_id bigint           null comment '节日礼盒id',
+    number      bigint default 1 not null comment '数量',
+    amount      decimal(10, 2)   not null comment '金额',
+    wrap_fee    bigint           null comment '礼盒包装费',
+    create_time datetime         null comment '创建时间',
+    update_time datetime         null comment '更新时间'
+)
+    comment '订单明细表' collate = utf8mb4_bin;
+
+create table if not exists flower_order_pay
+(
+    id            bigint auto_increment comment '主键id'
+        primary key,
+    order_id      bigint           null comment '关联orderId',
+    order_time    datetime         not null comment '下单时间',
+    pay_method    bigint default 1 not null comment '支付方式 1微信,2支付宝',
+    pay_status    bigint default 0 not null comment '支付状态 0未支付 1已支付 2已退款',
+    checkout_time datetime         null comment '支付完成时间',
+    amount        decimal(10, 2)   not null comment '实付金额',
+    remark        varchar(100)     null comment '备注',
+    cancel_reason varchar(255)     null comment '取消原因',
+    cancel_time   datetime         null comment '取消时间',
+    create_time   datetime         null comment '创建时间',
+    update_time   datetime         null comment '更新时间',
+    create_user   bigint           null comment '创建人',
+    update_user   bigint           null comment '修改人'
+)
+    comment '支付记录表' collate = utf8mb4_bin;
+
+create table if not exists role_permission
+(
+    id              bigint unsigned auto_increment comment '主键ID'
+        primary key,
+    permission_code varchar(128)                       not null comment '权限编码',
+    permission_name varchar(64)                        not null comment '权限名称',
+    status          bigint   default 1                 not null comment '状态 0禁用 1启用',
+    role            varchar(32)                        null comment '角色',
+    create_time     datetime default CURRENT_TIMESTAMP not null comment '创建时间',
+    update_time     datetime default CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP comment '更新时间',
+    constraint uk_permission_code
+        unique (permission_code)
+)
+    comment '权限表';
+
+create table if not exists user
 (
     id          bigint auto_increment comment '主键'
         primary key,
@@ -248,7 +232,7 @@ create table user
 )
     comment '用户信息' collate = utf8mb4_bin;
 
-create table user_address
+create table if not exists user_address
 (
     id            bigint auto_increment comment '主键'
         primary key,
@@ -268,7 +252,7 @@ create table user_address
 )
     comment '收货地址簿' collate = utf8mb4_bin;
 
-create table user_shopping
+create table if not exists user_shopping
 (
     id          bigint auto_increment comment '主键'
         primary key,
@@ -282,4 +266,43 @@ create table user_shopping
     create_time datetime         null comment '加入时间'
 )
     comment '购物车' collate = utf8mb4_bin;
+-- 操作日志记录
+create table if not exists operate_log (
+  id                bigint auto_increment comment '主键'
+        primary key,
+  title             varchar(50)     default ''                 comment '模块标题',
+  business_type     int(2)          default 0                  comment '业务类型（0其它 1新增 2修改 3删除）',
+  method            varchar(200)    default ''                 comment '方法名称',
+  request_method    varchar(10)     default ''                 comment '请求方式',
+  operator_type     int(1)          default 0                  comment '操作类别（0其它 1后台用户 2手机端用户）',
+  oper_name         varchar(50)     default ''                 comment '操作人员',
+  oper_url          varchar(255)    default ''                 comment '请求URL',
+  oper_ip           varchar(128)    default ''                 comment '主机地址',
+  oper_location     varchar(255)    default ''                 comment '操作地点',
+  oper_param        varchar(2000)   default ''                 comment '请求参数',
+  json_result       varchar(2000)   default ''                 comment '返回参数',
+  status            int(1)          default 0                  comment '操作状态（0正常 1异常）',
+  error_msg         varchar(2000)   default ''                 comment '错误消息',
+  cost_time         bigint(20)      default 0                  comment '消耗时间',
+  oper_time         datetime                                   comment '操作时间',
+  key idx_sys_oper_log_bt (business_type),
+  key idx_sys_oper_log_s  (status),
+  key idx_sys_oper_log_ot (oper_time)
+) engine=innodb auto_increment=100 comment = '操作日志记录';
+
+-- 系统访问记录
+create table if not exists login_log (
+  info_id        bigint(20)     not null auto_increment   comment '访问ID',
+  user_name      varchar(50)    default ''                comment '用户账号',
+  ipaddr         varchar(128)   default ''                comment '登录IP地址',
+  login_location varchar(255)   default ''                comment '登录地点',
+  browser        varchar(50)    default ''                comment '浏览器类型',
+  os             varchar(50)    default ''                comment '操作系统',
+  status         char(1)        default '0'               comment '登录状态（0成功 1失败）',
+  msg            varchar(255)   default ''                comment '提示消息',
+  login_time     datetime                                 comment '访问时间',
+  primary key (info_id),
+  key idx_sys_logininfor_s  (status),
+  key idx_sys_logininfor_lt (login_time)
+) engine=innodb auto_increment=100 comment = '系统访问记录';
 

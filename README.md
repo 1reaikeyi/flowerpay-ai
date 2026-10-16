@@ -126,7 +126,7 @@ flowerpay-ai\说明\wiki.md
 
 # 后端说明
 
-## 一、店长、店员和客户多端端登录认证模块
+## 一、店长、店员和客户登录模块
 
 ### 迭代过程
 
@@ -170,17 +170,12 @@ Q: 如何保证role权限？
 2. 鲜花单品模块
 
 - 分类：鲜花单品 = 1 : N（`flower.category_id`关联分类表）
-- 鲜花单品：鲜花规格`flower_detail` = 1 : N
 
 3. 多花组合模块
 
-- `festival`多花组合主表，代表一个成品礼盒商品（比如 “520 热恋礼盒”）
-
-- `festival_detail`多花组合明细：一个礼盒包含多朵鲜花，一条明细代表礼盒里面的一款鲜花，同时携带该鲜花的送人对象、用途规格。
-
 - 关系：`festival` : `festival_detail` = 1 : N
 
-- 索引：index idx_festival_id (festival_id)、index idx_flower_id (flower_id). 大幅提升数据检索速度（避免全表扫描） ，优化 ORDER BY 和 GROUP BY 操作
+- 索引：index idx_festival_id (festival_id)、index idx_flower_id (flower_id)，优化 ORDER BY 和 GROUP BY 操作
 
 ---
 
@@ -192,7 +187,7 @@ Q: 如何保证role权限？
 3 post,put,delete删@CacheEvict(allEntries = true)
 ```
 
-2 对于flower，festival，flower-detial，festival-detail这些热点信息**使用多级缓存**
+2 对于flower，festival，flower-detial，festival-detail这些热点信息使用多级缓存
 
 ```mermaid
 %%{init: {'theme':'neutral','themeVariables':{'fontSize':'8px','nodeBorder':'2px'},'flowchart':{'nodeSpacing':8,'rankSpacing':32,'useMaxWidth':false,'curve':'basis'}}}%%
@@ -310,40 +305,42 @@ flowchart TD
 | 悲观锁不能解决集群和并发问题 | Redisson 可重入分布式锁 + 看门狗自动续期；加锁后双重检查缓存 |
 |    redis宕机的突发性问题     | Redis 不可用：降级直查数据库<br> log.info("Redis 宕机:{}", e.getMessage()); Flower flower = this.getMysql(id); return BeanUtil.toBean(flower, FlowerVO.class); |
 
-排除冷启动的（第一次，第1000次)达到稳定，进行统计
+排除冷启动的达到稳定，进行统计
+
+无缓存的情况是全程没有使用 redis 的稳定情况
+
+有缓存的情况是全程有 redis 的稳定情况
 
 | category                                                     | <img src="说明/并发测试/flower-category.png" style="zoom: 25%;" /> |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 没有缓存，并发1000次                                         | ![](说明/并发测试/flower-category-运行日志-没有缓存1.png)    |
 | 没有缓存，并发1000次                                         | ![](说明/并发测试/flower-category-运行日志-没有缓存2.png)    |
 | 没有缓存，并发1000次                                         | ![](说明/并发测试/flower-category-运行日志-没有缓存3.png)    |
-| 无缓存的情况是全程没有使用 redis 的稳定情况                  | flowerpay-ai/说明/并发测试/flower-category-运行日志-没有缓存日志.txt |
+| 日志                                                         | flowerpay-ai/说明/并发测试/flower-category-运行日志-没有缓存日志.txt |
 | 有spring-cache缓存，再并发1000次                             | ![](说明/并发测试/flower-category-运行日志-缓存1.png)        |
 | 有spring-cache缓存，再并发1000次                             | ![](说明/并发测试/flower-category-运行日志-缓存2.png)        |
 | 有spring-cache缓存，再并发1000次                             | ![](说明/并发测试/flower-category-运行日志-缓存3.png)        |
-| 有缓存的情况是全程有 redis 的稳定情况                        | flowerpay-ai/说明/并发测试/flower-category-运行日志-缓存日志.txt |
+| 日志                                                         | flowerpay-ai/说明/并发测试/flower-category-运行日志-缓存日志.txt |
 | 计算说明：性能提升百分比 =(无缓存值‑有缓存值)/ 无缓存值 ×100%；吞吐量提升百分比 =(有缓存‑无缓存)/ 无缓存 ×100%。 | **吞吐量**：无缓存吞吐量 21.8 请求 / 秒；开启缓存吞吐量提升至 29.7 请求 / 秒，吞吐量提升**36.2%**，系统整体并发处理能力增强。 **网络流量**：接收速率从 43.46KB/sec 提升至 59.09KB/sec，发送速率从 7.93KB/sec 提升至 10.78KB/sec，单位时间网络数据处理能力随吞吐量同步上涨。 |
-
-排除冷启动的（第一次，第 500 次)达到稳定，进行统计, 最大值设置 500
 
 | flower                                                       | <img src="说明/并发测试/flower.png" style="zoom: 25%;" />    |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 没有缓存，再开启 500次并发                                   | ![](说明/并发测试/flower-运行日志-没有缓存1.png)             |
 | 没有缓存，再开启 500次并发                                   | ![](说明/并发测试/flower-运行日志-没有缓存2.png)             |
-| 无缓存的情况是全程没有使用 redis 的稳定情况                  | flowerpay-ai/说明/并发测试/flower-运行日志-没有缓存.txt      |
+| 日志                                                         | flowerpay-ai/说明/并发测试/flower-运行日志-没有缓存.txt      |
 | 有redis缓存，再开启 500次并发                                | ![](说明/并发测试/flower-运行日志-缓存1.png)                 |
 | 有redis缓存，再开启 500次并发                                | ![](说明/并发测试/flower-运行日志-缓存2.png)                 |
-| 有缓存的情况是全程有 redis 的稳定情况                        | flowerpay-ai/说明/并发测试/flower-运行日志-缓存.txt          |
+| 日志                                                         | flowerpay-ai/说明/并发测试/flower-运行日志-缓存.txt          |
 | 90% Line 含义：90% 的请求响应耗时不大于该数值，分位数指标用于评估接口稳定性，相比平均响应时间更能反映真实用户访问体验。 | 无缓存场景：90% 请求响应时间 1633ms，95% 请求响应时间 1751ms，99% 请求响应时间 1844ms。 开启缓存场景：90% 请求响应时间 193ms，95% 请求响应时间 237ms，99% 请求响应时间 266ms。<br> 90 分位：响应时间下降 88.18%； 95 分位：响应时间下降 86.46%； 99 分位：响应时间下降 85.57%。 |
 
 | festival                      | <img src="说明/并发测试/festival.png" style="zoom: 25%;" />  |
 | ----------------------------- | ------------------------------------------------------------ |
 | 没有缓存，再开启 500次并发    | ![](说明/并发测试/festival-运行日志-没有缓存2.png)           |
 | 没有缓存，再开启 500次并发    | ![](说明/并发测试/festival-运行日志-没有缓存1.png)           |
-| 没有缓存运行日志              | flowerpay-ai/说明/并发测试/festival-运行日志-没有缓存.txt    |
+| 日志                          | flowerpay-ai/说明/并发测试/festival-运行日志-没有缓存.txt    |
 | 有redis缓存，再开启 500次并发 | ![](说明/并发测试/festival-运行日志-缓存2.png)               |
 | 有redis缓存，再开启 500次并发 | ![](说明/并发测试/festival-运行日志-缓存1.png)               |
-| 有redis缓存运行日志           | flowerpay-ai/说明/并发测试/festival-运行日志-缓存.txt        |
+| 日志                          | flowerpay-ai/说明/并发测试/festival-运行日志-缓存.txt        |
 | 对比                          | 无缓存场景：接口平均响应时间 761ms，90% 请求响应时间 1595ms，95% 请求响应时间 1629ms，99% 请求响应时间 1746ms，吞吐量 34.3 次每秒，错误率 0%。 开启缓存场景：接口平均响应时间 136ms，90% 请求响应时间 327ms，95% 请求响应时间 346ms，99% 请求响应时间 423ms，吞吐量 150.6 次每秒，错误率 0%。 |
 
 ## 三、订单状态流转
@@ -360,8 +357,6 @@ flowchart TD
 
 `沙箱网关固定为：https://openapi-sandbox.dl.alipaydev.com/gateway.do`
 
-`生产网关一般为：https://openapi.alipay.com/gateway.do`
-
 | 支付宝授权     | <img src="说明/支付宝支付/zhifubao1.png" alt="支付宝" style="zoom:10%;" /> |
 | -------------- | ------------------------------------------------------------ |
 | 第三方授权成功 | <img src="说明/支付宝支付/zhifubao2.png" alt="支付宝" style="zoom:50%;" /> |
@@ -376,10 +371,11 @@ flowchart TD
 
 user-address
 
-|      业务难点      |                         场景                          |                           解决方案                           |                           选型理由                           |
-| :----------------: | :---------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-| 多默认地址数据违规 |       新增 / 修改地址勾选默认，旧默认地址未取消       | 设为默认前先批量更新该用户所有地址 isDefault=0，两步操作绑定业务逻辑 | 数据库无法直接约束单用户唯一默认，代码层前置清理旧默认，保证业务数据合规 |
-|      传统分页      | 用户地址数量较多时，pageNum=100 需要扫描前 100 页数据 |  游标滚动分页，以上一页最后一条 id 作为游标，直接走主键索引  | 游标分页性能稳定不随页码增长衰减，统一项目分页返回结构 ScrollResult |
+```
+Q:多默认地址数据违规，新增 / 修改地址勾选默认，旧默认地址未取消？
+设为默认前先批量更新该用户所有地址 isDefault=0，两步操作绑定业务逻辑，数据库无法直接约束单用户唯一默认，代码层前置清理旧默认，保证业务数据合规
+Q:用户地址数量较多时，需要扫描前 100 页数据，游标滚动分页，以上一页最后一条 id 作为游标，直接走主键索引
+```
 
 websocket
 
