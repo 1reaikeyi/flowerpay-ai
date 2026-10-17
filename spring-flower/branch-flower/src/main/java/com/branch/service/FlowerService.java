@@ -1,7 +1,7 @@
 package com.branch.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import common.result.PageResult;
+import framework.result.PageResult;
 import com.branch.domain.dto.FlowerDTO;
 import com.branch.domain.dto.FlowerPageDTO;
 import com.branch.domain.entity.Flower;

@@ -1,9 +1,9 @@
 package com.branch.controller.shop;
 
 import com.branch.domain.vo.ShopVO;
-import common.constant.ShopConstant;
+import framework.constant.ShopConstant;
 import framework.aop.oparation.OperationEnum;
-import common.result.Result;
+import framework.result.Result;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 

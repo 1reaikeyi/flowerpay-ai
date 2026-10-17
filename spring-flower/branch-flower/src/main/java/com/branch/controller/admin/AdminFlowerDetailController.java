@@ -4,7 +4,7 @@ import com.branch.domain.dto.FlowerDetailDTO;
 import com.branch.domain.vo.FlowerDetailVO;
 import com.branch.service.FlowerDetailService;
 import framework.aop.oparation.OperationEnum;
-import common.result.Result;
+import framework.result.Result;
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.beans.factory.annotation.Autowired;

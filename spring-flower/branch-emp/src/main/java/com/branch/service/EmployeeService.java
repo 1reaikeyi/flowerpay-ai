@@ -10,7 +10,7 @@ import com.branch.domain.dto.LoginDTO;
 import com.branch.domain.dto.EditPasswordDTO;
 import com.branch.domain.entity.Employee;
 import com.branch.domain.vo.EmployeeVO;
-import common.result.PageResult;
+import framework.result.PageResult;
 
 import java.util.List;
 
@@ -22,10 +22,8 @@ public interface EmployeeService extends IService<Employee> {
 
     Employee findEmployeename(String username);
 
-    String admin1(LoginDTO loginDTO);
-    void admin2();
-
-    void register(EmployeeDTO employeeDTO);
+    void registerAdmin(EmployeeDTO employeeDTO);
+    void registerEmployee(EmployeeDTO employeeDTO);
     String login(LoginDTO loginDTO);
     void logout();
 

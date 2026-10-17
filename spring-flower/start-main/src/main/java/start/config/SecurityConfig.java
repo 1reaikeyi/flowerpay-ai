@@ -2,17 +2,16 @@ package start.config;
 
 import cn.hutool.json.JSONUtil;
 import com.branch.service.login.LoginAdminService;
-import com.branch.service.login.LoginEmpService;
 import com.branch.service.login.LoginUserService;
-import framework.filter.auth.AdminRefreshRequestFilter;
-import framework.filter.auth.EmployeeRefreshRequestFilter;
-import framework.filter.auth.InformationRequestFilter;
-import framework.filter.auth.UserRefreshRequestFilter;
+import com.branch.filter.AdminRefreshRequestFilter;
+import com.branch.filter.InformationRequestFilter;
+import com.branch.filter.UserRefreshRequestFilter;
 import framework.properties.JwtProperties;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -35,7 +34,6 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import framework.security.AdminAuthenticationProvider;
-import framework.security.EmpAuthenticationProvider;
 
 import framework.security.UserAuthenticationProvider;
 
@@ -56,15 +54,17 @@ public class SecurityConfig {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+    @Autowired
+    private LoginUserService loginUserService;
+    @Autowired
+    private LoginAdminService loginAdminService;
 
     @Bean
     public AuthenticationManager authenticationManager(
             AdminAuthenticationProvider adminAuthenticationProvider,
-            EmpAuthenticationProvider empAuthenticationProvider,
             UserAuthenticationProvider userAuthenticationProvider) {
         return new ProviderManager(Arrays.asList(
                 adminAuthenticationProvider,
-                empAuthenticationProvider,
                 userAuthenticationProvider));
     }
     @Bean
@@ -72,15 +72,6 @@ public class SecurityConfig {
                                                        PasswordEncoder encoder) {
         UserAuthenticationProvider provider = new UserAuthenticationProvider();
         provider.setUserDetailsService(userService);
-        provider.setPasswordEncoder(encoder);
-        return provider;
-    }
-
-    @Bean
-    public EmpAuthenticationProvider empAuthProvider(LoginEmpService empService,
-                                                     PasswordEncoder encoder) {
-        EmpAuthenticationProvider provider = new EmpAuthenticationProvider();
-        provider.setUserDetailsService(empService);
         provider.setPasswordEncoder(encoder);
         return provider;
     }
@@ -115,9 +106,10 @@ public class SecurityConfig {
             HttpSecurity http,
             JwtProperties jwtProperties,
             StringRedisTemplate stringRedisTemplate) throws Exception {
-        AdminRefreshRequestFilter adminRefreshRequestFilter = new AdminRefreshRequestFilter(jwtProperties, stringRedisTemplate);
-        UserRefreshRequestFilter userRefreshRequestFilter = new UserRefreshRequestFilter(jwtProperties, stringRedisTemplate);
-        EmployeeRefreshRequestFilter employeeRefreshRequestFilter = new EmployeeRefreshRequestFilter(jwtProperties, stringRedisTemplate);
+        AdminRefreshRequestFilter adminRefreshRequestFilter = new AdminRefreshRequestFilter(jwtProperties,
+                stringRedisTemplate,loginAdminService);
+        UserRefreshRequestFilter userRefreshRequestFilter = new UserRefreshRequestFilter(jwtProperties,
+                stringRedisTemplate,loginUserService);
         InformationRequestFilter informationRequestFilter = new InformationRequestFilter();
         http.csrf(AbstractHttpConfigurer::disable)
                 .formLogin(AbstractHttpConfigurer::disable)
@@ -126,14 +118,16 @@ public class SecurityConfig {
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .cors(this::crosConfig)
                 .authorizeHttpRequests(auth -> auth
-                        // 登录、注册、退出等接口保持放行（需先于 /user/** 拦截规则匹配）
-                        .requestMatchers("/user/register", "/user/login").permitAll()
-                        .requestMatchers("/admin/register", "/admin/login").permitAll()
-                        .requestMatchers("/employee/register", "/employee/login").permitAll()
+                        // 登录、注册等接口保持放行
+                        .requestMatchers(
+                                "/user/register",
+                                "/user/login",
+                                "/admin/register/admin",
+                                "/admin/register/emplouee",
+                                "/admin/login").permitAll()
                         // 只拦截
-                        .requestMatchers("/admin/**").hasAnyAuthority("ROLE_ADMIN")
-                        .requestMatchers("/employee/**").hasAnyAuthority( "ROLE_EMP")
-                        .requestMatchers("/user/**").hasAuthority("ROLE_USER")
+                        .requestMatchers("/admin/**").hasRole("ADMIN")
+                        .requestMatchers("/user/**").hasRole("USER")
                         // 其他接口全部放行
                         .anyRequest().permitAll()
                 )
@@ -145,8 +139,6 @@ public class SecurityConfig {
                 .addFilterBefore(adminRefreshRequestFilter, UsernamePasswordAuthenticationFilter.class)
                 // user 刷新过滤器（处理 user token，其他 token 放行）
                 .addFilterBefore(userRefreshRequestFilter, UsernamePasswordAuthenticationFilter.class)
-                // emp 刷新过滤器（处理 emp token，其他 token 放行）
-                .addFilterBefore(employeeRefreshRequestFilter, UsernamePasswordAuthenticationFilter.class)
                 // 认证拦截过滤器（在 RefreshFilter 之后）
                 .addFilterBefore(informationRequestFilter, UsernamePasswordAuthenticationFilter.class);
         return http.build();

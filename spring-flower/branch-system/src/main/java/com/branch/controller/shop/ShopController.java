@@ -1,9 +1,9 @@
 package com.branch.controller.shop;
 
 import com.branch.domain.vo.ShopVO;
-import common.constant.ShopConstant;
+import framework.constant.ShopConstant;
 import framework.aop.oparation.OperationEnum;
-import common.result.Result;
+import framework.result.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.security.access.prepost.PreAuthorize;

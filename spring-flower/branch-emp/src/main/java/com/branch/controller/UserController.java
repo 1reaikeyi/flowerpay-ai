@@ -4,7 +4,7 @@ import com.branch.domain.dto.LoginDTO;
 import com.branch.domain.dto.UserDTO;
 import com.branch.service.UserService;
 import framework.aop.oparation.OperationEnum;
-import common.result.Result;
+import framework.result.Result;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;

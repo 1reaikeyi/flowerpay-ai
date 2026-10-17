@@ -14,26 +14,32 @@ import com.branch.domain.dto.EmployeePageDTO;
 import com.branch.domain.dto.LoginDTO;
 import com.branch.domain.dto.EditPasswordDTO;
 import com.branch.domain.entity.Employee;
+import com.branch.domain.entity.User;
 import com.branch.domain.vo.EmployeeVO;
 import com.branch.mapper.EmployeeMapper;
+import com.branch.service.EmployeeRoleService;
 import com.branch.service.EmployeeService;
-import common.constant.RedisPrefixConstant;
-import common.constant.ErrorConstant;
-import common.constant.JwtConstant;
-import common.exception.EmployeeFailedException;
-import common.exception.LoginFailedException;
-import common.exception.PasswordErrorException;
+import com.branch.service.RoleService;
+import framework.constant.RedisPrefixConstant;
+import framework.constant.ErrorConstant;
+import framework.constant.JwtConstant;
+import framework.exceptionhandle.exception.EmployeeFailedException;
+import framework.exceptionhandle.exception.LoginFailedException;
+import framework.exceptionhandle.exception.PasswordErrorException;
 
-import common.result.PageResult;
+import framework.result.PageResult;
 
-import common.constant.RoleConstant;
-import common.constant.StatusConstant;
+import framework.constant.RoleConstant;
+import framework.constant.StatusConstant;
+import framework.bo.UserBO;
 import framework.properties.JwtProperties;
+import framework.security.LoginUserDetails;
 import framework.util.JwtUtil;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -42,7 +48,6 @@ import org.springframework.transaction.annotation.Transactional;
 import framework.security.SecurityContextParam;
 
 import framework.security.AdminAuthenticationToken;
-import framework.security.EmpAuthenticationToken;
 
 
 import java.util.HashMap;
@@ -65,6 +70,10 @@ public class EmployeeServiceImpl extends ServiceImpl<EmployeeMapper, Employee> i
     private JwtProperties jwtProperties;
     @Autowired
     private AuthenticationManager authenticationManager; // 注入认证管理器
+    @Autowired
+    private RoleService roleService;
+    @Autowired
+    private EmployeeRoleService employeeRoleService;
 
     @Override
     public Employee findEmployeename(String username) {
@@ -73,39 +82,9 @@ public class EmployeeServiceImpl extends ServiceImpl<EmployeeMapper, Employee> i
                 .one();
     }
 
-    @Override
-    public String admin1(LoginDTO loginDTO) {
-        String username = loginDTO.getUsername();
-        String password = loginDTO.getPassword();
-        // 使用 AdminAuthenticationToken → 自动路由到 AdminAuthenticationProvider → LoginAdminService
-        AdminAuthenticationToken authenticationToken = new AdminAuthenticationToken(username, password);
-        authenticationManager.authenticate(authenticationToken);
-        Employee employee = this.findEmployeename(username);
-        Map<String,Object> map = new HashMap<>();
-        map.put(JwtConstant.ID, employee.getId());
-        map.put(JwtConstant.NAME, employee.getUsername());
-        map.put(JwtConstant.Role,RoleConstant.ROLE_ADMIN);
-        String token = JwtUtil.createJWT(jwtProperties.getAdminSecretKey(), jwtProperties.getAdminTtl(), map);
-        stringRedisTemplate.opsForValue().set(RedisPrefixConstant.ADMIN_AUTH_PREFIX+ employee.getId(), token,
-                jwtProperties.getAdminTtl(), TimeUnit.SECONDS);
-        return token;
-    }
-
-    @Override
-    public void admin2() {
-        Long userId = SecurityContextParam.getCurrentUserId();
-        if (userId == null) {
-            throw new LoginFailedException(ErrorConstant.ACCOUNT_NOT_EXIST);
-        }
-        stringRedisTemplate.delete(RedisPrefixConstant.ADMIN_AUTH_PREFIX + userId);
-        SecurityContextHolder.clearContext();
-    }
-
-
-
     @Transactional(rollbackFor = Exception.class)
     @Override
-    public void register(EmployeeDTO employeeDTO) {
+    public void registerAdmin(EmployeeDTO employeeDTO) {
         Employee find = this.findEmployeename(employeeDTO.getUsername());
         if (find != null) {
             throw new LoginFailedException(ErrorConstant.REGISTER_ERROR);
@@ -120,23 +99,42 @@ public class EmployeeServiceImpl extends ServiceImpl<EmployeeMapper, Employee> i
         employee.setUpdateUser(0L);
         this.save(employee);
     }
+
+    @Transactional(rollbackFor = Exception.class)
+    @Override
+    public void registerEmployee(EmployeeDTO employeeDTO) {
+        Employee find = this.findEmployeename(employeeDTO.getUsername());
+        if (find != null) {
+            throw new LoginFailedException(ErrorConstant.REGISTER_ERROR);
+        }
+        Employee employee = BeanUtil.toBean(employeeDTO, Employee.class);
+        employee.setStatus(StatusConstant.ENABLE);
+        if (employee.getPassword() == null) {
+            employee.setPassword("123456");
+        }
+        employee.setPassword(passwordEncoder.encode(employee.getPassword()));
+        employee.setCreateUser(0L);
+        employee.setUpdateUser(0L);
+        this.save(employee);
+    }
+
     @Transactional(rollbackFor = Exception.class)
     @Override
     public String login(LoginDTO loginDTO) {
         String username = loginDTO.getUsername();
         String password = loginDTO.getPassword();
-        // 使用 EmpAuthenticationToken → 自动路由到 EmpAuthenticationProvider → LoginEmpService
-        EmpAuthenticationToken authenticationToken = new EmpAuthenticationToken(username, password);
-        authenticationManager.authenticate(authenticationToken);
-        // 认证成功后，查询用户完整信息
-        Employee employee = this.findEmployeename(username);
+        // 使用 AdminAuthenticationToken → 自动路由到 AdminAuthenticationProvider → LoginAdminService
+        AdminAuthenticationToken authenticationToken = new AdminAuthenticationToken(username, password);
+        Authentication authentication = authenticationManager.authenticate(authenticationToken);
+        LoginUserDetails loginUser = (LoginUserDetails) authentication.getPrincipal();
+        UserBO userBO = loginUser.getUserBO();
+        User employee = BeanUtil.toBean(userBO, User.class);
         Map<String,Object> map = new HashMap<>();
         map.put(JwtConstant.ID, employee.getId());
         map.put(JwtConstant.NAME, employee.getUsername());
-        map.put(JwtConstant.Role,RoleConstant.ROLE_EMP);
-
-        String token = JwtUtil.createJWT(jwtProperties.getUserSecretKey(), jwtProperties.getUserTtl(), map);
-        stringRedisTemplate.opsForValue().set(RedisPrefixConstant.EMP_AUTH_PREFIX+ employee.getId(), token,
+        map.put(JwtConstant.Role,RoleConstant.ROLE_ADMIN);
+        String token = JwtUtil.createJWT(jwtProperties.getAdminSecretKey(), jwtProperties.getAdminTtl(), map);
+        stringRedisTemplate.opsForValue().set(RedisPrefixConstant.ADMIN_AUTH_PREFIX+ employee.getId(), token,
                 jwtProperties.getAdminTtl(), TimeUnit.SECONDS);
         return token;
     }
@@ -147,7 +145,7 @@ public class EmployeeServiceImpl extends ServiceImpl<EmployeeMapper, Employee> i
         if (userId == null) {
             throw new LoginFailedException(ErrorConstant.ACCOUNT_NOT_EXIST);
         }
-        stringRedisTemplate.delete(RedisPrefixConstant.EMP_AUTH_PREFIX + userId);
+        stringRedisTemplate.delete(RedisPrefixConstant.ADMIN_AUTH_PREFIX + userId);
         SecurityContextHolder.clearContext();
     }
 
@@ -178,6 +176,7 @@ public class EmployeeServiceImpl extends ServiceImpl<EmployeeMapper, Employee> i
         result.setPageSize(employeeIPage.getSize());    // 每页条数
         return result;
     }
+
     @Transactional(rollbackFor = Exception.class)
     @Override
     public void updateByObject(EmployeeDTO employeeDTO) {
@@ -217,6 +216,7 @@ public class EmployeeServiceImpl extends ServiceImpl<EmployeeMapper, Employee> i
         }
         this.update(null, updateWrapper);
     }
+
     @Transactional(rollbackFor = Exception.class)
     @Override
     public void deleteById(List<Long> ids) {
@@ -236,12 +236,9 @@ public class EmployeeServiceImpl extends ServiceImpl<EmployeeMapper, Employee> i
         Long id = SecurityContextParam.getCurrentUserId();
         Employee employee = this.getById(id);
         employee.setPassword(newPassword);
-        stringRedisTemplate.delete(RedisPrefixConstant.EMP_AUTH_PREFIX + id);
+        stringRedisTemplate.delete(RedisPrefixConstant.ADMIN_AUTH_PREFIX + id);
         SecurityContextHolder.clearContext();
         this.updateById(employee);
     }
-
-
-
 
 }

@@ -1,7 +1,6 @@
 package framework.security;
 
 
-import framework.bo.LoginUserDetails;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 
@@ -52,22 +51,9 @@ public class SecurityContextParam {
         }
         Object principal = authentication.getPrincipal();
         if (principal instanceof LoginUserDetails loginUserDetails) {
-            return loginUserDetails.getUserBO().getRole();
+            return loginUserDetails.getRoles().toString();
         }
         return null;
     }
-    /**
-     * 获取当前登录用户权限
-     */
-    public static List<String> getCurrentPermissions() {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        if (authentication == null) {
-            return null;
-        }
-        Object principal = authentication.getPrincipal();
-        if (principal instanceof LoginUserDetails loginUserDetails) {
-            return loginUserDetails.getUserBO().getPermission();
-        }
-        return null;
-    }
+
 }

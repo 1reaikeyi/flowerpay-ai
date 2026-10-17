@@ -32,7 +32,6 @@ const router = createRouter({
                 { path: 'flower/add', component: () => import('@/views/admin/flower/addFlower.vue') },
                 { path: 'flower/detail', component: () => import('@/views/admin/flower/detail.vue') },
                 { path: 'flower/give', component: () => import('@/views/admin/flower/giveFlower.vue') },
-
                 { path: 'festival', component: () => import('@/views/admin/festival/festival.vue') },
                 { path: 'festival/add', component: () => import('@/views/admin/festival/addFestival.vue') },
                 { path: 'festival/detail', component: () => import('@/views/admin/festival/detail.vue') },
@@ -42,17 +41,19 @@ const router = createRouter({
                 { path: 'statistics/column', component: () => import('@/views/admin/statistics/columnChart.vue') },
                 { path: 'statistics/fan', component: () => import('@/views/admin/statistics/fanChart.vue') },
 
-                { path: 'shop', component: () => import('@/views/admin/shop/shop.vue') },
-
                 { path: 'order/pay', component: () => import('@/views/admin/order/pay.vue') },
                 { path: 'order/refund', component: () => import('@/views/admin/order/refund.vue') },
                 { path: 'order/detail', component: () => import('@/views/admin/order/detail.vue') },
 
+                { path: 'shop', component: () => import('@/views/admin/shop/shop.vue') },
                 { path: 'admin/employee', component: () => import('@/views/admin/admin/employee.vue') },
                 { path: 'admin/update', component: () => import('@/views/admin/admin/updateEmployee.vue') },
                 { path: 'admin/profile', component: () => import('@/views/admin/admin/profile.vue') },
                 { path: 'admin/avatar', component: () => import('@/views/admin/admin/avatar.vue') },
                 { path: 'admin/password', component: () => import('@/views/admin/admin/password.vue') }
+
+                // { path: 'admin/system/login', component: () => import('@/views/admin/admin/password.vue') },
+                // { path: 'admin/system/operate', component: () => import('@/views/admin/admin/password.vue') }
 
             ]
         },

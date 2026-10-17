@@ -29,13 +29,6 @@
             <el-icon><Goods /></el-icon>
             <span>送人</span>
           </el-menu-item>
-        </el-sub-menu>
-
-        <el-sub-menu index="/user/festival">
-          <template #title>
-            <el-icon><DataAnalysis /></el-icon>
-            <span>多花礼盒</span>
-          </template>
           <el-menu-item index="/user/festival/index">
             <el-icon><Present /></el-icon>
             <span>多花</span>
@@ -45,6 +38,7 @@
             <span>用途</span>
           </el-menu-item>
         </el-sub-menu>
+
 
         <el-sub-menu index="/user/order">
           <template #title>

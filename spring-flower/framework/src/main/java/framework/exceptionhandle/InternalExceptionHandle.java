@@ -1,7 +1,7 @@
 package framework.exceptionhandle;
 
-import common.constant.ErrorConstant;
-import common.result.Result;
+import framework.constant.ErrorConstant;
+import framework.result.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.web.bind.annotation.ExceptionHandler;

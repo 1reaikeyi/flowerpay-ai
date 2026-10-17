@@ -1,8 +1,8 @@
 package framework.exceptionhandle;
 
-import common.constant.ErrorConstant;
-import common.exception.*;
-import common.result.Result;
+import framework.constant.ErrorConstant;
+import framework.result.Result;
+import framework.exceptionhandle.exception.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;

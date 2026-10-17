@@ -26,11 +26,11 @@ public class Generator {
     public boolean generate(String tableName) {
          AtomicBoolean hasGenerateFile = new AtomicBoolean(false);
          String path = "spring-flower";
-         String model = path + "/model/src/main/java/model/entity";
-         String mapper = path + "/service/src/main/java/mapper";
-         String service = path + "/service/src/main/java/service";
-         String mapperXml = path + "/service/src/main/resources/mapper";
-         String controller = path + "/start/src/main/java/start/controller";
+         String model = path + "/entity";
+         String mapper = path + "/mapper";
+         String service = path + "/service";
+         String mapperXml = path + "/resource/mapper";
+         String controller = path + "/controller";
          
 
         Map<OutputFile, String> pathInfo = new HashMap<>();
@@ -60,12 +60,12 @@ public class Generator {
                     log.info("controller: {}/{}Controller.java", controller, entityName);
                 }))
                 .packageConfig(b -> b
-                        .parent("")                    // 项目无统一父包，包名即模块名
-                        .entity("model.entity")        // model 模块的 model.entity 包
-                        .mapper("mapper")              // mapper 模块的 mapper 包
-                        .service("service")            // service 模块的 service 包
-                        .serviceImpl("service.impl")   // service 模块的 service.impl 包
-                        .controller("start.controller") // start 模块的 start.controller 包
+                        .parent("com.branch")          // 项目统一父包
+                        .entity("domain.entity")       // 实体包 com.branch.domain.entity
+                        .mapper("mapper")              // Mapper 接口包 com.branch.mapper
+                        .service("service")            // Service 接口包 com.branch.service
+                        .serviceImpl("service.impl")   // Service 实现包 com.branch.service.impl
+                        .controller("controller")      // Controller 包 com.branch.controller
                         .pathInfo(pathInfo)
                 )
 

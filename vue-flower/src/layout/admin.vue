@@ -11,78 +11,115 @@
           <span>菜单分类</span>
         </el-menu-item>
 
-        <el-sub-menu index="/admin/flower">
+        <el-sub-menu index="/admin">
+
           <template #title>
             <el-icon><DataAnalysis /></el-icon>
-            <span>鲜花销售</span>
+            <span>鲜花经营</span>
           </template>
+
           <el-menu-item index="/admin/flower">
             <el-icon><Goods /></el-icon>
             <span>单只鲜花</span>
           </el-menu-item>
-          <el-menu-item index="/admin/flower/give">
-            <el-icon><Goods /></el-icon>
-            <span>送人</span>
-          </el-menu-item>
-        </el-sub-menu>
 
-        <el-sub-menu index="/admin/festival">
-          <template #title>
+          <el-menu-item index="/admin/flower/give">
             <el-icon><DataAnalysis /></el-icon>
-            <span>多花礼盒</span>
-          </template>
+            <span>单只鲜花送人</span>
+          </el-menu-item>
+
           <el-menu-item index="/admin/festival">
             <el-icon><Present /></el-icon>
-            <span>多花</span>
+            <span>多花组合</span>
           </el-menu-item>
+
           <el-menu-item index="/admin/festival/give">
-            <el-icon><Present /></el-icon>
-            <span>用途</span>
+            <el-icon><DataAnalysis /></el-icon>
+            <span>组合鲜花用途</span>
           </el-menu-item>
+
         </el-sub-menu>
 
-        <el-sub-menu index="/admin/order">
+
+        <el-sub-menu index="/order">
+
           <template #title>
             <el-icon><DataAnalysis /></el-icon>
             <span>订单管理</span>
           </template>
+
           <el-menu-item index="/admin/order/pay">
             <el-icon><ShoppingCart /></el-icon>
             <span>主要情况</span>
           </el-menu-item>
+
           <el-menu-item index="/admin/order/refund">
             <el-icon><ShoppingCart /></el-icon>
             <span>退款情况</span>
           </el-menu-item>
+
         </el-sub-menu>
 
-        <el-menu-item index="/admin/shop">
-          <el-icon><Shop /></el-icon>
-          <span>店铺管理</span>
-        </el-menu-item>
+        <el-sub-menu index="/shop">
 
-        <el-menu-item index="/admin/admin/employee">
-          <el-icon><User /></el-icon>
-          <span>员工管理</span>
-        </el-menu-item>
+          <template #title>
+            <el-icon><DataAnalysis /></el-icon>
+            <span>店铺</span>
+          </template>
+
+          <el-menu-item index="/admin/shop">
+            <el-icon><Shop /></el-icon>
+            <span>店铺状态</span>
+          </el-menu-item>
+
+          <el-menu-item index="/admin/admin/employee">
+            <el-icon><User /></el-icon>
+            <span>员工管理</span>
+          </el-menu-item>
+
+        </el-sub-menu>
 
         <el-sub-menu index="/admin/statistics">
+
           <template #title>
             <el-icon><DataAnalysis /></el-icon>
             <span>数据分析</span>
           </template>
+
           <el-menu-item index="/admin/statistics/line">
             <el-icon><TrendCharts /></el-icon>
             <span>鲜花销量情况</span>
           </el-menu-item>
+
           <el-menu-item index="/admin/statistics/column">
             <el-icon><TrendCharts /></el-icon>
             <span>鲜花top</span>
           </el-menu-item>
+
           <el-menu-item index="/admin/statistics/fan">
             <el-icon><TrendCharts /></el-icon>
             <span>今日数据</span>
           </el-menu-item>
+
+        </el-sub-menu>
+
+        <el-sub-menu index="/admin/system">
+
+          <template #title>
+            <el-icon><DataAnalysis /></el-icon>
+            <span>系统管理</span>
+          </template>
+
+          <el-menu-item index="/admin/system/login">
+            <el-icon><TrendCharts /></el-icon>
+            <span>在线用户</span>
+          </el-menu-item>
+
+          <el-menu-item index="/admin/system/operate">
+            <el-icon><TrendCharts /></el-icon>
+            <span>运行日志</span>
+          </el-menu-item>
+
         </el-sub-menu>
 
       </el-menu>

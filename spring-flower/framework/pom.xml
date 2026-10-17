@@ -29,16 +29,14 @@
         <java.version>17</java.version>
     </properties>
     <dependencies>
-        <!-- 模块依赖 -->
-        <dependency>
-            <groupId>org.example</groupId>
-            <artifactId>common</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional> <!-- 常见写法，表示编译时需要，运行时不需要 -->
+        </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
         </dependency>
         <!-- web 模块 -->
         <dependency>

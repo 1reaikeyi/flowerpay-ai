@@ -11,6 +11,9 @@ public class CITest {
     private Generator generator;
     @Test
     public void generate() {
-        generator.generate("user");
+        generator.generate("employee_role");
+        generator.generate("role_permission");
+        generator.generate("role");
+        generator.generate("permission");
     }
 }

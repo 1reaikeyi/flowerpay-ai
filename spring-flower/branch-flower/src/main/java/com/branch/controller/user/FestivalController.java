@@ -5,7 +5,7 @@ import com.branch.domain.vo.FestivalDetailVO;
 import com.branch.domain.vo.FestivalVO;
 import com.branch.service.FestivalService;
 import framework.aop.oparation.OperationEnum;
-import common.result.Result;
+import framework.result.Result;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;

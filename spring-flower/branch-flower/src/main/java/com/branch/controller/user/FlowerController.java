@@ -6,7 +6,7 @@ import com.branch.domain.vo.FlowerVO;
 import com.branch.service.FlowerDetailService;
 import com.branch.service.FlowerService;
 import framework.aop.oparation.OperationEnum;
-import common.result.Result;
+import framework.result.Result;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;

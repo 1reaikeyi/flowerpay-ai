@@ -6,8 +6,8 @@ import com.branch.domain.vo.SessionTitleVO;
 import com.branch.domain.vo.SessionVO;
 import com.branch.service.session.SessionService;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import common.constant.ErrorConstant;
-import common.result.Result;
+import framework.constant.ErrorConstant;
+import framework.result.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

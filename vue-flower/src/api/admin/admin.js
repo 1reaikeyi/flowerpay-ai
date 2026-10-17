@@ -2,8 +2,6 @@ import request from '@/utils/admin/request.js'
 
 /**
  * 管理员账户 API（按 admin 接口文档第 1 节对齐）
- * 后端控制器根路径：/admin（AdminController），仅店长（ROLE_ADMIN）使用
- * 认证方式：POST /admin/login 返回 JWT Token，后续请求需携带 Authorization: Bearer {token}
  */
 
 // 1.1 管理员登录 - POST /admin/login（放行）

@@ -7,8 +7,8 @@ import com.branch.domain.vo.FlowerCategoryVO;
 import com.branch.domain.vo.FlowerVO;
 import com.branch.service.FlowerCategoryService;
 import framework.aop.oparation.OperationEnum;
-import common.result.PageResult;
-import common.result.Result;
+import framework.result.PageResult;
+import framework.result.Result;
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.beans.factory.annotation.Autowired;

@@ -3,7 +3,7 @@ package com.branch.controller.user;
 import com.branch.domain.vo.FestivalDetailVO;
 import com.branch.service.FestivalDetailService;
 import framework.aop.oparation.OperationEnum;
-import common.result.Result;
+import framework.result.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;

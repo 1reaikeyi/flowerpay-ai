@@ -1,12 +1,11 @@
 package com.branch.controller;
 
 import com.branch.domain.dto.UserAddressDTO;
-import com.branch.domain.entity.UserAddress;
 import com.branch.domain.vo.UserAddressVO;
 import com.branch.service.UserAddressService;
-import common.result.ScrollResult;
+import framework.result.ScrollResult;
 import framework.aop.oparation.OperationEnum;
-import common.result.Result;
+import framework.result.Result;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;

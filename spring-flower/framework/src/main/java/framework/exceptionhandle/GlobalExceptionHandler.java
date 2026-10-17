@@ -1,11 +1,10 @@
 package framework.exceptionhandle;
 
-import common.exception.BaseException;
-import common.result.Result;
+import framework.exceptionhandle.exception.BaseException;
+import framework.result.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import org.springframework.web.servlet.resource.NoResourceFoundException;
 
 @RestControllerAdvice
 @Slf4j

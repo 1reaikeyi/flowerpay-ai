@@ -23,8 +23,6 @@
 
 flowerpay-ai\说明\admin接口文档.md
 
-flowerpay-ai\说明\emp接口文档.md
-
 flowerpay-ai\说明\user接口文档.md
 
 ## 项目结构
@@ -97,14 +95,14 @@ flowerpay-ai\说明\wiki.md
 
 # 前端说明
 
-## 店长端
+## admin端
 
-|    登录页面    | <img src="说明/原型功能/admin1.png" alt="管理端登录" style="zoom: 50%;" /> | 分类                                                         | <img src="说明/原型功能/admin2.png" alt="管理端登录" style="zoom: 50%;" /> |
-| :------------: | :----------------------------------------------------------: | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 单花+送人+用途 | <img src="说明/原型功能/admin3.png" alt="管理端登录" style="zoom: 50%;" /> | <img src="说明/原型功能/admin33.png" alt="管理端登录" style="zoom: 50%;" /> | <img src="说明/原型功能/admin333.png" alt="管理端登录" style="zoom: 50%;" /> |
-|    多花组合    | <img src="说明/原型功能/admin4.png" alt="管理端登录" style="zoom: 50%;" /> | <img src="说明/原型功能/admin444.png" alt="管理端登录" style="zoom: 50%;" /> |                                                              |
-|    订单管理    | <img src="说明/原型功能/admin5.png" alt="管理端登录" style="zoom: 50%;" /> | <img src="说明/原型功能/admin55.png" alt="管理端登录" style="zoom: 50%;" /> |                                                              |
-|      店铺      | <img src="说明/原型功能/admin6.png" alt="管理端登录" style="zoom: 50%;" /> | 员工                                                         | <img src="说明/原型功能/admin7.png" alt="管理端登录" style="zoom: 50%;" /> |
+| <img src="说明/原型功能/admin1.png" alt="管理端登录" style="zoom: 50%;" /> | <img src="说明/原型功能/admin2.png" alt="管理端登录" style="zoom: 50%;" /> | <img src="说明/原型功能/admin33.png" alt="管理端登录" style="zoom: 50%;" /> |
+| :----------------------------------------------------------: | :----------------------------------------------------------: | ------------------------------------------------------------ |
+| <img src="说明/原型功能/admin333.png" alt="管理端登录" style="zoom: 50%;" /> | <img src="说明/原型功能/admin3.png" alt="管理端登录" style="zoom: 50%;" /> | <img src="说明/原型功能/admin4.png" alt="管理端登录" style="zoom: 50%;" /> |
+| <img src="说明/原型功能/admin444.png" alt="管理端登录" style="zoom: 50%;" /> | <img src="说明/原型功能/admin5.png" alt="管理端登录" style="zoom: 50%;" /> | <img src="说明/原型功能/admin55.png" alt="管理端登录" style="zoom: 50%;" /> |
+| <img src="说明/原型功能/admin6.png" alt="管理端登录" style="zoom: 50%;" /> | <img src="说明/原型功能/admin7.png" alt="管理端登录" style="zoom: 50%;" /> |                                                              |
+|                                                              |                                                              |                                                              |
 
 ## statistics
 
@@ -112,7 +110,7 @@ flowerpay-ai\说明\wiki.md
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | <img src="说明/原型功能/statistics3.png" alt="statistics" style="zoom: 50%;" /> | <img src="说明/原型功能/statistics1.png" alt="statistics" style="zoom: 50%;" /> | <img src="说明/原型功能/statistics2.png" alt="statistics" style="zoom: 50%;" /> |
 
-## 用户端，员工端
+## 用户端
 
 | <img src="说明/原型功能/uni3.png" alt="user登录" style="zoom: 25%;" /> | <img src="说明/原型功能/uni1.png" alt="user登录" style="zoom: 25%;" /> | <img src="说明/原型功能/uni6.png" alt="user登录" style="zoom: 25%;" /> |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -134,27 +132,13 @@ flowerpay-ai\说明\wiki.md
 Q：滑动过期会不会产生大量无效 Redis Key？
 答：设置最大基础 TTL 兜底，即使用户长期不操作，缓存自动(expire:24小时)淘汰；登出接口主动删除对应 key，减少无效缓存堆积。
 Q: 如何保证role权限？
-使用spring security处理
-1.url拦截
- @Override
-    protected boolean shouldNotFilter(HttpServletRequest request) {
-        // OPTIONS 请求（CORS 预检）直接放行
-        if (request.getMethod().equalsIgnoreCase(HttpMethod.OPTIONS.name())) {
-            return true;
-        }
-        String uri = request.getRequestURI();
-        // 登录和注册接口不需要认证，直接放行
-        if (uri.equals("/user/login") || uri.equals("/user/register") ||
-                uri.equals("/employee/login") || uri.equals("/employee/register")||
-                uri.equals("/admin/login") || uri.equals("/admin/register")){
-            return true;
-        }
-        return !uri.startsWith("/admin") &&
-                !uri.startsWith("/employee") &&
-                !uri.startsWith("/user");
-    }
+1.user和admin的url拦截
+.authorizeHttpRequests(  auth -> auth           		.requestMatchers("/admin/**").hasRole("ADMIN")
+	.requestMatchers("/user/**").hasRole("USER")
+	// 其他接口全部放行
+	.anyRequest().permitAll())
 2.使用层拦截
-@PreAuthorize("hasRole('ADMIN')"),@PreAuthorize("hasRole('EMP')"),@PreAuthorize("hasRole('USER')")
+@PreAuthorize("hasRole('ADMIN')")@PreAuthorize("hasAuthorize('admin:create')")@PreAuthorize("hasAuthorize('work:create')")等等
 ```
 
 ------

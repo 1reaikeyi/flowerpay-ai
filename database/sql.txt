@@ -57,6 +57,18 @@ create table if not exists employee
 )
     comment '员工信息' collate = utf8mb4_bin;
 
+create table if not exists employee_role
+(
+    id          bigint unsigned auto_increment comment '主键ID'
+        primary key,
+    user_id     bigint unsigned                    not null comment '用户ID',
+    role_id     bigint unsigned                    not null comment '角色ID',
+    create_time datetime default CURRENT_TIMESTAMP not null comment '创建时间',
+    constraint uk_user_role
+        unique (user_id, role_id)
+)
+    comment '用户角色关联表';
+
 create table if not exists festival
 (
     id          bigint auto_increment comment '主键'
@@ -123,11 +135,13 @@ create table if not exists flower_category
     create_time datetime         null comment '创建时间',
     update_time datetime         null comment '更新时间',
     create_user bigint           null comment '创建人',
-    update_user bigint           null comment '修改人',
-    constraint idx_category_name
-        unique (name)
+    update_user bigint           null comment '修改人'
 )
     comment '鲜花及节日礼盒分类' collate = utf8mb4_bin;
+
+create index index_category_type
+    on flower_category (type)
+    comment '类型索引';
 
 create table if not exists flower_detail
 (
@@ -202,20 +216,104 @@ create table if not exists flower_order_pay
 )
     comment '支付记录表' collate = utf8mb4_bin;
 
-create table if not exists role_permission
+create table if not exists login_log
+(
+    info_id        bigint auto_increment comment '访问ID'
+        primary key,
+    user_name      varchar(50)  default ''  null comment '用户账号',
+    ipaddr         varchar(128) default ''  null comment '登录IP地址',
+    login_location varchar(255) default ''  null comment '登录地点',
+    browser        varchar(50)  default ''  null comment '浏览器类型',
+    os             varchar(50)  default ''  null comment '操作系统',
+    status         char         default '0' null comment '登录状态（0成功 1失败）',
+    msg            varchar(255) default ''  null comment '提示消息',
+    login_time     datetime                 null comment '访问时间'
+)
+    comment '系统访问记录';
+
+create index idx_sys_logininfor_lt
+    on login_log (login_time);
+
+create index idx_sys_logininfor_s
+    on login_log (status);
+
+create table if not exists operate_log
+(
+    id             bigint auto_increment comment '主键'
+        primary key,
+    title          varchar(50)   default '' null comment '模块标题',
+    business_type  int           default 0  null comment '业务类型（0其它 1新增 2修改 3删除）',
+    method         varchar(200)  default '' null comment '方法名称',
+    request_method varchar(10)   default '' null comment '请求方式',
+    operator_type  int           default 0  null comment '操作类别（0其它 1后台用户 2手机端用户）',
+    oper_name      varchar(50)   default '' null comment '操作人员',
+    oper_url       varchar(255)  default '' null comment '请求URL',
+    oper_ip        varchar(128)  default '' null comment '主机地址',
+    oper_location  varchar(255)  default '' null comment '操作地点',
+    oper_param     varchar(2000) default '' null comment '请求参数',
+    json_result    varchar(2000) default '' null comment '返回参数',
+    status         int           default 0  null comment '操作状态（0正常 1异常）',
+    error_msg      varchar(2000) default '' null comment '错误消息',
+    cost_time      bigint        default 0  null comment '消耗时间',
+    oper_time      datetime                 null comment '操作时间'
+)
+    comment '操作日志记录';
+
+create index idx_sys_oper_log_bt
+    on operate_log (business_type);
+
+create index idx_sys_oper_log_ot
+    on operate_log (oper_time);
+
+create index idx_sys_oper_log_s
+    on operate_log (status);
+
+create table if not exists permission
 (
     id              bigint unsigned auto_increment comment '主键ID'
         primary key,
     permission_code varchar(128)                       not null comment '权限编码',
     permission_name varchar(64)                        not null comment '权限名称',
-    status          bigint   default 1                 not null comment '状态 0禁用 1启用',
-    role            varchar(32)                        null comment '角色',
+    path            varchar(255)                       null comment '路由',
+    method          varchar(16)                        null comment '方法',
+    sort            int      default 0                 not null comment '排序',
+    status          tinyint  default 1                 not null comment '状态 0禁用 1启用',
+    remark          varchar(512)                       null comment '备注',
     create_time     datetime default CURRENT_TIMESTAMP not null comment '创建时间',
     update_time     datetime default CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP comment '更新时间',
     constraint uk_permission_code
         unique (permission_code)
 )
     comment '权限表';
+
+create table if not exists role
+(
+    id          bigint unsigned auto_increment comment '主键ID'
+        primary key,
+    role_code   varchar(64)                        not null comment '角色编码',
+    role_name   varchar(64)                        not null comment '角色名称',
+    role_type   varchar(32)                        null comment '角色类型',
+    sort        int      default 0                 not null comment '排序',
+    status      tinyint  default 1                 not null comment '状态 0禁用 1启用',
+    remark      varchar(512)                       null comment '备注',
+    create_time datetime default CURRENT_TIMESTAMP not null comment '创建时间',
+    update_time datetime default CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP comment '更新时间',
+    constraint uk_role_code
+        unique (role_code)
+)
+    comment '角色表';
+
+create table if not exists role_permission
+(
+    id            bigint unsigned auto_increment comment '主键ID'
+        primary key,
+    role_id       bigint unsigned                    not null comment '角色ID',
+    permission_id bigint unsigned                    not null comment '权限ID',
+    create_time   datetime default CURRENT_TIMESTAMP not null comment '创建时间',
+    constraint uk_role_permission
+        unique (role_id, permission_id)
+)
+    comment '角色权限关联表';
 
 create table if not exists user
 (
@@ -266,43 +364,4 @@ create table if not exists user_shopping
     create_time datetime         null comment '加入时间'
 )
     comment '购物车' collate = utf8mb4_bin;
--- 操作日志记录
-create table if not exists operate_log (
-  id                bigint auto_increment comment '主键'
-        primary key,
-  title             varchar(50)     default ''                 comment '模块标题',
-  business_type     int(2)          default 0                  comment '业务类型（0其它 1新增 2修改 3删除）',
-  method            varchar(200)    default ''                 comment '方法名称',
-  request_method    varchar(10)     default ''                 comment '请求方式',
-  operator_type     int(1)          default 0                  comment '操作类别（0其它 1后台用户 2手机端用户）',
-  oper_name         varchar(50)     default ''                 comment '操作人员',
-  oper_url          varchar(255)    default ''                 comment '请求URL',
-  oper_ip           varchar(128)    default ''                 comment '主机地址',
-  oper_location     varchar(255)    default ''                 comment '操作地点',
-  oper_param        varchar(2000)   default ''                 comment '请求参数',
-  json_result       varchar(2000)   default ''                 comment '返回参数',
-  status            int(1)          default 0                  comment '操作状态（0正常 1异常）',
-  error_msg         varchar(2000)   default ''                 comment '错误消息',
-  cost_time         bigint(20)      default 0                  comment '消耗时间',
-  oper_time         datetime                                   comment '操作时间',
-  key idx_sys_oper_log_bt (business_type),
-  key idx_sys_oper_log_s  (status),
-  key idx_sys_oper_log_ot (oper_time)
-) engine=innodb auto_increment=100 comment = '操作日志记录';
-
--- 系统访问记录
-create table if not exists login_log (
-  info_id        bigint(20)     not null auto_increment   comment '访问ID',
-  user_name      varchar(50)    default ''                comment '用户账号',
-  ipaddr         varchar(128)   default ''                comment '登录IP地址',
-  login_location varchar(255)   default ''                comment '登录地点',
-  browser        varchar(50)    default ''                comment '浏览器类型',
-  os             varchar(50)    default ''                comment '操作系统',
-  status         char(1)        default '0'               comment '登录状态（0成功 1失败）',
-  msg            varchar(255)   default ''                comment '提示消息',
-  login_time     datetime                                 comment '访问时间',
-  primary key (info_id),
-  key idx_sys_logininfor_s  (status),
-  key idx_sys_logininfor_lt (login_time)
-) engine=innodb auto_increment=100 comment = '系统访问记录';
 
