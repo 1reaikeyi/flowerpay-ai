@@ -9,7 +9,7 @@ import com.alibaba.excel.write.metadata.WriteSheet;
 import com.branch.domain.entity.User;
 import com.branch.domain.excel.UserExcel;
 import com.branch.service.UserService;
-import framework.result.Result;
+import result.Result;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 

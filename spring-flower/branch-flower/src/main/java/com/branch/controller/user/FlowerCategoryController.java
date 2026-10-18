@@ -5,8 +5,8 @@ import com.branch.domain.vo.FestivalVO;
 import com.branch.domain.vo.FlowerCategoryVO;
 import com.branch.domain.vo.FlowerVO;
 import com.branch.service.FlowerCategoryService;
-import framework.aop.oparation.OperationEnum;
-import framework.result.Result;
+import framework.aop.oparation.OperationSuccessEnum;
+import result.Result;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -28,7 +28,7 @@ public class FlowerCategoryController {
     private FlowerCategoryService flowerCategoryService;
 
     @PreAuthorize("hasAnyRole('USER','EMP')")
-    @OperationLogging(operation = OperationEnum.READ)
+    @OperationLogging(operation = OperationSuccessEnum.READ)
     @GetMapping
     public Result readByType(@RequestParam("type") Long type) {
         List<FlowerCategoryVO> flowerCategoryVOList = flowerCategoryService.readByType(type);
@@ -36,7 +36,7 @@ public class FlowerCategoryController {
     }
 
     @PreAuthorize("hasAnyRole('USER','EMP')")
-    @OperationLogging(operation = OperationEnum.READ)
+    @OperationLogging(operation = OperationSuccessEnum.READ)
     @GetMapping("/all")
     public Result readPage( @Validated FlowerCategoryPageDTO flowerCategoryPageDTO) {
         return Result.success(flowerCategoryService.readPage(flowerCategoryPageDTO));
@@ -44,7 +44,7 @@ public class FlowerCategoryController {
 
 
     @PreAuthorize("hasAnyRole('USER','EMP')")
-    @OperationLogging(operation = OperationEnum.READ)
+    @OperationLogging(operation = OperationSuccessEnum.READ)
     @GetMapping("/of/flower")
     public Result readFlower(@RequestParam("id") Long categoryId) {
         List<FlowerVO> flowerVOList = flowerCategoryService.readFlower(categoryId);
@@ -53,7 +53,7 @@ public class FlowerCategoryController {
 
 
     @PreAuthorize("hasAuthority('ROLE_USER') or hasAuthority('ROLE_EMP') or hasAuthority('ROLE_ADMIN')")
-    @OperationLogging(operation = OperationEnum.READ)
+    @OperationLogging(operation = OperationSuccessEnum.READ)
     @GetMapping("of/festival")
     public Result getFestival(@RequestParam("id") Long categoryId) {
         List<FestivalVO> festivalList = flowerCategoryService.readFestival(categoryId);

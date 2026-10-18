@@ -3,8 +3,8 @@ package com.branch.controller.admin;
 import com.branch.domain.dto.FestivalDetailDTO;
 import com.branch.domain.vo.FestivalDetailVO;
 import com.branch.service.FestivalDetailService;
-import framework.aop.oparation.OperationEnum;
-import framework.result.Result;
+import framework.aop.oparation.OperationSuccessEnum;
+import result.Result;
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +23,7 @@ public class AdminFestivalDetailController {
     private FestivalDetailService festivalDetailService;
 
     @PreAuthorize("hasRole('ADMIN')")
-    @OperationLogging(operation = OperationEnum.CREATE)
+    @OperationLogging(operation = OperationSuccessEnum.CREATE)
     @PostMapping
     public Result add(@RequestBody FestivalDetailDTO festivalDetailDTO) {
         FestivalDetailDTO dto = festivalDetailService.create(festivalDetailDTO);
@@ -31,7 +31,7 @@ public class AdminFestivalDetailController {
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @OperationLogging(operation = OperationEnum.READ)
+    @OperationLogging(operation = OperationSuccessEnum.READ)
     @GetMapping
     public Result readById(@RequestParam Long id) {
 //        return Result.success(flowerService.getById(id));
@@ -40,7 +40,7 @@ public class AdminFestivalDetailController {
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @OperationLogging(operation = OperationEnum.UPDATE)
+    @OperationLogging(operation = OperationSuccessEnum.UPDATE)
     @PutMapping
     public Result updateByObject(@RequestBody FestivalDetailDTO festivalDetailDTO) {
         festivalDetailService.updateCache(festivalDetailDTO);
@@ -48,7 +48,7 @@ public class AdminFestivalDetailController {
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @OperationLogging(operation = OperationEnum.DELETE)
+    @OperationLogging(operation = OperationSuccessEnum.DELETE)
     @DeleteMapping
     public Result deleteById(@RequestParam List<Long> ids) {
         festivalDetailService.deleteCache(ids);

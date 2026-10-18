@@ -3,8 +3,8 @@ package com.branch.controller;
 import com.branch.domain.dto.UserShoppingDTO;
 import com.branch.domain.vo.UserShoppingVO;
 import com.branch.service.UserShoppingService;
-import framework.aop.oparation.OperationEnum;
-import framework.result.Result;
+import framework.aop.oparation.OperationSuccessEnum;
+import result.Result;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -23,7 +23,7 @@ public class UserShoppingController {
     private UserShoppingService userShoppingService;
 
     @PreAuthorize("hasAnyRole('USER')")
-    @OperationLogging(operation = OperationEnum.CREATE)
+    @OperationLogging(operation = OperationSuccessEnum.CREATE)
     @PostMapping
     public Result create(@Validated @RequestBody UserShoppingDTO userShoppingDTO){
         UserShoppingDTO dto = userShoppingService.create(userShoppingDTO);
@@ -31,7 +31,7 @@ public class UserShoppingController {
     }
 
     @PreAuthorize("hasAnyRole('USER')")
-    @OperationLogging(operation = OperationEnum.READ)
+    @OperationLogging(operation = OperationSuccessEnum.READ)
     @GetMapping
     public Result readAll(){
         List<UserShoppingVO> userShoppingVOList = userShoppingService.readAll();
@@ -39,7 +39,7 @@ public class UserShoppingController {
     }
 
     @PreAuthorize("hasAnyRole('USER')")
-    @OperationLogging(operation = OperationEnum.DELETE)
+    @OperationLogging(operation = OperationSuccessEnum.DELETE)
     @DeleteMapping
     public Result delete(@RequestParam Long id){
         userShoppingService.delete(id);
@@ -47,7 +47,7 @@ public class UserShoppingController {
     }
 
     @PreAuthorize("hasAnyRole('USER')")
-    @OperationLogging(operation = OperationEnum.DELETE)
+    @OperationLogging(operation = OperationSuccessEnum.DELETE)
     @DeleteMapping("/all")
     public Result deleteAll(){
         userShoppingService.deleteAll();

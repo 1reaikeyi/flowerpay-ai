@@ -2,7 +2,7 @@ package com.branch.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.branch.domain.vo.UserAddressVO;
-import framework.result.ScrollResult;
+import result.ScrollResult;
 import com.branch.domain.dto.UserAddressDTO;
 import com.branch.domain.entity.UserAddress;
 

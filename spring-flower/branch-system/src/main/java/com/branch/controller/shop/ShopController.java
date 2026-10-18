@@ -1,9 +1,9 @@
 package com.branch.controller.shop;
 
 import com.branch.domain.vo.ShopVO;
-import framework.constant.ShopConstant;
-import framework.aop.oparation.OperationEnum;
-import framework.result.Result;
+import constant.ShopConstant;
+import framework.aop.oparation.OperationSuccessEnum;
+import result.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -20,7 +20,7 @@ public class ShopController {
     private StringRedisTemplate stringRedisTemplate;
 
     @PreAuthorize("permitAll")
-    @OperationLogging(operation = OperationEnum.READ)
+    @OperationLogging(operation = OperationSuccessEnum.READ)
     @GetMapping("/status")
     public Result read() {
         String shop = stringRedisTemplate.opsForValue().get(ShopConstant.SHOP_STATUS);

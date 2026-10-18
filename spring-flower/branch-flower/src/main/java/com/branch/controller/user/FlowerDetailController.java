@@ -2,8 +2,8 @@ package com.branch.controller.user;
 
 import com.branch.domain.vo.FlowerDetailVO;
 import com.branch.service.FlowerDetailService;
-import framework.aop.oparation.OperationEnum;
-import framework.result.Result;
+import framework.aop.oparation.OperationSuccessEnum;
+import result.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,7 +21,7 @@ public class FlowerDetailController {
 
 
     @PreAuthorize("hasAnyRole('USER','EMP')")
-    @OperationLogging(operation = OperationEnum.READ)
+    @OperationLogging(operation = OperationSuccessEnum.READ)
     @GetMapping
     public Result readById(@RequestParam Long id) {
         FlowerDetailVO flowerDetailVO = flowerDetailService.readCache(id);

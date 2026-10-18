@@ -1,7 +1,8 @@
 package framework.security;
 
 
-import framework.constant.StatusConstant;
+import constant.RoleConstant;
+import constant.StatusConstant;
 import framework.bo.UserBO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,16 +12,12 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 /**
- * 登录用户信息载体（参照若依 LoginUser 设计）
- *
  * 作为 Spring Security 的 UserDetails 实现，同时承载：
-
  */
 @Data
 @NoArgsConstructor
@@ -46,15 +43,14 @@ public class LoginUserDetails implements UserDetails, Serializable {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        List<GrantedAuthority> authorities = new ArrayList<>();
+        Set<GrantedAuthority> authorities = new LinkedHashSet<>();
         // 权限标识直接作为 authority，如 admin:read（对应 @PreAuthorize("hasAnyAuthority(...)")）
         if (permissions != null) {
             permissions.stream()
                     .filter(org.springframework.util.StringUtils::hasText)
                     .forEach(code -> authorities.add(new SimpleGrantedAuthority(code)));
         }
-        // 角色统一补 ROLE_ 前缀并转大写
-//         如 admin -> ROLE_ADMIN（对应 hasRole('ADMIN')）
+//         角色统一补 ROLE_ 前缀并转大写
          if (roles != null) {
              roles.stream()
                      .filter(org.springframework.util.StringUtils::hasText)
@@ -64,7 +60,8 @@ public class LoginUserDetails implements UserDetails, Serializable {
                      .forEach(roleAuthority -> authorities.add(new SimpleGrantedAuthority(roleAuthority)));
          }
         // 默认添加 admin 角色
-        authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
+        // 如 admin -> ROLE_ADMIN（对应 hasRole('ADMIN')）
+        authorities.add(new SimpleGrantedAuthority(RoleConstant.ROLE_ADMIN));
         return authorities;
     }
 

@@ -5,8 +5,8 @@ import com.branch.domain.vo.FlowerDetailVO;
 import com.branch.domain.vo.FlowerVO;
 import com.branch.service.FlowerDetailService;
 import com.branch.service.FlowerService;
-import framework.aop.oparation.OperationEnum;
-import framework.result.Result;
+import framework.aop.oparation.OperationSuccessEnum;
+import result.Result;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -29,7 +29,7 @@ public class FlowerController {
     private FlowerDetailService flowerDetailService;
 
     @PreAuthorize("hasAnyRole('USER','EMP')")
-    @OperationLogging(operation = OperationEnum.READ)
+    @OperationLogging(operation = OperationSuccessEnum.READ)
     @GetMapping
     public Result readById(@RequestParam Long id) {
 //        return Result.success(flowerService.getById(id));
@@ -38,14 +38,14 @@ public class FlowerController {
     }
 
     @PreAuthorize("hasAnyRole('USER','EMP')")
-    @OperationLogging(operation = OperationEnum.READ)
+    @OperationLogging(operation = OperationSuccessEnum.READ)
     @GetMapping("/all")
     public Result readPage(FlowerPageDTO flowerPageDTO) {
         return Result.success(flowerService.readPage(flowerPageDTO));
     }
 
     @PreAuthorize("hasAnyRole('USER','EMP')")
-    @OperationLogging(operation = OperationEnum.READ)
+    @OperationLogging(operation = OperationSuccessEnum.READ)
     @GetMapping("/of/flowerDetail")
     public Result readFlowerDetail(@RequestParam Long id) {
         List<FlowerDetailVO> flowerDetailVOList = flowerService.readFlowerDetail(id);

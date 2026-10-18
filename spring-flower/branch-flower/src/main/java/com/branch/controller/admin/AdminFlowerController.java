@@ -6,9 +6,9 @@ import com.branch.domain.vo.FlowerDetailVO;
 import com.branch.domain.vo.FlowerVO;
 import com.branch.service.FlowerDetailService;
 import com.branch.service.FlowerService;
-import framework.aop.oparation.OperationEnum;
-import framework.result.PageResult;
-import framework.result.Result;
+import framework.aop.oparation.OperationSuccessEnum;
+import result.PageResult;
+import result.Result;
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +30,7 @@ public class AdminFlowerController {
     private FlowerDetailService flowerDetailService;
 
     @PreAuthorize("hasRole('ADMIN')")
-    @OperationLogging(operation = OperationEnum.CREATE)
+    @OperationLogging(operation = OperationSuccessEnum.CREATE)
     @PostMapping
     public Result create(@RequestBody FlowerDTO flowerDTO) {
         FlowerDTO dto = flowerService.create(flowerDTO);
@@ -38,7 +38,7 @@ public class AdminFlowerController {
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @OperationLogging(operation = OperationEnum.READ)
+    @OperationLogging(operation = OperationSuccessEnum.READ)
     @GetMapping
     public Result readById(@RequestParam Long id) {
 //        return Result.success(flowerService.getById(id));
@@ -47,7 +47,7 @@ public class AdminFlowerController {
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @OperationLogging(operation = OperationEnum.READ)
+    @OperationLogging(operation = OperationSuccessEnum.READ)
     @GetMapping("/all")
     public Result readPage(FlowerPageDTO flowerPageDTO) {
         PageResult<FlowerVO> flowerVOPageResult = flowerService.readPage(flowerPageDTO);
@@ -55,7 +55,7 @@ public class AdminFlowerController {
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @OperationLogging(operation = OperationEnum.UPDATE)
+    @OperationLogging(operation = OperationSuccessEnum.UPDATE)
     @PutMapping
     public Result updateByObject(@RequestBody FlowerDTO flowerDTO) {
         flowerService.updateCache(flowerDTO);
@@ -63,28 +63,28 @@ public class AdminFlowerController {
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @OperationLogging(operation = OperationEnum.DELETE)
+    @OperationLogging(operation = OperationSuccessEnum.DELETE)
     @DeleteMapping
     public Result deleteById(@RequestParam List<Long> ids) {
         flowerService.deleteCache(ids);
         return Result.success(ids);
     }
     @PreAuthorize("hasRole('ADMIN')")
-    @OperationLogging(operation = OperationEnum.READ)
+    @OperationLogging(operation = OperationSuccessEnum.READ)
     @GetMapping("/of/flowerDetail")
     public Result readFlowerDetail(@RequestParam Long id) {
         List<FlowerDetailVO> flowerDetailVOList = flowerService.readFlowerDetail(id);
         return Result.success(flowerDetailVOList);
     }
     @PreAuthorize("hasRole('ADMIN')")
-    @OperationLogging(operation = OperationEnum.READ)
+    @OperationLogging(operation = OperationSuccessEnum.READ)
     @GetMapping("/of/object")
     public Result readOfObject(@RequestParam String object) {
         List<FlowerDetailVO> flowerDetailVOList = flowerService.readOfObject(object);
         return Result.success(flowerDetailVOList);
     }
     @PreAuthorize("hasRole('ADMIN')")
-    @OperationLogging(operation = OperationEnum.READ)
+    @OperationLogging(operation = OperationSuccessEnum.READ)
     @GetMapping("/of/option")
     public Result readOfOption(@RequestParam String option) {
         List<FlowerDetailVO> flowerDetailVOList = flowerService.readOfOption(option);

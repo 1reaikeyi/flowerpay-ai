@@ -5,9 +5,9 @@ import com.branch.domain.dto.EmployeePageDTO;
 import com.branch.domain.dto.EditPasswordDTO;
 import com.branch.domain.vo.EmployeeVO;
 import com.branch.service.*;
-import framework.aop.oparation.OperationEnum;
-import framework.result.PageResult;
-import framework.result.Result;
+import framework.aop.oparation.OperationSuccessEnum;
+import result.PageResult;
+import result.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -33,35 +33,35 @@ public class AdminController {
     private RolePermissionService rolePermissionService;
 
     @PreAuthorize("hasAnyAuthority('admin:read')")
-    @OperationLogging(operation = OperationEnum.READ)
+    @OperationLogging(operation = OperationSuccessEnum.READ)
     @GetMapping("/employee")
     public Result readById(@RequestParam Long id) {
         EmployeeVO employeeVO = employeeService.readById(id);
         return Result.success(employeeVO);
     }
     @PreAuthorize("hasAnyAuthority('admin:read')")
-    @OperationLogging(operation = OperationEnum.READ)
+    @OperationLogging(operation = OperationSuccessEnum.READ)
     @GetMapping("/all")
     public Result readPage( @Validated EmployeePageDTO employeePageDTO) {
         PageResult<EmployeeVO> employeeVOPageResult = employeeService.readPage(employeePageDTO);
         return Result.success(employeeVOPageResult);
     }
     @PreAuthorize("hasAnyAuthority('admin:delete')")
-    @OperationLogging(operation = OperationEnum.DELETE)
+    @OperationLogging(operation = OperationSuccessEnum.DELETE)
     @DeleteMapping
     public Result deleteById(@RequestParam List<Long> ids) {
         employeeService.deleteById(ids);
         return Result.success(ids);
     }
     @PreAuthorize("hasRole('ADMIN')")
-    @OperationLogging(operation = OperationEnum.UPDATE)
+    @OperationLogging(operation = OperationSuccessEnum.UPDATE)
     @PutMapping("/password")
     public Result updatePassword(@Validated @RequestBody EditPasswordDTO editPasswordDTO) {
         employeeService.updatePassword(editPasswordDTO);
         return Result.success("layout");
     }
     @PreAuthorize("hasRole('ADMIN')")
-    @OperationLogging(operation = OperationEnum.UPDATE)
+    @OperationLogging(operation = OperationSuccessEnum.UPDATE)
     @PutMapping
     public Result updateByObject(@RequestBody EmployeeDTO employeeDTO) {
         employeeService.updateByObject(employeeDTO);

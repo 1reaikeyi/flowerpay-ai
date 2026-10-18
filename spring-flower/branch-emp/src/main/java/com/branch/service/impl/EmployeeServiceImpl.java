@@ -20,17 +20,17 @@ import com.branch.mapper.EmployeeMapper;
 import com.branch.service.EmployeeRoleService;
 import com.branch.service.EmployeeService;
 import com.branch.service.RoleService;
-import framework.constant.RedisPrefixConstant;
-import framework.constant.ErrorConstant;
-import framework.constant.JwtConstant;
-import framework.exceptionhandle.exception.EmployeeFailedException;
-import framework.exceptionhandle.exception.LoginFailedException;
-import framework.exceptionhandle.exception.PasswordErrorException;
+import constant.RedisPrefixConstant;
+import constant.ErrorConstant;
+import constant.JwtConstant;
+import exception.EmployeeFailedException;
+import exception.LoginFailedException;
+import exception.PasswordErrorException;
 
-import framework.result.PageResult;
+import result.PageResult;
 
-import framework.constant.RoleConstant;
-import framework.constant.StatusConstant;
+import constant.RoleConstant;
+import constant.StatusConstant;
 import framework.bo.UserBO;
 import framework.properties.JwtProperties;
 import framework.security.LoginUserDetails;
@@ -87,7 +87,7 @@ public class EmployeeServiceImpl extends ServiceImpl<EmployeeMapper, Employee> i
     public void registerAdmin(EmployeeDTO employeeDTO) {
         Employee find = this.findEmployeename(employeeDTO.getUsername());
         if (find != null) {
-            throw new LoginFailedException(ErrorConstant.REGISTER_ERROR);
+            throw new LoginFailedException("branch-emp",ErrorConstant.REGISTER_ERROR);
         }
         Employee employee = BeanUtil.toBean(employeeDTO, Employee.class);
         employee.setStatus(StatusConstant.ENABLE);
@@ -105,7 +105,7 @@ public class EmployeeServiceImpl extends ServiceImpl<EmployeeMapper, Employee> i
     public void registerEmployee(EmployeeDTO employeeDTO) {
         Employee find = this.findEmployeename(employeeDTO.getUsername());
         if (find != null) {
-            throw new LoginFailedException(ErrorConstant.REGISTER_ERROR);
+            throw new LoginFailedException("branch-emp",ErrorConstant.REGISTER_ERROR);
         }
         Employee employee = BeanUtil.toBean(employeeDTO, Employee.class);
         employee.setStatus(StatusConstant.ENABLE);
@@ -143,7 +143,7 @@ public class EmployeeServiceImpl extends ServiceImpl<EmployeeMapper, Employee> i
     public void logout() {
         Long userId = SecurityContextParam.getCurrentUserId();
         if (userId == null) {
-            throw new LoginFailedException(ErrorConstant.ACCOUNT_NOT_EXIST);
+            throw new LoginFailedException("branch-emp",ErrorConstant.ACCOUNT_NOT_EXIST);
         }
         stringRedisTemplate.delete(RedisPrefixConstant.ADMIN_AUTH_PREFIX + userId);
         SecurityContextHolder.clearContext();

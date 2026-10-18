@@ -2,7 +2,7 @@ package framework.aop;
 
 
 
-import framework.aop.oparation.OperationEnum;
+import framework.aop.oparation.OperationSuccessEnum;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -18,7 +18,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface OperationLogging {
     /**
-     * 操作类型（对应 OperationEnum：CREATE/GET/UPDATE/DELETE）
+     * 操作类型（对应 OperationSuccessEnum：CREATE/GET/UPDATE/DELETE）
      */
-    OperationEnum operation() default OperationEnum.CREATE;
+    OperationSuccessEnum operation() default OperationSuccessEnum.CREATE;
 }

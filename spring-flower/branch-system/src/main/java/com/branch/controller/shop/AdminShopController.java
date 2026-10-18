@@ -1,9 +1,9 @@
 package com.branch.controller.shop;
 
 import com.branch.domain.vo.ShopVO;
-import framework.constant.ShopConstant;
-import framework.aop.oparation.OperationEnum;
-import framework.result.Result;
+import constant.ShopConstant;
+import framework.aop.oparation.OperationSuccessEnum;
+import result.Result;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 
@@ -21,7 +21,7 @@ public class AdminShopController {
     private StringRedisTemplate stringRedisTemplate;
 
     @PreAuthorize("hasRole('ADMIN')")
-    @OperationLogging(operation = OperationEnum.UPDATE)
+    @OperationLogging(operation = OperationSuccessEnum.UPDATE)
     @PostMapping("{status}")
     @Validated
     public Result updateStatus(@PathVariable
@@ -32,7 +32,7 @@ public class AdminShopController {
     }
     
     @PreAuthorize("permitAll")
-    @OperationLogging(operation = OperationEnum.READ)
+    @OperationLogging(operation = OperationSuccessEnum.READ)
     @GetMapping
     public Result read() {
         String shop = stringRedisTemplate.opsForValue().get(ShopConstant.SHOP_STATUS);

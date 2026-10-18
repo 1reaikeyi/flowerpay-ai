@@ -1,6 +1,6 @@
 package start.monitor;
 
-import framework.result.Result;
+import result.Result;
 import framework.redis.RedisExporter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

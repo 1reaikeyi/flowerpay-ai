@@ -4,9 +4,9 @@ import com.branch.domain.dto.FlowerOrderPageDTO;
 import com.branch.domain.enums.OrderStatusEnum;
 import com.branch.domain.vo.FlowerOrderVO;
 import com.branch.service.FlowerOrderService;
-import framework.aop.oparation.OperationEnum;
-import framework.result.PageResult;
-import framework.result.Result;
+import framework.aop.oparation.OperationSuccessEnum;
+import result.PageResult;
+import result.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -20,7 +20,7 @@ public class AdminFlowerOrderController {
     @Autowired
     private FlowerOrderService flowerOrderService;
 
-    @OperationLogging(operation = OperationEnum.READ)
+    @OperationLogging(operation = OperationSuccessEnum.READ)
     @GetMapping
     @PreAuthorize("hasRole('ADMIN')")
     public Result readById(@RequestParam("id") Long id) {
@@ -29,7 +29,7 @@ public class AdminFlowerOrderController {
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @OperationLogging(operation = OperationEnum.READ)
+    @OperationLogging(operation = OperationSuccessEnum.READ)
     @GetMapping("/all")
     public Result readPage(FlowerOrderPageDTO flowerOrderPageDTO) {
         PageResult<FlowerOrderVO> flowerOrderVOPageResult = flowerOrderService.readPage(flowerOrderPageDTO);
@@ -37,7 +37,7 @@ public class AdminFlowerOrderController {
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @OperationLogging(operation = OperationEnum.UPDATE)
+    @OperationLogging(operation = OperationSuccessEnum.UPDATE)
     @PutMapping("cooking/{id}")
     public Result update3(@PathVariable Long id) {
         flowerOrderService.update3(id);
@@ -45,7 +45,7 @@ public class AdminFlowerOrderController {
     }
     
     @PreAuthorize("hasRole('ADMIN')")
-    @OperationLogging(operation = OperationEnum.UPDATE)
+    @OperationLogging(operation = OperationSuccessEnum.UPDATE)
     @PutMapping("go/{id}")
     public Result update4(@PathVariable Long id) {
         flowerOrderService.update4(id);
@@ -53,7 +53,7 @@ public class AdminFlowerOrderController {
     }
     
     @PreAuthorize("hasRole('ADMIN')")
-    @OperationLogging(operation = OperationEnum.UPDATE)
+    @OperationLogging(operation = OperationSuccessEnum.UPDATE)
     @PutMapping("delivering/{id}")
     public Result update5(@PathVariable Long id) {
         flowerOrderService.update5(id);
@@ -61,7 +61,7 @@ public class AdminFlowerOrderController {
     }
     
     @PreAuthorize("hasRole('ADMIN')")
-    @OperationLogging(operation = OperationEnum.UPDATE)
+    @OperationLogging(operation = OperationSuccessEnum.UPDATE)
     @PutMapping("arrived/{id}")
     public Result update6(@PathVariable Long id) {
         flowerOrderService.update6(id);
@@ -69,7 +69,7 @@ public class AdminFlowerOrderController {
     }
     
     @PreAuthorize("hasRole('ADMIN')")
-    @OperationLogging(operation = OperationEnum.UPDATE)
+    @OperationLogging(operation = OperationSuccessEnum.UPDATE)
     @PutMapping("/complete/{id}")
     public Result update7(@PathVariable Long id) {
         flowerOrderService.update7(id);
@@ -77,7 +77,7 @@ public class AdminFlowerOrderController {
     }
     
     @PreAuthorize("hasRole('ADMIN')")
-    @OperationLogging(operation = OperationEnum.UPDATE)
+    @OperationLogging(operation = OperationSuccessEnum.UPDATE)
     @PutMapping("canceled/{id}")
     public Result update8(@PathVariable Long id) {
         flowerOrderService.update8(id);

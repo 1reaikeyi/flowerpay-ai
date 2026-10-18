@@ -3,8 +3,8 @@ package com.branch.controller.admin;
 import com.branch.domain.dto.FlowerDetailDTO;
 import com.branch.domain.vo.FlowerDetailVO;
 import com.branch.service.FlowerDetailService;
-import framework.aop.oparation.OperationEnum;
-import framework.result.Result;
+import framework.aop.oparation.OperationSuccessEnum;
+import result.Result;
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +23,7 @@ public class AdminFlowerDetailController {
     private FlowerDetailService flowerDetailService;
 
     @PreAuthorize("hasRole('ADMIN')")
-    @OperationLogging(operation = OperationEnum.CREATE)
+    @OperationLogging(operation = OperationSuccessEnum.CREATE)
     @PostMapping
     public Result add(@RequestBody FlowerDetailDTO flowerDetailDTO) {
         FlowerDetailDTO dto = flowerDetailService.create(flowerDetailDTO);
@@ -31,7 +31,7 @@ public class AdminFlowerDetailController {
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @OperationLogging(operation = OperationEnum.READ)
+    @OperationLogging(operation = OperationSuccessEnum.READ)
     @GetMapping
     public Result readById(@RequestParam Long id) {
 //        return Result.success(flowerService.getById(id));
@@ -40,7 +40,7 @@ public class AdminFlowerDetailController {
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @OperationLogging(operation = OperationEnum.UPDATE)
+    @OperationLogging(operation = OperationSuccessEnum.UPDATE)
     @PutMapping
     public Result updateByObject(@RequestBody FlowerDetailDTO flowerDetailDTO) {
         flowerDetailService.updateCache(flowerDetailDTO);
@@ -48,7 +48,7 @@ public class AdminFlowerDetailController {
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @OperationLogging(operation = OperationEnum.DELETE)
+    @OperationLogging(operation = OperationSuccessEnum.DELETE)
     @DeleteMapping
     public Result deleteById(@RequestParam List<Long> ids) {
         flowerDetailService.deleteCache(ids);

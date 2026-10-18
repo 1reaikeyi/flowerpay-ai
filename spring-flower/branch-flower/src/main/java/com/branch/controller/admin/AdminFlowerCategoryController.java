@@ -6,9 +6,9 @@ import com.branch.domain.vo.FestivalVO;
 import com.branch.domain.vo.FlowerCategoryVO;
 import com.branch.domain.vo.FlowerVO;
 import com.branch.service.FlowerCategoryService;
-import framework.aop.oparation.OperationEnum;
-import framework.result.PageResult;
-import framework.result.Result;
+import framework.aop.oparation.OperationSuccessEnum;
+import result.PageResult;
+import result.Result;
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +29,7 @@ public class AdminFlowerCategoryController {
     private FlowerCategoryService flowerCategoryService;
 
     @PreAuthorize("hasRole('ADMIN')")
-    @OperationLogging(operation = OperationEnum.CREATE)
+    @OperationLogging(operation = OperationSuccessEnum.CREATE)
     @PostMapping
     public Result create(@RequestBody FlowerCategoryDTO flowerCategoryDTO) {
         FlowerCategoryDTO saved = flowerCategoryService.create(flowerCategoryDTO);
@@ -37,7 +37,7 @@ public class AdminFlowerCategoryController {
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @OperationLogging(operation = OperationEnum.READ)
+    @OperationLogging(operation = OperationSuccessEnum.READ)
     @GetMapping
     public Result readByType(@RequestParam("type") Long type) {
         List<FlowerCategoryVO> flowerCategoryVOList = flowerCategoryService.readByType(type);
@@ -45,7 +45,7 @@ public class AdminFlowerCategoryController {
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @OperationLogging(operation = OperationEnum.READ)
+    @OperationLogging(operation = OperationSuccessEnum.READ)
     @GetMapping("/all")
     public Result readPage( @Validated FlowerCategoryPageDTO flowerCategoryPageDTO) {
         PageResult<FlowerCategoryVO> flowerCategoryVOPageResult = flowerCategoryService.readPage(flowerCategoryPageDTO);
@@ -53,7 +53,7 @@ public class AdminFlowerCategoryController {
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @OperationLogging(operation = OperationEnum.UPDATE)
+    @OperationLogging(operation = OperationSuccessEnum.UPDATE)
     @PutMapping
     public Result updateByObject(@RequestBody FlowerCategoryDTO categoryDTO) {
         flowerCategoryService.updateByObject(categoryDTO);
@@ -61,7 +61,7 @@ public class AdminFlowerCategoryController {
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @OperationLogging(operation = OperationEnum.DELETE)
+    @OperationLogging(operation = OperationSuccessEnum.DELETE)
     @DeleteMapping
     public Result deleteById(@RequestParam List<Long> ids) {
         flowerCategoryService.deleteById(ids);
@@ -69,14 +69,14 @@ public class AdminFlowerCategoryController {
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @OperationLogging(operation = OperationEnum.READ)
+    @OperationLogging(operation = OperationSuccessEnum.READ)
     @GetMapping("/of/flower")
     public Result readFlower(@RequestParam("id") Long categoryId) {
         List<FlowerVO> flowerVOList = flowerCategoryService.readFlower(categoryId);
         return Result.success(flowerVOList);
     }
     @PreAuthorize("hasRole('ADMIN')")
-    @OperationLogging(operation = OperationEnum.READ)
+    @OperationLogging(operation = OperationSuccessEnum.READ)
     @GetMapping("of/festival")
     public Result getFestival(@RequestParam("id") Long categoryId) {
         List<FestivalVO> festivalList = flowerCategoryService.readFestival(categoryId);

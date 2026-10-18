@@ -3,9 +3,9 @@ package com.branch.controller;
 import com.branch.domain.dto.EmployeeDTO;
 import com.branch.domain.dto.LoginDTO;
 import com.branch.service.EmployeeService;
-import framework.result.Result;
+import result.Result;
 import framework.aop.OperationLogging;
-import framework.aop.oparation.OperationEnum;
+import framework.aop.oparation.OperationSuccessEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -39,7 +39,7 @@ public class AdminLoginController {
         return Result.success(token);
     }
 
-    @OperationLogging(operation = OperationEnum.CREATE)
+    @OperationLogging(operation = OperationSuccessEnum.CREATE)
     @PostMapping("/logout")
     public Result logout() {
         employeeService.logout();

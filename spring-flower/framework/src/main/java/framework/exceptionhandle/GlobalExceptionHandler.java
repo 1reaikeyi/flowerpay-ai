@@ -1,12 +1,15 @@
 package framework.exceptionhandle;
 
-import framework.exceptionhandle.exception.BaseException;
-import framework.result.Result;
+import exception.BaseException;
+import org.springframework.core.Ordered;
+import org.springframework.core.annotation.Order;
+import result.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @RestControllerAdvice
+@Order(100)
 @Slf4j
 public class GlobalExceptionHandler {
 

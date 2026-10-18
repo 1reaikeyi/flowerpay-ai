@@ -4,9 +4,9 @@ package com.branch.controller.user;
 import com.branch.domain.dto.FlowerOrderPageDTO;
 import com.branch.domain.vo.FlowerOrderVO;
 import com.branch.service.FlowerOrderService;
-import framework.aop.oparation.OperationEnum;
-import framework.result.PageResult;
-import framework.result.Result;
+import framework.aop.oparation.OperationSuccessEnum;
+import result.PageResult;
+import result.Result;
 import jakarta.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,39 +20,39 @@ public class FlowerOrderController {
     @Autowired
     private FlowerOrderService flowerOrderService;
 
-    @OperationLogging(operation = OperationEnum.READ)
+    @OperationLogging(operation = OperationSuccessEnum.READ)
     @GetMapping
     public Result readByOrderId(@RequestParam("id") Long id) {
         FlowerOrderVO flowerOrderVO = flowerOrderService.readById(id);
         return Result.success(flowerOrderVO);
     }
 
-    @OperationLogging(operation = OperationEnum.READ)
+    @OperationLogging(operation = OperationSuccessEnum.READ)
     @GetMapping("/history")
     public Result readPage(FlowerOrderPageDTO flowerOrderPageDTO) {
         PageResult<FlowerOrderVO> flowerOrderVOList = flowerOrderService.readPage(flowerOrderPageDTO);
         return Result.success(flowerOrderVOList);
     }
-    @OperationLogging(operation = OperationEnum.UPDATE)
+    @OperationLogging(operation = OperationSuccessEnum.UPDATE)
     @PostMapping("order/{id}")
     public Result update1(@PathVariable Long id) {
         flowerOrderService.update1(id);
         return Result.success();
     }
-    @OperationLogging(operation = OperationEnum.UPDATE)
+    @OperationLogging(operation = OperationSuccessEnum.UPDATE)
     @PutMapping("payment/{id}")
     public Result update2(@PathVariable Long id, HttpServletResponse response) {
         flowerOrderService.update2(id);
         return Result.success();
     }
-    @OperationLogging(operation = OperationEnum.UPDATE)
+    @OperationLogging(operation = OperationSuccessEnum.UPDATE)
     @PutMapping("/complete/{id}")
     public Result update7(@PathVariable Long id) {
         flowerOrderService.update7(id);
         return Result.success();
     }
 
-    @OperationLogging(operation = OperationEnum.UPDATE)
+    @OperationLogging(operation = OperationSuccessEnum.UPDATE)
     @PutMapping("canceled/{id}")
     public Result update8(@PathVariable Long id) {
         flowerOrderService.update8(id);

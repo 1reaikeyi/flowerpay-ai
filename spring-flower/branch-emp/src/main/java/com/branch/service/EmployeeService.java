@@ -10,7 +10,7 @@ import com.branch.domain.dto.LoginDTO;
 import com.branch.domain.dto.EditPasswordDTO;
 import com.branch.domain.entity.Employee;
 import com.branch.domain.vo.EmployeeVO;
-import framework.result.PageResult;
+import result.PageResult;
 
 import java.util.List;
 

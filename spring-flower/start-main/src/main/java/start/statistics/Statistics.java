@@ -1,10 +1,10 @@
 package start.statistics;
 
+import framework.aop.oparation.OperationSuccessEnum;
 import start.statistics.vo.OrderStatisticsVO;
 import start.statistics.vo.StatisticsVO;
 import start.statistics.vo.TopStatisticsVO;
-import framework.aop.oparation.OperationEnum;
-import framework.result.Result;
+import result.Result;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -23,7 +23,7 @@ public class Statistics {
     private StatisticsService statisticsService;
 
     @PreAuthorize("hasRole('ADMIN')")
-    @OperationLogging(operation = OperationEnum.READ)
+    @OperationLogging(operation = OperationSuccessEnum.READ)
     @GetMapping("/flower")
     public Result flowerSale() {
         List<StatisticsVO> statisticsVOList = statisticsService.flowerSale();
@@ -31,7 +31,7 @@ public class Statistics {
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @OperationLogging(operation = OperationEnum.READ)
+    @OperationLogging(operation = OperationSuccessEnum.READ)
     @GetMapping("/festival")
     public Result festivalSale() {
         List<StatisticsVO> festivalStatisticsVOList = statisticsService.festivalSale();
@@ -39,7 +39,7 @@ public class Statistics {
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @OperationLogging(operation = OperationEnum.READ)
+    @OperationLogging(operation = OperationSuccessEnum.READ)
     @GetMapping("/top1")
     public Result top1() {
         List<TopStatisticsVO> statisticsVOList = statisticsService.top1();
@@ -47,7 +47,7 @@ public class Statistics {
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @OperationLogging(operation = OperationEnum.READ)
+    @OperationLogging(operation = OperationSuccessEnum.READ)
     @GetMapping("/top2")
     public Result top2() {
         List<TopStatisticsVO> festivalStatisticsVOList = statisticsService.top2();
@@ -55,7 +55,7 @@ public class Statistics {
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @OperationLogging(operation = OperationEnum.READ)
+    @OperationLogging(operation = OperationSuccessEnum.READ)
     @GetMapping("/today")
     public Result today() {
         List<OrderStatisticsVO> orderStatisticsVOList = statisticsService.todayOrder();
