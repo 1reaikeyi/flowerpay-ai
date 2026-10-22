@@ -15,10 +15,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import framework.zhifubao.DTO.PayDTO;
-import framework.zhifubao.config.ZhifubaoProperties;
+import framework.zhifubao.PayDTO;
+import framework.zhifubao.ZhifubaoProperties;
 import framework.zhifubao.service.ZhifubaoService;
-import framework.zhifubao.DTO.RefundDTO;
+import framework.zhifubao.RefundDTO;
 
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;

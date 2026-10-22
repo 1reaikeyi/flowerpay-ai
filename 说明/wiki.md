@@ -12,15 +12,6 @@ database\sql.txt 					#20张表
 spring-flower/
 ├── pom.xml                          # 父 POM，统一管理依赖版本与子模块
 │
-├── common/                          # 公共基础模块
-│   ├── pom.xml
-│   └── src/main/java/common/
-│       ├── constant/                # 全局常量（ErrorConstant / JwtConstant / RedisPrefix等等）
-│       ├── exception/               # 异常体系（基类 BaseException + 各业务异常 + 文件异常）
-│       ├── result/                  # 统一返回体（Result / PageResult / ScrollResult）
-│       ├── system/                  # 系统枚举与字典 VO
-│       └── util/                    # 工具类（MessageUtils 等）
-│
 ├── framework/                       # 设施层模块
 │   ├── pom.xml
 │   └── src/main/java/framework/
@@ -36,6 +27,11 @@ spring-flower/
 │       ├── redis/                   # Redis 指标导出（RedisExporter）
 │       ├── security/                # 安全上下文（Admin / Emp / User 认证 Token 与 Provider）
 │       ├── util/                    # JWT、阿里云 OSS 工具
+│       ├── constant/                # 全局常量（ErrorConstant / JwtConstant / RedisPrefix等等）
+│       ├── exception/               # 异常体系（基类 BaseException + 各业务异常 + 文件异常）
+│       ├── result/                  # 统一返回体（Result / PageResult / ScrollResult）
+│       ├── system/                  # 系统枚举与字典 VO
+│       └── util/                    # 工具类（MessageUtils 等）
 │       ├── wechat/                  # 微信支付封装
 │       └── zhifubao/                # 支付宝支付封装（config / service / DTO）
 │

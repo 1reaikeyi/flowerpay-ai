@@ -1,7 +1,7 @@
 package com.branch.controller.shop;
 
 import com.branch.domain.vo.ShopVO;
-import constant.ShopConstant;
+import common.ShopConstant;
 import framework.aop.oparation.OperationSuccessEnum;
 import result.Result;
 import org.springframework.beans.factory.annotation.Autowired;

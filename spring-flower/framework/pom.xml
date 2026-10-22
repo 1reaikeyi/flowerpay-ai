@@ -71,17 +71,17 @@
             <artifactId>spring-boot-starter-cache</artifactId>
         </dependency>
         <!-- JJWT 核心 API（编译时依赖）：JWT 的生成和解析 -->
+        <!-- JJWT 实现（运行时）：JWT 签名算法实现 -->
+        <!-- JJWT Jackson 序列化（运行时）：JWT 的 JSON 处理 -->
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt-api</artifactId>
         </dependency>
-        <!-- JJWT 实现（运行时）：JWT 签名算法实现 -->
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt-impl</artifactId>
             <scope>runtime</scope>
         </dependency>
-        <!-- JJWT Jackson 序列化（运行时）：JWT 的 JSON 处理 -->
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt-jackson</artifactId>
@@ -111,6 +111,10 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-3-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
         <!-- 支付宝支付 -->
         <dependency>

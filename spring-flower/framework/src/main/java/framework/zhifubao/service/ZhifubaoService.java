@@ -14,12 +14,12 @@ import com.alipay.api.response.AlipayTradeQueryResponse;
 import com.alipay.api.response.AlipayTradeRefundResponse;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import framework.zhifubao.config.ZhifubaoConfig;
+import framework.zhifubao.ZhifubaoConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import framework.zhifubao.DTO.PayDTO;
-import framework.zhifubao.DTO.RefundDTO;
-import framework.zhifubao.config.ZhifubaoProperties;
+import framework.zhifubao.PayDTO;
+import framework.zhifubao.RefundDTO;
+import framework.zhifubao.ZhifubaoProperties;
 
 import java.util.Date;
 import java.util.LinkedHashMap;

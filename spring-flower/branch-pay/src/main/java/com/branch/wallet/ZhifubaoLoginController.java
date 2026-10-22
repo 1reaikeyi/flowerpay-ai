@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import framework.zhifubao.config.ZhifubaoConfig;
-import framework.zhifubao.config.ZhifubaoProperties;
+import framework.zhifubao.ZhifubaoConfig;
+import framework.zhifubao.ZhifubaoProperties;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;

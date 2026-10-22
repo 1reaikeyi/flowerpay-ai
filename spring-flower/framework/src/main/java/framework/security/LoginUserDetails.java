@@ -1,8 +1,8 @@
 package framework.security;
 
 
-import constant.RoleConstant;
-import constant.StatusConstant;
+import common.RoleConstant;
+import common.StatusConstant;
 import framework.bo.UserBO;
 import lombok.AllArgsConstructor;
 import lombok.Data;

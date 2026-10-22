@@ -21,4 +21,43 @@
         id, permission_code, permission_name, path, method, sort, status, remark, create_time, update_time
     </sql>
 
+    <!-- 角色-权限三表连接查询映射 -->
+    <resultMap id="RolePermissionMap" type="com.branch.domain.vo.RolePermissionVO">
+        <id column="role_id" property="roleId" />
+        <result column="role_name" property="roleName" />
+        <association property="permission" javaType="com.branch.domain.vo.PermissionVO">
+            <id column="permission_id" property="id" />
+            <result column="permission_code" property="permissionCode" />
+            <result column="permission_name" property="permissionName" />
+            <result column="path" property="path" />
+            <result column="method" property="method" />
+            <result column="sort" property="sort" />
+            <result column="status" property="status" />
+            <result column="remark" property="remark" />
+            <result column="create_time" property="createTime" />
+            <result column="update_time" property="updateTime" />
+        </association>
+    </resultMap>
+
+    <!-- 三表连接：role - role_permission - permission，按角色排序、权限排序 -->
+    <select id="selectRolePermissions" resultMap="RolePermissionMap">
+        SELECT
+            r.id AS role_id,
+            r.role_name,
+            p.id AS permission_id,
+            p.permission_code,
+            p.permission_name,
+            p.path,
+            p.method,
+            p.sort,
+            p.status,
+            p.remark,
+            p.create_time,
+            p.update_time
+        FROM role r
+        LEFT JOIN role_permission rp ON r.id = rp.role_id
+        LEFT JOIN permission p ON rp.permission_id = p.id
+        ORDER BY r.sort, r.id, p.sort, p.id
+    </select>
+
 </mapper>

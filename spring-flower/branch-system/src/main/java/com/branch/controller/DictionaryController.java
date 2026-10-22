@@ -1,11 +1,11 @@
 package com.branch.controller;
 
-import constant.system.NumberEnum;
-import constant.system.ObjectEnum;
-import constant.system.OptionEnum;
+import common.system.NumberEnum;
+import common.system.ObjectEnum;
+import common.system.OptionEnum;
 import result.Result;
 import lombok.extern.slf4j.Slf4j;
-import constant.system.DictionaryVO;
+import common.system.DictionaryVO;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

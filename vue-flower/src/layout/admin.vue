@@ -6,17 +6,18 @@
       <!-- 侧边栏菜单 -->
       <el-menu active-text-color="#ffd04b" background-color="#232323"
           :default-active="$route.path" text-color="#fff" router>
-        <el-menu-item index="/admin/category">
-          <el-icon><Menu /></el-icon>
-          <span>菜单分类</span>
-        </el-menu-item>
+
 
         <el-sub-menu index="/admin">
-
           <template #title>
-            <el-icon><DataAnalysis /></el-icon>
+            <el-icon><ChatLineRound /></el-icon>
             <span>鲜花经营</span>
           </template>
+
+          <el-menu-item index="/admin/category">
+            <el-icon><House /></el-icon>
+            <span>菜单分类</span>
+          </el-menu-item>
 
           <el-menu-item index="/admin/flower">
             <el-icon><Goods /></el-icon>
@@ -42,9 +43,8 @@
 
 
         <el-sub-menu index="/order">
-
           <template #title>
-            <el-icon><DataAnalysis /></el-icon>
+            <el-icon><ChatLineRound /></el-icon>
             <span>订单管理</span>
           </template>
 
@@ -54,16 +54,15 @@
           </el-menu-item>
 
           <el-menu-item index="/admin/order/refund">
-            <el-icon><ShoppingCart /></el-icon>
+            <el-icon><Tickets /></el-icon>
             <span>退款情况</span>
           </el-menu-item>
 
         </el-sub-menu>
 
         <el-sub-menu index="/shop">
-
           <template #title>
-            <el-icon><DataAnalysis /></el-icon>
+            <el-icon><ChatLineRound /></el-icon>
             <span>店铺</span>
           </template>
 
@@ -80,7 +79,6 @@
         </el-sub-menu>
 
         <el-sub-menu index="/admin/statistics">
-
           <template #title>
             <el-icon><DataAnalysis /></el-icon>
             <span>数据分析</span>
@@ -104,9 +102,8 @@
         </el-sub-menu>
 
         <el-sub-menu index="/admin/system">
-
           <template #title>
-            <el-icon><DataAnalysis /></el-icon>
+            <el-icon><ChatLineRound /></el-icon>
             <span>系统管理</span>
           </template>
 
@@ -176,14 +173,11 @@ import { ref, computed, onMounted } from 'vue'
 import AiWindows from '@/views/ai/index.vue'
 // 导入 Element Plus 图标组件
 import {
-  Menu,
-  Goods,
-  Present,
-  ShoppingCart,
-  Shop,
-  User,
-  DataAnalysis,
-  TrendCharts
+  ChatLineRound,Goods,Present,
+  House,
+  ShoppingCart,Tickets,
+  Shop, User,
+  DataAnalysis, TrendCharts
 } from '@element-plus/icons-vue'
 // 导入默认头像图片（用作兜底）
 import avatar from '@/assets/login/avatar.png'

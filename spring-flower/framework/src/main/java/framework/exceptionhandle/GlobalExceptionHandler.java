@@ -1,7 +1,6 @@
 package framework.exceptionhandle;
 
-import exception.BaseException;
-import org.springframework.core.Ordered;
+import common.exception.BaseException;
 import org.springframework.core.annotation.Order;
 import result.Result;
 import lombok.extern.slf4j.Slf4j;

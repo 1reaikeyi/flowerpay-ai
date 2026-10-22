@@ -4,10 +4,8 @@ package com.branch.service;
 
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.branch.domain.dto.EmployeeDTO;
-import com.branch.domain.dto.EmployeePageDTO;
-import com.branch.domain.dto.LoginDTO;
-import com.branch.domain.dto.EditPasswordDTO;
+import com.branch.domain.dto.*;
+import com.branch.domain.dto.page.EmployeePageDTO;
 import com.branch.domain.entity.Employee;
 import com.branch.domain.vo.EmployeeVO;
 import result.PageResult;
@@ -29,7 +27,15 @@ public interface EmployeeService extends IService<Employee> {
 
     EmployeeVO readById(Long id);
     PageResult<EmployeeVO> readPage(EmployeePageDTO employeePageDTO);
-    void updateByObject(EmployeeDTO employeeDTO);
+    void updateBySelf(EmployeeDTO employeeDTO);
     void deleteById(List<Long> ids);
     void updatePassword(EditPasswordDTO editPasswordDTO);
+
+    void postRoleTOEmployee(EmployeeRoleDTO employeeRoleDTO);
+
+    void deleteRoleTOEmployee(EmployeeRoleDTO employeeRoleDTO);
+
+    void postRoleTOPermission(RolePermissionDTO rolePermissionDTO);
+
+    void deleteRoleTOPermission(RolePermissionDTO rolePermissionDTO);
 }

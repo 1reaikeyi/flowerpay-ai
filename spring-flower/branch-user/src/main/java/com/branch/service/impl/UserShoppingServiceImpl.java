@@ -4,7 +4,7 @@ import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.json.JSONUtil;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import constant.RedisPrefixConstant;
+import common.constant.RedisPrefixConstant;
 import com.branch.mapper.UserShoppingMapper;
 import com.branch.domain.dto.UserShoppingDTO;
 import com.branch.domain.entity.UserShopping;

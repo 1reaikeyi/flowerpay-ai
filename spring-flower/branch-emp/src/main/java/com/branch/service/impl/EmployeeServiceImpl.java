@@ -9,28 +9,28 @@ import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.branch.domain.dto.EmployeeDTO;
-import com.branch.domain.dto.EmployeePageDTO;
-import com.branch.domain.dto.LoginDTO;
-import com.branch.domain.dto.EditPasswordDTO;
+import com.branch.domain.dto.*;
+import com.branch.domain.dto.page.EmployeePageDTO;
 import com.branch.domain.entity.Employee;
+import com.branch.domain.entity.EmployeeRole;
+import com.branch.domain.entity.RolePermission;
 import com.branch.domain.entity.User;
 import com.branch.domain.vo.EmployeeVO;
 import com.branch.mapper.EmployeeMapper;
 import com.branch.service.EmployeeRoleService;
 import com.branch.service.EmployeeService;
-import com.branch.service.RoleService;
-import constant.RedisPrefixConstant;
-import constant.ErrorConstant;
-import constant.JwtConstant;
-import exception.EmployeeFailedException;
-import exception.LoginFailedException;
-import exception.PasswordErrorException;
+import com.branch.service.RolePermissionService;
+import common.constant.RedisPrefixConstant;
+import common.constant.ErrorConstant;
+import common.constant.JwtConstant;
+import common.exception.EmployeeFailedException;
+import common.exception.LoginFailedException;
+import common.exception.PasswordErrorException;
 
 import result.PageResult;
 
-import constant.RoleConstant;
-import constant.StatusConstant;
+import common.RoleConstant;
+import common.StatusConstant;
 import framework.bo.UserBO;
 import framework.properties.JwtProperties;
 import framework.security.LoginUserDetails;
@@ -60,6 +60,7 @@ import java.util.stream.Collectors;
  * 员工 Service（对应 employee 表）
  */
 @Service
+@Transactional(rollbackFor = Exception.class)
 public class EmployeeServiceImpl extends ServiceImpl<EmployeeMapper, Employee> implements EmployeeService {
 
     @Autowired
@@ -71,9 +72,9 @@ public class EmployeeServiceImpl extends ServiceImpl<EmployeeMapper, Employee> i
     @Autowired
     private AuthenticationManager authenticationManager; // 注入认证管理器
     @Autowired
-    private RoleService roleService;
-    @Autowired
     private EmployeeRoleService employeeRoleService;
+    @Autowired
+    private RolePermissionService rolePermissionService;
 
     @Override
     public Employee findEmployeename(String username) {
@@ -82,7 +83,6 @@ public class EmployeeServiceImpl extends ServiceImpl<EmployeeMapper, Employee> i
                 .one();
     }
 
-    @Transactional(rollbackFor = Exception.class)
     @Override
     public void registerAdmin(EmployeeDTO employeeDTO) {
         Employee find = this.findEmployeename(employeeDTO.getUsername());
@@ -100,7 +100,6 @@ public class EmployeeServiceImpl extends ServiceImpl<EmployeeMapper, Employee> i
         this.save(employee);
     }
 
-    @Transactional(rollbackFor = Exception.class)
     @Override
     public void registerEmployee(EmployeeDTO employeeDTO) {
         Employee find = this.findEmployeename(employeeDTO.getUsername());
@@ -118,7 +117,6 @@ public class EmployeeServiceImpl extends ServiceImpl<EmployeeMapper, Employee> i
         this.save(employee);
     }
 
-    @Transactional(rollbackFor = Exception.class)
     @Override
     public String login(LoginDTO loginDTO) {
         String username = loginDTO.getUsername();
@@ -177,9 +175,8 @@ public class EmployeeServiceImpl extends ServiceImpl<EmployeeMapper, Employee> i
         return result;
     }
 
-    @Transactional(rollbackFor = Exception.class)
     @Override
-    public void updateByObject(EmployeeDTO employeeDTO) {
+    public void updateBySelf(EmployeeDTO employeeDTO) {
         // 1. 校验 ID
         if (employeeDTO.getId() == null) {
             throw new EmployeeFailedException(ErrorConstant.OPERATION_ERROR);
@@ -240,5 +237,34 @@ public class EmployeeServiceImpl extends ServiceImpl<EmployeeMapper, Employee> i
         SecurityContextHolder.clearContext();
         this.updateById(employee);
     }
+
+    @Override
+    public void postRoleTOEmployee(EmployeeRoleDTO employeeRoleDTO) {
+        EmployeeRole employeeRole = BeanUtil.toBean(employeeRoleDTO, EmployeeRole.class);
+        employeeRoleService.save(employeeRole);
+    }
+
+    @Override
+    public void deleteRoleTOEmployee(EmployeeRoleDTO employeeRoleDTO) {
+        if(employeeRoleDTO.getId() == null){
+            throw new EmployeeFailedException(ErrorConstant.OPERATION_ERROR);
+        }
+        employeeRoleService.removeById(employeeRoleDTO.getId());
+    }
+
+    @Override
+    public void postRoleTOPermission(RolePermissionDTO rolePermissionDTO) {
+        RolePermission rolePermission = BeanUtil.toBean(rolePermissionDTO, RolePermission.class);
+        rolePermissionService.save(rolePermission);
+    }
+
+    @Override
+    public void deleteRoleTOPermission(RolePermissionDTO rolePermissionDTO) {
+        if(rolePermissionDTO.getId() == null){
+            throw new EmployeeFailedException(ErrorConstant.OPERATION_ERROR);
+        }
+        rolePermissionService.removeById(rolePermissionDTO.getId());
+    }
+
 
 }

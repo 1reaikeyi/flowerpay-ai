@@ -3,7 +3,10 @@ package com.branch.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.branch.domain.entity.Permission;
+import com.branch.domain.vo.RolePermissionVO;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 /**
  * <p>
@@ -16,4 +19,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PermissionMapper extends BaseMapper<Permission> {
 
+    /**
+     * 三表连接查询：role - role_permission - permission
+     */
+    List<RolePermissionVO> selectRolePermissions();
 }
