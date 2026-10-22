@@ -32,8 +32,7 @@ flowerpay-ai\说明\wiki.md
 ## 数据流向图
 
 ```mermaid
-%%{init: {'theme':'neutral','themeVariables':{'fontSize':'8px','nodeBorder':'2px'},'flowchart':{'nodeSpacing':8,'rankSpacing':32,'useMaxWidth':false,'curve':'basis'}}}%%
-	flowchart TB
+flowchart TB
 	%% ============ 基建层 ============
     subgraph INFRA["基建层"]
         direction LR
@@ -126,6 +125,37 @@ flowerpay-ai\说明\wiki.md
 
 ## 一、店长、店员和客户登录模块
 
+### model
+
+```mermaid
+flowchart TB
+    subgraph adminer
+        zhi["zhizhi"]
+        li["lili"]
+        bai["baibai"]
+        zhang["zhangzhang"]
+    end
+    subgraph role
+        keyan["店长"]
+        shichang["worker"]
+        xiaoshou["waiter"]
+    end
+    subgraph permission
+        start1["权限1"]
+        start2["权限2"]
+        start3["权限3"]
+        start4["权限4"]
+       
+    end
+
+    classDef c1 fill:#fff
+    classDef c2 fill:#f2b8b8
+    classDef c3 fill:#b8d0f2
+    class admin c1
+    class role c2
+    class permission c3
+```
+
 ### 迭代过程
 
 ```
@@ -133,12 +163,13 @@ Q：滑动过期会不会产生大量无效 Redis Key？
 答：设置最大基础 TTL 兜底，即使用户长期不操作，缓存自动(expire:24小时)淘汰；登出接口主动删除对应 key，减少无效缓存堆积。
 Q: 如何保证role权限？
 1.user和admin的url拦截
-.authorizeHttpRequests(  auth -> auth           		.requestMatchers("/admin/**").hasRole("ADMIN")
+.authorizeHttpRequests(  auth -> auth           		
+	.requestMatchers("/admin/**").hasRole("ADMIN")
 	.requestMatchers("/user/**").hasRole("USER")
 	// 其他接口全部放行
 	.anyRequest().permitAll())
-2.使用层拦截
-@PreAuthorize("hasRole('ADMIN')")@PreAuthorize("hasAuthorize('admin:create')")@PreAuthorize("hasAuthorize('work:create')")等等
+2.admin不同的角色的使用层拦截
+@PreAuthorize("hasRole('ADMIN')")，@PreAuthorize("hasAuthorize('admin:create')")，@PreAuthorize("hasAuthorize('work:create')")等等
 ```
 
 ------

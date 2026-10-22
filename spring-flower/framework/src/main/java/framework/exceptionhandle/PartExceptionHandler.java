@@ -2,8 +2,7 @@ package framework.exceptionhandle;
 
 import common.constant.ErrorConstant;
 import common.exception.*;
-import exception.*;
-import framework.exception.*;
+
 import org.springframework.core.annotation.Order;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;

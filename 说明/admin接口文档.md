@@ -51,12 +51,7 @@ public Result handleException(Exception e) {
 
 - **管理员登录**：`POST /admin/login`，返回 JWT Token
 - **请求携带**：请求头 `Authorization: Bearer <token>`
-- **Token 存储**：Redis key 前缀 `flower:admin:` + 管理员 ID（员工端 token 前缀为 `flower:emp:`）
-- **权限控制**（Spring Security 配置）：
-  - `/admin/login` 放行（permitAll）
-  - `/admin/**` 需 `ROLE_ADMIN` 或 `ROLE_EMP` 角色
-- **方法级权限**：由 Service 接口方法上的 `@PreAuthorize` 注解控制（`spring-flower/service` 模块），如 `hasAuthority('ROLE_ADMIN')`，未标注注解的接口仅受 URL 级配置约束。
-- 所有写操作接口均有 `@OperationLogging` 操作日志切面记录。
+- **Token 存储**：Redis key 前缀 `flower:admin:` + 管理员 ID（用户端 token 前缀为 `flower:user:`）
 
 ---
 
@@ -64,13 +59,51 @@ public Result handleException(Exception e) {
 
 **基础路径**: `/admin`
 
-该控制器负责管理员登录、登出，以及后台员工账号的查询与删除（员工注册/资料修改接口在员工端 `/employee/**`，本文档不包含）。
+负责管理员/员工注册、登录与登出，员工账号的查询与删除，以及员工-角色、角色-权限的绑定与解绑。员工注册接口也在本控制器中，不存在独立的 `/employee/**` 注册接口。
 
-### 1.1 管理员登录
+### 1.1 注册管理员
+
+- **方法**: `POST`
+- **路径**: `/admin/register/admin`
+- **描述**: 创建管理员账号；用户名重复时抛业务异常；密码为空时默认 `123456`；状态强制为启用（1）
+- **权限**: 无（Security 放行）
+
+**请求体 (EmployeeDTO, JSON)**:
+
+| 字段 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| id | Long | 否 | 主键（注册时忽略） |
+| username | String | 是 | 用户名（唯一） |
+| password | String | 否 | 密码，为空时默认 `123456` |
+| work | String | 否 | 职位 |
+| avatar | String | 否 | 头像 URL |
+| email | String | 否 | 邮箱 |
+| phone | String | 否 | 手机号 |
+| sex | String | 否 | 性别（男/女） |
+| status | Long | 否 | 状态；注册时强制为 1 启用 |
+
+**响应**: `Result<String>` → `"register"`
+
+---
+
+### 1.2 注册员工
+
+- **方法**: `POST`
+- **路径**: `/admin/register/employee`
+- **描述**: 创建员工账号，规则与注册管理员一致（用户名唯一、密码默认 `123456`、状态启用）
+- **权限**: 需登录（`ROLE_ADMIN`）。注意 Security 放行名单中的路径拼写为 `/admin/register/emplouee`，与真实路径不一致，因此该接口实际受 `/admin/**` 规则约束
+
+**请求体 (EmployeeDTO, JSON)**: 字段见 1.1 节
+
+**响应**: `Result<String>` → `"register"`
+
+---
+
+### 1.3 管理员登录
 
 - **方法**: `POST`
 - **路径**: `/admin/login`
-- **描述**: 管理员账号密码登录，返回 JWT Token
+- **描述**: 管理员账号密码登录，返回 JWT Token；账号被禁用时登录失败
 - **权限**: 无（放行）
 
 **请求体 (LoginDTO, JSON)**:
@@ -82,14 +115,16 @@ public Result handleException(Exception e) {
 
 **响应**: `Result<String>` → JWT Token 字符串
 
+> Token 同时写入 Redis：`flower:admin:{管理员ID}`，有效期由 `JwtProperties.adminTtl` 控制。
+
 ---
 
-### 1.2 管理员登出
+### 1.4 管理员登出
 
 - **方法**: `POST`
 - **路径**: `/admin/logout`
-- **描述**: 清除当前登录状态
-- **权限**: 需登录
+- **描述**: 删除当前管理员的 Redis Token 并清空 SecurityContext
+- **权限**: 需登录（`ROLE_ADMIN`）
 
 **请求参数**: 无
 
@@ -97,12 +132,12 @@ public Result handleException(Exception e) {
 
 ---
 
-### 1.3 根据 ID 查询员工
+### 1.5 根据 ID 查询员工
 
 - **方法**: `GET`
 - **路径**: `/admin/employee`
-- **描述**: 获取单个员工信息
-- **权限**: ROLE_ADMIN
+- **描述**: 获取单个员工信息，员工不存在时抛业务异常
+- **权限**: `@PreAuthorize("hasAnyAuthority('admin:read')")`
 
 **请求参数 (Query)**:
 
@@ -125,12 +160,12 @@ public Result handleException(Exception e) {
 
 ---
 
-### 1.4 分页查询员工列表
+### 1.6 分页查询员工列表
 
 - **方法**: `GET`
 - **路径**: `/admin/all`
 - **描述**: 分页查询员工列表，支持按用户名模糊搜索
-- **权限**: ROLE_ADMIN
+- **权限**: `@PreAuthorize("hasAnyAuthority('admin:read')")`
 
 **请求参数 (EmployeePageDTO, Query 参数)**:
 
@@ -140,56 +175,57 @@ public Result handleException(Exception e) {
 | pageSize | Long | 否 | 10 | 每页条数（1~20） |
 | employeename | String | 否 | - | 用户名模糊搜索 |
 
-**响应**: `Result<PageResult<EmployeeVO>>`（EmployeeVO 字段见 1.3 节）
+**响应**: `Result<PageResult<EmployeeVO>>`（EmployeeVO 字段见 1.5 节）
 
 ---
 
-### 1.5 修改密码
+### 1.7 修改当前管理员密码
 
 - **方法**: `PUT`
 - **路径**: `/admin/password`
-- **描述**: 修改当前登录管理员的密码
-- **权限**: ROLE_ADMIN
+- **描述**: 修改当前登录管理员的密码；两次输入不一致时抛 `PasswordErrorException`；成功后删除当前 Token 并清空上下文，需重新登录
+- **权限**: `@PreAuthorize("hasRole('ADMIN')")`
 
-**请求体 (PasswordDTO, JSON)**:
+**请求体 (EditPasswordDTO, JSON)**:
 
 | 字段 | 类型 | 必填 | 说明 |
 |------|------|------|------|
 | newPassword | String | 是（@NotBlank） | 新密码 |
 | confirmPassword | String | 是（@NotBlank） | 确认密码 |
 
-**响应**: `Result<String>` → `"logout"`
+**响应**: `Result<String>` → `"layout"`（代码原样返回的字符串）
 
 ---
-### 1.6 修改个人信息
+### 1.8 修改个人信息
 
 - **方法**: `PUT`
 - **路径**: `/admin/employee`
-- **描述**: 修改个人信息
-- **权限**: ROLE_ADMIN
+- **描述**: 修改个人信息；仅更新传入的非空字段，密码非空时加密后更新
+- **权限**: `@PreAuthorize("hasRole('ADMIN')")`
 
 **请求体 (EmployeeDTO, JSON)**:
 
 | 字段 | 类型 | 必填 | 说明 |
 |------|------|------|------|
 | id | Long | 是 | 员工主键 ID |
-| username | String | 是 | 用户名 |
-| avatar | String | 是 | 头像 |
-| work | String | 是 | 职位 |
-| sex | String | 是 | 性别（男/女） |
-| email | String | 是 | 邮箱 |
-| phone | String | 是 | 手机号 |
-| status | Long | 是 | 状态 0:禁用 1:启用 |
+| username | String | 否 | 用户名 |
+| password | String | 否 | 密码（非空时加密更新） |
+| avatar | String | 否 | 头像 |
+| work | String | 否 | 职位 |
+| sex | String | 否 | 性别（男/女） |
+| email | String | 否 | 邮箱 |
+| phone | String | 否 | 手机号 |
+| status | Long | 否 | 状态 0:禁用 1:启用 |
 
 **响应**: `Result<Long>` → 员工 ID
 
 ---
-### 1.7 批量删除员工
+### 1.9 批量删除员工
 
 - **方法**: `DELETE`
-- **路径**: `/admin`
+- **路径**: `/admin/employee`
 - **描述**: 根据 ID 列表批量删除员工
-- **权限**: ROLE_ADMIN
+- **权限**: `@PreAuthorize("hasAnyAuthority('admin:delete')")`
 
 **请求参数 (Query)**:
 
@@ -198,6 +234,82 @@ public Result handleException(Exception e) {
 | ids | List\<Long\> | 是 | 员工 ID 列表，如 `ids=1&ids=2` |
 
 **响应**: `Result<List<Long>>` → 删除的 ID 列表
+
+---
+
+### 1.10 给员工授予角色
+
+- **方法**: `POST`
+- **路径**: `/admin/role/of/employee`
+- **描述**: 新增一条员工-角色关联记录
+- **权限**: `@PreAuthorize("hasAnyAuthority('admin:role:post')")`
+
+**请求体 (EmployeeRoleDTO, JSON)**:
+
+| 字段 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| userId | Long | 是 | 员工 ID |
+| roleId | Long | 是 | 角色 ID |
+| id | Long | 否 | 关联记录主键，新增时忽略 |
+
+**响应**: `Result<String>` → `roleId + userId` 拼接字符串
+
+---
+
+### 1.11 解除员工角色
+
+- **方法**: `DELETE`
+- **路径**: `/admin/role/of/employee`
+- **描述**: 按关联记录主键 `id` 删除员工-角色关联；`id` 为空时抛操作异常
+- **权限**: `@PreAuthorize("hasAnyAuthority('admin:role:delete')")`
+
+**请求体 (EmployeeRoleDTO, JSON)**:
+
+| 字段 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| id | Long | 是 | 员工-角色关联记录主键 |
+| userId | Long | 否 | 员工 ID |
+| roleId | Long | 否 | 角色 ID |
+
+**响应**: `Result<String>` → `roleId + userId` 拼接字符串
+
+---
+
+### 1.12 给角色授予权限
+
+- **方法**: `POST`
+- **路径**: `/admin/role/of/permission`
+- **描述**: 新增一条角色-权限关联记录
+- **权限**: `@PreAuthorize("hasAnyAuthority('admin:permission:post')")`
+
+**请求体 (RolePermissionDTO, JSON)**:
+
+| 字段 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| roleId | Long | 是 | 角色 ID |
+| permissionId | Long | 是 | 权限 ID |
+| id | Long | 否 | 关联记录主键，新增时忽略 |
+
+**响应**: `Result<String>` → `roleId + permissionId` 拼接字符串
+
+---
+
+### 1.13 解除角色权限
+
+- **方法**: `DELETE`
+- **路径**: `/admin/role/of/permission`
+- **描述**: 按关联记录主键 `id` 删除角色-权限关联；`id` 为空时抛操作异常
+- **权限**: `@PreAuthorize("hasAnyAuthority('admin:permission:delete')")`
+
+**请求体 (RolePermissionDTO, JSON)**:
+
+| 字段 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| id | Long | 是 | 角色-权限关联记录主键 |
+| roleId | Long | 否 | 角色 ID |
+| permissionId | Long | 否 | 权限 ID |
+
+**响应**: `Result<String>` → `roleId + permissionId` 拼接字符串
 
 ---
 
@@ -1232,9 +1344,9 @@ public Result handleException(Exception e) {
 
 ---
 
-## 10. 文件上传下载
+##  文件上传下载
 
-### 10.1 阿里云 OSS 上传 OSSFileController
+###  阿里云 OSS 上传 OSSFileController
 
 - **方法**: `POST`
 - **路径**: `/oss`
@@ -1263,7 +1375,7 @@ public Result handleException(Exception e) {
 
 ---
 
-### 10.2 OSS 文件下载
+### OSS 文件下载
 
 - **方法**: `GET`
 - **路径**: `/oss`
@@ -1280,7 +1392,7 @@ public Result handleException(Exception e) {
 
 ---
 
-### 10.3 本地文件上传 FileController
+### 本地文件上传 FileController
 
 - **方法**: `POST`
 - **路径**: `/local`
@@ -1298,7 +1410,7 @@ public Result handleException(Exception e) {
 
 ---
 
-### 10.4 本地文件下载
+### 本地文件下载
 
 - **方法**: `GET`
 - **路径**: `/local`
@@ -1313,15 +1425,7 @@ public Result handleException(Exception e) {
 
 **响应**: 直接写入响应体的文件流（`application/octet-stream`），无 Result 包装。
 
----
-
-## 11. Excel 报表 ExcelReportController
-
-**基础路径**: `/report/excel`
-
-基于 EasyExcel 的用户数据导出/导入，文件固定路径为服务器本地 `ku/excel/report.xlsx`。
-
-### 11.1 导出用户数据到 Excel
+### 导出用户数据到 Excel
 
 - **方法**: `POST`
 - **路径**: `/report/excel/write`
@@ -1343,7 +1447,7 @@ UserExcel 列定义：
 
 ---
 
-### 11.2 读取 Excel 用户数据
+###  读取 Excel 用户数据
 
 - **方法**: `POST`
 - **路径**: `/report/excel/read`
@@ -1356,7 +1460,7 @@ UserExcel 列定义：
 
 ---
 
-### 11.3 下载用户数据 Excel
+### 下载用户数据 Excel
 
 - **方法**: `GET`
 - **路径**: `/report/excel/download`
