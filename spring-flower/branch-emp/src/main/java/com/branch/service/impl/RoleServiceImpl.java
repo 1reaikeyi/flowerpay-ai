@@ -15,7 +15,7 @@ import com.branch.service.RoleService;
 import common.constant.ErrorConstant;
 import common.exception.EmployeeFailedException;
 import org.springframework.stereotype.Service;
-import result.PageResult;
+import com.branch.result.PageResult;
 
 import java.util.List;
 import java.util.stream.Collectors;

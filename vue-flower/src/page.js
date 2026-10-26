@@ -22,20 +22,19 @@ const router = createRouter({
         {
             path: '/admin',
             component: () => import('@/layout/admin.vue'), 
-            redirect: '/admin/flower',
+            redirect: '/admin/flower/category',
             children: [
 
-                { path: 'category', component: () => import('@/views/admin/category/category.vue') },
-                { path: 'category/add', component: () => import('@/views/admin/category/addCategory.vue') },
-
+                { path: 'flower/category', component: () => import('@/views/admin/category/category.vue') },
+                { path: 'flower/category/add', component: () => import('@/views/admin/category/addCategory.vue') },
                 { path: 'flower', component: () => import('@/views/admin/flower/flower.vue') },
                 { path: 'flower/add', component: () => import('@/views/admin/flower/addFlower.vue') },
                 { path: 'flower/detail', component: () => import('@/views/admin/flower/detail.vue') },
                 { path: 'flower/give', component: () => import('@/views/admin/flower/giveFlower.vue') },
-                { path: 'festival', component: () => import('@/views/admin/festival/festival.vue') },
-                { path: 'festival/add', component: () => import('@/views/admin/festival/addFestival.vue') },
-                { path: 'festival/detail', component: () => import('@/views/admin/festival/detail.vue') },
-                { path: 'festival/give', component: () => import('@/views/admin/festival/giveFestival.vue') },
+                { path: 'flower/festival', component: () => import('@/views/admin/festival/festival.vue') },
+                { path: 'flower/festival/add', component: () => import('@/views/admin/festival/addFestival.vue') },
+                { path: 'flower/festival/detail', component: () => import('@/views/admin/festival/detail.vue') },
+                { path: 'flower/festival/give', component: () => import('@/views/admin/festival/giveFestival.vue') },
 
                 { path: 'statistics/line', component: () => import('@/views/admin/statistics/lineChart.vue') },
                 { path: 'statistics/column', component: () => import('@/views/admin/statistics/columnChart.vue') },

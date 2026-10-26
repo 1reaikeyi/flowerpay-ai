@@ -3,7 +3,7 @@ package com.branch.controller;
 import com.branch.domain.dto.ChatDTO;
 import com.branch.domain.vo.ChatEventVO;
 import com.branch.service.rag.Chat;
-import result.Result;
+import com.branch.result.Result;
 import org.springframework.ai.document.Document;
 import org.springframework.ai.embedding.EmbeddingResponse;
 

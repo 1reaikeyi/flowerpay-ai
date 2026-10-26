@@ -1,14 +1,14 @@
 package framework.exceptionhandle;
 
-import common.constant.ErrorConstant;
-import common.exception.*;
+import com.branch.common.constant.ErrorConstant;
+import com.branch.common.exception.*;
 
 import org.springframework.core.annotation.Order;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.web.bind.annotation.ResponseStatus;
-import result.Result;
+import com.branch.result.Result;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ExceptionHandler;

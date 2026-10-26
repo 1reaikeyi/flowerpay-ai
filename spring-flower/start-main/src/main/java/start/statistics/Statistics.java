@@ -1,10 +1,11 @@
 package start.statistics;
 
+import com.branch.result.Result;
 import framework.aop.oparation.OperationSuccessEnum;
 import start.statistics.vo.OrderStatisticsVO;
 import start.statistics.vo.StatisticsVO;
 import start.statistics.vo.TopStatisticsVO;
-import result.Result;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;

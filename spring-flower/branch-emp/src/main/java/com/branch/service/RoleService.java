@@ -6,7 +6,7 @@ import com.branch.domain.dto.RoleDTO;
 import com.branch.domain.dto.page.RolePageDTO;
 import com.branch.domain.entity.Role;
 import com.branch.domain.vo.RoleVO;
-import result.PageResult;
+import com.branch.result.PageResult;
 
 import java.util.List;
 

@@ -27,15 +27,18 @@
     </scm>
     <modules>
         <module>framework</module>
+        <module>branch-system</module>
         <module>start-main</module>
         <module>start-ai</module>
         <module>start-generator</module>
-        <module>branch-system</module>
+        <module>branch-file</module>
         <module>branch-flower</module>
         <module>branch-pay</module>
         <module>branch-emp</module>
         <module>branch-user</module>
         <module>branch-ai</module>
+        <module>branch-file</module>
+        <module>branch-blog</module>
 
     </modules>
 

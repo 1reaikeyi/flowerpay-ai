@@ -1,22 +1,17 @@
 package com.branch.controller;
 
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.branch.domain.dto.PermissionDTO;
 import com.branch.domain.dto.RoleDTO;
 import com.branch.domain.dto.page.RolePageDTO;
-import com.branch.domain.vo.PermissionVO;
 import com.branch.domain.vo.RoleVO;
-import com.branch.service.PermissionService;
 import com.branch.service.RoleService;
 import framework.aop.Logging;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import result.PageResult;
-import result.Result;
+import com.branch.result.PageResult;
+import com.branch.result.Result;
 
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/admin/role")

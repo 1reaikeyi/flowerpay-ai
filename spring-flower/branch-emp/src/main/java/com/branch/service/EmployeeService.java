@@ -8,7 +8,7 @@ import com.branch.domain.dto.*;
 import com.branch.domain.dto.page.EmployeePageDTO;
 import com.branch.domain.entity.Employee;
 import com.branch.domain.vo.EmployeeVO;
-import result.PageResult;
+import com.branch.result.PageResult;
 
 import java.util.List;
 

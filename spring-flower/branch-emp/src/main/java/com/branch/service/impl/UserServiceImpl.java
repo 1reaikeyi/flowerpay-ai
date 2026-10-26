@@ -11,7 +11,7 @@ import common.exception.UserFailedException;
 
 import common.RoleConstant;
 import framework.properties.JwtProperties;
-import framework.util.JwtUtil;
+import com.branch.util.JwtUtil;
 import com.branch.mapper.UserMapper;
 import com.branch.domain.dto.LoginDTO;
 import com.branch.domain.dto.UserDTO;

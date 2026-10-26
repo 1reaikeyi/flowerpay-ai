@@ -7,7 +7,7 @@ import common.constant.JwtConstant;
 import common.constant.RedisPrefixConstant;
 
 import common.RoleConstant;
-import framework.util.JwtUtil;
+import com.branch.util.JwtUtil;
 import io.jsonwebtoken.ExpiredJwtException;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

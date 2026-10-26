@@ -1,8 +1,8 @@
 package framework.exceptionhandle;
 
-import common.exception.BaseException;
+import com.branch.common.exception.BaseException;
 import org.springframework.core.annotation.Order;
-import result.Result;
+import com.branch.result.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;

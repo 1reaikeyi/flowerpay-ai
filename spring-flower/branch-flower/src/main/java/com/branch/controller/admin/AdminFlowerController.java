@@ -1,5 +1,9 @@
 package com.branch.controller.admin;
 
+import com.branch.common.system.DictionaryVO;
+import com.branch.common.system.NumberEnum;
+import com.branch.common.system.ObjectEnum;
+import com.branch.common.system.OptionEnum;
 import com.branch.domain.dto.FlowerDTO;
 import com.branch.domain.dto.FlowerPageDTO;
 import com.branch.domain.vo.FlowerDetailVO;
@@ -7,8 +11,8 @@ import com.branch.domain.vo.FlowerVO;
 import com.branch.service.FlowerDetailService;
 import com.branch.service.FlowerService;
 import framework.aop.oparation.OperationSuccessEnum;
-import result.PageResult;
-import result.Result;
+import com.branch.result.PageResult;
+import com.branch.result.Result;
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +21,9 @@ import org.springframework.web.bind.annotation.*;
 
 import framework.aop.OperationLogging;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/admin/flower")
@@ -89,5 +95,26 @@ public class AdminFlowerController {
     public Result readOfOption(@RequestParam String option) {
         List<FlowerDetailVO> flowerDetailVOList = flowerService.readOfOption(option);
         return Result.success(flowerDetailVOList);
+    }
+    @GetMapping("/object")
+    public Result<List<DictionaryVO>> dictionary() {
+        List<DictionaryVO> list = Arrays.stream(ObjectEnum.values())
+                .map(e -> new DictionaryVO(e.name(), e.getName()))
+                .collect(Collectors.toList());
+        return Result.success(list);
+    }
+    @GetMapping("/option")
+    public Result<List<DictionaryVO>> option() {
+        List<DictionaryVO> list = Arrays.stream(OptionEnum.values())
+                .map(e -> new DictionaryVO(e.name(), e.getName()))
+                .collect(Collectors.toList());
+        return Result.success(list);
+    }
+    @GetMapping("/number")
+    public Result<List<DictionaryVO>> number() {
+        List<DictionaryVO> list = Arrays.stream(NumberEnum.values())
+                .map(e -> new DictionaryVO(e.name(), e.getMeaning()))
+                .collect(Collectors.toList());
+        return Result.success(list);
     }
 }

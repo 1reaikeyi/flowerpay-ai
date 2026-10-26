@@ -4,8 +4,8 @@ import com.branch.domain.dto.UserAddressDTO;
 import com.branch.domain.vo.UserAddressVO;
 import com.branch.service.UserAddressService;
 import framework.aop.oparation.OperationSuccessEnum;
-import result.ScrollResult;
-import result.Result;
+import com.branch.result.ScrollResult;
+import com.branch.result.Result;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;

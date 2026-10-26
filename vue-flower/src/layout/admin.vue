@@ -14,7 +14,7 @@
             <span>鲜花经营</span>
           </template>
 
-          <el-menu-item index="/admin/category">
+          <el-menu-item index="/admin/flower/category">
             <el-icon><House /></el-icon>
             <span>菜单分类</span>
           </el-menu-item>
@@ -29,20 +29,42 @@
             <span>单只鲜花送人</span>
           </el-menu-item>
 
-          <el-menu-item index="/admin/festival">
+          <el-menu-item index="/admin/flower/festival">
             <el-icon><Present /></el-icon>
             <span>多花组合</span>
           </el-menu-item>
 
-          <el-menu-item index="/admin/festival/give">
+          <el-menu-item index="/admin/flower/festival/give">
             <el-icon><DataAnalysis /></el-icon>
             <span>组合鲜花用途</span>
           </el-menu-item>
 
         </el-sub-menu>
 
+        <el-sub-menu index="/admin">
+          <template #title>
+            <el-icon><ChatLineRound /></el-icon>
+            <span>评论区</span>
+          </template>
 
-        <el-sub-menu index="/order">
+          <el-menu-item index="/admin/blog/article">
+            <el-icon><House /></el-icon>
+            <span>分类</span>
+          </el-menu-item>
+
+          <el-menu-item index="/admin/blog/articleDetail">
+            <el-icon><Goods /></el-icon>
+            <span>文章</span>
+          </el-menu-item>
+
+          <el-menu-item index="/admin/blog/comment">
+            <el-icon><Present /></el-icon>
+            <span>评论</span>
+          </el-menu-item>
+
+        </el-sub-menu>
+
+        <el-sub-menu index="/admin">
           <template #title>
             <el-icon><ChatLineRound /></el-icon>
             <span>订单管理</span>
@@ -205,7 +227,7 @@ const router = useRouter()
 // 横向菜单选中事件
 const handleSelect = (key) => {
   if (key === '1') {
-    // 首页：跳转到 admin 默认页（今日数据）
+    // 首页：跳转到 admin 默认页
     router.push('/admin/admin/avatar')
   } else if (key === '2') {
     // 当前员工信息

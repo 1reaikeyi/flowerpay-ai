@@ -10,7 +10,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import common.constant.ErrorConstant;
 import common.constant.RedisPrefixConstant;
 import common.exception.FlowerCategoryFailedException;
-import result.PageResult;
+import com.branch.result.PageResult;
 import com.branch.mapper.FlowerCategoryMapper;
 import com.branch.domain.dto.FlowerCategoryPageDTO;
 import com.branch.domain.dto.FlowerCategoryDTO;

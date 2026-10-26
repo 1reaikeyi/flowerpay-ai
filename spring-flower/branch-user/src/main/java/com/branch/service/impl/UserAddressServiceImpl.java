@@ -9,7 +9,7 @@ import com.branch.mapper.UserAddressMapper;
 import com.branch.service.UserAddressService;
 import common.constant.ErrorConstant;
 import common.exception.UseAddressFailedException;
-import result.ScrollResult;
+import com.branch.result.ScrollResult;
 import com.branch.domain.dto.UserAddressDTO;
 import com.branch.domain.entity.UserAddress;
 import org.springframework.stereotype.Service;

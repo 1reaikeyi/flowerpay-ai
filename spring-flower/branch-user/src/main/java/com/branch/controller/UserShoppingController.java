@@ -4,7 +4,7 @@ import com.branch.domain.dto.UserShoppingDTO;
 import com.branch.domain.vo.UserShoppingVO;
 import com.branch.service.UserShoppingService;
 import framework.aop.oparation.OperationSuccessEnum;
-import result.Result;
+import com.branch.result.Result;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;

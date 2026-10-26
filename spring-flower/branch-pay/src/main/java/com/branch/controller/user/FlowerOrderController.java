@@ -5,8 +5,8 @@ import com.branch.domain.dto.FlowerOrderPageDTO;
 import com.branch.domain.vo.FlowerOrderVO;
 import com.branch.service.FlowerOrderService;
 import framework.aop.oparation.OperationSuccessEnum;
-import result.PageResult;
-import result.Result;
+import com.branch.result.PageResult;
+import com.branch.result.Result;
 import jakarta.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;

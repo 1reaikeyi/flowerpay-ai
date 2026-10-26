@@ -12,7 +12,7 @@ import com.github.benmanes.caffeine.cache.Cache;
 import common.constant.ErrorConstant;
 import common.constant.RedisPrefixConstant;
 import common.exception.FestivalFailedException;
-import result.PageResult;
+import com.branch.result.PageResult;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import com.branch.mapper.FestivalMapper;

@@ -3,7 +3,7 @@ package com.branch.controller.user;
 import com.branch.domain.vo.FlowerDetailVO;
 import com.branch.service.FlowerDetailService;
 import framework.aop.oparation.OperationSuccessEnum;
-import result.Result;
+import com.branch.result.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;

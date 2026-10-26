@@ -27,14 +27,14 @@ import common.exception.EmployeeFailedException;
 import common.exception.LoginFailedException;
 import common.exception.PasswordErrorException;
 
-import result.PageResult;
+import com.branch.result.PageResult;
 
 import common.RoleConstant;
 import common.StatusConstant;
 import framework.bo.UserBO;
 import framework.properties.JwtProperties;
 import framework.security.LoginUserDetails;
-import framework.util.JwtUtil;
+import com.branch.util.JwtUtil;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
