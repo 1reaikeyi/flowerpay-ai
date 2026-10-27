@@ -32,11 +32,7 @@ public class BlogCommentsServiceImpl extends ServiceImpl<BlogCommentsMapper, Blo
         return stringRedisTemplate.opsForHyperLogLog().size(BLOG_VIEW_PREFIX + id);
     }
 
-    /**
-     * 插入（批量）
-     *
-     * @param entityList 实体对象集合
-     */
+
     @Override
     public boolean saveBatch(Collection<BlogComments> entityList) {
         return super.saveBatch(entityList);

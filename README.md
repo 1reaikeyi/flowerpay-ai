@@ -1,7 +1,9 @@
 <div align="center">
   <h1>flowerpay-ai 鲜花商店 + ai</h1>
-  <h5>后端利用 Spring Boot 3 的高效与安全性提供 RESTful API 服务，前端借助 Vue 3 实现流畅的用户交互体验的构建的现代化前后端分离系统。通过多级缓存热点数据以提升系统响应速度，Druid 负责MySQL连接池与 SQL 监控，保障订单、库存数据访问；使用redis_exporter采集多级缓存命中率使用情况，监视redis。</h5>	   <h5>主业务为B2C经营模式，一个花店卖家，多个买家，由店长、店员和客户组成，前台鲜花经营及后台管理系统。分支业务org.springframework.ai的openai +com.alibaba.cloud.ai的graph，问一问rag的使用用途和送人对象，拍一拍识别推荐花束。</h5>
+  <h5>后端利用 Spring Boot 3 的高效与安全性提供 RESTful API 服务，前端借助 Vue 3 实现流畅的用户交互体验的构建的现代化前后端分离系统。通过多级缓存热点数据以提升系统响应速度，Druid 负责MySQL连接池与 SQL 监控，保障订单、库存数据访问；使用redis_exporter采集多级缓存命中率使用情况，监视redis。</h5>
+    <h5>主业务为B2C经营模式，一个花店卖家，多个买家，由店长、店员和客户组成，前台鲜花经营及RBAC后台管理系统,统计数据分析,店铺管理,博客发布更新和评论服务，优惠卷秒杀服务。分支业务org.springframework.ai的openai +com.alibaba.cloud.ai的graph，问一问rag的使用用途和送人对象，拍一拍识别推荐花束。</h5>
 </div>
+
 ---
 
 ## 配置说明
@@ -18,79 +20,14 @@
     </h1>
 </div>
 ---
+## 接口和项目结构
 
-## 接口文档
-
-flowerpay-ai\说明\admin接口文档.md
-
-flowerpay-ai\说明\user接口文档.md
-
-## 项目结构
-
-flowerpay-ai\说明\wiki.md
-
-## 数据流向图
-
-```mermaid
-flowchart TB
-	%% ============ 基建层 ============
-    subgraph INFRA["基建层"]
-        direction LR
-        I1["Linux 服务器"]
-        I2["Docker 容器化"]
-        I3["硬盘存储"]
-        I4["阿里云OSS"]
-    end
-     %% ============ 数据层 ============
-    subgraph DATA["数据层"]
-        direction LR
-        D1["MySQL 业务主库"]
-        D2["Redis 缓存/分布式锁"]
-        D3["阿里云 OSS 商品图片"]
-        D4["本地硬盘 私有文件"]
-        D5["Excel 导出 报表数据"]
-        D2["进程缓存"]
-    end
- 	%% ============ 业务层 ============
-    subgraph BIZ["业务层"]
-        direction LR
-        BK1["后台管理服务"]
-        BK2["统计数据分析"]
-        BK3["Spring Security权限"]
-        BK4["Spring AI 服务"]
-        BK5["文件上传服务"]
-        BK6["Redis缓存服务"]
-        BK7["aop日志服务"]
-    end
-    
-    %% ============ 服务层（业务模块）============
-    subgraph SERVICE["服务层"]
-        direction LR
-        S1["用户模块"]
-        S2["员工模块"]
-        S3["分类模块"]
-        S4["鲜花单品模块"]
-        S5["节日多花模块"]
-        S7["订单模块"]
-        S8["支付模块"]
-        S9["文件模块"]
-    end
-  	%% ============ 请求转发层 ============
-    subgraph GATEWAY["请求转发层"]
-        direction LR
-        GB1["Nginx 负载均衡"]
-        GB2["敏感词拦截"]
-        GB3["黑名单"]
-    end
-
-    %% ============ 客户端 ============
-    subgraph CLIENT["客户端"]
-        direction LR
-        C1["店长"]
-        C3["店员"]
-        C2["用户端"]
-    end
-```
+<div align="center">
+    <h5>flowerpay-ai\说明\admin接口文档.md</h5>			
+    <h5>flowerpay-ai\说明\admin接口文档.md</h5>
+    <h5>flowerpay-ai\说明\wiki.md</h5>
+</div>
+---
 
 # 前端说明
 
@@ -99,14 +36,8 @@ flowchart TB
 | <img src="说明/原型功能/admin1.png" alt="管理端登录" style="zoom: 50%;" /> | <img src="说明/原型功能/admin2.png" alt="管理端登录" style="zoom: 50%;" /> | <img src="说明/原型功能/admin33.png" alt="管理端登录" style="zoom: 50%;" /> |
 | :----------------------------------------------------------: | :----------------------------------------------------------: | ------------------------------------------------------------ |
 | <img src="说明/原型功能/admin333.png" alt="管理端登录" style="zoom: 50%;" /> | <img src="说明/原型功能/admin3.png" alt="管理端登录" style="zoom: 50%;" /> | <img src="说明/原型功能/admin4.png" alt="管理端登录" style="zoom: 50%;" /> |
-| <img src="说明/原型功能/admin444.png" alt="管理端登录" style="zoom: 50%;" /> | <img src="说明/原型功能/admin5.png" alt="管理端登录" style="zoom: 50%;" /> | <img src="说明/原型功能/admin55.png" alt="管理端登录" style="zoom: 50%;" /> |
+| <img src="说明/原型功能/admin44.png" alt="管理端登录" style="zoom: 50%;" /> | <img src="说明/原型功能/admin5.png" alt="管理端登录" style="zoom: 50%;" /> | <img src="说明/原型功能/admin55.png" alt="管理端登录" style="zoom: 50%;" /> |
 | <img src="说明/原型功能/admin6.png" alt="管理端登录" style="zoom: 50%;" /> | <img src="说明/原型功能/admin7.png" alt="管理端登录" style="zoom: 50%;" /> |                                                              |
-|                                                              |                                                              |                                                              |
-
-## statistics
-
-| top                                                          | inventory                                                    | count                                                        |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | <img src="说明/原型功能/statistics3.png" alt="statistics" style="zoom: 50%;" /> | <img src="说明/原型功能/statistics1.png" alt="statistics" style="zoom: 50%;" /> | <img src="说明/原型功能/statistics2.png" alt="statistics" style="zoom: 50%;" /> |
 
 ## 用户端
@@ -123,7 +54,7 @@ flowchart TB
 
 # 后端说明
 
-## 一、店长、店员和客户登录模块
+## 多端登录模块
 
 ### model
 
@@ -174,7 +105,10 @@ Q: 如何保证role权限？
 
 ------
 
-## 二、flower-category , flower，festival，flower-detial，festival-detail模块
+## 鲜花商品模块
+
+| <img src="说明/原型功能/redis1.png" alt="redis" style="zoom: 50%;" /> | <img src="说明/原型功能/redis3.png" alt="redis" style="zoom: 50%;" /> |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
 
 ### model
 
@@ -189,20 +123,11 @@ Q: 如何保证role权限？
 3. 多花组合模块
 
 - 关系：`festival` : `festival_detail` = 1 : N
-
 - 索引：index idx_festival_id (festival_id)、index idx_flower_id (flower_id)，优化 ORDER BY 和 GROUP BY 操作
 
 ---
 
-1 对于category使用springcache
-
-```diff
-1 统一结构@CacheConfig(cacheNames = RedisPrefixConstant.CATEGORY_TYPE_PREFIX)
-2 get加@Cacheable(key = "#type")
-3 post,put,delete删@CacheEvict(allEntries = true)
-```
-
-2 对于flower，festival，flower-detial，festival-detail这些热点信息使用多级缓存
+对于这些热点信息使用多级缓存
 
 ```mermaid
 %%{init: {'theme':'neutral','themeVariables':{'fontSize':'8px','nodeBorder':'2px'},'flowchart':{'nodeSpacing':8,'rankSpacing':32,'useMaxWidth':false,'curve':'basis'}}}%%
@@ -249,11 +174,11 @@ flowchart LR
     Browser --> User
 ```
 
-**redis预热**
+**1 redis预热**
 
 使用@PreConstruct+@PreDestory管理
 
-**DB查询**
+**2 DB查询**
 
 ```mermaid
 %%{init: {'theme':'neutral','themeVariables':{'fontSize':'8px','nodeBorder':'2px'},'flowchart':{'nodeSpacing':8,'rankSpacing':32,'useMaxWidth':false,'curve':'basis'}}}%%
@@ -268,7 +193,7 @@ flowchart TD
     F --> H([返回 flower])
 ```
 
-**因为flower模块 festival模块的价格存在因为节日，花的保质期限制处于动态变化，异步更新后拿到新数据，返回新数据**
+**3 因为flower，festival模块的价格存在因为节日，花的保质期限制处于动态变化，异步更新后拿到新数据，返回新数据**
 
 ```mermaid
 %%{init: {'theme':'neutral','themeVariables':{'fontSize':'8px','nodeBorder':'2px'},'flowchart':{'nodeSpacing':8,'rankSpacing':32,'useMaxWidth':false,'curve':'basis'}}}%%
@@ -285,7 +210,7 @@ flowchart TD
     F --> R
 ```
 
-**flower-detial，festival-detail使用逻辑过期处理**
+**4 flower-detial，festival-detail使用传统逻辑过期处理**
 
 ```mermaid
 %%{init: {'theme':'neutral','themeVariables':{'fontSize':'8px','nodeBorder':'2px'},'flowchart':{'nodeSpacing':8,'rankSpacing':32,'useMaxWidth':false,'curve':'basis'}}}%%
@@ -318,7 +243,7 @@ flowchart TD
 |           缓存雪崩           | 基础 TTL 叠加 ±10% 随机偏移；列表、详情缓存设置不同过期周期  |
 |       缓存数据库一致性       |                       兜底物理 TTL24h                        |
 | 悲观锁不能解决集群和并发问题 | Redisson 可重入分布式锁 + 看门狗自动续期；加锁后双重检查缓存 |
-|    redis宕机的突发性问题     | Redis 不可用：降级直查数据库<br> log.info("Redis 宕机:{}", e.getMessage()); Flower flower = this.getMysql(id); return BeanUtil.toBean(flower, FlowerVO.class); |
+|    redis宕机的突发性问题     |                 Redis 不可用：降级直查数据库                 |
 
 排除冷启动的达到稳定，进行统计
 
@@ -358,7 +283,141 @@ flowchart TD
 | 日志                          | flowerpay-ai/说明/并发测试/festival-运行日志-缓存.txt        |
 | 对比                          | 无缓存场景：接口平均响应时间 761ms，90% 请求响应时间 1595ms，95% 请求响应时间 1629ms，99% 请求响应时间 1746ms，吞吐量 34.3 次每秒，错误率 0%。 开启缓存场景：接口平均响应时间 136ms，90% 请求响应时间 327ms，95% 请求响应时间 346ms，99% 请求响应时间 423ms，吞吐量 150.6 次每秒，错误率 0%。 |
 
-## 三、订单状态流转
+## 文章和评论模块
+
+<img src="说明/原型功能/redis4.png" alt="redis" style="zoom: 50%;" />
+
+### 迭代过程
+
+Q：为什么点赞用Redis的ZSet而不是普通Set？
+
+> A：ZSet可以存储分数（timestamp），这样可以按点赞时间排序，方便获取热门点赞用户。同时ZSet的score操作是原子的，不会出现并发问题。
+
+Q：为什么点赞数同时存Redis和MySQL？
+
+> A：Redis用于实时查询和计数，MySQL用于持久化存储。点赞操作先更新MySQL再更新Redis，保证数据最终一致性。
+
+Q：为什么用parent_id区分评论和回复？
+
+> A：`parent_id = 0` 表示直接评论博文，`parent_id = 1` 表示回复其他评论。这种设计可以支持无限层级的回复，同时查询时可以通过parent_id区分评论和回复。
+
+## 优惠券使用模块
+
+### 组件：ID生成器（RedisID）
+
+```java
+@Component
+public class RedisID {
+    // 基准时间：2020-01-01 00:00:00 UTC
+    private final static long BEGIN_TIME = 1577836800L;
+    // 32位序号最大值
+    private static final long MAX_SEQ = 0xFFFFFFFFL;
+
+    public long createId(String prefix) {
+        long nowSeconds = ZonedDateTime.now(ZoneOffset.UTC).toEpochSecond();
+        long timestamp = nowSeconds - BEGIN_TIME;
+        
+        String date = ZonedDateTime.now(ZoneOffset.UTC)
+            .format(DateTimeFormatter.ofPattern("yyyy:MM:dd"));
+        String key = "icr:" + prefix + ":" + date;
+        long count = stringRedisTemplate.opsForValue().increment(key);
+        
+        return timestamp << 32 | count;
+    }
+}
+```
+
+Q：为什么不用UUID？
+
+> A：UUID是随机字符串，无序，作为数据库主键会导致索引分裂，影响性能。而且UUID太长（36位），存储和传输成本高。
+
+Q：为什么不用数据库自增ID？
+
+> A：数据库自增ID在分布式环境下需要额外处理（比如分库分表），而且生成ID需要访问数据库，性能不如Redis。
+
+Q：ID结构为什么是 1位符号位+时间戳(31位) + 序号(32位)？
+
+> A：0作为符号位，正数自增，31位时间戳可以表示约68年（2^31秒 ≈ 68年），从2020年开始够用。32位序号可以表示约42亿，足够单日并发使用
+
+### 秒杀流程图
+
+**同步版本流程**
+
+```
+用户请求 → 校验秒杀活动 → 生成订单ID → 直接调用secondKill() → 扣库存+保存订单 → 返回结果
+```
+
+**异步单机流程**
+
+```
+用户请求 → 校验秒杀活动 → Lua脚本校验 → 放入ArrayBlockingQueue → 返回订单ID
+                                                              ↓
+                                        后台线程 take() → RedisLock → paySuccess() → 扣库存+保存订单
+```
+
+**异步分布式流程**
+
+```
+用户请求 → 校验秒杀活动 → Lua脚本校验（自动XADD到Stream）→ 返回订单ID
+                                                         ↓
+                                XREADGROUP读取 → 解析订单 → secondKill() → 扣库存+保存订单 → ACK确认
+```
+
+**数据库操作阶段**
+
+1. **一人一单校验**：在事务中基于用户ID和优惠券ID查询已存在订单
+2. **原子库存扣减**：使用 MyBatis Plus 的乐观锁 CAS 操作保证库存扣减的原子性
+3. **订单创建**：保存订单记录
+
+```
+用户请求 → Lua脚本校验（库存+重复下单）→ 成功
+								  ↓ →放入异步队列 → 后台线程处理（扣库存+保存订单）
+                                  ↓ →失败→直接返回
+```
+
+**redis操作阶段**：
+
+```lua
+-- 参数：优惠券ID、用户ID
+local voucherId = ARGV[1]
+local userId = ARGV[2]
+
+-- Redis Key定义
+local stockKey = "voucherSeckill:stock:" .. voucherId
+local orderKey = "voucherSeckill:order:" .. voucherId
+
+-- 1. 判断库存
+if tonumber(redis.call('get', stockKey)) <= 0 then
+    return 1  -- 库存不足
+end
+
+-- 2. 判断是否已下单
+if redis.call('sismember', orderKey, userId) > 0 then
+    return 2  -- 重复下单
+end
+
+-- 3. 扣减库存
+redis.call('incrby', stockKey, -1)
+
+-- 4. 记录下单用户
+redis.call('sadd', orderKey, userId)
+
+-- 5. 成功
+return 0
+```
+
+###  迭代过程
+
+| 维度           | VoucherSeckillController | VoucherController  | VoucherOrderController |
+| :------------- | :----------------------- | :----------------- | :--------------------- |
+| **处理方式**   | 同步                     | 异步               | 异步（Redis Stream）   |
+| **队列类型**   | 无                       | ArrayBlockingQueue | Redis Stream           |
+| **多服务支持** | 支持                     | 不支持             | 支持（消费组）         |
+| **故障恢复**   | 无状态                   | 重启丢失           | 消息可恢复             |
+
+---
+
+## 订单模块
 
 ### model
 
@@ -380,7 +439,7 @@ flowchart TD
 | 同步支付结果   | <img src="说明/支付宝支付/pay3.png" alt="支付" style="zoom: 25%;" /> |
 | 异步验签结果   | <img src="说明/支付宝支付/pay4.png" alt="支付" style="zoom: 25%;" /> |
 
-## 四、user模块
+## 用户模块
 
 ### model
 
@@ -416,7 +475,7 @@ Q:Redis Hash 结构
    内层 field：购物项唯一 id，value：商品完整信息 JSON
 ```
 
-## 五、文件管理
+## 文件管理模块
 
 ### model
 
@@ -431,7 +490,7 @@ GET /report/excel/download 流式写入Response输出流，边写边返回，不
 
 UUID 重命名策略，丢弃原始文件名，UUID + 后缀生成全新文件名，解决重名覆盖、路径遍历攻击、中文乱码三大问题。
 
-## 六、branch-AI
+## 接入AI模块
 
 ### model
 
@@ -524,13 +583,13 @@ flowchart TD
     end
 ```
 
-## 七 、branch-generator
+## 代码生成generator模块
 
 ### model
 
-代码生成器模块，修改和导入新功能的快速实现
+代码生成entity,mapper,service,controller，修改和导入新功能的快速实现
 
-## 八、运维监测和aop日志
+## 运维监测模块
 
 ### model
 
@@ -547,10 +606,9 @@ log.info("role: " + operationType.type+", ID: "+operationType.id+", 执行操作
 
 2 监测DB
 
-| 1    | <img src="说明/运维监测/druid1.png" style="zoom: 33%;" /> |
-| ---- | --------------------------------------------------------- |
-| 2    | <img src="说明/运维监测/druid2.png" style="zoom: 33%;" /> |
-| 3    | <img src="说明/运维监测/druid3.png" style="zoom: 33%;" /> |
+| <img src="说明/运维监测/druid2.png" style="zoom: 25%;" /> | <img src="说明/运维监测/druid1.png" style="zoom: 25%;" /> |
+| --------------------------------------------------------- | --------------------------------------------------------- |
+| <img src="说明/运维监测/druid3.png" style="zoom: 25%;" /> |                                                           |
 
 3 监测redis
 

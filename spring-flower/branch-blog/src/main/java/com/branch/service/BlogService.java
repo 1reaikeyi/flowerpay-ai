@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 
 import com.branch.domain.dto.BlogDTO;
 import com.branch.domain.entity.Blog;
+import com.branch.result.PageResult;
 import com.branch.result.ScrollResult;
 
 import java.util.Set;
@@ -17,7 +18,7 @@ public interface BlogService extends IService<Blog> {
      *
      * @return 博客ID
      */
-    Long createBlog(BlogDTO blogDTO);
+    Long postBlog(BlogDTO blogDTO);
 
     /**
      * 点赞/取消点赞
@@ -42,10 +43,12 @@ public interface BlogService extends IService<Blog> {
      *
      * @return 用户列表，无数据返回 null
      */
-    Object likedHot(Long id);
-
+    Object likedTop(long id);
     /**
      * 关注流收件箱：滚动分页查询已关注用户发布的博客
      */
     ScrollResult followScroll(Long max, Long offset);
+
+    PageResult<BlogDTO> readAll();
+
 }

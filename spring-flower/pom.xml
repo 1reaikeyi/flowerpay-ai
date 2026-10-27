@@ -39,7 +39,7 @@
         <module>branch-ai</module>
         <module>branch-file</module>
         <module>branch-blog</module>
-
+        <module>branch-manage</module>
     </modules>
 
     <properties>

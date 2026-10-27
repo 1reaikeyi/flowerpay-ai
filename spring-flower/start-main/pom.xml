@@ -30,12 +30,27 @@
         </dependency>
         <dependency>
             <groupId>org.example</groupId>
-            <artifactId>branch-pay</artifactId>
+            <artifactId>branch-file</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.example</groupId>
             <artifactId>branch-flower</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>branch-blog</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>branch-manage</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>branch-pay</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 

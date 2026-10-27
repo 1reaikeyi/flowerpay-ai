@@ -1,8 +1,9 @@
 package com.branch.controller;
 
 import com.branch.domain.dto.TimeDTO;
+import com.branch.result.Result;
 import com.branch.service.SignService;
-import common.result.Result;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;

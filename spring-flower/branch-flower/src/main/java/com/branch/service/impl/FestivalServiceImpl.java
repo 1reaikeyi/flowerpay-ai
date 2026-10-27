@@ -9,9 +9,9 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.github.benmanes.caffeine.cache.Cache;
-import common.constant.ErrorConstant;
-import common.constant.RedisPrefixConstant;
-import common.exception.FestivalFailedException;
+import com.branch.common.constant.ErrorConstant;
+import com.branch.common.constant.RedisPrefixConstant;
+import com.branch.common.exception.FestivalFailedException;
 import com.branch.result.PageResult;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
@@ -66,7 +66,7 @@ public class FestivalServiceImpl extends ServiceImpl<FestivalMapper, Festival> i
     public FestivalVO readCache(Long id) {
         String key = RedisPrefixConstant.FESTIVAL_PREFIX + id;
         String value;
-
+        LogicData logicData = new LogicData();
         FestivalVO festivalVO = (FestivalVO) festivalLocalCache.getIfPresent(key);
         if (festivalVO != null) {
             return festivalVO;
@@ -81,26 +81,16 @@ public class FestivalServiceImpl extends ServiceImpl<FestivalMapper, Festival> i
                 festivalLocalCache.put(key, vo);
                 return vo;
             }
+            logicData = JSONUtil.toBean(value, LogicData.class);
         } catch (Exception e) {
             log.info("Redis 宕机:{}", e.getMessage());
             // Redis 不可用：降级直查数据库
-            Festival festival = this.getCache(id);
+            Festival festival = this.getMysql(id);
             FestivalVO vo = festival != null ? BeanUtil.toBean(festival, FestivalVO.class) : null;
             festivalLocalCache.put(key, vo);
             return vo;
         }
 //        2 缓存存在
-        LogicData logicData = new LogicData();
-        try {
-            logicData = JSONUtil.toBean(value, LogicData.class);
-        } catch (Exception e) {
-            log.info("json 解析失败:{}", e.getMessage());
-            Festival festival = this.getCache(id);
-            FestivalVO vo = festival != null ? BeanUtil.toBean(festival, FestivalVO.class) : null;
-            festivalLocalCache.put(key, vo);
-            return vo;
-        }
-
         FestivalVO old = null;
         if (logicData.getData() == null) {
             //防止穿透
@@ -260,12 +250,10 @@ public class FestivalServiceImpl extends ServiceImpl<FestivalMapper, Festival> i
 
     @Override
     public void deleteCache(List<Long> ids) {
-        this.removeByIds(ids);
         for (Long id : ids) {
             festivalLocalCache.invalidate(RedisPrefixConstant.FESTIVAL_PREFIX + id);
             stringRedisTemplate.delete(RedisPrefixConstant.FESTIVAL_PREFIX + id);
         }
-
     }
 
     @Override

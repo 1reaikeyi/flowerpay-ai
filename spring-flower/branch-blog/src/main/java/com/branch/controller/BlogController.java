@@ -2,6 +2,7 @@ package com.branch.controller;
 
 import com.branch.domain.dto.BlogDTO;
 
+import com.branch.result.PageResult;
 import jakarta.websocket.server.PathParam;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,9 +19,9 @@ public class BlogController {
     private BlogService blogService;
 
     @PostMapping
-    public Result createBlog(@RequestBody BlogDTO blogDTO) {
-        Long blogId = blogService.createBlog(blogDTO);
-        return Result.success("createBlog::" + blogId);
+    public Result postBlog(@RequestBody BlogDTO blogDTO) {
+        Long blogId = blogService.postBlog(blogDTO);
+        return Result.success(blogId);
     }
 
     @GetMapping("/{id}")
@@ -30,7 +31,8 @@ public class BlogController {
 
     @GetMapping("/all")
     public Result readBlog() {
-        return Result.success(blogService.list());
+        PageResult<BlogDTO> pageResult = blogService.readAll();
+        return Result.success(pageResult);
     }
 
     @PostMapping("/liked")
@@ -49,18 +51,15 @@ public class BlogController {
     }
 
     @GetMapping("/liked/of/user")
-    public Result likedHot(@PathParam("id") long id) {
-        Object hot = blogService.likedHot(id);
-        if (hot == null) {
+    public Result likedTop(@PathParam("id") long id) {
+        Object top = blogService.likedTop(id);
+        if (top == null) {
             return Result.error(null);
         }
-        return Result.success(hot);
+        return Result.success(top);
     }
 
-    /**
-     * blog 收件箱
-     */
-    @GetMapping("/follow/of/all")
+    @GetMapping("/liked/of/follow")
     public Result follow(@RequestParam(required = false) Long max, Long offset) {
         ScrollResult scrollResult = blogService.followScroll(max, offset);
         return Result.success(scrollResult);

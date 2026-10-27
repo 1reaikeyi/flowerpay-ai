@@ -20,17 +20,17 @@ import com.branch.mapper.EmployeeMapper;
 import com.branch.service.EmployeeRoleService;
 import com.branch.service.EmployeeService;
 import com.branch.service.RolePermissionService;
-import common.constant.RedisPrefixConstant;
-import common.constant.ErrorConstant;
-import common.constant.JwtConstant;
-import common.exception.EmployeeFailedException;
-import common.exception.LoginFailedException;
-import common.exception.PasswordErrorException;
+import com.branch.common.constant.RedisPrefixConstant;
+import com.branch.common.constant.ErrorConstant;
+import com.branch.common.constant.JwtConstant;
+import com.branch.common.exception.EmployeeFailedException;
+import com.branch.common.exception.LoginFailedException;
+import com.branch.common.exception.PasswordErrorException;
 
 import com.branch.result.PageResult;
 
-import common.RoleConstant;
-import common.StatusConstant;
+import com.branch.common.RoleConstant;
+import com.branch.common.StatusConstant;
 import framework.bo.UserBO;
 import framework.properties.JwtProperties;
 import framework.security.LoginUserDetails;

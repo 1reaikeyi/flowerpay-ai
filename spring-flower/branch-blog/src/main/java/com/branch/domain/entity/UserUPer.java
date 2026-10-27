@@ -24,7 +24,7 @@ public class UserUPer implements Serializable {
     /**
      * 主键，用户 id
      */
-    @TableId(value = "user_id", type = IdType.INPUT)
+    @TableId(value = "user_id")
     private Long userId;
 
     /**

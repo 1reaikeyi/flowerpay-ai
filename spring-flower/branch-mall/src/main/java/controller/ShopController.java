@@ -1,6 +1,6 @@
 package controller;
 
-import common.result.Result;
+import com.branch.common.result.Result;
 import model.dto.ShopDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

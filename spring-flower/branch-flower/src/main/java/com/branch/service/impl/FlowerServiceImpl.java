@@ -8,9 +8,9 @@ import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import common.constant.ErrorConstant;
-import common.constant.RedisPrefixConstant;
-import common.exception.FlowerFailedException;
+import com.branch.common.constant.ErrorConstant;
+import com.branch.common.constant.RedisPrefixConstant;
+import com.branch.common.exception.FlowerFailedException;
 import com.branch.result.PageResult;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
@@ -64,7 +64,7 @@ public class FlowerServiceImpl extends ServiceImpl<FlowerMapper, Flower> impleme
     public FlowerVO readCache(Long id) {
         String key = RedisPrefixConstant.FLOWER_PREFIX + id;
         String value;
-
+        LogicData logicData = new LogicData();
         FlowerVO localVo = (FlowerVO) flowerLocalCache.getIfPresent(key);
         if (localVo != null) {
             return localVo;
@@ -79,6 +79,7 @@ public class FlowerServiceImpl extends ServiceImpl<FlowerMapper, Flower> impleme
                 flowerLocalCache.put(key, flowerVO);
                 return flowerVO;
             }
+            logicData = JSONUtil.toBean(value, LogicData.class);
         } catch (Exception e) {
             log.info("Redis 宕机:{}", e.getMessage());
             // Redis 不可用：降级直查数据库
@@ -88,17 +89,6 @@ public class FlowerServiceImpl extends ServiceImpl<FlowerMapper, Flower> impleme
             return flowerVO;
         }
 //        2 缓存存在
-        LogicData logicData = new LogicData();
-        try {
-            logicData = JSONUtil.toBean(value, LogicData.class);
-        } catch (Exception e) {
-            log.info("json 解析失败:{}", e.getMessage());
-            Flower flower = this.getCache(id);
-            FlowerVO flowerVO = flower != null ? BeanUtil.toBean(flower, FlowerVO.class) : null;
-            flowerLocalCache.put(key, flowerVO);
-            return flowerVO;
-        }
-
         FlowerVO old = null;
         if (logicData.getData() == null) {
             //防止穿透
@@ -258,7 +248,6 @@ public class FlowerServiceImpl extends ServiceImpl<FlowerMapper, Flower> impleme
 
     @Override
     public void deleteCache(List<Long> ids) {
-        this.removeByIds(ids);
         for (Long id : ids) {
             flowerLocalCache.invalidate(RedisPrefixConstant.FLOWER_PREFIX + id);
             stringRedisTemplate.delete(RedisPrefixConstant.FLOWER_PREFIX + id);

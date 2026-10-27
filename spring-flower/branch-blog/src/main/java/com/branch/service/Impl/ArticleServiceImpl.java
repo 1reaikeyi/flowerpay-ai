@@ -4,20 +4,28 @@ import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.json.JSONUtil;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.branch.common.constant.ErrorConstant;
+import com.branch.common.constant.RedisPrefixConstant;
 import com.branch.domain.dto.ArticleDTO;
+import com.branch.domain.vo.ArticleVO;
 import com.branch.domain.wrapper.LogicData;
 import com.branch.mapper.ArticleMapper;
+import com.github.benmanes.caffeine.cache.Cache;
 import lombok.extern.slf4j.Slf4j;
 import com.branch.domain.entity.Article;
 
+import org.redisson.api.RLock;
+import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import com.branch.service.ArticleService;
 import org.springframework.stereotype.Service;
 
 
+import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -26,87 +34,124 @@ import java.util.concurrent.TimeUnit;
 @Service
 @Slf4j
 public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> implements ArticleService {
-    private final static String KEYS = "category:";
-    private final static String LOCK_KEY = "category:lock";
+
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
+    @Autowired
+    private RedissonClient redissonClient;
+    @Autowired
+    private Cache<String, Object> articleCache;
+
+    // 时间统一使用s结算
+    private static final long FLASH_CACHE_TTL = 30L;
+    private static final long NEED_FLASH_CACHE_TTL = FLASH_CACHE_TTL / 10;
+    private static final long REDIS_EXIST_TTL = 86400L;
+    private static final Random RANDOM = new Random();
 
     @Override
     public ArticleDTO create(ArticleDTO articleDTO) {
-        return null;
+        Article article = BeanUtil.toBean(articleDTO, Article.class);
+        this.save(article);
+        ArticleDTO newArticle = BeanUtil.toBean(articleDTO, ArticleDTO.class);
+        return newArticle;
     }
 
     @Override
-    public Article readCache(Long id) {
-//        Article article = logicalCache(id);
-//        return article;
-        return null;
+    public ArticleVO readCache(Long id) {
+        ArticleVO articleVO = logicalCache(id);
+        return articleVO;
+
     }
 
-//    private Article logicalCache(Long id) {
-//        String key = KEYS + id;
-//        //1 直接从缓存中获取数据
-//        String categoryJson = stringRedisTemplate.opsForValue().get(key);
-//        //2缓存不存在
-//        if (StrUtil.isBlank(categoryJson)) {
-//            Article article = super.getById(id);
-//            LogicData logicData = new LogicData();
-//            //没有id
-//            if (article == null) {
-//                logicData.setExpireTime(LocalDateTime.now().plusSeconds(30));
-//                logicData.setData(null);
-//                stringRedisTemplate.opsForValue().set(key, JSONUtil.toJsonStr(logicData));
-//                throw  new RuntimeException("id不存在");
-//            }
-//            //有id
-//            logicData.setData(article);
-//            logicData.setExpireTime(LocalDateTime.now().plusSeconds(5));
-//            stringRedisTemplate.opsForValue().set(key, JSONUtil.toJsonStr(logicData));
-//            return article;
-//        }
-//        //3 缓存存在
-//        LogicData logicData = JSONUtil.toBean(categoryJson, LogicData.class);
-//        LocalDateTime expireTime = logicData.getExpireTime();
-//        //过期
-//        if (expireTime.isBefore(LocalDateTime.now())) {
-//            log.info("Category缓存过期");
-//            Boolean success = cacheLocked();
-//            if (success) {
-//                try {
-//                    Article article = super.getById(id);
-//                    logicData.setExpireTime(LocalDateTime.now().plusSeconds(5));
-//                    logicData.setData(article);
-//                    stringRedisTemplate.opsForValue().set(key, JSONUtil.toJsonStr(logicData));
-//                } catch (Exception e) {
-//                    throw new RuntimeException(e);
-//                } finally {
-//                    if (success) {
-//                        cacheUnlock();
-//                    }
-//                }
-//            }else {
-//                throw new RuntimeException("服务器繁忙，请稍后重试");
-//            }
-//        }
-//        //正常
-//        log.info("Category缓存正常");
-//        Article article = BeanUtil.toBean(logicData.getData(), Article.class);
-//        return article;
-//    }
+    private ArticleVO logicalCache(Long id) {
+        String key = RedisPrefixConstant.ARTICLE_PREFIX + id;
+        //1直接从缓存中获取数据
+        String value;
 
-    @Override
-    public Boolean updateCache(ArticleDTO article) {
-//        boolean result = super.updateById(article);
-//        stringRedisTemplate.delete(KEYS+ article.getId());
-//        return result;
+        ArticleVO localVo= (ArticleVO) articleCache.getIfPresent(key);
+        if (localVo != null) {
+            return localVo;
+        }
+        //2缓存不存在
+        LogicData logicData = new LogicData();
+        try {
+            value = stringRedisTemplate.opsForValue().get(RedisPrefixConstant.ARTICLE_PREFIX + id);
+            if (StrUtil.isBlank(value)) {
+                Article article = this.getCache(id);
+                ArticleVO articleVO = article == null ? null : BeanUtil.toBean(article, ArticleVO.class);
+                articleCache.put(key, articleVO);
+                return articleVO;
+            }
+            logicData = JSONUtil.toBean(value, LogicData.class);
+        } catch (Exception e) {
+            log.info("Redis 宕机:{}", e.getMessage());
+            // Redis 不可用：降级直查数据库
+            Article article = this.getMysql(id);
+            ArticleVO articleVO = article == null ? null : BeanUtil.toBean(article, ArticleVO.class);
+            articleCache.put(key, articleVO);
+            return articleVO;
+        }
+        //3 缓存存在
+        if(logicData.getData() == null){
+            return null;
+        }
+//        if(logicData.getData() != null){}
+        ArticleVO old = null;
+        old = BeanUtil.toBean(logicData.getData(), ArticleVO.class);
+        if (logicData.getExpireTime().isAfter(LocalDateTime.now())) {
+            long remainSec = Duration.between(LocalDateTime.now(), logicData.getExpireTime()).getSeconds();
+            if (remainSec < NEED_FLASH_CACHE_TTL) {
+                logicData.setExpireTime(LocalDateTime.now().plusSeconds(FLASH_CACHE_TTL));
+                stringRedisTemplate.opsForValue().set(key, JSONUtil.toJsonStr(logicData),
+                        REDIS_EXIST_TTL, TimeUnit.SECONDS);
+            }
+            log.info("缓存没有过期------------");
+            ArticleVO vo = BeanUtil.toBean(logicData.getData(), ArticleVO.class);
+            articleCache.put(key, vo);
+            return vo;
+        }
+        //逻辑过期：重建缓存
+        log.info("festival缓存过期-------------");
+        this.getRedis(id);
+        articleCache.put(key, old);
+        return old;
+    }
+    private Article getCache(Long id) {
+        String lockKey = "article:lock:" + id;
+        RLock lock = redissonClient.getLock(lockKey);
+        boolean locked = false;
+        try {
+            locked = lock.tryLock(10, TimeUnit.SECONDS);
+        } catch (Exception e) {
+            log.info("Redis 宕机:{}", e.getMessage());
+            return getMysql(id);
+        }
         return null;
+    }
+    private Article getMysql(Long id) {
+        Article article = this.getById(id);
+        if (article == null) {}
+        return null;
+    }
+    private void getRedis(Long id) {
+
+    }
+    @Override
+    public void updateCache(ArticleDTO articleDTO) {
+        if (articleDTO.getId() == null) {
+            throw new IllegalArgumentException(ErrorConstant.OPERATION_ERROR);
+        }
+        Article article = BeanUtil.toBean(articleDTO, Article.class);
+        this.updateById(article);
+        articleCache.invalidate(RedisPrefixConstant.ARTICLE_PREFIX + article.getId());
+        stringRedisTemplate.delete(RedisPrefixConstant.ARTICLE_PREFIX+article.getId());
     }
 
     @Override
-    public Boolean deleteCache(List<Long> id) {
-//        boolean result = super.removeById(id);
-//        stringRedisTemplate.delete(KEYS+id);
-//        return result;
-        return null;
+    public void deleteCache(List<Long> ids) {
+        for (Long id : ids) {
+            articleCache.invalidate(RedisPrefixConstant.ARTICLE_PREFIX + id);
+            stringRedisTemplate.delete(RedisPrefixConstant.ARTICLE_PREFIX+id);
+        }
     }
 }

@@ -6,9 +6,9 @@ import cn.hutool.json.JSONUtil;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.github.benmanes.caffeine.cache.Cache;
-import common.constant.ErrorConstant;
-import common.constant.RedisPrefixConstant;
-import common.exception.FlowerDetailFailedException;
+import com.branch.common.constant.ErrorConstant;
+import com.branch.common.constant.RedisPrefixConstant;
+import com.branch.common.exception.FlowerDetailFailedException;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import com.branch.mapper.FestivalDetailMapper;
@@ -61,6 +61,7 @@ public class FestivalDetailServiceImpl extends ServiceImpl<FestivalDetailMapper,
     public FestivalDetailVO readCache(Long id) {
         String key = RedisPrefixConstant.FESTIVALDETAIL_PREFIX + id;
         String value;
+        LogicData logicData = new LogicData();
 
         FestivalDetailVO festivalDetailVO = festivalDetailLocalCache.getIfPresent(key);
         if (festivalDetailVO != null) {
@@ -75,34 +76,22 @@ public class FestivalDetailServiceImpl extends ServiceImpl<FestivalDetailMapper,
                 festivalDetailLocalCache.put(key, vo);
                 return vo;
             }
+            logicData = JSONUtil.toBean(value, LogicData.class);
         } catch (Exception e) {
             log.info("Redis 宕机:{}", e.getMessage());
             // Redis 不可用：降级直查数据库
-            FestivalDetail festivalDetail = this.getCache(id);
+            FestivalDetail festivalDetail = this.getMysql(id);
             FestivalDetailVO vo = festivalDetail != null ? BeanUtil.toBean(festivalDetail, FestivalDetailVO.class) : null;
             festivalDetailLocalCache.put(key, vo);
             return vo;
         }
-        LogicData logicData = new LogicData();
-        try {
-            logicData = JSONUtil.toBean(value, LogicData.class);
-        } catch (Exception e) {
-            log.info("json解析失败:{}", e.getMessage());
-            // Redis 不可用：降级直查数据库
-            FestivalDetail festivalDetail = this.getCache(id);
-            FestivalDetailVO vo = festivalDetail != null ? BeanUtil.toBean(festivalDetail, FestivalDetailVO.class) : null;
-            festivalDetailLocalCache.put(key, vo);
-            return vo;
-        }
+
         if(logicData.getData() == null){
             return null;
         }
-        FestivalDetailVO old = null;
-        if (logicData.getData() == null){
-            return old;
-        }
-//        if (logicData.getData() != null){}
-            old = BeanUtil.toBean(logicData.getData(), FestivalDetailVO.class);
+        //if (logicData.getData() != null){}
+        FestivalDetailVO old = BeanUtil.toBean(logicData.getData(), FestivalDetailVO.class);
+
         if (logicData.getExpireTime().isAfter(LocalDateTime.now())){
             long remainSec = Duration.between(LocalDateTime.now(), logicData.getExpireTime()).getSeconds();
             if (remainSec < NEED_FLASH_CACHE_TTL) {
@@ -232,7 +221,6 @@ public class FestivalDetailServiceImpl extends ServiceImpl<FestivalDetailMapper,
 
     @Override
     public void deleteCache(List<Long> ids) {
-        this.removeByIds(ids);
         for (Long id : ids) {
             festivalDetailLocalCache.invalidate(RedisPrefixConstant.FLOWER_PREFIX + id);
             stringRedisTemplate.delete(RedisPrefixConstant.FESTIVALDETAIL_PREFIX + id);

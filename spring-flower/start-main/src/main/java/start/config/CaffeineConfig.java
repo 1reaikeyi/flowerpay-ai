@@ -1,5 +1,6 @@
 package start.config;
 
+import com.branch.domain.vo.ArticleVO;
 import com.branch.domain.vo.FestivalDetailVO;
 import com.branch.domain.vo.FlowerDetailVO;
 import org.springframework.context.annotation.Bean;
@@ -34,6 +35,15 @@ public class CaffeineConfig {
 
     @Bean
     public Cache<String, FestivalDetailVO> festivalDetailCache(){
+        return Caffeine.newBuilder()
+                .initialCapacity(32)
+                .maximumSize(64)
+                .expireAfterWrite(30, TimeUnit.MINUTES)
+                .recordStats()
+                .build();
+    }
+    @Bean
+    public Cache<String, ArticleVO> articleCache(){
         return Caffeine.newBuilder()
                 .initialCapacity(32)
                 .maximumSize(64)

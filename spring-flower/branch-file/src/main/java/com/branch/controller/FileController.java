@@ -24,7 +24,7 @@ import java.util.UUID;
 public class FileController {
 
     //本地存储 private数据 resource-ku
-    private static final String PATH = "branch-resource/image";
+    private static final String PATH = "resource/image";
 
     @PostMapping
     public Result upload(MultipartFile file) {

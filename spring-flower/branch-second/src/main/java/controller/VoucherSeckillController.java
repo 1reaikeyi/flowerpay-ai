@@ -1,6 +1,6 @@
 package controller;
 
-import common.result.Result;
+import com.branch.common.result.Result;
 import VoucherOrder;
 import domain.dto.VoucherOrderDTO;
 import org.springframework.beans.factory.annotation.Autowired;

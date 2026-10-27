@@ -11,5 +11,8 @@ public class RedisPrefixConstant {
     public final static String FLOWERDETAIL_PREFIX = "flowerDetail:";
     public final static String FESTIVAL_PREFIX = "festival:";
     public final static String FESTIVALDETAIL_PREFIX = "festivalDetail:";
-    public final static String SHOPPING_CART_PREFIX = "shopping:cart";
+    public final static String SHOPPING_CART_PREFIX = "shopping:cart:";
+    public final static String ARTICLE_PREFIX = "blog:article:";
+    public final static String SIGN_DAY = "sign:day:";
+
 }

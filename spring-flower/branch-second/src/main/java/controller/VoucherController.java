@@ -1,6 +1,6 @@
 package controller;
 
-import common.result.Result;
+import com.branch.common.result.Result;
 import domain.dto.VoucherDTO;
 import domain.dto.VoucherOrderDTO;
 import lombok.extern.slf4j.Slf4j;

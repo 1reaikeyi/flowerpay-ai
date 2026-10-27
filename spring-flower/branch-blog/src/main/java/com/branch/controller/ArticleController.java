@@ -3,6 +3,7 @@ package com.branch.controller;
 import com.branch.domain.dto.ArticleDTO;
 
 import com.branch.domain.dto.ArticlePageDTO;
+import com.branch.domain.vo.ArticleVO;
 import com.branch.result.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.transaction.annotation.Transactional;
@@ -36,7 +37,7 @@ public class ArticleController {
      * @return 结果
      */
     @PostMapping
-    public Result createCategory(@RequestBody @Validated ArticleDTO articleDTO) {
+    public Result create(@RequestBody @Validated ArticleDTO articleDTO) {
         ArticleDTO dto = articleService.create(articleDTO);
         return Result.success(dto);
     }
@@ -47,7 +48,7 @@ public class ArticleController {
      * @return 结果
      */
     @GetMapping("/all")
-    public Result readCategory(@Validated ArticlePageDTO articlePageDTO) {
+    public Result read(@Validated ArticlePageDTO articlePageDTO) {
         articleService.list();
         return Result.success();
     }
@@ -60,8 +61,8 @@ public class ArticleController {
      */
     @GetMapping("/{id}")
     public Result getById(@PathVariable("id") Long id) {
-        articleService.readCache(id);
-        return Result.success();
+        ArticleVO articleVO = articleService.readCache(id);
+        return Result.success(articleVO);
     }
 
     /**
@@ -70,9 +71,9 @@ public class ArticleController {
      * @return 结果
      */
     @PutMapping
-    public Result updateCategory(@RequestBody @Validated ArticleDTO articleDTO) {
+    public Result update(@RequestBody @Validated ArticleDTO articleDTO) {
         articleService.updateCache(articleDTO);
-        return Result.success();
+        return Result.success(articleDTO.getId());
     }
 
     /**
@@ -82,7 +83,7 @@ public class ArticleController {
      * @return 结果
      */
     @DeleteMapping("/{id}")
-    public Result deleteById(@PathVariable("id") List<Long> ids) {
+    public Result delete(@PathVariable("id") List<Long> ids) {
         articleService.deleteCache(ids);
         return Result.success(ids);
     }

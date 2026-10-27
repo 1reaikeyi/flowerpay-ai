@@ -9,7 +9,7 @@ import com.branch.mapper.SignMapper;
 import com.branch.service.SignService;
 
 
-import common.constant.RedisPrefixConstant;
+import com.branch.common.constant.RedisPrefixConstant;
 import framework.security.SecurityContextParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.connection.BitFieldSubCommands;

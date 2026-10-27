@@ -12,8 +12,8 @@ import com.branch.domain.entity.Role;
 import com.branch.domain.vo.RoleVO;
 import com.branch.mapper.RoleMapper;
 import com.branch.service.RoleService;
-import common.constant.ErrorConstant;
-import common.exception.EmployeeFailedException;
+import com.branch.common.constant.ErrorConstant;
+import com.branch.common.exception.EmployeeFailedException;
 import org.springframework.stereotype.Service;
 import com.branch.result.PageResult;
 

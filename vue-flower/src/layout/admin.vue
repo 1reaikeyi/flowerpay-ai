@@ -8,7 +8,7 @@
           :default-active="$route.path" text-color="#fff" router>
 
 
-        <el-sub-menu index="/admin">
+        <el-sub-menu index="/admin/flower">
           <template #title>
             <el-icon><ChatLineRound /></el-icon>
             <span>鲜花经营</span>
@@ -41,7 +41,7 @@
 
         </el-sub-menu>
 
-        <el-sub-menu index="/admin">
+        <el-sub-menu index="/admin/blog">
           <template #title>
             <el-icon><ChatLineRound /></el-icon>
             <span>评论区</span>
@@ -64,7 +64,7 @@
 
         </el-sub-menu>
 
-        <el-sub-menu index="/admin">
+        <el-sub-menu index="/admin/order">
           <template #title>
             <el-icon><ChatLineRound /></el-icon>
             <span>订单管理</span>
@@ -82,7 +82,7 @@
 
         </el-sub-menu>
 
-        <el-sub-menu index="/shop">
+        <el-sub-menu index="/admin/shop">
           <template #title>
             <el-icon><ChatLineRound /></el-icon>
             <span>店铺</span>

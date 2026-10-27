@@ -1,7 +1,7 @@
 package controller;
 
-import common.result.Result;
-import common.annotion.Logging;
+import com.branch.common.result.Result;
+import com.branch.common.annotion.Logging;
 import domain.dto.VoucherOrderDTO;
 import lombok.extern.slf4j.Slf4j;
 import VoucherOrder;

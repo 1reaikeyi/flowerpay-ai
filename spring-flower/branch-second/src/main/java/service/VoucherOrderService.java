@@ -1,7 +1,7 @@
 package service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import common.result.Result;
+import com.branch.common.result.Result;
 import domain.entity.VoucherOrder;
 
 

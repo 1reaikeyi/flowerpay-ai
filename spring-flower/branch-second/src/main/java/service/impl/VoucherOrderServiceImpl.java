@@ -2,7 +2,7 @@ package service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import common.result.Result;
+import com.branch.common.result.Result;
 import framework.redis.RedisID;
 
 import mapper.VoucherOrderMapper;

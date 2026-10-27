@@ -4,7 +4,7 @@ import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.collection.CollectionUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import common.result.ScrollResult;
+import com.branch.common.result.ScrollResult;
 import mapper.ShopMapper;
 import model.dto.ShopDTO;
 import model.entity.Shop;

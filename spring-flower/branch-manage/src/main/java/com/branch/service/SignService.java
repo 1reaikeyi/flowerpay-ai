@@ -19,18 +19,8 @@ public interface SignService extends IService<Sign> {
      */
     String backSign(TimeDTO time);
 
-    /**
-     * 统计当月截至今日的签到/缺勤天数
-     *
-     * @return 结果描述；无数据时返回数字 0
-     */
     Object countOfMonth();
 
-    /**
-     * 统计指定月份的签到情况，并落库保存到 Sign 表
-     *
-     * @return 保存的 Sign 记录；无数据时返回数字 0
-     */
     Object countOfTime(TimeDTO time);
 
 }

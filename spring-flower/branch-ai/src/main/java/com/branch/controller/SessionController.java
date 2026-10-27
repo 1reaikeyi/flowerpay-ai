@@ -1,12 +1,13 @@
 package com.branch.controller;
 
+import com.branch.common.constant.ErrorConstant;
 import com.branch.domain.entity.Session;
 import com.branch.domain.vo.MessageVO;
 import com.branch.domain.vo.SessionTitleVO;
 import com.branch.domain.vo.SessionVO;
 import com.branch.service.session.SessionService;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import common.constant.ErrorConstant;
+
 import com.branch.result.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

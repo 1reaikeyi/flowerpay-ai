@@ -3,10 +3,10 @@ package com.branch.filter;
 import com.branch.service.login.LoginUserService;
 import framework.properties.JwtProperties;
 
-import common.constant.JwtConstant;
-import common.constant.RedisPrefixConstant;
+import com.branch.common.constant.JwtConstant;
+import com.branch.common.constant.RedisPrefixConstant;
 
-import common.RoleConstant;
+import com.branch.common.RoleConstant;
 import com.branch.util.JwtUtil;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

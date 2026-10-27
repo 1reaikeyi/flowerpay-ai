@@ -6,9 +6,9 @@ import cn.hutool.json.JSONUtil;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.github.benmanes.caffeine.cache.Cache;
-import common.constant.ErrorConstant;
-import common.constant.RedisPrefixConstant;
-import common.exception.FlowerDetailFailedException;
+import com.branch.common.constant.ErrorConstant;
+import com.branch.common.constant.RedisPrefixConstant;
+import com.branch.common.exception.FlowerDetailFailedException;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import com.branch.mapper.FlowerDetailMapper;
@@ -77,24 +77,16 @@ public class FlowerDetailServiceImpl extends ServiceImpl<FlowerDetailMapper, Flo
                 flowerDetailCache.put(key, flowerDetailVO);
                 return flowerDetailVO;
             }
+            logicData = JSONUtil.toBean(value, LogicData.class);
         } catch (Exception e) {
             log.info("Redis 宕机:{}", e.getMessage());
             // Redis 不可用：降级直查数据库
-            FlowerDetail flowerDetail = this.getCache(id);
+            FlowerDetail flowerDetail = this.getMysql(id);
             FlowerDetailVO flowerDetailVO = flowerDetail != null ? BeanUtil.toBean(flowerDetail, FlowerDetailVO.class) : null;
             flowerDetailCache.put(key, flowerDetailVO);
             return flowerDetailVO;
         }
         //2 缓存存在
-        try {
-             logicData = JSONUtil.toBean(value, LogicData.class);
-        } catch (Exception e) {
-            log.info("json 解析失败:{}", e.getMessage());
-            FlowerDetail flowerDetail = this.getCache(id);
-            FlowerDetailVO flowerDetailVO = flowerDetail != null ? BeanUtil.toBean(flowerDetail, FlowerDetailVO.class) : null;
-            flowerDetailCache.put(key, flowerDetailVO);
-            return flowerDetailVO;
-        }
         FlowerDetailVO old = null;
         if (logicData.getData() == null){
             //防止穿透
@@ -219,13 +211,14 @@ public class FlowerDetailServiceImpl extends ServiceImpl<FlowerDetailMapper, Flo
             updateWrapper.set(FlowerDetail::getSpecOption,flowerDetailDTO.getSpecOption());
         }
         this.update(updateWrapper);
+        flowerDetailCache.invalidate(RedisPrefixConstant.FLOWER_PREFIX + flowerDetailDTO.getId());
         stringRedisTemplate.delete(RedisPrefixConstant.FLOWERDETAIL_PREFIX + flowerDetailDTO.getId());
     }
 
     @Override
     public void deleteCache(List<Long> ids) {
-        this.removeByIds(ids);
         for (Long id : ids) {
+            flowerDetailCache.invalidate(RedisPrefixConstant.FLOWER_PREFIX + id);
             stringRedisTemplate.delete(RedisPrefixConstant.FLOWERDETAIL_PREFIX + id);
         }
     }

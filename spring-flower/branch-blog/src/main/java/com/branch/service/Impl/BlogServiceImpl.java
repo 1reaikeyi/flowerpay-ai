@@ -4,6 +4,7 @@ import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.collection.CollectionUtil;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.branch.domain.entity.UserFollower;
+import com.branch.result.PageResult;
 import com.branch.service.UserFollowerService;
 
 import com.branch.domain.entity.Blog;
@@ -34,7 +35,7 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements Bl
     @Autowired
     private UserFollowerService userFollowerService;
 
-    @Override
+
     public Long createBlog(BlogDTO blogDTO) {
         Long userId = SecurityContextParam.getCurrentUserId();
         Blog blog = BeanUtil.toBean(blogDTO, Blog.class);
@@ -49,6 +50,17 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements Bl
             stringRedisTemplate.opsForZSet().add(key, blog.getId().toString(), System.currentTimeMillis());
         }
         return blog.getId();
+    }
+
+    /**
+     * 发布博客：保存博客并推送到所有粉丝的收件箱
+     *
+     * @param blogDTO
+     * @return 博客ID
+     */
+    @Override
+    public Long postBlog(BlogDTO blogDTO) {
+        return null;
     }
 
     @Override
@@ -86,7 +98,18 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements Bl
         return stringRedisTemplate.opsForZSet().range(BLOG_LIKED_PREFIX + id, 0, -1);
     }
 
+    /**
+     * 博客点赞的Top3用户
+     *
+     * @param id
+     * @return 用户列表，无数据返回 null
+     */
     @Override
+    public Object likedTop(long id) {
+        return null;
+    }
+
+
     public Object likedHot(Long id) {
         Set<String> set = stringRedisTemplate.opsForZSet().range(BLOG_LIKED_PREFIX + id, 0, 2);
         if (CollectionUtil.isEmpty(set)) {
@@ -127,5 +150,10 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements Bl
         next.setMinTime(minTime);
         next.setOffset(Long.valueOf(os));
         return next;
+    }
+
+    @Override
+    public PageResult<BlogDTO> readAll() {
+        return null;
     }
 }

@@ -1,7 +1,7 @@
 package service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import common.result.ScrollResult;
+import com.branch.common.result.ScrollResult;
 import model.dto.ShopDTO;
 import model.entity.Shop;
 
