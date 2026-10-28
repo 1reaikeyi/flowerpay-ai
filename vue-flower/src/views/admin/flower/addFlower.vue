@@ -27,7 +27,7 @@
 
       <!-- 分类 -->
       <el-form-item label="鲜花分类" prop="categoryId">
-        <el-select v-model="formData.categoryId" placeholder="请选择鲜花分类">
+        <el-select v-model="formData.categoryId" placeholder="请选择鲜花分类" style="width: 240px">
           <el-option
             v-for="item in categoryList"
             :key="item.id"
@@ -209,24 +209,18 @@ const fetchFlowerDetail = async () => {
 
 
 
-// 统一图片 URL 解析策略（本地文件优先，兼容多来源）
-// 数据库 image 字段可能有多种形态：
-//   1. "/image/1.png"         → 直接走 vite /image 代理 → 后端 WebConfig 映射 file:ku/image/
-//   2. "/img/flower/1.png"      → 历史遗留，前端替换前缀为 /image/
-//   3. "uuid-xxx.png"         → 上传接口返回的文件名，需要走 /api/local?fileName=
-//   4. "https://xxx.com/xxx"  → 外链直接返回
+// 统一图片 URL 解析策略：走 vite /image 代理 → 后端 WebConfig 的 file:resource/image/ 静态映射
+// 数据库 image 字段的形态：
+//   1. "/image/1.png"      → 取出文件名 1.png
+//   2. "uuid-xxx.png"      → 上传接口返回的文件名，直接使用
+//   3. "https://xxx.com/x" → 外链直接返回
 const resolveImageUrl = (image) => {
   if (!image) return ''
   // 外链（OSS/CDN）直接放行
   if (/^https?:\/\//i.test(image)) return image
-  // /image/ 前缀：新格式，直接用，命中 vite /image 代理 → 后端 ku/image/
-  if (image.startsWith('/image/')) return image
-  // /img/ 前缀：历史遗留（数据库旧格式 /img/flower/1.png），替换成 /image/
-  if (image.startsWith('/img/')) return '/image/' + image.slice(5)
-  // / 开头但不是上面两种的未知静态路径，原样保留
-  if (image.startsWith('/')) return image
-  // 其余情况视为 uploadFile 接口返回的 UUID 文件名，走本地文件下载接口
-  return `/api/local?fileName=${encodeURIComponent(image)}`
+  // 去掉 /image/ 或 /img/ 前缀，只保留后端 resource/image 下的文件名
+  const fileName = image.replace(/^\/?(?:image|img)\//i, '')
+  return `/image/${fileName}`
 }
 
 // 图片上传前验证
@@ -323,10 +317,6 @@ onMounted(() => {
 /* 表单控件宽度、图片上传为页面特有；页面容器、头部、按钮区通用样式已抽离到公共组件 */
 
 .flower-form {
-  .el-select {
-    width: 300px;
-  }
-
   .el-input {
     width: 300px;
   }

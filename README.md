@@ -1,10 +1,9 @@
 <div align="center">
   <h1>flowerpay-ai 鲜花商店 + ai</h1>
   <h5>后端利用 Spring Boot 3 的高效与安全性提供 RESTful API 服务，前端借助 Vue 3 实现流畅的用户交互体验的构建的现代化前后端分离系统。通过多级缓存热点数据以提升系统响应速度，Druid 负责MySQL连接池与 SQL 监控，保障订单、库存数据访问；使用redis_exporter采集多级缓存命中率使用情况，监视redis。</h5>
-    <h5>主业务为B2C经营模式，一个花店卖家，多个买家，由店长、店员和客户组成，前台鲜花经营及RBAC后台管理系统,统计数据分析,店铺管理,博客发布更新和评论服务，优惠卷秒杀服务。分支业务org.springframework.ai的openai +com.alibaba.cloud.ai的graph，问一问rag的使用用途和送人对象，拍一拍识别推荐花束。</h5>
+   <h5>主业务为B2C经营模式，一个花店卖家，多个买家，由店长、店员和客户组成，前台鲜花经营及RBAC后台管理系统,统计数据分析,店铺管理,博客发布更新和评论服务，优惠卷秒杀服务。分支业务org.springframework.ai的openai +com.alibaba.cloud.ai的graph，问一问rag的使用用途和送人对象，拍一拍识别推荐花束。</h5>
+   <h1>项目结构:flowerpay-ai\说明\wiki.md</h1>
 </div>
-
----
 
 ## 配置说明
 
@@ -19,26 +18,19 @@
     <img src="https://img.shields.io/badge/阿里云-qwen-6DB33F?style=flat-square&logo=java&logoColor=white" alt="阿里云" />
     </h1>
 </div>
----
-## 接口和项目结构
-
-<div align="center">
-    <h5>flowerpay-ai\说明\admin接口文档.md</h5>			
-    <h5>flowerpay-ai\说明\admin接口文档.md</h5>
-    <h5>flowerpay-ai\说明\wiki.md</h5>
-</div>
----
 
 # 前端说明
 
 ## admin端
 
-| <img src="说明/原型功能/admin1.png" alt="管理端登录" style="zoom: 50%;" /> | <img src="说明/原型功能/admin2.png" alt="管理端登录" style="zoom: 50%;" /> | <img src="说明/原型功能/admin33.png" alt="管理端登录" style="zoom: 50%;" /> |
-| :----------------------------------------------------------: | :----------------------------------------------------------: | ------------------------------------------------------------ |
-| <img src="说明/原型功能/admin333.png" alt="管理端登录" style="zoom: 50%;" /> | <img src="说明/原型功能/admin3.png" alt="管理端登录" style="zoom: 50%;" /> | <img src="说明/原型功能/admin4.png" alt="管理端登录" style="zoom: 50%;" /> |
-| <img src="说明/原型功能/admin44.png" alt="管理端登录" style="zoom: 50%;" /> | <img src="说明/原型功能/admin5.png" alt="管理端登录" style="zoom: 50%;" /> | <img src="说明/原型功能/admin55.png" alt="管理端登录" style="zoom: 50%;" /> |
-| <img src="说明/原型功能/admin6.png" alt="管理端登录" style="zoom: 50%;" /> | <img src="说明/原型功能/admin7.png" alt="管理端登录" style="zoom: 50%;" /> |                                                              |
-| <img src="说明/原型功能/statistics3.png" alt="statistics" style="zoom: 50%;" /> | <img src="说明/原型功能/statistics1.png" alt="statistics" style="zoom: 50%;" /> | <img src="说明/原型功能/statistics2.png" alt="statistics" style="zoom: 50%;" /> |
+| <img src="说明/原型功能/1.png" alt="管理端登录" style="zoom: 25%;" /> | <img src="说明/原型功能/flower1.png" alt="管理端登录" style="zoom: 25%;" /> |
+| :----------------------------------------------------------: | :----------------------------------------------------------: |
+| <img src="说明/原型功能/flower3.png" alt="管理端登录" style="zoom: 25%;" /> | <img src="说明/原型功能/flower4.png" alt="管理端登录" style="zoom: 25%;" /> |
+| <img src="说明/原型功能/flower2.png" alt="管理端登录" style="zoom: 25%;" /> | <img src="说明/原型功能/blog2.png" alt="管理端登录" style="zoom: 25%;" /> |
+| <img src="说明/原型功能/blog1.png" alt="管理端登录" style="zoom: 25%;" /> | <img src="说明/原型功能/shop1.png" alt="管理端登录" style="zoom: 25%;" /> |
+| <img src="说明/原型功能/shop2.png" alt="管理端登录" style="zoom: 25%;" /> | <img src="说明/原型功能/pay1.png" alt="管理端登录" style="zoom: 25%;" /> |
+| <img src="说明/原型功能/pay2.png" alt="管理端登录" style="zoom: 25%;" /> | <img src="说明/原型功能/statistics2.png" alt="statistics" style="zoom: 25%;" /> |
+| <img src="说明/原型功能/statistics3.png" alt="statistics" style="zoom: 25%;" /> | <img src="说明/原型功能/statistics1.png" alt="statistics" style="zoom: 25%;" /> |
 
 ## 用户端
 
@@ -106,9 +98,6 @@ Q: 如何保证role权限？
 ------
 
 ## 鲜花商品模块
-
-| <img src="说明/原型功能/redis1.png" alt="redis" style="zoom: 50%;" /> | <img src="说明/原型功能/redis3.png" alt="redis" style="zoom: 50%;" /> |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
 
 ### model
 
@@ -285,7 +274,7 @@ flowchart TD
 
 ## 文章和评论模块
 
-<img src="说明/原型功能/redis4.png" alt="redis" style="zoom: 50%;" />
+<img src="说明/原型功能/redis2.png" alt="redis" style="zoom: 25%;" />
 
 ### 迭代过程
 
@@ -302,6 +291,8 @@ Q：为什么用parent_id区分评论和回复？
 > A：`parent_id = 0` 表示直接评论博文，`parent_id = 1` 表示回复其他评论。这种设计可以支持无限层级的回复，同时查询时可以通过parent_id区分评论和回复。
 
 ## 优惠券使用模块
+
+<img src="说明/原型功能/redis1.png" alt="redis" style="zoom: 50%;" />
 
 ### 组件：ID生成器（RedisID）
 
@@ -341,33 +332,24 @@ Q：ID结构为什么是 1位符号位+时间戳(31位) + 序号(32位)？
 
 ### 秒杀流程图
 
-**同步版本流程**
-
 ```
+同步版本流程：
 用户请求 → 校验秒杀活动 → 生成订单ID → 直接调用secondKill() → 扣库存+保存订单 → 返回结果
-```
-
-**异步单机流程**
-
-```
+异步单机流程：
 用户请求 → 校验秒杀活动 → Lua脚本校验 → 放入ArrayBlockingQueue → 返回订单ID
                                                               ↓
-                                        后台线程 take() → RedisLock → paySuccess() → 扣库存+保存订单
-```
-
-**异步分布式流程**
-
-```
+       						 后台线程 take() → RedisLock → paySuccess() → 扣库存+保存订单
+异步分布式流程：
 用户请求 → 校验秒杀活动 → Lua脚本校验（自动XADD到Stream）→ 返回订单ID
                                                          ↓
-                                XREADGROUP读取 → 解析订单 → secondKill() → 扣库存+保存订单 → ACK确认
+             				 XREADGROUP读取 → 解析订单 → secondKill() → 扣库存+保存订单 → ACK确认
 ```
 
 **数据库操作阶段**
 
-1. **一人一单校验**：在事务中基于用户ID和优惠券ID查询已存在订单
-2. **原子库存扣减**：使用 MyBatis Plus 的乐观锁 CAS 操作保证库存扣减的原子性
-3. **订单创建**：保存订单记录
+1. 一人一单校验：在事务中基于用户ID和优惠券ID查询已存在订单
+2. 原子库存扣减：使用 MyBatis Plus 的乐观锁 CAS 操作保证库存扣减的原子性
+3. 订单创建：保存订单记录
 
 ```
 用户请求 → Lua脚本校验（库存+重复下单）→ 成功

@@ -5,7 +5,9 @@ package com.branch.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 import com.branch.domain.dto.BlogDTO;
+import com.branch.domain.dto.BlogPageDTO;
 import com.branch.domain.entity.Blog;
+import com.branch.domain.vo.BlogVO;
 import com.branch.result.PageResult;
 import com.branch.result.ScrollResult;
 
@@ -18,7 +20,7 @@ public interface BlogService extends IService<Blog> {
      *
      * @return 博客ID
      */
-    Long postBlog(BlogDTO blogDTO);
+    BlogDTO postBlog(BlogDTO blogDTO);
 
     /**
      * 点赞/取消点赞
@@ -39,16 +41,10 @@ public interface BlogService extends IService<Blog> {
     Set<String> likedAll(Long id);
 
     /**
-     * 博客点赞的Top3用户
-     *
-     * @return 用户列表，无数据返回 null
-     */
-    Object likedTop(long id);
-    /**
      * 关注流收件箱：滚动分页查询已关注用户发布的博客
      */
     ScrollResult followScroll(Long max, Long offset);
 
-    PageResult<BlogDTO> readAll();
+    PageResult<BlogVO> readAll(BlogPageDTO blogPageDTO);
 
 }

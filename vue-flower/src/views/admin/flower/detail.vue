@@ -216,14 +216,14 @@ const goBack = () => {
   router.push('/admin/flower/index')
 }
 
-// 统一图片 URL 解析策略（与 festival.vue 保持一致）
+// 统一图片 URL 解析策略：走 vite /image 代理 → 后端 WebConfig 的 file:resource/image/ 静态映射
 const resolveImageUrl = (image) => {
   if (!image) return ''
+  // 外链（OSS/CDN）直接放行
   if (/^https?:\/\//i.test(image)) return image
-  if (image.startsWith('/image/')) return image
-  if (image.startsWith('/img/')) return '/image/' + image.slice(5)
-  if (image.startsWith('/')) return image
-  return `/api/local?fileName=${encodeURIComponent(image)}`
+  // 去掉 /image/ 或 /img/ 前缀，只保留后端 resource/image 下的文件名
+  const fileName = image.replace(/^\/?(?:image|img)\//i, '')
+  return `/image/${fileName}`
 }
 
 // 获取分类名称映射（type=1）

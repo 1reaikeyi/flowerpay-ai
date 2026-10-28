@@ -1,0 +1,1169 @@
+D:\a.java\java17\bin\java.exe -XX:TieredStopAtLevel=1 -Dspring.output.ansi.enabled=always -Dcom.sun.management.jmxremote -Dspring.jmx.enabled=true -Dspring.liveBeansView.mbeanDomain -Dspring.application.admin.enabled=true "-Dmanagement.endpoints.jmx.exposure.include=*" "-javaagent:D:\a.java\intellij2024.1\IntelliJ IDEA 2024.1.1\lib\idea_rt.jar=55265:D:\a.java\intellij2024.1\IntelliJ IDEA 2024.1.1\bin" -Dfile.encoding=UTF-8 -classpath D:\a.github\big-event\backend-spring-bigevent\target\classes;D:\a.maven-java\repository\org\springframework\boot\spring-boot-starter\3.3.8\spring-boot-starter-3.3.8.jar;D:\a.maven-java\repository\org\springframework\boot\spring-boot\3.3.8\spring-boot-3.3.8.jar;D:\a.maven-java\repository\org\springframework\boot\spring-boot-starter-logging\3.3.8\spring-boot-starter-logging-3.3.8.jar;D:\a.maven-java\repository\ch\qos\logback\logback-classic\1.5.16\logback-classic-1.5.16.jar;D:\a.maven-java\repository\ch\qos\logback\logback-core\1.5.16\logback-core-1.5.16.jar;D:\a.maven-java\repository\org\apache\logging\log4j\log4j-to-slf4j\2.23.1\log4j-to-slf4j-2.23.1.jar;D:\a.maven-java\repository\org\apache\logging\log4j\log4j-api\2.23.1\log4j-api-2.23.1.jar;D:\a.maven-java\repository\org\slf4j\jul-to-slf4j\2.0.16\jul-to-slf4j-2.0.16.jar;D:\a.maven-java\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;D:\a.maven-java\repository\org\yaml\snakeyaml\2.2\snakeyaml-2.2.jar;D:\a.maven-java\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.2\jakarta.xml.bind-api-4.0.2.jar;D:\a.maven-java\repository\jakarta\activation\jakarta.activation-api\2.1.3\jakarta.activation-api-2.1.3.jar;D:\a.maven-java\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;D:\a.maven-java\repository\org\springframework\spring-core\6.1.16\spring-core-6.1.16.jar;D:\a.maven-java\repository\org\springframework\spring-jcl\6.1.16\spring-jcl-6.1.16.jar;D:\a.maven-java\repository\org\springframework\boot\spring-boot-starter-web\3.3.8\spring-boot-starter-web-3.3.8.jar;D:\a.maven-java\repository\org\springframework\boot\spring-boot-starter-json\3.3.8\spring-boot-starter-json-3.3.8.jar;D:\a.maven-java\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.17.3\jackson-datatype-jdk8-2.17.3.jar;D:\a.maven-java\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.17.3\jackson-module-parameter-names-2.17.3.jar;D:\a.maven-java\repository\org\springframework\boot\spring-boot-starter-tomcat\3.3.8\spring-boot-starter-tomcat-3.3.8.jar;D:\a.maven-java\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.34\tomcat-embed-core-10.1.34.jar;D:\a.maven-java\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.34\tomcat-embed-websocket-10.1.34.jar;D:\a.maven-java\repository\org\springframework\spring-web\6.1.16\spring-web-6.1.16.jar;D:\a.maven-java\repository\org\springframework\spring-beans\6.1.16\spring-beans-6.1.16.jar;D:\a.maven-java\repository\io\micrometer\micrometer-observation\1.13.10\micrometer-observation-1.13.10.jar;D:\a.maven-java\repository\io\micrometer\micrometer-commons\1.13.10\micrometer-commons-1.13.10.jar;D:\a.maven-java\repository\org\springframework\spring-webmvc\6.1.16\spring-webmvc-6.1.16.jar;D:\a.maven-java\repository\org\springframework\spring-context\6.1.16\spring-context-6.1.16.jar;D:\a.maven-java\repository\org\springframework\spring-expression\6.1.16\spring-expression-6.1.16.jar;D:\a.maven-java\repository\com\mysql\mysql-connector-j\8.3.0\mysql-connector-j-8.3.0.jar;D:\a.maven-java\repository\com\baomidou\mybatis-plus-spring-boot3-starter\3.5.9\mybatis-plus-spring-boot3-starter-3.5.9.jar;D:\a.maven-java\repository\com\baomidou\mybatis-plus\3.5.9\mybatis-plus-3.5.9.jar;D:\a.maven-java\repository\com\baomidou\mybatis-plus-core\3.5.9\mybatis-plus-core-3.5.9.jar;D:\a.maven-java\repository\com\baomidou\mybatis-plus-annotation\3.5.9\mybatis-plus-annotation-3.5.9.jar;D:\a.maven-java\repository\com\baomidou\mybatis-plus-spring\3.5.9\mybatis-plus-spring-3.5.9.jar;D:\a.maven-java\repository\org\mybatis\mybatis\3.5.16\mybatis-3.5.16.jar;D:\a.maven-java\repository\org\mybatis\mybatis-spring\3.0.4\mybatis-spring-3.0.4.jar;D:\a.maven-java\repository\com\baomidou\mybatis-plus-spring-boot-autoconfigure\3.5.9\mybatis-plus-spring-boot-autoconfigure-3.5.9.jar;D:\a.maven-java\repository\org\springframework\boot\spring-boot-autoconfigure\3.3.8\spring-boot-autoconfigure-3.3.8.jar;D:\a.maven-java\repository\org\springframework\boot\spring-boot-starter-jdbc\3.3.8\spring-boot-starter-jdbc-3.3.8.jar;D:\a.maven-java\repository\com\zaxxer\HikariCP\5.1.0\HikariCP-5.1.0.jar;D:\a.maven-java\repository\org\springframework\spring-jdbc\6.1.16\spring-jdbc-6.1.16.jar;D:\a.maven-java\repository\com\baomidou\mybatis-plus-jsqlparser\3.5.9\mybatis-plus-jsqlparser-3.5.9.jar;D:\a.maven-java\repository\com\github\jsqlparser\jsqlparser\5.0\jsqlparser-5.0.jar;D:\a.maven-java\repository\com\baomidou\mybatis-plus-jsqlparser-common\3.5.9\mybatis-plus-jsqlparser-common-3.5.9.jar;D:\a.maven-java\repository\com\baomidou\mybatis-plus-extension\3.5.9\mybatis-plus-extension-3.5.9.jar;D:\a.maven-java\repository\io\jsonwebtoken\jjwt-api\0.12.6\jjwt-api-0.12.6.jar;D:\a.maven-java\repository\io\jsonwebtoken\jjwt-impl\0.12.6\jjwt-impl-0.12.6.jar;D:\a.maven-java\repository\io\jsonwebtoken\jjwt-jackson\0.12.6\jjwt-jackson-0.12.6.jar;D:\a.maven-java\repository\com\fasterxml\jackson\core\jackson-databind\2.17.3\jackson-databind-2.17.3.jar;D:\a.maven-java\repository\org\projectlombok\lombok\1.18.36\lombok-1.18.36.jar;D:\a.maven-java\repository\cn\hutool\hutool-all\5.8.36\hutool-all-5.8.36.jar;D:\a.maven-java\repository\org\springframework\boot\spring-boot-starter-validation\3.3.8\spring-boot-starter-validation-3.3.8.jar;D:\a.maven-java\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.34\tomcat-embed-el-10.1.34.jar;D:\a.maven-java\repository\org\hibernate\validator\hibernate-validator\8.0.2.Final\hibernate-validator-8.0.2.Final.jar;D:\a.maven-java\repository\jakarta\validation\jakarta.validation-api\3.0.2\jakarta.validation-api-3.0.2.jar;D:\a.maven-java\repository\org\jboss\logging\jboss-logging\3.5.3.Final\jboss-logging-3.5.3.Final.jar;D:\a.maven-java\repository\com\fasterxml\classmate\1.7.0\classmate-1.7.0.jar;D:\a.maven-java\repository\org\springframework\boot\spring-boot-starter-aop\3.3.8\spring-boot-starter-aop-3.3.8.jar;D:\a.maven-java\repository\org\springframework\spring-aop\6.1.16\spring-aop-6.1.16.jar;D:\a.maven-java\repository\org\aspectj\aspectjweaver\1.9.22.1\aspectjweaver-1.9.22.1.jar;D:\a.maven-java\repository\org\springframework\boot\spring-boot-starter-data-redis\3.3.8\spring-boot-starter-data-redis-3.3.8.jar;D:\a.maven-java\repository\io\lettuce\lettuce-core\6.3.2.RELEASE\lettuce-core-6.3.2.RELEASE.jar;D:\a.maven-java\repository\org\springframework\data\spring-data-redis\3.3.8\spring-data-redis-3.3.8.jar;D:\a.maven-java\repository\org\springframework\data\spring-data-keyvalue\3.3.8\spring-data-keyvalue-3.3.8.jar;D:\a.maven-java\repository\org\springframework\data\spring-data-commons\3.3.8\spring-data-commons-3.3.8.jar;D:\a.maven-java\repository\org\springframework\spring-tx\6.1.16\spring-tx-6.1.16.jar;D:\a.maven-java\repository\org\springframework\spring-oxm\6.1.16\spring-oxm-6.1.16.jar;D:\a.maven-java\repository\org\springframework\boot\spring-boot-starter-cache\3.3.8\spring-boot-starter-cache-3.3.8.jar;D:\a.maven-java\repository\org\springframework\spring-context-support\6.1.16\spring-context-support-6.1.16.jar;D:\a.maven-java\repository\org\redisson\redisson\3.52.0\redisson-3.52.0.jar;D:\a.maven-java\repository\io\netty\netty-common\4.1.117.Final\netty-common-4.1.117.Final.jar;D:\a.maven-java\repository\io\netty\netty-codec\4.1.117.Final\netty-codec-4.1.117.Final.jar;D:\a.maven-java\repository\io\netty\netty-buffer\4.1.117.Final\netty-buffer-4.1.117.Final.jar;D:\a.maven-java\repository\io\netty\netty-transport\4.1.117.Final\netty-transport-4.1.117.Final.jar;D:\a.maven-java\repository\io\netty\netty-resolver\4.1.117.Final\netty-resolver-4.1.117.Final.jar;D:\a.maven-java\repository\io\netty\netty-resolver-dns\4.1.117.Final\netty-resolver-dns-4.1.117.Final.jar;D:\a.maven-java\repository\io\netty\netty-codec-dns\4.1.117.Final\netty-codec-dns-4.1.117.Final.jar;D:\a.maven-java\repository\io\netty\netty-handler\4.1.117.Final\netty-handler-4.1.117.Final.jar;D:\a.maven-java\repository\io\netty\netty-transport-native-unix-common\4.1.117.Final\netty-transport-native-unix-common-4.1.117.Final.jar;D:\a.maven-java\repository\javax\cache\cache-api\1.1.1\cache-api-1.1.1.jar;D:\a.maven-java\repository\io\projectreactor\reactor-core\3.6.13\reactor-core-3.6.13.jar;D:\a.maven-java\repository\org\reactivestreams\reactive-streams\1.0.4\reactive-streams-1.0.4.jar;D:\a.maven-java\repository\io\reactivex\rxjava3\rxjava\3.1.10\rxjava-3.1.10.jar;D:\a.maven-java\repository\com\esotericsoftware\kryo\5.6.2\kryo-5.6.2.jar;D:\a.maven-java\repository\com\esotericsoftware\reflectasm\1.11.9\reflectasm-1.11.9.jar;D:\a.maven-java\repository\com\esotericsoftware\minlog\1.3.1\minlog-1.3.1.jar;D:\a.maven-java\repository\org\slf4j\slf4j-api\2.0.16\slf4j-api-2.0.16.jar;D:\a.maven-java\repository\com\fasterxml\jackson\core\jackson-annotations\2.17.3\jackson-annotations-2.17.3.jar;D:\a.maven-java\repository\com\fasterxml\jackson\dataformat\jackson-dataformat-yaml\2.17.3\jackson-dataformat-yaml-2.17.3.jar;D:\a.maven-java\repository\com\fasterxml\jackson\core\jackson-core\2.17.3\jackson-core-2.17.3.jar;D:\a.maven-java\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.17.3\jackson-datatype-jsr310-2.17.3.jar;D:\a.maven-java\repository\net\bytebuddy\byte-buddy\1.14.19\byte-buddy-1.14.19.jar;D:\a.maven-java\repository\org\jodd\jodd-util\6.3.0\jodd-util-6.3.0.jar;D:\a.maven-java\repository\com\aliyun\oss\aliyun-sdk-oss\3.17.4\aliyun-sdk-oss-3.17.4.jar;D:\a.maven-java\repository\org\jdom\jdom2\2.0.6.1\jdom2-2.0.6.1.jar;D:\a.maven-java\repository\org\codehaus\jettison\jettison\1.5.4\jettison-1.5.4.jar;D:\a.maven-java\repository\com\aliyun\aliyun-java-sdk-core\4.5.10\aliyun-java-sdk-core-4.5.10.jar;D:\a.maven-java\repository\com\google\code\gson\gson\2.10.1\gson-2.10.1.jar;D:\a.maven-java\repository\javax\xml\bind\jaxb-api\2.3.1\jaxb-api-2.3.1.jar;D:\a.maven-java\repository\javax\activation\javax.activation-api\1.2.0\javax.activation-api-1.2.0.jar;D:\a.maven-java\repository\org\jacoco\org.jacoco.agent\0.8.5\org.jacoco.agent-0.8.5-runtime.jar;D:\a.maven-java\repository\org\ini4j\ini4j\0.5.4\ini4j-0.5.4.jar;D:\a.maven-java\repository\io\opentracing\opentracing-api\0.33.0\opentracing-api-0.33.0.jar;D:\a.maven-java\repository\io\opentracing\opentracing-util\0.33.0\opentracing-util-0.33.0.jar;D:\a.maven-java\repository\io\opentracing\opentracing-noop\0.33.0\opentracing-noop-0.33.0.jar;D:\a.maven-java\repository\com\aliyun\aliyun-java-sdk-ram\3.1.0\aliyun-java-sdk-ram-3.1.0.jar;D:\a.maven-java\repository\com\aliyun\aliyun-java-sdk-kms\2.11.0\aliyun-java-sdk-kms-2.11.0.jar;D:\a.maven-java\repository\org\apache\httpcomponents\httpclient\4.5.14\httpclient-4.5.14.jar;D:\a.maven-java\repository\org\apache\httpcomponents\httpcore\4.4.16\httpcore-4.4.16.jar;D:\a.maven-java\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;D:\a.maven-java\repository\commons-codec\commons-codec\1.16.1\commons-codec-1.16.1.jar start.BigEventApplication
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.8)
+
+2026-07-23T14:30:18.859+08:00  INFO 50044 --- [title] [           main] start.BigEventApplication                : Starting BigEventApplication using Java 17.0.1 with PID 50044 (D:\a.github\big-event\backend-spring-bigevent\target\classes started by lenovo in D:\a.github\big-event\backend-spring-bigevent)
+2026-07-23T14:30:18.859+08:00  INFO 50044 --- [title] [           main] start.BigEventApplication                : The following 1 profile is active: "dev"
+2026-07-23T14:30:19.265+08:00  INFO 50044 --- [title] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-07-23T14:30:19.268+08:00  INFO 50044 --- [title] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-07-23T14:30:19.287+08:00  INFO 50044 --- [title] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2026-07-23T14:30:19.750+08:00  INFO 50044 --- [title] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-07-23T14:30:19.751+08:00  INFO 50044 --- [title] [           main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [2.0.12] using APR version [1.7.6].
+2026-07-23T14:30:19.754+08:00  INFO 50044 --- [title] [           main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.5.4 30 Sep 2025]
+2026-07-23T14:30:19.760+08:00  INFO 50044 --- [title] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-07-23T14:30:19.760+08:00  INFO 50044 --- [title] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2026-07-23T14:30:19.798+08:00  INFO 50044 --- [title] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-07-23T14:30:19.798+08:00  INFO 50044 --- [title] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 909 ms
+Logging initialized using 'class org.apache.ibatis.logging.stdout.StdOutImpl' adapter.
+Get /192.168.80.1 network interface 
+Get network interface info: name:eth6 (VMware Virtual Ethernet Adapter for VMnet8)
+Initialization Sequence datacenterId:0 workerId:5
+ _ _   |_  _ _|_. ___ _ |    _ 
+| | |\/|_)(_| | |_\  |_)||_|_\ 
+     /               |         
+                        3.5.9 
+2026-07-23T14:30:20.564+08:00  INFO 50044 --- [title] [           main] org.redisson.Version                     : Redisson 3.52.0
+2026-07-23T14:30:20.756+08:00  INFO 50044 --- [title] [isson-netty-4-4] o.redisson.connection.ConnectionsHolder  : 1 connections initialized for 192.168.80.128/192.168.80.128:6379
+2026-07-23T14:30:20.830+08:00  INFO 50044 --- [title] [sson-netty-4-19] o.redisson.connection.ConnectionsHolder  : 24 connections initialized for 192.168.80.128/192.168.80.128:6379
+2026-07-23T14:30:21.049+08:00  INFO 50044 --- [title] [           main] s.controller.VoucherOrderController      : Redis Stream消费组 g1 创建成功
+-----------------
+2026-07-23T14:30:21.084+08:00  INFO 50044 --- [title] [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2026-07-23T14:30:21.335+08:00  INFO 50044 --- [title] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-07-23T14:30:21.341+08:00  INFO 50044 --- [title] [           main] start.BigEventApplication                : Started BigEventApplication in 2.724 seconds (process running for 3.143)
+2026-07-23T14:30:21.344+08:00  INFO 50044 --- [title] [           main] start.BigEventApplication                : BigEvent启动成功
+2026-07-23T14:30:51.363+08:00  INFO 50044 --- [title] [nio-8080-exec-6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-07-23T14:30:51.363+08:00  INFO 50044 --- [title] [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-07-23T14:30:51.364+08:00  INFO 50044 --- [title] [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@49943d39] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@38c40394] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@553ecae4] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@53b75a38] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@168b7e65] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6de84389] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6c82eeb8] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3b20d69] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3c597382] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3755d5c7] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@47756cb9] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@43b79111] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@56c5e6d1] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5f509a42] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@47905c88] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@490c7d93] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@53e9219c] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3b10bc55] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7e5cefe9] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@488d0f2b] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@71cc9d5a] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@a9e7564] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4550b86a] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@44ca217d] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@75b3a6b5] was not registered for synchronization because synchronization is not active
+2026-07-23T14:30:51.554+08:00  INFO 50044 --- [title] [nio-8080-exec-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@45d8144e] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2df8574a] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7892f885] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@202a183e] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1465d88e] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@556c14c] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6e08c199] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@18f49a9c] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6e9a6db5] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3fb0cf9b] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2e591a54] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@59df7f43] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@675765be] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@265db1bc] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4f03b829] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7786f3fc] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@19ca28d9] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5b8c1478] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@384d497c] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@71c2e04c] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2002f50b] was not registered for synchronization because synchronization is not active
+2026-07-23T14:30:51.769+08:00  INFO 50044 --- [title] [nio-8080-exec-7] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5c7bc22f
+2026-07-23T14:30:51.770+08:00  INFO 50044 --- [title] [nio-8080-exec-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7838124d] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1065307517 wrapping com.mysql.cj.jdbc.ConnectionImpl@5c7bc22f] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@633022ee] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1431040377 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@564a58d3] was not registered for synchronization because synchronization is not active
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@78e6b87f] was not registered for synchronization because synchronization is not active
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2ee7b22b] was not registered for synchronization because synchronization is not active
+<==      Total: 1
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5b8c1478]
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2002f50b]
+JDBC Connection [HikariProxyConnection@2131034116 wrapping com.mysql.cj.jdbc.ConnectionImpl@5c7bc22f] will not be managed by Spring
+JDBC Connection [HikariProxyConnection@915058693 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@71c2e04c]
+JDBC Connection [HikariProxyConnection@2034307964 wrapping com.mysql.cj.jdbc.ConnectionImpl@5c7bc22f] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+==> Parameters: 1(Long)
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@384d497c]
+JDBC Connection [HikariProxyConnection@386778512 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@19ca28d9]
+JDBC Connection [HikariProxyConnection@1103388601 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7786f3fc]
+JDBC Connection [HikariProxyConnection@857039148 wrapping com.mysql.cj.jdbc.ConnectionImpl@5c7bc22f] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7e5cefe9]
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+JDBC Connection [HikariProxyConnection@681204487 wrapping com.mysql.cj.jdbc.ConnectionImpl@5c7bc22f] will not be managed by Spring
+Creating a new SqlSession
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@34e8fd50] was not registered for synchronization because synchronization is not active
+==> Parameters: 1(Long)
+JDBC Connection [HikariProxyConnection@1771083556 wrapping com.mysql.cj.jdbc.ConnectionImpl@6daf0ece] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4f03b829]
+JDBC Connection [HikariProxyConnection@1461230088 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@675765be]
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@265db1bc]
+JDBC Connection [HikariProxyConnection@547283439 wrapping com.mysql.cj.jdbc.ConnectionImpl@6daf0ece] will not be managed by Spring
+JDBC Connection [HikariProxyConnection@829892125 wrapping com.mysql.cj.jdbc.ConnectionImpl@5c7bc22f] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@59df7f43]
+JDBC Connection [HikariProxyConnection@1616748054 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3fb0cf9b]
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+JDBC Connection [HikariProxyConnection@372467698 wrapping com.mysql.cj.jdbc.ConnectionImpl@5c7bc22f] will not be managed by Spring
+<==      Total: 1
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2e591a54]
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6e9a6db5]
+JDBC Connection [HikariProxyConnection@1624191528 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+JDBC Connection [HikariProxyConnection@194064278 wrapping com.mysql.cj.jdbc.ConnectionImpl@6daf0ece] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6e08c199]
+JDBC Connection [HikariProxyConnection@446833778 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+Creating a new SqlSession
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6716d611] was not registered for synchronization because synchronization is not active
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+<==      Total: 1
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@556c14c]
+JDBC Connection [HikariProxyConnection@787341899 wrapping com.mysql.cj.jdbc.ConnectionImpl@6daf0ece] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@18f49a9c]
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1465d88e]
+JDBC Connection [HikariProxyConnection@1985284583 wrapping com.mysql.cj.jdbc.ConnectionImpl@5c7bc22f] will not be managed by Spring
+JDBC Connection [HikariProxyConnection@591379589 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@202a183e]
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2df8574a]
+JDBC Connection [HikariProxyConnection@2071217779 wrapping com.mysql.cj.jdbc.ConnectionImpl@6daf0ece] will not be managed by Spring
+<==      Total: 1
+JDBC Connection [HikariProxyConnection@1260380805 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7892f885]
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+JDBC Connection [HikariProxyConnection@485202904 wrapping com.mysql.cj.jdbc.ConnectionImpl@5c7bc22f] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+<==      Total: 1
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@45d8144e]
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@75b3a6b5]
+JDBC Connection [HikariProxyConnection@55720603 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+JDBC Connection [HikariProxyConnection@275524888 wrapping com.mysql.cj.jdbc.ConnectionImpl@6daf0ece] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@168b7e65]
+JDBC Connection [HikariProxyConnection@1707927668 wrapping com.mysql.cj.jdbc.ConnectionImpl@5c7bc22f] will not be managed by Spring
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3c597382]
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@49943d39]
+JDBC Connection [HikariProxyConnection@1890266766 wrapping com.mysql.cj.jdbc.ConnectionImpl@6daf0ece] will not be managed by Spring
+JDBC Connection [HikariProxyConnection@625482464 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@71cc9d5a]
+JDBC Connection [HikariProxyConnection@5535851 wrapping com.mysql.cj.jdbc.ConnectionImpl@5c7bc22f] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+Creating a new SqlSession
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1f9f42a9] was not registered for synchronization because synchronization is not active
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+<==      Total: 1
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@a9e7564]
+JDBC Connection [HikariProxyConnection@1693679192 wrapping com.mysql.cj.jdbc.ConnectionImpl@6daf0ece] will not be managed by Spring
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@553ecae4]
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+JDBC Connection [HikariProxyConnection@2111080043 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==      Total: 1
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@43b79111]
+JDBC Connection [HikariProxyConnection@1518442183 wrapping com.mysql.cj.jdbc.ConnectionImpl@5c7bc22f] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+==> Parameters: 1(Long)
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6de84389]
+JDBC Connection [HikariProxyConnection@671590092 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@488d0f2b]
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+JDBC Connection [HikariProxyConnection@1238728688 wrapping com.mysql.cj.jdbc.ConnectionImpl@6daf0ece] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==      Total: 1
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@47756cb9]
+<==      Total: 1
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+JDBC Connection [HikariProxyConnection@1640082729 wrapping com.mysql.cj.jdbc.ConnectionImpl@5c7bc22f] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@47905c88]
+==> Parameters: 1(Long)
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@44ca217d]
+JDBC Connection [HikariProxyConnection@605780970 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+JDBC Connection [HikariProxyConnection@139054679 wrapping com.mysql.cj.jdbc.ConnectionImpl@6daf0ece] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@490c7d93]
+<==      Total: 1
+JDBC Connection [HikariProxyConnection@623044719 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3755d5c7]
+==> Parameters: 1(Long)
+JDBC Connection [HikariProxyConnection@490761265 wrapping com.mysql.cj.jdbc.ConnectionImpl@6daf0ece] will not be managed by Spring
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5f509a42]
+JDBC Connection [HikariProxyConnection@860877429 wrapping com.mysql.cj.jdbc.ConnectionImpl@5c7bc22f] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3b10bc55]
+<==      Total: 1
+JDBC Connection [HikariProxyConnection@1051729966 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@56c5e6d1]
+JDBC Connection [HikariProxyConnection@42226953 wrapping com.mysql.cj.jdbc.ConnectionImpl@6daf0ece] will not be managed by Spring
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6c82eeb8]
+==> Parameters: 1(Long)
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+JDBC Connection [HikariProxyConnection@512179218 wrapping com.mysql.cj.jdbc.ConnectionImpl@5c7bc22f] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@53b75a38]
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3b20d69]
+JDBC Connection [HikariProxyConnection@176687674 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+JDBC Connection [HikariProxyConnection@111257031 wrapping com.mysql.cj.jdbc.ConnectionImpl@6daf0ece] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4550b86a]
+JDBC Connection [HikariProxyConnection@1996481338 wrapping com.mysql.cj.jdbc.ConnectionImpl@5c7bc22f] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+<==      Total: 1
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@53e9219c]
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@38c40394]
+<==      Total: 1
+JDBC Connection [HikariProxyConnection@1844957432 wrapping com.mysql.cj.jdbc.ConnectionImpl@6daf0ece] will not be managed by Spring
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7838124d]
+JDBC Connection [HikariProxyConnection@1485679722 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+JDBC Connection [HikariProxyConnection@1981896979 wrapping com.mysql.cj.jdbc.ConnectionImpl@5c7bc22f] will not be managed by Spring
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@564a58d3]
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+JDBC Connection [HikariProxyConnection@538986887 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+<==      Total: 1
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@78e6b87f]
+<==      Total: 1
+JDBC Connection [HikariProxyConnection@976160189 wrapping com.mysql.cj.jdbc.ConnectionImpl@5c7bc22f] will not be managed by Spring
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@633022ee]
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+JDBC Connection [HikariProxyConnection@1775318147 wrapping com.mysql.cj.jdbc.ConnectionImpl@6daf0ece] will not be managed by Spring
+==> Parameters: 1(Long)
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+Creating a new SqlSession
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@60f0ab84] was not registered for synchronization because synchronization is not active
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@34e8fd50]
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+JDBC Connection [HikariProxyConnection@291028778 wrapping com.mysql.cj.jdbc.ConnectionImpl@5c7bc22f] will not be managed by Spring
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2ee7b22b]
+==> Parameters: 1(Long)
+<==      Total: 1
+JDBC Connection [HikariProxyConnection@1849117162 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6716d611]
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1f9f42a9]
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@60f0ab84]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1bf76129] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@355503143 wrapping com.mysql.cj.jdbc.ConnectionImpl@5c7bc22f] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1bf76129]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@c80ee75] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@38211989 wrapping com.mysql.cj.jdbc.ConnectionImpl@5c7bc22f] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@c80ee75]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2ed54b04] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@538095790 wrapping com.mysql.cj.jdbc.ConnectionImpl@5c7bc22f] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2ed54b04]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1b9cfcfb] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@358285816 wrapping com.mysql.cj.jdbc.ConnectionImpl@5c7bc22f] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1b9cfcfb]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@38232cc9] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@920962493 wrapping com.mysql.cj.jdbc.ConnectionImpl@5c7bc22f] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@38232cc9]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1b2d191e] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@367719435 wrapping com.mysql.cj.jdbc.ConnectionImpl@5c7bc22f] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1b2d191e]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2d0ebf84] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@600396885 wrapping com.mysql.cj.jdbc.ConnectionImpl@5c7bc22f] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2d0ebf84]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@39c3569] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@224123754 wrapping com.mysql.cj.jdbc.ConnectionImpl@5c7bc22f] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@39c3569]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@ef16d28] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@3572358 wrapping com.mysql.cj.jdbc.ConnectionImpl@5c7bc22f] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@ef16d28]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1b1b17ab] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@366799544 wrapping com.mysql.cj.jdbc.ConnectionImpl@5c7bc22f] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1b1b17ab]
+2026-07-23T14:30:51.893+08:00  INFO 50044 --- [title] [io-8080-exec-48] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.893+08:00  INFO 50044 --- [title] [io-8080-exec-49] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.893+08:00  INFO 50044 --- [title] [io-8080-exec-17] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.893+08:00  INFO 50044 --- [title] [io-8080-exec-45] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.957+08:00  INFO 50044 --- [title] [io-8080-exec-65] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.893+08:00  INFO 50044 --- [title] [io-8080-exec-44] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.893+08:00  INFO 50044 --- [title] [io-8080-exec-31] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.957+08:00  INFO 50044 --- [title] [io-8080-exec-65] start.aspect.InfoAspect                  : 耗时:4ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.957+08:00  INFO 50044 --- [title] [io-8080-exec-31] start.aspect.InfoAspect                  : 耗时:269ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.957+08:00  INFO 50044 --- [title] [io-8080-exec-45] start.aspect.InfoAspect                  : 耗时:141ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.957+08:00  INFO 50044 --- [title] [io-8080-exec-44] start.aspect.InfoAspect                  : 耗时:150ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.893+08:00  INFO 50044 --- [title] [io-8080-exec-12] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.893+08:00  INFO 50044 --- [title] [io-8080-exec-43] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.893+08:00  INFO 50044 --- [title] [io-8080-exec-52] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.893+08:00  INFO 50044 --- [title] [nio-8080-exec-2] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.957+08:00  INFO 50044 --- [title] [io-8080-exec-12] start.aspect.InfoAspect                  : 耗时:365ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.893+08:00  INFO 50044 --- [title] [io-8080-exec-11] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.957+08:00  INFO 50044 --- [title] [io-8080-exec-52] start.aspect.InfoAspect                  : 耗时:67ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.957+08:00  INFO 50044 --- [title] [io-8080-exec-43] start.aspect.InfoAspect                  : 耗时:161ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.957+08:00  INFO 50044 --- [title] [nio-8080-exec-2] start.aspect.InfoAspect                  : 耗时:365ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.957+08:00  INFO 50044 --- [title] [io-8080-exec-11] start.aspect.InfoAspect                  : 耗时:365ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.893+08:00  INFO 50044 --- [title] [io-8080-exec-35] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.957+08:00  INFO 50044 --- [title] [io-8080-exec-35] start.aspect.InfoAspect                  : 耗时:240ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.957+08:00  INFO 50044 --- [title] [io-8080-exec-49] start.aspect.InfoAspect                  : 耗时:99ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.894+08:00  INFO 50044 --- [title] [io-8080-exec-53] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.894+08:00  INFO 50044 --- [title] [io-8080-exec-58] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.894+08:00  INFO 50044 --- [title] [io-8080-exec-30] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.957+08:00  INFO 50044 --- [title] [io-8080-exec-53] start.aspect.InfoAspect                  : 耗时:60ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.957+08:00  INFO 50044 --- [title] [io-8080-exec-58] start.aspect.InfoAspect                  : 耗时:12ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.957+08:00  INFO 50044 --- [title] [io-8080-exec-30] start.aspect.InfoAspect                  : 耗时:290ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.894+08:00  INFO 50044 --- [title] [io-8080-exec-28] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.894+08:00  INFO 50044 --- [title] [io-8080-exec-23] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.894+08:00  INFO 50044 --- [title] [io-8080-exec-24] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.927+08:00  INFO 50044 --- [title] [io-8080-exec-62] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.957+08:00  INFO 50044 --- [title] [io-8080-exec-28] start.aspect.InfoAspect                  : 耗时:312ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.957+08:00  INFO 50044 --- [title] [io-8080-exec-23] start.aspect.InfoAspect                  : 耗时:361ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.894+08:00  INFO 50044 --- [title] [io-8080-exec-26] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.957+08:00  INFO 50044 --- [title] [io-8080-exec-24] start.aspect.InfoAspect                  : 耗时:351ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.957+08:00  INFO 50044 --- [title] [io-8080-exec-62] start.aspect.InfoAspect                  : 耗时:2ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.894+08:00  INFO 50044 --- [title] [io-8080-exec-33] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.900+08:00  INFO 50044 --- [title] [io-8080-exec-59] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.957+08:00  INFO 50044 --- [title] [io-8080-exec-26] start.aspect.InfoAspect                  : 耗时:330ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.957+08:00  INFO 50044 --- [title] [io-8080-exec-33] start.aspect.InfoAspect                  : 耗时:261ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.894+08:00  INFO 50044 --- [title] [io-8080-exec-37] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.957+08:00  INFO 50044 --- [title] [io-8080-exec-59] start.aspect.InfoAspect                  : 耗时:4ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.894+08:00  INFO 50044 --- [title] [io-8080-exec-13] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.894+08:00  INFO 50044 --- [title] [io-8080-exec-34] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.894+08:00  INFO 50044 --- [title] [io-8080-exec-55] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.894+08:00  INFO 50044 --- [title] [io-8080-exec-40] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.957+08:00  INFO 50044 --- [title] [io-8080-exec-37] start.aspect.InfoAspect                  : 耗时:220ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.894+08:00  INFO 50044 --- [title] [io-8080-exec-18] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.959+08:00  INFO 50044 --- [title] [io-8080-exec-13] start.aspect.InfoAspect                  : 耗时:366ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.894+08:00  INFO 50044 --- [title] [io-8080-exec-46] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.894+08:00  INFO 50044 --- [title] [io-8080-exec-14] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.908+08:00  INFO 50044 --- [title] [io-8080-exec-60] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.959+08:00  INFO 50044 --- [title] [io-8080-exec-34] start.aspect.InfoAspect                  : 耗时:246ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.959+08:00  INFO 50044 --- [title] [io-8080-exec-55] start.aspect.InfoAspect                  : 耗时:33ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.920+08:00  INFO 50044 --- [title] [io-8080-exec-61] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.894+08:00  INFO 50044 --- [title] [nio-8080-exec-1] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.894+08:00  INFO 50044 --- [title] [nio-8080-exec-3] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.894+08:00  INFO 50044 --- [title] [io-8080-exec-47] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.894+08:00  INFO 50044 --- [title] [io-8080-exec-32] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.894+08:00  INFO 50044 --- [title] [io-8080-exec-54] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.894+08:00  INFO 50044 --- [title] [io-8080-exec-42] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.959+08:00  INFO 50044 --- [title] [io-8080-exec-32] start.aspect.InfoAspect                  : 耗时:268ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.959+08:00  INFO 50044 --- [title] [io-8080-exec-40] start.aspect.InfoAspect                  : 耗时:192ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.894+08:00  INFO 50044 --- [title] [io-8080-exec-56] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.959+08:00  INFO 50044 --- [title] [io-8080-exec-47] start.aspect.InfoAspect                  : 耗时:121ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.959+08:00  INFO 50044 --- [title] [io-8080-exec-54] start.aspect.InfoAspect                  : 耗时:50ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.959+08:00  INFO 50044 --- [title] [io-8080-exec-18] start.aspect.InfoAspect                  : 耗时:366ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.894+08:00  INFO 50044 --- [title] [io-8080-exec-57] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.894+08:00  INFO 50044 --- [title] [io-8080-exec-38] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.894+08:00  INFO 50044 --- [title] [io-8080-exec-29] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.894+08:00  INFO 50044 --- [title] [io-8080-exec-36] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.959+08:00  INFO 50044 --- [title] [nio-8080-exec-1] start.aspect.InfoAspect                  : 耗时:366ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.959+08:00  INFO 50044 --- [title] [io-8080-exec-57] start.aspect.InfoAspect                  : 耗时:19ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.959+08:00  INFO 50044 --- [title] [io-8080-exec-38] start.aspect.InfoAspect                  : 耗时:213ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.959+08:00  INFO 50044 --- [title] [io-8080-exec-29] start.aspect.InfoAspect                  : 耗时:300ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.959+08:00  INFO 50044 --- [title] [io-8080-exec-61] start.aspect.InfoAspect                  : 耗时:5ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.959+08:00  INFO 50044 --- [title] [io-8080-exec-36] start.aspect.InfoAspect                  : 耗时:231ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.959+08:00  INFO 50044 --- [title] [io-8080-exec-60] start.aspect.InfoAspect                  : 耗时:3ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.959+08:00  INFO 50044 --- [title] [io-8080-exec-46] start.aspect.InfoAspect                  : 耗时:133ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.959+08:00  INFO 50044 --- [title] [io-8080-exec-14] start.aspect.InfoAspect                  : 耗时:366ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.894+08:00  INFO 50044 --- [title] [io-8080-exec-50] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.894+08:00  INFO 50044 --- [title] [io-8080-exec-39] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.894+08:00  INFO 50044 --- [title] [io-8080-exec-27] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.894+08:00  INFO 50044 --- [title] [io-8080-exec-41] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.959+08:00  INFO 50044 --- [title] [nio-8080-exec-3] start.aspect.InfoAspect                  : 耗时:366ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.959+08:00  INFO 50044 --- [title] [io-8080-exec-56] start.aspect.InfoAspect                  : 耗时:31ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.959+08:00  INFO 50044 --- [title] [io-8080-exec-42] start.aspect.InfoAspect                  : 耗时:173ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.959+08:00  INFO 50044 --- [title] [io-8080-exec-27] start.aspect.InfoAspect                  : 耗时:323ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.959+08:00  INFO 50044 --- [title] [io-8080-exec-41] start.aspect.InfoAspect                  : 耗时:181ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.957+08:00  INFO 50044 --- [title] [io-8080-exec-17] start.aspect.InfoAspect                  : 耗时:365ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.959+08:00  INFO 50044 --- [title] [io-8080-exec-50] start.aspect.InfoAspect                  : 耗时:90ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.959+08:00  INFO 50044 --- [title] [io-8080-exec-39] start.aspect.InfoAspect                  : 耗时:201ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.894+08:00  INFO 50044 --- [title] [io-8080-exec-25] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.939+08:00  INFO 50044 --- [title] [io-8080-exec-63] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.894+08:00  INFO 50044 --- [title] [io-8080-exec-51] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.953+08:00  INFO 50044 --- [title] [io-8080-exec-64] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.961+08:00  INFO 50044 --- [title] [io-8080-exec-25] start.aspect.InfoAspect                  : 耗时:341ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.961+08:00  INFO 50044 --- [title] [io-8080-exec-63] start.aspect.InfoAspect                  : 耗时:6ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.957+08:00  INFO 50044 --- [title] [io-8080-exec-48] start.aspect.InfoAspect                  : 耗时:110ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.961+08:00  INFO 50044 --- [title] [io-8080-exec-51] start.aspect.InfoAspect                  : 耗时:80ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.961+08:00  INFO 50044 --- [title] [io-8080-exec-64] start.aspect.InfoAspect                  : 耗时:5ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.894+08:00  INFO 50044 --- [title] [io-8080-exec-15] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.896+08:00  INFO 50044 --- [title] [io-8080-exec-16] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.961+08:00  INFO 50044 --- [title] [io-8080-exec-15] start.aspect.InfoAspect                  : 耗时:366ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.961+08:00  INFO 50044 --- [title] [io-8080-exec-16] start.aspect.InfoAspect                  : 耗时:368ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.894+08:00  INFO 50044 --- [title] [io-8080-exec-20] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.961+08:00  INFO 50044 --- [title] [io-8080-exec-20] start.aspect.InfoAspect                  : 耗时:366ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.894+08:00  INFO 50044 --- [title] [nio-8080-exec-9] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.894+08:00  INFO 50044 --- [title] [io-8080-exec-21] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.894+08:00  INFO 50044 --- [title] [io-8080-exec-22] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.894+08:00  INFO 50044 --- [title] [io-8080-exec-10] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.961+08:00  INFO 50044 --- [title] [nio-8080-exec-9] start.aspect.InfoAspect                  : 耗时:366ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.961+08:00  INFO 50044 --- [title] [io-8080-exec-22] start.aspect.InfoAspect                  : 耗时:366ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.961+08:00  INFO 50044 --- [title] [io-8080-exec-10] start.aspect.InfoAspect                  : 耗时:366ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.961+08:00  INFO 50044 --- [title] [io-8080-exec-21] start.aspect.InfoAspect                  : 耗时:366ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.894+08:00  INFO 50044 --- [title] [nio-8080-exec-7] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.894+08:00  INFO 50044 --- [title] [nio-8080-exec-5] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.894+08:00  INFO 50044 --- [title] [nio-8080-exec-6] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.894+08:00  INFO 50044 --- [title] [nio-8080-exec-8] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.894+08:00  INFO 50044 --- [title] [nio-8080-exec-4] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.894+08:00  INFO 50044 --- [title] [io-8080-exec-19] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.961+08:00  INFO 50044 --- [title] [nio-8080-exec-5] start.aspect.InfoAspect                  : 耗时:366ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.961+08:00  INFO 50044 --- [title] [nio-8080-exec-7] start.aspect.InfoAspect                  : 耗时:366ms, Result:Result(code=200, message=操作成功, data=888849713904746830)
+2026-07-23T14:30:51.961+08:00  INFO 50044 --- [title] [nio-8080-exec-6] start.aspect.InfoAspect                  : 耗时:366ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.961+08:00  INFO 50044 --- [title] [nio-8080-exec-4] start.aspect.InfoAspect                  : 耗时:366ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.961+08:00  INFO 50044 --- [title] [io-8080-exec-19] start.aspect.InfoAspect                  : 耗时:366ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:51.961+08:00  INFO 50044 --- [title] [nio-8080-exec-8] start.aspect.InfoAspect                  : 耗时:366ms, Result:Result(code=0, message=重复下单, data=null)
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3970f1d4] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@934746250 wrapping com.mysql.cj.jdbc.ConnectionImpl@5c7bc22f] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+voucherOrder = VoucherOrder(id=888849713904746830, userId=1, voucherId=1, payType=null, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3970f1d4]
+2026-07-23T14:30:51.968+08:00  INFO 50044 --- [title] [io-8080-exec-66] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.968+08:00  INFO 50044 --- [title] [io-8080-exec-66] start.aspect.InfoAspect                  : 耗时:5ms, Result:Result(code=0, message=重复下单, data=null)
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6ba235b0] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1701172916 wrapping com.mysql.cj.jdbc.ConnectionImpl@5c7bc22f] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6ba235b0]
+2026-07-23T14:30:51.976+08:00  INFO 50044 --- [title] [io-8080-exec-67] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.976+08:00  INFO 50044 --- [title] [io-8080-exec-67] start.aspect.InfoAspect                  : 耗时:3ms, Result:Result(code=0, message=重复下单, data=null)
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2bb41e52] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@628352340 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2bb41e52]
+2026-07-23T14:30:51.985+08:00  INFO 50044 --- [title] [io-8080-exec-68] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.985+08:00  INFO 50044 --- [title] [io-8080-exec-68] start.aspect.InfoAspect                  : 耗时:2ms, Result:Result(code=0, message=重复下单, data=null)
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@41be287a] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1333382717 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@41be287a]
+2026-07-23T14:30:51.996+08:00  INFO 50044 --- [title] [io-8080-exec-69] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:51.996+08:00  INFO 50044 --- [title] [io-8080-exec-69] start.aspect.InfoAspect                  : 耗时:2ms, Result:Result(code=0, message=重复下单, data=null)
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@698dbcc1] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1732927360 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@698dbcc1]
+2026-07-23T14:30:52.008+08:00  INFO 50044 --- [title] [io-8080-exec-70] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:52.008+08:00  INFO 50044 --- [title] [io-8080-exec-70] start.aspect.InfoAspect                  : 耗时:3ms, Result:Result(code=0, message=重复下单, data=null)
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@744c4a5c] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@2055973541 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@744c4a5c]
+2026-07-23T14:30:52.030+08:00  INFO 50044 --- [title] [io-8080-exec-71] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:52.030+08:00  INFO 50044 --- [title] [io-8080-exec-71] start.aspect.InfoAspect                  : 耗时:16ms, Result:Result(code=0, message=重复下单, data=null)
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@579bdf57] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1499212756 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@579bdf57]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7ecdc4c1] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1879713128 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+2026-07-23T14:30:52.035+08:00  INFO 50044 --- [title] [io-8080-exec-72] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:52.035+08:00  INFO 50044 --- [title] [io-8080-exec-72] start.aspect.InfoAspect                  : 耗时:4ms, Result:Result(code=0, message=重复下单, data=null)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7ecdc4c1]
+2026-07-23T14:30:52.040+08:00  INFO 50044 --- [title] [io-8080-exec-73] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:52.040+08:00  INFO 50044 --- [title] [io-8080-exec-73] start.aspect.InfoAspect                  : 耗时:5ms, Result:Result(code=0, message=重复下单, data=null)
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4ef4559c] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1077129778 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4ef4559c]
+2026-07-23T14:30:52.049+08:00  INFO 50044 --- [title] [io-8080-exec-74] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:52.049+08:00  INFO 50044 --- [title] [io-8080-exec-74] start.aspect.InfoAspect                  : 耗时:6ms, Result:Result(code=0, message=重复下单, data=null)
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@311e3ff8] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1071241131 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@311e3ff8]
+2026-07-23T14:30:52.059+08:00  INFO 50044 --- [title] [io-8080-exec-75] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:52.059+08:00  INFO 50044 --- [title] [io-8080-exec-75] start.aspect.InfoAspect                  : 耗时:4ms, Result:Result(code=0, message=重复下单, data=null)
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3ec51fa] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@220966903 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3ec51fa]
+2026-07-23T14:30:52.074+08:00  INFO 50044 --- [title] [io-8080-exec-76] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:52.074+08:00  INFO 50044 --- [title] [io-8080-exec-76] start.aspect.InfoAspect                  : 耗时:8ms, Result:Result(code=0, message=重复下单, data=null)
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7e738d04] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1114630685 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7e738d04]
+2026-07-23T14:30:52.081+08:00  INFO 50044 --- [title] [io-8080-exec-43] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:52.081+08:00  INFO 50044 --- [title] [io-8080-exec-43] start.aspect.InfoAspect                  : 耗时:7ms, Result:Result(code=0, message=重复下单, data=null)
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4c06c4f8]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@51540b69] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@2031241857 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@51540b69]
+2026-07-23T14:30:52.091+08:00  INFO 50044 --- [title] [io-8080-exec-41] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:52.091+08:00  INFO 50044 --- [title] [io-8080-exec-41] start.aspect.InfoAspect                  : 耗时:6ms, Result:Result(code=0, message=重复下单, data=null)
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7b68a0c2] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1274290202 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7b68a0c2]
+2026-07-23T14:30:52.098+08:00  INFO 50044 --- [title] [io-8080-exec-15] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:52.098+08:00  INFO 50044 --- [title] [io-8080-exec-15] start.aspect.InfoAspect                  : 耗时:5ms, Result:Result(code=0, message=重复下单, data=null)
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5c784e90] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@376305868 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5c784e90]
+2026-07-23T14:30:52.108+08:00  INFO 50044 --- [title] [io-8080-exec-11] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:52.108+08:00  INFO 50044 --- [title] [io-8080-exec-11] start.aspect.InfoAspect                  : 耗时:5ms, Result:Result(code=0, message=重复下单, data=null)
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@16c91ce6] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@33071673 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@16c91ce6]
+2026-07-23T14:30:52.117+08:00  INFO 50044 --- [title] [io-8080-exec-60] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:52.117+08:00  INFO 50044 --- [title] [io-8080-exec-60] start.aspect.InfoAspect                  : 耗时:4ms, Result:Result(code=0, message=重复下单, data=null)
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7aad0c4d] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@28151512 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7aad0c4d]
+2026-07-23T14:30:52.126+08:00  INFO 50044 --- [title] [nio-8080-exec-8] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:52.126+08:00  INFO 50044 --- [title] [nio-8080-exec-8] start.aspect.InfoAspect                  : 耗时:2ms, Result:Result(code=0, message=重复下单, data=null)
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@592d1599] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@955776819 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@592d1599]
+JDBC Connection [HikariProxyConnection@1919229200 wrapping com.mysql.cj.jdbc.ConnectionImpl@5c7bc22f] will be managed by Spring
+2026-07-23T14:30:52.136+08:00  INFO 50044 --- [title] [io-8080-exec-14] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:52.137+08:00  INFO 50044 --- [title] [io-8080-exec-14] start.aspect.InfoAspect                  : 耗时:4ms, Result:Result(code=0, message=重复下单, data=null)
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3e45cc4b] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1339039911 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3e45cc4b]
+2026-07-23T14:30:52.145+08:00  INFO 50044 --- [title] [io-8080-exec-75] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:52.145+08:00  INFO 50044 --- [title] [io-8080-exec-75] start.aspect.InfoAspect                  : 耗时:3ms, Result:Result(code=0, message=重复下单, data=null)
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1bf0f6d9] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1524150210 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1bf0f6d9]
+2026-07-23T14:30:52.155+08:00  INFO 50044 --- [title] [io-8080-exec-31] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:52.155+08:00  INFO 50044 --- [title] [io-8080-exec-31] start.aspect.InfoAspect                  : 耗时:4ms, Result:Result(code=0, message=重复下单, data=null)
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7a32761d] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1490065491 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7a32761d]
+2026-07-23T14:30:52.183+08:00  INFO 50044 --- [title] [io-8080-exec-44] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:52.183+08:00  INFO 50044 --- [title] [io-8080-exec-44] start.aspect.InfoAspect                  : 耗时:21ms, Result:Result(code=0, message=重复下单, data=null)
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7e7b75c4] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1047600885 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+Creating a new SqlSession
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@73cba69a] was not registered for synchronization because synchronization is not active
+==> Parameters: 1(Long)
+JDBC Connection [HikariProxyConnection@502328461 wrapping com.mysql.cj.jdbc.ConnectionImpl@6daf0ece] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7e7b75c4]
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@73cba69a]
+2026-07-23T14:30:52.187+08:00  INFO 50044 --- [title] [io-8080-exec-48] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:52.187+08:00  INFO 50044 --- [title] [io-8080-exec-25] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:52.187+08:00  INFO 50044 --- [title] [io-8080-exec-48] start.aspect.InfoAspect                  : 耗时:4ms, Result:Result(code=0, message=重复下单, data=null)
+2026-07-23T14:30:52.187+08:00  INFO 50044 --- [title] [io-8080-exec-25] start.aspect.InfoAspect                  : 耗时:4ms, Result:Result(code=0, message=重复下单, data=null)
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3045d8b6] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@362507020 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3045d8b6]
+2026-07-23T14:30:52.199+08:00  INFO 50044 --- [title] [io-8080-exec-74] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:52.199+08:00  INFO 50044 --- [title] [io-8080-exec-74] start.aspect.InfoAspect                  : 耗时:5ms, Result:Result(code=0, message=重复下单, data=null)
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@76b04054] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1244189011 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@76b04054]
+2026-07-23T14:30:52.209+08:00  INFO 50044 --- [title] [io-8080-exec-16] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:52.209+08:00  INFO 50044 --- [title] [io-8080-exec-16] start.aspect.InfoAspect                  : 耗时:5ms, Result:Result(code=0, message=重复下单, data=null)
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@78797041] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@747315464 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@78797041]
+2026-07-23T14:30:52.217+08:00  INFO 50044 --- [title] [io-8080-exec-42] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:52.217+08:00  INFO 50044 --- [title] [io-8080-exec-42] start.aspect.InfoAspect                  : 耗时:4ms, Result:Result(code=0, message=重复下单, data=null)
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@756afcd4] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1977813187 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@756afcd4]
+2026-07-23T14:30:52.228+08:00  INFO 50044 --- [title] [io-8080-exec-49] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:52.229+08:00  INFO 50044 --- [title] [io-8080-exec-49] start.aspect.InfoAspect                  : 耗时:4ms, Result:Result(code=0, message=重复下单, data=null)
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@76cd9190] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@139452464 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@76cd9190]
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+2026-07-23T14:30:52.240+08:00  INFO 50044 --- [title] [io-8080-exec-17] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:52.240+08:00  INFO 50044 --- [title] [io-8080-exec-17] start.aspect.InfoAspect                  : 耗时:4ms, Result:Result(code=0, message=重复下单, data=null)
+==> Parameters: 1(Long), 0(Integer)
+Creating a new SqlSession
+<==    Updates: 1
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7c2bda98] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@62495174 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4c06c4f8]
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4c06c4f8] from current transaction
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7c2bda98]
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+2026-07-23T14:30:52.247+08:00  INFO 50044 --- [title] [io-8080-exec-47] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+==> Parameters: 1(Long), 1(Long)
+2026-07-23T14:30:52.247+08:00  INFO 50044 --- [title] [io-8080-exec-47] start.aspect.InfoAspect                  : 耗时:4ms, Result:Result(code=0, message=重复下单, data=null)
+<==    Columns: total
+<==        Row: 0
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4c06c4f8]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4c06c4f8] from current transaction
+==>  Preparing: INSERT INTO voucher_order ( id, user_id, voucher_id, create_time, update_time ) VALUES ( ?, ?, ?, ?, ? )
+==> Parameters: 888849713904746830(Long), 1(Long), 1(Long), 2026-07-23T14:30:52.250125500(LocalDateTime), 2026-07-23T14:30:52.250125500(LocalDateTime)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4c06c4f8]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@52924373] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1026414144 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:06
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@52924373]
+2026-07-23T14:30:52.258+08:00  INFO 50044 --- [title] [io-8080-exec-67] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:52.258+08:00  INFO 50044 --- [title] [io-8080-exec-67] start.aspect.InfoAspect                  : 耗时:5ms, Result:Result(code=0, message=重复下单, data=null)
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4c06c4f8]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4c06c4f8]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4c06c4f8]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2e106529] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1877693802 wrapping com.mysql.cj.jdbc.ConnectionImpl@51747f08] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:52
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2e106529]
+2026-07-23T14:30:52.269+08:00  INFO 50044 --- [title] [io-8080-exec-39] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:52.269+08:00  INFO 50044 --- [title] [io-8080-exec-39] start.aspect.InfoAspect                  : 耗时:6ms, Result:Result(code=0, message=重复下单, data=null)
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7ee5fbb1] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1807861087 wrapping com.mysql.cj.jdbc.ConnectionImpl@5c7bc22f] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:52
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7ee5fbb1]
+2026-07-23T14:30:52.280+08:00  INFO 50044 --- [title] [io-8080-exec-62] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:52.280+08:00  INFO 50044 --- [title] [io-8080-exec-62] start.aspect.InfoAspect                  : 耗时:5ms, Result:Result(code=0, message=重复下单, data=null)
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@eaf382f] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@2118908493 wrapping com.mysql.cj.jdbc.ConnectionImpl@5c7bc22f] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:52
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@eaf382f]
+2026-07-23T14:30:52.287+08:00  INFO 50044 --- [title] [nio-8080-exec-1] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:52.288+08:00  INFO 50044 --- [title] [nio-8080-exec-1] start.aspect.InfoAspect                  : 耗时:4ms, Result:Result(code=0, message=重复下单, data=null)
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@256aaa77] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@749556828 wrapping com.mysql.cj.jdbc.ConnectionImpl@5c7bc22f] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:52
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@256aaa77]
+2026-07-23T14:30:52.296+08:00  INFO 50044 --- [title] [io-8080-exec-64] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:52.297+08:00  INFO 50044 --- [title] [io-8080-exec-64] start.aspect.InfoAspect                  : 耗时:5ms, Result:Result(code=0, message=重复下单, data=null)
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@294700e5] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1306303051 wrapping com.mysql.cj.jdbc.ConnectionImpl@5c7bc22f] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:30:52
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@294700e5]
+2026-07-23T14:30:52.308+08:00  INFO 50044 --- [title] [io-8080-exec-13] start.aspect.InfoAspect                  : ---执行成功:异步秒杀下单, import:start.controller.VoucherOrderController, method:redisproLock, 详细:[VoucherOrder(id=null, userId=null, voucherId=1, payType=1, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)]
+2026-07-23T14:30:52.309+08:00  INFO 50044 --- [title] [io-8080-exec-13] start.aspect.InfoAspect                  : 耗时:4ms, Result:Result(code=0, message=重复下单, data=null)

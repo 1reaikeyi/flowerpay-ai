@@ -2,8 +2,13 @@ package com.branch.service.Impl;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.collection.CollectionUtil;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.branch.common.constant.RedisPrefixConstant;
+import com.branch.domain.dto.BlogPageDTO;
 import com.branch.domain.entity.UserFollower;
+import com.branch.domain.vo.BlogVO;
 import com.branch.result.PageResult;
 import com.branch.service.UserFollowerService;
 
@@ -23,34 +28,18 @@ import com.branch.result.ScrollResult;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements BlogService {
 
-    private static final String BLOG_LIKED_PREFIX = "blog:liked:";
-    private static final String BLOG_FOLLOW_PREFIX = "blog:follow:";
+
 
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
     @Autowired
     private UserFollowerService userFollowerService;
 
-
-    public Long createBlog(BlogDTO blogDTO) {
-        Long userId = SecurityContextParam.getCurrentUserId();
-        Blog blog = BeanUtil.toBean(blogDTO, Blog.class);
-        blog.setUserId(userId);
-        super.save(blog);
-        // 发送给 follower 的收件箱
-        List<UserFollower> userFollows = null;
-//                = userFollowerService.list(new LambdaQueryWrapper<>()
-//                .eq(UserFollower::getFollowUserId, userId));
-        for (UserFollower userFollow : userFollows) {
-            String key = BLOG_FOLLOW_PREFIX + userFollow.getUserId();
-            stringRedisTemplate.opsForZSet().add(key, blog.getId().toString(), System.currentTimeMillis());
-        }
-        return blog.getId();
-    }
 
     /**
      * 发布博客：保存博客并推送到所有粉丝的收件箱
@@ -59,29 +48,52 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements Bl
      * @return 博客ID
      */
     @Override
-    public Long postBlog(BlogDTO blogDTO) {
-        return null;
+    public BlogDTO postBlog(BlogDTO blogDTO) {
+        Blog blog = BeanUtil.toBean(blogDTO, Blog.class);
+        super.save(blog);
+        // 发送给所有粉丝的收件箱
+        Long userId = blog.getUserId();
+        List<UserFollower> userFollows = userFollowerService.lambdaQuery()
+                .eq(UserFollower::getUserId,userId).list();
+        for (UserFollower userFollow : userFollows) {
+            String key = RedisPrefixConstant.BLOG_FOLLOW_PREFIX + userFollow.getFollowUserId();
+            stringRedisTemplate.opsForZSet().add(key, blog.getId().toString(), System.currentTimeMillis());
+        }
+        return BeanUtil.toBean(blog, BlogDTO.class);
+    }
+     @Override
+    public PageResult<BlogVO> readAll(BlogPageDTO blogPageDTO) {
+        IPage page = new Page(blogPageDTO.getPage(), blogPageDTO.getPageSize());
+        IPage<Blog> blogPage = this.page(page);
+        List<BlogVO> blogDTOList = blogPage.getRecords().stream()
+                .map(b -> BeanUtil.toBean(b,BlogVO.class))
+                .collect(Collectors.toList());
+        PageResult<BlogVO> pageResult = new PageResult<>();
+        pageResult.setList(blogDTOList);
+        pageResult.setTotal(blogPage.getTotal());
+        pageResult.setPageSize(blogPage.getSize());
+        pageResult.setPageNum(blogPage.getCurrent());
+        return pageResult;
     }
 
     @Override
     public String toggleLike(Long id) {
         Long userId = SecurityContextParam.getCurrentUserId();
-        Double liked = stringRedisTemplate.opsForZSet().score(BLOG_LIKED_PREFIX + id, userId.toString());
+        String key = RedisPrefixConstant.BLOG_FOLLOW_PREFIX + userId;
+        Double liked = stringRedisTemplate.opsForZSet().score(key, userId.toString());
         if (liked == null) {
             // 没点赞
-            boolean success = super.lambdaUpdate()
+            boolean success = this.lambdaUpdate()
                     .setSql("liked= liked + 1").eq(Blog::getId, id).update();
-            if (success) {
-                stringRedisTemplate.opsForZSet().add(BLOG_LIKED_PREFIX + id, userId.toString(), System.currentTimeMillis());
-            }
+            stringRedisTemplate.opsForZSet().add(key,
+                    userId.toString(),
+                    System.currentTimeMillis());
             return "liked::" + id;
         } else {
             // 点赞过
             boolean success = super.lambdaUpdate()
                     .setSql("liked= liked - 1").eq(Blog::getId, id).update();
-            if (success) {
-                stringRedisTemplate.opsForZSet().remove(BLOG_LIKED_PREFIX + id, userId.toString());
-            }
+            stringRedisTemplate.opsForZSet().remove(key, userId.toString());
             return "unliked::" + id;
         }
     }
@@ -89,49 +101,27 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements Bl
     @Override
     public Boolean isLiked(Long id) {
         Long userId = SecurityContextParam.getCurrentUserId();
-        Double liked = stringRedisTemplate.opsForZSet().score(BLOG_LIKED_PREFIX + id, userId.toString());
+        Double liked = stringRedisTemplate.opsForZSet().score(RedisPrefixConstant.BLOG_LIKED_PREFIX + id, userId.toString());
         return liked != null;
     }
 
     @Override
     public Set<String> likedAll(Long id) {
-        return stringRedisTemplate.opsForZSet().range(BLOG_LIKED_PREFIX + id, 0, -1);
-    }
-
-    /**
-     * 博客点赞的Top3用户
-     *
-     * @param id
-     * @return 用户列表，无数据返回 null
-     */
-    @Override
-    public Object likedTop(long id) {
-        return null;
-    }
-
-
-    public Object likedHot(Long id) {
-        Set<String> set = stringRedisTemplate.opsForZSet().range(BLOG_LIKED_PREFIX + id, 0, 2);
-        if (CollectionUtil.isEmpty(set)) {
-            return null;
-        }
-        List<Long> ids = set.stream().map(Long::parseLong).toList();
-//        return userService.listByIds(ids);
-        return null;
+        return stringRedisTemplate.opsForZSet().range(RedisPrefixConstant.BLOG_LIKED_PREFIX+ id, 0, -1);
     }
 
     @Override
-    public ScrollResult followScroll(Long max, Long offset) {
-        if (max == null) {
-            max = System.currentTimeMillis();
+    public ScrollResult followScroll(Long offset,Long current) {
+        if (current == null) {
+            current = System.currentTimeMillis();
         }
         Long userId = SecurityContextParam.getCurrentUserId();
         Set<ZSetOperations.TypedTuple<String>> result = stringRedisTemplate.opsForZSet().reverseRangeByScoreWithScores(
-                BLOG_FOLLOW_PREFIX + userId, 0, max, offset, 10);
+                RedisPrefixConstant.BLOG_FOLLOW_PREFIX + userId, 0, current, offset, 10);
         if (CollectionUtil.isEmpty(result)) {
             return null;
         }
-        List<Long> ids = new ArrayList<>(result.size());
+        List<Long> ids = new ArrayList<>();
         long minTime = 0;
         int os = 1;
         for (ZSetOperations.TypedTuple<String> typedTuple : result) {
@@ -144,7 +134,7 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements Bl
                 os = 1;
             }
         }
-        List<Blog> blogList = super.listByIds(ids);
+        List<Blog> blogList = this.listByIds(ids);
         ScrollResult next = new ScrollResult();
         next.setList(blogList);
         next.setMinTime(minTime);
@@ -152,8 +142,5 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements Bl
         return next;
     }
 
-    @Override
-    public PageResult<BlogDTO> readAll() {
-        return null;
-    }
+   
 }

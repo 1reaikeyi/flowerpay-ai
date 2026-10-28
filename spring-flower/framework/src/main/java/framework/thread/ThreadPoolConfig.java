@@ -22,32 +22,14 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Configuration
 public class ThreadPoolConfig {
 
-    /**
-     * 核心线程数 = cpu 核心数 + 1
-     */
     private final int core = 1 + 1;
-
-    /**
-     * 有界队列容量，防止任务无限堆积导致 OOM
-     */
     private static final int QUEUE_CAPACITY = 32;
 
     private ExecutorService flowerExecutor;
     private ExecutorService flowerDetailExecutor;
     private ExecutorService festivalExecutor;
     private ExecutorService festivalDetailExecutor;
-
-    /**
-     * 构建命名线程工厂：线程名按 namePattern 递增（如 flower-handler-1），且为守护线程
-     */
-    private ThreadFactory buildThreadFactory(String namePattern) {
-        AtomicInteger threadNumber = new AtomicInteger(1);
-        return r -> {
-            Thread t = new Thread(r, String.format(namePattern, threadNumber.getAndIncrement()));
-            t.setDaemon(true);
-            return t;
-        };
-    }
+    private ExecutorService articleExecutor;
 
     /**
      * 构建缓存重建线程池：固定核心线程数，有界队列，CallerRunsPolicy 拒绝策略，
@@ -69,6 +51,17 @@ public class ThreadPoolConfig {
                 super.afterExecute(r, t);
                 printException(r, t);
             }
+        };
+    }
+    /**
+     * 构建命名线程工厂：线程名按 namePattern 递增（如 flower-handler-1），且为守护线程
+     */
+    private ThreadFactory buildThreadFactory(String namePattern) {
+        AtomicInteger threadNumber = new AtomicInteger(1);
+        return r -> {
+            Thread t = new Thread(r, String.format(namePattern, threadNumber.getAndIncrement()));
+            t.setDaemon(true);
+            return t;
         };
     }
 
@@ -110,6 +103,12 @@ public class ThreadPoolConfig {
     }
 
     @Bean
+    public ExecutorService articleExecutor() {
+        articleExecutor = buildCacheRebuildExecutor("festival-handler-%d");
+        return articleExecutor;
+    }
+
+    @Bean
     public ExecutorService festivalExecutor() {
         festivalExecutor = buildCacheRebuildExecutor("festival-handler-%d");
         log.info("Festival 缓存重建线程池初始化完成, 核心线程数: {}", core);
@@ -135,6 +134,7 @@ public class ThreadPoolConfig {
         shutdownGracefully(flowerDetailExecutor, "flowerDetail");
         shutdownGracefully(festivalExecutor, "Festival");
         shutdownGracefully(festivalDetailExecutor, "FestivalDetail");
+        shutdownGracefully(articleExecutor, "FestivalDetail");
     }
 
     private void shutdownGracefully(ExecutorService executor, String name) {

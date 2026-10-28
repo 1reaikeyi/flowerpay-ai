@@ -24,7 +24,7 @@ public class ScrollResult<T> {
     private Long minTime;
 
     /**
-     * 本次查询最后一条数据在相同时间戳中的偏移量（也就是下一次查询的 offset）
+     * 偏移量（也就是下一次查询的 offset）
      */
     private Long offset;
 }

@@ -4,7 +4,7 @@
       <!-- Logo区域 -->
       <div class="el-aside__logo1"></div>
       <!-- 侧边栏菜单 -->
-      <el-menu active-text-color="#ffd04b" background-color="#232323"
+      <el-menu active-text-color="#ffd04b" background-color="#101010ff"
           :default-active="$route.path" text-color="#fff" router>
 
 
@@ -49,12 +49,7 @@
 
           <el-menu-item index="/admin/blog/article">
             <el-icon><House /></el-icon>
-            <span>分类</span>
-          </el-menu-item>
-
-          <el-menu-item index="/admin/blog/articleDetail">
-            <el-icon><Goods /></el-icon>
-            <span>文章</span>
+            <span>近期热点信息</span>
           </el-menu-item>
 
           <el-menu-item index="/admin/blog/comment">

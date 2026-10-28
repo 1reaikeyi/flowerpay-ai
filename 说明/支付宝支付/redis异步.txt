@@ -1,0 +1,947 @@
+2026-07-23T14:25:25.491+08:00  INFO 49900 --- [title] [nio-8080-exec-6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-07-23T14:25:25.492+08:00  INFO 49900 --- [title] [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-07-23T14:25:25.504+08:00  INFO 49900 --- [title] [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@66262127] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@192366e3] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7fe9886] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@233fbcb8] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@685ac2a8] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1ca4a944] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2130d3ba] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@416c53b] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@61a9f6ed] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1de29e40] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@53300df] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@46190604] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5a3f5ac0] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3ffffdfb] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6ba3c8a5] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5ab5ad6a] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7e5269f9] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3f16fd0f] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@183b73b4] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23eda329] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3e30c660] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@15b0c090] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1f900f37] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@39823c7e] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@87c736c] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5e8ae06a] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@67d9eb7a] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2eb8e991] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@45a3fb7b] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@36c02440] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@67e0ccf4] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@ca7a422] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@75a95b21] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4aa8f935] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@f4eac85] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3418076] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@c6030ed] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@78bb77a6] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@53c5bc1b] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3e8e9811] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@57ddcf6b] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@314fbaa2] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4d744a11] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@533ab0b4] was not registered for synchronization because synchronization is not active
+2026-07-23T14:25:25.818+08:00  INFO 49900 --- [title] [io-8080-exec-43] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7984c616] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@11f5e344] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5fe53f32] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2d58753a] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7af552f1] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@22b9e6c5] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4f6d4b6a] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@17e9fe6b] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@fb715e6] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@427b1764] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3920906b] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2c7c7d75] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@57bf6c93] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5ba4c7e] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@668462c6] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1f282958] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3632f93f] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@62c48004] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3e9d7039] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@101eb122] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@71f91204] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@581967aa] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@358771a0] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@261d0498] was not registered for synchronization because synchronization is not active
+2026-07-23T14:25:26.057+08:00  INFO 49900 --- [title] [io-8080-exec-43] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@ee190ca
+2026-07-23T14:25:26.059+08:00  INFO 49900 --- [title] [io-8080-exec-43] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+JDBC Connection [HikariProxyConnection@1111932656 wrapping com.mysql.cj.jdbc.ConnectionImpl@ee190ca] will not be managed by Spring
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2cedb7b7] was not registered for synchronization because synchronization is not active
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+JDBC Connection [HikariProxyConnection@517557585 wrapping com.mysql.cj.jdbc.ConnectionImpl@1ae6da52] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3a53d689] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@44896ad9] was not registered for synchronization because synchronization is not active
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@55d26a05] was not registered for synchronization because synchronization is not active
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+<==      Total: 1
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5d3f0efc] was not registered for synchronization because synchronization is not active
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3e30c660]
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@101eb122]
+JDBC Connection [HikariProxyConnection@753233896 wrapping com.mysql.cj.jdbc.ConnectionImpl@1ae6da52] will not be managed by Spring
+JDBC Connection [HikariProxyConnection@1457427161 wrapping com.mysql.cj.jdbc.ConnectionImpl@ee190ca] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@581967aa]
+<==      Total: 1
+JDBC Connection [HikariProxyConnection@994089312 wrapping com.mysql.cj.jdbc.ConnectionImpl@ee190ca] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@261d0498]
+JDBC Connection [HikariProxyConnection@2134827595 wrapping com.mysql.cj.jdbc.ConnectionImpl@1ae6da52] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@358771a0]
+JDBC Connection [HikariProxyConnection@811239834 wrapping com.mysql.cj.jdbc.ConnectionImpl@ee190ca] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@71f91204]
+JDBC Connection [HikariProxyConnection@1812165164 wrapping com.mysql.cj.jdbc.ConnectionImpl@1ae6da52] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+==> Parameters: 1(Long)
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3e9d7039]
+JDBC Connection [HikariProxyConnection@955584905 wrapping com.mysql.cj.jdbc.ConnectionImpl@ee190ca] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+==> Parameters: 1(Long)
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@62c48004]
+JDBC Connection [HikariProxyConnection@300926157 wrapping com.mysql.cj.jdbc.ConnectionImpl@1ae6da52] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+Creating a new SqlSession
+==> Parameters: 1(Long)
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6214157a] was not registered for synchronization because synchronization is not active
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3632f93f]
+JDBC Connection [HikariProxyConnection@192783033 wrapping com.mysql.cj.jdbc.ConnectionImpl@ee190ca] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+==> Parameters: 1(Long)
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1f282958]
+JDBC Connection [HikariProxyConnection@1749254246 wrapping com.mysql.cj.jdbc.ConnectionImpl@1ae6da52] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5ba4c7e]
+JDBC Connection [HikariProxyConnection@1501071380 wrapping com.mysql.cj.jdbc.ConnectionImpl@ee190ca] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+==> Parameters: 1(Long)
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@668462c6]
+JDBC Connection [HikariProxyConnection@582715018 wrapping com.mysql.cj.jdbc.ConnectionImpl@1ae6da52] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@57bf6c93]
+JDBC Connection [HikariProxyConnection@937912639 wrapping com.mysql.cj.jdbc.ConnectionImpl@ee190ca] will not be managed by Spring
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2c7c7d75]
+JDBC Connection [HikariProxyConnection@1287450971 wrapping com.mysql.cj.jdbc.ConnectionImpl@1ae6da52] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@427b1764]
+JDBC Connection [HikariProxyConnection@24177248 wrapping com.mysql.cj.jdbc.ConnectionImpl@1ae6da52] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7a1ab24f] was not registered for synchronization because synchronization is not active
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3920906b]
+JDBC Connection [HikariProxyConnection@422445798 wrapping com.mysql.cj.jdbc.ConnectionImpl@ee190ca] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@17e9fe6b]
+JDBC Connection [HikariProxyConnection@1101704439 wrapping com.mysql.cj.jdbc.ConnectionImpl@ee190ca] will not be managed by Spring
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@fb715e6]
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+JDBC Connection [HikariProxyConnection@746462434 wrapping com.mysql.cj.jdbc.ConnectionImpl@1ae6da52] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+JDBC Connection [HikariProxyConnection@1949479903 wrapping com.mysql.cj.jdbc.ConnectionImpl@700d3981] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==      Total: 1
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4f6d4b6a]
+==> Parameters: 1(Long)
+JDBC Connection [HikariProxyConnection@597659361 wrapping com.mysql.cj.jdbc.ConnectionImpl@ee190ca] will not be managed by Spring
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@22b9e6c5]
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+JDBC Connection [HikariProxyConnection@523378442 wrapping com.mysql.cj.jdbc.ConnectionImpl@1ae6da52] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7af552f1]
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+JDBC Connection [HikariProxyConnection@1361234622 wrapping com.mysql.cj.jdbc.ConnectionImpl@700d3981] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@11f5e344]
+JDBC Connection [HikariProxyConnection@2000889686 wrapping com.mysql.cj.jdbc.ConnectionImpl@1ae6da52] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+==> Parameters: 1(Long)
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2d58753a]
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+JDBC Connection [HikariProxyConnection@1614301243 wrapping com.mysql.cj.jdbc.ConnectionImpl@ee190ca] will not be managed by Spring
+<==      Total: 1
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5fe53f32]
+JDBC Connection [HikariProxyConnection@1576883363 wrapping com.mysql.cj.jdbc.ConnectionImpl@700d3981] will not be managed by Spring
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7984c616]
+JDBC Connection [HikariProxyConnection@851611300 wrapping com.mysql.cj.jdbc.ConnectionImpl@1ae6da52] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@533ab0b4]
+<==      Total: 1
+JDBC Connection [HikariProxyConnection@1016307521 wrapping com.mysql.cj.jdbc.ConnectionImpl@700d3981] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@36c02440]
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+JDBC Connection [HikariProxyConnection@698486196 wrapping com.mysql.cj.jdbc.ConnectionImpl@ee190ca] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==      Total: 1
+==> Parameters: 1(Long)
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6ba3c8a5]
+JDBC Connection [HikariProxyConnection@1489436588 wrapping com.mysql.cj.jdbc.ConnectionImpl@1ae6da52] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+Creating a new SqlSession
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5ae2b4de] was not registered for synchronization because synchronization is not active
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@45a3fb7b]
+<==      Total: 1
+JDBC Connection [HikariProxyConnection@530968341 wrapping com.mysql.cj.jdbc.ConnectionImpl@ee190ca] will not be managed by Spring
+<==      Total: 1
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@183b73b4]
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@53300df]
+JDBC Connection [HikariProxyConnection@1729164714 wrapping com.mysql.cj.jdbc.ConnectionImpl@700d3981] will not be managed by Spring
+==> Parameters: 1(Long)
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+JDBC Connection [HikariProxyConnection@1033287327 wrapping com.mysql.cj.jdbc.ConnectionImpl@1ae6da52] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1f900f37]
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7e5269f9]
+JDBC Connection [HikariProxyConnection@255981024 wrapping com.mysql.cj.jdbc.ConnectionImpl@700d3981] will not be managed by Spring
+<==      Total: 1
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+JDBC Connection [HikariProxyConnection@488435999 wrapping com.mysql.cj.jdbc.ConnectionImpl@1ae6da52] will not be managed by Spring
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3ffffdfb]
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+JDBC Connection [HikariProxyConnection@1314601012 wrapping com.mysql.cj.jdbc.ConnectionImpl@ee190ca] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@685ac2a8]
+<==      Total: 1
+JDBC Connection [HikariProxyConnection@1824026730 wrapping com.mysql.cj.jdbc.ConnectionImpl@700d3981] will not be managed by Spring
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@233fbcb8]
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==      Total: 1
+JDBC Connection [HikariProxyConnection@1330873871 wrapping com.mysql.cj.jdbc.ConnectionImpl@ee190ca] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@192366e3]
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+JDBC Connection [HikariProxyConnection@691266779 wrapping com.mysql.cj.jdbc.ConnectionImpl@1ae6da52] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@78bb77a6]
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3e8e9811]
+JDBC Connection [HikariProxyConnection@287875196 wrapping com.mysql.cj.jdbc.ConnectionImpl@ee190ca] will not be managed by Spring
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+JDBC Connection [HikariProxyConnection@457149132 wrapping com.mysql.cj.jdbc.ConnectionImpl@700d3981] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==      Total: 1
+==> Parameters: 1(Long)
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@61a9f6ed]
+JDBC Connection [HikariProxyConnection@371328859 wrapping com.mysql.cj.jdbc.ConnectionImpl@1ae6da52] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@15b0c090]
+JDBC Connection [HikariProxyConnection@1146970161 wrapping com.mysql.cj.jdbc.ConnectionImpl@700d3981] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3f16fd0f]
+==> Parameters: 1(Long)
+JDBC Connection [HikariProxyConnection@1919553536 wrapping com.mysql.cj.jdbc.ConnectionImpl@ee190ca] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+==> Parameters: 1(Long)
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@f4eac85]
+JDBC Connection [HikariProxyConnection@2013620575 wrapping com.mysql.cj.jdbc.ConnectionImpl@1ae6da52] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@67d9eb7a]
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+JDBC Connection [HikariProxyConnection@1726718403 wrapping com.mysql.cj.jdbc.ConnectionImpl@ee190ca] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4aa8f935]
+==> Parameters: 1(Long)
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+JDBC Connection [HikariProxyConnection@623792831 wrapping com.mysql.cj.jdbc.ConnectionImpl@700d3981] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==      Total: 1
+Creating a new SqlSession
+==> Parameters: 1(Long)
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1de29e40]
+JDBC Connection [HikariProxyConnection@55052066 wrapping com.mysql.cj.jdbc.ConnectionImpl@1ae6da52] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6462a049] was not registered for synchronization because synchronization is not active
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==      Total: 1
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@c6030ed]
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5ab5ad6a]
+JDBC Connection [HikariProxyConnection@1990475018 wrapping com.mysql.cj.jdbc.ConnectionImpl@700d3981] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+JDBC Connection [HikariProxyConnection@2055178239 wrapping com.mysql.cj.jdbc.ConnectionImpl@ee190ca] will not be managed by Spring
+==> Parameters: 1(Long)
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5e8ae06a]
+==> Parameters: 1(Long)
+JDBC Connection [HikariProxyConnection@1808667473 wrapping com.mysql.cj.jdbc.ConnectionImpl@1ae6da52] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+Creating a new SqlSession
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@186e1555] was not registered for synchronization because synchronization is not active
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@67e0ccf4]
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+JDBC Connection [HikariProxyConnection@1335161735 wrapping com.mysql.cj.jdbc.ConnectionImpl@700d3981] will not be managed by Spring
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==      Total: 1
+==> Parameters: 1(Long)
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@ca7a422]
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@57ddcf6b]
+JDBC Connection [HikariProxyConnection@63185061 wrapping com.mysql.cj.jdbc.ConnectionImpl@ee190ca] will not be managed by Spring
+JDBC Connection [HikariProxyConnection@189034473 wrapping com.mysql.cj.jdbc.ConnectionImpl@1ae6da52] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+<==      Total: 1
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4d744a11]
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@39823c7e]
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@66262127]
+JDBC Connection [HikariProxyConnection@337180516 wrapping com.mysql.cj.jdbc.ConnectionImpl@1ae6da52] will not be managed by Spring
+JDBC Connection [HikariProxyConnection@89319327 wrapping com.mysql.cj.jdbc.ConnectionImpl@700d3981] will not be managed by Spring
+JDBC Connection [HikariProxyConnection@1395983100 wrapping com.mysql.cj.jdbc.ConnectionImpl@ee190ca] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5a3f5ac0]
+JDBC Connection [HikariProxyConnection@919246273 wrapping com.mysql.cj.jdbc.ConnectionImpl@ee190ca] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+==> Parameters: 1(Long)
+<==      Total: 1
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@53c5bc1b]
+JDBC Connection [HikariProxyConnection@645252353 wrapping com.mysql.cj.jdbc.ConnectionImpl@700d3981] will not be managed by Spring
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7fe9886]
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+JDBC Connection [HikariProxyConnection@1009910642 wrapping com.mysql.cj.jdbc.ConnectionImpl@1ae6da52] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2eb8e991]
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3418076]
+<==      Total: 1
+JDBC Connection [HikariProxyConnection@925514110 wrapping com.mysql.cj.jdbc.ConnectionImpl@700d3981] will not be managed by Spring
+JDBC Connection [HikariProxyConnection@240221107 wrapping com.mysql.cj.jdbc.ConnectionImpl@ee190ca] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@87c736c]
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+JDBC Connection [HikariProxyConnection@824182688 wrapping com.mysql.cj.jdbc.ConnectionImpl@1ae6da52] will not be managed by Spring
+==> Parameters: 1(Long)
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@75a95b21]
+JDBC Connection [HikariProxyConnection@1732933292 wrapping com.mysql.cj.jdbc.ConnectionImpl@700d3981] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@416c53b]
+==> Parameters: 1(Long)
+JDBC Connection [HikariProxyConnection@1865766064 wrapping com.mysql.cj.jdbc.ConnectionImpl@ee190ca] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==      Total: 1
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23eda329]
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+JDBC Connection [HikariProxyConnection@1846203412 wrapping com.mysql.cj.jdbc.ConnectionImpl@1ae6da52] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==      Total: 1
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@46190604]
+==> Parameters: 1(Long)
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@314fbaa2]
+JDBC Connection [HikariProxyConnection@277709993 wrapping com.mysql.cj.jdbc.ConnectionImpl@700d3981] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+JDBC Connection [HikariProxyConnection@573197402 wrapping com.mysql.cj.jdbc.ConnectionImpl@ee190ca] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1ca4a944]
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+JDBC Connection [HikariProxyConnection@882126771 wrapping com.mysql.cj.jdbc.ConnectionImpl@1ae6da52] will not be managed by Spring
+<==      Total: 1
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2130d3ba]
+<==      Total: 1
+JDBC Connection [HikariProxyConnection@1246665784 wrapping com.mysql.cj.jdbc.ConnectionImpl@700d3981] will not be managed by Spring
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2cedb7b7]
+==> Parameters: 1(Long)
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+JDBC Connection [HikariProxyConnection@1528139471 wrapping com.mysql.cj.jdbc.ConnectionImpl@ee190ca] will not be managed by Spring
+Creating a new SqlSession
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3bac190f] was not registered for synchronization because synchronization is not active
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+<==      Total: 1
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@55d26a05]
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3a53d689]
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@44896ad9]
+JDBC Connection [HikariProxyConnection@1408822059 wrapping com.mysql.cj.jdbc.ConnectionImpl@ee190ca] will not be managed by Spring
+JDBC Connection [HikariProxyConnection@1825830728 wrapping com.mysql.cj.jdbc.ConnectionImpl@1ae6da52] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+JDBC Connection [HikariProxyConnection@1960657788 wrapping com.mysql.cj.jdbc.ConnectionImpl@700d3981] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6214157a]
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5d3f0efc]
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7a1ab24f]
+JDBC Connection [HikariProxyConnection@1411727858 wrapping com.mysql.cj.jdbc.ConnectionImpl@1ae6da52] will not be managed by Spring
+JDBC Connection [HikariProxyConnection@1789219509 wrapping com.mysql.cj.jdbc.ConnectionImpl@ee190ca] will not be managed by Spring
+JDBC Connection [HikariProxyConnection@380237864 wrapping com.mysql.cj.jdbc.ConnectionImpl@700d3981] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6462a049]
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5ae2b4de]
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+JDBC Connection [HikariProxyConnection@896266250 wrapping com.mysql.cj.jdbc.ConnectionImpl@ee190ca] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@186e1555]
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3bac190f]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7c8e030b] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1917448938 wrapping com.mysql.cj.jdbc.ConnectionImpl@ee190ca] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7c8e030b]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5b12d690] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1440031618 wrapping com.mysql.cj.jdbc.ConnectionImpl@ee190ca] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5b12d690]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@523da523] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1559908628 wrapping com.mysql.cj.jdbc.ConnectionImpl@ee190ca] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@523da523]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7d9c324c] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1935393679 wrapping com.mysql.cj.jdbc.ConnectionImpl@ee190ca] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7d9c324c]
+2026-07-23T14:25:26.200+08:00  INFO 49900 --- [title] [r-order-handler] start.controller.VoucherController       : 检验值voucherOrder:VoucherOrder(id=888848318040376592, userId=1, voucherId=1, payType=1, status=1, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1403583] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@260561883 wrapping com.mysql.cj.jdbc.ConnectionImpl@ee190ca] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1403583]
+voucherOrder = VoucherOrder(id=888848318040376592, userId=1, voucherId=1, payType=null, status=null, createTime=null, updateTime=null, payTime=null, useTime=null, refundTime=null)
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@74b0fa3c] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@2054621914 wrapping com.mysql.cj.jdbc.ConnectionImpl@ee190ca] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@74b0fa3c]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@66ac801] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@145565372 wrapping com.mysql.cj.jdbc.ConnectionImpl@ee190ca] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@66ac801]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5fee2688] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1361691397 wrapping com.mysql.cj.jdbc.ConnectionImpl@1ae6da52] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5fee2688]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@38a67566] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@912366594 wrapping com.mysql.cj.jdbc.ConnectionImpl@1ae6da52] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@38a67566]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@767c4057] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@2025566440 wrapping com.mysql.cj.jdbc.ConnectionImpl@700d3981] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@767c4057]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4d958df7] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1129478709 wrapping com.mysql.cj.jdbc.ConnectionImpl@700d3981] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@129e487e] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@475636829 wrapping com.mysql.cj.jdbc.ConnectionImpl@1866230e] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+==> Parameters: 1(Long)
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4d958df7]
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@129e487e]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@53459e8a] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1568828050 wrapping com.mysql.cj.jdbc.ConnectionImpl@700d3981] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@53459e8a]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@144f4579] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@445163904 wrapping com.mysql.cj.jdbc.ConnectionImpl@700d3981] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@144f4579]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3ba85e97] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@896509842 wrapping com.mysql.cj.jdbc.ConnectionImpl@700d3981] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3ba85e97]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@65ae2992] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1802099543 wrapping com.mysql.cj.jdbc.ConnectionImpl@700d3981] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@65ae2992]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@fc1708f]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@100ad908] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@516765049 wrapping com.mysql.cj.jdbc.ConnectionImpl@700d3981] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@100ad908]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@12b4d0c6] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@477310176 wrapping com.mysql.cj.jdbc.ConnectionImpl@700d3981] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@12b4d0c6]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3e20ea7e] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@805059159 wrapping com.mysql.cj.jdbc.ConnectionImpl@700d3981] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3e20ea7e]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@46a0f894] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1693894018 wrapping com.mysql.cj.jdbc.ConnectionImpl@700d3981] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@46a0f894]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@691d327b]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@70303fca] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1023473006 wrapping com.mysql.cj.jdbc.ConnectionImpl@700d3981] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:24:25
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@70303fca]
+JDBC Connection [HikariProxyConnection@1154407560 wrapping com.mysql.cj.jdbc.ConnectionImpl@1ae6da52] will be managed by Spring
+JDBC Connection [HikariProxyConnection@638797170 wrapping com.mysql.cj.jdbc.ConnectionImpl@ee190ca] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@691d327b]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@691d327b] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 0
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@691d327b]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@691d327b] from current transaction
+==>  Preparing: INSERT INTO voucher_order ( id, user_id, voucher_id, create_time, update_time ) VALUES ( ?, ?, ?, ?, ? )
+==> Parameters: 888848318040376592(Long), 1(Long), 1(Long), 2026-07-23T14:25:26.495240300(LocalDateTime), 2026-07-23T14:25:26.495240300(LocalDateTime)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@691d327b]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@691d327b]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@691d327b]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@691d327b]
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@fc1708f]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@fc1708f] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@fc1708f]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@fc1708f]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@fc1708f]
+

@@ -4,6 +4,7 @@ import com.branch.domain.dto.ArticleDTO;
 
 import com.branch.domain.dto.ArticlePageDTO;
 import com.branch.domain.vo.ArticleVO;
+import com.branch.result.PageResult;
 import com.branch.result.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.transaction.annotation.Transactional;
@@ -43,14 +44,15 @@ public class ArticleController {
     }
 
     /**
-     * 获取所有分类
+     * 分页查询分类列表
      *
-     * @return 结果
+     * @param articlePageDTO 分页参数（page / pageSize）
+     * @return 分页结果
      */
     @GetMapping("/all")
     public Result read(@Validated ArticlePageDTO articlePageDTO) {
-        articleService.list();
-        return Result.success();
+        PageResult<ArticleVO> pageResult = articleService.readPage(articlePageDTO);
+        return Result.success(pageResult);
     }
 
     /**

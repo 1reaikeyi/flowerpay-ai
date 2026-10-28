@@ -9,6 +9,7 @@
             placeholder="请选择分类类型"
             clearable
             @change="handleSearch"
+            style="width: 240px"
           >
             <el-option
               v-for="item in typeOptions"

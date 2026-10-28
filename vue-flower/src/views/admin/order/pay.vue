@@ -9,7 +9,7 @@
             placeholder="全部状态"
             clearable
             @change="handleSearch"
-            style="width: 180px"
+            style="width: 240px"
           >
             <el-option
               v-for="item in statusOptions"

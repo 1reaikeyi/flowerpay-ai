@@ -18,7 +18,7 @@
 
       <!-- 分类 -->
       <el-form-item label="多花礼盒分类" prop="categoryId">
-        <el-select v-model="formData.categoryId" placeholder="请选择多花礼盒分类">
+        <el-select v-model="formData.categoryId" placeholder="请选择多花礼盒分类" style="width: 240px">
           <el-option
             v-for="item in categoryList"
             :key="item.id"
@@ -298,10 +298,6 @@ onMounted(() => {
 /* 表单控件宽度、图片上传为页面特有；页面容器、头部、按钮区通用样式已抽离到公共组件 */
 
 .festival-form {
-  .el-select {
-    width: 300px;
-  }
-
   .el-input {
     width: 300px;
   }

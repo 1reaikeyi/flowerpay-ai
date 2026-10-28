@@ -3,14 +3,20 @@ package com.branch.service.Impl;
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.json.JSONUtil;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.branch.common.constant.ErrorConstant;
 import com.branch.common.constant.RedisPrefixConstant;
 import com.branch.domain.dto.ArticleDTO;
+import com.branch.domain.dto.ArticlePageDTO;
 import com.branch.domain.vo.ArticleVO;
 import com.branch.domain.wrapper.LogicData;
 import com.branch.mapper.ArticleMapper;
+import com.branch.result.PageResult;
 import com.github.benmanes.caffeine.cache.Cache;
+import framework.thread.ThreadPoolConfig;
+import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import com.branch.domain.entity.Article;
 
@@ -26,7 +32,9 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 
 /**
  * 分类服务实现类 - 实现分类相关业务逻辑
@@ -41,6 +49,8 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> impl
     private RedissonClient redissonClient;
     @Autowired
     private Cache<String, Object> articleCache;
+    @Resource(name = "articleExecutor")
+    private ExecutorService articleExecutor;
 
     // 时间统一使用s结算
     private static final long FLASH_CACHE_TTL = 30L;
@@ -54,6 +64,21 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> impl
         this.save(article);
         ArticleDTO newArticle = BeanUtil.toBean(articleDTO, ArticleDTO.class);
         return newArticle;
+    }
+
+    @Override
+    public PageResult<ArticleVO> readPage(ArticlePageDTO articlePageDTO) {
+        IPage<Article> page = new Page<>(articlePageDTO.getPage(), articlePageDTO.getPageSize());
+        IPage<Article> articlePage = this.page(page);
+        List<ArticleVO> voList = articlePage.getRecords().stream()
+                .map(a -> BeanUtil.toBean(a, ArticleVO.class))
+                .collect(Collectors.toList());
+        PageResult<ArticleVO> pageResult = new PageResult<>();
+        pageResult.setList(voList);
+        pageResult.setTotal(articlePage.getTotal());
+        pageResult.setPageSize(articlePage.getSize());
+        pageResult.setPageNum(articlePage.getCurrent());
+        return pageResult;
     }
 
     @Override
@@ -126,15 +151,71 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> impl
             log.info("Redis 宕机:{}", e.getMessage());
             return getMysql(id);
         }
-        return null;
+        if (!locked) {
+            return null;
+        }
+//        if (locked) {}
+        String latestVal;
+        try {
+            latestVal = stringRedisTemplate.opsForValue().get(RedisPrefixConstant.ARTICLE_PREFIX + id);
+        } catch (Exception e) {
+            log.info("Redis 宕机:{}", e.getMessage());
+            latestVal = null;
+        }
+        //缓存已经被重建
+        if(latestVal != null) {
+            LogicData latestData = JSONUtil.toBean(latestVal, LogicData.class);
+            if (latestData.getExpireTime().isAfter(LocalDateTime.now())) {
+                return latestData.getData() == null ? null : BeanUtil.toBean(latestData.getData(),Article.class);
+            }
+        }
+        //缓存重建失败
+        return getMysql(id);
     }
     private Article getMysql(Long id) {
         Article article = this.getById(id);
-        if (article == null) {}
-        return null;
+        LogicData logicData = new LogicData();
+        if (article == null) {
+            logicData.setData(null);
+            logicData.setExpireTime(LocalDateTime.now().plusSeconds(FLASH_CACHE_TTL +
+                    (RANDOM.nextLong(-(FLASH_CACHE_TTL / 10), FLASH_CACHE_TTL / 10))));
+            try {
+                stringRedisTemplate.opsForValue().set(RedisPrefixConstant.ARTICLE_PREFIX + id,
+                        JSONUtil.toJsonStr(logicData),
+                        REDIS_EXIST_TTL,
+                        TimeUnit.SECONDS);
+            } catch (Exception e) {
+                log.info("空值缓存写入失败{}", e.getMessage());
+            }
+            return null;
+        }
+//        if (article != null){}
+        logicData.setData(article);
+        logicData.setExpireTime(LocalDateTime.now().plusSeconds(FLASH_CACHE_TTL +
+                (RANDOM.nextLong(-(FLASH_CACHE_TTL / 10), FLASH_CACHE_TTL / 10))));
+        try {
+            stringRedisTemplate.opsForValue().set(RedisPrefixConstant.ARTICLE_PREFIX + id,
+                    JSONUtil.toJsonStr(logicData),
+                    REDIS_EXIST_TTL,
+                    TimeUnit.SECONDS);
+        } catch (Exception e) {
+            log.info("空值缓存写入失败{}", e.getMessage());
+        }
+        return article;
     }
     private void getRedis(Long id) {
-
+        articleExecutor.execute(() ->{
+            try {
+                getCache(id);
+            } catch (Exception e) {
+                log.error("异步刷新缓存失败, id={}, 删除key", id, e);
+                try {
+                    stringRedisTemplate.delete(RedisPrefixConstant.ARTICLE_PREFIX + id);
+                } catch (Exception ex) {
+                    log.error("删除key失败, id={}", id, ex);
+                }
+            }
+        });
     }
     @Override
     public void updateCache(ArticleDTO articleDTO) {

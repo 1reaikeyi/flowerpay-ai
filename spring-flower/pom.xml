@@ -37,7 +37,6 @@
         <module>branch-emp</module>
         <module>branch-user</module>
         <module>branch-ai</module>
-        <module>branch-file</module>
         <module>branch-blog</module>
         <module>branch-manage</module>
     </modules>

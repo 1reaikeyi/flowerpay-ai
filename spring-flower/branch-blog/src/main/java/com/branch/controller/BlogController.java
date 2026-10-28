@@ -2,10 +2,13 @@ package com.branch.controller;
 
 import com.branch.domain.dto.BlogDTO;
 
+import com.branch.domain.dto.BlogPageDTO;
+import com.branch.domain.vo.BlogVO;
 import com.branch.result.PageResult;
 import jakarta.websocket.server.PathParam;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import com.branch.service.BlogService;
 import com.branch.result.Result;
@@ -20,8 +23,8 @@ public class BlogController {
 
     @PostMapping
     public Result postBlog(@RequestBody BlogDTO blogDTO) {
-        Long blogId = blogService.postBlog(blogDTO);
-        return Result.success(blogId);
+        BlogDTO dto = blogService.postBlog(blogDTO);
+        return Result.success(dto);
     }
 
     @GetMapping("/{id}")
@@ -30,13 +33,13 @@ public class BlogController {
     }
 
     @GetMapping("/all")
-    public Result readBlog() {
-        PageResult<BlogDTO> pageResult = blogService.readAll();
+    public Result readBlog(@Validated BlogPageDTO blogPageDTO) {
+        PageResult<BlogVO> pageResult = blogService.readAll(blogPageDTO);
         return Result.success(pageResult);
     }
 
     @PostMapping("/liked")
-    public Result isliked(@RequestBody Long id) {
+    public Result liked(@RequestBody Long id) {
         return Result.success(blogService.toggleLike(id));
     }
 
@@ -48,15 +51,6 @@ public class BlogController {
     @GetMapping("liked/of/all")
     public Result likedOfAll(@PathParam("id") long id) {
         return Result.success(blogService.likedAll(id));
-    }
-
-    @GetMapping("/liked/of/user")
-    public Result likedTop(@PathParam("id") long id) {
-        Object top = blogService.likedTop(id);
-        if (top == null) {
-            return Result.error(null);
-        }
-        return Result.success(top);
     }
 
     @GetMapping("/liked/of/follow")

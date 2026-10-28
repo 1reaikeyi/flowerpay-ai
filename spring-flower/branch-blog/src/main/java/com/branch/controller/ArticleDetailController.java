@@ -4,7 +4,7 @@ import com.branch.domain.dto.ArticleDTO;
 import com.branch.domain.dto.ArticleDetailDTO;
 
 import com.branch.domain.dto.ArticleDetailPageDTO;
-import com.branch.domain.vo.ArticleVO;
+import com.branch.domain.vo.ArticleDetailVO;
 import com.branch.result.PageResult;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.transaction.annotation.Transactional;
@@ -43,14 +43,14 @@ public class ArticleDetailController {
 
     @GetMapping("/all")
     public Result readArticlePage(@Validated ArticleDetailPageDTO articleDetailPageDTO){
-        PageResult<ArticleVO> result = articleDetailService.queryPublishedPage(articleDetailPageDTO);
+        PageResult<ArticleDetailVO> result = articleDetailService.queryPublishedPage(articleDetailPageDTO);
         return Result.success(result);
     }
 
     @GetMapping("/{id}")
     public Result readById(@PathVariable Long id) {
-        articleDetailService.readCache(id);
-        return Result.success();
+        ArticleDetailVO vo = articleDetailService.readCache(id);
+        return Result.success(vo);
     }
 
     @PutMapping

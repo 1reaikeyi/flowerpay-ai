@@ -1,0 +1,2512 @@
+2026-07-23T14:29:06.962+08:00  INFO 46000 --- [title] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-07-23T14:29:06.962+08:00  INFO 46000 --- [title] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-07-23T14:29:06.963+08:00  INFO 46000 --- [title] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6a0dbab9] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@691ffc55] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4cafb0bb] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1450b596] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4ff759e1] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@694b2a28] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@58a0e35a] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@24661b98] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2e0ecaab] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7de8399a] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@24f80523] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1c8a98b4] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@585d47fc] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@300b5882] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7bbe8e96] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@76c86e15] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6c3bb292] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@47aac86] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2e3060e2] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@45b7d032] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2cb1a978] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3b7f5ca1] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@18e0a086] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@55749b56] was not registered for synchronization because synchronization is not active
+2026-07-23T14:29:07.149+08:00  INFO 46000 --- [title] [io-8080-exec-22] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@66338080] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@425e03e4] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@85bb04] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@9b6b7c7] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@13d61333] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@64df4c58] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@747b59c8] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3d7a2469] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@38a273bd] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@11e33556] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3c38fb44] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1c471dc2] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7535a77a] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7f7e8dae] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@25c9a2a8] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@75a9fa12] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3d80725a] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@399f1fa7] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@370a8bb1] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@36e80c0] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@50bdf108] was not registered for synchronization because synchronization is not active
+2026-07-23T14:29:07.367+08:00  INFO 46000 --- [title] [io-8080-exec-22] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3e0f09b2
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@24b71bc1] was not registered for synchronization because synchronization is not active
+2026-07-23T14:29:07.367+08:00  INFO 46000 --- [title] [io-8080-exec-22] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+JDBC Connection [HikariProxyConnection@433335447 wrapping com.mysql.cj.jdbc.ConnectionImpl@3e0f09b2] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7e95ea82] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1585059183 wrapping com.mysql.cj.jdbc.ConnectionImpl@5a459a78] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5cda4310] was not registered for synchronization because synchronization is not active
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7b630fa9] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@34cec953] was not registered for synchronization because synchronization is not active
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+<==      Total: 1
+<==      Total: 1
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5e617253] was not registered for synchronization because synchronization is not active
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@58a0e35a]
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@50bdf108]
+JDBC Connection [HikariProxyConnection@229207773 wrapping com.mysql.cj.jdbc.ConnectionImpl@3e0f09b2] will not be managed by Spring
+JDBC Connection [HikariProxyConnection@928577252 wrapping com.mysql.cj.jdbc.ConnectionImpl@5a459a78] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+JDBC Connection [HikariProxyConnection@969761568 wrapping com.mysql.cj.jdbc.ConnectionImpl@3df2e0c1] will not be managed by Spring
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+<==      Total: 1
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@36e80c0]
+JDBC Connection [HikariProxyConnection@2070813399 wrapping com.mysql.cj.jdbc.ConnectionImpl@3e0f09b2] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==      Total: 1
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@399f1fa7]
+JDBC Connection [HikariProxyConnection@776958129 wrapping com.mysql.cj.jdbc.ConnectionImpl@5a459a78] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@370a8bb1]
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+==> Parameters: 1(Long)
+JDBC Connection [HikariProxyConnection@1907977265 wrapping com.mysql.cj.jdbc.ConnectionImpl@3df2e0c1] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@24b71bc1]
+<==      Total: 1
+JDBC Connection [HikariProxyConnection@722360417 wrapping com.mysql.cj.jdbc.ConnectionImpl@5a459a78] will not be managed by Spring
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@75a9fa12]
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+JDBC Connection [HikariProxyConnection@2079479724 wrapping com.mysql.cj.jdbc.ConnectionImpl@3e0f09b2] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7f7e8dae]
+JDBC Connection [HikariProxyConnection@310439994 wrapping com.mysql.cj.jdbc.ConnectionImpl@3df2e0c1] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+==> Parameters: 1(Long)
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7535a77a]
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+JDBC Connection [HikariProxyConnection@855573171 wrapping com.mysql.cj.jdbc.ConnectionImpl@3e0f09b2] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+Creating a new SqlSession
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@327dc99c] was not registered for synchronization because synchronization is not active
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@25c9a2a8]
+JDBC Connection [HikariProxyConnection@522508570 wrapping com.mysql.cj.jdbc.ConnectionImpl@5a459a78] will not be managed by Spring
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+<==      Total: 1
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1c471dc2]
+JDBC Connection [HikariProxyConnection@860330906 wrapping com.mysql.cj.jdbc.ConnectionImpl@3df2e0c1] will not be managed by Spring
+<==      Total: 1
+==> Parameters: 1(Long)
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3c38fb44]
+JDBC Connection [HikariProxyConnection@868081078 wrapping com.mysql.cj.jdbc.ConnectionImpl@3e0f09b2] will not be managed by Spring
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+<==      Total: 1
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@11e33556]
+JDBC Connection [HikariProxyConnection@912624345 wrapping com.mysql.cj.jdbc.ConnectionImpl@5a459a78] will not be managed by Spring
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3d80725a]
+JDBC Connection [HikariProxyConnection@2059184439 wrapping com.mysql.cj.jdbc.ConnectionImpl@3df2e0c1] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3d7a2469]
+JDBC Connection [HikariProxyConnection@1780002483 wrapping com.mysql.cj.jdbc.ConnectionImpl@3e0f09b2] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+<==      Total: 1
+<==      Total: 1
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@747b59c8]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@48e80f64] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@487714617 wrapping com.mysql.cj.jdbc.ConnectionImpl@3df2e0c1] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@64df4c58]
+JDBC Connection [HikariProxyConnection@124864641 wrapping com.mysql.cj.jdbc.ConnectionImpl@3e0f09b2] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@38a273bd]
+JDBC Connection [HikariProxyConnection@239224164 wrapping com.mysql.cj.jdbc.ConnectionImpl@5a459a78] will not be managed by Spring
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+==> Parameters: 1(Long)
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@9b6b7c7]
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+JDBC Connection [HikariProxyConnection@1285154271 wrapping com.mysql.cj.jdbc.ConnectionImpl@3e0f09b2] will not be managed by Spring
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@13d61333]
+JDBC Connection [HikariProxyConnection@1760850486 wrapping com.mysql.cj.jdbc.ConnectionImpl@3df2e0c1] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+==> Parameters: 1(Long)
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@85bb04]
+JDBC Connection [HikariProxyConnection@931671870 wrapping com.mysql.cj.jdbc.ConnectionImpl@5a459a78] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@66338080]
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+JDBC Connection [HikariProxyConnection@2115815612 wrapping com.mysql.cj.jdbc.ConnectionImpl@3df2e0c1] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+<==      Total: 1
+==> Parameters: 1(Long)
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@425e03e4]
+<==      Total: 1
+JDBC Connection [HikariProxyConnection@1861806043 wrapping com.mysql.cj.jdbc.ConnectionImpl@3e0f09b2] will not be managed by Spring
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7bbe8e96]
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+JDBC Connection [HikariProxyConnection@2019959826 wrapping com.mysql.cj.jdbc.ConnectionImpl@5a459a78] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+<==      Total: 1
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@694b2a28]
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@76c86e15]
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+JDBC Connection [HikariProxyConnection@136401655 wrapping com.mysql.cj.jdbc.ConnectionImpl@5a459a78] will not be managed by Spring
+JDBC Connection [HikariProxyConnection@869626931 wrapping com.mysql.cj.jdbc.ConnectionImpl@3df2e0c1] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@585d47fc]
+JDBC Connection [HikariProxyConnection@159385310 wrapping com.mysql.cj.jdbc.ConnectionImpl@3e0f09b2] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2cb1a978]
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+JDBC Connection [HikariProxyConnection@1139005649 wrapping com.mysql.cj.jdbc.ConnectionImpl@5a459a78] will not be managed by Spring
+<==      Total: 1
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@47aac86]
+<==      Total: 1
+JDBC Connection [HikariProxyConnection@1848116339 wrapping com.mysql.cj.jdbc.ConnectionImpl@3df2e0c1] will not be managed by Spring
+==> Parameters: 1(Long)
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6a0dbab9]
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+JDBC Connection [HikariProxyConnection@716068069 wrapping com.mysql.cj.jdbc.ConnectionImpl@3e0f09b2] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+<==      Total: 1
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@24661b98]
+JDBC Connection [HikariProxyConnection@836749602 wrapping com.mysql.cj.jdbc.ConnectionImpl@5a459a78] will not be managed by Spring
+<==      Total: 1
+<==      Total: 1
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1450b596]
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@691ffc55]
+JDBC Connection [HikariProxyConnection@1347473279 wrapping com.mysql.cj.jdbc.ConnectionImpl@3df2e0c1] will not be managed by Spring
+==> Parameters: 1(Long)
+JDBC Connection [HikariProxyConnection@1538486152 wrapping com.mysql.cj.jdbc.ConnectionImpl@3e0f09b2] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2e3060e2]
+JDBC Connection [HikariProxyConnection@290631623 wrapping com.mysql.cj.jdbc.ConnectionImpl@5a459a78] will not be managed by Spring
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+Creating a new SqlSession
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+==> Parameters: 1(Long)
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4f0e5aba] was not registered for synchronization because synchronization is not active
+<==      Total: 1
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@55749b56]
+JDBC Connection [HikariProxyConnection@976223620 wrapping com.mysql.cj.jdbc.ConnectionImpl@3e0f09b2] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@45b7d032]
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+==> Parameters: 1(Long)
+JDBC Connection [HikariProxyConnection@641444442 wrapping com.mysql.cj.jdbc.ConnectionImpl@3df2e0c1] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+==> Parameters: 1(Long)
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@24f80523]
+JDBC Connection [HikariProxyConnection@1961784359 wrapping com.mysql.cj.jdbc.ConnectionImpl@5a459a78] will not be managed by Spring
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+<==      Total: 1
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7de8399a]
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+JDBC Connection [HikariProxyConnection@1234188054 wrapping com.mysql.cj.jdbc.ConnectionImpl@3e0f09b2] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==      Total: 1
+==> Parameters: 1(Long)
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4ff759e1]
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+JDBC Connection [HikariProxyConnection@1063777162 wrapping com.mysql.cj.jdbc.ConnectionImpl@3df2e0c1] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==      Total: 1
+==> Parameters: 1(Long)
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6c3bb292]
+JDBC Connection [HikariProxyConnection@1716381820 wrapping com.mysql.cj.jdbc.ConnectionImpl@5a459a78] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@300b5882]
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+JDBC Connection [HikariProxyConnection@54846915 wrapping com.mysql.cj.jdbc.ConnectionImpl@3e0f09b2] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2e0ecaab]
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+JDBC Connection [HikariProxyConnection@554718387 wrapping com.mysql.cj.jdbc.ConnectionImpl@3df2e0c1] will not be managed by Spring
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1c8a98b4]
+JDBC Connection [HikariProxyConnection@1717236217 wrapping com.mysql.cj.jdbc.ConnectionImpl@5a459a78] will not be managed by Spring
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==      Total: 1
+==> Parameters: 1(Long)
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4cafb0bb]
+JDBC Connection [HikariProxyConnection@1884424992 wrapping com.mysql.cj.jdbc.ConnectionImpl@3e0f09b2] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+<==      Total: 1
+<==      Total: 1
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@18e0a086]
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7e95ea82]
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3b7f5ca1]
+JDBC Connection [HikariProxyConnection@1377675003 wrapping com.mysql.cj.jdbc.ConnectionImpl@5a459a78] will not be managed by Spring
+JDBC Connection [HikariProxyConnection@1973743285 wrapping com.mysql.cj.jdbc.ConnectionImpl@3e0f09b2] will not be managed by Spring
+JDBC Connection [HikariProxyConnection@973676986 wrapping com.mysql.cj.jdbc.ConnectionImpl@3df2e0c1] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@34cec953]
+<==      Total: 1
+JDBC Connection [HikariProxyConnection@1353091055 wrapping com.mysql.cj.jdbc.ConnectionImpl@3df2e0c1] will not be managed by Spring
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5cda4310]
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+JDBC Connection [HikariProxyConnection@1018835363 wrapping com.mysql.cj.jdbc.ConnectionImpl@5a459a78] will not be managed by Spring
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+==> Parameters: 1(Long)
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7b630fa9]
+JDBC Connection [HikariProxyConnection@1177548809 wrapping com.mysql.cj.jdbc.ConnectionImpl@3e0f09b2] will not be managed by Spring
+==> Parameters: 1(Long)
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+<==      Total: 1
+<==        Row: 1, 500, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:28:35
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5e617253]
+<==      Total: 1
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@327dc99c]
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@48e80f64]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7d4a90c0] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@739a71ad] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23caef03] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4979923f] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@dec8ffa]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5ab73287] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@27310c13] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@39c49b87] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6d98737d] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1935107977 wrapping com.mysql.cj.jdbc.ConnectionImpl@3df2e0c1] will be managed by Spring
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@70962e36] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@55f9ac8] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4af9d168] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@75fd8bb4] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@26a0430c] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@24abfeb] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@e4ab2a1] was not registered for synchronization because synchronization is not active
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7c58e855] was not registered for synchronization because synchronization is not active
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@dec8ffa]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@dec8ffa] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 0
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@dec8ffa]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@dec8ffa] from current transaction
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@32e8daa6] was not registered for synchronization because synchronization is not active
+==>  Preparing: INSERT INTO voucher_order ( id, user_id, voucher_id, pay_type, status, create_time, update_time ) VALUES ( ?, ?, ?, ?, ?, ?, ? )
+==> Parameters: 888849267228149044(Long), 1(Long), 1(Long), 1(Long), 1(Long), 2026-07-23T14:29:07.620117700(LocalDateTime), 2026-07-23T14:29:07.620117700(LocalDateTime)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@dec8ffa]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@dec8ffa]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@dec8ffa]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@dec8ffa]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@56e1859d]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@33e4bd81] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1695019935 wrapping com.mysql.cj.jdbc.ConnectionImpl@3e0f09b2] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@56e1859d]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@56e1859d] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@56e1859d]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@56e1859d]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@56e1859d]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1d61805e]
+JDBC Connection [HikariProxyConnection@976934635 wrapping com.mysql.cj.jdbc.ConnectionImpl@5a459a78] will be managed by Spring
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5a7ed255] was not registered for synchronization because synchronization is not active
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1d61805e]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1d61805e] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1d61805e]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1d61805e]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1d61805e]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1ad296e2]
+JDBC Connection [HikariProxyConnection@290232085 wrapping com.mysql.cj.jdbc.ConnectionImpl@1fa76658] will be managed by Spring
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4f77ec35] was not registered for synchronization because synchronization is not active
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1ad296e2]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1ad296e2] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1ad296e2]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1ad296e2]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1ad296e2]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1ce8a37b]
+JDBC Connection [HikariProxyConnection@63777649 wrapping com.mysql.cj.jdbc.ConnectionImpl@5ae7a308] will be managed by Spring
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@a25c9ce] was not registered for synchronization because synchronization is not active
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1ce8a37b]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1ce8a37b] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1ce8a37b]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1ce8a37b]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1ce8a37b]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@65acaccd]
+JDBC Connection [HikariProxyConnection@1927943266 wrapping com.mysql.cj.jdbc.ConnectionImpl@72200436] will be managed by Spring
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@69dbe76d] was not registered for synchronization because synchronization is not active
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@65acaccd]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@65acaccd] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@65acaccd]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@65acaccd]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@65acaccd]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@351e0046] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5f7db5f3]
+JDBC Connection [HikariProxyConnection@374472020 wrapping com.mysql.cj.jdbc.ConnectionImpl@24b11040] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5f7db5f3]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5f7db5f3] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5f7db5f3]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5f7db5f3]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5f7db5f3]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2c5520ef]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7f067af7] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@687533222 wrapping com.mysql.cj.jdbc.ConnectionImpl@3df2e0c1] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2c5520ef]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2c5520ef] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2c5520ef]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2c5520ef]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2c5520ef]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@54833504] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@75173b78]
+JDBC Connection [HikariProxyConnection@2062996628 wrapping com.mysql.cj.jdbc.ConnectionImpl@3e0f09b2] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@75173b78]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@75173b78] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@75173b78]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@75173b78]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@75173b78]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@70c3e790] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4b2958d1]
+JDBC Connection [HikariProxyConnection@23471745 wrapping com.mysql.cj.jdbc.ConnectionImpl@5a459a78] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4b2958d1]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4b2958d1] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4b2958d1]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4b2958d1]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4b2958d1]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@72be2666]
+JDBC Connection [HikariProxyConnection@1925582685 wrapping com.mysql.cj.jdbc.ConnectionImpl@71c88a75] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@28598778] was not registered for synchronization because synchronization is not active
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@72be2666]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@72be2666] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@72be2666]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@72be2666]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@72be2666]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5700ef60]
+JDBC Connection [HikariProxyConnection@559895308 wrapping com.mysql.cj.jdbc.ConnectionImpl@1fa76658] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5700ef60]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5700ef60] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5700ef60]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5700ef60]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5700ef60]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@350900f7]
+JDBC Connection [HikariProxyConnection@112868288 wrapping com.mysql.cj.jdbc.ConnectionImpl@5ae7a308] will be managed by Spring
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@32fe123d] was not registered for synchronization because synchronization is not active
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@350900f7]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@350900f7] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@350900f7]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4ccf7fc8] was not registered for synchronization because synchronization is not active
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@350900f7]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@350900f7]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@140c877f]
+JDBC Connection [HikariProxyConnection@1849393437 wrapping com.mysql.cj.jdbc.ConnectionImpl@72200436] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@140c877f]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@140c877f] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@140c877f]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@140c877f]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@140c877f]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@17dd4f1e]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@172c75f9] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1962561885 wrapping com.mysql.cj.jdbc.ConnectionImpl@24b11040] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@17dd4f1e]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@17dd4f1e] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@17dd4f1e]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@17dd4f1e]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@17dd4f1e]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@216f46ba]
+JDBC Connection [HikariProxyConnection@1273339470 wrapping com.mysql.cj.jdbc.ConnectionImpl@2ddb8d7e] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1e01bb46] was not registered for synchronization because synchronization is not active
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@216f46ba]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@216f46ba] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@216f46ba]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@216f46ba]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@216f46ba]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@44e65767]
+JDBC Connection [HikariProxyConnection@688046848 wrapping com.mysql.cj.jdbc.ConnectionImpl@3df2e0c1] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@44e65767]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@44e65767] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@44e65767]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1d4ae49a] was not registered for synchronization because synchronization is not active
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@44e65767]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@44e65767]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2c7dfbfc]
+JDBC Connection [HikariProxyConnection@1763060127 wrapping com.mysql.cj.jdbc.ConnectionImpl@3e0f09b2] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2c7dfbfc]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2c7dfbfc] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2c7dfbfc]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2c7dfbfc]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2c7dfbfc]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@222de737]
+JDBC Connection [HikariProxyConnection@1629432457 wrapping com.mysql.cj.jdbc.ConnectionImpl@5a459a78] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@222de737]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@222de737] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@222de737]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@222de737]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@222de737]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5d96ba37] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@384d42f7]
+JDBC Connection [HikariProxyConnection@1266151909 wrapping com.mysql.cj.jdbc.ConnectionImpl@71c88a75] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@384d42f7]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@384d42f7] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@384d42f7]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@384d42f7]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@384d42f7]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2b1eebf9]
+JDBC Connection [HikariProxyConnection@953710378 wrapping com.mysql.cj.jdbc.ConnectionImpl@1fa76658] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2b1eebf9]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2b1eebf9] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+Creating a new SqlSession
+<==    Columns: total
+<==        Row: 1
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6b1b28ec] was not registered for synchronization because synchronization is not active
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2b1eebf9]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2b1eebf9]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2b1eebf9]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4da8ba0d]
+JDBC Connection [HikariProxyConnection@506091055 wrapping com.mysql.cj.jdbc.ConnectionImpl@5ae7a308] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4da8ba0d]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4da8ba0d] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4da8ba0d]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4da8ba0d]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4da8ba0d]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@29517e8b]
+JDBC Connection [HikariProxyConnection@363437361 wrapping com.mysql.cj.jdbc.ConnectionImpl@372e0c29] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@29517e8b]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@29517e8b] from current transaction
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@37555cb4] was not registered for synchronization because synchronization is not active
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@29517e8b]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@29517e8b]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@29517e8b]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@69c58981]
+JDBC Connection [HikariProxyConnection@995409980 wrapping com.mysql.cj.jdbc.ConnectionImpl@72200436] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@69c58981]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@69c58981] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@69c58981]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@484b0c9d] was not registered for synchronization because synchronization is not active
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@69c58981]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@69c58981]
+JDBC Connection [HikariProxyConnection@1103736107 wrapping com.mysql.cj.jdbc.ConnectionImpl@72200436] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6febacd2]
+JDBC Connection [HikariProxyConnection@1186556947 wrapping com.mysql.cj.jdbc.ConnectionImpl@24b11040] will be managed by Spring
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:29:07
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+<==      Total: 1
+==> Parameters: 1(Long), 0(Integer)
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4f0e5aba]
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6febacd2]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6febacd2] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6febacd2]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6febacd2]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6febacd2]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3119be31]
+JDBC Connection [HikariProxyConnection@449962870 wrapping com.mysql.cj.jdbc.ConnectionImpl@2ddb8d7e] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3119be31]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3119be31] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@58f9a192] was not registered for synchronization because synchronization is not active
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3119be31]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3119be31]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3119be31]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@756f7d76]
+JDBC Connection [HikariProxyConnection@1101367692 wrapping com.mysql.cj.jdbc.ConnectionImpl@3df2e0c1] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@756f7d76]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@756f7d76] from current transaction
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@38ac8f5a] was not registered for synchronization because synchronization is not active
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@756f7d76]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@756f7d76]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@756f7d76]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2e389792]
+JDBC Connection [HikariProxyConnection@396175938 wrapping com.mysql.cj.jdbc.ConnectionImpl@3e0f09b2] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2e389792]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2e389792] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2e389792]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2e389792]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2e389792]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5c5f04aa]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6d9d0c57] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1448934561 wrapping com.mysql.cj.jdbc.ConnectionImpl@5a459a78] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5c5f04aa]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5c5f04aa] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5c5f04aa]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5c5f04aa]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5c5f04aa]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5d81d054]
+JDBC Connection [HikariProxyConnection@1819976683 wrapping com.mysql.cj.jdbc.ConnectionImpl@71c88a75] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5d81d054]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5d81d054] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2e61d122] was not registered for synchronization because synchronization is not active
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5d81d054]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5d81d054]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5d81d054]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@48fe1a03]
+JDBC Connection [HikariProxyConnection@386309746 wrapping com.mysql.cj.jdbc.ConnectionImpl@1fa76658] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@48fe1a03]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@48fe1a03] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@48fe1a03]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@48fe1a03]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@48fe1a03]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7f64072e] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@38517128]
+JDBC Connection [HikariProxyConnection@2052948139 wrapping com.mysql.cj.jdbc.ConnectionImpl@5ae7a308] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@38517128]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@38517128] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@38517128]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@38517128]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@38517128]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3c60ec]
+JDBC Connection [HikariProxyConnection@2079607014 wrapping com.mysql.cj.jdbc.ConnectionImpl@372e0c29] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@c5ed5a7] was not registered for synchronization because synchronization is not active
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3c60ec]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3c60ec] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3c60ec]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3c60ec]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3c60ec]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@51d181c4]
+JDBC Connection [HikariProxyConnection@571298853 wrapping com.mysql.cj.jdbc.ConnectionImpl@72200436] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@51d181c4]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@51d181c4] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@51d181c4]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@51d181c4]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@51d181c4]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3dc176ed] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7eef84e4]
+JDBC Connection [HikariProxyConnection@1822616489 wrapping com.mysql.cj.jdbc.ConnectionImpl@24b11040] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7eef84e4]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7eef84e4] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7eef84e4]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7eef84e4]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7eef84e4]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4915c83b]
+JDBC Connection [HikariProxyConnection@547077529 wrapping com.mysql.cj.jdbc.ConnectionImpl@2ddb8d7e] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@72e87106] was not registered for synchronization because synchronization is not active
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4915c83b]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4915c83b] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4915c83b]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4915c83b]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4915c83b]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5517bcd4]
+JDBC Connection [HikariProxyConnection@714030709 wrapping com.mysql.cj.jdbc.ConnectionImpl@3df2e0c1] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5517bcd4]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5517bcd4] from current transaction
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@429978c9] was not registered for synchronization because synchronization is not active
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5517bcd4]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5517bcd4]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5517bcd4]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@50416cb1]
+JDBC Connection [HikariProxyConnection@1059985558 wrapping com.mysql.cj.jdbc.ConnectionImpl@3e0f09b2] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@50416cb1]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@50416cb1] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@50416cb1]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@50416cb1]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@50416cb1]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@978abd5] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1f98cde9]
+JDBC Connection [HikariProxyConnection@690067729 wrapping com.mysql.cj.jdbc.ConnectionImpl@5a459a78] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1f98cde9]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1f98cde9] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1f98cde9]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1f98cde9]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1f98cde9]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@16acd865]
+JDBC Connection [HikariProxyConnection@1395720226 wrapping com.mysql.cj.jdbc.ConnectionImpl@71c88a75] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@16acd865]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@16acd865] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@16acd865]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@16acd865]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@16acd865]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@524f1342]
+JDBC Connection [HikariProxyConnection@1632315631 wrapping com.mysql.cj.jdbc.ConnectionImpl@1fa76658] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@524f1342]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@524f1342] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@524f1342]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@524f1342]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@524f1342]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@ff735ea]
+JDBC Connection [HikariProxyConnection@39519387 wrapping com.mysql.cj.jdbc.ConnectionImpl@5ae7a308] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@ff735ea]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@ff735ea] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@ff735ea]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@ff735ea]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@ff735ea]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5c9e110e]
+JDBC Connection [HikariProxyConnection@310445108 wrapping com.mysql.cj.jdbc.ConnectionImpl@372e0c29] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5c9e110e]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5c9e110e] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5c9e110e]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5c9e110e]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5c9e110e]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@50a5905d]
+JDBC Connection [HikariProxyConnection@1933993476 wrapping com.mysql.cj.jdbc.ConnectionImpl@72200436] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@50a5905d]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@50a5905d] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@50a5905d]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@50a5905d]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@50a5905d]
+JDBC Connection [HikariProxyConnection@1938649369 wrapping com.mysql.cj.jdbc.ConnectionImpl@72200436] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3d10fa1e]
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:29:07
+JDBC Connection [HikariProxyConnection@1280329919 wrapping com.mysql.cj.jdbc.ConnectionImpl@24b11040] will be managed by Spring
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7d4a90c0]
+JDBC Connection [HikariProxyConnection@2103284142 wrapping com.mysql.cj.jdbc.ConnectionImpl@72200436] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:29:07
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@739a71ad]
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3d10fa1e]
+JDBC Connection [HikariProxyConnection@755832074 wrapping com.mysql.cj.jdbc.ConnectionImpl@72200436] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3d10fa1e] from current transaction
+==> Parameters: 1(Long)
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3d10fa1e]
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:29:07
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23caef03]
+JDBC Connection [HikariProxyConnection@1203664224 wrapping com.mysql.cj.jdbc.ConnectionImpl@72200436] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:29:07
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4979923f]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3d10fa1e]
+JDBC Connection [HikariProxyConnection@1416677281 wrapping com.mysql.cj.jdbc.ConnectionImpl@72200436] will not be managed by Spring
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3d10fa1e]
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+JDBC Connection [HikariProxyConnection@704046725 wrapping com.mysql.cj.jdbc.ConnectionImpl@24b11040] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:29:07
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5ab73287]
+JDBC Connection [HikariProxyConnection@922972879 wrapping com.mysql.cj.jdbc.ConnectionImpl@72200436] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+==> Parameters: 1(Long)
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:29:07
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==      Total: 1
+Creating a new SqlSession
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@27310c13]
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6c56e41a]
+JDBC Connection [HikariProxyConnection@1667207358 wrapping com.mysql.cj.jdbc.ConnectionImpl@24b11040] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:29:07
+==> Parameters: 1(Long)
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@39c49b87]
+JDBC Connection [HikariProxyConnection@2119290452 wrapping com.mysql.cj.jdbc.ConnectionImpl@72200436] will not be managed by Spring
+JDBC Connection [HikariProxyConnection@606381902 wrapping com.mysql.cj.jdbc.ConnectionImpl@2ddb8d7e] will be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:29:07
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6d98737d]
+JDBC Connection [HikariProxyConnection@194536467 wrapping com.mysql.cj.jdbc.ConnectionImpl@24b11040] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:29:07
+==> Parameters: 1(Long)
+<==      Total: 1
+==> Parameters: 1(Long), 0(Integer)
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@70962e36]
+JDBC Connection [HikariProxyConnection@1144927815 wrapping com.mysql.cj.jdbc.ConnectionImpl@72200436] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:29:07
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6c56e41a]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6c56e41a] from current transaction
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@55f9ac8]
+JDBC Connection [HikariProxyConnection@2067430267 wrapping com.mysql.cj.jdbc.ConnectionImpl@24b11040] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:29:07
+==> Parameters: 1(Long)
+==> Parameters: 1(Long), 1(Long)
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4af9d168]
+JDBC Connection [HikariProxyConnection@677882280 wrapping com.mysql.cj.jdbc.ConnectionImpl@72200436] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+==> Parameters: 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6c56e41a]
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:29:07
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@75fd8bb4]
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:29:07
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@26a0430c]
+JDBC Connection [HikariProxyConnection@9260312 wrapping com.mysql.cj.jdbc.ConnectionImpl@72200436] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:29:07
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@e4ab2a1]
+JDBC Connection [HikariProxyConnection@1923025326 wrapping com.mysql.cj.jdbc.ConnectionImpl@72200436] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6c56e41a]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6c56e41a]
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:29:07
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7c58e855]
+JDBC Connection [HikariProxyConnection@1025725837 wrapping com.mysql.cj.jdbc.ConnectionImpl@72200436] will not be managed by Spring
+JDBC Connection [HikariProxyConnection@1009721995 wrapping com.mysql.cj.jdbc.ConnectionImpl@2ddb8d7e] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@550e43a5]
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:29:07
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:29:07
+<==      Total: 1
+<==      Total: 1
+JDBC Connection [HikariProxyConnection@295453055 wrapping com.mysql.cj.jdbc.ConnectionImpl@3df2e0c1] will be managed by Spring
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@32e8daa6]
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@33e4bd81]
+JDBC Connection [HikariProxyConnection@1102060459 wrapping com.mysql.cj.jdbc.ConnectionImpl@72200436] will not be managed by Spring
+JDBC Connection [HikariProxyConnection@1421420394 wrapping com.mysql.cj.jdbc.ConnectionImpl@2ddb8d7e] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+==> Parameters: 1(Long), 0(Integer)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:29:07
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4f77ec35]
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:29:07
+JDBC Connection [HikariProxyConnection@81934074 wrapping com.mysql.cj.jdbc.ConnectionImpl@72200436] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==      Total: 1
+<==    Updates: 1
+==> Parameters: 1(Long)
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5a7ed255]
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@550e43a5]
+JDBC Connection [HikariProxyConnection@1729893414 wrapping com.mysql.cj.jdbc.ConnectionImpl@2ddb8d7e] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@550e43a5] from current transaction
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: total
+<==        Row: 1
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:29:07
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@550e43a5]
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:29:07
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@a25c9ce]
+<==      Total: 1
+JDBC Connection [HikariProxyConnection@1619222841 wrapping com.mysql.cj.jdbc.ConnectionImpl@72200436] will not be managed by Spring
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@69dbe76d]
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+JDBC Connection [HikariProxyConnection@1971127483 wrapping com.mysql.cj.jdbc.ConnectionImpl@2ddb8d7e] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:29:07
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@351e0046]
+JDBC Connection [HikariProxyConnection@800465348 wrapping com.mysql.cj.jdbc.ConnectionImpl@72200436] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:29:07
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7f067af7]
+JDBC Connection [HikariProxyConnection@505487570 wrapping com.mysql.cj.jdbc.ConnectionImpl@2ddb8d7e] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:29:07
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@54833504]
+JDBC Connection [HikariProxyConnection@1370045896 wrapping com.mysql.cj.jdbc.ConnectionImpl@72200436] will not be managed by Spring
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@550e43a5]
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:29:07
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@550e43a5]
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@70c3e790]
+==> Parameters: 1(Long)
+JDBC Connection [HikariProxyConnection@1948882069 wrapping com.mysql.cj.jdbc.ConnectionImpl@2ddb8d7e] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:29:07
+JDBC Connection [HikariProxyConnection@1723927938 wrapping com.mysql.cj.jdbc.ConnectionImpl@3df2e0c1] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==      Total: 1
+==> Parameters: 1(Long)
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@28598778]
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+JDBC Connection [HikariProxyConnection@694495268 wrapping com.mysql.cj.jdbc.ConnectionImpl@72200436] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:29:07
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1f552b74]
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:29:07
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==      Total: 1
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4ccf7fc8]
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@32fe123d]
+JDBC Connection [HikariProxyConnection@2128768810 wrapping com.mysql.cj.jdbc.ConnectionImpl@3df2e0c1] will not be managed by Spring
+JDBC Connection [HikariProxyConnection@1067403786 wrapping com.mysql.cj.jdbc.ConnectionImpl@2ddb8d7e] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+==> Parameters: 1(Long)
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:29:07
+JDBC Connection [HikariProxyConnection@312828354 wrapping com.mysql.cj.jdbc.ConnectionImpl@3e0f09b2] will be managed by Spring
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@172c75f9]
+JDBC Connection [HikariProxyConnection@1074174993 wrapping com.mysql.cj.jdbc.ConnectionImpl@72200436] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+==> Parameters: 1(Long)
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:29:07
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:29:07
+==> Parameters: 1(Long), 0(Integer)
+<==      Total: 1
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1d4ae49a]
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1e01bb46]
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:29:07
+JDBC Connection [HikariProxyConnection@1785294742 wrapping com.mysql.cj.jdbc.ConnectionImpl@2ddb8d7e] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+JDBC Connection [HikariProxyConnection@201420031 wrapping com.mysql.cj.jdbc.ConnectionImpl@3df2e0c1] will not be managed by Spring
+<==      Total: 1
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5d96ba37]
+==> Parameters: 1(Long)
+JDBC Connection [HikariProxyConnection@1323781450 wrapping com.mysql.cj.jdbc.ConnectionImpl@72200436] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Updates: 1
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1f552b74]
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:29:07
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:29:07
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1f552b74] from current transaction
+<==      Total: 1
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@37555cb4]
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6b1b28ec]
+JDBC Connection [HikariProxyConnection@1009664498 wrapping com.mysql.cj.jdbc.ConnectionImpl@2ddb8d7e] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:29:07
+==> Parameters: 1(Long)
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@484b0c9d]
+==> Parameters: 1(Long), 1(Long)
+JDBC Connection [HikariProxyConnection@2071744089 wrapping com.mysql.cj.jdbc.ConnectionImpl@72200436] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1f552b74]
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:29:07
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@58f9a192]
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:29:07
+JDBC Connection [HikariProxyConnection@144087377 wrapping com.mysql.cj.jdbc.ConnectionImpl@2ddb8d7e] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==      Total: 1
+==> Parameters: 1(Long)
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@38ac8f5a]
+JDBC Connection [HikariProxyConnection@1692868605 wrapping com.mysql.cj.jdbc.ConnectionImpl@72200436] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:29:07
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6d9d0c57]
+JDBC Connection [HikariProxyConnection@1744494643 wrapping com.mysql.cj.jdbc.ConnectionImpl@2ddb8d7e] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:29:07
+==> Parameters: 1(Long)
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2e61d122]
+JDBC Connection [HikariProxyConnection@675834770 wrapping com.mysql.cj.jdbc.ConnectionImpl@72200436] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+==> Parameters: 1(Long)
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:29:07
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7f64072e]
+JDBC Connection [HikariProxyConnection@1414245830 wrapping com.mysql.cj.jdbc.ConnectionImpl@2ddb8d7e] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1f552b74]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1f552b74]
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:29:07
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:29:07
+JDBC Connection [HikariProxyConnection@1602585345 wrapping com.mysql.cj.jdbc.ConnectionImpl@3e0f09b2] will not be managed by Spring
+<==      Total: 1
+<==      Total: 1
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@c5ed5a7]
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3dc176ed]
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+Creating a new SqlSession
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:29:07
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7741cc39]
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@72e87106]
+JDBC Connection [HikariProxyConnection@238691190 wrapping com.mysql.cj.jdbc.ConnectionImpl@5a459a78] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7741cc39]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7741cc39] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7741cc39]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7741cc39]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7741cc39]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@50f8a3d6]
+JDBC Connection [HikariProxyConnection@508129995 wrapping com.mysql.cj.jdbc.ConnectionImpl@71c88a75] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@50f8a3d6]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@50f8a3d6] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@50f8a3d6]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@50f8a3d6]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@50f8a3d6]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@19e6bdce]
+JDBC Connection [HikariProxyConnection@1803661384 wrapping com.mysql.cj.jdbc.ConnectionImpl@1fa76658] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@19e6bdce]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@19e6bdce] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@19e6bdce]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@19e6bdce]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@19e6bdce]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@637316f9]
+JDBC Connection [HikariProxyConnection@711512671 wrapping com.mysql.cj.jdbc.ConnectionImpl@5ae7a308] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@637316f9]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@637316f9] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@637316f9]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@637316f9]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@637316f9]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@75fa6f8e]
+JDBC Connection [HikariProxyConnection@1006457267 wrapping com.mysql.cj.jdbc.ConnectionImpl@372e0c29] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@75fa6f8e]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@75fa6f8e] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@75fa6f8e]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@75fa6f8e]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@75fa6f8e]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@61625ab6]
+JDBC Connection [HikariProxyConnection@1937912335 wrapping com.mysql.cj.jdbc.ConnectionImpl@24b11040] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@61625ab6]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@61625ab6] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@61625ab6]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@61625ab6]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@61625ab6]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6495443d]
+JDBC Connection [HikariProxyConnection@204343050 wrapping com.mysql.cj.jdbc.ConnectionImpl@3df2e0c1] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6495443d]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6495443d] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6495443d]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6495443d]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6495443d]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@166ebed0]
+JDBC Connection [HikariProxyConnection@1501922963 wrapping com.mysql.cj.jdbc.ConnectionImpl@72200436] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@166ebed0]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@166ebed0] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@166ebed0]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@166ebed0]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@166ebed0]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1fd7fba0]
+JDBC Connection [HikariProxyConnection@134615408 wrapping com.mysql.cj.jdbc.ConnectionImpl@2ddb8d7e] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1fd7fba0]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1fd7fba0] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1fd7fba0]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1fd7fba0]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1fd7fba0]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@56d13a5b]
+JDBC Connection [HikariProxyConnection@877305079 wrapping com.mysql.cj.jdbc.ConnectionImpl@3e0f09b2] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@56d13a5b]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@56d13a5b] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@56d13a5b]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@56d13a5b]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@56d13a5b]
+JDBC Connection [HikariProxyConnection@210584018 wrapping com.mysql.cj.jdbc.ConnectionImpl@3e0f09b2] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5801dc24]
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+JDBC Connection [HikariProxyConnection@135662779 wrapping com.mysql.cj.jdbc.ConnectionImpl@5a459a78] will be managed by Spring
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:29:07
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@24abfeb]
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5801dc24]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5801dc24] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5801dc24]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5801dc24]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5801dc24]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@85198d0]
+JDBC Connection [HikariProxyConnection@533664713 wrapping com.mysql.cj.jdbc.ConnectionImpl@71c88a75] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@85198d0]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@85198d0] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@85198d0]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@85198d0]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@85198d0]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@62e21a11]
+JDBC Connection [HikariProxyConnection@1635738982 wrapping com.mysql.cj.jdbc.ConnectionImpl@1fa76658] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@62e21a11]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@62e21a11] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@62e21a11]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@62e21a11]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@62e21a11]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@712c2b06]
+JDBC Connection [HikariProxyConnection@408707872 wrapping com.mysql.cj.jdbc.ConnectionImpl@5ae7a308] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@712c2b06]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@712c2b06] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@712c2b06]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@712c2b06]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@712c2b06]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@caaefbc]
+JDBC Connection [HikariProxyConnection@422423398 wrapping com.mysql.cj.jdbc.ConnectionImpl@372e0c29] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@caaefbc]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@caaefbc] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@caaefbc]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@caaefbc]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@caaefbc]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@125f7d0b]
+JDBC Connection [HikariProxyConnection@1464026634 wrapping com.mysql.cj.jdbc.ConnectionImpl@24b11040] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@125f7d0b]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@125f7d0b] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@125f7d0b]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@125f7d0b]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@125f7d0b]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4603db2e]
+JDBC Connection [HikariProxyConnection@526636748 wrapping com.mysql.cj.jdbc.ConnectionImpl@3df2e0c1] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4603db2e]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4603db2e] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4603db2e]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4603db2e]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4603db2e]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5b0d80da]
+JDBC Connection [HikariProxyConnection@2105073794 wrapping com.mysql.cj.jdbc.ConnectionImpl@72200436] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5b0d80da]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5b0d80da] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5b0d80da]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5b0d80da]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5b0d80da]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2ec4cf4c]
+JDBC Connection [HikariProxyConnection@1615700607 wrapping com.mysql.cj.jdbc.ConnectionImpl@2ddb8d7e] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2ec4cf4c]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2ec4cf4c] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2ec4cf4c]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2ec4cf4c]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2ec4cf4c]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5e66b096]
+JDBC Connection [HikariProxyConnection@1752803588 wrapping com.mysql.cj.jdbc.ConnectionImpl@3e0f09b2] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5e66b096]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5e66b096] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5e66b096]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5e66b096]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5e66b096]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@d3ba110]
+JDBC Connection [HikariProxyConnection@1084956494 wrapping com.mysql.cj.jdbc.ConnectionImpl@5a459a78] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@d3ba110]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@d3ba110] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@d3ba110]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@d3ba110]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@d3ba110]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@25d1e54a]
+JDBC Connection [HikariProxyConnection@20187190 wrapping com.mysql.cj.jdbc.ConnectionImpl@71c88a75] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@25d1e54a]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@25d1e54a] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@25d1e54a]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@25d1e54a]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@25d1e54a]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@57c343ee]
+JDBC Connection [HikariProxyConnection@963003188 wrapping com.mysql.cj.jdbc.ConnectionImpl@1fa76658] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@57c343ee]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@57c343ee] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@57c343ee]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@57c343ee]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@57c343ee]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1973ae63]
+JDBC Connection [HikariProxyConnection@127656462 wrapping com.mysql.cj.jdbc.ConnectionImpl@5ae7a308] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1973ae63]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1973ae63] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1973ae63]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1973ae63]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1973ae63]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@187f5861]
+JDBC Connection [HikariProxyConnection@1571849978 wrapping com.mysql.cj.jdbc.ConnectionImpl@372e0c29] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@187f5861]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@187f5861] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@187f5861]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@187f5861]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@187f5861]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@64ecf2dc]
+JDBC Connection [HikariProxyConnection@742509991 wrapping com.mysql.cj.jdbc.ConnectionImpl@24b11040] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@64ecf2dc]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@64ecf2dc] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@64ecf2dc]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@64ecf2dc]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@64ecf2dc]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@71e5cb0c]
+JDBC Connection [HikariProxyConnection@791222562 wrapping com.mysql.cj.jdbc.ConnectionImpl@3df2e0c1] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@71e5cb0c]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@71e5cb0c] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@71e5cb0c]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@71e5cb0c]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@71e5cb0c]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4240dbf5]
+JDBC Connection [HikariProxyConnection@1204757371 wrapping com.mysql.cj.jdbc.ConnectionImpl@72200436] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4240dbf5]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4240dbf5] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4240dbf5]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4240dbf5]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4240dbf5]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@21be9acf]
+JDBC Connection [HikariProxyConnection@629761928 wrapping com.mysql.cj.jdbc.ConnectionImpl@2ddb8d7e] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@21be9acf]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@21be9acf] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@21be9acf]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@21be9acf]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@21be9acf]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@644b850b]
+JDBC Connection [HikariProxyConnection@995704524 wrapping com.mysql.cj.jdbc.ConnectionImpl@3e0f09b2] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@644b850b]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@644b850b] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@644b850b]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@644b850b]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@644b850b]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1f272ca9]
+JDBC Connection [HikariProxyConnection@51586836 wrapping com.mysql.cj.jdbc.ConnectionImpl@5a459a78] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1f272ca9]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1f272ca9] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1f272ca9]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1f272ca9]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1f272ca9]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1a9772b0]
+JDBC Connection [HikariProxyConnection@332155241 wrapping com.mysql.cj.jdbc.ConnectionImpl@71c88a75] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1a9772b0]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1a9772b0] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1a9772b0]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1a9772b0]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1a9772b0]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@49146b7e]
+JDBC Connection [HikariProxyConnection@902408251 wrapping com.mysql.cj.jdbc.ConnectionImpl@1fa76658] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@49146b7e]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@49146b7e] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@49146b7e]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@49146b7e]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@49146b7e]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@586ef48f]
+JDBC Connection [HikariProxyConnection@1969014971 wrapping com.mysql.cj.jdbc.ConnectionImpl@5ae7a308] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@586ef48f]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@586ef48f] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@586ef48f]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@586ef48f]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@586ef48f]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@31c58993]
+JDBC Connection [HikariProxyConnection@504112698 wrapping com.mysql.cj.jdbc.ConnectionImpl@372e0c29] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@31c58993]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@31c58993] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@31c58993]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@31c58993]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@31c58993]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1b0099ae]
+JDBC Connection [HikariProxyConnection@1254431887 wrapping com.mysql.cj.jdbc.ConnectionImpl@24b11040] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1b0099ae]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1b0099ae] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1b0099ae]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1b0099ae]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1b0099ae]
+JDBC Connection [HikariProxyConnection@1579641712 wrapping com.mysql.cj.jdbc.ConnectionImpl@24b11040] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@a95f2be]
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:29:07
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@429978c9]
+JDBC Connection [HikariProxyConnection@1967824926 wrapping com.mysql.cj.jdbc.ConnectionImpl@3df2e0c1] will be managed by Spring
+JDBC Connection [HikariProxyConnection@1816441443 wrapping com.mysql.cj.jdbc.ConnectionImpl@24b11040] will not be managed by Spring
+==>  Preparing: SELECT voucher_id,stock,begin_time,end_time,create_time,update_time FROM voucher_seckill WHERE voucher_id=?
+==> Parameters: 1(Long)
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Columns: voucher_id, stock, begin_time, end_time, create_time, update_time
+<==        Row: 1, 499, 2025-10-01 00:00:00, 2027-10-07 23:59:59, 2026-07-23 13:04:00, 2026-07-23 14:29:07
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@978abd5]
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@a95f2be]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@a95f2be] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@a95f2be]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@a95f2be]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@a95f2be]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@38d2f6b1]
+JDBC Connection [HikariProxyConnection@772196991 wrapping com.mysql.cj.jdbc.ConnectionImpl@72200436] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@38d2f6b1]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@38d2f6b1] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@38d2f6b1]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@38d2f6b1]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@38d2f6b1]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@17d384c1]
+JDBC Connection [HikariProxyConnection@1749536958 wrapping com.mysql.cj.jdbc.ConnectionImpl@2ddb8d7e] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@17d384c1]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@17d384c1] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@17d384c1]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@17d384c1]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@17d384c1]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2b738d31]
+JDBC Connection [HikariProxyConnection@378433735 wrapping com.mysql.cj.jdbc.ConnectionImpl@3e0f09b2] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2b738d31]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2b738d31] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2b738d31]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2b738d31]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2b738d31]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3032acd5]
+JDBC Connection [HikariProxyConnection@1664773654 wrapping com.mysql.cj.jdbc.ConnectionImpl@5a459a78] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3032acd5]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3032acd5] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3032acd5]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3032acd5]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3032acd5]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@21397a00]
+JDBC Connection [HikariProxyConnection@307277172 wrapping com.mysql.cj.jdbc.ConnectionImpl@71c88a75] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@21397a00]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@21397a00] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@21397a00]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@21397a00]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@21397a00]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@31cf66b1]
+JDBC Connection [HikariProxyConnection@1385106429 wrapping com.mysql.cj.jdbc.ConnectionImpl@71c88a75] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@31cf66b1]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@31cf66b1] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@31cf66b1]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@31cf66b1]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@31cf66b1]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@10123d3e]
+JDBC Connection [HikariProxyConnection@2036839947 wrapping com.mysql.cj.jdbc.ConnectionImpl@5ae7a308] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@10123d3e]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@10123d3e] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@10123d3e]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@10123d3e]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@10123d3e]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4e9e0ead]
+JDBC Connection [HikariProxyConnection@1860917907 wrapping com.mysql.cj.jdbc.ConnectionImpl@372e0c29] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4e9e0ead]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4e9e0ead] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4e9e0ead]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4e9e0ead]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4e9e0ead]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6bf97125]
+JDBC Connection [HikariProxyConnection@338728734 wrapping com.mysql.cj.jdbc.ConnectionImpl@24b11040] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6bf97125]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6bf97125] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6bf97125]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6bf97125]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6bf97125]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@706bbe86]
+JDBC Connection [HikariProxyConnection@571582971 wrapping com.mysql.cj.jdbc.ConnectionImpl@3df2e0c1] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@706bbe86]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@706bbe86] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@706bbe86]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@706bbe86]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@706bbe86]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7ab290a9]
+JDBC Connection [HikariProxyConnection@916197367 wrapping com.mysql.cj.jdbc.ConnectionImpl@72200436] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7ab290a9]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7ab290a9] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7ab290a9]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7ab290a9]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7ab290a9]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@61a9590b]
+JDBC Connection [HikariProxyConnection@250131197 wrapping com.mysql.cj.jdbc.ConnectionImpl@2ddb8d7e] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@61a9590b]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@61a9590b] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@61a9590b]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@61a9590b]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@61a9590b]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@29d1ed88]
+JDBC Connection [HikariProxyConnection@17599422 wrapping com.mysql.cj.jdbc.ConnectionImpl@3e0f09b2] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@29d1ed88]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@29d1ed88] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@29d1ed88]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@29d1ed88]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@29d1ed88]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3de4dade]
+JDBC Connection [HikariProxyConnection@482231917 wrapping com.mysql.cj.jdbc.ConnectionImpl@5a459a78] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3de4dade]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3de4dade] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3de4dade]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3de4dade]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3de4dade]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6de65190]
+JDBC Connection [HikariProxyConnection@1072690468 wrapping com.mysql.cj.jdbc.ConnectionImpl@1fa76658] will be managed by Spring
+==>  Preparing: UPDATE voucher_seckill SET stock = stock - 1 WHERE (voucher_id = ? AND stock > ?)
+==> Parameters: 1(Long), 0(Integer)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6de65190]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6de65190] from current transaction
+==>  Preparing: SELECT COUNT( * ) AS total FROM voucher_order WHERE (user_id = ? AND voucher_id = ?)
+==> Parameters: 1(Long), 1(Long)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6de65190]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6de65190]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6de65190]

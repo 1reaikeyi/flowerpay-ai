@@ -18,7 +18,7 @@
 
       <!-- 分类类型 -->
       <el-form-item label="分类类型" prop="type">
-        <el-select v-model="formData.type" placeholder="请选择分类类型">
+        <el-select v-model="formData.type" placeholder="请选择分类类型" style="width: 240px">
           <el-option
             v-for="item in typeOptions"
             :key="item.value"
@@ -211,7 +211,6 @@ onMounted(() => {
 <style lang="scss" scoped>
 /* 表单控件宽度为页面特有设置；页面容器、头部、按钮区通用样式已抽离到公共组件 */
 .category-form {
-  .el-select,
   .el-input,
   .el-input-number {
     width: 300px;
