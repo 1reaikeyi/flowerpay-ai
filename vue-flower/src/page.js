@@ -36,10 +36,9 @@ const router = createRouter({
                 { path: 'flower/festival/detail', component: () => import('@/views/admin/festival/detail.vue') },
                 { path: 'flower/festival/give', component: () => import('@/views/admin/festival/giveFestival.vue') },
 
-                // 评论区 - 近期热点信息（ArticleController / ArticleDetailController）
+
                 { path: 'blog/article', component: () => import('@/views/admin/blog/article.vue') },
                 { path: 'blog/article/add', component: () => import('@/views/admin/blog/addArticle.vue') },
-                // 评论区 - 评论（BlogController / BlogCommentsController）
                 { path: 'blog/comment', component: () => import('@/views/admin/blog/comment.vue') },
 
                 { path: 'statistics/line', component: () => import('@/views/admin/statistics/lineChart.vue') },

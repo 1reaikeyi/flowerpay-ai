@@ -7,10 +7,10 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.branch.common.constant.RedisPrefixConstant;
 import com.branch.domain.dto.BlogPageDTO;
-import com.branch.domain.entity.UserFollower;
+import com.branch.domain.entity.BlogFollower;
 import com.branch.domain.vo.BlogVO;
 import com.branch.result.PageResult;
-import com.branch.service.UserFollowerService;
+import com.branch.service.BlogFollowerService;
 
 import com.branch.domain.entity.Blog;
 import framework.security.SecurityContextParam;
@@ -33,12 +33,10 @@ import java.util.stream.Collectors;
 @Service
 public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements BlogService {
 
-
-
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
     @Autowired
-    private UserFollowerService userFollowerService;
+    private BlogFollowerService blogFollowerService;
 
 
     /**
@@ -53,9 +51,9 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements Bl
         super.save(blog);
         // 发送给所有粉丝的收件箱
         Long userId = blog.getUserId();
-        List<UserFollower> userFollows = userFollowerService.lambdaQuery()
-                .eq(UserFollower::getUserId,userId).list();
-        for (UserFollower userFollow : userFollows) {
+        List<BlogFollower> userFollows = blogFollowerService.lambdaQuery()
+                .eq(BlogFollower::getUserId,userId).list();
+        for (BlogFollower userFollow : userFollows) {
             String key = RedisPrefixConstant.BLOG_FOLLOW_PREFIX + userFollow.getFollowUserId();
             stringRedisTemplate.opsForZSet().add(key, blog.getId().toString(), System.currentTimeMillis());
         }

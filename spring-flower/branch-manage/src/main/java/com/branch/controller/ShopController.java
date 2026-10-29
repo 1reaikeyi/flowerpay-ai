@@ -1,6 +1,6 @@
 package com.branch.controller;
 
-import com.branch.domain.vo.ShopVO;
+import com.branch.domain.vo.ShopStatusVO;
 import com.branch.common.ShopConstant;
 import framework.aop.oparation.OperationSuccessEnum;
 import com.branch.result.Result;
@@ -24,7 +24,7 @@ public class ShopController {
     @GetMapping("/status")
     public Result read() {
         String shop = stringRedisTemplate.opsForValue().get(ShopConstant.SHOP_STATUS);
-        ShopVO shopVO = new ShopVO(shop);
-        return Result.success(shopVO);
+        ShopStatusVO shopStatusVO = new ShopStatusVO(shop);
+        return Result.success(shopStatusVO);
     }
 }

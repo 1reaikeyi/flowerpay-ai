@@ -43,21 +43,21 @@ export const listBlogComments = (id) => {
 }
 
 // 对博客发表评论 - POST /blog/comments/0/{id}
-// 后端 @RequestBody String，需要发送 JSON 字符串（带引号）
+// 请求体 BlogCommentsDTO：{ content }（JSON 对象，避免 String 接收导致的中文乱码）
 export const createBlogComment = (id, content) => {
   return request({
     url: `/blog/comments/0/${id}`,
     method: 'post',
-    data: JSON.stringify(content)
+    data: { content }
   })
 }
 
 // 回复评论 - POST /blog/comments/1/{id}
-// 后端 @RequestBody String，需要发送 JSON 字符串（带引号）
+// 请求体 BlogCommentsDTO：{ content }（JSON 对象，避免 String 接收导致的中文乱码）
 export const replyBlogComment = (id, content) => {
   return request({
     url: `/blog/comments/1/${id}`,
     method: 'post',
-    data: JSON.stringify(content)
+    data: { content }
   })
 }

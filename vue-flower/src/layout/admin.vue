@@ -53,7 +53,7 @@
           </el-menu-item>
 
           <el-menu-item index="/admin/blog/comment">
-            <el-icon><Present /></el-icon>
+            <el-icon><DataAnalysis /></el-icon>
             <span>评论</span>
           </el-menu-item>
 

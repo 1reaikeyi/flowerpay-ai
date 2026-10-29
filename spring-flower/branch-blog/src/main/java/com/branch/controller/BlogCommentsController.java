@@ -3,6 +3,7 @@ package com.branch.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import com.branch.domain.dto.BlogCommentsDTO;
 import com.branch.service.BlogCommentsService;
 import com.branch.result.Result;
 
@@ -16,16 +17,16 @@ public class BlogCommentsController {
      * 对博客发表评论（parent_id=0）
      */
     @PostMapping("/0/{id}")
-    public Result createBlog(@PathVariable("id") Long id, @RequestBody String content) {
-        return Result.success(blogCommentsService.createBlog(id, content));
+    public Result createBlog(@PathVariable("id") Long id, @RequestBody BlogCommentsDTO blogCommentsDTO) {
+        return Result.success(blogCommentsService.createBlog(id, blogCommentsDTO.getContent()));
     }
 
     /**
      * 回复评论（parent_id=1，answer_id 指向目标评论）
      */
     @PostMapping("/1/{id}")
-    public Result createBlogComment(@PathVariable("id") Long id, @RequestBody String content) {
-        return Result.success(blogCommentsService.createBlogComment(id, content));
+    public Result createBlogComment(@PathVariable("id") Long id, @RequestBody BlogCommentsDTO blogCommentsDTO) {
+        return Result.success(blogCommentsService.createBlogComment(id, blogCommentsDTO.getContent()));
     }
 
     /**

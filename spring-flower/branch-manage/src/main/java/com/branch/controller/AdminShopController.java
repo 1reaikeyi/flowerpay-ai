@@ -1,6 +1,6 @@
 package com.branch.controller;
 
-import com.branch.domain.vo.ShopVO;
+import com.branch.domain.vo.ShopStatusVO;
 import com.branch.common.ShopConstant;
 import framework.aop.oparation.OperationSuccessEnum;
 import com.branch.result.Result;
@@ -27,8 +27,8 @@ public class AdminShopController {
     public Result updateStatus(@PathVariable
                                    @Min(value = 0) @Max(value = 1) Long status) {
         stringRedisTemplate.opsForValue().set(ShopConstant.SHOP_STATUS, status == 1 ? "营业中" : "已打烊");
-        ShopVO shopVO = new ShopVO(status == 1 ? "营业中" : "已打烊");
-        return Result.success(shopVO);
+        ShopStatusVO shopStatusVO = new ShopStatusVO(status == 1 ? "营业中" : "已打烊");
+        return Result.success(shopStatusVO);
     }
     
     @PreAuthorize("permitAll")
@@ -36,7 +36,7 @@ public class AdminShopController {
     @GetMapping
     public Result read() {
         String shop = stringRedisTemplate.opsForValue().get(ShopConstant.SHOP_STATUS);
-        ShopVO shopVO = new ShopVO(shop);
-        return Result.success(shopVO);
+        ShopStatusVO shopStatusVO = new ShopStatusVO(shop);
+        return Result.success(shopStatusVO);
     }
 }

@@ -39,6 +39,7 @@
         <module>branch-ai</module>
         <module>branch-blog</module>
         <module>branch-manage</module>
+        <module>branch-shop</module>
     </modules>
 
     <properties>

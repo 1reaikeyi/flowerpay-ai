@@ -22,7 +22,10 @@ public class RedisPrefixConstant {
     public static final String BLOG_LIKED_PREFIX = "blog:liked:";
     public static final String BLOG_FOLLOW_PREFIX = "blog:follow:";
     public static final String BLOG_VIEW_PREFIX = "blog:view:";
+    public static final String BLOG_WATCH_PREFIX = "blog:watch:";
 
     public final static String SIGN_DAY = "sign:day:";
+
+    public static final String SHOP_TYPE = "shop:type:";
 
 }

@@ -1,6 +1,6 @@
 package com.branch.service.rag;
 
-import com.branch.controller.load.PromptConfig;
+import com.branch.controller.config.PromptConfig;
 import com.branch.domain.enums.ChatEventTypeEnum;
 import com.branch.domain.vo.ChatEventVO;
 import org.springframework.ai.document.Document;
