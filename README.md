@@ -273,7 +273,7 @@ flowchart TD
 
 ## 文章和评论模块
 
-<img src="说明/原型功能/redis2.png" alt="redis" style="zoom: 25%;" />
+<img src="说明/原型功能/redis1.png" alt="redis" style="zoom: 25%;" />
 
 ### 迭代过程
 
@@ -287,9 +287,7 @@ Q：为什么用parent_id区分评论和回复？
 
 ## 优惠券使用模块
 
-<img src="说明/原型功能/redis1.png" alt="redis" style="zoom: 50%;" />
-
-### 组件：ID生成器（RedisID）
+组件：ID生成器（RedisID）
 
 ```java
 public class RedisID {
@@ -324,10 +322,11 @@ Q：ID结为什么是 1位符号位+时间戳(31位) + 序号(32位)？
 2. 原子库存扣减：使用 MyBatis Plus 的乐观锁 CAS 操作保证库存扣减的原子性
 3. 订单创建：保存订单记录
 
-**redis操作阶段**：
+**redis操作阶段**
 
 用户请求 → Lua脚本校验（库存+重复下单）
-								  ↓ → 后台线程处理（扣库存+保存订单）
+
+​								  ↓ → 后台线程处理（扣库存+保存订单）
 
 ```lua
 -- 参数：优惠券ID、用户ID
@@ -358,6 +357,17 @@ redis.call('sadd', orderKey, userId)
 return 0
 ```
 
+### 迭代过程
+
+| 乐观锁                                                       |
+| ------------------------------------------------------------ |
+| <img src="说明/支付宝支付/乐观锁解决超卖.png" alt="redis" style="zoom: 50%;" /> |
+| 分布式锁同步                                                 |
+| <img src="说明/支付宝支付/redis同步.png" alt="redis" style="zoom: 50%;" /> |
+| 分布式锁异步                                                 |
+| <img src="说明/支付宝支付/stream异步.png" alt="redis" style="zoom: 50%;" /> |
+| 日志：说明/支付宝支付/redis同步.txt，redis异步.txt           |
+
 ---
 
 ## 订单模块
@@ -371,8 +381,6 @@ return 0
 ```
 
 第三方授权登录流程图和支付流程：支付宝
-
-`沙箱网关固定为：https://openapi-sandbox.dl.alipaydev.com/gateway.do`
 
 | 支付宝授权     | <img src="说明/支付宝支付/pay5.png" alt="支付宝" style="zoom:50%;" /> |
 | -------------- | ------------------------------------------------------------ |
@@ -525,7 +533,7 @@ flowchart TD
     end
 ```
 
-## 代码生成generator模块
+## 代码生成模块
 
 ### model
 
