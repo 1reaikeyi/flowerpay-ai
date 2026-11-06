@@ -9,6 +9,7 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -30,6 +31,7 @@ public class ThreadPoolConfig {
     private ExecutorService festivalExecutor;
     private ExecutorService festivalDetailExecutor;
     private ExecutorService articleExecutor;
+    private ExecutorService voucherOrderExecutor;
 
     /**
      * 构建缓存重建线程池：固定核心线程数，有界队列，CallerRunsPolicy 拒绝策略，
@@ -91,35 +93,43 @@ public class ThreadPoolConfig {
     @Bean
     public ExecutorService flowerExecutor() {
         flowerExecutor = buildCacheRebuildExecutor("flower-handler-%d");
-        log.info("Flower 缓存重建线程池初始化完成, 核心线程数: {}", core);
+        log.info("flowerExecutor线程池初始化完成, 核心线程数: {}", core);
         return flowerExecutor;
     }
 
     @Bean
     public ExecutorService flowerDetailExecutor() {
         flowerDetailExecutor = buildCacheRebuildExecutor("flowerDetail-handler-%d");
-        log.info("flowerDetail 缓存重建线程池初始化完成, 核心线程数: {}", core);
+        log.info("flowerDetailExecutor线程池初始化完成, 核心线程数: {}", core);
         return flowerDetailExecutor;
     }
 
     @Bean
     public ExecutorService articleExecutor() {
         articleExecutor = buildCacheRebuildExecutor("festival-handler-%d");
+        log.info("articleExecutor线程池初始化完成, 核心线程数: {}", core);
         return articleExecutor;
     }
 
     @Bean
     public ExecutorService festivalExecutor() {
         festivalExecutor = buildCacheRebuildExecutor("festival-handler-%d");
-        log.info("Festival 缓存重建线程池初始化完成, 核心线程数: {}", core);
+        log.info("festivalExecutor线程池初始化完成, 核心线程数: {}", core);
         return festivalExecutor;
     }
 
     @Bean
     public ExecutorService festivalDetailExecutor() {
         festivalDetailExecutor = buildCacheRebuildExecutor("festivalDetail-handler-%d");
-        log.info("FestivalDetail 缓存重建线程池初始化完成, 核心线程数: {}", core);
+        log.info("festivalDetailExecutor线程池初始化完成, 核心线程数: {}", core);
         return festivalDetailExecutor;
+    }
+
+    @Bean(name = "voucherOrderExecutor", destroyMethod = "shutdownNow")
+    public ExecutorService voucherOrderExecutor() {
+        log.info("优惠券订单线程池初始化完成, 核心线程数: 1");
+        voucherOrderExecutor = Executors.newSingleThreadExecutor(buildThreadFactory("voucher-order-handler-%d"));
+        return voucherOrderExecutor;
     }
 
     /**
@@ -135,6 +145,7 @@ public class ThreadPoolConfig {
         shutdownGracefully(festivalExecutor, "Festival");
         shutdownGracefully(festivalDetailExecutor, "FestivalDetail");
         shutdownGracefully(articleExecutor, "FestivalDetail");
+        shutdownGracefully(voucherOrderExecutor, "FestivalDetail");
     }
 
     private void shutdownGracefully(ExecutorService executor, String name) {

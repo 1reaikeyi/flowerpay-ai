@@ -40,6 +40,7 @@
         <module>branch-blog</module>
         <module>branch-manage</module>
         <module>branch-shop</module>
+        <module>branch-second</module>
     </modules>
 
     <properties>

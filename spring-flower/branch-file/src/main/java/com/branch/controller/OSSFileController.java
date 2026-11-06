@@ -20,6 +20,7 @@ import java.util.UUID;
 /**
  * 直接访问测试图片
  * https://java-web-ai-wangnian.oss-cn-beijing.aliyuncs.com/fcb59f82-5aac-4078-8667-0ef559af7af9.gif
+ * https://java-web-ai-wangnian.oss-cn-beijing.aliyuncs.com/3f8d7452-2379-4c95-82ae-b6711a657b43.png
  */
 @RestController
 @RequestMapping("/oss")

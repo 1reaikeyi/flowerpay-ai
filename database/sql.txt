@@ -1,3 +1,113 @@
+create table if not exists article
+(
+    id             bigint auto_increment comment 'ID'
+        primary key,
+    category_name  varchar(32) not null comment '分类名称',
+    category_alias varchar(32) not null comment '分类别名',
+    create_user    bigint      not null comment '创建人ID,关联user.id',
+    update_user    bigint      null comment '更新人',
+    create_time    datetime    not null comment '创建时间',
+    update_time    datetime    not null comment '修改时间'
+);
+
+create table if not exists article_detail
+(
+    id          bigint auto_increment comment 'ID'
+        primary key,
+    title       varchar(50)               not null comment '文章标题',
+    content     varchar(10000)            not null comment '文章内容',
+    cover_img   varchar(128)              not null comment '文章封面',
+    state       varchar(3) default '草稿' null comment '文章状态: 只能是[已发布] 或者 [草稿]',
+    category_id bigint                    null comment '文章分类ID,关联category.id',
+    create_user bigint                    not null comment '创建人ID,关联user.id',
+    update_user bigint                    null comment '更新人',
+    create_time datetime                  not null comment '创建时间',
+    update_time datetime                  not null comment '修改时间'
+);
+
+create table if not exists blog
+(
+    id          bigint auto_increment comment '主键自增ID'
+        primary key,
+    shop_id     bigint                              not null comment '商户ID',
+    user_id     bigint                              not null comment '发布用户ID',
+    title       varchar(255)                        not null comment '探店笔记标题',
+    images      varchar(2048)                       not null comment '探店照片地址，最多9张，多图逗号分隔',
+    content     varchar(2048)                       not null comment '探店文字描述内容',
+    liked       bigint    default 0                 null comment '笔记点赞数量',
+    comments    bigint    default 0                 null comment '笔记评论总数',
+    create_time timestamp default CURRENT_TIMESTAMP not null comment '笔记创建时间',
+    update_time timestamp default CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP comment '笔记更新时间'
+)
+    comment '探店笔记主表' collate = utf8mb4_unicode_ci;
+
+create index idx_create_time
+    on blog (create_time)
+    comment '按发布时间排序索引';
+
+create index idx_shop_id
+    on blog (shop_id)
+    comment '商户笔记查询索引';
+
+create index idx_user_id
+    on blog (user_id)
+    comment '用户发布笔记索引';
+
+create table if not exists blog_comments
+(
+    id          bigint auto_increment comment '评论主键自增ID'
+        primary key,
+    user_id     bigint                              not null comment '评论发布用户ID',
+    blog_id     bigint                              not null comment '关联探店笔记ID',
+    parent_id   bigint    default 0                 not null comment '回复blog评论评论值为0，回复blog_comments评论评论值为1',
+    answer_id   bigint                              not null comment '回复目标评论ID',
+    content     varchar(255)                        not null comment '评论文字内容',
+    liked       bigint    default 0                 null comment '评论点赞数量',
+    status      tinyint   default 0                 null comment '评论状态：0正常，1被举报，2禁止查看',
+    create_time timestamp default CURRENT_TIMESTAMP not null comment '评论创建时间',
+    update_time timestamp default CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP comment '评论更新时间'
+)
+    comment '探店笔记评论明细表' collate = utf8mb4_unicode_ci;
+
+create index idx_blog_id
+    on blog_comments (blog_id)
+    comment '根据笔记查询所有评论';
+
+create index idx_parent_blog
+    on blog_comments (blog_id, parent_id)
+    comment '笔记下一级评论联合索引';
+
+create index idx_user_id
+    on blog_comments (user_id)
+    comment '用户发布评论查询索引';
+
+create table if not exists blog_follower
+(
+    id             bigint auto_increment comment '主键'
+        primary key,
+    user_id        bigint unsigned                     not null comment '用户id',
+    follow_user_id bigint unsigned                     not null comment '关联的用户id',
+    create_time    timestamp default CURRENT_TIMESTAMP not null comment '创建时间'
+)
+    comment '关注表' collate = utf8mb4_unicode_ci;
+
+create table if not exists blog_self
+(
+    user_id     bigint                                not null comment '主键，用户id'
+        primary key,
+    city        varchar(64) default ''                null comment '城市名称',
+    introduce   varchar(128)                          null comment '个人介绍，不要超过128个字符',
+    fans        bigint      default 0                 null comment '粉丝数量',
+    followee    bigint      default 0                 null comment '关注的人的数量',
+    gender      tinyint     default 0                 null comment '性别，0：男，1：女',
+    birthday    date                                  null comment '生日',
+    credits     bigint      default 0                 null comment '积分',
+    level       tinyint     default 0                 null comment '会员级别，0~9级,0代表未开通会员',
+    create_time timestamp   default CURRENT_TIMESTAMP not null comment '创建时间',
+    update_time timestamp   default CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP comment '更新时间'
+)
+    comment '博主表' collate = utf8mb4_unicode_ci;
+
 create table if not exists chat_record
 (
     id          bigint                             not null comment '数据id'
@@ -272,15 +382,15 @@ create table if not exists permission
 (
     id              bigint unsigned auto_increment comment '主键ID'
         primary key,
-    permission_code varchar(128)                       not null comment '权限编码',
-    permission_name varchar(64)                        not null comment '权限名称',
-    path            varchar(255)                       null comment '路由',
-    method          varchar(16)                        null comment '方法',
-    sort            int      default 0                 not null comment '排序',
-    status          tinyint  default 1                 not null comment '状态 0禁用 1启用',
-    remark          varchar(512)                       null comment '备注',
-    create_time     datetime default CURRENT_TIMESTAMP not null comment '创建时间',
-    update_time     datetime default CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP comment '更新时间',
+    permission_code varchar(128)                          not null comment '权限编码',
+    permission_name varchar(64)                           not null comment '权限名称',
+    path            varchar(255)                          null comment '路由',
+    method          varchar(16) default 'get'             null comment '方法',
+    sort            int         default 0                 not null comment '排序',
+    status          tinyint     default 1                 not null comment '状态 0禁用 1启用',
+    remark          varchar(512)                          null comment '备注',
+    create_time     datetime    default CURRENT_TIMESTAMP not null comment '创建时间',
+    update_time     datetime    default CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP comment '更新时间',
     constraint uk_permission_code
         unique (permission_code)
 )
@@ -292,10 +402,8 @@ create table if not exists role
         primary key,
     role_code   varchar(64)                        not null comment '角色编码',
     role_name   varchar(64)                        not null comment '角色名称',
-    role_type   varchar(32)                        null comment '角色类型',
     sort        int      default 0                 not null comment '排序',
     status      tinyint  default 1                 not null comment '状态 0禁用 1启用',
-    remark      varchar(512)                       null comment '备注',
     create_time datetime default CURRENT_TIMESTAMP not null comment '创建时间',
     update_time datetime default CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP comment '更新时间',
     constraint uk_role_code
@@ -314,6 +422,41 @@ create table if not exists role_permission
         unique (role_id, permission_id)
 )
     comment '角色权限关联表';
+
+create table if not exists shop
+(
+    id          bigint auto_increment comment '主键'
+        primary key,
+    name        varchar(128)                        not null comment '商铺名称',
+    type_id     bigint                              not null comment '商铺类型的id',
+    images      varchar(1024)                       not null comment '商铺图片，多个图片以隔开',
+    area        varchar(128)                        null comment '商圈，例如陆家嘴',
+    address     varchar(255)                        not null comment '地址',
+    x           double                              not null comment '经度',
+    y           double                              not null comment '纬度',
+    avg_price   bigint                              null comment '均价，取整数',
+    sold        bigint                              not null comment '销量',
+    comments    bigint                              not null comment '评论数量',
+    score       bigint                              not null comment '评分，1~5分，乘10保存，避免小数',
+    open_hours  varchar(32)                         null comment '营业时间，例如 10:00-22:00',
+    create_time timestamp default CURRENT_TIMESTAMP null comment '创建时间',
+    update_time timestamp default CURRENT_TIMESTAMP null on update CURRENT_TIMESTAMP comment '更新时间'
+)
+    comment '商店表' collate = utf8mb4_unicode_ci;
+
+create index foreign_key_type
+    on shop (type_id);
+
+create table if not exists shop_type
+(
+    id          bigint auto_increment comment '主键'
+        primary key,
+    name        varchar(32)                         null comment '类型名称',
+    sort        bigint                              null comment '顺序',
+    create_time timestamp default CURRENT_TIMESTAMP null comment '创建时间',
+    update_time timestamp default CURRENT_TIMESTAMP null on update CURRENT_TIMESTAMP comment '更新时间'
+)
+    comment '商店分类表' collate = utf8mb4_unicode_ci;
 
 create table if not exists user
 (
@@ -364,4 +507,57 @@ create table if not exists user_shopping
     create_time datetime         null comment '加入时间'
 )
     comment '购物车' collate = utf8mb4_bin;
+
+create table if not exists user_sign
+(
+    id          bigint auto_increment comment '主键'
+        primary key,
+    user_id     bigint    not null comment '用户id',
+    year        bigint    not null comment '签到的年',
+    month       bigint    not null comment '签到的月',
+    signed      bigint    null comment '签到次数',
+    not_signed  bigint    null comment '缺勤次数',
+    create_time timestamp not null comment '创建时间'
+)
+    comment '签到表' collate = utf8mb4_unicode_ci;
+
+create table if not exists voucher
+(
+    id           bigint auto_increment comment '优惠券主键ID'
+        primary key,
+    shop_id      bigint unsigned                          null comment '所属门店ID',
+    title        varchar(255) collate utf8mb4_general_ci  not null comment '优惠券标题',
+    sub_title    varchar(255) collate utf8mb4_general_ci  null comment '优惠券副标题',
+    type         bigint    default 0                      not null comment '券类型：0普通代金券，1秒杀券',
+    status       bigint    default 1                      not null comment '优惠券状态：1上架，2下架，3过期',
+    rules        varchar(1024) collate utf8mb4_general_ci null comment '优惠券使用规则',
+    pay_value    bigint unsigned                          not null comment '用户购买支付金额，单位分',
+    actual_value bigint                                   not null comment '优惠券抵扣金额，单位分',
+    create_time  timestamp default CURRENT_TIMESTAMP      not null comment '优惠券创建时间',
+    update_time  timestamp default CURRENT_TIMESTAMP      not null on update CURRENT_TIMESTAMP comment '优惠券更新时间'
+)
+    comment '优惠券表';
+
+create table if not exists voucher_second
+(
+    voucher_id  bigint                              not null comment '关联优惠券表主键ID'
+        primary key,
+    stock       bigint                              not null comment '秒杀库存数量',
+    begin_time  timestamp default CURRENT_TIMESTAMP not null comment '秒杀活动开始时间',
+    end_time    timestamp default CURRENT_TIMESTAMP not null comment '秒杀活动结束时间',
+    create_time timestamp default CURRENT_TIMESTAMP not null comment '记录创建时间',
+    update_time timestamp default CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP comment '更新时间'
+)
+    comment '秒杀优惠券表';
+
+create table if not exists voucher_use
+(
+    id          bigint                              not null comment '订单唯一主键ID'
+        primary key,
+    user_id     bigint                              not null comment '下单用户ID',
+    voucher_id  bigint                              not null comment '购买的优惠券ID',
+    use_time    timestamp                           null comment '使用时间',
+    update_time timestamp default CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP comment '订单更新时间'
+)
+    comment '购买订单表';
 

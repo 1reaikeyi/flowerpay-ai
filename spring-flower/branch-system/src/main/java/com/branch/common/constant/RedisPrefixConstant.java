@@ -28,4 +28,7 @@ public class RedisPrefixConstant {
 
     public static final String SHOP_TYPE = "shop:type:";
 
+    public static final String VOUCHER_STOCK_PREFIX = "voucher:second:stock:";
+    public static final String VOUCHER_ORDER_PREFIX = "voucher:second:order:";
+
 }

@@ -11,7 +11,8 @@ public class CITest {
     private Generator generator;
     @Test
     public void generate() {
-        generator.generate("login_log");
-        generator.generate("operate_log");
+        generator.generate("voucher");
+        generator.generate("voucher_use");
+        generator.generate("voucher_second");
     }
 }

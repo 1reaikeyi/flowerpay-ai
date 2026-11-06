@@ -1,10 +1,9 @@
 <div align="center">
   <h1>flowerpay-ai 鲜花商店 + ai</h1>
   <h5>后端利用 Spring Boot 3 的高效与安全性提供 RESTful API 服务，前端借助 Vue 3 实现流畅的用户交互体验的构建的现代化前后端分离系统。通过多级缓存热点数据以提升系统响应速度，Druid 负责MySQL连接池与 SQL 监控，保障订单、库存数据访问；使用redis_exporter采集多级缓存命中率使用情况，监视redis。</h5>
-   <h5>主业务为B2C经营模式，一个花店卖家，多个买家，由店长、店员和客户组成，前台鲜花经营及RBAC后台管理系统,统计数据分析,店铺管理,博客发布更新和评论服务，优惠卷秒杀服务。分支业务org.springframework.ai的openai +com.alibaba.cloud.ai的graph，问一问rag的使用用途和送人对象，拍一拍识别推荐花束。</h5>
+   <h5>主业务为B2C经营模式，一个花店卖家，多个买家，由店长、店员和客户组成，前台鲜花经营及RBAC后台管理系统,统计数据分析,店铺管理,博客发布更新和评论服务，附近的店寻找，优惠卷秒杀服务。分支业务org.springframework.ai的openai +com.alibaba.cloud.ai的graph，问一问rag的使用用途和送人对象，拍一拍识别推荐花束。</h5>
    <h1>项目结构:flowerpay-ai\说明\wiki.md</h1>
 </div>
-
 ## 配置说明
 
 <div align="center">
@@ -282,10 +281,6 @@ Q：为什么点赞用Redis的ZSet而不是普通Set？
 
 > A：ZSet可以存储分数（timestamp），这样可以按点赞时间排序，方便获取热门点赞用户。同时ZSet的score操作是原子的，不会出现并发问题。
 
-Q：为什么点赞数同时存Redis和MySQL？
-
-> A：Redis用于实时查询和计数，MySQL用于持久化存储。点赞操作先更新MySQL再更新Redis，保证数据最终一致性。
-
 Q：为什么用parent_id区分评论和回复？
 
 > A：`parent_id = 0` 表示直接评论博文，`parent_id = 1` 表示回复其他评论。这种设计可以支持无限层级的回复，同时查询时可以通过parent_id区分评论和回复。
@@ -297,7 +292,6 @@ Q：为什么用parent_id区分评论和回复？
 ### 组件：ID生成器（RedisID）
 
 ```java
-@Component
 public class RedisID {
     // 基准时间：2020-01-01 00:00:00 UTC
     private final static long BEGIN_TIME = 1577836800L;
@@ -318,32 +312,11 @@ public class RedisID {
 }
 ```
 
-Q：为什么不用UUID？
-
-> A：UUID是随机字符串，无序，作为数据库主键会导致索引分裂，影响性能。而且UUID太长（36位），存储和传输成本高。
-
-Q：为什么不用数据库自增ID？
-
-> A：数据库自增ID在分布式环境下需要额外处理（比如分库分表），而且生成ID需要访问数据库，性能不如Redis。
-
-Q：ID结构为什么是 1位符号位+时间戳(31位) + 序号(32位)？
+Q：ID结为什么是 1位符号位+时间戳(31位) + 序号(32位)？
 
 > A：0作为符号位，正数自增，31位时间戳可以表示约68年（2^31秒 ≈ 68年），从2020年开始够用。32位序号可以表示约42亿，足够单日并发使用
-
-### 秒杀流程图
-
-```
-同步版本流程：
-用户请求 → 校验秒杀活动 → 生成订单ID → 直接调用secondKill() → 扣库存+保存订单 → 返回结果
-异步单机流程：
-用户请求 → 校验秒杀活动 → Lua脚本校验 → 放入ArrayBlockingQueue → 返回订单ID
-                                                              ↓
-       						 后台线程 take() → RedisLock → paySuccess() → 扣库存+保存订单
-异步分布式流程：
-用户请求 → 校验秒杀活动 → Lua脚本校验（自动XADD到Stream）→ 返回订单ID
-                                                         ↓
-             				 XREADGROUP读取 → 解析订单 → secondKill() → 扣库存+保存订单 → ACK确认
-```
+>
+> A：数据库自增ID在分布式环境下需要额外处理（比如分库分表），而且生成ID需要访问数据库，性能不如Redis。UUID是随机字符串，无序，而且UUID太长（36位），存储和传输成本高.
 
 **数据库操作阶段**
 
@@ -351,13 +324,10 @@ Q：ID结构为什么是 1位符号位+时间戳(31位) + 序号(32位)？
 2. 原子库存扣减：使用 MyBatis Plus 的乐观锁 CAS 操作保证库存扣减的原子性
 3. 订单创建：保存订单记录
 
-```
-用户请求 → Lua脚本校验（库存+重复下单）→ 成功
-								  ↓ →放入异步队列 → 后台线程处理（扣库存+保存订单）
-                                  ↓ →失败→直接返回
-```
-
 **redis操作阶段**：
+
+用户请求 → Lua脚本校验（库存+重复下单）
+								  ↓ → 后台线程处理（扣库存+保存订单）
 
 ```lua
 -- 参数：优惠券ID、用户ID
@@ -388,15 +358,6 @@ redis.call('sadd', orderKey, userId)
 return 0
 ```
 
-###  迭代过程
-
-| 维度           | VoucherSeckillController | VoucherController  | VoucherOrderController |
-| :------------- | :----------------------- | :----------------- | :--------------------- |
-| **处理方式**   | 同步                     | 异步               | 异步（Redis Stream）   |
-| **队列类型**   | 无                       | ArrayBlockingQueue | Redis Stream           |
-| **多服务支持** | 支持                     | 不支持             | 支持（消费组）         |
-| **故障恢复**   | 无状态                   | 重启丢失           | 消息可恢复             |
-
 ---
 
 ## 订单模块
@@ -413,9 +374,8 @@ return 0
 
 `沙箱网关固定为：https://openapi-sandbox.dl.alipaydev.com/gateway.do`
 
-| 支付宝授权     | <img src="说明/支付宝支付/zhifubao1.png" alt="支付宝" style="zoom:10%;" /> |
+| 支付宝授权     | <img src="说明/支付宝支付/pay5.png" alt="支付宝" style="zoom:50%;" /> |
 | -------------- | ------------------------------------------------------------ |
-| 第三方授权成功 | <img src="说明/支付宝支付/zhifubao2.png" alt="支付宝" style="zoom:50%;" /> |
 | 支付集成到订单 | <img src="说明/支付宝支付/pay1.png" alt="支付" style="zoom:25%;" /> |
 | 支付过程       | <img src="说明/支付宝支付/pay2.png" alt="支付" style="zoom: 25%;" /> |
 | 同步支付结果   | <img src="说明/支付宝支付/pay3.png" alt="支付" style="zoom: 25%;" /> |
