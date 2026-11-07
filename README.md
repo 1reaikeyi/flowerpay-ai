@@ -45,55 +45,6 @@
 
 # 后端说明
 
-## 多端登录模块
-
-### model
-
-```mermaid
-flowchart TB
-    subgraph adminer
-        zhi["zhizhi"]
-        li["lili"]
-        bai["baibai"]
-        zhang["zhangzhang"]
-    end
-    subgraph role
-        keyan["店长"]
-        shichang["worker"]
-        xiaoshou["waiter"]
-    end
-    subgraph permission
-        start1["权限1"]
-        start2["权限2"]
-        start3["权限3"]
-        start4["权限4"]
-       
-    end
-
-    classDef c1 fill:#fff
-    classDef c2 fill:#f2b8b8
-    classDef c3 fill:#b8d0f2
-    class admin c1
-    class role c2
-    class permission c3
-```
-
-### 迭代过程
-
-```
-Q：滑动过期会不会产生大量无效 Redis Key？
-答：设置最大基础 TTL 兜底，即使用户长期不操作，缓存自动(expire:24小时)淘汰；登出接口主动删除对应 key，减少无效缓存堆积。
-Q: 如何保证role权限？
-1.user和admin的url拦截
-.authorizeHttpRequests(  auth -> auth           		
-	.requestMatchers("/admin/**").hasRole("ADMIN")
-	.requestMatchers("/user/**").hasRole("USER")
-	// 其他接口全部放行
-	.anyRequest().permitAll())
-2.admin不同的角色的使用层拦截
-@PreAuthorize("hasRole('ADMIN')")，@PreAuthorize("hasAuthorize('admin:create')")，@PreAuthorize("hasAuthorize('work:create')")等等
-```
-
 ------
 
 ## 鲜花商品模块
@@ -271,21 +222,9 @@ flowchart TD
 | 日志                          | flowerpay-ai/说明/并发测试/festival-运行日志-缓存.txt        |
 | 对比                          | 无缓存场景：接口平均响应时间 761ms，90% 请求响应时间 1595ms，95% 请求响应时间 1629ms，99% 请求响应时间 1746ms，吞吐量 34.3 次每秒，错误率 0%。 开启缓存场景：接口平均响应时间 136ms，90% 请求响应时间 327ms，95% 请求响应时间 346ms，99% 请求响应时间 423ms，吞吐量 150.6 次每秒，错误率 0%。 |
 
-## 文章和评论模块
+## 优惠券使用模块
 
 <img src="说明/原型功能/redis1.png" alt="redis" style="zoom: 25%;" />
-
-### 迭代过程
-
-Q：为什么点赞用Redis的ZSet而不是普通Set？
-
-> A：ZSet可以存储分数（timestamp），这样可以按点赞时间排序，方便获取热门点赞用户。同时ZSet的score操作是原子的，不会出现并发问题。
-
-Q：为什么用parent_id区分评论和回复？
-
-> A：`parent_id = 0` 表示直接评论博文，`parent_id = 1` 表示回复其他评论。这种设计可以支持无限层级的回复，同时查询时可以通过parent_id区分评论和回复。
-
-## 优惠券使用模块
 
 组件：ID生成器（RedisID）
 
@@ -374,6 +313,37 @@ return 0
 
 ### model
 
+```mermaid
+flowchart TB
+    subgraph adminer
+        zhi["zhizhi"]
+        li["lili"]
+        bai["baibai"]
+        zhang["zhangzhang"]
+    end
+    subgraph role
+        keyan["店长"]
+        shichang["worker"]
+        xiaoshou["waiter"]
+    end
+    subgraph permission
+        start1["权限1"]
+        start2["权限2"]
+        start3["权限3"]
+        start4["权限4"]
+       
+    end
+
+    classDef c1 fill:#fff
+    classDef c2 fill:#f2b8b8
+    classDef c3 fill:#b8d0f2
+    class admin c1
+    class role c2
+    class permission c3
+```
+
+
+
 ```
 → 1 用户下单 → 2 用户确认支付 
 → 3 商家制作 → 4 工作人员取货 → 5 工作人员开始配送 → 6 工作人员已到达 → 7 用户确认
@@ -388,57 +358,6 @@ return 0
 | 支付过程       | <img src="说明/支付宝支付/pay2.png" alt="支付" style="zoom: 25%;" /> |
 | 同步支付结果   | <img src="说明/支付宝支付/pay3.png" alt="支付" style="zoom: 25%;" /> |
 | 异步验签结果   | <img src="说明/支付宝支付/pay4.png" alt="支付" style="zoom: 25%;" /> |
-
-## 用户模块
-
-### model
-
-user-address
-
-```
-Q:多默认地址数据违规，新增 / 修改地址勾选默认，旧默认地址未取消？
-设为默认前先批量更新该用户所有地址 isDefault=0，两步操作绑定业务逻辑，数据库无法直接约束单用户唯一默认，代码层前置清理旧默认，保证业务数据合规
-Q:用户地址数量较多时，需要扫描前 100 页数据，游标滚动分页，以上一页最后一条 id 作为游标，直接走主键索引
-```
-
-websocket
-
-```mermaid
-sequenceDiagram
-    participant 用户
-    participant websocket
-    participant 商户
-
-    用户->>websocket:1 用户催单
-    websocket->>商户:2 发送用户请求
-    商户-->>websocket:3 商家回复收到
-    websocket-->>用户:4 发送商家请求
-```
-
-user-shopping
-
-```
-Q:MySQL 持久化，还采用 Redis Hash 存储?
-节假日使用redis，平时使用MySQL。
-Q:Redis Hash 结构
-   外层 key：shopping_cart:{userId}
-   内层 field：购物项唯一 id，value：商品完整信息 JSON
-```
-
-## 文件管理模块
-
-### model
-
-1 使用excel分析
-
-POST /report/excel/read EasyExcel流式逐行读取解析，不加载全表到内存
-GET /report/excel/download 流式写入Response输出流，边写边返回，不占用堆内存
-
-2 文件管理
-
-双存储环境隔离，使用硬盘存储，对于内部的用户数据，敏感数据和重要文档。切换 OSS 加速、多实例共享文件、无限扩容，存储公共数据。
-
-UUID 重命名策略，丢弃原始文件名，UUID + 后缀生成全新文件名，解决重名覆盖、路径遍历攻击、中文乱码三大问题。
 
 ## 接入AI模块
 
@@ -533,26 +452,11 @@ flowchart TD
     end
 ```
 
-## 代码生成模块
-
-### model
-
-代码生成entity,mapper,service,controller，修改和导入新功能的快速实现
-
 ## 运维监测模块
 
 ### model
 
 1采用注解 + AOP 切面实现日志统一收集，自定义注解统一采集上下文常用的登录人、请求类型，使用参数，状态、耗时。
-
-```
-log.info("role: " + operationType.type+", ID: "+operationType.id+", 执行操作: "+operationType.operation+
-        ", 使用参数: "+ message +", 运行状态: "+operationType.status + ", 记录时间: " + time);
-```
-
-|       业务难点       |                场景                |                      解决方案                      |                          选型理由                           |
-| :------------------: | :--------------------------------: | :------------------------------------------------: | :---------------------------------------------------------: |
-| 日志逻辑侵入业务代码 | 每个 CRUD 方法手动写日志，代码冗余 | AOP 切面统一拦截，注解标记即可自动记录，无业务侵入 | 符合 AOP 面向切面设计思想，日志属于横向通用能力，与业务解耦 |
 
 2 监测DB
 
