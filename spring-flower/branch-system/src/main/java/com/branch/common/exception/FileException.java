@@ -1,7 +1,5 @@
-package com.branch.common.exception.file;
+package com.branch.common.exception;
 
-
-import com.branch.common.exception.BaseException;
 
 /**
  * 文件信息异常类

@@ -85,13 +85,6 @@
             <scope>runtime</scope>
         </dependency>
 
-        <!-- AOP 切面 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-aop</artifactId>
-        </dependency>
-
-
         <!-- 支付宝支付 -->
         <dependency>
             <groupId>com.alipay.sdk</groupId>

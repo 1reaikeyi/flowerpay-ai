@@ -2,7 +2,8 @@ package framework.aop;
 
 
 
-import framework.aop.oparation.OperationSuccessEnum;
+
+import com.branch.domain.OperationSuccessEnum;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

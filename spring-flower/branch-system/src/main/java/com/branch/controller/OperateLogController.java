@@ -1,7 +1,14 @@
 package com.branch.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.branch.domain.entity.OperateLog;
+import com.branch.domain.vo.OperateLogVO;
+import com.branch.result.PageResult;
+import com.branch.result.Result;
+import com.branch.service.OperateLogService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * <p>
@@ -12,7 +19,19 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2026-10-25
  */
 @RestController
-@RequestMapping("/operate-log")
+@RequestMapping("/operate/log")
 public class OperateLogController {
 
+    @Autowired
+    private OperateLogService operateLogService;
+    @GetMapping
+    public Result read(@RequestBody OperateLog operateLog) {
+        PageResult<OperateLogVO> operateLogVOPageResult = operateLogService.readPage(operateLog);
+        return Result.success(operateLogVOPageResult);
+    }
+    @DeleteMapping
+    public Result delete(List<Long> ids) {
+        operateLogService.deleteByIds(ids);
+        return Result.success(ids);
+    }
 }

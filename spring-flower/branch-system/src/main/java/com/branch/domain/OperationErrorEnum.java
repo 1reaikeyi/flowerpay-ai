@@ -1,4 +1,4 @@
-package framework.aop.oparation;
+package com.branch.domain;
 
 public enum OperationErrorEnum {
 

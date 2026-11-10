@@ -41,6 +41,7 @@
         <module>branch-manage</module>
         <module>branch-shop</module>
         <module>branch-second</module>
+        <module>branch-navigation</module>
     </modules>
 
     <properties>

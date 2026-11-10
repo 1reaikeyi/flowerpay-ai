@@ -6,8 +6,8 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.time.LocalDateTime;
-import lombok.Getter;
-import lombok.Setter;
+
+import lombok.*;
 
 /**
  * <p>
@@ -20,6 +20,9 @@ import lombok.Setter;
 @Getter
 @Setter
 @TableName("operate_log")
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class OperateLog implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -37,7 +40,7 @@ public class OperateLog implements Serializable {
     private String title;
 
     /**
-     * 业务类型（0其它 1新增 2修改 3删除）
+     * 业务类型（0查询 1新增 2修改 3删除）
      */
     @TableField("business_type")
     private Integer businessType;

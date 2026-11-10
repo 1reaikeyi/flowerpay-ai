@@ -1,6 +1,5 @@
 import org.springframework.web.bind.annotation.*;
 import com.branch.domain.entity.Employee;
-import framework.aop.Logging;
 
 @CrossOrigin
 @RestController
@@ -9,7 +8,6 @@ public class QuickUserController {
     public Employee register(@RequestBody Employee user) {
         return user;
     }
-    @Logging
     @PostMapping("/login")
     public Employee login(@RequestBody Employee employee) {
         System.out.println(employee);
