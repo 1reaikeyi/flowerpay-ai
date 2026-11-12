@@ -2,7 +2,7 @@ package com.branch.controller;
 
 import com.branch.domain.vo.ShopStatusVO;
 import com.branch.common.ShopConstant;
-import framework.aop.oparation.OperationSuccessEnum;
+import com.branch.domain.OperationSuccessEnum;
 import com.branch.result.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;

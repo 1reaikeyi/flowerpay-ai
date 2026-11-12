@@ -1,7 +1,7 @@
 <template>
   <div class="login">
     <div class="login-box">
-      <img src="../../../assets/login/login2.png" style="width: 500px; height: 500px" alt="饿了吗" />
+      <img src="../../../assets/login/login1.png" style="width: 500px; height: 500px" alt="饿了吗" />
       <div class="login-form">
         <el-form ref="loginFormRef" :model="loginForm" :rules="loginRules">
           <div class="login-form-title">

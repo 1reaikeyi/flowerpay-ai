@@ -9,7 +9,7 @@ import com.branch.domain.dto.FestivalPageDTO;
 import com.branch.domain.vo.FestivalDetailVO;
 import com.branch.domain.vo.FestivalVO;
 import com.branch.service.FestivalService;
-import framework.aop.oparation.OperationSuccessEnum;
+import com.branch.domain.OperationSuccessEnum;
 import com.branch.result.PageResult;
 import com.branch.result.Result;
 import lombok.extern.slf4j.Slf4j;

@@ -3,7 +3,7 @@ package com.branch.controller.admin;
 import com.branch.domain.dto.FlowerDetailDTO;
 import com.branch.domain.vo.FlowerDetailVO;
 import com.branch.service.FlowerDetailService;
-import framework.aop.oparation.OperationSuccessEnum;
+import com.branch.domain.OperationSuccessEnum;
 import com.branch.result.Result;
 import lombok.extern.slf4j.Slf4j;
 

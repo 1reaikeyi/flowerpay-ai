@@ -5,7 +5,7 @@ import com.branch.domain.dto.*;
 import com.branch.domain.dto.page.EmployeePageDTO;
 import com.branch.domain.vo.EmployeeVO;
 import com.branch.service.*;
-import framework.aop.oparation.OperationSuccessEnum;
+import com.branch.domain.OperationSuccessEnum;
 import com.branch.result.PageResult;
 import com.branch.result.Result;
 import lombok.extern.slf4j.Slf4j;

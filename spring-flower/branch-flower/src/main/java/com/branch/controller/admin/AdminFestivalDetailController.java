@@ -3,7 +3,7 @@ package com.branch.controller.admin;
 import com.branch.domain.dto.FestivalDetailDTO;
 import com.branch.domain.vo.FestivalDetailVO;
 import com.branch.service.FestivalDetailService;
-import framework.aop.oparation.OperationSuccessEnum;
+import com.branch.domain.OperationSuccessEnum;
 import com.branch.result.Result;
 import lombok.extern.slf4j.Slf4j;
 
