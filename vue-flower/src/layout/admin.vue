@@ -116,6 +116,11 @@
             <span>今日数据</span>
           </el-menu-item>
 
+          <el-menu-item index="/admin/map">
+            <el-icon><MapLocation /></el-icon>
+            <span>地图找房</span>
+          </el-menu-item>
+
         </el-sub-menu>
 
         <el-sub-menu index="/admin/system">
@@ -194,7 +199,7 @@ import {
   House,
   ShoppingCart,Tickets,
   Shop, User,
-  DataAnalysis, TrendCharts
+  DataAnalysis, TrendCharts, MapLocation
 } from '@element-plus/icons-vue'
 // 导入默认头像图片（用作兜底）
 import avatar from '@/assets/login/avatar.png'

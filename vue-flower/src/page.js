@@ -45,6 +45,8 @@ const router = createRouter({
                 { path: 'statistics/column', component: () => import('@/views/admin/statistics/columnChart.vue') },
                 { path: 'statistics/fan', component: () => import('@/views/admin/statistics/fanChart.vue') },
 
+                { path: 'map', component: () => import('@/views/admin/map/index.vue') },
+
                 { path: 'order/pay', component: () => import('@/views/admin/order/pay.vue') },
                 { path: 'order/refund', component: () => import('@/views/admin/order/refund.vue') },
                 { path: 'order/detail', component: () => import('@/views/admin/order/detail.vue') },
