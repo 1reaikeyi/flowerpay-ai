@@ -1,5 +1,9 @@
-package com.branch.controller.admin;
+package com.branch.controller;
 
+import com.alipay.api.response.AlipayTradeCloseResponse;
+import com.alipay.api.response.AlipayTradeFastpayRefundQueryResponse;
+import com.alipay.api.response.AlipayTradeQueryResponse;
+import com.alipay.api.response.AlipayTradeRefundResponse;
 import com.branch.domain.dto.FlowerOrderPageDTO;
 import com.branch.domain.enums.OrderStatusEnum;
 import com.branch.domain.vo.FlowerOrderVO;
@@ -7,11 +11,18 @@ import com.branch.service.FlowerOrderService;
 import com.branch.domain.OperationSuccessEnum;
 import com.branch.result.PageResult;
 import com.branch.result.Result;
+import framework.zhifubao.PayDTO;
+import framework.zhifubao.RefundDTO;
+import framework.zhifubao.ZhifubaoProperties;
+import framework.zhifubao.service.ZhifubaoService;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import framework.aop.OperationLogging;
+
+import java.nio.charset.StandardCharsets;
 
 @RestController
 @RequestMapping("/admin/flowerOrder")
@@ -19,6 +30,8 @@ import framework.aop.OperationLogging;
 public class AdminFlowerOrderController {
     @Autowired
     private FlowerOrderService flowerOrderService;
+    @Autowired
+    private ZhifubaoService zhifubaoService;
 
     @OperationLogging(operation = OperationSuccessEnum.READ)
     @GetMapping
@@ -84,4 +97,36 @@ public class AdminFlowerOrderController {
         return Result.success(OrderStatusEnum.CANCELLED);
     }
 
+    @GetMapping("/order")
+    public void orderPay(PayDTO payDTO, HttpServletResponse response) throws Exception {
+        String form = zhifubaoService.createPagePayForm(payDTO);
+        response.setCharacterEncoding(StandardCharsets.UTF_8.name());
+        response.setContentType("text/html;charset=UTF-8");
+        response.getWriter().write(form);
+        response.getWriter().flush();
+    }
+
+    /** 交易查询 */
+    @GetMapping("/order/query")
+    public AlipayTradeQueryResponse queryOrder(@RequestParam String outTradeNo) throws Exception {
+        return zhifubaoService.queryTrade(outTradeNo);
+    }
+
+    /** 退款 */
+    @PostMapping("/refund")
+    public AlipayTradeRefundResponse refundOrder(RefundDTO refundDTO) throws Exception {
+        return zhifubaoService.refund(refundDTO);
+    }
+
+    /** 退款查询 */
+    @GetMapping("/refund/query")
+    public AlipayTradeFastpayRefundQueryResponse refundQuery(@RequestParam String outTradeNo, @RequestParam String outRequestNo) throws Exception {
+        return zhifubaoService.refundQuery(outTradeNo, outRequestNo);
+    }
+
+    /** 关闭交易 */
+    @PostMapping("/order/close")
+    public AlipayTradeCloseResponse close(@RequestParam String outTradeNo) throws Exception {
+        return zhifubaoService.close(outTradeNo);
+    }
 }

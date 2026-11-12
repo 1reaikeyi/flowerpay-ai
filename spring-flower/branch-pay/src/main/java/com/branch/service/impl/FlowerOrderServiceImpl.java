@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.branch.service.FlowerOrderService;
+import com.branch.service.*;
 import com.branch.result.PageResult;
 
 
@@ -24,11 +24,11 @@ import com.branch.domain.enums.PayStatusEnum;
 import com.branch.domain.vo.FlowerOrderVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.branch.service.FlowerOrderDetailService;
-import com.branch.service.FlowerOrderPayService;
 
 
+import java.math.BigDecimal;
 import java.nio.charset.StandardCharsets;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -41,6 +41,7 @@ public class FlowerOrderServiceImpl extends ServiceImpl<FlowerOrderMapper, Flowe
     private FlowerOrderPayService flowerOrderPayService;
     @Autowired
     private FlowerOrderDetailService flowerOrderDetailService;
+
 
     @Override
     public FlowerOrderVO readById(Long id) {
@@ -106,22 +107,25 @@ public class FlowerOrderServiceImpl extends ServiceImpl<FlowerOrderMapper, Flowe
     @Override
     public void update8(Long id) {
         FlowerOrder flowerOrder = this.getById(id);
-        FlowerOrderDetail flowerOrderDetail = flowerOrderDetailService.lambdaQuery()
-                .eq(FlowerOrderDetail::getOrderId,flowerOrder.getId())
+
+        FlowerOrderPay flowerOrderPay = flowerOrderPayService.lambdaQuery()
+                .eq(FlowerOrderPay::getOrderId, id)
                 .one();
         RefundDTO refundDTO = new RefundDTO();
-        refundDTO.setOutTradeNo(flowerOrder.getId().toString());
-        refundDTO.setOutRefundNo(flowerOrder.getId().toString());
-        refundDTO.setRefundReason("因为XXXXXXXXXX,已退款");
-        refundDTO.setRefundAmount(flowerOrderDetail.getAmount());
+        refundDTO.setOutTradeNo(flowerOrderPay.getId().toString());
+        refundDTO.setOutRefundNo(flowerOrderPay.getId().toString());
+        refundDTO.setRefundReason("已退款");
+        refundDTO.setRefundAmount(flowerOrderPay.getAmount());
         try {
             refund(refundDTO);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+
         flowerOrderPayService.lambdaUpdate()
                 .eq(FlowerOrderPay::getOrderId, flowerOrder.getId())
                 .set(FlowerOrderPay::getPayStatus, PayStatusEnum.REFUNDED);
+
         this.lambdaUpdate()
                 .eq(FlowerOrder::getId, id)
                 .set(FlowerOrder::getStatus, OrderStatusEnum.CANCELLED);
@@ -132,13 +136,39 @@ public class FlowerOrderServiceImpl extends ServiceImpl<FlowerOrderMapper, Flowe
         this.lambdaUpdate()
                 .eq(FlowerOrder::getId, id)
                 .set(FlowerOrder::getStatus, OrderStatusEnum.COOKING);
+//        应该在branch-user填入
+//        FlowerOrderDetail flowerOrderDetail = FlowerOrderDetail.builder()
+//                .orderId(id).flowerId().amount().image().festivalId().number().name()
+//                .wrapFee(2L)
+//                .build();
+        FlowerOrderDetail flowerOrderDetail = flowerOrderDetailService.lambdaQuery().eq(FlowerOrderDetail::getOrderId, id).one();
+
+        FlowerOrderPay flowerOrderPay = FlowerOrderPay.builder()
+                .orderId(id)
+                .orderTime(LocalDateTime.now())
+                .amount(flowerOrderDetail.getAmount().add(BigDecimal.valueOf(flowerOrderDetail.getWrapFee())))
+                .build();
+        flowerOrderPayService.save(flowerOrderPay);
     }
 
     @Override
-    public void update2(Long id) {
+    public void update2(Long id,HttpServletResponse httpServletResponse) {
         this.lambdaUpdate()
                 .eq(FlowerOrder::getId, id)
                 .set(FlowerOrder::getStatus, OrderStatusEnum.COOKING);
+
+        FlowerOrderPay flowerOrderPay = flowerOrderPayService.lambdaQuery()
+                .eq(FlowerOrderPay::getOrderId, id)
+                .one();
+        PayDTO payDTO = new PayDTO();
+        payDTO.setOutTradeNo(flowerOrderPay.getId().toString());
+        payDTO.setSubject(flowerOrderPay.getId().toString());
+        payDTO.setTotalAmount(flowerOrderPay.getAmount());
+        try {
+            order(payDTO,httpServletResponse);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void order(PayDTO payDTO, HttpServletResponse response) throws Exception {

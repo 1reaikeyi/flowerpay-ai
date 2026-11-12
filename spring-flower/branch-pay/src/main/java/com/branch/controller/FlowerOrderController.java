@@ -1,4 +1,4 @@
-package com.branch.controller.user;
+package com.branch.controller;
 
 
 import com.branch.domain.dto.FlowerOrderPageDTO;
@@ -42,7 +42,7 @@ public class FlowerOrderController {
     @OperationLogging(operation = OperationSuccessEnum.UPDATE)
     @PutMapping("payment/{id}")
     public Result update2(@PathVariable Long id, HttpServletResponse response) {
-        flowerOrderService.update2(id);
+        flowerOrderService.update2(id,response);
         return Result.success();
     }
     @OperationLogging(operation = OperationSuccessEnum.UPDATE)

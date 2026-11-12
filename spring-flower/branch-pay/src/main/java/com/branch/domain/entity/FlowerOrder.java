@@ -47,13 +47,7 @@ public class FlowerOrder implements Serializable {
     private Long userId;
 
     /**
-     * 用户名称（冗余字段）
-     */
-    @TableField("username")
-    private String userName;
-
-    /**
-     * 收花人（冗余字段）
+     * 收花人
      */
     @TableField("consignee")
     private String consignee;
@@ -71,15 +65,7 @@ public class FlowerOrder implements Serializable {
     private Long addressId;
 
     /**
-     * 完整配送地址（冗余字段）
-     */
-    @TableField("address")
-    private String address;
-
-
-
-    /**
-     * 备注信息，可存 AI 生成的贺卡文案
+     * 备注信息
      */
     @TableField("remark")
     private String remark;

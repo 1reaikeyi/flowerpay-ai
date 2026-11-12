@@ -5,6 +5,7 @@ import com.branch.result.PageResult;
 import com.branch.domain.dto.FlowerOrderPageDTO;
 import com.branch.domain.entity.FlowerOrder;
 import com.branch.domain.vo.FlowerOrderVO;
+import jakarta.servlet.http.HttpServletResponse;
 
 /**
  * 订单 Service（对应 flower_order 表）
@@ -15,6 +16,10 @@ public interface FlowerOrderService extends IService<FlowerOrder> {
     FlowerOrderVO readById(Long id);
 
     PageResult<FlowerOrderVO> readPage(FlowerOrderPageDTO flowerOrderPageDTO);
+
+    void update1(Long id);
+
+    void update2(Long id, HttpServletResponse httpServletResponse);
 
     void update3(Long id);
 
@@ -28,7 +33,5 @@ public interface FlowerOrderService extends IService<FlowerOrder> {
 
     void update8(Long id);
 
-    void update1(Long id);
 
-    void update2(Long id);
 }

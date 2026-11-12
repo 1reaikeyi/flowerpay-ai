@@ -8,11 +8,5 @@ import com.branch.domain.entity.FlowerOrderDetail;
  */
 
 public interface FlowerOrderDetailService extends IService<FlowerOrderDetail> {
-//
-//    List<StatisticsVO> flowerSale();
-//    List<StatisticsVO> festivalSale();
-//    List<TopStatisticsVO> top1();
-//    List<TopStatisticsVO> top2();
-//    List<OrderStatisticsVO> order();
-//    List<OrderStatisticsVO> todayOrder();
+
 }
