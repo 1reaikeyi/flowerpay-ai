@@ -6,7 +6,7 @@ import com.aliyun.oss.OSSClientBuilder;
 import com.aliyun.oss.OSSException;
 
 
-import framework.properties.AliOssProperties;
+import com.branch.framework.properties.AliOssProperties;
 
 import java.io.InputStream;
 

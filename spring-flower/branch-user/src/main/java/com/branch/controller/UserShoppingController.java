@@ -4,7 +4,6 @@ import com.branch.domain.OperationSuccessEnum;
 import com.branch.domain.dto.UserShoppingDTO;
 import com.branch.domain.vo.UserShoppingVO;
 import com.branch.service.UserShoppingService;
-import com.branch.domain.OperationSuccessEnum;
 import com.branch.result.Result;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +11,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import framework.aop.OperationLogging;
+import com.branch.framework.aop.OperationLogging;
 
 
 import java.util.List;
@@ -23,7 +22,7 @@ public class UserShoppingController {
     @Autowired
     private UserShoppingService userShoppingService;
 
-    @PreAuthorize("hasAnyRole('USER')")
+    @PreAuthorize("hasRole('USER')")
     @OperationLogging(operation = OperationSuccessEnum.CREATE)
     @PostMapping
     public Result create(@Validated @RequestBody UserShoppingDTO userShoppingDTO){
@@ -31,7 +30,7 @@ public class UserShoppingController {
         return Result.success(dto);
     }
 
-    @PreAuthorize("hasAnyRole('USER')")
+    @PreAuthorize("hasRole('USER')")
     @OperationLogging(operation = OperationSuccessEnum.READ)
     @GetMapping
     public Result readAll(){
@@ -39,7 +38,7 @@ public class UserShoppingController {
         return Result.success(userShoppingVOList);
     }
 
-    @PreAuthorize("hasAnyRole('USER')")
+    @PreAuthorize("hasRole('USER')")
     @OperationLogging(operation = OperationSuccessEnum.DELETE)
     @DeleteMapping
     public Result delete(@RequestParam Long id){
@@ -47,11 +46,16 @@ public class UserShoppingController {
         return Result.success(id);
     }
 
-    @PreAuthorize("hasAnyRole('USER')")
+    @PreAuthorize("hasRole('USER')")
     @OperationLogging(operation = OperationSuccessEnum.DELETE)
     @DeleteMapping("/all")
     public Result deleteAll(){
         userShoppingService.deleteAll();
+        return Result.success();
+    }
+    @PostMapping("/submit")
+    public Result submit(){
+        userShoppingService.submit();
         return Result.success();
     }
 }

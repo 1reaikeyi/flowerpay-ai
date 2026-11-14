@@ -6,9 +6,9 @@ import cn.hutool.json.JSONUtil;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.github.benmanes.caffeine.cache.Cache;
-import com.branch.common.constant.ErrorConstant;
-import com.branch.common.constant.RedisPrefixConstant;
-import com.branch.common.exception.FlowerDetailFailedException;
+import com.branch.constant.ErrorConstant;
+import com.branch.constant.RedisPrefixConstant;
+import com.branch.exception.ModelFailedException;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import com.branch.mapper.FlowerDetailMapper;
@@ -197,7 +197,7 @@ public class FlowerDetailServiceImpl extends ServiceImpl<FlowerDetailMapper, Flo
     @Override
     public void updateCache(FlowerDetailDTO flowerDetailDTO) {
         if(flowerDetailDTO.getId() == null){
-            throw new FlowerDetailFailedException(ErrorConstant.OPERATION_ERROR);
+            throw new ModelFailedException(ErrorConstant.OPERATION_ERROR);
         }
         LambdaUpdateWrapper<FlowerDetail> updateWrapper = new LambdaUpdateWrapper<FlowerDetail>();
         updateWrapper.eq(FlowerDetail::getId,flowerDetailDTO.getId());

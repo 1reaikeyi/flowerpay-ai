@@ -16,7 +16,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("chat")
+@RequestMapping("/chat")
 public class ChatController {
     @Autowired
     private Chat chatService;

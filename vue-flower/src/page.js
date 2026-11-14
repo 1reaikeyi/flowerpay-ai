@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import { useAdminStore } from '@/stores/index.js'
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -10,13 +9,6 @@ const router = createRouter({
             component: () => import('@/views/admin/login/admin.vue'),
             meta: { requiresAuth: false }
         },
-        // Level 2:
-        {
-            path: '/user/login',
-            component: () => import('@/views/user/login/user.vue'),
-            meta: { requiresAuth: false }
-        },
-
 
         // Level 1 - 分支 A: 管理员体系
         {
@@ -62,49 +54,25 @@ const router = createRouter({
                 // { path: 'admin/system/operate', component: () => import('@/views/admin/admin/password.vue') }
 
             ]
-        },
-
-        // Level 2 - 分支 B: user体系
-        {
-            path: '/user', // 用户体系的根路径
-            component: () => import('@/layout/user.vue'), 
-            redirect: '/user/category',
-            children: [
-                { path: 'category', component: () => import('@/views/user/category/category.vue') },
-                { path: 'flower', component: () => import('@/views/user/flower/index.vue') },
-                { path: 'festival', component: () => import('@/views/user/festival/index.vue') },
-                { path: 'shop', component: () => import('@/views/user/shop/shop.vue') },
-                { path: 'shoppingCart', component: () => import('@/views/user/shop/shop.vue') },
-                { path: 'order', component: () => import('@/views/user/order/order.vue') }
-            ]
         }
     ]
 })
 
-// 各端登录态配置：路由前缀 -> { localStorage 存储 key, 登录页路径 }
-const AUTH_SCOPES = [
-    { prefix: '/admin', key: 'flower:admin', login: '/admin/login' },
-    { prefix: '/user', key: 'flower:user', login: '/user/login' },
-]
-
-// 取某端 localStorage 中的 token
-const getToken = (key) => {
-    const raw = localStorage.getItem(key)
+// 取管理员 localStorage 中的 token
+const getToken = () => {
+    const raw = localStorage.getItem('flower:admin')
     return raw ? JSON.parse(raw).token : ''
 }
 
-// 登录访问拦截：按路由前缀匹配所属体系，仅校验是否已登录
+// 登录访问拦截：仅校验管理员是否已登录
 router.beforeEach((to) => {
-    const scope = AUTH_SCOPES.find((s) => to.path.startsWith(s.prefix))
-    if (!scope) return
+    // 登录页放行，避免重定向死循环
+    if (to.path === '/admin/login') return
 
-    // 对应体系的登录页放行，避免重定向死循环
-    if (to.path === scope.login) return
-
-    // 未登录：清掉该端登录态，跳转到对应登录页
-    if (!getToken(scope.key)) {
-        localStorage.removeItem(scope.key)
-        return scope.login
+    // 未登录：清掉登录态，跳转到登录页
+    if (!getToken()) {
+        localStorage.removeItem('flower:admin')
+        return '/admin/login'
     }
 })
 

@@ -1,18 +1,16 @@
 package com.branch.service.Impl;
 
-import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.util.BooleanUtil;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.branch.common.constant.RedisPrefixConstant;
-import com.branch.domain.dto.BlogSelfDTO;
+import com.branch.constant.RedisPrefixConstant;
 import com.branch.domain.entity.BlogFollower;
 import com.branch.domain.entity.BlogSelf;
 import com.branch.mapper.BlogFollowMapper;
 import com.branch.service.BlogSelfService;
-import framework.security.SecurityContextParam;
+import com.branch.framework.bo.SecurityContextParam;
 ;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;

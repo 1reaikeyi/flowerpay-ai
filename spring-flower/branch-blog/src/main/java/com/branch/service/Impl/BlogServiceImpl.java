@@ -5,7 +5,7 @@ import cn.hutool.core.collection.CollectionUtil;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.branch.common.constant.RedisPrefixConstant;
+import com.branch.constant.RedisPrefixConstant;
 import com.branch.domain.dto.BlogPageDTO;
 import com.branch.domain.entity.BlogFollower;
 import com.branch.domain.vo.BlogVO;
@@ -13,7 +13,7 @@ import com.branch.result.PageResult;
 import com.branch.service.BlogFollowerService;
 
 import com.branch.domain.entity.Blog;
-import framework.security.SecurityContextParam;
+import com.branch.framework.bo.SecurityContextParam;
 import com.branch.mapper.BlogMapper;
 import com.branch.domain.dto.BlogDTO;
 

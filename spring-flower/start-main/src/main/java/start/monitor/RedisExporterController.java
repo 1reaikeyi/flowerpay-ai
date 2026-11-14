@@ -1,7 +1,7 @@
 package start.monitor;
 
 import com.branch.result.Result;
-import framework.redis.RedisExporter;
+import com.branch.framework.redis.RedisExporter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;

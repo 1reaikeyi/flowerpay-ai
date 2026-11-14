@@ -3,19 +3,18 @@ package com.branch.service.Impl;
 
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.branch.common.constant.RedisPrefixConstant;
-import com.branch.common.exception.BaseException;
+import com.branch.constant.RedisPrefixConstant;
+import com.branch.exception.BaseException;
 import com.branch.domain.entity.Blog;
 import com.branch.mapper.BlogCommentsMapper;
 import com.branch.service.BlogCommentsService;
 import com.branch.domain.entity.BlogComments;
 import com.branch.service.BlogService;
-import framework.security.SecurityContextParam;
+import com.branch.framework.bo.SecurityContextParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
-import java.util.Collection;
 import java.util.List;
 
 @Service

@@ -5,7 +5,7 @@ import cn.hutool.core.collection.CollectionUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 
-import com.branch.common.constant.RedisPrefixConstant;
+import com.branch.constant.RedisPrefixConstant;
 import com.branch.domain.dto.ShopDTO;
 import com.branch.domain.entity.Shop;
 import com.branch.mapper.ShopMapper;

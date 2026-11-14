@@ -2,7 +2,7 @@ package com.branch.service.impl;
 
 import cn.hutool.core.bean.BeanUtil;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.branch.common.constant.RedisPrefixConstant;
+import com.branch.constant.RedisPrefixConstant;
 import com.branch.domain.dto.VoucherDTO;
 import com.branch.domain.entity.Voucher;
 

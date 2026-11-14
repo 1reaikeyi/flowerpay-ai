@@ -29,7 +29,7 @@ export const getFlowerById = (id) => {
 
 // 5.3 分页查询鲜花列表 - GET /admin/flower/all
 // 请求参数 FlowerPageDTO (Query): { page, pageSize, name }
-// 支持按名称模糊搜索，响应 Result<List<FlowerVO>>
+// 支持按名称模糊搜索，响应 Result<PageResult<FlowerVO>>
 export const pageFlowerList = (params) => {
   return request({
     url: '/admin/flower/all',
@@ -90,5 +90,32 @@ export const getFlowerDetailsByOption = (option) => {
     url: '/admin/flower/of/option',
     method: 'get',
     params: { option }
+  })
+}
+
+// 5.9 送人对象字典 - GET /admin/flower/get/object
+// 响应 Result<List<DictionaryVO>>: { code, name }
+export const getFlowerObjectDictionary = () => {
+  return request({
+    url: '/admin/flower/get/object',
+    method: 'get'
+  })
+}
+
+// 5.10 用途场景字典 - GET /admin/flower/get/option
+// 响应 Result<List<DictionaryVO>>: { code, name }
+export const getFlowerOptionDictionary = () => {
+  return request({
+    url: '/admin/flower/get/option',
+    method: 'get'
+  })
+}
+
+// 5.11 鲜花数量字典 - GET /admin/flower/get/number
+// 响应 Result<List<DictionaryVO>>: { code, name }
+export const getFlowerNumberDictionary = () => {
+  return request({
+    url: '/admin/flower/get/number',
+    method: 'get'
   })
 }

@@ -30,7 +30,7 @@ export const getFestivalById = (id) => {
 
 // 2.3 分页查询多花礼盒列表 - GET /admin/festival/all
 // 请求参数 FestivalPageDTO (Query): { page, pageSize, name }
-// 支持按名称模糊搜索，响应 Result<List<FestivalVO>>
+// 支持按名称模糊搜索，响应 Result<PageResult<FestivalVO>>
 export const pageFestivalList = (params) => {
   return request({
     url: '/admin/festival/all',
@@ -61,12 +61,12 @@ export const deleteFestivals = (ids) => {
   })
 }
 
-// 2.6 查询多花礼盒下的明细列表 - GET /admin/festival/of/festivalDetail
+// 2.6 查询多花礼盒下的明细列表 - GET /admin/festival/of/detail
 // 请求参数: id (Long, 必填) 多花礼盒主键 ID
 // 在 festival_detail 表按 festival_id 查询，响应 Result<List<FestivalDetailVO>>
 export const getFestivalDetailsByFestivalId = (id) => {
   return request({
-    url: '/admin/festival/of/festivalDetail',
+    url: '/admin/festival/of/detail',
     method: 'get',
     params: { id }
   })
@@ -102,5 +102,43 @@ export const getFestivalDetailsByOption = (option) => {
     url: '/admin/festival/of/option',
     method: 'get',
     params: { option }
+  })
+}
+
+// 2.10 按鲜花数量查询多花礼盒明细 - GET /admin/festival/of/number
+// 请求参数: number (int, 必填) 规格鲜花数量
+// 响应 Result<List<FestivalDetailVO>>
+export const getFestivalDetailsByNumber = (number) => {
+  return request({
+    url: '/admin/festival/of/number',
+    method: 'get',
+    params: { number }
+  })
+}
+
+// 2.11 送人对象字典 - GET /admin/festival/get/object
+// 响应 Result<List<DictionaryVO>>: { code, name }
+export const getFestivalObjectDictionary = () => {
+  return request({
+    url: '/admin/festival/get/object',
+    method: 'get'
+  })
+}
+
+// 2.12 用途场景字典 - GET /admin/festival/get/option
+// 响应 Result<List<DictionaryVO>>: { code, name }
+export const getFestivalOptionDictionary = () => {
+  return request({
+    url: '/admin/festival/get/option',
+    method: 'get'
+  })
+}
+
+// 2.13 鲜花数量字典 - GET /admin/festival/get/number
+// 响应 Result<List<DictionaryVO>>: { code, name }
+export const getFestivalNumberDictionary = () => {
+  return request({
+    url: '/admin/festival/get/number',
+    method: 'get'
   })
 }

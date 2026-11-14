@@ -1,6 +1,6 @@
 package com.branch.controller;
 
-import com.branch.common.constant.ErrorConstant;
+import com.branch.constant.ErrorConstant;
 import com.branch.domain.entity.Session;
 import com.branch.domain.vo.MessageVO;
 import com.branch.domain.vo.SessionTitleVO;

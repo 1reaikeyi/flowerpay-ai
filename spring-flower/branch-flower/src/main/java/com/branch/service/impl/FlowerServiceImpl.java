@@ -8,9 +8,9 @@ import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.branch.common.constant.ErrorConstant;
-import com.branch.common.constant.RedisPrefixConstant;
-import com.branch.common.exception.FlowerFailedException;
+import com.branch.constant.ErrorConstant;
+import com.branch.constant.RedisPrefixConstant;
+import com.branch.exception.ModelFailedException;
 import com.branch.result.PageResult;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
@@ -215,7 +215,7 @@ public class FlowerServiceImpl extends ServiceImpl<FlowerMapper, Flower> impleme
     @Override
     public void updateCache(FlowerDTO flowerDTO) {
         if(flowerDTO.getId() == null){
-            throw new FlowerFailedException(ErrorConstant.OPERATION_ERROR);
+            throw new ModelFailedException(ErrorConstant.OPERATION_ERROR);
         }
         LambdaUpdateWrapper<Flower> updateWrapper = new LambdaUpdateWrapper<>();
         updateWrapper.eq(Flower::getId, flowerDTO.getId());

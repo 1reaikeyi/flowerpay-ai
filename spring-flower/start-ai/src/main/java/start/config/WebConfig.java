@@ -1,7 +1,7 @@
 package start.config;
 
 
-import framework.interceptor.SensitiveWordInterceptor;
+import com.branch.framework.interceptor.SensitiveWordInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;

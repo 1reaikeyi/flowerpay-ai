@@ -7,13 +7,13 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.branch.domain.vo.UserAddressVO;
 import com.branch.mapper.UserAddressMapper;
 import com.branch.service.UserAddressService;
-import com.branch.common.constant.ErrorConstant;
-import com.branch.common.exception.UseAddressFailedException;
+import com.branch.constant.ErrorConstant;
+import com.branch.exception.ModelFailedException;
 import com.branch.result.ScrollResult;
 import com.branch.domain.dto.UserAddressDTO;
 import com.branch.domain.entity.UserAddress;
 import org.springframework.stereotype.Service;
-import framework.security.SecurityContextParam;
+import com.branch.framework.bo.SecurityContextParam;
 
 
 import java.util.List;
@@ -91,7 +91,7 @@ public class UserAddressServiceImpl extends ServiceImpl<UserAddressMapper, UserA
     @Override
     public void updateAddress(UserAddressDTO userAddressDTO) {
         if (userAddressDTO.getId() == null){
-            throw new UseAddressFailedException(ErrorConstant.OPERATION_ERROR);
+            throw new ModelFailedException(ErrorConstant.OPERATION_ERROR);
         }
         if (userAddressDTO.getIsDefault() == 1){
             this.updateDefaultAddress(userAddressDTO.getId());
@@ -141,7 +141,7 @@ public class UserAddressServiceImpl extends ServiceImpl<UserAddressMapper, UserA
     @Override
     public void deleteAddress(List<Long> ids) {
         if(CollectionUtil.isEmpty(ids)){
-            throw new UseAddressFailedException(ErrorConstant.OPERATION_ERROR);
+            throw new ModelFailedException(ErrorConstant.OPERATION_ERROR);
         }
         this.removeByIds(ids);
     }

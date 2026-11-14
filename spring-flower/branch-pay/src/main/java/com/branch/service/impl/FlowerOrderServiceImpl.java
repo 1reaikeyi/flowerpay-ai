@@ -10,9 +10,9 @@ import com.branch.service.*;
 import com.branch.result.PageResult;
 
 
-import framework.zhifubao.PayDTO;
-import framework.zhifubao.RefundDTO;
-import framework.zhifubao.service.ZhifubaoService;
+import com.branch.framework.zhifubao.PayDTO;
+import com.branch.framework.zhifubao.RefundDTO;
+import com.branch.framework.zhifubao.service.ZhifubaoService;
 import jakarta.servlet.http.HttpServletResponse;
 import com.branch.mapper.FlowerOrderMapper;
 import com.branch.domain.dto.FlowerOrderPageDTO;
@@ -136,13 +136,10 @@ public class FlowerOrderServiceImpl extends ServiceImpl<FlowerOrderMapper, Flowe
         this.lambdaUpdate()
                 .eq(FlowerOrder::getId, id)
                 .set(FlowerOrder::getStatus, OrderStatusEnum.COOKING);
-//        应该在branch-user填入
-//        FlowerOrderDetail flowerOrderDetail = FlowerOrderDetail.builder()
-//                .orderId(id).flowerId().amount().image().festivalId().number().name()
-//                .wrapFee(2L)
-//                .build();
-        FlowerOrderDetail flowerOrderDetail = flowerOrderDetailService.lambdaQuery().eq(FlowerOrderDetail::getOrderId, id).one();
 
+        FlowerOrderDetail flowerOrderDetail = flowerOrderDetailService
+                .lambdaQuery()
+                .eq(FlowerOrderDetail::getOrderId, id).one();
         FlowerOrderPay flowerOrderPay = FlowerOrderPay.builder()
                 .orderId(id)
                 .orderTime(LocalDateTime.now())

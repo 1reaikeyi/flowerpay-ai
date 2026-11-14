@@ -6,7 +6,7 @@ import com.branch.service.login.LoginUserService;
 import com.branch.filter.AdminRefreshRequestFilter;
 import com.branch.filter.InformationRequestFilter;
 import com.branch.filter.UserRefreshRequestFilter;
-import framework.properties.JwtProperties;
+import com.branch.framework.properties.JwtProperties;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -33,9 +33,9 @@ import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-import framework.security.AdminAuthenticationProvider;
+import com.branch.framework.security.AdminAuthenticationProvider;
 
-import framework.security.UserAuthenticationProvider;
+import com.branch.framework.security.UserAuthenticationProvider;
 
 
 import java.io.IOException;

@@ -29,7 +29,7 @@ export const getCategoryByType = (type) => {
 
 // 4.3 分页查询分类列表 - GET /admin/category/all
 // 请求参数 FlowerCategoryPageDTO (Query): { page, pageSize, type }
-// 支持按类型筛选，响应 Result<List<FlowerCategoryVO>>
+// 支持按类型筛选，响应 Result<PageResult<FlowerCategoryVO>>
 export const pageCategoryList = (params) => {
   return request({
     url: '/admin/category/all',

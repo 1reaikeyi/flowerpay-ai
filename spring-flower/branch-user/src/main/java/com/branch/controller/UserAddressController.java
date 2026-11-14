@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
-import framework.aop.OperationLogging;
+import com.branch.framework.aop.OperationLogging;
 
 import java.util.List;
 
@@ -23,7 +23,7 @@ public class UserAddressController {
     private UserAddressService userAddressService;
 
 
-    @PreAuthorize("hasAnyRole('USER')")
+    @PreAuthorize("hasRole('USER')")
     @OperationLogging(operation = OperationSuccessEnum.CREATE)
     @PostMapping
     public Result createAddress(@RequestBody UserAddressDTO userAddressDTO) {
@@ -31,35 +31,35 @@ public class UserAddressController {
         return Result.success(dto);
     }
 
-    @PreAuthorize("hasAnyRole('USER')")
+    @PreAuthorize("hasRole('USER')")
     @OperationLogging(operation = OperationSuccessEnum.READ)
     @GetMapping("default")
     public Result readDefaultAddress() {
         UserAddressVO defaultAddressVO = userAddressService.readDefaultAddress();
         return Result.success(defaultAddressVO);
     }
-    @PreAuthorize("hasAnyRole('USER')")
+    @PreAuthorize("hasRole('USER')")
     @OperationLogging(operation = OperationSuccessEnum.READ)
     @GetMapping("/all")
     public Result readAddress(Long offset, Long current) {
         ScrollResult<UserAddressVO> scrollResult = userAddressService.readPage(offset,current);
         return Result.success(scrollResult);
     }
-    @PreAuthorize("hasAnyRole('USER')")
+    @PreAuthorize("hasRole('USER')")
     @OperationLogging(operation = OperationSuccessEnum.UPDATE)
     @PutMapping("/default/{id}")
     public Result updateDefaultAddress(@PathVariable Long id) {
         userAddressService.updateDefaultAddress(id);
         return Result.success();
     }
-    @PreAuthorize("hasAnyRole('USER')")
+    @PreAuthorize("hasRole('USER')")
     @OperationLogging(operation = OperationSuccessEnum.UPDATE)
     @PutMapping
     public Result updateAddress(@RequestBody UserAddressDTO userAddressDTO) {
         userAddressService.updateAddress(userAddressDTO);
         return Result.success();
     }
-    @PreAuthorize("hasAnyRole('USER')")
+    @PreAuthorize("hasRole('USER')")
     @OperationLogging(operation = OperationSuccessEnum.DELETE)
     @DeleteMapping
     public Result deleteAddress(List<Long> ids) {

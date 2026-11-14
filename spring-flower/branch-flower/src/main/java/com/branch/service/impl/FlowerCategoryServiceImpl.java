@@ -7,9 +7,9 @@ import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.branch.common.constant.ErrorConstant;
-import com.branch.common.constant.RedisPrefixConstant;
-import com.branch.common.exception.FlowerCategoryFailedException;
+import com.branch.constant.ErrorConstant;
+import com.branch.constant.RedisPrefixConstant;
+import com.branch.exception.ModelFailedException;
 import com.branch.result.PageResult;
 import com.branch.mapper.FlowerCategoryMapper;
 import com.branch.domain.dto.FlowerCategoryPageDTO;
@@ -58,7 +58,7 @@ public class FlowerCategoryServiceImpl extends ServiceImpl<FlowerCategoryMapper,
                 .eq(FlowerCategory::getType, type)
                 .list();
         if (CollectionUtil.isEmpty(flowerCategories)) {
-            throw new FlowerCategoryFailedException(ErrorConstant.CATEGORY_NOT_EXIST);
+            throw new ModelFailedException(ErrorConstant.CATEGORY_NOT_EXIST);
         }
         List<FlowerCategoryVO> flowerCategoryVOList = flowerCategories.stream()
                 .map(flowerCategory -> BeanUtil.toBean(flowerCategory, FlowerCategoryVO.class))
@@ -87,7 +87,7 @@ public class FlowerCategoryServiceImpl extends ServiceImpl<FlowerCategoryMapper,
     public void updateByObject(FlowerCategoryDTO categoryDTO) {
          // 1. 校验 ID
         if (categoryDTO.getId() == null) {
-            throw new FlowerCategoryFailedException(ErrorConstant.OPERATION_ERROR);
+            throw new ModelFailedException(ErrorConstant.OPERATION_ERROR);
         }
         // 2. 构建 wrapper，只 set 有值的字段
         LambdaUpdateWrapper<FlowerCategory> updateWrapper = new LambdaUpdateWrapper<>();
@@ -111,7 +111,7 @@ public class FlowerCategoryServiceImpl extends ServiceImpl<FlowerCategoryMapper,
     @Override
     public void deleteById(List<Long> ids) {
         if(CollectionUtil.isEmpty(ids)){
-            throw new FlowerCategoryFailedException(ErrorConstant.CATEGORY_NOT_EXIST);
+            throw new ModelFailedException(ErrorConstant.CATEGORY_NOT_EXIST);
         }
         this.removeByIds(ids);
     }

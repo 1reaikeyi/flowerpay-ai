@@ -17,4 +17,6 @@ public interface UserShoppingService extends IService<UserShopping> {
     void delete(Long id);
     List<UserShoppingVO> readAll();
     UserShoppingDTO create(UserShoppingDTO userShoppingDTO);
+
+    void submit();
 }

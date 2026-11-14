@@ -1,0 +1,85 @@
+package com.branch.controller;
+
+import com.branch.domain.dto.FlowerCategoryDTO;
+import com.branch.domain.dto.FlowerCategoryPageDTO;
+import com.branch.domain.vo.FestivalVO;
+import com.branch.domain.vo.FlowerCategoryVO;
+import com.branch.domain.vo.FlowerVO;
+import com.branch.service.FlowerCategoryService;
+import com.branch.domain.OperationSuccessEnum;
+import com.branch.result.PageResult;
+import com.branch.result.Result;
+import lombok.extern.slf4j.Slf4j;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
+
+import com.branch.framework.aop.OperationLogging;
+
+import java.util.List;
+
+@RestController
+@RequestMapping(value = {"/admin/category","/user/category"})
+@Slf4j
+public class CategoryController {
+
+    @Autowired
+    private FlowerCategoryService flowerCategoryService;
+
+    @PreAuthorize("hasRole('ADMIN')")
+    @OperationLogging(operation = OperationSuccessEnum.CREATE)
+    @PostMapping
+    public Result create(@RequestBody FlowerCategoryDTO flowerCategoryDTO) {
+        FlowerCategoryDTO saved = flowerCategoryService.create(flowerCategoryDTO);
+        return Result.success(saved);
+    }
+
+    @PreAuthorize("hasAnyRole('ADMIN','USER')")
+    @OperationLogging(operation = OperationSuccessEnum.READ)
+    @GetMapping
+    public Result readByType(@RequestParam("type") Long type) {
+        List<FlowerCategoryVO> flowerCategoryVOList = flowerCategoryService.readByType(type);
+        return Result.success(flowerCategoryVOList);
+    }
+
+    @PreAuthorize("hasAnyRole('ADMIN','USER')")
+    @OperationLogging(operation = OperationSuccessEnum.READ)
+    @GetMapping("/all")
+    public Result readPage( @Validated FlowerCategoryPageDTO flowerCategoryPageDTO) {
+        PageResult<FlowerCategoryVO> flowerCategoryVOPageResult = flowerCategoryService.readPage(flowerCategoryPageDTO);
+        return Result.success(flowerCategoryVOPageResult);
+    }
+
+    @PreAuthorize("hasRole('ADMIN')")
+    @OperationLogging(operation = OperationSuccessEnum.UPDATE)
+    @PutMapping
+    public Result updateByObject(@RequestBody FlowerCategoryDTO categoryDTO) {
+        flowerCategoryService.updateByObject(categoryDTO);
+        return Result.success(categoryDTO);
+    }
+
+    @PreAuthorize("hasRole('ADMIN')")
+    @OperationLogging(operation = OperationSuccessEnum.DELETE)
+    @DeleteMapping
+    public Result deleteById(@RequestParam List<Long> ids) {
+        flowerCategoryService.deleteById(ids);
+        return Result.success(ids);
+    }
+
+    @PreAuthorize("hasRole('ADMIN')")
+    @OperationLogging(operation = OperationSuccessEnum.READ)
+    @GetMapping("/of/flower")
+    public Result readFlower(@RequestParam("id") Long categoryId) {
+        List<FlowerVO> flowerVOList = flowerCategoryService.readFlower(categoryId);
+        return Result.success(flowerVOList);
+    }
+    @PreAuthorize("hasRole('ADMIN')")
+    @OperationLogging(operation = OperationSuccessEnum.READ)
+    @GetMapping("of/festival")
+    public Result getFestival(@RequestParam("id") Long categoryId) {
+        List<FestivalVO> festivalList = flowerCategoryService.readFestival(categoryId);
+        return Result.success(festivalList);
+    }
+}

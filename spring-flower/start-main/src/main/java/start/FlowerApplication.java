@@ -3,8 +3,8 @@ package start;
 
 
 
-import framework.properties.AliOssProperties;
-import framework.properties.JwtProperties;
+import com.branch.framework.properties.AliOssProperties;
+import com.branch.framework.properties.JwtProperties;
 import lombok.extern.slf4j.Slf4j;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;

@@ -9,9 +9,9 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.github.benmanes.caffeine.cache.Cache;
-import com.branch.common.constant.ErrorConstant;
-import com.branch.common.constant.RedisPrefixConstant;
-import com.branch.common.exception.FestivalFailedException;
+import com.branch.constant.ErrorConstant;
+import com.branch.constant.RedisPrefixConstant;
+import com.branch.exception.ModelFailedException;
 import com.branch.result.PageResult;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
@@ -220,7 +220,7 @@ public class FestivalServiceImpl extends ServiceImpl<FestivalMapper, Festival> i
     @Override
     public void updateCache(FestivalDTO festivalDTO) {
         if (festivalDTO.getId() == null) {
-            throw new FestivalFailedException(ErrorConstant.OPERATION_ERROR);
+            throw new ModelFailedException(ErrorConstant.OPERATION_ERROR);
         }
         LambdaUpdateWrapper<Festival> updateWrapper = new LambdaUpdateWrapper<>();
         updateWrapper.eq(Festival::getId, festivalDTO.getId());
