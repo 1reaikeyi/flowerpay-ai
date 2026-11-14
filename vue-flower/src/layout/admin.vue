@@ -146,15 +146,14 @@
 
     <el-container>
       <el-header>
-        <!-- header外层flex，实现左右分离 -->
+        <!-- header外层flex -->
         <div class="header-container">
-          <div class="header-left"></div>
-          <!-- 右侧：头像下拉 + 横向菜单 -->
-          <div class="header-right">
+          <!-- 左侧：头像下拉 + 横向菜单 -->
+          <div class="header-left">
             <el-dropdown placement="bottom-end" @command="handleCommand">
               <span class="avatar-wrap">
                 <!-- 头像 src：后端返回的是文件名，需拼接 /api/local?fileName= 完整 URL；为空时用本地默认头像兜底 -->
-                <el-avatar :src="avatarUrl" :size="50" />
+                <el-avatar :src="avatarUrl" :size="60" />
                 <el-icon><CaretBottom /></el-icon>
               </span>
               <template #dropdown>
@@ -281,11 +280,9 @@ const handleCommand = async (key) => {
       width: 100%;
       height: 100%;
       align-items: center;
+      justify-content: center;
 
       .header-left {
-        flex: 1;
-      }
-      .header-right {
         display: flex;
         align-items: center;
 

@@ -37,14 +37,8 @@
       :header-cell-style="{ background: 'rgba(10, 132, 255, 0.1)', color: '#0A84FF', fontWeight: 'bold' }"
     >
       <el-table-column prop="id" label="订单号" width="80" />
-      <el-table-column prop="userName" label="下单用户" min-width="100" />
       <el-table-column prop="consignee" label="收花人" min-width="100" />
       <el-table-column prop="phone" label="收花人手机号" min-width="130" />
-      <el-table-column label="配送地址" min-width="200" show-overflow-tooltip>
-        <template #default="{ row }">
-          {{ row.address || '-' }}
-        </template>
-      </el-table-column>
       <el-table-column label="配送方式" min-width="100">
         <template #default="{ row }">
           <!-- deliveryType 也是枚举（DeliveryStatusEnum: NOW=1, BOOK_TIME=0），同样需归一化 -->
