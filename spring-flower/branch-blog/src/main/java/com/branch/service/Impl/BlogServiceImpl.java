@@ -9,7 +9,7 @@ import com.branch.constant.RedisPrefixConstant;
 import com.branch.domain.dto.BlogPageDTO;
 import com.branch.domain.entity.BlogFollower;
 import com.branch.domain.vo.BlogVO;
-import com.branch.result.PageResult;
+import com.branch.result.PagePart;
 import com.branch.service.BlogFollowerService;
 
 import com.branch.domain.entity.Blog;
@@ -22,7 +22,7 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ZSetOperations;
 import org.springframework.stereotype.Service;
 import com.branch.service.BlogService;
-import com.branch.result.ScrollResult;
+import com.branch.result.ScrollPart;
 
 
 import java.util.ArrayList;
@@ -60,18 +60,18 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements Bl
         return BeanUtil.toBean(blog, BlogDTO.class);
     }
      @Override
-    public PageResult<BlogVO> readAll(BlogPageDTO blogPageDTO) {
+    public PagePart<BlogVO> readAll(BlogPageDTO blogPageDTO) {
         IPage page = new Page(blogPageDTO.getPage(), blogPageDTO.getPageSize());
         IPage<Blog> blogPage = this.page(page);
         List<BlogVO> blogDTOList = blogPage.getRecords().stream()
                 .map(b -> BeanUtil.toBean(b,BlogVO.class))
                 .collect(Collectors.toList());
-        PageResult<BlogVO> pageResult = new PageResult<>();
-        pageResult.setList(blogDTOList);
-        pageResult.setTotal(blogPage.getTotal());
-        pageResult.setPageSize(blogPage.getSize());
-        pageResult.setPageNum(blogPage.getCurrent());
-        return pageResult;
+        PagePart<BlogVO> pagePart = new PagePart<>();
+        pagePart.setList(blogDTOList);
+        pagePart.setTotal(blogPage.getTotal());
+        pagePart.setPageSize(blogPage.getSize());
+        pagePart.setPageNum(blogPage.getCurrent());
+        return pagePart;
     }
 
     @Override
@@ -109,7 +109,7 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements Bl
     }
 
     @Override
-    public ScrollResult followScroll(Long offset,Long current) {
+    public ScrollPart followScroll(Long offset, Long current) {
         if (current == null) {
             current = System.currentTimeMillis();
         }
@@ -133,7 +133,7 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements Bl
             }
         }
         List<Blog> blogList = this.listByIds(ids);
-        ScrollResult next = new ScrollResult();
+        ScrollPart next = new ScrollPart();
         next.setList(blogList);
         next.setMinTime(minTime);
         next.setOffset(Long.valueOf(os));

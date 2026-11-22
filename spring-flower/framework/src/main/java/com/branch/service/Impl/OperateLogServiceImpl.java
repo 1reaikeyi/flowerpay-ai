@@ -5,7 +5,7 @@ import com.branch.domain.vo.OperateLogVO;
 import com.branch.mapper.OperateLogMapper;
 import com.branch.service.OperateLogService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.branch.result.PageResult;
+import com.branch.result.PagePart;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -27,7 +27,7 @@ public class OperateLogServiceImpl extends ServiceImpl<OperateLogMapper, Operate
     }
 
     @Override
-    public PageResult<OperateLogVO> readPage(OperateLog operateLog) {
+    public PagePart<OperateLogVO> readPage(OperateLog operateLog) {
         return null;
     }
 }

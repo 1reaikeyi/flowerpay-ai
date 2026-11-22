@@ -18,7 +18,7 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@TableName("flower_order")
+@TableName("order_flower")
 @Getter
 @Setter
 @ToString
@@ -45,18 +45,6 @@ public class FlowerOrder implements Serializable {
      */
     @TableField(value = "user_id", fill = FieldFill.INSERT)
     private Long userId;
-
-    /**
-     * 收花人
-     */
-    @TableField("consignee")
-    private String consignee;
-
-    /**
-     * 收花人手机号
-     */
-    @TableField("phone")
-    private String phone;
 
     /**
      * 地址 ID，关联 user_address.id

@@ -12,7 +12,7 @@ import com.github.benmanes.caffeine.cache.Cache;
 import com.branch.constant.ErrorConstant;
 import com.branch.constant.RedisPrefixConstant;
 import com.branch.exception.ModelFailedException;
-import com.branch.result.PageResult;
+import com.branch.result.PagePart;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import com.branch.mapper.FestivalMapper;
@@ -265,7 +265,7 @@ public class FestivalServiceImpl extends ServiceImpl<FestivalMapper, Festival> i
     }
 
     @Override
-    public PageResult<FestivalVO> readPage(FestivalPageDTO festivalPageDTO) {
+    public PagePart<FestivalVO> readPage(FestivalPageDTO festivalPageDTO) {
         LambdaQueryWrapper<Festival> queryWrapper = new LambdaQueryWrapper<>();
         queryWrapper.like(festivalPageDTO.getName() != null, Festival::getName, festivalPageDTO.getName());
         IPage page = new Page(festivalPageDTO.getPage(), festivalPageDTO.getPageSize());
@@ -273,7 +273,7 @@ public class FestivalServiceImpl extends ServiceImpl<FestivalMapper, Festival> i
         List<FestivalVO> voList = festivalIPage.getRecords().stream()
                 .map(festival ->BeanUtil.toBean(festival, FestivalVO.class))
                 .collect(Collectors.toList());
-        PageResult<FestivalVO> result = new PageResult<>();
+        PagePart<FestivalVO> result = new PagePart<>();
         result.setTotal(festivalIPage.getTotal());
         result.setList(voList);                         // 当前页数据
         result.setPageNum(festivalIPage.getCurrent());  // 当前页码

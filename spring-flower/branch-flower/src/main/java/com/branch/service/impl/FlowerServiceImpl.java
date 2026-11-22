@@ -11,7 +11,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.branch.constant.ErrorConstant;
 import com.branch.constant.RedisPrefixConstant;
 import com.branch.exception.ModelFailedException;
-import com.branch.result.PageResult;
+import com.branch.result.PagePart;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import com.branch.mapper.FlowerMapper;
@@ -264,7 +264,7 @@ public class FlowerServiceImpl extends ServiceImpl<FlowerMapper, Flower> impleme
     }
 
     @Override
-    public PageResult<FlowerVO> readPage(FlowerPageDTO flowerPageDTO) {
+    public PagePart<FlowerVO> readPage(FlowerPageDTO flowerPageDTO) {
         LambdaQueryWrapper<Flower> queryWrapper = new LambdaQueryWrapper<>();
         queryWrapper.like(flowerPageDTO.getName() != null, Flower::getName, flowerPageDTO.getName());
         IPage page = new Page(flowerPageDTO.getPage(),flowerPageDTO.getPageSize());
@@ -272,7 +272,7 @@ public class FlowerServiceImpl extends ServiceImpl<FlowerMapper, Flower> impleme
         List<FlowerVO> voList = flowerIPage.getRecords().stream()
                 .map(flower -> BeanUtil.copyProperties(flower, FlowerVO.class))
                 .collect(Collectors.toList());
-        PageResult<FlowerVO> result = new PageResult<>();
+        PagePart<FlowerVO> result = new PagePart<>();
         result.setTotal(flowerIPage.getTotal());
         result.setList(voList);                         // 当前页数据
         result.setPageNum(flowerIPage.getCurrent());  // 当前页码

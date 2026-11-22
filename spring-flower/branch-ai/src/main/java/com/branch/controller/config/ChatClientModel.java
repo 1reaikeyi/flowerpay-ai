@@ -41,16 +41,18 @@ public class ChatClientModel {
                 .defaultAdvisors(loggerAdvisor)
                 .build();
     }
+    
     @Value("${spring.data.redis.password}")
     private String auth;
-    @Value("${spring.data.redis.port:16379}")
+    @Value("${spring.data.redis.port}")
     private int redisPort;
     @Value("${spring.data.redis.host}")
     private String redisHost;
+    private static final String database = "0";
     @Bean
     public JedisPooled jedisPooled() {
         // 显式指定 database 0：RediSearch 向量索引仅支持 database 0
-        return new JedisPooled("redis://:"+auth+"@"+redisHost+":"+redisPort+"/0");
+        return new JedisPooled("redis://:"+auth+"@"+redisHost+":"+redisPort+"/"+database);
     }
 
     @Bean

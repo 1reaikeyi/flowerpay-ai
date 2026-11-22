@@ -10,7 +10,7 @@ import com.branch.domain.vo.FestivalDetailVO;
 import com.branch.domain.vo.FestivalVO;
 import com.branch.service.FestivalService;
 import com.branch.domain.OperationSuccessEnum;
-import com.branch.result.PageResult;
+import com.branch.result.PagePart;
 import com.branch.result.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,8 +51,8 @@ public class FestivalController {
     @OperationLogging(operation = OperationSuccessEnum.READ)
     @GetMapping("/all")
     public Result readPage(FestivalPageDTO festivalPageDTO) {
-        PageResult<FestivalVO> festivalVOPageResult = festivalService.readPage(festivalPageDTO);
-        return Result.success(festivalVOPageResult);
+        PagePart<FestivalVO> festivalVOPagePart = festivalService.readPage(festivalPageDTO);
+        return Result.success(festivalVOPagePart);
     }
 
     @PreAuthorize("hasRole('ADMIN')")

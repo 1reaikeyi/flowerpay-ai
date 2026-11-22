@@ -5,7 +5,7 @@ import com.branch.domain.dto.ArticleDTO;
 import com.branch.domain.dto.ArticlePageDTO;
 import com.branch.domain.entity.Article;
 import com.branch.domain.vo.ArticleVO;
-import com.branch.result.PageResult;
+import com.branch.result.PagePart;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ import java.util.List;
 public interface ArticleService extends IService<Article> {
 
     ArticleDTO create(ArticleDTO articleDTO);
-    PageResult<ArticleVO> readPage(ArticlePageDTO articlePageDTO);
+    PagePart<ArticleVO> readPage(ArticlePageDTO articlePageDTO);
     ArticleVO readCache(Long id);
     void updateCache(ArticleDTO article);
     void deleteCache(List<Long> id);

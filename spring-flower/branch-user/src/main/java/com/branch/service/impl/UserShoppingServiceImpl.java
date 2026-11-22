@@ -5,10 +5,14 @@ import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.json.JSONUtil;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.branch.constant.RedisPrefixConstant;
+
+
 import com.branch.mapper.UserShoppingMapper;
 import com.branch.domain.dto.UserShoppingDTO;
 import com.branch.domain.entity.UserShopping;
 import com.branch.domain.vo.UserShoppingVO;
+
+import com.branch.service.UserAddressService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.BoundHashOperations;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -66,12 +70,5 @@ public class UserShoppingServiceImpl extends ServiceImpl<UserShoppingMapper, Use
         return userShoppingDTO;
     }
 
-    @Override
-    public void submit() {
 
-//        FlowerOrderDetail flowerOrderDetail = FlowerOrderDetail.builder()
-//                .orderId(id).flowerId().amount().image().festivalId().number().name()
-//                .wrapFee(2L)
-//                .build();
-    }
 }

@@ -18,7 +18,7 @@ import java.util.*;
 
 @RestController
 @RequestMapping("admin/statistics")
-public class Statistics {
+public class StatisticsController {
 
     @Autowired
     private StatisticsService statisticsService;

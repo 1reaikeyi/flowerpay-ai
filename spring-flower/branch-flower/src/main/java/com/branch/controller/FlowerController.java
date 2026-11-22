@@ -11,7 +11,7 @@ import com.branch.domain.vo.FlowerVO;
 import com.branch.service.FlowerDetailService;
 import com.branch.service.FlowerService;
 import com.branch.domain.OperationSuccessEnum;
-import com.branch.result.PageResult;
+import com.branch.result.PagePart;
 import com.branch.result.Result;
 import lombok.extern.slf4j.Slf4j;
 
@@ -56,8 +56,8 @@ public class FlowerController {
     @OperationLogging(operation = OperationSuccessEnum.READ)
     @GetMapping("/all")
     public Result readPage(FlowerPageDTO flowerPageDTO) {
-        PageResult<FlowerVO> flowerVOPageResult = flowerService.readPage(flowerPageDTO);
-        return Result.success(flowerVOPageResult);
+        PagePart<FlowerVO> flowerVOPagePart = flowerService.readPage(flowerPageDTO);
+        return Result.success(flowerVOPagePart);
     }
 
     @PreAuthorize("hasRole('ADMIN')")

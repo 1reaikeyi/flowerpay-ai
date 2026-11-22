@@ -30,24 +30,13 @@ public class FlowerOrderVO {
      */
     private Long userId;
 
-
-    /**
-     * 收花人
-     */
-    private String consignee;
-
-    /**
-     * 收花人手机号
-     */
-    private String phone;
-
     /**
      * 地址 ID
      */
     private Long addressId;
 
     /**
-     * 备注信息（可存 AI 生成的贺卡文案）
+     * 用户备注信息
      */
     private String remark;
 

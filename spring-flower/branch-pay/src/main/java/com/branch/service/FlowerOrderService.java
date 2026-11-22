@@ -1,7 +1,7 @@
 package com.branch.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.branch.result.PageResult;
+import com.branch.result.PagePart;
 import com.branch.domain.dto.FlowerOrderPageDTO;
 import com.branch.domain.entity.FlowerOrder;
 import com.branch.domain.vo.FlowerOrderVO;
@@ -15,7 +15,7 @@ public interface FlowerOrderService extends IService<FlowerOrder> {
 
     FlowerOrderVO readById(Long id);
 
-    PageResult<FlowerOrderVO> readPage(FlowerOrderPageDTO flowerOrderPageDTO);
+    PagePart<FlowerOrderVO> readPage(FlowerOrderPageDTO flowerOrderPageDTO);
 
     void update1(Long id);
 

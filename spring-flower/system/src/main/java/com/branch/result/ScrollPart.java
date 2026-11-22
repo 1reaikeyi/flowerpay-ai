@@ -12,7 +12,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class ScrollResult<T> {
+public class ScrollPart<T> {
     /**
      * 数据列表
      */

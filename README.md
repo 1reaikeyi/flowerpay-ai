@@ -45,30 +45,63 @@
 | ------------------ | ------------------------------------------------------------ | ---- | ------------------------------------------------------------ |
 | 2                  | <img src="说明/原型功能/ai2.png" alt="ai" style="zoom:50%;" /> | 3    | <img src="说明/原型功能/ai4.png" alt="ai" style="zoom:50%;" /> |
 
-# 后端说明
+# 后端设计
 
 ------
 
-## 鲜花商品模块
+## 订单模块
+
+使用支付宝开放平台
 
 ### model
 
-1. flower-category索引：type 普通索引
+```mermaid
+flowchart TB
+    subgraph adminer
+        zhi["zhizhi"]
+        li["lili"]
+        bai["baibai"]
+        zhang["zhangzhang"]
+    end
+    subgraph role
+        keyan["店长"]
+        shichang["worker"]
+        xiaoshou["waiter"]
+    end
+    subgraph permission
+        start1["权限1"]
+        start2["权限2"]
+        start3["权限3"]
+        start4["权限4"]
+       
+    end
 
-   按类型快速筛选分类，优化 type查询速度
+    classDef c1 fill:#fff
+    classDef c2 fill:#f2b8b8
+    classDef c3 fill:#b8d0f2
+    class admin c1
+    class role c2
+    class permission c3
+```
 
-2. 鲜花单品模块
+```
+→ 1 用户下单 → 2 用户确认支付 
+→ 3 商家制作 → 4 工作人员取货 → 5 工作人员开始配送 → 6 工作人员已到达 → 7 用户确认
+→ 8 已取消（未接单退款、商家拒单、超时取消、退款）
+```
 
-- 分类：鲜花单品 = 1 : N（`flower.category_id`关联分类表）
+第三方授权登录流程图和支付流程：支付宝
 
-3. 多花组合模块
+| 支付宝授权     | <img src="说明/支付宝支付/pay5.png" alt="支付宝" style="zoom:50%;" /> |
+| -------------- | ------------------------------------------------------------ |
+| 支付集成到订单 | <img src="说明/支付宝支付/pay1.png" alt="支付" style="zoom:25%;" /> |
+| 支付过程       | <img src="说明/支付宝支付/pay2.png" alt="支付" style="zoom: 25%;" /> |
+| 同步支付结果   | <img src="说明/支付宝支付/pay3.png" alt="支付" style="zoom: 25%;" /> |
+| 异步验签结果   | <img src="说明/支付宝支付/pay4.png" alt="支付" style="zoom: 25%;" /> |
 
-- 关系：`festival` : `festival_detail` = 1 : N
-- 索引：index idx_festival_id (festival_id)、index idx_flower_id (flower_id)，优化 ORDER BY 和 GROUP BY 操作
+## 鲜花商品模块
 
----
-
-对于这些热点信息使用多级缓存
+**对于这些热点信息使用多级缓存**
 
 ```mermaid
 %%{init: {'theme':'neutral','themeVariables':{'fontSize':'8px','nodeBorder':'2px'},'flowchart':{'nodeSpacing':8,'rankSpacing':32,'useMaxWidth':false,'curve':'basis'}}}%%
@@ -228,7 +261,7 @@ flowchart TD
 
 使用高德地图开发平台https://console.amap.com/
 
-
+redis的geo
 
 ## 优惠券使用模块
 
@@ -316,56 +349,6 @@ return 0
 | 日志：说明/支付宝支付/redis同步.txt，redis异步.txt           |
 
 ---
-
-## 订单模块
-
-使用支付宝开放平台
-
-### model
-
-```mermaid
-flowchart TB
-    subgraph adminer
-        zhi["zhizhi"]
-        li["lili"]
-        bai["baibai"]
-        zhang["zhangzhang"]
-    end
-    subgraph role
-        keyan["店长"]
-        shichang["worker"]
-        xiaoshou["waiter"]
-    end
-    subgraph permission
-        start1["权限1"]
-        start2["权限2"]
-        start3["权限3"]
-        start4["权限4"]
-       
-    end
-
-    classDef c1 fill:#fff
-    classDef c2 fill:#f2b8b8
-    classDef c3 fill:#b8d0f2
-    class admin c1
-    class role c2
-    class permission c3
-```
-
-```
-→ 1 用户下单 → 2 用户确认支付 
-→ 3 商家制作 → 4 工作人员取货 → 5 工作人员开始配送 → 6 工作人员已到达 → 7 用户确认
-→ 8 已取消（未接单退款、商家拒单、超时取消、退款）
-```
-
-第三方授权登录流程图和支付流程：支付宝
-
-| 支付宝授权     | <img src="说明/支付宝支付/pay5.png" alt="支付宝" style="zoom:50%;" /> |
-| -------------- | ------------------------------------------------------------ |
-| 支付集成到订单 | <img src="说明/支付宝支付/pay1.png" alt="支付" style="zoom:25%;" /> |
-| 支付过程       | <img src="说明/支付宝支付/pay2.png" alt="支付" style="zoom: 25%;" /> |
-| 同步支付结果   | <img src="说明/支付宝支付/pay3.png" alt="支付" style="zoom: 25%;" /> |
-| 异步验签结果   | <img src="说明/支付宝支付/pay4.png" alt="支付" style="zoom: 25%;" /> |
 
 ## 接入AI模块
 
@@ -464,7 +447,7 @@ flowchart TD
 
 ### model
 
-1采用注解 + AOP 切面实现日志统一收集，自定义注解统一采集上下文常用的登录人、请求类型，使用参数，状态、耗时。
+1采用注解 + AOP 切面实现日志统一收集，统一采集上下文常用的登录人、请求类型，使用参数，状态、耗时。
 
 2 监测DB
 

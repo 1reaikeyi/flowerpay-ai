@@ -8,8 +8,8 @@ import com.branch.domain.dto.BlogDTO;
 import com.branch.domain.dto.BlogPageDTO;
 import com.branch.domain.entity.Blog;
 import com.branch.domain.vo.BlogVO;
-import com.branch.result.PageResult;
-import com.branch.result.ScrollResult;
+import com.branch.result.PagePart;
+import com.branch.result.ScrollPart;
 
 import java.util.Set;
 
@@ -43,8 +43,8 @@ public interface BlogService extends IService<Blog> {
     /**
      * 关注流收件箱：滚动分页查询已关注用户发布的博客
      */
-    ScrollResult followScroll(Long max, Long offset);
+    ScrollPart followScroll(Long max, Long offset);
 
-    PageResult<BlogVO> readAll(BlogPageDTO blogPageDTO);
+    PagePart<BlogVO> readAll(BlogPageDTO blogPageDTO);
 
 }

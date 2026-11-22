@@ -11,7 +11,7 @@ import com.branch.domain.entity.Article;
 import com.branch.domain.vo.ArticleDetailVO;
 import com.branch.mapper.ArticleMapper;
 import com.branch.mapper.ArticleDetailMapper;
-import com.branch.result.PageResult;
+import com.branch.result.PagePart;
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -62,7 +62,7 @@ public class ArticleDetailDetailServiceImpl extends ServiceImpl<ArticleDetailMap
     }
 
     @Override
-    public PageResult<ArticleDetailVO> queryPublishedPage(ArticleDetailPageDTO articleDetailPageDTO) {
+    public PagePart<ArticleDetailVO> queryPublishedPage(ArticleDetailPageDTO articleDetailPageDTO) {
         IPage<ArticleDetail> page = new Page<>(articleDetailPageDTO.getPage(), articleDetailPageDTO.getPageSize());
         IPage<ArticleDetail> detailPage = this.page(page);
         List<ArticleDetailVO> voList = detailPage.getRecords().stream()
@@ -79,12 +79,12 @@ public class ArticleDetailDetailServiceImpl extends ServiceImpl<ArticleDetailMap
                     .collect(Collectors.toMap(Article::getId, Article::getCategoryName, (a, b) -> a));
             voList.forEach(vo -> vo.setCategoryName(nameMap.get(vo.getCategoryId())));
         }
-        PageResult<ArticleDetailVO> pageResult = new PageResult<>();
-        pageResult.setList(voList);
-        pageResult.setTotal(detailPage.getTotal());
-        pageResult.setPageSize(detailPage.getSize());
-        pageResult.setPageNum(detailPage.getCurrent());
-        return pageResult;
+        PagePart<ArticleDetailVO> pagePart = new PagePart<>();
+        pagePart.setList(voList);
+        pagePart.setTotal(detailPage.getTotal());
+        pagePart.setPageSize(detailPage.getSize());
+        pagePart.setPageNum(detailPage.getCurrent());
+        return pagePart;
     }
 
 }

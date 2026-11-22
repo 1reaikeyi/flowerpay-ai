@@ -18,5 +18,4 @@ public interface UserShoppingService extends IService<UserShopping> {
     List<UserShoppingVO> readAll();
     UserShoppingDTO create(UserShoppingDTO userShoppingDTO);
 
-    void submit();
 }

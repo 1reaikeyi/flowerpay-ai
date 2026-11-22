@@ -1,7 +1,7 @@
 package com.branch.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.branch.result.PageResult;
+import com.branch.result.PagePart;
 import com.branch.domain.dto.FlowerCategoryPageDTO;
 import com.branch.domain.dto.FlowerCategoryDTO;
 import com.branch.domain.entity.FlowerCategory;
@@ -21,7 +21,7 @@ public interface FlowerCategoryService extends IService<FlowerCategory> {
 
     List<FlowerCategoryVO> readByType(Long type);
 
-    PageResult<FlowerCategoryVO> readPage(FlowerCategoryPageDTO flowerCategoryPageDTO);
+    PagePart<FlowerCategoryVO> readPage(FlowerCategoryPageDTO flowerCategoryPageDTO);
 
     void updateByObject(FlowerCategoryDTO categoryDTO);
 

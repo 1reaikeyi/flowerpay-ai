@@ -6,7 +6,7 @@ import com.branch.domain.dto.page.EmployeePageDTO;
 import com.branch.domain.vo.EmployeeVO;
 import com.branch.service.*;
 import com.branch.domain.OperationSuccessEnum;
-import com.branch.result.PageResult;
+import com.branch.result.PagePart;
 import com.branch.result.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,8 +59,8 @@ public class AdminController {
     @OperationLogging(operation = OperationSuccessEnum.READ)
     @GetMapping("/all")
     public Result readPage( @Validated EmployeePageDTO employeePageDTO) {
-        PageResult<EmployeeVO> employeeVOPageResult = employeeService.readPage(employeePageDTO);
-        return Result.success(employeeVOPageResult);
+        PagePart<EmployeeVO> employeeVOPagePart = employeeService.readPage(employeePageDTO);
+        return Result.success(employeeVOPagePart);
     }
     @PreAuthorize("hasAnyAuthority('admin:delete')")
     @OperationLogging(operation = OperationSuccessEnum.DELETE)

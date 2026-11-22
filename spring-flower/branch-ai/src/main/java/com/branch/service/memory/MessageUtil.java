@@ -1,15 +1,15 @@
 package com.branch.service.memory;
 
-import com.branch.service.tool.ToolResultHolder;
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.convert.Convert;
 import cn.hutool.core.util.ObjectUtil;
-import cn.hutool.core.util.StrUtil;
 import cn.hutool.json.JSONUtil;
+
+import com.branch.service.tool.ToolResultHolder;
 import org.springframework.ai.chat.messages.*;
 
 /**
- * 消息转换工具类，提供消息对象与JSON字符串之间的转换功能，主要用于Redis存储格式转换
+ * 消息转换工具类，提供消息对象与JSON字符串之间的转换功能
  */
 public class MessageUtil {
 
@@ -21,7 +21,7 @@ public class MessageUtil {
      * @return 符合Redis存储规范的JSON字符串
      */
     public static String toJson(Message message, String sessionId) {
-        var myMessage = BeanUtil.toBean(message, MessageModel.class);
+        var myMessage = BeanUtil.toBean(message, MessageBO.class);
         // 设置消息内容
         myMessage.setTextContent(message.getText());
         myMessage.setSessionId(sessionId);
@@ -29,20 +29,13 @@ public class MessageUtil {
             myMessage.setToolCalls(assistantMessage.getToolCalls());
             // 通过 messageId 获取 requestId，再通过 requestId 获取参数列表，如果有，就存储起来
             // 最后，删除 messageId 对应的数据
-            // 注意：普通 AssistantMessage（无工具调用，如停止生成时补存的消息）metadata 中没有 id，
-            // 此时 messageId 为 null，不能访问 ToolResultHolder，否则会触发 "key is not null!" 断言
-            var metadata = assistantMessage.getMetadata();
-            var messageId = metadata == null ? null : Convert.toStr(metadata.get("id"));
-            if (StrUtil.isNotBlank(messageId)) {
-                var requestId = Convert.toStr(ToolResultHolder.get(messageId, "requestId"));
-                if (StrUtil.isNotBlank(requestId)) {
-                    var params = ToolResultHolder.get(requestId);
-                    if (ObjectUtil.isNotEmpty(params)) {
-                        myMessage.setParams(params);
-                    }
-                }
-                ToolResultHolder.remove(messageId);
+            var messageId = Convert.toStr(assistantMessage.getMetadata().get("id"));
+            var requestId = Convert.toStr(ToolResultHolder.get(messageId, "requestId"));
+            var params = ToolResultHolder.get(requestId);
+            if (ObjectUtil.isNotEmpty(params)) {
+                myMessage.setParams(params);
             }
+            ToolResultHolder.remove(messageId);
         }
 
         if (message instanceof ToolResponseMessage toolResponseMessage) {
@@ -60,7 +53,7 @@ public class MessageUtil {
      * @throws RuntimeException 当无法识别的消息类型时抛出异常
      */
     public static Message toMessage(String json) {
-        var myMessage = JSONUtil.toBean(json, MessageModel.class);
+        var myMessage = JSONUtil.toBean(json, MessageBO.class);
         var messageType = MessageType.valueOf(myMessage.getMessageType());
         switch (messageType) {
             case SYSTEM -> {
@@ -74,19 +67,13 @@ public class MessageUtil {
                         .build();
             }
             case ASSISTANT -> {
-                return new AssistantMessageUtil(myMessage.getTextContent(),
+                return new AssistantMessageBO(
+                        myMessage.getTextContent(),
                         myMessage.getMetadata(),
                         myMessage.getToolCalls(),
                         myMessage.getMedia(),
                         myMessage.getParams());
             }
-//            case ASSISTANT -> {
-//                return AssistantMessage.builder()
-//                        .content(myMessage.getTextContent())
-//                        .properties(myMessage.getMetadata())
-//                        .toolCalls(myMessage.getToolCalls())
-//                        .build();
-//            }
             case TOOL -> {
                 return ToolResponseMessage.builder()
                         .responses(myMessage.getToolResponses())
@@ -98,6 +85,11 @@ public class MessageUtil {
         throw new RuntimeException("Message data conversion failed.");
     }
 
-
+/**
+ * ● AssistantMessage 		大模型生成的消息
+ * ● SystemMessage  		系统消息
+ * ● ToolResponseMessage	工具响应消息
+ * ● UserMessage  		用户消息
+ */
 
 }

@@ -2,7 +2,7 @@ package com.branch.service;
 
 import com.branch.domain.entity.LoginLog;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.branch.result.PageResult;
+import com.branch.result.PagePart;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ import java.util.List;
  */
 public interface LoginLogService extends IService<LoginLog> {
 
-    PageResult<LoginLog> read();
+    PagePart<LoginLog> read();
 
     void deleteRole(List<Long> ids);
 }

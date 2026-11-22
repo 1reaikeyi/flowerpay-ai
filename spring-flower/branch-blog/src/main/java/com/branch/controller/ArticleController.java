@@ -4,10 +4,9 @@ import com.branch.domain.dto.ArticleDTO;
 
 import com.branch.domain.dto.ArticlePageDTO;
 import com.branch.domain.vo.ArticleVO;
-import com.branch.result.PageResult;
+import com.branch.result.PagePart;
 import com.branch.result.Result;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.transaction.annotation.Transactional;
 import com.branch.service.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -51,8 +50,8 @@ public class ArticleController {
      */
     @GetMapping("/all")
     public Result read(@Validated ArticlePageDTO articlePageDTO) {
-        PageResult<ArticleVO> pageResult = articleService.readPage(articlePageDTO);
-        return Result.success(pageResult);
+        PagePart<ArticleVO> pagePart = articleService.readPage(articlePageDTO);
+        return Result.success(pagePart);
     }
 
     /**

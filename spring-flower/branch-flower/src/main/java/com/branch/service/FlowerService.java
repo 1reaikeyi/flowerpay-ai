@@ -1,7 +1,7 @@
 package com.branch.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.branch.result.PageResult;
+import com.branch.result.PagePart;
 import com.branch.domain.dto.FlowerDTO;
 import com.branch.domain.dto.FlowerPageDTO;
 import com.branch.domain.entity.Flower;
@@ -22,7 +22,7 @@ public interface FlowerService extends IService<Flower> {
 
     void deleteCache(List<Long> ids);
 
-    PageResult<FlowerVO> readPage(FlowerPageDTO flowerPageDTO);
+    PagePart<FlowerVO> readPage(FlowerPageDTO flowerPageDTO);
 
     FlowerDTO create(FlowerDTO flowerDTO);
 

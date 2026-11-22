@@ -53,9 +53,5 @@ public class UserShoppingController {
         userShoppingService.deleteAll();
         return Result.success();
     }
-    @PostMapping("/submit")
-    public Result submit(){
-        userShoppingService.submit();
-        return Result.success();
-    }
+
 }

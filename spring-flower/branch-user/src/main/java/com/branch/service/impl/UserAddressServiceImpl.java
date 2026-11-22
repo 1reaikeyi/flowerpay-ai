@@ -9,7 +9,7 @@ import com.branch.mapper.UserAddressMapper;
 import com.branch.service.UserAddressService;
 import com.branch.constant.ErrorConstant;
 import com.branch.exception.ModelFailedException;
-import com.branch.result.ScrollResult;
+import com.branch.result.ScrollPart;
 import com.branch.domain.dto.UserAddressDTO;
 import com.branch.domain.entity.UserAddress;
 import org.springframework.stereotype.Service;
@@ -51,8 +51,8 @@ public class UserAddressServiceImpl extends ServiceImpl<UserAddressMapper, UserA
     }
 
     @Override
-    public ScrollResult<UserAddressVO> readPage(Long offset, Long current) {
-        ScrollResult<UserAddressVO> scrollResult = new ScrollResult();
+    public ScrollPart<UserAddressVO> readPage(Long offset, Long current) {
+        ScrollPart<UserAddressVO> scrollPart = new ScrollPart();
         offset = offset == null ? LIMIT_NUMBER : offset;
         Long userId = SecurityContextParam.getCurrentUserId();
         List<UserAddress> userAddressList = this.lambdaQuery()
@@ -61,15 +61,15 @@ public class UserAddressServiceImpl extends ServiceImpl<UserAddressMapper, UserA
                 .list();
         List<UserAddressVO> userAddressVOList = BeanUtil.copyToList(userAddressList, UserAddressVO.class);
         if(userAddressList.size() == 0 || userAddressList == null){
-            scrollResult.setList(null);
-            scrollResult.setMinTime(0L);
-            scrollResult.setOffset(LIMIT_NUMBER);
-            return scrollResult;
+            scrollPart.setList(null);
+            scrollPart.setMinTime(0L);
+            scrollPart.setOffset(LIMIT_NUMBER);
+            return scrollPart;
         }
-        scrollResult.setList(userAddressVOList);
-        scrollResult.setMinTime(userAddressList.get(userAddressList.size() - 1).getId());
-        scrollResult.setOffset(LIMIT_NUMBER);
-        return scrollResult;
+        scrollPart.setList(userAddressVOList);
+        scrollPart.setMinTime(userAddressList.get(userAddressList.size() - 1).getId());
+        scrollPart.setOffset(LIMIT_NUMBER);
+        return scrollPart;
     }
 
     @Override

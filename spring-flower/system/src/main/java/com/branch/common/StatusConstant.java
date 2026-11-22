@@ -3,11 +3,11 @@ package com.branch.common;
 /**
  * 状态常量，启用或者禁用
  */
-public class StatusConstant {
+public interface StatusConstant {
 
     //启用
-    public static final Long ENABLE = 1L;
+    Long ENABLE = 1L;
 
     //禁用
-    public static final Long DISABLE = 0L;
+    Long DISABLE = 0L;
 }

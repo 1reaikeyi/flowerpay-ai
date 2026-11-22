@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@TableName("flower_order_pay")
+@TableName("order_pay_flower")
 @Getter
 @Setter
 @ToString

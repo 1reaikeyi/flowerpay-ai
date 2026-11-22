@@ -9,7 +9,7 @@ import com.branch.constant.RedisPrefixConstant;
 import com.branch.domain.dto.ShopDTO;
 import com.branch.domain.entity.Shop;
 import com.branch.mapper.ShopMapper;
-import com.branch.result.ScrollResult;
+import com.branch.result.ScrollPart;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.geo.Distance;
 import org.springframework.data.geo.GeoResults;
@@ -44,8 +44,8 @@ public class ShopServiceImpl extends ServiceImpl<ShopMapper, Shop>implements Sho
     }
 
     @Override
-    public ScrollResult queryByType(Long typeId, Long lastId, Long offset, Double x, Double y) {
-        ScrollResult scrollResult = new ScrollResult();
+    public ScrollPart queryByType(Long typeId, Long lastId, Long offset, Double x, Double y) {
+        ScrollPart scrollPart = new ScrollPart();
         Long limit = offset == null ? 5L : offset;
         // 如果没有传经纬度，使用基于 ID 的滚动分页查询
         if (x == null && y == null) {
@@ -57,15 +57,15 @@ public class ShopServiceImpl extends ServiceImpl<ShopMapper, Shop>implements Sho
                             .last("LIMIT " + limit)
             );
             if (CollectionUtil.isEmpty(shops)) {
-                scrollResult.setList(null);
-                scrollResult.setMinTime(0L);
-                scrollResult.setOffset(limit);
-                return scrollResult;
+                scrollPart.setList(null);
+                scrollPart.setMinTime(0L);
+                scrollPart.setOffset(limit);
+                return scrollPart;
             }
-            scrollResult.setList(shops);
-            scrollResult.setMinTime(shops.get(shops.size() - 1).getId());
-            scrollResult.setOffset(limit);
-            return scrollResult;
+            scrollPart.setList(shops);
+            scrollPart.setMinTime(shops.get(shops.size() - 1).getId());
+            scrollPart.setOffset(limit);
+            return scrollPart;
         }
         // 如果传了经纬度，使用 Redis GEO 按距离排序查询附近店铺
         GeoResults<RedisGeoCommands.GeoLocation<String>> results = stringRedisTemplate.opsForGeo().search(
@@ -75,19 +75,19 @@ public class ShopServiceImpl extends ServiceImpl<ShopMapper, Shop>implements Sho
                 RedisGeoCommands.GeoSearchCommandArgs.newGeoSearchArgs().includeDistance().limit(5).sortAscending()
         );
         if (CollectionUtil.isEmpty(results)) {
-            scrollResult.setList(null);
-            scrollResult.setMinTime(0L);
-            scrollResult.setOffset(limit);
-            return scrollResult;
+            scrollPart.setList(null);
+            scrollPart.setMinTime(0L);
+            scrollPart.setOffset(limit);
+            return scrollPart;
         }
         List<Long> shopIds = results.getContent().stream()
                 .map(item -> Long.valueOf(item.getContent().getName()))
                 .toList();
         List<Shop> shopList = super.listByIds(shopIds);
-        scrollResult.setList(shopList);
-        scrollResult.setMinTime(shopIds.get(shopIds.size() - 1));
-        scrollResult.setOffset(limit);
-        return scrollResult;
+        scrollPart.setList(shopList);
+        scrollPart.setMinTime(shopIds.get(shopIds.size() - 1));
+        scrollPart.setOffset(limit);
+        return scrollPart;
     }
 
 

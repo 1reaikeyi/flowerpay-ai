@@ -6,7 +6,7 @@ import com.branch.domain.dto.RoleDTO;
 import com.branch.domain.dto.page.RolePageDTO;
 import com.branch.domain.entity.Role;
 import com.branch.domain.vo.RoleVO;
-import com.branch.result.PageResult;
+import com.branch.result.PagePart;
 
 import java.util.List;
 
@@ -24,7 +24,7 @@ public interface RoleService extends IService<Role> {
 
     void deleteRole(List<Long> ids);
 
-    PageResult<RoleVO> read(RolePageDTO rolePageDTO);
+    PagePart<RoleVO> read(RolePageDTO rolePageDTO);
 
     RoleDTO createRole(RoleDTO roleDTO);
 }

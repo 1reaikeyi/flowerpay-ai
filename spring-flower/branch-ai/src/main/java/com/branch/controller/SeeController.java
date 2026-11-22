@@ -20,18 +20,16 @@ public class SeeController {
     private NodeLink nodeLink;
 
     @PostMapping
-    public Object flow(@RequestParam String question,
-                       @RequestParam MultipartFile file) throws Exception {
+    public Object flow(@RequestParam String question, @RequestParam MultipartFile file,String sessionId) throws Exception {
         if(file == null){
             return "文件不能为空";
         }
         CompiledGraph compiledGraph = nodeLink.toSee();
 
-        // 将文件转为 Base64 字符串再传入 state，避免 graph 框架无法处理 byte[]
         String fileBase64 = Base64.getEncoder().encodeToString(file.getBytes());
-        return compiledGraph.invoke(Map.of("file", fileBase64, "question", question))
-                .map(state -> "1.识别结果"+state.value("visualResult").orElse("null") +
-                        "==>2.查询结果" + state.value("toolResult").orElse("null"))
-                .orElse("执行失败");
+        return compiledGraph.invoke(Map.of("file", fileBase64, "question", question,"sessionId", sessionId))
+                .map(state -> "第一个"+state.value("visualResult").orElse("null") +
+                        "==>第二个" + state.value("toolResult").orElse("null"))
+                .orElse("执行内部有错误");
     }
 }

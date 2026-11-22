@@ -13,12 +13,17 @@ import org.springframework.context.annotation.Configuration;
 public class SpringAiConfig {
     @Bean
     public Advisor loggerAdvisor(){
-        return new SimpleLoggerAdvisor();
+        return SimpleLoggerAdvisor.builder()
+                .order(1)
+                .build();
     }
     @Bean
     public Advisor memoryAdvisor(ChatMemory chatMemory){
-        return MessageChatMemoryAdvisor.builder(chatMemory).build();
+        return MessageChatMemoryAdvisor.builder(chatMemory)
+                .order(0)
+                .build();
     }
+
     @Bean
     public ChatMemory chatMemory(ChatMemoryRepository chatMemoryRepository){
         return MessageWindowChatMemory.builder()

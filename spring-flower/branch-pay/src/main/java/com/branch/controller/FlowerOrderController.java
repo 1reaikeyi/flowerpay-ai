@@ -9,7 +9,7 @@ import com.branch.domain.enums.OrderStatusEnum;
 import com.branch.domain.vo.FlowerOrderVO;
 import com.branch.service.FlowerOrderService;
 import com.branch.domain.OperationSuccessEnum;
-import com.branch.result.PageResult;
+import com.branch.result.PagePart;
 import com.branch.result.Result;
 import com.branch.framework.zhifubao.PayDTO;
 import com.branch.framework.zhifubao.RefundDTO;
@@ -44,8 +44,8 @@ public class FlowerOrderController {
     @OperationLogging(operation = OperationSuccessEnum.READ)
     @GetMapping("/all")
     public Result readPage(FlowerOrderPageDTO flowerOrderPageDTO) {
-        PageResult<FlowerOrderVO> flowerOrderVOPageResult = flowerOrderService.readPage(flowerOrderPageDTO);
-        return Result.success(flowerOrderVOPageResult);
+        PagePart<FlowerOrderVO> flowerOrderVOPagePart = flowerOrderService.readPage(flowerOrderPageDTO);
+        return Result.success(flowerOrderVOPagePart);
     }
 
     @PreAuthorize("hasRole('USER')")

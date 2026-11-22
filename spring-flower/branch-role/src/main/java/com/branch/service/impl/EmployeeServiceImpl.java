@@ -27,7 +27,7 @@ import com.branch.constant.ErrorConstant;
 import com.branch.constant.JwtConstant;
 
 
-import com.branch.result.PageResult;
+import com.branch.result.PagePart;
 
 import com.branch.common.RoleConstant;
 import com.branch.common.StatusConstant;
@@ -158,7 +158,7 @@ public class EmployeeServiceImpl extends ServiceImpl<EmployeeMapper, Employee> i
     }
 
     @Override
-    public PageResult<EmployeeVO> readPage(EmployeePageDTO employeePageDTO) {
+    public PagePart<EmployeeVO> readPage(EmployeePageDTO employeePageDTO) {
         LambdaQueryWrapper<Employee> queryWrapper = new LambdaQueryWrapper<>();
         queryWrapper.like(employeePageDTO.getEmployeename()!= null,
                 Employee::getUsername,employeePageDTO.getEmployeename());
@@ -167,7 +167,7 @@ public class EmployeeServiceImpl extends ServiceImpl<EmployeeMapper, Employee> i
         List<EmployeeVO> voList = employeeIPage.getRecords().stream()
                 .map(emp -> BeanUtil.copyProperties(emp, EmployeeVO.class))
                 .collect(Collectors.toList());
-        PageResult<EmployeeVO> result = new PageResult<>();
+        PagePart<EmployeeVO> result = new PagePart<>();
         result.setTotal(employeeIPage.getTotal());
         result.setList(voList);                         // 当前页数据
         result.setPageNum(employeeIPage.getCurrent());  // 当前页码

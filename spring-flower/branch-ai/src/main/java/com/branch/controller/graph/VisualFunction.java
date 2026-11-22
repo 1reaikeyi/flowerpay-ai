@@ -12,6 +12,7 @@ import org.springframework.util.MimeTypeUtils;
 import java.net.URI;
 import java.time.Duration;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -24,15 +25,15 @@ public class VisualFunction implements NodeAction {
     @Override
     public Map<String, Object> apply(OverAllState state) throws Exception {
         String file = (String) state.value("file").orElse(("文件为空"));
-
+        String sessionId = (String) state.value("sessionId").orElse("");
         Media media = new Media(MimeTypeUtils.IMAGE_JPEG, URI.create("data:image/jpeg;base64," + file));
 
-        String result =  visualService.chat(media)
-                .collectList()
-                .timeout(Duration.ofSeconds(60))
-                .blockOptional(Duration.ofSeconds(65))
+        String result = visualService.chat(media,sessionId)
+                .collect(Collectors.joining())
+                .timeout(Duration.ofSeconds(30))
+                .blockOptional(Duration.ofSeconds(40))
                 .toString();
-        return Map.of("visualResult",result);
+        return Map.of("visualResult", result);
     }
 
 }

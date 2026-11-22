@@ -6,7 +6,7 @@ import com.branch.domain.dto.ArticleDetailDTO;
 import com.branch.domain.dto.ArticleDetailPageDTO;
 import com.branch.domain.entity.ArticleDetail;
 import com.branch.domain.vo.ArticleDetailVO;
-import com.branch.result.PageResult;
+import com.branch.result.PagePart;
 
 import java.util.List;
 
@@ -20,5 +20,5 @@ public interface ArticleDetailService extends IService<ArticleDetail> {
     void updateCache(ArticleDetailDTO articleDetail);
     void deleteCache(List<Long> ids);
 
-    PageResult<ArticleDetailVO> queryPublishedPage(ArticleDetailPageDTO articleDetailPageDTO);
+    PagePart<ArticleDetailVO> queryPublishedPage(ArticleDetailPageDTO articleDetailPageDTO);
 }

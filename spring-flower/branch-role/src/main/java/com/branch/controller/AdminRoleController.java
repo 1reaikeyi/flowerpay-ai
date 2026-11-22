@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import com.branch.result.PageResult;
+import com.branch.result.PagePart;
 import com.branch.result.Result;
 
 import java.util.List;
@@ -32,7 +32,7 @@ public class AdminRoleController {
     @OperationLogging(operation = OperationSuccessEnum.READ)
     @GetMapping("/all")
     public Result getRoleList(@Validated RolePageDTO rolePageDTO ) {
-        PageResult<RoleVO> roleList = roleService.read(rolePageDTO);
+        PagePart<RoleVO> roleList = roleService.read(rolePageDTO);
         return Result.success(roleList);
     }
     @PreAuthorize("hasAuthority('admin:put')")

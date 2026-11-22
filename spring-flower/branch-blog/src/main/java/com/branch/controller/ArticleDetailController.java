@@ -1,15 +1,12 @@
 package com.branch.controller;
 
-import com.branch.domain.dto.ArticleDTO;
 import com.branch.domain.dto.ArticleDetailDTO;
 
 import com.branch.domain.dto.ArticleDetailPageDTO;
 import com.branch.domain.vo.ArticleDetailVO;
-import com.branch.result.PageResult;
+import com.branch.result.PagePart;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.transaction.annotation.Transactional;
 import com.branch.service.ArticleDetailService;
-import com.branch.service.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -43,7 +40,7 @@ public class ArticleDetailController {
 
     @GetMapping("/all")
     public Result readArticlePage(@Validated ArticleDetailPageDTO articleDetailPageDTO){
-        PageResult<ArticleDetailVO> result = articleDetailService.queryPublishedPage(articleDetailPageDTO);
+        PagePart<ArticleDetailVO> result = articleDetailService.queryPublishedPage(articleDetailPageDTO);
         return Result.success(result);
     }
 

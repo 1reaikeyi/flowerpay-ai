@@ -2,6 +2,7 @@ package com.branch.domain.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.validation.constraints.Min;
+import lombok.Data;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -10,6 +11,7 @@ import java.time.LocalDateTime;
 /**
  * 购物车 DTO（对应 user_shopping 表的传输对象）
  */
+@Data
 public class UserShoppingDTO implements Serializable {
 
     private static final long serialVersionUID = 1L;

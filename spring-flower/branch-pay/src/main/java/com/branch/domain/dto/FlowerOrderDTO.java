@@ -33,17 +33,6 @@ public class FlowerOrderDTO {
      */
     private Long userId;
 
-
-    /**
-     * 收花人
-     */
-    private String consignee;
-
-    /**
-     * 收花人手机号
-     */
-    private String phone;
-
     /**
      * 地址 ID
      */

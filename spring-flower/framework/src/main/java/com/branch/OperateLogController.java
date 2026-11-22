@@ -2,7 +2,7 @@ package com.branch;
 
 import com.branch.domain.entity.OperateLog;
 import com.branch.domain.vo.OperateLogVO;
-import com.branch.result.PageResult;
+import com.branch.result.PagePart;
 import com.branch.result.Result;
 import com.branch.service.OperateLogService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,8 +26,8 @@ public class OperateLogController {
     private OperateLogService operateLogService;
     @GetMapping
     public Result read(@RequestBody OperateLog operateLog) {
-        PageResult<OperateLogVO> operateLogVOPageResult = operateLogService.readPage(operateLog);
-        return Result.success(operateLogVOPageResult);
+        PagePart<OperateLogVO> operateLogVOPagePart = operateLogService.readPage(operateLog);
+        return Result.success(operateLogVOPagePart);
     }
     @DeleteMapping
     public Result delete(List<Long> ids) {

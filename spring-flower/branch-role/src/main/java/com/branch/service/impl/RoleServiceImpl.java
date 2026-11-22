@@ -15,7 +15,7 @@ import com.branch.service.RoleService;
 import com.branch.constant.ErrorConstant;
 import com.branch.exception.ModelFailedException;
 import org.springframework.stereotype.Service;
-import com.branch.result.PageResult;
+import com.branch.result.PagePart;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -38,13 +38,13 @@ public class RoleServiceImpl extends ServiceImpl<RoleMapper, Role> implements Ro
         return dto;
     }
     @Override
-    public PageResult<RoleVO> read(RolePageDTO rolePageDTO) {
+    public PagePart<RoleVO> read(RolePageDTO rolePageDTO) {
         IPage page = new Page(rolePageDTO.getPage(),rolePageDTO.getPageSize());
         IPage<Role> roles = this.page(page);
         List<RoleVO> voList = roles.getRecords().stream()
                 .map(role -> BeanUtil.copyProperties(role, RoleVO.class))
                 .collect(Collectors.toList());
-        PageResult<RoleVO> result = new PageResult<>();
+        PagePart<RoleVO> result = new PagePart<>();
         result.setTotal(roles.getTotal());
         result.setList(voList);                         // 当前页数据
         result.setPageNum(roles.getCurrent());  // 当前页码

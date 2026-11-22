@@ -13,7 +13,7 @@ import com.branch.domain.dto.ArticlePageDTO;
 import com.branch.domain.vo.ArticleVO;
 import com.branch.domain.wrapper.LogicData;
 import com.branch.mapper.ArticleMapper;
-import com.branch.result.PageResult;
+import com.branch.result.PagePart;
 import com.github.benmanes.caffeine.cache.Cache;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
@@ -66,18 +66,18 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> impl
     }
 
     @Override
-    public PageResult<ArticleVO> readPage(ArticlePageDTO articlePageDTO) {
+    public PagePart<ArticleVO> readPage(ArticlePageDTO articlePageDTO) {
         IPage<Article> page = new Page<>(articlePageDTO.getPage(), articlePageDTO.getPageSize());
         IPage<Article> articlePage = this.page(page);
         List<ArticleVO> voList = articlePage.getRecords().stream()
                 .map(a -> BeanUtil.toBean(a, ArticleVO.class))
                 .collect(Collectors.toList());
-        PageResult<ArticleVO> pageResult = new PageResult<>();
-        pageResult.setList(voList);
-        pageResult.setTotal(articlePage.getTotal());
-        pageResult.setPageSize(articlePage.getSize());
-        pageResult.setPageNum(articlePage.getCurrent());
-        return pageResult;
+        PagePart<ArticleVO> pagePart = new PagePart<>();
+        pagePart.setList(voList);
+        pagePart.setTotal(articlePage.getTotal());
+        pagePart.setPageSize(articlePage.getSize());
+        pagePart.setPageNum(articlePage.getCurrent());
+        return pagePart;
     }
 
     @Override

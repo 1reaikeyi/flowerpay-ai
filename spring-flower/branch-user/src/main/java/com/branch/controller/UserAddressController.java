@@ -5,7 +5,7 @@ import com.branch.domain.dto.UserAddressDTO;
 import com.branch.domain.vo.UserAddressVO;
 import com.branch.service.UserAddressService;
 
-import com.branch.result.ScrollResult;
+import com.branch.result.ScrollPart;
 import com.branch.result.Result;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,8 +42,8 @@ public class UserAddressController {
     @OperationLogging(operation = OperationSuccessEnum.READ)
     @GetMapping("/all")
     public Result readAddress(Long offset, Long current) {
-        ScrollResult<UserAddressVO> scrollResult = userAddressService.readPage(offset,current);
-        return Result.success(scrollResult);
+        ScrollPart<UserAddressVO> scrollPart = userAddressService.readPage(offset,current);
+        return Result.success(scrollPart);
     }
     @PreAuthorize("hasRole('USER')")
     @OperationLogging(operation = OperationSuccessEnum.UPDATE)

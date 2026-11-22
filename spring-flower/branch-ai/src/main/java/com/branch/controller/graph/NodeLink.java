@@ -54,7 +54,7 @@ public class NodeLink {
         }
         // UML 图生成与打印
         // 使用 PlantUML 格式生成图的可视化表示
-        GraphRepresentation representation = graph.getGraph(GraphRepresentation.Type.PLANTUML, "takeout Flow");
+        GraphRepresentation representation = graph.getGraph(GraphRepresentation.Type.PLANTUML, "Flow");
         // 打印 UML 图内容到控制台
         System.out.println("\n=== English Flow UML Diagram ===");
         System.out.println(representation.content());

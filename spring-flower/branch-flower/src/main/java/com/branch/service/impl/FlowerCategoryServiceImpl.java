@@ -10,7 +10,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.branch.constant.ErrorConstant;
 import com.branch.constant.RedisPrefixConstant;
 import com.branch.exception.ModelFailedException;
-import com.branch.result.PageResult;
+import com.branch.result.PagePart;
 import com.branch.mapper.FlowerCategoryMapper;
 import com.branch.domain.dto.FlowerCategoryPageDTO;
 import com.branch.domain.dto.FlowerCategoryDTO;
@@ -67,7 +67,7 @@ public class FlowerCategoryServiceImpl extends ServiceImpl<FlowerCategoryMapper,
     }
     @CacheEvict(allEntries = true)
     @Override
-    public PageResult<FlowerCategoryVO> readPage(FlowerCategoryPageDTO flowerCategoryPageDTO) {
+    public PagePart<FlowerCategoryVO> readPage(FlowerCategoryPageDTO flowerCategoryPageDTO) {
         LambdaQueryWrapper<FlowerCategory> queryWrapper = new LambdaQueryWrapper<>();
         queryWrapper.like(flowerCategoryPageDTO.getType() != null, FlowerCategory::getType, flowerCategoryPageDTO.getType());
         IPage page = new Page(flowerCategoryPageDTO.getPage(), flowerCategoryPageDTO.getPageSize());
@@ -75,7 +75,7 @@ public class FlowerCategoryServiceImpl extends ServiceImpl<FlowerCategoryMapper,
         List<FlowerCategoryVO> voList = flowerCategoryIPage.getRecords().stream()
                 .map(flowerCategory -> BeanUtil.copyProperties(flowerCategory, FlowerCategoryVO.class))
                 .collect(Collectors.toList());
-        PageResult<FlowerCategoryVO> result = new PageResult<>();
+        PagePart<FlowerCategoryVO> result = new PagePart<>();
         result.setTotal(flowerCategoryIPage.getTotal());
         result.setList(voList);                         // 当前页数据
         result.setPageNum(flowerCategoryIPage.getCurrent());  // 当前页码

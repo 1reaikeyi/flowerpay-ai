@@ -7,7 +7,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.branch.service.*;
-import com.branch.result.PageResult;
+import com.branch.result.PagePart;
 
 
 import com.branch.framework.zhifubao.PayDTO;
@@ -51,7 +51,7 @@ public class FlowerOrderServiceImpl extends ServiceImpl<FlowerOrderMapper, Flowe
     }
 
     @Override
-    public PageResult<FlowerOrderVO> readPage(FlowerOrderPageDTO flowerOrderPageDTO) {
+    public PagePart<FlowerOrderVO> readPage(FlowerOrderPageDTO flowerOrderPageDTO) {
         LambdaQueryWrapper<FlowerOrder> queryWrapper = new LambdaQueryWrapper<>();
         queryWrapper.eq(flowerOrderPageDTO.getStatus() != null,
                 FlowerOrder::getStatus, flowerOrderPageDTO.getStatus());
@@ -61,7 +61,7 @@ public class FlowerOrderServiceImpl extends ServiceImpl<FlowerOrderMapper, Flowe
                 .map(flowerOrder -> BeanUtil.copyProperties(flowerOrder, FlowerOrderVO.class))
                 .collect(Collectors.toList());
 
-        PageResult<FlowerOrderVO> result = new PageResult<>();
+        PagePart<FlowerOrderVO> result = new PagePart<>();
         result.setTotal(flowerOrderIPage.getTotal());
         result.setList(voList);                         // 当前页数据
         result.setPageNum(flowerOrderIPage.getCurrent());  // 当前页码
@@ -135,11 +135,9 @@ public class FlowerOrderServiceImpl extends ServiceImpl<FlowerOrderMapper, Flowe
     public void update1(Long id) {
         this.lambdaUpdate()
                 .eq(FlowerOrder::getId, id)
-                .set(FlowerOrder::getStatus, OrderStatusEnum.COOKING);
+                .set(FlowerOrder::getStatus, OrderStatusEnum.ORDER);
 
-        FlowerOrderDetail flowerOrderDetail = flowerOrderDetailService
-                .lambdaQuery()
-                .eq(FlowerOrderDetail::getOrderId, id).one();
+        FlowerOrderDetail flowerOrderDetail = flowerOrderDetailService.lambdaQuery().eq(FlowerOrderDetail::getOrderId, id).one();
         FlowerOrderPay flowerOrderPay = FlowerOrderPay.builder()
                 .orderId(id)
                 .orderTime(LocalDateTime.now())
@@ -150,13 +148,7 @@ public class FlowerOrderServiceImpl extends ServiceImpl<FlowerOrderMapper, Flowe
 
     @Override
     public void update2(Long id,HttpServletResponse httpServletResponse) {
-        this.lambdaUpdate()
-                .eq(FlowerOrder::getId, id)
-                .set(FlowerOrder::getStatus, OrderStatusEnum.COOKING);
-
-        FlowerOrderPay flowerOrderPay = flowerOrderPayService.lambdaQuery()
-                .eq(FlowerOrderPay::getOrderId, id)
-                .one();
+        FlowerOrderPay flowerOrderPay = flowerOrderPayService.lambdaQuery().eq(FlowerOrderPay::getOrderId, id).one();
         PayDTO payDTO = new PayDTO();
         payDTO.setOutTradeNo(flowerOrderPay.getId().toString());
         payDTO.setSubject(flowerOrderPay.getId().toString());
@@ -166,6 +158,10 @@ public class FlowerOrderServiceImpl extends ServiceImpl<FlowerOrderMapper, Flowe
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+
+        this.lambdaUpdate()
+                .eq(FlowerOrder::getId, id)
+                .set(FlowerOrder::getStatus, OrderStatusEnum.PAYMENT);
     }
 
     public void order(PayDTO payDTO, HttpServletResponse response) throws Exception {

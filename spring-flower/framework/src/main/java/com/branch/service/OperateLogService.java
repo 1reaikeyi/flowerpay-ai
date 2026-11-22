@@ -3,7 +3,7 @@ package com.branch.service;
 import com.branch.domain.entity.OperateLog;
 import com.branch.domain.vo.OperateLogVO;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.branch.result.PageResult;
+import com.branch.result.PagePart;
 
 import java.util.List;
 
@@ -19,5 +19,5 @@ public interface OperateLogService extends IService<OperateLog> {
 
     void deleteByIds(List<Long> ids);
 
-    PageResult<OperateLogVO> readPage(OperateLog operateLog);
+    PagePart<OperateLogVO> readPage(OperateLog operateLog);
 }

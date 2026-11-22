@@ -11,12 +11,15 @@ public enum OrderStatusEnum {
      */
     ORDER(1L, "用户下单"),
     PAYMENT(2L, "用户确认支付"),
+
     COOKING(3L, "商家制作"),
     GO(4L, "工作人员取货"),
     DELIVERING(5L, "工作人员开始配送"),
     ARRIVED(6L, "工作人员已到达"),
-    COMPLETED(7L, "系统自动确认"),
-    CANCELLED(8L, "用户确认");
+
+    COMPLETED(7L, "用户确认"),
+    CANCELLED(8L, "已取消");
+
     @EnumValue
     private final Long code;
     private final String text;

@@ -1,7 +1,7 @@
 package com.branch.controller;
 
 import com.branch.domain.vo.ShopStatusVO;
-import com.branch.common.ShopConstant;
+import com.branch.common.system.ShopConstant;
 import com.branch.domain.OperationSuccessEnum;
 import com.branch.result.Result;
 import jakarta.validation.constraints.Max;

@@ -8,7 +8,7 @@ import com.branch.domain.dto.*;
 import com.branch.domain.dto.page.EmployeePageDTO;
 import com.branch.domain.entity.Employee;
 import com.branch.domain.vo.EmployeeVO;
-import com.branch.result.PageResult;
+import com.branch.result.PagePart;
 
 import java.util.List;
 
@@ -26,7 +26,7 @@ public interface EmployeeService extends IService<Employee> {
     void logout();
 
     EmployeeVO readById(Long id);
-    PageResult<EmployeeVO> readPage(EmployeePageDTO employeePageDTO);
+    PagePart<EmployeeVO> readPage(EmployeePageDTO employeePageDTO);
     void updateBySelf(EmployeeDTO employeeDTO);
     void deleteById(List<Long> ids);
     void updatePassword(EditPasswordDTO editPasswordDTO);

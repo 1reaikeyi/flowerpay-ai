@@ -23,7 +23,6 @@
                 {{ getStatusText(order.status) }}
               </el-tag>
             </el-descriptions-item>
-            <el-descriptions-item label="下单用户">{{ order.userName || '-' }}</el-descriptions-item>
             <el-descriptions-item label="用户ID">{{ order.userId || '-' }}</el-descriptions-item>
             <el-descriptions-item label="配送方式">
               <el-tag :type="normalizeDeliveryType(order.deliveryType) === 1 ? 'warning' : 'info'" effect="plain">
@@ -33,21 +32,7 @@
             <el-descriptions-item label="预约配送日期">
               {{ order.deliveryDate || '-' }}
             </el-descriptions-item>
-          </el-descriptions>
-        </el-card>
-
-        <!-- 收花人信息 -->
-        <el-card shadow="never" class="info-card">
-          <template #header>
-            <span class="card-title">收花人信息</span>
-          </template>
-          <el-descriptions :column="2" border>
-            <el-descriptions-item label="收花人">{{ order.consignee || '-' }}</el-descriptions-item>
-            <el-descriptions-item label="手机号">{{ order.phone || '-' }}</el-descriptions-item>
-            <el-descriptions-item label="配送地址" :span="2">
-              {{ order.address || '-' }}
-            </el-descriptions-item>
-            <el-descriptions-item label="备注/贺卡文案" :span="2">
+            <el-descriptions-item label="备注/贺卡文案">
               {{ order.remark || '-' }}
             </el-descriptions-item>
           </el-descriptions>

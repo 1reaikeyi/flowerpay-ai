@@ -1,7 +1,7 @@
 package com.branch.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.branch.result.PageResult;
+import com.branch.result.PagePart;
 import com.branch.domain.dto.FestivalDTO;
 import com.branch.domain.dto.FestivalPageDTO;
 import com.branch.domain.entity.Festival;
@@ -20,7 +20,7 @@ public interface FestivalService extends IService<Festival> {
     FestivalVO readCache(Long id);
     void updateCache(FestivalDTO festivalDTO);
     void deleteCache(List<Long> ids);
-    PageResult<FestivalVO> readPage(FestivalPageDTO festivalPageDTO);
+    PagePart<FestivalVO> readPage(FestivalPageDTO festivalPageDTO);
     List<FestivalDetailVO> readFestivalDetail(Long id);
     List<FestivalDetailVO> readOfFlower(Long id);
     List<FestivalDetailVO> readOfObject(String object);

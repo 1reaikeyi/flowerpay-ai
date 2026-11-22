@@ -4,7 +4,7 @@ import com.branch.domain.dto.BlogDTO;
 
 import com.branch.domain.dto.BlogPageDTO;
 import com.branch.domain.vo.BlogVO;
-import com.branch.result.PageResult;
+import com.branch.result.PagePart;
 import jakarta.websocket.server.PathParam;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import com.branch.service.BlogService;
 import com.branch.result.Result;
-import com.branch.result.ScrollResult;
+import com.branch.result.ScrollPart;
 
 @RestController
 @RequestMapping("/blog")
@@ -34,8 +34,8 @@ public class BlogController {
 
     @GetMapping("/all")
     public Result readBlog(@Validated BlogPageDTO blogPageDTO) {
-        PageResult<BlogVO> pageResult = blogService.readAll(blogPageDTO);
-        return Result.success(pageResult);
+        PagePart<BlogVO> pagePart = blogService.readAll(blogPageDTO);
+        return Result.success(pagePart);
     }
 
     @PostMapping("/liked")
@@ -55,7 +55,7 @@ public class BlogController {
 
     @GetMapping("/liked/of/follow")
     public Result follow(@RequestParam(required = false) Long max, Long offset) {
-        ScrollResult scrollResult = blogService.followScroll(max, offset);
-        return Result.success(scrollResult);
+        ScrollPart scrollPart = blogService.followScroll(max, offset);
+        return Result.success(scrollPart);
     }
 }

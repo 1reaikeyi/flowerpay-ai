@@ -3,32 +3,32 @@ package com.branch.constant;
 /**
  * redisKey前缀
  */
-public class RedisPrefixConstant {
-    public final static String ADMIN_AUTH_PREFIX = "flower:admin:";
-    public final static String USER_AUTH_PREFIX = "flower:user:";
+public interface RedisPrefixConstant {
+    String ADMIN_AUTH_PREFIX = "flower:admin:";
+    String USER_AUTH_PREFIX = "flower:user:";
 
 
-    public final static String CATEGORY_TYPE_PREFIX = "flower:category:type:";
-    public final static String FLOWER_PREFIX = "flower:";
-    public final static String FLOWERDETAIL_PREFIX = "flowerDetail:";
-    public final static String FESTIVAL_PREFIX = "festival:";
-    public final static String FESTIVALDETAIL_PREFIX = "festivalDetail:";
+    String CATEGORY_TYPE_PREFIX = "flower:category:type:";
+    String FLOWER_PREFIX = "flower:";
+    String FLOWERDETAIL_PREFIX = "flowerDetail:";
+    String FESTIVAL_PREFIX = "festival:";
+    String FESTIVALDETAIL_PREFIX = "festivalDetail:";
 
 
-    public final static String SHOPPING_CART_PREFIX = "shopping:cart:";
+    String SHOPPING_CART_PREFIX = "shopping:cart:";
 
 
-    public final static String ARTICLE_PREFIX = "blog:article:";
-    public static final String BLOG_LIKED_PREFIX = "blog:liked:";
-    public static final String BLOG_FOLLOW_PREFIX = "blog:follow:";
-    public static final String BLOG_VIEW_PREFIX = "blog:view:";
-    public static final String BLOG_WATCH_PREFIX = "blog:watch:";
+    String ARTICLE_PREFIX = "blog:article:";
+    String BLOG_LIKED_PREFIX = "blog:liked:";
+    String BLOG_FOLLOW_PREFIX = "blog:follow:";
+    String BLOG_VIEW_PREFIX = "blog:view:";
+    String BLOG_WATCH_PREFIX = "blog:watch:";
 
-    public final static String SIGN_DAY = "sign:day:";
+    String SIGN_DAY = "sign:day:";
 
-    public static final String SHOP_TYPE = "shop:type:";
+    String SHOP_TYPE = "shop:type:";
 
-    public static final String VOUCHER_STOCK_PREFIX = "voucher:second:stock:";
-    public static final String VOUCHER_ORDER_PREFIX = "voucher:second:order:";
+    String VOUCHER_STOCK_PREFIX = "voucher:second:stock:";
+    String VOUCHER_ORDER_PREFIX = "voucher:second:order:";
 
 }

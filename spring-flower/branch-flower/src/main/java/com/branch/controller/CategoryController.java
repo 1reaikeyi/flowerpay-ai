@@ -7,7 +7,7 @@ import com.branch.domain.vo.FlowerCategoryVO;
 import com.branch.domain.vo.FlowerVO;
 import com.branch.service.FlowerCategoryService;
 import com.branch.domain.OperationSuccessEnum;
-import com.branch.result.PageResult;
+import com.branch.result.PagePart;
 import com.branch.result.Result;
 import lombok.extern.slf4j.Slf4j;
 
@@ -48,8 +48,8 @@ public class CategoryController {
     @OperationLogging(operation = OperationSuccessEnum.READ)
     @GetMapping("/all")
     public Result readPage( @Validated FlowerCategoryPageDTO flowerCategoryPageDTO) {
-        PageResult<FlowerCategoryVO> flowerCategoryVOPageResult = flowerCategoryService.readPage(flowerCategoryPageDTO);
-        return Result.success(flowerCategoryVOPageResult);
+        PagePart<FlowerCategoryVO> flowerCategoryVOPagePart = flowerCategoryService.readPage(flowerCategoryPageDTO);
+        return Result.success(flowerCategoryVOPagePart);
     }
 
     @PreAuthorize("hasRole('ADMIN')")
