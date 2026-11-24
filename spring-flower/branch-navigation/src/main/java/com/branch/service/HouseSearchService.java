@@ -2,9 +2,9 @@ package com.branch.service;
 
 import cn.hutool.core.util.NumberUtil;
 import cn.hutool.json.JSONUtil;
-import com.branch.domain.entity.District;
-import com.branch.domain.entity.House;
-import com.branch.domain.vo.HouseResultVo;
+import com.branch.model.entity.District;
+import com.branch.model.entity.House;
+import com.branch.model.vo.HouseResultVo;
 import lombok.extern.slf4j.Slf4j;
 import org.redisson.api.RScript;
 import org.redisson.api.RedissonClient;

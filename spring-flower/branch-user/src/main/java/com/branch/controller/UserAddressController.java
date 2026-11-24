@@ -1,8 +1,8 @@
 package com.branch.controller;
 
-import com.branch.domain.OperationSuccessEnum;
-import com.branch.domain.dto.UserAddressDTO;
-import com.branch.domain.vo.UserAddressVO;
+import com.branch.model.OperationSuccessEnum;
+import com.branch.model.dto.UserAddressDTO;
+import com.branch.model.vo.UserAddressVO;
 import com.branch.service.UserAddressService;
 
 import com.branch.result.ScrollPart;

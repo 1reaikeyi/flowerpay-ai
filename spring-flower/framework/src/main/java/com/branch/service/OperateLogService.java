@@ -1,7 +1,7 @@
 package com.branch.service;
 
-import com.branch.domain.entity.OperateLog;
-import com.branch.domain.vo.OperateLogVO;
+import com.branch.model.entity.OperateLog;
+import com.branch.model.vo.OperateLogVO;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.branch.result.PagePart;
 

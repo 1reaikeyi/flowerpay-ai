@@ -1,8 +1,8 @@
 package com.branch.service.rag;
 
 import com.branch.controller.config.PromptConfig;
-import com.branch.domain.enums.ChatEventTypeEnum;
-import com.branch.domain.vo.ChatEventVO;
+import com.branch.model.enums.ChatEventTypeEnum;
+import com.branch.model.vo.ChatEventVO;
 import org.springframework.ai.document.Document;
 import org.springframework.ai.embedding.EmbeddingResponse;
 import org.springframework.ai.openai.OpenAiEmbeddingModel;

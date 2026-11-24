@@ -1,9 +1,9 @@
 package com.branch.controller;
 
-import com.branch.domain.entity.LoginLog;
+import com.branch.model.entity.LoginLog;
 import com.branch.service.LoginLogService;
 import com.branch.framework.aop.OperationLogging;
-import com.branch.domain.OperationSuccessEnum;
+import com.branch.model.OperationSuccessEnum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;

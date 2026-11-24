@@ -1,7 +1,7 @@
 package com.branch.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.branch.domain.entity.FlowerOrderPay;
+import com.branch.model.entity.FlowerOrderPay;
 
 
 /**

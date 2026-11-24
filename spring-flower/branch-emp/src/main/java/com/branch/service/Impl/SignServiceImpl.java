@@ -2,9 +2,9 @@ package com.branch.service.Impl;
 
 import cn.hutool.core.collection.CollectionUtil;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.branch.domain.dto.TimeDTO;
-import com.branch.domain.entity.Sign;
-import com.branch.mapper.SignMapper;
+import com.branch.model.dto.TimeDTO;
+import com.branch.model.entity.Sign;
+import com.branch.service.mapper.SignMapper;
 import com.branch.service.SignService;
 
 

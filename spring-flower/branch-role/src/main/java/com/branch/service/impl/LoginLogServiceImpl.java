@@ -1,7 +1,7 @@
 package com.branch.service.impl;
 
-import com.branch.domain.entity.LoginLog;
-import com.branch.mapper.LoginLogMapper;
+import com.branch.model.entity.LoginLog;
+import com.branch.service.mapper.LoginLogMapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.branch.result.PagePart;
 import com.branch.service.LoginLogService;

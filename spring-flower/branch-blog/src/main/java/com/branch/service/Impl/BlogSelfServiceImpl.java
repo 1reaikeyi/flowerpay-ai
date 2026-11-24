@@ -1,9 +1,9 @@
 package com.branch.service.Impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.branch.domain.dto.BlogSelfDTO;
-import com.branch.domain.entity.BlogSelf;
-import com.branch.mapper.BlogSelfMapper;
+import com.branch.model.dto.BlogSelfDTO;
+import com.branch.model.entity.BlogSelf;
+import com.branch.service.mapper.BlogSelfMapper;
 import com.branch.service.BlogSelfService;
 
 import org.springframework.stereotype.Service;

@@ -2,11 +2,11 @@ package com.branch.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.branch.result.PagePart;
-import com.branch.domain.dto.FestivalDTO;
-import com.branch.domain.dto.FestivalPageDTO;
-import com.branch.domain.entity.Festival;
-import com.branch.domain.vo.FestivalDetailVO;
-import com.branch.domain.vo.FestivalVO;
+import com.branch.model.dto.FestivalDTO;
+import com.branch.model.dto.FestivalPageDTO;
+import com.branch.model.entity.Festival;
+import com.branch.model.vo.FestivalDetailVO;
+import com.branch.model.vo.FestivalVO;
 
 import java.util.List;
 

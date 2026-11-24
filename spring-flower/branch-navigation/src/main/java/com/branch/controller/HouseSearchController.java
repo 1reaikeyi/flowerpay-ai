@@ -1,6 +1,6 @@
 package com.branch.controller;
 
-import com.branch.domain.vo.HouseResultVo;
+import com.branch.model.vo.HouseResultVo;
 import com.branch.service.HouseSearchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

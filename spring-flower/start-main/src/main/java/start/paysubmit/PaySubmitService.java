@@ -1,16 +1,15 @@
 package start.paysubmit;
 
-import com.branch.domain.dto.UserShoppingDTO;
-import com.branch.domain.entity.Festival;
-import com.branch.domain.entity.Flower;
-import com.branch.domain.entity.FlowerOrder;
-import com.branch.domain.entity.FlowerOrderDetail;
-import com.branch.domain.enums.DeliveryStatusEnum;
-import com.branch.domain.vo.UserAddressVO;
+import com.branch.model.dto.UserShoppingDTO;
+import com.branch.model.entity.Festival;
+import com.branch.model.entity.Flower;
+import com.branch.model.entity.FlowerOrder;
+import com.branch.model.entity.FlowerOrderDetail;
+import com.branch.model.enums.DeliveryStatusEnum;
+import com.branch.model.vo.UserAddressVO;
 import com.branch.framework.bo.SecurityContextParam;
 import com.branch.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;

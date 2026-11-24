@@ -1,7 +1,6 @@
 package com.branch.framework.aop;
 
 
-import com.branch.domain.entity.OperateLog;
 import com.branch.framework.bo.SecurityContextParam;
 import com.branch.service.OperateLogService;
 
@@ -14,7 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Method;
-import java.time.LocalDateTime;
 import java.util.Arrays;
 @Slf4j
 @Aspect // 标记为AOP切面类

@@ -1,12 +1,12 @@
 package com.branch.controller;
 
-import com.branch.domain.dto.FlowerCategoryDTO;
-import com.branch.domain.dto.FlowerCategoryPageDTO;
-import com.branch.domain.vo.FestivalVO;
-import com.branch.domain.vo.FlowerCategoryVO;
-import com.branch.domain.vo.FlowerVO;
+import com.branch.model.dto.FlowerCategoryDTO;
+import com.branch.model.dto.FlowerCategoryPageDTO;
+import com.branch.model.vo.FestivalVO;
+import com.branch.model.vo.FlowerCategoryVO;
+import com.branch.model.vo.FlowerVO;
 import com.branch.service.FlowerCategoryService;
-import com.branch.domain.OperationSuccessEnum;
+import com.branch.model.OperationSuccessEnum;
 import com.branch.result.PagePart;
 import com.branch.result.Result;
 import lombok.extern.slf4j.Slf4j;

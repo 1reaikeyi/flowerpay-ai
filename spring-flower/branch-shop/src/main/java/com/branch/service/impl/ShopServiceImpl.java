@@ -6,9 +6,9 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 
 import com.branch.constant.RedisPrefixConstant;
-import com.branch.domain.dto.ShopDTO;
-import com.branch.domain.entity.Shop;
-import com.branch.mapper.ShopMapper;
+import com.branch.model.dto.ShopDTO;
+import com.branch.model.entity.Shop;
+import com.branch.service.mapper.ShopMapper;
 import com.branch.result.ScrollPart;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.geo.Distance;

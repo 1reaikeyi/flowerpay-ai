@@ -2,9 +2,7 @@ package com.branch.service;
 
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.branch.domain.entity.RolePermission;
-
-import java.util.List;
+import com.branch.model.entity.RolePermission;
 
 /**
  * <p>

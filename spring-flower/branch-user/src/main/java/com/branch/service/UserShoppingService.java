@@ -1,9 +1,9 @@
 package com.branch.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.branch.domain.dto.UserShoppingDTO;
-import com.branch.domain.entity.UserShopping;
-import com.branch.domain.vo.UserShoppingVO;
+import com.branch.model.dto.UserShoppingDTO;
+import com.branch.model.entity.UserShopping;
+import com.branch.model.vo.UserShoppingVO;
 
 import java.util.List;
 

@@ -1,10 +1,8 @@
 package com.branch.controller;
 
 
-import com.branch.domain.dto.VoucherDTO;
-import com.branch.domain.dto.VoucherUseDTO;
+import com.branch.model.dto.VoucherDTO;
 import com.branch.result.Result;
-import com.branch.service.VoucherUseService;
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.beans.factory.annotation.Autowired;

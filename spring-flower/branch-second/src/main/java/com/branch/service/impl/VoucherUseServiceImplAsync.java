@@ -2,9 +2,9 @@ package com.branch.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.branch.constant.RedisPrefixConstant;
-import com.branch.domain.bo.RedisIdBO;
-import com.branch.domain.entity.VoucherUse;
-import com.branch.mapper.VoucherUseMapper;
+import com.branch.model.bo.RedisIdBO;
+import com.branch.model.entity.VoucherUse;
+import com.branch.service.mapper.VoucherUseMapper;
 import com.branch.service.VoucherUseService;
 import com.branch.framework.bo.SecurityContextParam;
 import jakarta.annotation.PostConstruct;

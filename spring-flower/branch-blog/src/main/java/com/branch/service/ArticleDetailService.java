@@ -2,10 +2,10 @@ package com.branch.service;
 
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.branch.domain.dto.ArticleDetailDTO;
-import com.branch.domain.dto.ArticleDetailPageDTO;
-import com.branch.domain.entity.ArticleDetail;
-import com.branch.domain.vo.ArticleDetailVO;
+import com.branch.model.dto.ArticleDetailDTO;
+import com.branch.model.dto.ArticleDetailPageDTO;
+import com.branch.model.entity.ArticleDetail;
+import com.branch.model.vo.ArticleDetailVO;
 import com.branch.result.PagePart;
 
 import java.util.List;

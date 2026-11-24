@@ -1,8 +1,8 @@
 package com.branch.controller;
 
-import com.branch.domain.OperationSuccessEnum;
-import com.branch.domain.dto.UserShoppingDTO;
-import com.branch.domain.vo.UserShoppingVO;
+import com.branch.model.OperationSuccessEnum;
+import com.branch.model.dto.UserShoppingDTO;
+import com.branch.model.vo.UserShoppingVO;
 import com.branch.service.UserShoppingService;
 import com.branch.result.Result;
 

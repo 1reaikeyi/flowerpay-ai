@@ -2,8 +2,8 @@ package com.branch.service;
 
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.branch.domain.dto.VoucherDTO;
-import com.branch.domain.entity.Voucher;
+import com.branch.model.dto.VoucherDTO;
+import com.branch.model.entity.Voucher;
 
 /**
  * 优惠券服务接口 - 定义优惠券相关业务操作

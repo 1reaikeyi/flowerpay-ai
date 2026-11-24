@@ -2,11 +2,11 @@ package com.branch.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.branch.domain.bo.RedisIdBO;
-import com.branch.domain.dto.VoucherUseDTO;
-import com.branch.domain.entity.VoucherSecond;
+import com.branch.model.bo.RedisIdBO;
+import com.branch.model.dto.VoucherUseDTO;
+import com.branch.model.entity.VoucherSecond;
 
-import com.branch.mapper.VoucherSecondMapper;
+import com.branch.service.mapper.VoucherSecondMapper;
 import jakarta.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

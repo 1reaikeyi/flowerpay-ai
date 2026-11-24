@@ -1,6 +1,6 @@
 package com.branch.controller;
 
-import com.branch.domain.dto.TimeDTO;
+import com.branch.model.dto.TimeDTO;
 import com.branch.result.Result;
 import com.branch.service.SignService;
 

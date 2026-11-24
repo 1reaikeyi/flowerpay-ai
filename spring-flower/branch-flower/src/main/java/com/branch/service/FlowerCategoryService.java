@@ -2,12 +2,12 @@ package com.branch.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.branch.result.PagePart;
-import com.branch.domain.dto.FlowerCategoryPageDTO;
-import com.branch.domain.dto.FlowerCategoryDTO;
-import com.branch.domain.entity.FlowerCategory;
-import com.branch.domain.vo.FestivalVO;
-import com.branch.domain.vo.FlowerCategoryVO;
-import com.branch.domain.vo.FlowerVO;
+import com.branch.model.dto.FlowerCategoryPageDTO;
+import com.branch.model.dto.FlowerCategoryDTO;
+import com.branch.model.entity.FlowerCategory;
+import com.branch.model.vo.FestivalVO;
+import com.branch.model.vo.FlowerCategoryVO;
+import com.branch.model.vo.FlowerVO;
 
 import java.util.List;
 

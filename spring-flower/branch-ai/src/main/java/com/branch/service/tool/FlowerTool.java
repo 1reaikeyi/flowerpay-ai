@@ -1,11 +1,11 @@
 package com.branch.service.tool;
 
-import com.branch.domain.bo.FlowerBO;
+import com.branch.model.bo.FlowerBO;
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 
-import com.branch.domain.entity.Flower;
+import com.branch.model.entity.Flower;
 import com.branch.service.FlowerService;
 import org.springframework.ai.chat.model.ToolContext;
 import org.springframework.ai.tool.annotation.Tool;

@@ -1,9 +1,9 @@
 package com.branch.controller;
 
-import com.branch.domain.dto.LoginDTO;
-import com.branch.domain.dto.UserDTO;
+import com.branch.model.dto.LoginDTO;
+import com.branch.model.dto.UserDTO;
 import com.branch.service.UserService;
-import com.branch.domain.OperationSuccessEnum;
+import com.branch.model.OperationSuccessEnum;
 import com.branch.result.Result;
 
 import org.springframework.beans.factory.annotation.Autowired;

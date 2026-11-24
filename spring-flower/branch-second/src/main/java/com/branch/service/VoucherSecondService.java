@@ -1,8 +1,8 @@
 package com.branch.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.branch.domain.dto.VoucherUseDTO;
-import com.branch.domain.entity.VoucherSecond;
+import com.branch.model.dto.VoucherUseDTO;
+import com.branch.model.entity.VoucherSecond;
 
 
 /**

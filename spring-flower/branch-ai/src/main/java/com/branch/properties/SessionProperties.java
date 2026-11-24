@@ -1,6 +1,6 @@
 package com.branch.properties;
 
-import com.branch.domain.vo.SessionVO;
+import com.branch.model.vo.SessionVO;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;

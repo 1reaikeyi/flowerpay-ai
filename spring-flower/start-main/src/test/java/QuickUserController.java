@@ -1,5 +1,5 @@
 import org.springframework.web.bind.annotation.*;
-import com.branch.domain.entity.Employee;
+import com.branch.model.entity.Employee;
 
 @CrossOrigin
 @RestController

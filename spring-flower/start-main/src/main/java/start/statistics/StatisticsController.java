@@ -1,7 +1,7 @@
 package start.statistics;
 
 import com.branch.result.Result;
-import com.branch.domain.OperationSuccessEnum;
+import com.branch.model.OperationSuccessEnum;
 import start.statistics.vo.OrderStatisticsVO;
 import start.statistics.vo.StatisticsVO;
 import start.statistics.vo.TopStatisticsVO;

@@ -1,6 +1,6 @@
 package com.branch.service.rag;
 
-import com.branch.domain.vo.ChatEventVO;
+import com.branch.model.vo.ChatEventVO;
 import org.springframework.ai.document.Document;
 import org.springframework.ai.embedding.EmbeddingResponse;
 import reactor.core.publisher.Flux;

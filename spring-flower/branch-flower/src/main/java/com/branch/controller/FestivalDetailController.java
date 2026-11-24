@@ -1,9 +1,9 @@
 package com.branch.controller;
 
-import com.branch.domain.dto.FestivalDetailDTO;
-import com.branch.domain.vo.FestivalDetailVO;
+import com.branch.model.dto.FestivalDetailDTO;
+import com.branch.model.vo.FestivalDetailVO;
 import com.branch.service.FestivalDetailService;
-import com.branch.domain.OperationSuccessEnum;
+import com.branch.model.OperationSuccessEnum;
 import com.branch.result.Result;
 import lombok.extern.slf4j.Slf4j;
 

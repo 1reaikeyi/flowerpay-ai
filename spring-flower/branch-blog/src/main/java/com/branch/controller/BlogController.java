@@ -1,9 +1,9 @@
 package com.branch.controller;
 
-import com.branch.domain.dto.BlogDTO;
+import com.branch.model.dto.BlogDTO;
 
-import com.branch.domain.dto.BlogPageDTO;
-import com.branch.domain.vo.BlogVO;
+import com.branch.model.dto.BlogPageDTO;
+import com.branch.model.vo.BlogVO;
 import com.branch.result.PagePart;
 import jakarta.websocket.server.PathParam;
 import lombok.extern.slf4j.Slf4j;

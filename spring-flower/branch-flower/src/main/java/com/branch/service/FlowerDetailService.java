@@ -1,9 +1,9 @@
 package com.branch.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.branch.domain.dto.FlowerDetailDTO;
-import com.branch.domain.entity.FlowerDetail;
-import com.branch.domain.vo.FlowerDetailVO;
+import com.branch.model.dto.FlowerDetailDTO;
+import com.branch.model.entity.FlowerDetail;
+import com.branch.model.vo.FlowerDetailVO;
 
 import java.util.List;
 

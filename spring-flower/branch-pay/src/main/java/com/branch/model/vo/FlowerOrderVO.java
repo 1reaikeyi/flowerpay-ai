@@ -1,0 +1,72 @@
+package com.branch.model.vo;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import com.branch.model.entity.FlowerOrderDetail;
+import com.branch.model.enums.DeliveryStatusEnum;
+import com.branch.model.enums.OrderStatusEnum;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.List;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class FlowerOrderVO {
+    /**
+     * 主键
+     */
+    private Long id;
+
+    /**
+     * 订单状态：1 用户下单 → 2 确认支付 → 3 商家制作 → 4 快递员取货 → 5 配送中 → 6 已送达 → 7 系统自动确认 → 8 已取消
+     */
+    private OrderStatusEnum status;
+
+    /**
+     * 下单用户 ID
+     */
+    private Long userId;
+
+    /**
+     * 地址 ID
+     */
+    private Long addressId;
+
+    /**
+     * 用户备注信息
+     */
+    private String remark;
+
+    /**
+     * 配送方式：0 预约配送，1 立即送出
+     */
+    private DeliveryStatusEnum deliveryType;
+
+    /**
+     * 预约配送日期
+     */
+    private LocalDate deliveryDate;
+
+    /**
+     * 配送开始时间
+     */
+    private LocalDateTime startDeliveryTime;
+
+    /**
+     * 预计送达时间
+     */
+    private LocalDateTime estimatedDeliveryTime;
+
+    /**
+     * 实际送达时间
+     */
+    private LocalDateTime deliveryTime;
+
+    /**
+     * 订单明细列表
+     */
+    private List<FlowerOrderDetail> flowerOrderDetailList;
+}

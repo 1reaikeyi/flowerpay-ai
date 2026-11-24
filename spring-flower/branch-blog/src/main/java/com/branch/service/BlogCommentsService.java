@@ -1,7 +1,7 @@
 package com.branch.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.branch.domain.entity.BlogComments;
+import com.branch.model.entity.BlogComments;
 
 import java.util.List;
 

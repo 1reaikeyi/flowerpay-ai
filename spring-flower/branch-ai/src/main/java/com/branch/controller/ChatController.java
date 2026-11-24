@@ -1,7 +1,7 @@
 package com.branch.controller;
 
-import com.branch.domain.dto.ChatDTO;
-import com.branch.domain.vo.ChatEventVO;
+import com.branch.model.dto.ChatDTO;
+import com.branch.model.vo.ChatEventVO;
 import com.branch.service.rag.Chat;
 import com.branch.result.Result;
 import org.springframework.ai.document.Document;

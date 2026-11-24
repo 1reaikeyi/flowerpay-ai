@@ -1,8 +1,8 @@
 package start.config;
 
-import com.branch.domain.vo.ArticleVO;
-import com.branch.domain.vo.FestivalDetailVO;
-import com.branch.domain.vo.FlowerDetailVO;
+import com.branch.model.vo.ArticleVO;
+import com.branch.model.vo.FestivalDetailVO;
+import com.branch.model.vo.FlowerDetailVO;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import com.github.benmanes.caffeine.cache.Cache;

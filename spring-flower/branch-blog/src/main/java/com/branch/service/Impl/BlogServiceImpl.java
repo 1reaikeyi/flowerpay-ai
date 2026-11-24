@@ -6,16 +6,16 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.branch.constant.RedisPrefixConstant;
-import com.branch.domain.dto.BlogPageDTO;
-import com.branch.domain.entity.BlogFollower;
-import com.branch.domain.vo.BlogVO;
+import com.branch.model.dto.BlogPageDTO;
+import com.branch.model.entity.BlogFollower;
+import com.branch.model.vo.BlogVO;
 import com.branch.result.PagePart;
 import com.branch.service.BlogFollowerService;
 
-import com.branch.domain.entity.Blog;
+import com.branch.model.entity.Blog;
 import com.branch.framework.bo.SecurityContextParam;
-import com.branch.mapper.BlogMapper;
-import com.branch.domain.dto.BlogDTO;
+import com.branch.service.mapper.BlogMapper;
+import com.branch.model.dto.BlogDTO;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;

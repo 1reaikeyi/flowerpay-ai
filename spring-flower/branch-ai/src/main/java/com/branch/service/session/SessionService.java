@@ -1,9 +1,9 @@
 package com.branch.service.session;
 
-import com.branch.domain.entity.Session;
-import com.branch.domain.vo.MessageVO;
-import com.branch.domain.vo.SessionTitleVO;
-import com.branch.domain.vo.SessionVO;
+import com.branch.model.entity.Session;
+import com.branch.model.vo.MessageVO;
+import com.branch.model.vo.SessionTitleVO;
+import com.branch.model.vo.SessionVO;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 

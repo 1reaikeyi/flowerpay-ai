@@ -1,6 +1,6 @@
 package com.branch.service;
 
-import com.branch.domain.entity.LoginLog;
+import com.branch.model.entity.LoginLog;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.branch.result.PagePart;
 

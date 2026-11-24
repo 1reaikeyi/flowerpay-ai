@@ -1,14 +1,15 @@
 package com.branch.service.session;
 
-import com.branch.domain.entity.ChatRecord;
-import com.branch.domain.entity.Session;
-import com.branch.domain.enums.MessageTypeEnum;
-import com.branch.domain.vo.MessageVO;
-import com.branch.domain.vo.SessionTitleVO;
-import com.branch.domain.vo.SessionVO;
+import com.branch.model.entity.ChatRecord;
+import com.branch.model.entity.Session;
+import com.branch.model.enums.MessageTypeEnum;
+import com.branch.model.vo.MessageVO;
+import com.branch.model.vo.SessionTitleVO;
+import com.branch.model.vo.SessionVO;
 import com.branch.mapper.SessionMapper;
 import com.branch.properties.SessionProperties;
-import com.branch.service.memory.AssistantMessageUtil;
+
+import com.branch.service.memory.AssistantMessageBO;
 import com.branch.service.memory.mysql.ChatRecordService;
 import com.branch.service.rag.Chat;
 import cn.hutool.core.bean.BeanUtil;
@@ -96,11 +97,11 @@ public class SessionServiceImpl extends ServiceImpl<SessionMapper, Session> impl
                 // 过滤掉非用户消息和助手消息
                 .filter(message -> message.getMessageType() == MessageType.ASSISTANT || message.getMessageType() == MessageType.USER)
                 .map(message -> {
-                    if (message instanceof AssistantMessageUtil) {
+                    if (message instanceof AssistantMessageBO) {
                         return MessageVO.builder()
                                 .content(message.getText())
                                 .type(MessageTypeEnum.valueOf(message.getMessageType().name()))
-                                .params(((AssistantMessageUtil) message).getParams())
+                                .params(((AssistantMessageBO) message).getParams())
                                 .build();
                     }
                     //if (message instanceof USERMessageUtil) {}

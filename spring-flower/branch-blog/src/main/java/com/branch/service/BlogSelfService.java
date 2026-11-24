@@ -1,8 +1,8 @@
 package com.branch.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.branch.domain.dto.BlogSelfDTO;
-import com.branch.domain.entity.BlogSelf;
+import com.branch.model.dto.BlogSelfDTO;
+import com.branch.model.entity.BlogSelf;
 
 
 /**

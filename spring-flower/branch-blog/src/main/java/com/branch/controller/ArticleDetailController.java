@@ -1,9 +1,9 @@
 package com.branch.controller;
 
-import com.branch.domain.dto.ArticleDetailDTO;
+import com.branch.model.dto.ArticleDetailDTO;
 
-import com.branch.domain.dto.ArticleDetailPageDTO;
-import com.branch.domain.vo.ArticleDetailVO;
+import com.branch.model.dto.ArticleDetailPageDTO;
+import com.branch.model.vo.ArticleDetailVO;
 import com.branch.result.PagePart;
 import lombok.extern.slf4j.Slf4j;
 import com.branch.service.ArticleDetailService;

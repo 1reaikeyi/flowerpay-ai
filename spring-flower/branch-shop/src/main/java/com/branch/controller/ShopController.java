@@ -1,7 +1,7 @@
 package com.branch.controller;
 
 
-import com.branch.domain.dto.ShopDTO;
+import com.branch.model.dto.ShopDTO;
 import com.branch.result.Result;
 import com.branch.result.ScrollPart;
 import com.branch.service.ShopService;

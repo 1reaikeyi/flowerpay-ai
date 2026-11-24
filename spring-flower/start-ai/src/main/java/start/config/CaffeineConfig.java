@@ -1,7 +1,7 @@
 package start.config;
 
-import com.branch.domain.vo.FestivalDetailVO;
-import com.branch.domain.vo.FlowerDetailVO;
+import com.branch.model.vo.FestivalDetailVO;
+import com.branch.model.vo.FlowerDetailVO;
 import com.github.benmanes.caffeine.cache.Cache;
 import com.github.benmanes.caffeine.cache.Caffeine;
 import org.springframework.context.annotation.Bean;

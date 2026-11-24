@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.branch.mapper.PermissionMapper">
+<mapper namespace="com.branch.service.mapper.PermissionMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.branch.domain.entity.Permission">
+    <resultMap id="BaseResultMap" type="com.branch.model.entity.Permission">
         <id column="id" property="id" />
         <result column="permission_code" property="permissionCode" />
         <result column="permission_name" property="permissionName" />
@@ -22,10 +22,10 @@
     </sql>
 
     <!-- 角色-权限三表连接查询映射 -->
-    <resultMap id="RolePermissionMap" type="com.branch.domain.vo.RolePermissionVO">
+    <resultMap id="RolePermissionMap" type="com.branch.model.vo.RolePermissionVO">
         <id column="role_id" property="roleId" />
         <result column="role_name" property="roleName" />
-        <association property="permission" javaType="com.branch.domain.vo.PermissionVO">
+        <association property="permission" javaType="com.branch.model.vo.PermissionVO">
             <id column="permission_id" property="id" />
             <result column="permission_code" property="permissionCode" />
             <result column="permission_name" property="permissionName" />

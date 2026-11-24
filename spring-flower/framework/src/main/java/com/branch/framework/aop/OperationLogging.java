@@ -3,7 +3,7 @@ package com.branch.framework.aop;
 
 
 
-import com.branch.domain.OperationSuccessEnum;
+import com.branch.model.OperationSuccessEnum;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

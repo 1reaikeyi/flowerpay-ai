@@ -1,8 +1,8 @@
 package com.branch.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.branch.domain.dto.TimeDTO;
-import com.branch.domain.entity.Sign;
+import com.branch.model.dto.TimeDTO;
+import com.branch.model.entity.Sign;
 
 
 public interface SignService extends IService<Sign> {

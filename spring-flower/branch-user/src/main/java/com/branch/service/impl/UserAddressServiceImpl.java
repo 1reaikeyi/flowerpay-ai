@@ -4,14 +4,14 @@ import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.collection.CollectionUtil;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.branch.domain.vo.UserAddressVO;
-import com.branch.mapper.UserAddressMapper;
+import com.branch.model.vo.UserAddressVO;
+import com.branch.service.mapper.UserAddressMapper;
 import com.branch.service.UserAddressService;
 import com.branch.constant.ErrorConstant;
 import com.branch.exception.ModelFailedException;
 import com.branch.result.ScrollPart;
-import com.branch.domain.dto.UserAddressDTO;
-import com.branch.domain.entity.UserAddress;
+import com.branch.model.dto.UserAddressDTO;
+import com.branch.model.entity.UserAddress;
 import org.springframework.stereotype.Service;
 import com.branch.framework.bo.SecurityContextParam;
 

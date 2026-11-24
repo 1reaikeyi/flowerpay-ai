@@ -3,7 +3,7 @@ package com.branch.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import com.branch.domain.dto.BlogCommentsDTO;
+import com.branch.model.dto.BlogCommentsDTO;
 import com.branch.service.BlogCommentsService;
 import com.branch.result.Result;
 

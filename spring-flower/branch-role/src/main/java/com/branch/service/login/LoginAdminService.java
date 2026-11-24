@@ -2,13 +2,13 @@ package com.branch.service.login;
 
 import cn.hutool.core.bean.BeanUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.branch.domain.entity.*;
+import com.branch.model.entity.*;
 import com.branch.exception.LoginFailedException;
-import com.branch.mapper.*;
 import com.branch.constant.ErrorConstant;
 import com.branch.common.StatusConstant;
 import com.branch.framework.bo.LoginUserDetails;
 import com.branch.framework.bo.UserBO;
+import com.branch.service.mapper.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;

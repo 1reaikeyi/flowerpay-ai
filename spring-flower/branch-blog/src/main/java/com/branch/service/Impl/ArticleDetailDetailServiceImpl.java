@@ -5,18 +5,18 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 
-import com.branch.domain.dto.ArticleDetailDTO;
-import com.branch.domain.dto.ArticleDetailPageDTO;
-import com.branch.domain.entity.Article;
-import com.branch.domain.vo.ArticleDetailVO;
-import com.branch.mapper.ArticleMapper;
-import com.branch.mapper.ArticleDetailMapper;
+import com.branch.model.dto.ArticleDetailDTO;
+import com.branch.model.dto.ArticleDetailPageDTO;
+import com.branch.model.entity.Article;
+import com.branch.model.vo.ArticleDetailVO;
+import com.branch.service.mapper.ArticleMapper;
+import com.branch.service.mapper.ArticleDetailMapper;
 import com.branch.result.PagePart;
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.branch.domain.entity.ArticleDetail;
+import com.branch.model.entity.ArticleDetail;
 import com.branch.service.ArticleDetailService;
 
 import java.util.List;

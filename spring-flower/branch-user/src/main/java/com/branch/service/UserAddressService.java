@@ -1,10 +1,10 @@
 package com.branch.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.branch.domain.vo.UserAddressVO;
+import com.branch.model.vo.UserAddressVO;
 import com.branch.result.ScrollPart;
-import com.branch.domain.dto.UserAddressDTO;
-import com.branch.domain.entity.UserAddress;
+import com.branch.model.dto.UserAddressDTO;
+import com.branch.model.entity.UserAddress;
 
 import java.util.List;
 

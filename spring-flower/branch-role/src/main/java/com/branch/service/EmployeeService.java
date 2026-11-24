@@ -4,10 +4,10 @@ package com.branch.service;
 
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.branch.domain.dto.*;
-import com.branch.domain.dto.page.EmployeePageDTO;
-import com.branch.domain.entity.Employee;
-import com.branch.domain.vo.EmployeeVO;
+import com.branch.model.dto.*;
+import com.branch.model.dto.page.EmployeePageDTO;
+import com.branch.model.entity.Employee;
+import com.branch.model.vo.EmployeeVO;
 import com.branch.result.PagePart;
 
 import java.util.List;

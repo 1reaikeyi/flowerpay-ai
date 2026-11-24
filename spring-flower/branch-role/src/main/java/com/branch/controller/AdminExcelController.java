@@ -6,12 +6,12 @@ import com.alibaba.excel.ExcelWriter;
 import com.alibaba.excel.context.AnalysisContext;
 import com.alibaba.excel.event.AnalysisEventListener;
 import com.alibaba.excel.write.metadata.WriteSheet;
-import com.branch.domain.entity.User;
-import com.branch.domain.excel.UserExcel;
+import com.branch.model.entity.User;
+import com.branch.model.excel.UserExcel;
 import com.branch.service.UserService;
 import com.branch.result.Result;
 import com.branch.framework.aop.OperationLogging;
-import com.branch.domain.OperationSuccessEnum;
+import com.branch.model.OperationSuccessEnum;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 

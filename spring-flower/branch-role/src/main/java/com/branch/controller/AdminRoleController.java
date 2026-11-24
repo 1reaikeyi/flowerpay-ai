@@ -1,11 +1,11 @@
 package com.branch.controller;
 
-import com.branch.domain.dto.RoleDTO;
-import com.branch.domain.dto.page.RolePageDTO;
-import com.branch.domain.vo.RoleVO;
+import com.branch.model.dto.RoleDTO;
+import com.branch.model.dto.page.RolePageDTO;
+import com.branch.model.vo.RoleVO;
 import com.branch.service.RoleService;
 import com.branch.framework.aop.OperationLogging;
-import com.branch.domain.OperationSuccessEnum;
+import com.branch.model.OperationSuccessEnum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;

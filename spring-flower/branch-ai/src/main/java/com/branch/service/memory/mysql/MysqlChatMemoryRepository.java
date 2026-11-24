@@ -1,6 +1,6 @@
 package com.branch.service.memory.mysql;
 
-import com.branch.domain.entity.ChatRecord;
+import com.branch.model.entity.ChatRecord;
 import com.branch.service.memory.MessageUtil;
 import cn.hutool.core.collection.CollStreamUtil;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;

@@ -1,9 +1,9 @@
 package com.branch.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.branch.domain.dto.PermissionDTO;
-import com.branch.domain.entity.Permission;
-import com.branch.domain.vo.PermissionVO;
+import com.branch.model.dto.PermissionDTO;
+import com.branch.model.entity.Permission;
+import com.branch.model.vo.PermissionVO;
 
 import java.util.List;
 import java.util.Map;

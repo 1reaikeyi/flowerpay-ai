@@ -1,13 +1,13 @@
 package start.statistics;
 
-import com.branch.domain.vo.FestivalVO;
-import com.branch.domain.vo.FlowerVO;
+import com.branch.model.vo.FestivalVO;
+import com.branch.model.vo.FlowerVO;
 import com.branch.service.FestivalService;
 import com.branch.service.FlowerService;
 import start.statistics.vo.OrderStatisticsVO;
-import com.branch.domain.entity.FlowerOrder;
-import com.branch.domain.entity.FlowerOrderDetail;
-import com.branch.domain.enums.OrderStatusEnum;
+import com.branch.model.entity.FlowerOrder;
+import com.branch.model.entity.FlowerOrderDetail;
+import com.branch.model.enums.OrderStatusEnum;
 
 import com.branch.service.FlowerOrderDetailService;
 import com.branch.service.FlowerOrderService;

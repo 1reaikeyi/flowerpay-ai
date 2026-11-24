@@ -2,10 +2,10 @@ package com.branch.service;
 
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.branch.domain.dto.RoleDTO;
-import com.branch.domain.dto.page.RolePageDTO;
-import com.branch.domain.entity.Role;
-import com.branch.domain.vo.RoleVO;
+import com.branch.model.dto.RoleDTO;
+import com.branch.model.dto.page.RolePageDTO;
+import com.branch.model.entity.Role;
+import com.branch.model.vo.RoleVO;
 import com.branch.result.PagePart;
 
 import java.util.List;

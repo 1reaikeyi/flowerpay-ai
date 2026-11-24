@@ -1,11 +1,11 @@
 package com.branch.controller;
 
 
-import com.branch.domain.dto.*;
-import com.branch.domain.dto.page.EmployeePageDTO;
-import com.branch.domain.vo.EmployeeVO;
+import com.branch.model.dto.*;
+import com.branch.model.dto.page.EmployeePageDTO;
+import com.branch.model.vo.EmployeeVO;
 import com.branch.service.*;
-import com.branch.domain.OperationSuccessEnum;
+import com.branch.model.OperationSuccessEnum;
 import com.branch.result.PagePart;
 import com.branch.result.Result;
 import lombok.extern.slf4j.Slf4j;
@@ -25,13 +25,13 @@ public class AdminController {
     private EmployeeService employeeService;
 
     @PostMapping("/register/admin")
-    public Result registerAdmin(@RequestBody EmployeeDTO employeeDTO) {
+    public Result registerAdmin(@Validated @RequestBody EmployeeDTO employeeDTO) {
         employeeService.registerAdmin(employeeDTO);
         return Result.success("register");
     }
 
     @PostMapping("/register/employee")
-    public Result registerEmployee(@RequestBody EmployeeDTO employeeDTO) {
+    public Result registerEmployee(@Validated @RequestBody EmployeeDTO employeeDTO) {
         employeeService.registerEmployee(employeeDTO);
         return Result.success("register");
     }
@@ -81,7 +81,7 @@ public class AdminController {
     @PreAuthorize("hasRole('ADMIN')")
     @OperationLogging(operation = OperationSuccessEnum.UPDATE)
     @PutMapping("/employee")
-    public Result updateBySelf(@RequestBody EmployeeDTO employeeDTO) {
+    public Result updateBySelf(@Validated @RequestBody EmployeeDTO employeeDTO) {
         employeeService.updateBySelf(employeeDTO);
         return Result.success(employeeDTO.getId());
     }

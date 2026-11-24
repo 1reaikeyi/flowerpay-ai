@@ -11,7 +11,7 @@ spring:
         # 主节点名称，必须与 redis-sentinel.conf 中 "sentinel monitor <name> ..." 一致
         master: mymaster
         nodes:
-          - 192.168.80.128:263790
-          - 192.168.80.129:263791
-          - 192.168.80.130:263792
+          - 192.168.80.128:27001
+          - 192.168.80.129:27002
+          - 192.168.80.130:27003
         password: ${flower.redis.password}

@@ -1,7 +1,7 @@
 package com.branch.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.branch.domain.entity.FlowerOrderDetail;
+import com.branch.model.entity.FlowerOrderDetail;
 
 /**
  * 订单详情 Service（对应 flower_order_detail 表）

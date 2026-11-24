@@ -1,6 +1,6 @@
 package start.websocket;
 
-import com.branch.domain.entity.Flower;
+import com.branch.model.entity.Flower;
 import com.branch.service.FlowerService;
 import lombok.extern.slf4j.Slf4j;
 

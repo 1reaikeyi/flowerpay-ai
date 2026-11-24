@@ -1,8 +1,8 @@
 package com.branch.wallet;
 
 import com.alipay.api.internal.util.AlipaySignature;
-import com.branch.domain.entity.FlowerOrderPay;
-import com.branch.domain.enums.PayStatusEnum;
+import com.branch.model.entity.FlowerOrderPay;
+import com.branch.model.enums.PayStatusEnum;
 import com.branch.service.FlowerOrderPayService;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;

@@ -4,10 +4,10 @@ package com.branch.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 
-import com.branch.domain.dto.BlogDTO;
-import com.branch.domain.dto.BlogPageDTO;
-import com.branch.domain.entity.Blog;
-import com.branch.domain.vo.BlogVO;
+import com.branch.model.dto.BlogDTO;
+import com.branch.model.dto.BlogPageDTO;
+import com.branch.model.entity.Blog;
+import com.branch.model.vo.BlogVO;
 import com.branch.result.PagePart;
 import com.branch.result.ScrollPart;
 

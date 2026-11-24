@@ -11,17 +11,17 @@ import com.branch.constant.RedisPrefixConstant;
 import com.branch.exception.ModelFailedException;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
-import com.branch.mapper.FlowerDetailMapper;
-import com.branch.domain.dto.FlowerDetailDTO;
-import com.branch.domain.entity.FlowerDetail;
-import com.branch.domain.vo.FlowerDetailVO;
+import com.branch.service.mapper.FlowerDetailMapper;
+import com.branch.model.dto.FlowerDetailDTO;
+import com.branch.model.entity.FlowerDetail;
+import com.branch.model.vo.FlowerDetailVO;
 
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
-import com.branch.domain.wrapper.LogicData;
+import com.branch.model.wrapper.LogicData;
 import com.branch.service.FlowerDetailService;
 
 import java.time.Duration;

@@ -3,12 +3,12 @@ package com.branch.service.impl;
 import cn.hutool.core.bean.BeanUtil;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.branch.constant.RedisPrefixConstant;
-import com.branch.domain.dto.VoucherDTO;
-import com.branch.domain.entity.Voucher;
+import com.branch.model.dto.VoucherDTO;
+import com.branch.model.entity.Voucher;
 
-import com.branch.domain.entity.VoucherSecond;
+import com.branch.model.entity.VoucherSecond;
 import lombok.extern.slf4j.Slf4j;
-import com.branch.mapper.VoucherMapper;
+import com.branch.service.mapper.VoucherMapper;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;

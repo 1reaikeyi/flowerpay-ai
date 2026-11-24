@@ -1,6 +1,6 @@
 package com.branch.service.tool;
 
-import com.branch.domain.vo.ChatEventVO;
+import com.branch.model.vo.ChatEventVO;
 import reactor.core.publisher.Flux;
 
 public interface ToolService {

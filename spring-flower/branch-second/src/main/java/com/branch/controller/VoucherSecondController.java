@@ -1,12 +1,11 @@
 package com.branch.controller;
 
 
-import com.branch.domain.dto.VoucherUseDTO;
+import com.branch.model.dto.VoucherUseDTO;
 import com.branch.result.Result;
 import com.branch.service.VoucherSecondService;
 import com.branch.service.VoucherUseService;
 import jakarta.annotation.Resource;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

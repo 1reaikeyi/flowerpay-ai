@@ -1,6 +1,6 @@
 package com.branch.controller;
 
-import com.branch.domain.dto.BlogSelfDTO;
+import com.branch.model.dto.BlogSelfDTO;
 import com.branch.result.Result;
 import com.branch.service.BlogSelfService;
 import lombok.extern.slf4j.Slf4j;

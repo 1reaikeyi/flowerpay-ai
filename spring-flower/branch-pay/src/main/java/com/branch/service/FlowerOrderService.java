@@ -2,9 +2,9 @@ package com.branch.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.branch.result.PagePart;
-import com.branch.domain.dto.FlowerOrderPageDTO;
-import com.branch.domain.entity.FlowerOrder;
-import com.branch.domain.vo.FlowerOrderVO;
+import com.branch.model.dto.FlowerOrderPageDTO;
+import com.branch.model.entity.FlowerOrder;
+import com.branch.model.vo.FlowerOrderVO;
 import jakarta.servlet.http.HttpServletResponse;
 
 /**

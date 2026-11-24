@@ -1,10 +1,10 @@
 package com.branch.controller;
 
-import com.branch.domain.dto.PermissionDTO;
-import com.branch.domain.vo.PermissionVO;
+import com.branch.model.dto.PermissionDTO;
+import com.branch.model.vo.PermissionVO;
 import com.branch.service.PermissionService;
 import com.branch.framework.aop.OperationLogging;
-import com.branch.domain.OperationSuccessEnum;
+import com.branch.model.OperationSuccessEnum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
